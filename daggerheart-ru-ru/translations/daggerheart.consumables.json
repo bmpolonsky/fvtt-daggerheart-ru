@@ -1,8 +1,7 @@
 {
   "label": "Расходники",
   "mapping": {
-    "description": "system.description",
-    "actions": "system.actions"
+    "description": "system.description"
   },
   "entries": {
     "Acidpaste": {
