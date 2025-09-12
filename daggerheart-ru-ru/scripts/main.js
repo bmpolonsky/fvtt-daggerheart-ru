@@ -9,12 +9,24 @@ Hooks.once('babele.init', (babele) => {
 
     Babele.get().registerConverters({
 
-        "toAdversariesItems": (original, translation) => {
-            for (i in original) {
-								if (original[i]._id in translation){
-									original[i].name = translation[original[i]._id]?.name;
-									original[i].system.description = translation[original[i]._id]?.description;
+        "toAdversariesItems": (origItems, transItems) => {
+            for (item of origItems) {
+								id = item._id;
+								if (id in transItems){
+									item.name = transItems[id]?.name;
+									item.system.description = transItems[id]?.description;
+									
+									// actions if exist
+									for (actionId in item.system.actions){
+										item.system.actions[actionId].description = transItems[id]?.description;
+									}
 								}
+            }
+            return;
+        },
+				"toActions": (origActions, transActions) => {
+            for (actionId in origActions) {
+								origActions[actionId]["description"] = transActions[actionId];
             }
             return;
         }
