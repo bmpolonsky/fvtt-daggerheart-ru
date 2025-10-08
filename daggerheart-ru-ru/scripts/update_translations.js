@@ -37,15 +37,15 @@ const CLASS_ITEM_OVERRIDES = {
   "Grappling Hook": "Крюк кошка",
   "Letter(Never Opened)": "Письмо (никогда не вскрывалось)",
   "Secret Key": "Секретный ключ",
-  "Set of Forgery Tools": "Набор фальсификатора",
-  "Sigil of Your God": "Символ вашего божества",
-  "Small Bag (Rocks & Bones)": "Мешочек с камнями и костями",
-  "Strange Dirty Penant": "Странный грязный талисман",
-  "Tiny Elemental Pet": "Крошечный питомец-элементаль",
-  "Totem from Mentor": "Тотем наставника",
-  "Trophy from your First Kill": "Трофей первого убийства",
-  "Untranslated Book": "Непереведённая книга",
-  "Broken Compass": "Сломанный компас"
+  "Set of Forgery Tools": "Набор для фальсификации",
+  "Sigil of Your God": "Символ вашего бога",
+  "Small Bag (Rocks & Bones)": "Маленький мешочек с камнями и костями",
+  "Strange Dirty Penant": "Странный кулон, найденный в грязи",
+  "Tiny Elemental Pet": "Маленький безобидный питомец элементаль",
+  "Totem from Mentor": "Тотем от вашего наставника",
+  "Trophy from your First Kill": "Трофей вашего первого убийства",
+  "Untranslated Book": "Книга, которую вы пытаетесь перевести",
+  "Broken Compass": "Кажущийся сломанным компас"
 };
 
 /**
@@ -58,44 +58,6 @@ const ACTION_OVERRIDES = {
     "<p>Выберите один из элементов — Воздух, Земля, Огонь, Молния или Вода — и создавайте безвредные эффекты на его основе.</p>",
   S7HvFD3qIR3ifJRL:
     "<p><strong>Потратьте Надежду</strong>, опишите помощь стихии и получите +2 к броску действия или +3 к броску урона.</p>",
-
-  // Elemental Incarnation (four elemental stances).
-  wVGSzAnJGs5eXKqI:
-    "<p><strong>Огонь:</strong> Когда враг на Рукопашной дистанции наносит вам урон, он получает <strong>1d10</strong> магического урона.</p>",
-  "6QXTThhnJpGDIvhJ":
-    "<p><strong>Земля:</strong> Добавьте ваш модификатор Мастерства к своим порогам урона.</p>",
-  pY2EdEMoyLGYWjK5:
-    "<p><strong>Вода:</strong> Когда вы наносите урон врагу на Рукопашной дистанции, остальные враги в пределах Близкой дистанции отмечают Стресс.</p>",
-  uk8EgHMxCgoWENzt:
-    "<p><strong>Воздух:</strong> Вы можете парить и получаете преимущество на броски Проворности.</p>",
-
-  // Elemental Aura (elemental aura effects).
-  AdOnKhi7g6zQu2iv:
-    "<p><strong>Огонь:</strong> Когда противник отмечает Рану, он также отмечает Стресс.</p>",
-  xDBLH5TWidvrYF7z:
-    "<p><strong>Земля:</strong> Союзники в пределах ауры получают +1 к Силе.</p>",
-  S4t5HlgxWlHwaBDw:
-    "<p><strong>Вода:</strong> Когда противник наносит вам урон, вы можете <strong>отметить Стресс</strong>, чтобы переместить его в пределах Близкой дистанции.</p>",
-  hAsKFFewtTqd1gg9:
-    "<p><strong>Воздух:</strong> Атаки с дальности дальше Рукопашной наносят вам на <strong>1d8</strong> меньше урона.</p>",
-
-  // Elemental Dominion (advanced elemental perks).
-  ofdSzqY7IfAy5ayv:
-    "<p><strong>Огонь:</strong> Получите +1 к Мастерству для атак и заклинаний, наносящих урон.</p>",
-  knGm3snaplWYDaue:
-    "<p><strong>Земля:</strong> При отметке Ран бросайте <strong>d6</strong> за каждую; за результат 6 уменьшайте количество отмеченных Ран на 1.</p>",
-  MocaqHUdyVwH0ZFu:
-    "<p><strong>Вода:</strong> Когда по вам попадают, можете <strong>отметить Стресс</strong>, чтобы сделать атакующего временно Уязвимым.</p>",
-  AQMNJRmVyhJTSCfR:
-    "<p><strong>Воздух:</strong> Получите +1 к Уклонению и способность летать.</p>",
-
-  // Gifted Performer songs.
-  xvs7ZKm93AlnZD3F:
-    "<p><strong>Расслабляющая песня:</strong> Вы и союзники в пределах Средней дистанции снимаете по одной Ране.</p>",
-  nvfJ8rOx8baI6POZ:
-    "<p><strong>Эпическая песня:</strong> Сделайте цель в пределах Средней дистанции временно уязвимой.</p>",
-  QTTgKnhpNE2XHz4u:
-    "<p><strong>Душераздирающая песня:</strong> Вы и союзники в пределах Средней дистанции получаете Надежду.</p>",
 
   // Sparing Touch split: healing HP vs Stress.
   aanLNQkeO2ZTIqBl:
@@ -114,6 +76,13 @@ const ACTION_OVERRIDES = {
     "<p><strong>Отметьте Стресс</strong>, чтобы во время полёта поднять и нести союзника вашего размера или меньше.</p>",
   "1qjnoz5I7NqrWMkp":
     "<p><strong>Потратьте Надежду</strong>, чтобы нанести дополнительный <strong>1d8</strong> урона при успешной атаке в полёте.</p>"
+};
+
+const FEATURE_ACTION_GENERATORS = {
+  147: generateBulletActions,
+  159: generateBulletActions,
+  160: generateBulletActions,
+  161: generateBulletActions
 };
 
 const SUBCLASS_NAME_ALIASES = {
@@ -141,30 +110,16 @@ const ARMOR_OVERRIDES = {
 const LEGACY_ANCESTRY_KEYS = new Set(["Fearless", "Unshakeable"]);
 
 const LABEL_OVERRIDES = {
-  "daggerheart.beastforms.json": "Звериные формы"
-};
-
-const ITEM_TYPE_OVERRIDES = {
-  ancestry: "Происхождения",
-  community: "Сообщества",
-  class: "Классы",
-  subclass: "Подклассы",
-  feature: "Особенности",
-  domainCard: "Карты домена",
-  consumable: "Расходуемые",
-  loot: "Добыча",
-  weapon: "Оружие",
-  armor: "Броня",
-  beastform: "Звериная форма"
-};
-
-const ACTOR_TYPE_OVERRIDES = {
-  environment: "Окружение"
+  "daggerheart.ancestries.json": "Родословные",
+  "daggerheart.beastforms.json": "Звериные формы",
+  "daggerheart.consumables.json": "Расходники",
+  "daggerheart.environments.json": "Окружения"
 };
 
 const HTML_LINK_RE = /<a\s+[^>]*>(.*?)<\/a>/gis;
 const MD_LINK_RE = /\[([^\]]+)\]\([^)]+\)/g;
 const CLASS_ATTR_RE = /\sclass="[^"]*"/gi;
+const HASH_PLACEHOLDER_RE = /#\{([^}]+)\}#/g;
 
 const BASE_DIR = path.resolve(__dirname, "..");
 const DATA_DIR = path.join(BASE_DIR, "tmp_data");
@@ -195,6 +150,8 @@ function normaliseText(text) {
 function stripLinks(text) {
   if (!text) return text;
   let result = text;
+  result = result.replace(HASH_PLACEHOLDER_RE, "$1");
+  result = result.replace(/#\{/g, "");
   while (HTML_LINK_RE.test(result)) {
     result = result.replace(HTML_LINK_RE, "$1");
   }
@@ -249,6 +206,31 @@ function stripExperienceBonus(name) {
 function cleanAdversaryItemName(name) {
   if (!name) return name;
   return name.replace(/\s*-\s*(?:action|reaction|passive|действие|реакция|пассив[^\s]*)$/iu, "").trim();
+}
+
+function generateBulletActions(rawFeature) {
+  if (!rawFeature) return [];
+  const source = (rawFeature.main_body || "").replace(/\r\n/g, "\n");
+  const matches = source.match(/- .*?(?=\n- |\n*$)/gs);
+  if (!matches) return [];
+  return matches.map((segment) => {
+    const cleaned = segment.replace(/^-\s*/, "").replace(/\*\*\*/g, "**").trim();
+    return sanitizeHtml(markdownToHtml(cleaned));
+  });
+}
+
+function applyFeatureGeneratedActions(entry, featureInfo) {
+  if (!entry || !entry.actions || !featureInfo || !featureInfo.raw) return;
+  const generator = FEATURE_ACTION_GENERATORS[featureInfo.raw.id];
+  if (!generator) return;
+  const generated = generator(featureInfo.raw);
+  if (!generated || !generated.length) return;
+  const ids = Object.keys(entry.actions);
+  for (let i = 0; i < ids.length && i < generated.length; i += 1) {
+    const html = generated[i];
+    if (!html) continue;
+    entry.actions[ids[i]] = sanitizeHtml(html);
+  }
 }
 
 function _updateFeature(entry, featureInfo) {
@@ -391,7 +373,8 @@ function buildFeatureMap(enEntries, ruBySlug, fields, sourceLabel, featureMap, f
 
         const candidate = {
           name: ruName || nameEn,
-          description: descriptionHtml
+          description: descriptionHtml,
+          raw: ruFeature
         };
 
         if (featureMap[key]) {
@@ -742,69 +725,6 @@ async function applyLabelOverride(filePath, newLabel) {
   }
 }
 
-function initials(text) {
-  if (!text) return text;
-  const letters = text
-    .replace(/[^A-Za-zА-Яа-яЁё]/g, "")
-    .toUpperCase();
-  return letters.slice(0, Math.max(3, Math.min(letters.length, 3)));
-}
-
-async function updateI18nTerms(ruleData) {
-  const i18nPath = path.join(BASE_DIR, "i18n", "systems", "daggerheart.json");
-  const raw = JSON.parse(await fs.readFile(i18nPath, "utf-8"));
-  if (raw?.TYPES?.Item) raw.TYPES.Item.beastform = "Звериная форма";
-  if (raw?.TYPES?.ActiveEffect) raw.TYPES.ActiveEffect.beastform = "Звериная форма";
-  if (raw?.DAGGERHEART?.ACTIONS?.TYPES?.beastform) {
-    raw.DAGGERHEART.ACTIONS.TYPES.beastform.name = "Звериная форма";
-    raw.DAGGERHEART.ACTIONS.TYPES.beastform.tooltip = "Превращает персонажа в звериную форму.";
-  }
-  if (raw?.DAGGERHEART?.ACTIONS?.Config?.beastform) {
-    raw.DAGGERHEART.ACTIONS.Config.beastform.label = "Звериная форма";
-    raw.DAGGERHEART.ACTIONS.Config.beastform.exact = "Макс. уровень звериной формы";
-  }
-  if (raw?.TYPES?.Item) {
-    for (const [key, value] of Object.entries(ITEM_TYPE_OVERRIDES)) {
-      raw.TYPES.Item[key] = value;
-    }
-  }
-  if (raw?.TYPES?.Actor) {
-    for (const [key, value] of Object.entries(ACTOR_TYPE_OVERRIDES)) {
-      raw.TYPES.Actor[key] = value;
-    }
-  }
-  if (raw?.DAGGERHEART?.CONFIG?.Traits && Array.isArray(ruleData)) {
-    const ruleBySlug = new Map();
-    for (const entry of ruleData) {
-      if (entry?.slug) ruleBySlug.set(entry.slug, entry);
-    }
-    const traitToRule = {
-      agility: "agility",
-      strength: "strength",
-      finesse: "finesse",
-      instinct: "instinct",
-      presence: "presence",
-      knowledge: "knowledge"
-    };
-    for (const [trait, slug] of Object.entries(traitToRule)) {
-      const target = raw.DAGGERHEART.CONFIG.Traits[trait];
-      if (!target) continue;
-      const ruleEntry = ruleBySlug.get(slug);
-      const name = ruleEntry?.name || target.name;
-      target.name = name;
-      target.short = initials(name);
-    }
-  }
-  if (raw?.DAGGERHEART?.UI?.Chat) {
-    raw.DAGGERHEART.UI.Chat.featureTitle = "Особенность класса";
-  }
-  if (raw?.DAGGERHEART?.UI?.Notifications) {
-    raw.DAGGERHEART.UI.Notifications.subclassAlreadyLinked =
-      "{name} уже является подклассом класса {class}. Удалите его оттуда, если хотите назначить его этому классу.";
-  }
-  await fs.writeFile(i18nPath, `${JSON.stringify(raw, null, 4)}\n`, "utf-8");
-}
-
 async function updateClassesFile(path, { classTop, featureMap, classItemsMap, ruleTop }) {
   return updateEntries(path, (norm, entry, key) => {
     if (!norm) return false;
@@ -856,7 +776,10 @@ async function updateClassesFile(path, { classTop, featureMap, classItemsMap, ru
         delete entry.description;
       }
       handled = true;
+      applyFeatureGeneratedActions(entry, info);
     }
+
+    if (featureInfo) applyFeatureGeneratedActions(entry, featureInfo);
 
     const itemOverride = classItemsMap[norm];
     // if (key === "Whispering Orb") {
@@ -935,6 +858,7 @@ async function updateSubclassesFile(path, { subclassTop, featureMap }) {
       handled = true;
     }
 
+    if (featureInfo) applyFeatureGeneratedActions(entry, featureInfo);
     applyActionOverrides(entry);
     return handled;
   });
@@ -1005,6 +929,16 @@ async function updateBeastformsFile(path, { beastTop, featureMap }) {
           entry.description = sanitizeHtml(info.description);
         } else {
           delete entry.description;
+        }
+      }
+      const raw = info.raw;
+      if (raw && raw.examples) {
+        const examples = sanitizeHtml(stripLinks(raw.examples));
+        if (examples) {
+          const examplesHtml = `<p><strong>Примеры:</strong> ${examples}</p>`;
+          entry.description = entry.description
+            ? `${entry.description}${examplesHtml}`
+            : examplesHtml;
         }
       }
       applyActionOverrides(entry);
@@ -1177,8 +1111,9 @@ async function updateEnvironmentsFile(path, { environmentTop, featureMap }) {
   const missingConsumables = await applyEquipmentMap(consumablesPath, consumableMap, consumablesOld);
   const missingLoot = await applyEquipmentMap(lootPath, lootMap, lootOld);
 
-  if (LABEL_OVERRIDES["daggerheart.beastforms.json"]) {
-    await applyLabelOverride(beastformsPath, LABEL_OVERRIDES["daggerheart.beastforms.json"]);
+  for (const [file, label] of Object.entries(LABEL_OVERRIDES)) {
+    const targetPath = path.join(TRANSLATIONS_DIR, file);
+    await applyLabelOverride(targetPath, label);
   }
 
   const missingBeasts = await updateBeastformsFile(beastformsPath, {
@@ -1210,8 +1145,6 @@ async function updateEnvironmentsFile(path, { environmentTop, featureMap }) {
     consumables: missingConsumables,
     loot: missingLoot
   };
-
-  await updateI18nTerms(ruleData.ru);
 
   console.log("Missing entries report:");
   for (const [category, items] of Object.entries(missingSummary)) {
