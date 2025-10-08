@@ -1,26 +1,26 @@
 {
     "TYPES": {
         "Item": {
-            "ancestry": "Происхождение",
-            "community": "Сообщество",
-            "class": "Класс",
-            "subclass": "Подкласс",
-            "feature": "Особенность",
-            "domainCard": "Карта домена",
-            "consumable": "Расходуемое",
+            "ancestry": "Происхождения",
+            "community": "Сообщества",
+            "class": "Классы",
+            "subclass": "Подклассы",
+            "feature": "Особенности",
+            "domainCard": "Карты домена",
+            "consumable": "Расходуемые",
             "loot": "Добыча",
             "weapon": "Оружие",
             "armor": "Броня",
-            "beastform": "Звероформа"
+            "beastform": "Звериная форма"
         },
         "ActiveEffect": {
-            "beastform": "Звероформа"
+            "beastform": "Звериная форма"
         },
         "Actor": {
             "character": "Персонаж",
             "companion": "Спутник",
             "adversary": "Противник",
-            "environment": "Местность"
+            "environment": "Окружение"
         }
     },
     "CONTROLS": {
@@ -34,8 +34,8 @@
                     "tooltip": "Атакующее действие, такое как атака оружием, заклинание и т.д."
                 },
                 "beastform": {
-                    "name": "Звероформа",
-                    "tooltip": "Превращает пользователя в другую форму."
+                    "name": "Звериная форма",
+                    "tooltip": "Превращает персонажа в звериную форму."
                 },
                 "damage": {
                     "name": "Урон",
@@ -60,9 +60,9 @@
             },
             "Config": {
                 "beastform": {
-                    "exact": "Макс. уровень звероформы",
+                    "exact": "Макс. уровень звериной формы",
                     "exactHint": "Если пусто, используется Ранг персонажа",
-                    "label": "Звероформа"
+                    "label": "Звериная форма"
                 },
                 "displayInChat": "Отображать в чате"
             },
@@ -1060,8 +1060,8 @@
             },
             "Traits": {
                 "agility": {
-                    "name": "Ловкость",
-                    "short": "ЛОВ",
+                    "name": "Проворность",
+                    "short": "ПРО",
                     "verb": {
                         "sprint": "Спринт",
                         "leap": "Прыжок",
@@ -1078,8 +1078,8 @@
                     }
                 },
                 "finesse": {
-                    "name": "Моторика",
-                    "short": "МОТ",
+                    "name": "Искусность",
+                    "short": "ИСК",
                     "verb": {
                         "control": "Контролировать",
                         "hide": "Скрывать",
@@ -1096,8 +1096,8 @@
                     }
                 },
                 "presence": {
-                    "name": "Присутствие",
-                    "short": "ПРИ",
+                    "name": "Влияние",
+                    "short": "ВЛИ",
                     "verb": {
                         "charm": "Очаровывать",
                         "perform": "Выступать",
@@ -1945,11 +1945,11 @@
                 "rules": "Правила"
             },
             "Tiers": {
-                "singular": "Ранг",
                 "1": "Ранг 1",
                 "2": "Ранг 2",
                 "3": "Ранг 3",
-                "4": "Ранг 4"
+                "4": "Ранг 4",
+                "singular": "Ранг"
             },
             "Trait": {
                 "single": "Черта",
@@ -2061,7 +2061,6 @@
             "use": "Использовать",
             "used": "Использовано",
             "uses": "Использования",
-            "value": "Значение",
             "value": "Значение",
             "withThing": "С {thing}"
         },
@@ -2448,7 +2447,7 @@
                 "dualityRoll": {
                     "abilityCheckTitle": "Проверка {ability}"
                 },
-                "featureTitle": "Class Feature",
+                "featureTitle": "Особенность класса",
                 "healingRoll": {
                     "title": "Исцеление - {damage}",
                     "heal": "Исцелить",
@@ -2525,7 +2524,7 @@
                 "multiclassAlreadyPresent": "У вас уже есть класс и мультикласс",
                 "subclassesAlreadyPresent": "У вас уже есть подкласс класса и мультикласса",
                 "noDiceSystem": "В выбранной вами системе костей {system} нет кости с {faces} гранями",
-                "subclassAlreadyLinked": "{name} is already a subclass in the class {class}. Remove it from there if you want it to be a subclass to this class."
+                "subclassAlreadyLinked": "{name} уже является подклассом класса {class}. Удалите его оттуда, если хотите назначить его этому классу."
             },
             "Tooltip": {
                 "disableEffect": "Отключить эффект",

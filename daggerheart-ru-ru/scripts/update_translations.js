@@ -45,8 +45,75 @@ const CLASS_ITEM_OVERRIDES = {
   "Totem from Mentor": "Тотем наставника",
   "Trophy from your First Kill": "Трофей первого убийства",
   "Untranslated Book": "Непереведённая книга",
-  "Whispering Orb": "Шепчущий шар",
   "Broken Compass": "Сломанный компас"
+};
+
+/**
+ * HTML overrides for action entries that the API does not expose separately.
+ * Values are already sanitised to only include simple markup.
+ */
+const ACTION_OVERRIDES = {
+  // Elementalist foundation: flavour text split into two separate actions.
+  rxuFLfHP1FILDpds:
+    "<p>Выберите один из элементов — Воздух, Земля, Огонь, Молния или Вода — и создавайте безвредные эффекты на его основе.</p>",
+  S7HvFD3qIR3ifJRL:
+    "<p><strong>Потратьте Надежду</strong>, опишите помощь стихии и получите +2 к броску действия или +3 к броску урона.</p>",
+
+  // Elemental Incarnation (four elemental stances).
+  wVGSzAnJGs5eXKqI:
+    "<p><strong>Огонь:</strong> Когда враг на Рукопашной дистанции наносит вам урон, он получает <strong>1d10</strong> магического урона.</p>",
+  "6QXTThhnJpGDIvhJ":
+    "<p><strong>Земля:</strong> Добавьте ваш модификатор Мастерства к своим порогам урона.</p>",
+  pY2EdEMoyLGYWjK5:
+    "<p><strong>Вода:</strong> Когда вы наносите урон врагу на Рукопашной дистанции, остальные враги в пределах Близкой дистанции отмечают Стресс.</p>",
+  uk8EgHMxCgoWENzt:
+    "<p><strong>Воздух:</strong> Вы можете парить и получаете преимущество на броски Проворности.</p>",
+
+  // Elemental Aura (elemental aura effects).
+  AdOnKhi7g6zQu2iv:
+    "<p><strong>Огонь:</strong> Когда противник отмечает Рану, он также отмечает Стресс.</p>",
+  xDBLH5TWidvrYF7z:
+    "<p><strong>Земля:</strong> Союзники в пределах ауры получают +1 к Силе.</p>",
+  S4t5HlgxWlHwaBDw:
+    "<p><strong>Вода:</strong> Когда противник наносит вам урон, вы можете <strong>отметить Стресс</strong>, чтобы переместить его в пределах Близкой дистанции.</p>",
+  hAsKFFewtTqd1gg9:
+    "<p><strong>Воздух:</strong> Атаки с дальности дальше Рукопашной наносят вам на <strong>1d8</strong> меньше урона.</p>",
+
+  // Elemental Dominion (advanced elemental perks).
+  ofdSzqY7IfAy5ayv:
+    "<p><strong>Огонь:</strong> Получите +1 к Мастерству для атак и заклинаний, наносящих урон.</p>",
+  knGm3snaplWYDaue:
+    "<p><strong>Земля:</strong> При отметке Ран бросайте <strong>d6</strong> за каждую; за результат 6 уменьшайте количество отмеченных Ран на 1.</p>",
+  MocaqHUdyVwH0ZFu:
+    "<p><strong>Вода:</strong> Когда по вам попадают, можете <strong>отметить Стресс</strong>, чтобы сделать атакующего временно Уязвимым.</p>",
+  AQMNJRmVyhJTSCfR:
+    "<p><strong>Воздух:</strong> Получите +1 к Уклонению и способность летать.</p>",
+
+  // Gifted Performer songs.
+  xvs7ZKm93AlnZD3F:
+    "<p><strong>Расслабляющая песня:</strong> Вы и союзники в пределах Средней дистанции снимаете по одной Ране.</p>",
+  nvfJ8rOx8baI6POZ:
+    "<p><strong>Эпическая песня:</strong> Сделайте цель в пределах Средней дистанции временно уязвимой.</p>",
+  QTTgKnhpNE2XHz4u:
+    "<p><strong>Душераздирающая песня:</strong> Вы и союзники в пределах Средней дистанции получаете Надежду.</p>",
+
+  // Sparing Touch split: healing HP vs Stress.
+  aanLNQkeO2ZTIqBl:
+    "<p>Один раз до следующего продолжительного отдыха очистите цели 2 Раны.</p>",
+  cWdzCQJv8RFfi2NR:
+    "<p>Один раз до следующего продолжительного отдыха очистите цели 2 Стресса.</p>",
+
+  // Weapon Specialist split.
+  vay9rVXJS3iksaVR:
+    "<p><strong>Потратьте Надежду</strong>, чтобы добавить к урону кость вторичного оружия, когда вы преуспели в атаке.</p>",
+  "1bBFfxmywJpx5tfk":
+    "<p>Один раз до следующего продолжительного отдыха перебросьте выпавшие 1 на Костях Истребления.</p>",
+
+  // Wings of Light split.
+  rg2sLCTqY2rTo861:
+    "<p><strong>Отметьте Стресс</strong>, чтобы во время полёта поднять и нести союзника вашего размера или меньше.</p>",
+  "1qjnoz5I7NqrWMkp":
+    "<p><strong>Потратьте Надежду</strong>, чтобы нанести дополнительный <strong>1d8</strong> урона при успешной атаке в полёте.</p>"
 };
 
 const SUBCLASS_NAME_ALIASES = {
@@ -63,7 +130,37 @@ const EQUIPMENT_NAME_ALIASES = {
   elundrianchainmail: "elundrianchainarmor"
 };
 
+const ARMOR_OVERRIDES = {
+  "Bare Bones": {
+    name: "Наголо",
+    description:
+      "<p>Если вы отказываетесь от доспехов, ваш показатель брони равен 3 + ваша Сила. Базовые пороги урона: 9/19 (ранг 1), 11/24 (ранги 2–4), 13/31 (ранги 5–7) и 15/38 (ранги 8–10).</p>"
+  }
+};
+
 const LEGACY_ANCESTRY_KEYS = new Set(["Fearless", "Unshakeable"]);
+
+const LABEL_OVERRIDES = {
+  "daggerheart.beastforms.json": "Звериные формы"
+};
+
+const ITEM_TYPE_OVERRIDES = {
+  ancestry: "Происхождения",
+  community: "Сообщества",
+  class: "Классы",
+  subclass: "Подклассы",
+  feature: "Особенности",
+  domainCard: "Карты домена",
+  consumable: "Расходуемые",
+  loot: "Добыча",
+  weapon: "Оружие",
+  armor: "Броня",
+  beastform: "Звериная форма"
+};
+
+const ACTOR_TYPE_OVERRIDES = {
+  environment: "Окружение"
+};
 
 const HTML_LINK_RE = /<a\s+[^>]*>(.*?)<\/a>/gis;
 const MD_LINK_RE = /\[([^\]]+)\]\([^)]+\)/g;
@@ -142,6 +239,16 @@ function buildFeatureDescription(features) {
     }
   }
   return chunks.length ? chunks.join("") : null;
+}
+
+function stripExperienceBonus(name) {
+  if (!name) return name;
+  return name.replace(/\s*[+\-]\d+\s*$/u, "").trim();
+}
+
+function cleanAdversaryItemName(name) {
+  if (!name) return name;
+  return name.replace(/\s*-\s*(?:action|reaction|passive|действие|реакция|пассив[^\s]*)$/iu, "").trim();
 }
 
 function _updateFeature(entry, featureInfo) {
@@ -461,8 +568,14 @@ async function main() {
     const enItems = enEntry.class_items || [];
     const ruItems = ruEntry.class_items || [];
     for (let i = 0; i < Math.min(enItems.length, ruItems.length); i += 1) {
+      const ruName = sanitizeName(ruItems[i]);
       const key = normalize(enItems[i]);
-      if (key) classItemsMap[key] = sanitizeName(ruItems[i]);
+      if (key) classItemsMap[key] = ruName;
+      const articleFree = enItems[i].replace(/^(?:an?\s+)/i, "");
+      const keyNoArticle = normalize(articleFree);
+      if (keyNoArticle && keyNoArticle !== key) {
+        classItemsMap[keyNoArticle] = ruName;
+      }
     }
   }
 
@@ -520,20 +633,180 @@ const updateTopWithFeatures = (topMap, featureMap, aliases = {}) => (norm, entry
   return handled;
 };
 
-  const classesPath = path.join(TRANSLATIONS_DIR, "daggerheart.classes.json");
-  const subclassesPath = path.join(TRANSLATIONS_DIR, "daggerheart.subclasses.json");
-  const ancestriesPath = path.join(TRANSLATIONS_DIR, "daggerheart.ancestries.json");
-  const communitiesPath = path.join(TRANSLATIONS_DIR, "daggerheart.communities.json");
-  const domainsPath = path.join(TRANSLATIONS_DIR, "daggerheart.domains.json");
-  const beastformsPath = path.join(TRANSLATIONS_DIR, "daggerheart.beastforms.json");
-  const adversariesPath = path.join(TRANSLATIONS_DIR, "daggerheart.adversaries.json");
-  const environmentsPath = path.join(TRANSLATIONS_DIR, "daggerheart.environments.json");
-  const armorsPath = path.join(TRANSLATIONS_DIR, "daggerheart.armors.json");
-  const weaponsPath = path.join(TRANSLATIONS_DIR, "daggerheart.weapons.json");
-  const consumablesPath = path.join(TRANSLATIONS_DIR, "daggerheart.consumables.json");
-  const lootPath = path.join(TRANSLATIONS_DIR, "daggerheart.loot.json");
+function defaultEquipmentDescription(ruEntry, enEntry) {
+  const ruBody = normaliseText(ruEntry.main_body || "");
+  const enBody = normaliseText(enEntry.main_body || "");
+  if (ruBody && (!enBody || ruBody !== enBody)) {
+    return markdownToHtml(ruEntry.main_body || "");
+  }
+  return null;
+}
 
-  const missingClasses = await updateEntries(classesPath, (norm, entry, key) => {
+function createEquipmentMap(equipmentData, typeSlugs, options = {}) {
+  const { buildDescription } = options;
+  const ruBySlug = new Map(equipmentData.ru.map((entry) => [entry.slug, entry]));
+  const map = {};
+  for (const enEntry of equipmentData.en) {
+    if (!typeSlugs.has(enEntry.type_slug)) continue;
+    const ruEntry = ruBySlug.get(enEntry.slug);
+    if (!ruEntry) continue;
+    const norm = normalize(enEntry.name);
+    if (!norm) continue;
+    const rawDescription = buildDescription
+      ? buildDescription(ruEntry, enEntry)
+      : defaultEquipmentDescription(ruEntry, enEntry);
+    const description = rawDescription ? sanitizeHtml(rawDescription) : null;
+    map[norm] = {
+      name: sanitizeName(ruEntry.name || enEntry.name),
+      description
+    };
+  }
+  return map;
+}
+
+async function applyEquipmentMap(targetPath, map, fallback, options = {}) {
+  const { overrides = {}, preserveFallbackDescription = true } = options;
+  return updateEntries(targetPath, (norm, entry, key) => {
+    if (overrides[key]) {
+      const override = overrides[key];
+      entry.name = sanitizeName(override.name || entry.name);
+      if (override.description) {
+        entry.description = sanitizeHtml(override.description);
+      } else {
+        delete entry.description;
+      }
+      return true;
+    }
+    if (!norm) return false;
+    const info = map[norm] || map[resolveAlias(norm, EQUIPMENT_NAME_ALIASES)];
+    if (!info) {
+      const oldEntries = fallback.entries || {};
+      if (oldEntries[key]) {
+        entry.name = oldEntries[key].name;
+        if (oldEntries[key].description) {
+          entry.description = oldEntries[key].description;
+        } else {
+          delete entry.description;
+        }
+        return true;
+      }
+      return false;
+    }
+    entry.name = sanitizeName(info.name);
+    if (info.description) {
+      entry.description = info.description;
+    } else if (
+      preserveFallbackDescription &&
+      fallback.entries &&
+      fallback.entries[key] &&
+      fallback.entries[key].description
+    ) {
+      entry.description = fallback.entries[key].description;
+    } else {
+      delete entry.description;
+    }
+    return true;
+  });
+}
+
+function updateActionsFromFeatures(entry, features) {
+  if (!entry || !entry.actions) return;
+  const actionIds = Object.keys(entry.actions);
+  if (!actionIds.length) return;
+  for (let i = 0; i < actionIds.length; i += 1) {
+    const feature = features[i];
+    if (!feature) break;
+    if (ACTION_OVERRIDES[actionIds[i]]) continue;
+    const body = markdownToHtml(feature.main_body || "");
+    if (!body) continue;
+    entry.actions[actionIds[i]] = sanitizeHtml(body);
+  }
+}
+
+function applyActionOverrides(entry) {
+  if (!entry || !entry.actions) return;
+  for (const [actionId, html] of Object.entries(entry.actions)) {
+    if (!html) continue;
+    if (ACTION_OVERRIDES[actionId]) {
+      entry.actions[actionId] = sanitizeHtml(ACTION_OVERRIDES[actionId]);
+    }
+  }
+}
+
+async function applyLabelOverride(filePath, newLabel) {
+  if (!newLabel) return;
+  const raw = JSON.parse(await fs.readFile(filePath, "utf-8"));
+  if (raw.label !== newLabel) {
+    raw.label = newLabel;
+    await fs.writeFile(filePath, `${JSON.stringify(raw, null, 4)}\n`, "utf-8");
+  }
+}
+
+function initials(text) {
+  if (!text) return text;
+  const letters = text
+    .replace(/[^A-Za-zА-Яа-яЁё]/g, "")
+    .toUpperCase();
+  return letters.slice(0, Math.max(3, Math.min(letters.length, 3)));
+}
+
+async function updateI18nTerms(ruleData) {
+  const i18nPath = path.join(BASE_DIR, "i18n", "systems", "daggerheart.json");
+  const raw = JSON.parse(await fs.readFile(i18nPath, "utf-8"));
+  if (raw?.TYPES?.Item) raw.TYPES.Item.beastform = "Звериная форма";
+  if (raw?.TYPES?.ActiveEffect) raw.TYPES.ActiveEffect.beastform = "Звериная форма";
+  if (raw?.DAGGERHEART?.ACTIONS?.TYPES?.beastform) {
+    raw.DAGGERHEART.ACTIONS.TYPES.beastform.name = "Звериная форма";
+    raw.DAGGERHEART.ACTIONS.TYPES.beastform.tooltip = "Превращает персонажа в звериную форму.";
+  }
+  if (raw?.DAGGERHEART?.ACTIONS?.Config?.beastform) {
+    raw.DAGGERHEART.ACTIONS.Config.beastform.label = "Звериная форма";
+    raw.DAGGERHEART.ACTIONS.Config.beastform.exact = "Макс. уровень звериной формы";
+  }
+  if (raw?.TYPES?.Item) {
+    for (const [key, value] of Object.entries(ITEM_TYPE_OVERRIDES)) {
+      raw.TYPES.Item[key] = value;
+    }
+  }
+  if (raw?.TYPES?.Actor) {
+    for (const [key, value] of Object.entries(ACTOR_TYPE_OVERRIDES)) {
+      raw.TYPES.Actor[key] = value;
+    }
+  }
+  if (raw?.DAGGERHEART?.CONFIG?.Traits && Array.isArray(ruleData)) {
+    const ruleBySlug = new Map();
+    for (const entry of ruleData) {
+      if (entry?.slug) ruleBySlug.set(entry.slug, entry);
+    }
+    const traitToRule = {
+      agility: "agility",
+      strength: "strength",
+      finesse: "finesse",
+      instinct: "instinct",
+      presence: "presence",
+      knowledge: "knowledge"
+    };
+    for (const [trait, slug] of Object.entries(traitToRule)) {
+      const target = raw.DAGGERHEART.CONFIG.Traits[trait];
+      if (!target) continue;
+      const ruleEntry = ruleBySlug.get(slug);
+      const name = ruleEntry?.name || target.name;
+      target.name = name;
+      target.short = initials(name);
+    }
+  }
+  if (raw?.DAGGERHEART?.UI?.Chat) {
+    raw.DAGGERHEART.UI.Chat.featureTitle = "Особенность класса";
+  }
+  if (raw?.DAGGERHEART?.UI?.Notifications) {
+    raw.DAGGERHEART.UI.Notifications.subclassAlreadyLinked =
+      "{name} уже является подклассом класса {class}. Удалите его оттуда, если хотите назначить его этому классу.";
+  }
+  await fs.writeFile(i18nPath, `${JSON.stringify(raw, null, 4)}\n`, "utf-8");
+}
+
+async function updateClassesFile(path, { classTop, featureMap, classItemsMap, ruleTop }) {
+  return updateEntries(path, (norm, entry, key) => {
     if (!norm) return false;
     let handled = false;
     const classInfo = classTop[norm];
@@ -586,6 +859,9 @@ const updateTopWithFeatures = (topMap, featureMap, aliases = {}) => (norm, entry
     }
 
     const itemOverride = classItemsMap[norm];
+    // if (key === "Whispering Orb") {
+    //   console.log("Whispering Orb debug:", norm, itemOverride);
+    // }
     if (itemOverride) {
       entry.name = itemOverride;
       delete entry.description;
@@ -613,10 +889,17 @@ const updateTopWithFeatures = (topMap, featureMap, aliases = {}) => (norm, entry
       handled = true;
     }
 
+    if (!handled) {
+      // no-op: keep entry for further manual review
+    }
+    applyActionOverrides(entry);
+
     return handled;
   });
+}
 
-  const missingSubclasses = await updateEntries(subclassesPath, (norm, entry) => {
+async function updateSubclassesFile(path, { subclassTop, featureMap }) {
+  const result = await updateEntries(path, (norm, entry) => {
     if (!norm) return false;
     const lookup = resolveAlias(norm, SUBCLASS_NAME_ALIASES);
     let handled = false;
@@ -651,16 +934,24 @@ const updateTopWithFeatures = (topMap, featureMap, aliases = {}) => (norm, entry
       }
       handled = true;
     }
+
+    applyActionOverrides(entry);
     return handled;
   });
+  await applySubclassDuplicates(path);
+  return result;
+}
 
-  await applySubclassDuplicates(subclassesPath);
+async function updateAncestriesFile(path, { ancestryTop, featureMap }) {
+  return updateEntries(path, updateTopWithFeatures(ancestryTop, featureMap));
+}
 
-  const missingAncestriesRaw = await updateEntries(ancestriesPath, updateTopWithFeatures(ancestryTop, featureMap));
-  const missingAncestries = missingAncestriesRaw.filter((key) => !LEGACY_ANCESTRY_KEYS.has(key));
-  const missingCommunities = await updateEntries(communitiesPath, updateTopWithFeatures(communityTop, featureMap));
+async function updateCommunitiesFile(path, { communityTop, featureMap }) {
+  return updateEntries(path, updateTopWithFeatures(communityTop, featureMap));
+}
 
-  const missingDomains = await updateEntries(domainsPath, (norm, entry, key) => {
+async function updateDomainsFile(path, { domainTop, featureMap, oldDomainActions }) {
+  return updateEntries(path, (norm, entry, key) => {
     if (!norm) return false;
     let handled = false;
     const domainInfo = domainTop[norm];
@@ -687,71 +978,24 @@ const updateTopWithFeatures = (topMap, featureMap, aliases = {}) => (norm, entry
     if (handled && entry.actions && Object.keys(entry.actions).length === 0 && oldDomainActions[key]) {
       entry.actions = oldDomainActions[key];
     }
-    if (handled && entry.actions && entry.description) {
-      const clean = sanitizeHtml(entry.description);
-      for (const actionId of Object.keys(entry.actions)) {
-        entry.actions[actionId] = clean;
+    if (handled && entry.actions) {
+      const raw = domainInfo ? domainInfo.raw : null;
+      if (raw && raw.features && raw.features.length) {
+        updateActionsFromFeatures(entry, raw.features);
+      } else if (entry.description) {
+        const clean = sanitizeHtml(entry.description);
+        for (const actionId of Object.keys(entry.actions)) {
+          entry.actions[actionId] = clean;
+        }
       }
     }
+    applyActionOverrides(entry);
     return handled;
   });
+}
 
-  const updateEquipmentFile = async (targetPath, allowedTypes, fallback) => {
-    const typeMap = {};
-    const ruBySlug = new Map(equipmentData.ru.map((entry) => [entry.slug, entry]));
-    for (const enEntry of equipmentData.en) {
-      if (!allowedTypes.has(enEntry.type_slug)) continue;
-      const ruEntry = ruBySlug.get(enEntry.slug);
-      if (!ruEntry) continue;
-      const norm = normalize(enEntry.name);
-      if (!norm) continue;
-      const ruBody = normaliseText(ruEntry.main_body || "");
-      const enBody = normaliseText(enEntry.main_body || "");
-      let description = null;
-      if (enEntry.type_slug === "combat-wheelchair") {
-        description = buildFeatureDescription(ruEntry.features || []);
-        if (!description && ruBody && (!enBody || ruBody !== enBody)) {
-          description = markdownToHtml(ruEntry.main_body || "");
-        }
-      } else if (ruBody && (!enBody || ruBody !== enBody)) {
-        description = markdownToHtml(ruEntry.main_body || "");
-      }
-      typeMap[norm] = {
-        name: sanitizeName(ruEntry.name || enEntry.name),
-        description
-      };
-    }
-
-    return updateEntries(targetPath, (norm, entry, key) => {
-      if (!norm) return false;
-      const info = typeMap[norm] || typeMap[resolveAlias(norm, EQUIPMENT_NAME_ALIASES)];
-      if (!info) {
-        const oldEntries = fallback.entries || {};
-        if (oldEntries[key] && oldEntries[key].description) {
-          entry.description = oldEntries[key].description;
-          entry.name = oldEntries[key].name;
-          return true;
-        }
-        return false;
-      }
-      entry.name = sanitizeName(info.name);
-      if (info.description) {
-        entry.description = sanitizeHtml(info.description);
-      } else if (fallback.entries && fallback.entries[key] && fallback.entries[key].description) {
-        entry.description = fallback.entries[key].description;
-      } else {
-        delete entry.description;
-      }
-      return true;
-    });
-  };
-
-  const missingArmors = await updateEquipmentFile(armorsPath, new Set(["armor"]), armorsOld);
-  const missingWeapons = await updateEquipmentFile(weaponsPath, new Set(["primary-weapon", "secondary-weapon", "combat-wheelchair"]), weaponsOld);
-  const missingConsumables = await updateEquipmentFile(consumablesPath, new Set(["consumable"]), consumablesOld);
-  const missingLoot = await updateEquipmentFile(lootPath, new Set(["item"]), lootOld);
-
-  const missingBeasts = await updateEntries(beastformsPath, (norm, entry) => {
+async function updateBeastformsFile(path, { beastTop, featureMap }) {
+  return updateEntries(path, (norm, entry) => {
     if (!norm) return false;
     const info = beastTop[norm];
     if (info) {
@@ -763,16 +1007,21 @@ const updateTopWithFeatures = (topMap, featureMap, aliases = {}) => (norm, entry
           delete entry.description;
         }
       }
+      applyActionOverrides(entry);
       return true;
     }
     if (featureMap[norm]) {
       _updateFeature(entry, featureMap[norm]);
+      applyActionOverrides(entry);
       return true;
     }
+    applyActionOverrides(entry);
     return false;
   });
+}
 
-  const missingAdversaries = await updateEntries(adversariesPath, (norm, entry) => {
+async function updateAdversariesFile(path, { adversaryTop, featureMap }) {
+  return updateEntries(path, (norm, entry) => {
     if (!norm) return false;
     const info = adversaryTop[norm];
     if (info) {
@@ -793,7 +1042,7 @@ const updateTopWithFeatures = (topMap, featureMap, aliases = {}) => (norm, entry
         for (let i = 0; i < keys.length; i += 1) {
           const value = values[i] || experiences;
           if (value) {
-            entry.experiences[keys[i]].name = sanitizeName(value);
+            entry.experiences[keys[i]].name = sanitizeName(stripExperienceBonus(value));
           }
         }
       }
@@ -803,7 +1052,7 @@ const updateTopWithFeatures = (topMap, featureMap, aliases = {}) => (norm, entry
       for (const itemEntry of Object.values(items)) {
         const nextFeature = featureList.shift();
         if (!nextFeature) break;
-        itemEntry.name = sanitizeName(nextFeature.name || "");
+        itemEntry.name = sanitizeName(cleanAdversaryItemName(nextFeature.name || ""));
         const body = markdownToHtml(nextFeature.main_body || "");
         if (body) {
           const clean = sanitizeHtml(body);
@@ -817,16 +1066,21 @@ const updateTopWithFeatures = (topMap, featureMap, aliases = {}) => (norm, entry
           delete itemEntry.description;
         }
       }
+      applyActionOverrides(entry);
       return true;
     }
     if (featureMap[norm]) {
       _updateFeature(entry, featureMap[norm]);
+      applyActionOverrides(entry);
       return true;
     }
+    applyActionOverrides(entry);
     return false;
   });
+}
 
-  const missingEnvironments = await updateEntries(environmentsPath, (norm, entry) => {
+async function updateEnvironmentsFile(path, { environmentTop, featureMap }) {
+  return updateEntries(path, (norm, entry) => {
     if (!norm) return false;
     const info = environmentTop[norm];
     if (info) {
@@ -843,9 +1097,103 @@ const updateTopWithFeatures = (topMap, featureMap, aliases = {}) => (norm, entry
     }
     if (featureMap[norm]) {
       _updateFeature(entry, featureMap[norm]);
+      applyActionOverrides(entry);
       return true;
     }
+    applyActionOverrides(entry);
     return false;
+  });
+}
+
+  const classesPath = path.join(TRANSLATIONS_DIR, "daggerheart.classes.json");
+  const subclassesPath = path.join(TRANSLATIONS_DIR, "daggerheart.subclasses.json");
+  const ancestriesPath = path.join(TRANSLATIONS_DIR, "daggerheart.ancestries.json");
+  const communitiesPath = path.join(TRANSLATIONS_DIR, "daggerheart.communities.json");
+  const domainsPath = path.join(TRANSLATIONS_DIR, "daggerheart.domains.json");
+  const beastformsPath = path.join(TRANSLATIONS_DIR, "daggerheart.beastforms.json");
+  const adversariesPath = path.join(TRANSLATIONS_DIR, "daggerheart.adversaries.json");
+  const environmentsPath = path.join(TRANSLATIONS_DIR, "daggerheart.environments.json");
+  const armorsPath = path.join(TRANSLATIONS_DIR, "daggerheart.armors.json");
+  const weaponsPath = path.join(TRANSLATIONS_DIR, "daggerheart.weapons.json");
+  const consumablesPath = path.join(TRANSLATIONS_DIR, "daggerheart.consumables.json");
+  const lootPath = path.join(TRANSLATIONS_DIR, "daggerheart.loot.json");
+
+  const missingClasses = await updateClassesFile(classesPath, {
+    classTop,
+    featureMap,
+    classItemsMap,
+    ruleTop
+  });
+
+  const missingSubclasses = await updateSubclassesFile(subclassesPath, {
+    subclassTop,
+    featureMap
+  });
+
+  const missingAncestriesRaw = await updateAncestriesFile(ancestriesPath, {
+    ancestryTop,
+    featureMap
+  });
+  const missingAncestries = missingAncestriesRaw.filter((key) => !LEGACY_ANCESTRY_KEYS.has(key));
+
+  const missingCommunities = await updateCommunitiesFile(communitiesPath, {
+    communityTop,
+    featureMap
+  });
+
+  const missingDomains = await updateDomainsFile(domainsPath, {
+    domainTop,
+    featureMap,
+    oldDomainActions
+  });
+
+  const armorMap = createEquipmentMap(equipmentData, new Set(["armor"]), {
+    buildDescription: (ruEntry) => {
+      const fromFeatures = buildFeatureDescription(ruEntry.features || []);
+      return fromFeatures || null;
+    }
+  });
+  const weaponMap = createEquipmentMap(
+    equipmentData,
+    new Set(["primary-weapon", "secondary-weapon", "combat-wheelchair"]),
+    {
+      buildDescription: (ruEntry, enEntry) => {
+        const featureDesc = buildFeatureDescription(ruEntry.features || []);
+        if (enEntry.type_slug === "combat-wheelchair") {
+          return featureDesc || defaultEquipmentDescription(ruEntry, enEntry);
+        }
+        return featureDesc || null;
+      }
+    }
+  );
+  const consumableMap = createEquipmentMap(equipmentData, new Set(["consumable"]));
+  const lootMap = createEquipmentMap(equipmentData, new Set(["item"]));
+
+  const missingArmors = await applyEquipmentMap(armorsPath, armorMap, armorsOld, {
+    overrides: ARMOR_OVERRIDES,
+    preserveFallbackDescription: false
+  });
+  const missingWeapons = await applyEquipmentMap(weaponsPath, weaponMap, weaponsOld);
+  const missingConsumables = await applyEquipmentMap(consumablesPath, consumableMap, consumablesOld);
+  const missingLoot = await applyEquipmentMap(lootPath, lootMap, lootOld);
+
+  if (LABEL_OVERRIDES["daggerheart.beastforms.json"]) {
+    await applyLabelOverride(beastformsPath, LABEL_OVERRIDES["daggerheart.beastforms.json"]);
+  }
+
+  const missingBeasts = await updateBeastformsFile(beastformsPath, {
+    beastTop,
+    featureMap
+  });
+
+  const missingAdversaries = await updateAdversariesFile(adversariesPath, {
+    adversaryTop,
+    featureMap
+  });
+
+  const missingEnvironments = await updateEnvironmentsFile(environmentsPath, {
+    environmentTop,
+    featureMap
   });
 
   const missingSummary = {
@@ -862,6 +1210,8 @@ const updateTopWithFeatures = (topMap, featureMap, aliases = {}) => (norm, entry
     consumables: missingConsumables,
     loot: missingLoot
   };
+
+  await updateI18nTerms(ruleData.ru);
 
   console.log("Missing entries report:");
   for (const [category, items] of Object.entries(missingSummary)) {
