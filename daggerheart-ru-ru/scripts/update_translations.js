@@ -100,11 +100,11 @@ const EQUIPMENT_NAME_ALIASES = {
 };
 
 const ARMOR_OVERRIDES = {
-  "Bare Bones": {
-    name: "Наголо",
-    description:
-      "<p>Если вы отказываетесь от доспехов, ваш показатель брони равен 3 + ваша Сила. Базовые пороги урона: 9/19 (ранг 1), 11/24 (ранги 2–4), 13/31 (ранги 5–7) и 15/38 (ранги 8–10).</p>"
-  }
+"Bare Bones": {
+    name: "Без доспехов",
+    description: "<p>Благодаря карте домена <strong>«Ничего лишнего»</strong>, пока на вас не экипирована броня, ваш базовый Показатель Брони равен 3 + ваша Сила, а также вы используете следующие значения как ваши базовые пороги урона:</p><ul><li><strong><em>Ранг 1:</em></strong> 9/19</li><li><strong><em>Ранг 2:</em></strong> 11/24</li><li><strong><em>Ранг 3:</em></strong> 13/31</li><li><strong><em>Ранг 4:</em></strong> 15/38</li></ul>"
+}
+
 };
 
 const LEGACY_ANCESTRY_KEYS = new Set(["Fearless", "Unshakeable"]);
@@ -114,6 +114,21 @@ const LABEL_OVERRIDES = {
   "daggerheart.beastforms.json": "Звериные формы",
   "daggerheart.consumables.json": "Расходники",
   "daggerheart.environments.json": "Окружения"
+};
+
+const TRANSLATION_FILES = {
+  classes: "daggerheart.classes.json",
+  subclasses: "daggerheart.subclasses.json",
+  ancestries: "daggerheart.ancestries.json",
+  communities: "daggerheart.communities.json",
+  domains: "daggerheart.domains.json",
+  weapons: "daggerheart.weapons.json",
+  armors: "daggerheart.armors.json",
+  loot: "daggerheart.loot.json",
+  consumables: "daggerheart.consumables.json",
+  beastforms: "daggerheart.beastforms.json",
+  adversaries: "daggerheart.adversaries.json",
+  environments: "daggerheart.environments.json"
 };
 
 const HTML_LINK_RE = /<a\s+[^>]*>(.*?)<\/a>/gis;
@@ -465,19 +480,54 @@ function prepareCommunityMainBody(text) {
   return selected.join("\n\n");
 }
 
-async function updateEntries(filePath, updater, sortKeys = false) {
+function createStatsTracker(file) {
+  return {
+    file,
+    total: 0,
+    processed: 0,
+    updated: 0,
+    unchanged: [],
+    missing: []
+  };
+}
+
+async function updateEntries(filePath, updater, options = {}) {
+  let sortKeys = false;
+  let stats = null;
+  if (typeof options === "boolean") {
+    sortKeys = options;
+  } else if (options) {
+    ({ sortKeys = false, stats = null } = options);
+  }
   const raw = await fs.readFile(filePath, "utf-8");
   const data = JSON.parse(raw);
   const missing = [];
 
   for (const [key, entry] of Object.entries(data.entries || {})) {
     const norm = normalize(key);
+    if (stats) {
+      stats.total += 1;
+    }
+    const before = stats ? JSON.stringify(entry) : null;
     const handled = await updater(norm, entry, key);
-    if (!handled) missing.push(key);
+    if (!handled) {
+      missing.push(key);
+      if (stats) stats.missing.push(key);
+      continue;
+    }
+    if (stats) {
+      stats.processed += 1;
+      const after = JSON.stringify(entry);
+      if (before === after) {
+        stats.unchanged.push(key);
+      } else {
+        stats.updated += 1;
+      }
+    }
   }
 
-  const output = sortKeys ? JSON.stringify(data, Object.keys(data).sort(), 4) : JSON.stringify(data, null, 4);
-  await fs.writeFile(filePath, `${output}\n`, "utf-8");
+  const output = sortKeys ? JSON.stringify(data, Object.keys(data).sort(), 2) : JSON.stringify(data, null, 2);
+  await fs.writeFile(filePath, `${output}`, "utf-8");
   return missing;
 }
 
@@ -490,7 +540,7 @@ function applySubclassDuplicates(path) {
         entries[alias] = entries[original];
       }
     }
-    return fs.writeFile(path, `${JSON.stringify(data, null, 4)}\n`, "utf-8");
+    return fs.writeFile(path, `${JSON.stringify(data, null, 2)}`, "utf-8");
   });
 }
 
@@ -511,20 +561,7 @@ async function main() {
   ] = await Promise.all(ENDPOINTS.map((endpoint) => loadApi(endpoint)));
 
   const oldTranslations = {};
-  const translationFiles = [
-    "daggerheart.classes.json",
-    "daggerheart.subclasses.json",
-    "daggerheart.ancestries.json",
-    "daggerheart.communities.json",
-    "daggerheart.domains.json",
-    "daggerheart.weapons.json",
-    "daggerheart.armors.json",
-    "daggerheart.loot.json",
-    "daggerheart.consumables.json",
-    "daggerheart.beastforms.json",
-    "daggerheart.adversaries.json",
-    "daggerheart.environments.json"
-  ];
+  const translationFiles = Object.values(TRANSLATION_FILES);
 
   for (const file of translationFiles) {
     const fullPath = path.join(TRANSLATIONS_DIR, file);
@@ -594,7 +631,7 @@ async function main() {
     }
   }
 
-  const domainsOld = oldTranslations["daggerheart.domains.json"];
+  const domainsOld = oldTranslations[TRANSLATION_FILES.domains];
   const oldDomainActions = {};
   if (domainsOld) {
     for (const [key, value] of Object.entries(domainsOld.entries || {})) {
@@ -602,10 +639,10 @@ async function main() {
     }
   }
 
-  const weaponsOld = oldTranslations["daggerheart.weapons.json"] || {};
-  const armorsOld = oldTranslations["daggerheart.armors.json"] || {};
-  const consumablesOld = oldTranslations["daggerheart.consumables.json"] || {};
-  const lootOld = oldTranslations["daggerheart.loot.json"] || {};
+  const weaponsOld = oldTranslations[TRANSLATION_FILES.weapons] || {};
+  const armorsOld = oldTranslations[TRANSLATION_FILES.armors] || {};
+  const consumablesOld = oldTranslations[TRANSLATION_FILES.consumables] || {};
+  const lootOld = oldTranslations[TRANSLATION_FILES.loot] || {};
 
 const updateSimpleTop = (topMap, aliases) => (norm, entry, key) =>
     !!topMap[resolveAlias(norm, aliases || {})] &&
@@ -680,7 +717,7 @@ function createEquipmentMap(equipmentData, typeSlugs, options = {}) {
 }
 
 async function applyEquipmentMap(targetPath, map, fallback, options = {}) {
-  const { overrides = {}, preserveFallbackDescription = true } = options;
+  const { overrides = {}, preserveFallbackDescription = true, stats = null } = options;
   return updateEntries(targetPath, (norm, entry, key) => {
     if (overrides[key]) {
       const override = overrides[key];
@@ -721,7 +758,7 @@ async function applyEquipmentMap(targetPath, map, fallback, options = {}) {
       delete entry.description;
     }
     return true;
-  });
+  }, { stats });
 }
 
 function updateActionsFromFeatures(entry, features) {
@@ -753,11 +790,11 @@ async function applyLabelOverride(filePath, newLabel) {
   const raw = JSON.parse(await fs.readFile(filePath, "utf-8"));
   if (raw.label !== newLabel) {
     raw.label = newLabel;
-    await fs.writeFile(filePath, `${JSON.stringify(raw, null, 4)}\n`, "utf-8");
+    await fs.writeFile(filePath, `${JSON.stringify(raw, null, 2)}`, "utf-8");
   }
 }
 
-async function updateClassesFile(path, { classTop, featureMap, classItemsMap, ruleTop }) {
+async function updateClassesFile(path, { classTop, featureMap, classItemsMap, ruleTop }, stats) {
   return updateEntries(path, (norm, entry, key) => {
     if (!norm) return false;
     let handled = false;
@@ -850,10 +887,10 @@ async function updateClassesFile(path, { classTop, featureMap, classItemsMap, ru
     applyActionOverrides(entry);
 
     return handled;
-  });
+  }, { stats });
 }
 
-async function updateSubclassesFile(path, { subclassTop, featureMap }) {
+async function updateSubclassesFile(path, { subclassTop, featureMap }, stats) {
   const result = await updateEntries(path, (norm, entry) => {
     if (!norm) return false;
     const lookup = resolveAlias(norm, SUBCLASS_NAME_ALIASES);
@@ -893,20 +930,20 @@ async function updateSubclassesFile(path, { subclassTop, featureMap }) {
     if (featureInfo) applyFeatureGeneratedActions(entry, featureInfo);
     applyActionOverrides(entry);
     return handled;
-  });
+  }, { stats });
   await applySubclassDuplicates(path);
   return result;
 }
 
-async function updateAncestriesFile(path, { ancestryTop, featureMap }) {
-  return updateEntries(path, updateTopWithFeatures(ancestryTop, featureMap));
+async function updateAncestriesFile(path, { ancestryTop, featureMap }, stats) {
+  return updateEntries(path, updateTopWithFeatures(ancestryTop, featureMap), { stats });
 }
 
-async function updateCommunitiesFile(path, { communityTop, featureMap }) {
-  return updateEntries(path, updateTopWithFeatures(communityTop, featureMap));
+async function updateCommunitiesFile(path, { communityTop, featureMap }, stats) {
+  return updateEntries(path, updateTopWithFeatures(communityTop, featureMap), { stats });
 }
 
-async function updateDomainsFile(path, { domainTop, featureMap, oldDomainActions }) {
+async function updateDomainsFile(path, { domainTop, featureMap, oldDomainActions }, stats) {
   return updateEntries(path, (norm, entry, key) => {
     if (!norm) return false;
     let handled = false;
@@ -947,10 +984,10 @@ async function updateDomainsFile(path, { domainTop, featureMap, oldDomainActions
     }
     applyActionOverrides(entry);
     return handled;
-  });
+  }, { stats });
 }
 
-async function updateBeastformsFile(path, { beastTop, featureMap }) {
+async function updateBeastformsFile(path, { beastTop, featureMap }, stats) {
   return updateEntries(path, (norm, entry) => {
     if (!norm) return false;
     const info = beastTop[norm];
@@ -983,10 +1020,10 @@ async function updateBeastformsFile(path, { beastTop, featureMap }) {
     }
     applyActionOverrides(entry);
     return false;
-  });
+  }, { stats });
 }
 
-async function updateAdversariesFile(path, { adversaryTop, featureMap }) {
+async function updateAdversariesFile(path, { adversaryTop, featureMap }, stats) {
   return updateEntries(path, (norm, entry) => {
     if (!norm) return false;
     const info = adversaryTop[norm];
@@ -1042,10 +1079,10 @@ async function updateAdversariesFile(path, { adversaryTop, featureMap }) {
     }
     applyActionOverrides(entry);
     return false;
-  });
+  }, { stats });
 }
 
-async function updateEnvironmentsFile(path, { environmentTop, featureMap }) {
+async function updateEnvironmentsFile(path, { environmentTop, featureMap }, stats) {
   return updateEntries(path, (norm, entry) => {
     if (!norm) return false;
     const info = environmentTop[norm];
@@ -1068,50 +1105,8 @@ async function updateEnvironmentsFile(path, { environmentTop, featureMap }) {
     }
     applyActionOverrides(entry);
     return false;
-  });
+  }, { stats });
 }
-
-  const classesPath = path.join(TRANSLATIONS_DIR, "daggerheart.classes.json");
-  const subclassesPath = path.join(TRANSLATIONS_DIR, "daggerheart.subclasses.json");
-  const ancestriesPath = path.join(TRANSLATIONS_DIR, "daggerheart.ancestries.json");
-  const communitiesPath = path.join(TRANSLATIONS_DIR, "daggerheart.communities.json");
-  const domainsPath = path.join(TRANSLATIONS_DIR, "daggerheart.domains.json");
-  const beastformsPath = path.join(TRANSLATIONS_DIR, "daggerheart.beastforms.json");
-  const adversariesPath = path.join(TRANSLATIONS_DIR, "daggerheart.adversaries.json");
-  const environmentsPath = path.join(TRANSLATIONS_DIR, "daggerheart.environments.json");
-  const armorsPath = path.join(TRANSLATIONS_DIR, "daggerheart.armors.json");
-  const weaponsPath = path.join(TRANSLATIONS_DIR, "daggerheart.weapons.json");
-  const consumablesPath = path.join(TRANSLATIONS_DIR, "daggerheart.consumables.json");
-  const lootPath = path.join(TRANSLATIONS_DIR, "daggerheart.loot.json");
-
-  const missingClasses = await updateClassesFile(classesPath, {
-    classTop,
-    featureMap,
-    classItemsMap,
-    ruleTop
-  });
-
-  const missingSubclasses = await updateSubclassesFile(subclassesPath, {
-    subclassTop,
-    featureMap
-  });
-
-  const missingAncestriesRaw = await updateAncestriesFile(ancestriesPath, {
-    ancestryTop,
-    featureMap
-  });
-  const missingAncestries = missingAncestriesRaw.filter((key) => !LEGACY_ANCESTRY_KEYS.has(key));
-
-  const missingCommunities = await updateCommunitiesFile(communitiesPath, {
-    communityTop,
-    featureMap
-  });
-
-  const missingDomains = await updateDomainsFile(domainsPath, {
-    domainTop,
-    featureMap,
-    oldDomainActions
-  });
 
   const armorMap = createEquipmentMap(equipmentData, new Set(["armor"]), {
     buildDescription: (ruEntry) => {
@@ -1135,48 +1130,156 @@ async function updateEnvironmentsFile(path, { environmentTop, featureMap }) {
   const consumableMap = createEquipmentMap(equipmentData, new Set(["consumable"]));
   const lootMap = createEquipmentMap(equipmentData, new Set(["item"]));
 
-  const missingArmors = await applyEquipmentMap(armorsPath, armorMap, armorsOld, {
-    overrides: ARMOR_OVERRIDES,
-    preserveFallbackDescription: false
-  });
-  const missingWeapons = await applyEquipmentMap(weaponsPath, weaponMap, weaponsOld);
-  const missingConsumables = await applyEquipmentMap(consumablesPath, consumableMap, consumablesOld);
-  const missingLoot = await applyEquipmentMap(lootPath, lootMap, lootOld);
+  const filePaths = Object.fromEntries(
+    Object.entries(TRANSLATION_FILES).map(([key, file]) => [key, path.join(TRANSLATIONS_DIR, file)])
+  );
+
+  const statsByFile = {};
+  for (const key of Object.keys(TRANSLATION_FILES)) {
+    statsByFile[key] = createStatsTracker(TRANSLATION_FILES[key]);
+  }
+
+  const tasks = [
+    {
+      key: "classes",
+      file: TRANSLATION_FILES.classes,
+      run: () =>
+        updateClassesFile(filePaths.classes, {
+          classTop,
+          featureMap,
+          classItemsMap,
+          ruleTop
+        }, statsByFile.classes)
+    },
+    {
+      key: "subclasses",
+      file: TRANSLATION_FILES.subclasses,
+      run: () =>
+        updateSubclassesFile(filePaths.subclasses, {
+          subclassTop,
+          featureMap
+        }, statsByFile.subclasses)
+    },
+    {
+      key: "ancestries",
+      file: TRANSLATION_FILES.ancestries,
+      run: async () => {
+        const stats = statsByFile.ancestries;
+        const missing = await updateAncestriesFile(filePaths.ancestries, {
+          ancestryTop,
+          featureMap
+        }, stats);
+        const filtered = missing.filter((key) => !LEGACY_ANCESTRY_KEYS.has(key));
+        const legacyRemoved = stats.missing.length - filtered.length;
+        if (legacyRemoved > 0) {
+          stats.total -= legacyRemoved;
+        }
+        stats.missing = stats.missing.filter((key) => !LEGACY_ANCESTRY_KEYS.has(key));
+        return filtered;
+      }
+    },
+    {
+      key: "communities",
+      file: TRANSLATION_FILES.communities,
+      run: () =>
+        updateCommunitiesFile(filePaths.communities, {
+          communityTop,
+          featureMap
+        }, statsByFile.communities)
+    },
+    {
+      key: "domains",
+      file: TRANSLATION_FILES.domains,
+      run: () =>
+        updateDomainsFile(filePaths.domains, {
+          domainTop,
+          featureMap,
+          oldDomainActions
+        }, statsByFile.domains)
+    },
+    {
+      key: "beastforms",
+      file: TRANSLATION_FILES.beastforms,
+      run: () =>
+        updateBeastformsFile(filePaths.beastforms, {
+          beastTop,
+          featureMap
+        }, statsByFile.beastforms)
+    },
+    {
+      key: "adversaries",
+      file: TRANSLATION_FILES.adversaries,
+      run: () =>
+        updateAdversariesFile(filePaths.adversaries, {
+          adversaryTop,
+          featureMap
+        }, statsByFile.adversaries)
+    },
+    {
+      key: "environments",
+      file: TRANSLATION_FILES.environments,
+      run: () =>
+        updateEnvironmentsFile(filePaths.environments, {
+          environmentTop,
+          featureMap
+        }, statsByFile.environments)
+    },
+    {
+      key: "armors",
+      file: TRANSLATION_FILES.armors,
+      run: () =>
+        applyEquipmentMap(filePaths.armors, armorMap, armorsOld, {
+          overrides: ARMOR_OVERRIDES,
+          preserveFallbackDescription: false,
+          stats: statsByFile.armors
+        })
+    },
+    {
+      key: "weapons",
+      file: TRANSLATION_FILES.weapons,
+      run: () => applyEquipmentMap(filePaths.weapons, weaponMap, weaponsOld, { stats: statsByFile.weapons })
+    },
+    {
+      key: "consumables",
+      file: TRANSLATION_FILES.consumables,
+      run: () => applyEquipmentMap(filePaths.consumables, consumableMap, consumablesOld, { stats: statsByFile.consumables })
+    },
+    {
+      key: "loot",
+      file: TRANSLATION_FILES.loot,
+      run: () => applyEquipmentMap(filePaths.loot, lootMap, lootOld, { stats: statsByFile.loot })
+    }
+  ];
+
+  const taskResults = {};
+  for (const task of tasks) {
+    const result = await task.run();
+    taskResults[task.key] = Array.isArray(result) ? result : [];
+  }
+
+  console.log("Update summary:");
+  for (const [key, stats] of Object.entries(statsByFile)) {
+    const total = stats.total;
+    const updated = stats.updated;
+    const unchangedCount = stats.unchanged.length;
+    const missingCount = stats.missing.length;
+    console.log(`- ${key}: total ${total}, updated ${updated}, unchanged ${unchangedCount}, missing ${missingCount}`);
+    if (!updated && unchangedCount && total) {
+      const sample = stats.unchanged.slice(0, 3);
+      console.log(
+        `  · Entries already matched API (sample unchanged keys: ${sample.join(", ")}${
+          stats.unchanged.length > sample.length ? ", ..." : ""
+        }`
+      );
+    }
+  }
 
   for (const [file, label] of Object.entries(LABEL_OVERRIDES)) {
     const targetPath = path.join(TRANSLATIONS_DIR, file);
     await applyLabelOverride(targetPath, label);
   }
 
-  const missingBeasts = await updateBeastformsFile(beastformsPath, {
-    beastTop,
-    featureMap
-  });
-
-  const missingAdversaries = await updateAdversariesFile(adversariesPath, {
-    adversaryTop,
-    featureMap
-  });
-
-  const missingEnvironments = await updateEnvironmentsFile(environmentsPath, {
-    environmentTop,
-    featureMap
-  });
-
-  const missingSummary = {
-    classes: missingClasses,
-    subclasses: missingSubclasses,
-    ancestries: missingAncestries,
-    communities: missingCommunities,
-    domains: missingDomains,
-    beastforms: missingBeasts,
-    adversaries: missingAdversaries,
-    environments: missingEnvironments,
-    armors: missingArmors,
-    weapons: missingWeapons,
-    consumables: missingConsumables,
-    loot: missingLoot
-  };
+  const missingSummary = taskResults;
 
   console.log("Missing entries report:");
   for (const [category, items] of Object.entries(missingSummary)) {
