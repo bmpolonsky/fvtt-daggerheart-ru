@@ -99,6 +99,10 @@ const EQUIPMENT_NAME_ALIASES = {
   elundrianchainmail: "elundrianchainarmor"
 };
 
+const FEATURE_NAME_ALIASES = {
+  unshakeable: "unshakable"
+};
+
 const ARMOR_OVERRIDES = {
 "Bare Bones": {
     name: "Без доспехов",
@@ -411,7 +415,8 @@ function enFeatureName(feature) {
   return feature.name || "";
 }
 
-function buildTopLevelMap(enEntries, ruEntries, descriptionFields, mainField = null) {
+function buildTopLevelMap(enEntries, ruEntries, descriptionFields, mainField = null, options = {}) {
+  const { processMainField } = options;
   const ruBySlug = new Map();
   for (const entry of ruEntries) {
     const slug = entry.slug || String(entry.id);
@@ -437,15 +442,16 @@ function buildTopLevelMap(enEntries, ruEntries, descriptionFields, mainField = n
       collectPart(enEntry[field], descEnParts);
     }
     if (mainField) {
-      const scrubCommunity = mainField === "main_body" && descriptionFields.includes("short_description");
-      collectPart(
-        scrubCommunity ? prepareCommunityMainBody(ruEntry[mainField]) : ruEntry[mainField],
-        descRuParts
-      );
-      collectPart(
-        scrubCommunity ? prepareCommunityMainBody(enEntry[mainField]) : enEntry[mainField],
-        descEnParts
-      );
+      const ruValueRaw = ruEntry[mainField];
+      const enValueRaw = enEntry[mainField];
+      const ruValue = processMainField
+        ? processMainField({ entry: ruEntry, value: ruValueRaw, locale: "ru" })
+        : ruValueRaw;
+      const enValue = processMainField
+        ? processMainField({ entry: enEntry, value: enValueRaw, locale: "en" })
+        : enValueRaw;
+      collectPart(ruValue, descRuParts);
+      collectPart(enValue, descEnParts);
     }
     const descRu = descRuParts.join("\n\n");
     const descEn = descEnParts.join("\n\n");
@@ -462,9 +468,9 @@ function buildTopLevelMap(enEntries, ruEntries, descriptionFields, mainField = n
   return result;
 }
 
-function prepareCommunityMainBody(text) {
-  if (!text) return text;
-  const withoutImages = text
+function prepareCommunityMainBody({ value }) {
+  if (!value) return value;
+  const withoutImages = value
     .replace(/!\[[^\]]*\]\([^)]*\)/g, "")
     .replace(/<img[^>]*>/gi, "");
   const chunks = withoutImages
@@ -478,6 +484,23 @@ function prepareCommunityMainBody(text) {
     selected.push(chunks[1]);
   }
   return selected.join("\n\n");
+}
+
+function prepareAncestryMainBody({ value, entry }) {
+  if (!value) return value;
+  const imageMatch = value.search(/(?:\n!\[[^\]]*\]\([^)]*\)|\n<img[^>]*>)/i);
+  const truncated = imageMatch >= 0 ? value.slice(0, imageMatch) : value;
+  const normalised = truncated.replace(/\r\n/g, "\n");
+  const paragraphs = normalised
+    .split(/\n\s*\n+/)
+    .map((chunk) => chunk.trim())
+    .filter(Boolean)
+    .slice(0, 2);
+  if (paragraphs.length === 0) {
+    const fallback = entry?.short_description ? String(entry.short_description).trim() : "";
+    return fallback;
+  }
+  return paragraphs.join("\n\n");
 }
 
 function createStatsTracker(file) {
@@ -571,8 +594,20 @@ async function main() {
 
   const classTop = buildTopLevelMap(classData.en, classData.ru, ["description"]);
   const subclassTop = buildTopLevelMap(subclassData.en, subclassData.ru, ["description"]);
-  const ancestryTop = buildTopLevelMap(ancestryData.en, ancestryData.ru, ["description", "short_description"]);
-  const communityTop = buildTopLevelMap(communityData.en, communityData.ru, ["description", "short_description"], "main_body");
+  const ancestryTop = buildTopLevelMap(
+    ancestryData.en,
+    ancestryData.ru,
+    ["short_description", "description"],
+    "main_body",
+    { processMainField: prepareAncestryMainBody }
+  );
+  const communityTop = buildTopLevelMap(
+    communityData.en,
+    communityData.ru,
+    ["description", "short_description"],
+    "main_body",
+    { processMainField: prepareCommunityMainBody }
+  );
   const domainTop = buildTopLevelMap(domainData.en, domainData.ru, [], "main_body");
   const equipmentTop = buildTopLevelMap(equipmentData.en, equipmentData.ru, [], "main_body");
   const beastTop = buildTopLevelMap(beastData.en, beastData.ru, ["main_body", "short_description"]);
@@ -936,7 +971,7 @@ async function updateSubclassesFile(path, { subclassTop, featureMap }, stats) {
 }
 
 async function updateAncestriesFile(path, { ancestryTop, featureMap }, stats) {
-  return updateEntries(path, updateTopWithFeatures(ancestryTop, featureMap), { stats });
+  return updateEntries(path, updateTopWithFeatures(ancestryTop, featureMap, FEATURE_NAME_ALIASES), { stats });
 }
 
 async function updateCommunitiesFile(path, { communityTop, featureMap }, stats) {
