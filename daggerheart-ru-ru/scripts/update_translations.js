@@ -176,6 +176,8 @@ function stripLinks(text) {
   }
   result = result.replace(MD_LINK_RE, "$1");
   result = result.replace(CLASS_ATTR_RE, "");
+  result = result.replace(/[ \t]+([,.;:!?])/g, "$1");
+  result = result.replace(/[ \t]{2,}/g, " ");
   return result;
 }
 
@@ -187,6 +189,76 @@ function sanitizeHtml(text) {
 function sanitizeName(text) {
   if (text === null || text === undefined) return text;
   return stripLinks(text).trim();
+}
+
+const TEMPLATE_TAG_RE = /@Template\[[^\]]+\]/gi;
+const INLINE_ROLL_RE = /\[\[\/r\s*([^\]]+)\]\]/gi;
+
+function escapeRegExp(str) {
+  return str.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+}
+
+function mergeFoundryTags(oldHtml, newHtml) {
+  if (!oldHtml || !newHtml) return newHtml;
+  let result = newHtml;
+
+  const templateMatches = Array.from(oldHtml.matchAll(TEMPLATE_TAG_RE));
+  if (templateMatches.length) {
+    const appended = [];
+    const seen = new Set();
+    for (const match of templateMatches) {
+      const tag = match[0];
+      if (!tag || seen.has(tag)) continue;
+      seen.add(tag);
+      if (!result.includes(tag)) {
+        appended.push(`<p>${tag}</p>`);
+      }
+    }
+    if (appended.length) {
+      result = result.replace(/\s*$/, "") + appended.join("");
+    }
+  }
+
+  const inlineMatches = Array.from(oldHtml.matchAll(INLINE_ROLL_RE));
+  for (const match of inlineMatches) {
+    const full = match[0];
+    const expr = (match[1] || "").trim();
+    if (!expr || result.includes(full)) continue;
+    const regex = new RegExp(escapeRegExp(expr));
+    if (regex.test(result)) {
+      result = result.replace(regex, full);
+    }
+  }
+
+  return result;
+}
+
+function hasMeaningfulHtml(html) {
+  if (typeof html !== "string") return false;
+  const plain = html
+    .replace(/<[^>]*>/g, "")
+    .replace(/&nbsp;/gi, " ")
+    .trim();
+  if (plain) return true;
+  if (/@Template\[[^\]]+\]/.test(html)) return true;
+  if (/\[\[\/r\s*[^\]]+\]\]/.test(html)) return true;
+  if (/@UUID\[[^\]]+\]\{[^}]+\}/.test(html)) return true;
+  return false;
+}
+
+function setHtmlField(target, key, html) {
+  if (!target) return;
+  if (html === null || html === undefined) {
+    delete target[key];
+    return;
+  }
+  const sanitized = sanitizeHtml(html);
+  if (!sanitized || !hasMeaningfulHtml(sanitized)) {
+    delete target[key];
+    return;
+  }
+  const merged = mergeFoundryTags(target[key], sanitized);
+  target[key] = merged;
 }
 
 function unwrapSingleParagraph(html) {
@@ -248,7 +320,7 @@ function applyFeatureGeneratedActions(entry, featureInfo) {
   for (let i = 0; i < ids.length && i < generated.length; i += 1) {
     const html = generated[i];
     if (!html) continue;
-    entry.actions[ids[i]] = sanitizeHtml(html);
+    setHtmlField(entry.actions, ids[i], html);
   }
 }
 
@@ -259,11 +331,10 @@ function _updateFeature(entry, featureInfo) {
   }
   if (featureInfo.description !== null && featureInfo.description !== undefined) {
     if (featureInfo.description) {
-      const clean = sanitizeHtml(featureInfo.description);
-      entry.description = clean;
+      setHtmlField(entry, "description", featureInfo.description);
       if (entry.actions) {
         for (const actionId of Object.keys(entry.actions)) {
-          entry.actions[actionId] = clean;
+          setHtmlField(entry.actions, actionId, featureInfo.description);
         }
       }
     } else {
@@ -686,7 +757,7 @@ const updateSimpleTop = (topMap, aliases) => (norm, entry, key) =>
       entry.name = sanitizeName(info.name);
       if (info.description !== null && info.description !== undefined) {
         if (info.description) {
-          entry.description = sanitizeHtml(info.description);
+          setHtmlField(entry, "description", info.description);
         } else {
           delete entry.description;
         }
@@ -704,7 +775,7 @@ const updateTopWithFeatures = (topMap, featureMap, aliases = {}) => (norm, entry
     entry.name = sanitizeName(topInfo.name);
     if (topInfo.description !== null && topInfo.description !== undefined) {
       if (topInfo.description) {
-        entry.description = sanitizeHtml(topInfo.description);
+        setHtmlField(entry, "description", topInfo.description);
       } else {
         delete entry.description;
       }
@@ -758,7 +829,7 @@ async function applyEquipmentMap(targetPath, map, fallback, options = {}) {
       const override = overrides[key];
       entry.name = sanitizeName(override.name || entry.name);
       if (override.description) {
-        entry.description = sanitizeHtml(override.description);
+        setHtmlField(entry, "description", override.description);
       } else {
         delete entry.description;
       }
@@ -781,7 +852,7 @@ async function applyEquipmentMap(targetPath, map, fallback, options = {}) {
     }
     entry.name = sanitizeName(info.name);
     if (info.description) {
-      entry.description = info.description;
+      setHtmlField(entry, "description", info.description);
     } else if (
       preserveFallbackDescription &&
       fallback.entries &&
@@ -806,7 +877,7 @@ function updateActionsFromFeatures(entry, features) {
     if (ACTION_OVERRIDES[actionIds[i]]) continue;
     const body = markdownToHtml(feature.main_body || "");
     if (!body) continue;
-    entry.actions[actionIds[i]] = sanitizeHtml(body);
+    setHtmlField(entry.actions, actionIds[i], body);
   }
 }
 
@@ -815,7 +886,7 @@ function applyActionOverrides(entry) {
   for (const [actionId, html] of Object.entries(entry.actions)) {
     if (!html) continue;
     if (ACTION_OVERRIDES[actionId]) {
-      entry.actions[actionId] = sanitizeHtml(ACTION_OVERRIDES[actionId]);
+      setHtmlField(entry.actions, actionId, ACTION_OVERRIDES[actionId]);
     }
   }
 }
@@ -838,7 +909,7 @@ async function updateClassesFile(path, { classTop, featureMap, classItemsMap, ru
       entry.name = sanitizeName(classInfo.name);
       if (classInfo.description !== null && classInfo.description !== undefined) {
         if (classInfo.description) {
-          entry.description = sanitizeHtml(classInfo.description);
+          setHtmlField(entry, "description", classInfo.description);
         } else {
           delete entry.description;
         }
@@ -852,10 +923,10 @@ async function updateClassesFile(path, { classTop, featureMap, classItemsMap, ru
       if (featureInfo.name) entry.name = sanitizeName(featureInfo.name);
       if (featureInfo.description !== null && featureInfo.description !== undefined) {
         if (featureInfo.description) {
-          entry.description = sanitizeHtml(featureInfo.description);
+          setHtmlField(entry, "description", featureInfo.description);
           if (entry.actions) {
             for (const actionId of Object.keys(entry.actions)) {
-              entry.actions[actionId] = sanitizeHtml(featureInfo.description);
+              setHtmlField(entry.actions, actionId, featureInfo.description);
             }
           }
         } else {
@@ -869,11 +940,10 @@ async function updateClassesFile(path, { classTop, featureMap, classItemsMap, ru
       const info = featureMap[normalize("Rally")];
       entry.name = `${sanitizeName(info.name)} (уровень 5)`;
       if (info.description) {
-        const desc = sanitizeHtml(info.description);
-        entry.description = desc;
+        setHtmlField(entry, "description", info.description);
         if (entry.actions) {
           for (const actionId of Object.keys(entry.actions)) {
-            entry.actions[actionId] = desc;
+            setHtmlField(entry.actions, actionId, info.description);
           }
         }
       } else {
@@ -908,7 +978,7 @@ async function updateClassesFile(path, { classTop, featureMap, classItemsMap, ru
       entry.name = sanitizeName(ruleInfo.name);
       if (ruleInfo.description !== null && ruleInfo.description !== undefined) {
         if (ruleInfo.description) {
-          entry.description = sanitizeHtml(ruleInfo.description);
+          setHtmlField(entry, "description", ruleInfo.description);
         } else {
           delete entry.description;
         }
@@ -935,7 +1005,7 @@ async function updateSubclassesFile(path, { subclassTop, featureMap }, stats) {
       entry.name = sanitizeName(subclassInfo.name);
       if (subclassInfo.description !== null && subclassInfo.description !== undefined) {
         if (subclassInfo.description) {
-          entry.description = sanitizeHtml(subclassInfo.description);
+          setHtmlField(entry, "description", subclassInfo.description);
         } else {
           delete entry.description;
         }
@@ -948,11 +1018,10 @@ async function updateSubclassesFile(path, { subclassTop, featureMap }, stats) {
       if (featureInfo.name) entry.name = sanitizeName(featureInfo.name);
       if (featureInfo.description !== null && featureInfo.description !== undefined) {
         if (featureInfo.description) {
-          const desc = sanitizeHtml(featureInfo.description);
-          entry.description = desc;
+          setHtmlField(entry, "description", featureInfo.description);
           if (entry.actions) {
             for (const actionId of Object.keys(entry.actions)) {
-              entry.actions[actionId] = desc;
+              setHtmlField(entry.actions, actionId, featureInfo.description);
             }
           }
         } else {
@@ -992,7 +1061,7 @@ async function updateDomainsFile(path, { domainTop, featureMap, oldDomainActions
       }
       const desc = descSource ? markdownToHtml(descSource) : null;
       if (desc) {
-        entry.description = sanitizeHtml(desc);
+        setHtmlField(entry, "description", desc);
       } else {
         delete entry.description;
       }
@@ -1011,9 +1080,8 @@ async function updateDomainsFile(path, { domainTop, featureMap, oldDomainActions
       if (raw && raw.features && raw.features.length) {
         updateActionsFromFeatures(entry, raw.features);
       } else if (entry.description) {
-        const clean = sanitizeHtml(entry.description);
         for (const actionId of Object.keys(entry.actions)) {
-          entry.actions[actionId] = clean;
+          setHtmlField(entry.actions, actionId, entry.description);
         }
       }
     }
@@ -1030,7 +1098,7 @@ async function updateBeastformsFile(path, { beastTop, featureMap }, stats) {
       entry.name = sanitizeName(info.name);
       if (info.description !== null && info.description !== undefined) {
         if (info.description) {
-          entry.description = sanitizeHtml(info.description);
+          setHtmlField(entry, "description", info.description);
         } else {
           delete entry.description;
         }
@@ -1067,11 +1135,11 @@ async function updateAdversariesFile(path, { adversaryTop, featureMap }, stats) 
       const raw = info.raw;
       const desc = markdownToHtml(raw.short_description || raw.main_body || "");
       if (desc) {
-        entry.description = sanitizeHtml(desc);
+        setHtmlField(entry, "description", desc);
       } else {
         delete entry.description;
       }
-      if (raw.motives) entry.motivesAndTactics = sanitizeHtml(raw.motives);
+      if (raw.motives) setHtmlField(entry, "motivesAndTactics", raw.motives);
       if (raw.weapon_name) entry.attack = sanitizeName(raw.weapon_name);
       const experiences = raw.experiences;
       if (experiences && entry.experiences) {
@@ -1093,11 +1161,10 @@ async function updateAdversariesFile(path, { adversaryTop, featureMap }, stats) 
         itemEntry.name = sanitizeName(cleanAdversaryItemName(nextFeature.name || ""));
         const body = markdownToHtml(nextFeature.main_body || "");
         if (body) {
-          const clean = sanitizeHtml(body);
-          itemEntry.description = clean;
+          setHtmlField(itemEntry, "description", body);
           if (itemEntry.actions) {
             for (const actionId of Object.keys(itemEntry.actions)) {
-              itemEntry.actions[actionId] = clean;
+              setHtmlField(itemEntry.actions, actionId, body);
             }
           }
         } else {
@@ -1126,11 +1193,11 @@ async function updateEnvironmentsFile(path, { environmentTop, featureMap }, stat
       const raw = info.raw;
       const desc = markdownToHtml(raw.short_description || raw.main_body || "");
       if (desc) {
-        entry.description = sanitizeHtml(desc);
+        setHtmlField(entry, "description", desc);
       } else {
         delete entry.description;
       }
-      if (raw.impulses) entry.impulses = sanitizeHtml(raw.impulses);
+      if (raw.impulses) setHtmlField(entry, "impulses", raw.impulses);
       return true;
     }
     if (featureMap[norm]) {
