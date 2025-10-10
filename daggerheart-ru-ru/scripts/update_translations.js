@@ -193,16 +193,18 @@ function sanitizeName(text) {
 
 const TEMPLATE_TAG_RE = /@Template\[[^\]]+\]/gi;
 const INLINE_ROLL_RE = /\[\[\/r\s*([^\]]+)\]\]/gi;
+const UUID_TAG_RE = /@UUID\[([^\]]+)\]\{([^}]*)\}/gi;
 
 function escapeRegExp(str) {
   return str.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
 }
 
 function mergeFoundryTags(oldHtml, newHtml) {
-  if (!oldHtml || !newHtml) return newHtml;
+  if (!newHtml) return newHtml;
+  const source = oldHtml || "";
   let result = newHtml;
 
-  const templateMatches = Array.from(oldHtml.matchAll(TEMPLATE_TAG_RE));
+  const templateMatches = Array.from(source.matchAll(TEMPLATE_TAG_RE));
   if (templateMatches.length) {
     const appended = [];
     const seen = new Set();
@@ -219,7 +221,7 @@ function mergeFoundryTags(oldHtml, newHtml) {
     }
   }
 
-  const inlineMatches = Array.from(oldHtml.matchAll(INLINE_ROLL_RE));
+  const inlineMatches = Array.from(source.matchAll(INLINE_ROLL_RE));
   for (const match of inlineMatches) {
     const full = match[0];
     const expr = (match[1] || "").trim();
@@ -230,20 +232,28 @@ function mergeFoundryTags(oldHtml, newHtml) {
     }
   }
 
+  const uuidMatches = Array.from(source.matchAll(UUID_TAG_RE));
+  for (const match of uuidMatches) {
+    const full = match[0];
+    const path = match[1];
+    const label = (match[2] || "").trim();
+    if (!path || !label || result.includes(full)) continue;
+    const regex = new RegExp(escapeRegExp(label));
+    if (regex.test(result)) {
+      result = result.replace(regex, `@UUID[${path}]{${label}}`);
+    }
+  }
+
   return result;
 }
 
-function hasMeaningfulHtml(html) {
+function hasVisibleText(html) {
   if (typeof html !== "string") return false;
   const plain = html
     .replace(/<[^>]*>/g, "")
     .replace(/&nbsp;/gi, " ")
     .trim();
-  if (plain) return true;
-  if (/@Template\[[^\]]+\]/.test(html)) return true;
-  if (/\[\[\/r\s*[^\]]+\]\]/.test(html)) return true;
-  if (/@UUID\[[^\]]+\]\{[^}]+\}/.test(html)) return true;
-  return false;
+  return plain.length > 0;
 }
 
 function setHtmlField(target, key, html) {
@@ -253,11 +263,15 @@ function setHtmlField(target, key, html) {
     return;
   }
   const sanitized = sanitizeHtml(html);
-  if (!sanitized || !hasMeaningfulHtml(sanitized)) {
+  if (!sanitized) {
     delete target[key];
     return;
   }
   const merged = mergeFoundryTags(target[key], sanitized);
+  if (!hasVisibleText(merged)) {
+    delete target[key];
+    return;
+  }
   target[key] = merged;
 }
 
