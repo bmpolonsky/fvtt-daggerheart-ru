@@ -55,21 +55,19 @@ const CLASS_ITEM_OVERRIDES = {
 const ACTION_OVERRIDES = {
   // Elementalist foundation: flavour text split into two separate actions.
   rxuFLfHP1FILDpds:
-    "<p>Выберите один из элементов — Воздух, Земля, Огонь, Молния или Вода — и создавайте безвредные эффекты на его основе.</p>",
+    "<p><strong>Потратьте Надежду</strong>, опишите, как контроль над вашей стихией помогает в броске действия, который вы собираетесь сделать, и получите +2 к броску действия.</p>",
   S7HvFD3qIR3ifJRL:
-    "<p><strong>Потратьте Надежду</strong>, опишите помощь стихии и получите +2 к броску действия или +3 к броску урона.</p>",
+    "<p><strong>Потратьте Надежду</strong>, опишите, как контроль над вашей стихией помогает в броске действия, который вы собираетесь сделать, и получите +3 к броску урона.</p>",
 
   // Sparing Touch split: healing HP vs Stress.
   aanLNQkeO2ZTIqBl:
-    "<p>Один раз до следующего продолжительного отдыха очистите цели 2 Раны.</p>",
+    "<p>Один раз до следующего Продолжительного отдыха коснитесь существа и очистите ему 2 Раны.</p>",
   cWdzCQJv8RFfi2NR:
-    "<p>Один раз до следующего продолжительного отдыха очистите цели 2 Стресса.</p>",
+    "<p>Один раз до следующего Продолжительного отдыха коснитесь существа и очистите ему 2 Стресса.</p>",
 
   // Weapon Specialist split.
-  vay9rVXJS3iksaVR:
-    "<p><strong>Потратьте Надежду</strong>, чтобы добавить к урону кость вторичного оружия, когда вы преуспели в атаке.</p>",
-  "1bBFfxmywJpx5tfk":
-    "<p>Один раз до следующего продолжительного отдыха перебросьте выпавшие 1 на Костях Истребления.</p>",
+  "vay9rVXJS3iksaVR": "<p>Вы владеете многими видами оружия с ужасающей легкостью. Когда вы преуспеваете в атаке, вы можете <strong>потратить Надежду</strong>, чтобы добавить одну из костей урона от вашего вторичного оружия к Броску Урона.</p>",
+  "1bBFfxmywJpx5tfk": "<p>Кроме того, один раз до следующего Продолжительного отдыха, когда вы бросаете Кости Истребления, перебросьте любые выпавшие <strong>1</strong>.</p>",
 
   // Wings of Light split.
   rg2sLCTqY2rTo861:
@@ -104,10 +102,10 @@ const FEATURE_NAME_ALIASES = {
 };
 
 const ARMOR_OVERRIDES = {
-"Bare Bones": {
+  "Bare Bones": {
     name: "Без доспехов",
     description: "<p>Благодаря карте домена <strong>«Ничего лишнего»</strong>, пока на вас не экипирована броня, ваш базовый Показатель Брони равен 3 + ваша Сила, а также вы используете следующие значения как ваши базовые пороги урона:</p><ul><li><strong><em>Ранг 1:</em></strong> 9/19</li><li><strong><em>Ранг 2:</em></strong> 11/24</li><li><strong><em>Ранг 3:</em></strong> 13/31</li><li><strong><em>Ранг 4:</em></strong> 15/38</li></ul>"
-}
+  }
 
 };
 
@@ -819,7 +817,7 @@ async function main() {
   const consumablesOld = oldTranslations[TRANSLATION_FILES.consumables] || {};
   const lootOld = oldTranslations[TRANSLATION_FILES.loot] || {};
 
-const updateSimpleTop = (topMap, aliases) => (norm, entry, key) =>
+  const updateSimpleTop = (topMap, aliases) => (norm, entry, key) =>
     !!topMap[resolveAlias(norm, aliases || {})] &&
     (( () => {
       const info = topMap[resolveAlias(norm, aliases || {})];
@@ -835,246 +833,16 @@ const updateSimpleTop = (topMap, aliases) => (norm, entry, key) =>
       return true;
     })());
 
-const updateTopWithFeatures = (topMap, featureMap, aliases = {}) => (norm, entry) => {
-  if (!norm) return false;
-  const lookup = resolveAlias(norm, aliases);
-  let handled = false;
-  const topInfo = topMap[lookup];
-  if (topInfo) {
-    entry.name = sanitizeName(topInfo.name);
-    if (topInfo.description !== null && topInfo.description !== undefined) {
-      if (topInfo.description) {
-        setHtmlField(entry, "description", topInfo.description);
-      } else {
-        delete entry.description;
-      }
-    }
-    if (entry.actions) delete entry.actions;
-    handled = true;
-  }
-  const featureInfo = featureMap[lookup] || featureMap[norm];
-  if (featureInfo) {
-    _updateFeature(entry, featureInfo);
-    handled = true;
-  }
-  return handled;
-};
-
-function defaultEquipmentDescription(ruEntry, enEntry) {
-  const ruBody = normaliseText(ruEntry.main_body || "");
-  const enBody = normaliseText(enEntry.main_body || "");
-  if (ruBody && (!enBody || ruBody !== enBody)) {
-    return markdownToHtml(ruEntry.main_body || "");
-  }
-  return null;
-}
-
-function createEquipmentMap(equipmentData, typeSlugs, options = {}) {
-  const { buildDescription } = options;
-  const ruBySlug = new Map(equipmentData.ru.map((entry) => [entry.slug, entry]));
-  const map = {};
-  for (const enEntry of equipmentData.en) {
-    if (!typeSlugs.has(enEntry.type_slug)) continue;
-    const ruEntry = ruBySlug.get(enEntry.slug);
-    if (!ruEntry) continue;
-    const norm = normalize(enEntry.name);
-    if (!norm) continue;
-    const rawDescription = buildDescription
-      ? buildDescription(ruEntry, enEntry)
-      : defaultEquipmentDescription(ruEntry, enEntry);
-    const description = rawDescription ? sanitizeHtml(rawDescription) : null;
-    map[norm] = {
-      name: sanitizeName(ruEntry.name || enEntry.name),
-      description
-    };
-  }
-  return map;
-}
-
-async function applyEquipmentMap(targetPath, map, fallback, options = {}) {
-  const { overrides = {}, preserveFallbackDescription = true, stats = null } = options;
-  return updateEntries(targetPath, (norm, entry, key) => {
-    if (overrides[key]) {
-      const override = overrides[key];
-      entry.name = sanitizeName(override.name || entry.name);
-      if (override.description) {
-        setHtmlField(entry, "description", override.description);
-      } else {
-        delete entry.description;
-      }
-      return true;
-    }
+  const updateTopWithFeatures = (topMap, featureMap, aliases = {}) => (norm, entry) => {
     if (!norm) return false;
-    const info = map[norm] || map[resolveAlias(norm, EQUIPMENT_NAME_ALIASES)];
-    if (!info) {
-      const oldEntries = fallback.entries || {};
-      if (oldEntries[key]) {
-        entry.name = oldEntries[key].name;
-        if (oldEntries[key].description) {
-          entry.description = oldEntries[key].description;
-        } else {
-          delete entry.description;
-        }
-        return true;
-      }
-      return false;
-    }
-    entry.name = sanitizeName(info.name);
-    if (info.description) {
-      setHtmlField(entry, "description", info.description);
-    } else if (
-      preserveFallbackDescription &&
-      fallback.entries &&
-      fallback.entries[key] &&
-      fallback.entries[key].description
-    ) {
-      entry.description = fallback.entries[key].description;
-    } else {
-      delete entry.description;
-    }
-    return true;
-  }, { stats });
-}
-
-function updateActionsFromFeatures(entry, features) {
-  if (!entry || !entry.actions) return;
-  const actionIds = Object.keys(entry.actions);
-  if (!actionIds.length) return;
-  for (let i = 0; i < actionIds.length; i += 1) {
-    const feature = features[i];
-    if (!feature) break;
-    if (ACTION_OVERRIDES[actionIds[i]]) continue;
-    const body = markdownToHtml(feature.main_body || "");
-    if (!body) continue;
-    setHtmlField(entry.actions, actionIds[i], body);
-  }
-}
-
-function applyActionOverrides(entry) {
-  if (!entry || !entry.actions) return;
-  for (const [actionId, html] of Object.entries(entry.actions)) {
-    if (!html) continue;
-    if (ACTION_OVERRIDES[actionId]) {
-      setHtmlField(entry.actions, actionId, ACTION_OVERRIDES[actionId]);
-    }
-  }
-}
-
-async function applyLabelOverride(filePath, newLabel) {
-  if (!newLabel) return;
-  const raw = JSON.parse(await fs.readFile(filePath, "utf-8"));
-  if (raw.label !== newLabel) {
-    raw.label = newLabel;
-    await fs.writeFile(filePath, `${JSON.stringify(raw, null, 2)}`, "utf-8");
-  }
-}
-
-async function updateClassesFile(path, { classTop, featureMap, classItemsMap, ruleTop }, stats) {
-  return updateEntries(path, (norm, entry, key) => {
-    if (!norm) return false;
+    const lookup = resolveAlias(norm, aliases);
     let handled = false;
-    const classInfo = classTop[norm];
-    if (classInfo) {
-      entry.name = sanitizeName(classInfo.name);
-      if (classInfo.description !== null && classInfo.description !== undefined) {
-        if (classInfo.description) {
-          setHtmlField(entry, "description", classInfo.description);
-        } else {
-          delete entry.description;
-        }
-      }
-      if (entry.actions) delete entry.actions;
-      handled = true;
-    }
-
-    const featureInfo = featureMap[norm];
-    if (featureInfo) {
-      if (featureInfo.name) entry.name = sanitizeName(featureInfo.name);
-      if (featureInfo.description !== null && featureInfo.description !== undefined) {
-        if (featureInfo.description) {
-          setHtmlField(entry, "description", featureInfo.description);
-          if (entry.actions) {
-            for (const actionId of Object.keys(entry.actions)) {
-              setHtmlField(entry.actions, actionId, featureInfo.description);
-            }
-          }
-        } else {
-          delete entry.description;
-        }
-      }
-      handled = true;
-    }
-
-    if (norm === normalize("Rally Level 5") && featureMap[normalize("Rally")]) {
-      const info = featureMap[normalize("Rally")];
-      entry.name = `${sanitizeName(info.name)} (уровень 5)`;
-      if (info.description) {
-        setHtmlField(entry, "description", info.description);
-        if (entry.actions) {
-          for (const actionId of Object.keys(entry.actions)) {
-            setHtmlField(entry.actions, actionId, info.description);
-          }
-        }
-      } else {
-        delete entry.description;
-      }
-      handled = true;
-      applyFeatureGeneratedActions(entry, info);
-    }
-
-    if (featureInfo) applyFeatureGeneratedActions(entry, featureInfo);
-
-    const itemOverride = classItemsMap[norm];
-    // if (key === "Whispering Orb") {
-    //   console.log("Whispering Orb debug:", norm, itemOverride);
-    // }
-    if (itemOverride) {
-      entry.name = itemOverride;
-      delete entry.description;
-      delete entry.actions;
-      handled = true;
-    }
-
-    if (CLASS_ITEM_OVERRIDES[key]) {
-      entry.name = CLASS_ITEM_OVERRIDES[key];
-      delete entry.description;
-      delete entry.actions;
-      handled = true;
-    }
-
-    const ruleInfo = ruleTop[norm];
-    if (ruleInfo && (!handled || !entry.description)) {
-      entry.name = sanitizeName(ruleInfo.name);
-      if (ruleInfo.description !== null && ruleInfo.description !== undefined) {
-        if (ruleInfo.description) {
-          setHtmlField(entry, "description", ruleInfo.description);
-        } else {
-          delete entry.description;
-        }
-      }
-      handled = true;
-    }
-
-    if (!handled) {
-      // no-op: keep entry for further manual review
-    }
-    applyActionOverrides(entry);
-
-    return handled;
-  }, { stats });
-}
-
-async function updateSubclassesFile(path, { subclassTop, featureMap }, stats) {
-  const result = await updateEntries(path, (norm, entry) => {
-    if (!norm) return false;
-    const lookup = resolveAlias(norm, SUBCLASS_NAME_ALIASES);
-    let handled = false;
-    const subclassInfo = subclassTop[lookup];
-    if (subclassInfo) {
-      entry.name = sanitizeName(subclassInfo.name);
-      if (subclassInfo.description !== null && subclassInfo.description !== undefined) {
-        if (subclassInfo.description) {
-          setHtmlField(entry, "description", subclassInfo.description);
+    const topInfo = topMap[lookup];
+    if (topInfo) {
+      entry.name = sanitizeName(topInfo.name);
+      if (topInfo.description !== null && topInfo.description !== undefined) {
+        if (topInfo.description) {
+          setHtmlField(entry, "description", topInfo.description);
         } else {
           delete entry.description;
         }
@@ -1084,197 +852,381 @@ async function updateSubclassesFile(path, { subclassTop, featureMap }, stats) {
     }
     const featureInfo = featureMap[lookup] || featureMap[norm];
     if (featureInfo) {
-      if (featureInfo.name) entry.name = sanitizeName(featureInfo.name);
-      if (featureInfo.description !== null && featureInfo.description !== undefined) {
-        if (featureInfo.description) {
-          setHtmlField(entry, "description", featureInfo.description);
-          if (entry.actions) {
-            for (const actionId of Object.keys(entry.actions)) {
-              setHtmlField(entry.actions, actionId, featureInfo.description);
-            }
-          }
-        } else {
-          delete entry.description;
-        }
-      }
-      handled = true;
-    }
-
-    if (featureInfo) applyFeatureGeneratedActions(entry, featureInfo);
-    applyActionOverrides(entry);
-    return handled;
-  }, { stats });
-  await applySubclassDuplicates(path);
-  return result;
-}
-
-async function updateAncestriesFile(path, { ancestryTop, featureMap }, stats) {
-  return updateEntries(path, updateTopWithFeatures(ancestryTop, featureMap, FEATURE_NAME_ALIASES), { stats });
-}
-
-async function updateCommunitiesFile(path, { communityTop, featureMap }, stats) {
-  return updateEntries(path, updateTopWithFeatures(communityTop, featureMap), { stats });
-}
-
-async function updateDomainsFile(path, { domainTop, featureMap, oldDomainActions }, stats) {
-  return updateEntries(path, (norm, entry, key) => {
-    if (!norm) return false;
-    let handled = false;
-    const domainInfo = domainTop[norm];
-    if (domainInfo) {
-      entry.name = sanitizeName(domainInfo.name);
-      const raw = domainInfo.raw;
-      let descSource = raw.main_body || "";
-      if (!descSource && raw.features && raw.features.length) {
-        descSource = raw.features[0].main_body || "";
-      }
-      const desc = descSource ? markdownToHtml(descSource) : null;
-      if (desc) {
-        setHtmlField(entry, "description", desc);
-      } else {
-        delete entry.description;
-      }
-      handled = true;
-    }
-    const featureInfo = featureMap[norm];
-    if (featureInfo) {
       _updateFeature(entry, featureInfo);
       handled = true;
     }
-    if (handled && entry.actions && Object.keys(entry.actions).length === 0 && oldDomainActions[key]) {
-      entry.actions = oldDomainActions[key];
-    }
-    if (handled && entry.actions) {
-      const raw = domainInfo ? domainInfo.raw : null;
-      if (raw && raw.features && raw.features.length) {
-        updateActionsFromFeatures(entry, raw.features);
-      } else if (entry.description) {
-        for (const actionId of Object.keys(entry.actions)) {
-          setHtmlField(entry.actions, actionId, entry.description);
-        }
-      }
-    }
-    applyActionOverrides(entry);
     return handled;
-  }, { stats });
-}
+  };
 
-async function updateBeastformsFile(path, { beastTop, featureMap }, stats) {
-  return updateEntries(path, (norm, entry) => {
-    if (!norm) return false;
-    const info = beastTop[norm];
-    if (info) {
-      entry.name = sanitizeName(info.name);
-      if (info.description !== null && info.description !== undefined) {
-        if (info.description) {
-          setHtmlField(entry, "description", info.description);
+  function defaultEquipmentDescription(ruEntry, enEntry) {
+    const ruBody = normaliseText(ruEntry.main_body || "");
+    const enBody = normaliseText(enEntry.main_body || "");
+    if (ruBody && (!enBody || ruBody !== enBody)) {
+      return markdownToHtml(ruEntry.main_body || "");
+    }
+    return null;
+  }
+
+  function createEquipmentMap(equipmentData, typeSlugs, options = {}) {
+    const { buildDescription } = options;
+    const ruBySlug = new Map(equipmentData.ru.map((entry) => [entry.slug, entry]));
+    const map = {};
+    for (const enEntry of equipmentData.en) {
+      if (!typeSlugs.has(enEntry.type_slug)) continue;
+      const ruEntry = ruBySlug.get(enEntry.slug);
+      if (!ruEntry) continue;
+      const norm = normalize(enEntry.name);
+      if (!norm) continue;
+      const rawDescription = buildDescription
+        ? buildDescription(ruEntry, enEntry)
+        : defaultEquipmentDescription(ruEntry, enEntry);
+      const description = rawDescription ? sanitizeHtml(rawDescription) : null;
+      map[norm] = {
+        name: sanitizeName(ruEntry.name || enEntry.name),
+        description
+      };
+    }
+    return map;
+  }
+
+  async function applyEquipmentMap(targetPath, map, fallback, options = {}) {
+    const { overrides = {}, preserveFallbackDescription = true, stats = null } = options;
+    return updateEntries(targetPath, (norm, entry, key) => {
+      if (overrides[key]) {
+        const override = overrides[key];
+        entry.name = sanitizeName(override.name || entry.name);
+        if (override.description) {
+          setHtmlField(entry, "description", override.description);
         } else {
           delete entry.description;
         }
+        return true;
       }
-      const raw = info.raw;
-      if (raw && raw.examples) {
-        const examples = sanitizeHtml(stripLinks(raw.examples));
-        if (examples) {
-          const examplesHtml = `<p><strong>Примеры:</strong> ${examples}</p>`;
-          entry.description = entry.description
-            ? `${entry.description}${examplesHtml}`
-            : examplesHtml;
+      if (!norm) return false;
+      const info = map[norm] || map[resolveAlias(norm, EQUIPMENT_NAME_ALIASES)];
+      if (!info) {
+        const oldEntries = fallback.entries || {};
+        if (oldEntries[key]) {
+          entry.name = oldEntries[key].name;
+          if (oldEntries[key].description) {
+            entry.description = oldEntries[key].description;
+          } else {
+            delete entry.description;
+          }
+          return true;
         }
+        return false;
       }
-      applyActionOverrides(entry);
-      return true;
-    }
-    if (featureMap[norm]) {
-      _updateFeature(entry, featureMap[norm]);
-      applyActionOverrides(entry);
-      return true;
-    }
-    applyActionOverrides(entry);
-    return false;
-  }, { stats });
-}
-
-async function updateAdversariesFile(path, { adversaryTop, featureMap }, stats) {
-  return updateEntries(path, (norm, entry) => {
-    if (!norm) return false;
-    const info = adversaryTop[norm];
-    if (info) {
       entry.name = sanitizeName(info.name);
-      const raw = info.raw;
-      const desc = markdownToHtml(raw.short_description || raw.main_body || "");
-      if (desc) {
-        setHtmlField(entry, "description", desc);
+      if (info.description) {
+        setHtmlField(entry, "description", info.description);
+      } else if (
+        preserveFallbackDescription &&
+        fallback.entries &&
+        fallback.entries[key] &&
+        fallback.entries[key].description
+      ) {
+        entry.description = fallback.entries[key].description;
       } else {
         delete entry.description;
       }
-      if (raw.motives) setHtmlField(entry, "motivesAndTactics", raw.motives);
-      if (raw.weapon_name) entry.attack = sanitizeName(raw.weapon_name);
-      const experiences = raw.experiences;
-      if (experiences && entry.experiences) {
-        const values = experiences.split(",").map((v) => v.trim()).filter(Boolean);
-        const keys = Object.keys(entry.experiences);
-        for (let i = 0; i < keys.length; i += 1) {
-          const value = values[i] || experiences;
-          if (value) {
-            entry.experiences[keys[i]].name = sanitizeName(stripExperienceBonus(value));
+      return true;
+    }, { stats });
+  }
+
+  function updateActionsFromFeatures(entry, features) {
+    if (!entry || !entry.actions) return;
+    const actionIds = Object.keys(entry.actions);
+    if (!actionIds.length) return;
+    for (let i = 0; i < actionIds.length; i += 1) {
+      const feature = features[i];
+      if (!feature) break;
+      if (ACTION_OVERRIDES[actionIds[i]]) continue;
+      const body = markdownToHtml(feature.main_body || "");
+      if (!body) continue;
+      setHtmlField(entry.actions, actionIds[i], body);
+    }
+  }
+
+  function applyActionOverrides(entry) {
+    if (!entry || !entry.actions) return;
+    for (const [actionId, html] of Object.entries(entry.actions)) {
+      if (!html) continue;
+      if (ACTION_OVERRIDES[actionId]) {
+        setHtmlField(entry.actions, actionId, ACTION_OVERRIDES[actionId]);
+      }
+    }
+  }
+
+  async function applyLabelOverride(filePath, newLabel) {
+    if (!newLabel) return;
+    const raw = JSON.parse(await fs.readFile(filePath, "utf-8"));
+    if (raw.label !== newLabel) {
+      raw.label = newLabel;
+      await fs.writeFile(filePath, `${JSON.stringify(raw, null, 2)}`, "utf-8");
+    }
+  }
+
+  async function updateClassesFile(path, { classTop, featureMap, classItemsMap, ruleTop }, stats) {
+    return updateEntries(path, (norm, entry, key) => {
+      if (!norm) return false;
+      let handled = false;
+      const classInfo = classTop[norm];
+      if (classInfo) {
+        entry.name = sanitizeName(classInfo.name);
+        if (classInfo.description !== null && classInfo.description !== undefined) {
+          if (classInfo.description) {
+            setHtmlField(entry, "description", classInfo.description);
+          } else {
+            delete entry.description;
           }
         }
+        if (entry.actions) delete entry.actions;
+        handled = true;
       }
-      const ruFeatures = raw.features || [];
-      const items = entry.items || {};
-      const featureList = ruFeatures.slice();
-      for (const itemEntry of Object.values(items)) {
-        const nextFeature = featureList.shift();
-        if (!nextFeature) break;
-        itemEntry.name = sanitizeName(cleanAdversaryItemName(nextFeature.name || ""));
-        const body = markdownToHtml(nextFeature.main_body || "");
-        if (body) {
-          setHtmlField(itemEntry, "description", body);
-          if (itemEntry.actions) {
-            for (const actionId of Object.keys(itemEntry.actions)) {
-              setHtmlField(itemEntry.actions, actionId, body);
+
+      const featureInfo = featureMap[norm];
+      if (featureInfo) {
+        if (featureInfo.name) entry.name = sanitizeName(featureInfo.name);
+        if (featureInfo.description !== null && featureInfo.description !== undefined) {
+          if (featureInfo.description) {
+            setHtmlField(entry, "description", featureInfo.description);
+            if (entry.actions) {
+              for (const actionId of Object.keys(entry.actions)) {
+                setHtmlField(entry.actions, actionId, featureInfo.description);
+              }
+            }
+          } else {
+            delete entry.description;
+          }
+        }
+        handled = true;
+      }
+
+      if (norm === normalize("Rally Level 5") && featureMap[normalize("Rally")]) {
+        const info = featureMap[normalize("Rally")];
+        entry.name = `${sanitizeName(info.name)} (уровень 5)`;
+        if (info.description) {
+          setHtmlField(entry, "description", info.description);
+          if (entry.actions) {
+            for (const actionId of Object.keys(entry.actions)) {
+              setHtmlField(entry.actions, actionId, info.description);
             }
           }
         } else {
-          delete itemEntry.description;
+          delete entry.description;
+        }
+        handled = true;
+        applyFeatureGeneratedActions(entry, info);
+      }
+
+      if (featureInfo) applyFeatureGeneratedActions(entry, featureInfo);
+
+      const itemOverride = classItemsMap[norm];
+      // if (key === "Whispering Orb") {
+      //   console.log("Whispering Orb debug:", norm, itemOverride);
+      // }
+      if (itemOverride) {
+        entry.name = itemOverride;
+        delete entry.description;
+        delete entry.actions;
+        handled = true;
+      }
+
+      if (CLASS_ITEM_OVERRIDES[key]) {
+        entry.name = CLASS_ITEM_OVERRIDES[key];
+        delete entry.description;
+        delete entry.actions;
+        handled = true;
+      }
+
+      const ruleInfo = ruleTop[norm];
+      if (ruleInfo && (!handled || !entry.description)) {
+        entry.name = sanitizeName(ruleInfo.name);
+        if (ruleInfo.description !== null && ruleInfo.description !== undefined) {
+          if (ruleInfo.description) {
+            setHtmlField(entry, "description", ruleInfo.description);
+          } else {
+            delete entry.description;
+          }
+        }
+        handled = true;
+      }
+
+      if (!handled) {
+        // no-op: keep entry for further manual review
+      }
+      applyActionOverrides(entry);
+
+      return handled;
+    }, { stats });
+  }
+
+  async function updateSubclassesFile(path, { subclassTop, featureMap }, stats) {
+    const result = await updateEntries(path, (norm, entry) => {
+      if (!norm) return false;
+      const lookup = resolveAlias(norm, SUBCLASS_NAME_ALIASES);
+      let handled = false;
+      const subclassInfo = subclassTop[lookup];
+      if (subclassInfo) {
+        entry.name = sanitizeName(subclassInfo.name);
+        if (subclassInfo.description !== null && subclassInfo.description !== undefined) {
+          if (subclassInfo.description) {
+            setHtmlField(entry, "description", subclassInfo.description);
+          } else {
+            delete entry.description;
+          }
+        }
+        if (entry.actions) delete entry.actions;
+        handled = true;
+      }
+      const featureInfo = featureMap[lookup] || featureMap[norm];
+      if (featureInfo) {
+        if (featureInfo.name) entry.name = sanitizeName(featureInfo.name);
+        if (featureInfo.description !== null && featureInfo.description !== undefined) {
+          if (featureInfo.description) {
+            setHtmlField(entry, "description", featureInfo.description);
+            if (entry.actions) {
+              for (const actionId of Object.keys(entry.actions)) {
+                setHtmlField(entry.actions, actionId, featureInfo.description);
+              }
+            }
+          } else {
+            delete entry.description;
+          }
+        }
+        handled = true;
+      }
+
+      if (featureInfo) applyFeatureGeneratedActions(entry, featureInfo);
+      applyActionOverrides(entry);
+      return handled;
+    }, { stats });
+    await applySubclassDuplicates(path);
+    return result;
+  }
+
+  async function updateAncestriesFile(path, { ancestryTop, featureMap }, stats) {
+    return updateEntries(path, updateTopWithFeatures(ancestryTop, featureMap, FEATURE_NAME_ALIASES), { stats });
+  }
+
+  async function updateCommunitiesFile(path, { communityTop, featureMap }, stats) {
+    return updateEntries(path, updateTopWithFeatures(communityTop, featureMap), { stats });
+  }
+
+  async function updateDomainsFile(path, { domainTop, featureMap, oldDomainActions }, stats) {
+    return updateEntries(path, (norm, entry, key) => {
+      if (!norm) return false;
+      let handled = false;
+      const domainInfo = domainTop[norm];
+      if (domainInfo) {
+        entry.name = sanitizeName(domainInfo.name);
+        const raw = domainInfo.raw;
+        let descSource = raw.main_body || "";
+        if (!descSource && raw.features && raw.features.length) {
+          descSource = raw.features[0].main_body || "";
+        }
+        const desc = descSource ? markdownToHtml(descSource) : null;
+        if (desc) {
+          setHtmlField(entry, "description", desc);
+        } else {
+          delete entry.description;
+        }
+        handled = true;
+      }
+      const featureInfo = featureMap[norm];
+      if (featureInfo) {
+        _updateFeature(entry, featureInfo);
+        handled = true;
+      }
+      if (handled && entry.actions && Object.keys(entry.actions).length === 0 && oldDomainActions[key]) {
+        entry.actions = oldDomainActions[key];
+      }
+      if (handled && entry.actions) {
+        const raw = domainInfo ? domainInfo.raw : null;
+        if (raw && raw.features && raw.features.length) {
+          updateActionsFromFeatures(entry, raw.features);
+        } else if (entry.description) {
+          for (const actionId of Object.keys(entry.actions)) {
+            setHtmlField(entry.actions, actionId, entry.description);
+          }
         }
       }
       applyActionOverrides(entry);
-      return true;
-    }
-    if (featureMap[norm]) {
-      _updateFeature(entry, featureMap[norm]);
-      applyActionOverrides(entry);
-      return true;
-    }
-    applyActionOverrides(entry);
-    return false;
-  }, { stats });
-}
+      return handled;
+    }, { stats });
+  }
 
-async function updateEnvironmentsFile(path, { environmentTop, featureMap }, stats) {
-  return updateEntries(path, (norm, entry) => {
-    if (!norm) return false;
-    const info = environmentTop[norm];
-    if (info) {
-      entry.name = sanitizeName(info.name);
-      const raw = info.raw;
-      const desc = markdownToHtml(raw.short_description || raw.main_body || "");
-      if (desc) {
-        setHtmlField(entry, "description", desc);
-      } else {
-        delete entry.description;
+  async function updateBeastformsFile(path, { beastTop, featureMap }, stats) {
+    return updateEntries(path, (norm, entry) => {
+      if (!norm) return false;
+      const info = beastTop[norm];
+      if (info) {
+        entry.name = sanitizeName(info.name);
+        if (info.description !== null && info.description !== undefined) {
+          if (info.description) {
+            setHtmlField(entry, "description", info.description);
+          } else {
+            delete entry.description;
+          }
+        }
+        const raw = info.raw;
+        if (raw && raw.examples) {
+          const examples = sanitizeHtml(stripLinks(raw.examples));
+          if (examples) {
+            const examplesHtml = `<p><strong>Примеры:</strong> ${examples}</p>`;
+            entry.description = entry.description
+              ? `${entry.description}${examplesHtml}`
+              : examplesHtml;
+          }
+        }
+        applyActionOverrides(entry);
+        return true;
       }
-      const ruFeatures = raw.features || [];
-      const items = entry.items || {};
-      if (ruFeatures.length && Object.keys(items).length) {
+      if (featureMap[norm]) {
+        _updateFeature(entry, featureMap[norm]);
+        applyActionOverrides(entry);
+        return true;
+      }
+      applyActionOverrides(entry);
+      return false;
+    }, { stats });
+  }
+
+  async function updateAdversariesFile(path, { adversaryTop, featureMap }, stats) {
+    return updateEntries(path, (norm, entry) => {
+      if (!norm) return false;
+      const info = adversaryTop[norm];
+      if (info) {
+        entry.name = sanitizeName(info.name);
+        const raw = info.raw;
+        const desc = markdownToHtml(raw.short_description || raw.main_body || "");
+        if (desc) {
+          setHtmlField(entry, "description", desc);
+        } else {
+          delete entry.description;
+        }
+        if (raw.motives) setHtmlField(entry, "motivesAndTactics", raw.motives);
+        if (raw.weapon_name) entry.attack = sanitizeName(raw.weapon_name);
+        const experiences = raw.experiences;
+        if (experiences && entry.experiences) {
+          const values = experiences.split(",").map((v) => v.trim()).filter(Boolean);
+          const keys = Object.keys(entry.experiences);
+          for (let i = 0; i < keys.length; i += 1) {
+            const value = values[i] || experiences;
+            if (value) {
+              entry.experiences[keys[i]].name = sanitizeName(stripExperienceBonus(value));
+            }
+          }
+        }
+        const ruFeatures = raw.features || [];
+        const items = entry.items || {};
         const featureList = ruFeatures.slice();
         for (const itemEntry of Object.values(items)) {
-          const feature = featureList.shift();
-          if (!feature) break;
-          itemEntry.name = sanitizeName(cleanAdversaryItemName(feature.name || ""));
-          const body = markdownToHtml(feature.main_body || "");
+          const nextFeature = featureList.shift();
+          if (!nextFeature) break;
+          itemEntry.name = sanitizeName(cleanAdversaryItemName(nextFeature.name || ""));
+          const body = markdownToHtml(nextFeature.main_body || "");
           if (body) {
             setHtmlField(itemEntry, "description", body);
             if (itemEntry.actions) {
@@ -1286,19 +1238,65 @@ async function updateEnvironmentsFile(path, { environmentTop, featureMap }, stat
             delete itemEntry.description;
           }
         }
+        applyActionOverrides(entry);
+        return true;
       }
-      if (raw.impulses) setHtmlField(entry, "impulses", raw.impulses);
-      return true;
-    }
-    if (featureMap[norm]) {
-      _updateFeature(entry, featureMap[norm]);
+      if (featureMap[norm]) {
+        _updateFeature(entry, featureMap[norm]);
+        applyActionOverrides(entry);
+        return true;
+      }
       applyActionOverrides(entry);
-      return true;
-    }
-    applyActionOverrides(entry);
-    return false;
-  }, { stats });
-}
+      return false;
+    }, { stats });
+  }
+
+  async function updateEnvironmentsFile(path, { environmentTop, featureMap }, stats) {
+    return updateEntries(path, (norm, entry) => {
+      if (!norm) return false;
+      const info = environmentTop[norm];
+      if (info) {
+        entry.name = sanitizeName(info.name);
+        const raw = info.raw;
+        const desc = markdownToHtml(raw.short_description || raw.main_body || "");
+        if (desc) {
+          setHtmlField(entry, "description", desc);
+        } else {
+          delete entry.description;
+        }
+        const ruFeatures = raw.features || [];
+        const items = entry.items || {};
+        if (ruFeatures.length && Object.keys(items).length) {
+          const featureList = ruFeatures.slice();
+          for (const itemEntry of Object.values(items)) {
+            const feature = featureList.shift();
+            if (!feature) break;
+            itemEntry.name = sanitizeName(cleanAdversaryItemName(feature.name || ""));
+            const body = markdownToHtml(feature.main_body || "");
+            if (body) {
+              setHtmlField(itemEntry, "description", body);
+              if (itemEntry.actions) {
+                for (const actionId of Object.keys(itemEntry.actions)) {
+                  setHtmlField(itemEntry.actions, actionId, body);
+                }
+              }
+            } else {
+              delete itemEntry.description;
+            }
+          }
+        }
+        if (raw.impulses) setHtmlField(entry, "impulses", raw.impulses);
+        return true;
+      }
+      if (featureMap[norm]) {
+        _updateFeature(entry, featureMap[norm]);
+        applyActionOverrides(entry);
+        return true;
+      }
+      applyActionOverrides(entry);
+      return false;
+    }, { stats });
+  }
 
   const armorMap = createEquipmentMap(equipmentData, new Set(["armor"]), {
     buildDescription: (ruEntry) => {
