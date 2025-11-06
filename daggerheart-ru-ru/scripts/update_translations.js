@@ -1248,6 +1248,8 @@ async function main() {
         const raw = info.raw;
         const ruFeatures = raw.features || [];
         const items = entry.items || {};
+        const hadDescription = !!entry.description;
+        const allowDescription = hadDescription && Object.keys(items).length > 0;
 
         // 2. Определяем, как генерировать описание
         if (ruFeatures.length > 0 && Object.keys(items).length === 0) {
@@ -1255,7 +1257,7 @@ async function main() {
           // Есть features в API, но нет вложенных items в JSON.
           // Значит, features - это и есть основное описание.
           const descriptionHtml = buildFeatureDescription(ruFeatures);
-          if (descriptionHtml) {
+          if (allowDescription && descriptionHtml) {
             setHtmlField(entry, "description", descriptionHtml);
           } else {
             delete entry.description;
@@ -1263,7 +1265,7 @@ async function main() {
         } else {
           // СЦЕНАРИЙ 2: "Стандартная" форма (составная или простая)
           // Обновляем основное описание из short_description, а потом (если нужно) вложенные items.
-          if (info.description) {
+          if (allowDescription && info.description) {
             setHtmlField(entry, "description", info.description);
           } else {
             delete entry.description;
@@ -1292,14 +1294,11 @@ async function main() {
           }
         }
 
-        // 3. Добавляем "Примеры" в конец любого сгенерированного описания
+        // 3. Добавляем "Примеры"
         if (raw && raw.examples) {
           const examples = sanitizeHtml(stripLinks(raw.examples));
           if (examples) {
-            const examplesHtml = `<p><strong>Примеры:</strong> ${examples}</p>`;
-            entry.description = entry.description
-              ? `${entry.description}${examplesHtml}`
-              : examplesHtml;
+            entry.examples = examples;
           }
         }
 
