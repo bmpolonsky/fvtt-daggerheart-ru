@@ -87,6 +87,10 @@ const FEATURE_ACTION_GENERATORS = {
   161: generateBulletActions
 };
 
+const ADVERSARY_FEATURE_RENDERERS = {
+  1599: renderBattleBoxRandomTactics
+};
+
 // Алиасы для нормализации названий подклассов (исправление опечаток в API или системе).
 const SUBCLASS_NAME_ALIASES = {
   comaraderie: "camaraderie",
@@ -219,6 +223,11 @@ function sanitizeHtml(text) {
 function sanitizeName(text) {
   if (text === null || text === undefined) return text;
   return stripLinks(text).trim();
+}
+
+function stripLeadingStrongLabel(html) {
+  if (!html) return html;
+  return html.replace(/^<p><strong>[^<]+?\.<\/strong>\s*/i, "<p>");
 }
 
 // Регулярные выражения для поиска специфичных для Foundry VTT тегов.
@@ -443,6 +452,103 @@ function generateBulletActions(rawFeature) {
     const cleaned = segment.replace(/^-\s*/, "").replace(/\*\*\*/g, "**").trim();
     return sanitizeHtml(markdownToHtml(cleaned));
   });
+}
+
+function renderBattleBoxRandomTactics(feature) {
+  if (!feature || !feature.main_body) return null;
+  const source = feature.main_body.replace(/\r\n/g, "\n").trim();
+  if (!source) return null;
+
+  const introText = source.split(/\n-\s/)[0]?.trim() || "";
+  const introHtml = introText ? markdownToHtml(introText) : "";
+
+  const items = Array.from(source.matchAll(/-\s+\*\*(.+?)\*\*/g))
+    .map((match) => {
+      const rawName = match[1] ? match[1].replace(/\.+$/, "").trim() : "";
+      const name = sanitizeName(rawName);
+      return name ? `<li><p><strong>${name}</strong></p></li>` : null;
+    })
+    .filter(Boolean);
+
+  const listHtml = items.length ? `<ol>${items.join("")}</ol>` : "";
+  const combined = `${introHtml || ""}${listHtml}`;
+  return combined || null;
+}
+
+function applyFeatureToItemEntry(itemEntry, feature) {
+  if (!itemEntry || !feature) return;
+  const cleanedName = sanitizeName(cleanAdversaryItemName(feature.name || ""));
+  if (cleanedName) {
+    itemEntry.name = cleanedName;
+  }
+  const customRenderer = ADVERSARY_FEATURE_RENDERERS[feature.id];
+  const body =
+    customRenderer !== null && customRenderer !== undefined
+      ? customRenderer(feature)
+      : markdownToHtml(feature.main_body || "");
+  if (body) {
+    setHtmlField(itemEntry, "description", body);
+    if (itemEntry.actions) {
+      for (const actionId of Object.keys(itemEntry.actions)) {
+        setHtmlField(itemEntry.actions, actionId, body);
+      }
+    }
+  } else {
+    delete itemEntry.description;
+  }
+}
+
+function applyBattleBoxOverrides(entry, raw) {
+  if (!entry || !raw) return;
+  const items = entry.items || {};
+  const itemKeys = Object.keys(items);
+  if (itemKeys.length < 2) return;
+  const features = raw.features || [];
+  if (features.length < 2) return;
+
+  const unstoppable = features[0];
+  const randomTactics = features[1];
+  const overload = features[2];
+  const deathQuake = features[3];
+
+  const unstoppableItem = items[itemKeys[0]];
+  if (unstoppableItem) {
+    applyFeatureToItemEntry(unstoppableItem, unstoppable);
+  }
+
+  const randomItem = items[itemKeys[1]];
+  if (randomItem) {
+    applyFeatureToItemEntry(randomItem, randomTactics);
+  }
+
+  const bulletHtml = generateBulletActions(randomTactics) || [];
+  const bulletTargets = itemKeys.slice(2, 2 + bulletHtml.length);
+  for (let i = 0; i < bulletTargets.length; i += 1) {
+    const html = stripLeadingStrongLabel(bulletHtml[i]);
+    if (!html) continue;
+    const target = items[bulletTargets[i]];
+    if (!target) continue;
+    setHtmlField(target, "description", html);
+    if (target.actions) {
+      for (const actionId of Object.keys(target.actions)) {
+        setHtmlField(target.actions, actionId, html);
+      }
+    }
+  }
+
+  if (overload) {
+    const overloadItem = items[itemKeys[itemKeys.length - 2]];
+    if (overloadItem) {
+      applyFeatureToItemEntry(overloadItem, overload);
+    }
+  }
+
+  if (deathQuake) {
+    const deathQuakeItem = items[itemKeys[itemKeys.length - 1]];
+    if (deathQuakeItem) {
+      applyFeatureToItemEntry(deathQuakeItem, deathQuake);
+    }
+  }
 }
 
 function applyFeatureGeneratedActions(entry, featureInfo) {
@@ -1472,7 +1578,7 @@ async function main() {
   }
 
   async function updateAdversariesFile(path, { adversaryTop, featureMap }, stats) {
-    return updateEntries(path, (norm, entry) => {
+    return updateEntries(path, (norm, entry, key) => {
       if (!norm) return false;
       const info = adversaryTop[norm];
       if (info) {
@@ -1499,29 +1605,22 @@ async function main() {
         }
         const ruFeatures = raw.features || [];
         const items = entry.items || {};
-        const featureList = ruFeatures.slice();
-        for (const itemEntry of Object.values(items)) {
-          const nextFeature = featureList.shift();
-          if (!nextFeature) break;
-          itemEntry.name = sanitizeName(cleanAdversaryItemName(nextFeature.name || ""));
-          const body = markdownToHtml(nextFeature.main_body || "");
-          if (body) {
-            setHtmlField(itemEntry, "description", body);
-            if (itemEntry.actions) {
-              for (const actionId of Object.keys(itemEntry.actions)) {
-                setHtmlField(itemEntry.actions, actionId, body);
-              }
-            }
-          } else {
-            delete itemEntry.description;
+        if (raw.slug === "battle-box") {
+          applyBattleBoxOverrides(entry, raw);
+        } else {
+          const featureList = ruFeatures.slice();
+          for (const itemEntry of Object.values(items)) {
+            const nextFeature = featureList.shift();
+            if (!nextFeature) break;
+            applyFeatureToItemEntry(itemEntry, nextFeature);
           }
         }
         applyActionOverrides(entry);
         return true;
       }
-    const featureInfo = featureMap[norm];
-    if (featureInfo) {
-      _updateFeature(entry, featureInfo);
+      const featureInfo = featureMap[norm];
+      if (featureInfo) {
+        _updateFeature(entry, featureInfo);
         applyActionOverrides(entry);
         return true;
       }
@@ -1567,9 +1666,9 @@ async function main() {
         if (raw.impulses) setHtmlField(entry, "impulses", raw.impulses);
         return true;
       }
-    const featureInfo = featureMap[norm];
-    if (featureInfo) {
-      _updateFeature(entry, featureInfo);
+      const featureInfo = featureMap[norm];
+      if (featureInfo) {
+        _updateFeature(entry, featureInfo);
         applyActionOverrides(entry);
         return true;
       }
@@ -1682,7 +1781,8 @@ async function main() {
       run: () =>
         updateAdversariesFile(filePaths.adversaries, {
           adversaryTop,
-          featureMap: scopedFeatureMaps.adversary
+          featureMap: scopedFeatureMaps.adversary,
+          oldEntries: oldTranslations[TRANSLATION_FILES.adversaries]
         }, statsByFile.adversaries)
     },
     {
