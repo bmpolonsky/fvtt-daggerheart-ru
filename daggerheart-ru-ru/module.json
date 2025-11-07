@@ -37,7 +37,7 @@
       "flags": {}
     }
   ],
-  "url": "https://github.com/LooseSlives/daggerheart-ru-ru",
-  "manifest": "https://raw.githubusercontent.com/bmpolonsky/daggerheart-ru-ru/refs/heads/main/daggerheart-ru-ru/module.json",
+  "url": "https://github.com/bmpolonsky/daggerheart-ru-ru",
+  "manifest": "https://raw.githubusercontent.com/bmpolonsky/daggerheart-ru-ru/main/daggerheart-ru-ru/module.json",
   "download": "https://github.com/bmpolonsky/daggerheart-ru-ru/releases/download/latest/daggerheart-ru-ru.zip"
 }

@@ -6,7 +6,7 @@ import { execSync } from "child_process";
 
 // === Настройки ===
 const MODULE_FOLDER = "daggerheart-ru-ru";        // имя папки модуля
-const VERSION = process.argv[2] || "0.0.1";       // версия передается аргументом
+const VERSION = process.argv[2] || new Date().toISOString().slice(0, 10);       // версия передается аргументом
 
 // === Пути ===
 const ZIP_NAME = `${MODULE_FOLDER}.zip`;

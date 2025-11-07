@@ -1,6 +1,10 @@
 # daggerheart-ru-ru
 Russian translation of Daggerheart SRD compendium and Charactersheets on FoundryVTT 
 
+Link to install: https://raw.githubusercontent.com/bmpolonsky/daggerheart-ru-ru/main/daggerheart-ru-ru/module.json
+
+
+
 ## Disclaimer:
 
 **Daggerheart System**
