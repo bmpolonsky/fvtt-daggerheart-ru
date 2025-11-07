@@ -838,25 +838,56 @@ async function fetchEndpoint(endpoint, lang) {
   return response.arrayBuffer();
 }
 
-async function downloadEndpoint(endpoint) {
-  return fetchEndpoint(endpoint, "ru");
+async function downloadEndpoint(endpoint, lang = "ru") {
+  return fetchEndpoint(endpoint, lang);
+}
+
+function getCachePath(endpoint, lang = "ru") {
+  const suffix = lang === "ru" ? "" : `.${lang}`;
+  return path.join(DATA_DIR, `${endpoint}${suffix}.json`);
+}
+
+async function writeCacheFile(endpoint, lang, buffer) {
+  const target = getCachePath(endpoint, lang);
+  await fs.writeFile(target, Buffer.from(buffer));
 }
 
 async function refreshApiCache() {
   await fs.rm(DATA_DIR, { recursive: true, force: true });
   await fs.mkdir(DATA_DIR, { recursive: true });
   for (const endpoint of ENDPOINTS) {
-    const data = await downloadEndpoint(endpoint);
-    const target = path.join(DATA_DIR, `${endpoint}.json`);
-    await fs.writeFile(target, Buffer.from(data));
+    const [ruData, enData] = await Promise.all([
+      downloadEndpoint(endpoint, "ru"),
+      downloadEndpoint(endpoint, "en")
+    ]);
+    await Promise.all([
+      writeCacheFile(endpoint, "ru", ruData),
+      writeCacheFile(endpoint, "en", enData)
+    ]);
   }
 }
 
+async function loadLanguageDataset(endpoint, lang) {
+  const cachePath = getCachePath(endpoint, lang);
+  try {
+    return JSON.parse(await fs.readFile(cachePath, "utf-8")).data;
+  } catch (err) {
+    if (err.code !== "ENOENT") {
+      throw err;
+    }
+  }
+
+  const buffer = await downloadEndpoint(endpoint, lang);
+  await fs.mkdir(DATA_DIR, { recursive: true });
+  await writeCacheFile(endpoint, lang, buffer);
+  return JSON.parse(Buffer.from(buffer).toString("utf-8")).data;
+}
+
 async function loadApi(endpoint) {
-  const ruPath = path.join(DATA_DIR, `${endpoint}.json`);
-  const ru = JSON.parse(await fs.readFile(ruPath, "utf-8")).data;
-  const enBuffer = await fetchEndpoint(endpoint, "en");
-  const en = JSON.parse(Buffer.from(enBuffer).toString("utf-8")).data;
+  const [ru, en] = await Promise.all([
+    loadLanguageDataset(endpoint, "ru"),
+    loadLanguageDataset(endpoint, "en")
+  ]);
   return { ru, en };
 }
 
