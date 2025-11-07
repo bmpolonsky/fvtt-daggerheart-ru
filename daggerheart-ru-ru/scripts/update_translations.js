@@ -189,6 +189,29 @@ const DOMAIN_ACTION_SPLITTERS = (() => {
     map[norm] = config;
   };
 
+  add("Book of Exota", {
+    forceUnique: true,
+    split: ({ features }) => {
+      const segments = [];
+      if (features && features[0] && features[0].main_body) {
+        segments.push(features[0].main_body);
+      }
+      if (features && features[1] && features[1].main_body) {
+        const second = normalizeMarkdownSource(features[1].main_body);
+        if (second) {
+          const parts = second.split(/(?=Совершите)/i).map((part) => part.trim()).filter(Boolean);
+          if (parts.length > 1) {
+            segments.push(parts[0]);
+            segments.push(parts.slice(1).join(" ").trim());
+          } else {
+            segments.push(second);
+          }
+        }
+      }
+      return segments;
+    }
+  });
+
   add("Chain Lightning", {
     forceUnique: true,
     split: ({ markdown }) => splitMarkdownWithRegex(markdown, /(?=Дополнительные|Additional\s+targets?)/i)
@@ -206,7 +229,53 @@ const DOMAIN_ACTION_SPLITTERS = (() => {
 
   add("Codex-Touched", {
     forceUnique: true,
-    split: ({ markdown }) => splitIntroWithBullets(markdown)
+    split: ({ markdown }) => {
+      const lines = normalizeMarkdownSource(markdown)
+        .split(/\n/)
+        .map((line) => line.trim())
+        .filter((line) => line.startsWith("- "));
+      if (!lines.length) return [];
+      return lines.map((line) => line.replace(/^-+\s*/, "").trim());
+    }
+  });
+
+  add("Enrapture", {
+    forceUnique: true,
+    split: ({ markdown }) => splitMarkdownWithRegex(markdown, /(?=Один раз)/i)
+  });
+
+  add("Rain of Blades", {
+    forceUnique: true,
+    split: ({ markdown }) => splitMarkdownWithRegex(markdown, /(?=Если)/i)
+  });
+
+  add("Restoration", {
+    forceUnique: true,
+    split: ({ markdown }) => splitRestorationSegments(markdown)
+  });
+
+  add("Unleash Chaos", {
+    forceUnique: true,
+    split: ({ markdown }) => {
+      const paragraphs = splitMarkdownParagraphs(markdown);
+      if (!paragraphs.length) return [];
+      if (paragraphs.length === 1) return [paragraphs[0]];
+      const first = paragraphs[0];
+      const second = paragraphs[1] || "";
+      const stressMatch = second.match(/(\*\*\s*(?:Отметьте|Mark\s+Stress)[\s\S]*)/i);
+      let mainSecond = second;
+      let stressPart = "";
+      if (stressMatch) {
+        mainSecond = second.slice(0, stressMatch.index).trim();
+        stressPart = stressMatch[0].trim();
+      }
+      const combined = mainSecond ? `${first}\n\n${mainSecond}` : first;
+      const segments = [combined];
+      if (stressPart) {
+        segments.push(stressPart);
+      }
+      return segments;
+    }
   });
 
   return map;
@@ -314,6 +383,44 @@ function splitIntroWithBullets(markdown) {
     const prefix = intro ? `${intro}\n\n${cleaned}` : cleaned;
     return prefix;
   });
+}
+
+function splitRestorationSegments(markdown) {
+  const source = normalizeMarkdownSource(markdown);
+  if (!source) return [];
+  const paragraphs = source.split(/\n\s*\n+/).map((chunk) => chunk.trim()).filter(Boolean);
+  if (!paragraphs.length) return [];
+  const segments = [];
+  const healingParagraph =
+    paragraphs.find((p) => /2\s*[Рр]ан/i.test(p) && /Стресс/i.test(p)) || paragraphs[0];
+  const stripIntro = (text) => {
+    if (!text) return text;
+    const lower = text.toLowerCase();
+    const marker = "прикоснитесь";
+    const idx = lower.indexOf(marker);
+    if (idx > -1) {
+      return text.slice(idx).trim();
+    }
+    return text.trim();
+  };
+
+  if (healingParagraph) {
+    const healingPlain = stripLinks(healingParagraph);
+    const choiceRegex = /2\s*[Рр]ан[аыё]\s+или\s+2\s*[Сс]тресс[аыё]/i;
+    if (choiceRegex.test(healingPlain)) {
+      const woundsVariant = healingPlain.replace(choiceRegex, "2 Раны");
+      const stressVariant = healingPlain.replace(choiceRegex, "2 Стресса");
+      segments.push(stripIntro(woundsVariant));
+      segments.push(stripIntro(stressVariant));
+    } else {
+      segments.push(stripIntro(healingPlain));
+    }
+  }
+  const conditionParagraph = paragraphs.find((p) => /состояни/i.test(p) || /заболеван/i.test(p));
+  if (conditionParagraph) {
+    segments.push(stripLinks(conditionParagraph).trim());
+  }
+  return segments;
 }
 
 // Регулярные выражения для поиска специфичных для Foundry VTT тегов.
