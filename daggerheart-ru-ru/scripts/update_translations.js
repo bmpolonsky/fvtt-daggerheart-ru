@@ -181,6 +181,37 @@ function normalize(text) {
   return key || null;
 }
 
+const DOMAIN_ACTION_SPLITTERS = (() => {
+  const map = {};
+  const add = (name, config) => {
+    const norm = normalize(name);
+    if (!norm) return;
+    map[norm] = config;
+  };
+
+  add("Chain Lightning", {
+    forceUnique: true,
+    split: ({ markdown }) => splitMarkdownWithRegex(markdown, /(?=Дополнительные|Additional\s+targets?)/i)
+  });
+
+  add("Chokehold", {
+    forceUnique: true,
+    split: ({ markdown }) => splitMarkdownParagraphs(markdown)
+  });
+
+  add("Cinder Grasp", {
+    forceUnique: true,
+    split: ({ markdown }) => splitMarkdownParagraphs(markdown)
+  });
+
+  add("Codex-Touched", {
+    forceUnique: true,
+    split: ({ markdown }) => splitIntroWithBullets(markdown)
+  });
+
+  return map;
+})();
+
 // Вспомогательная функция для разрешения алиасов.
 function resolveAlias(norm, aliases) {
   if (!norm) return norm;
@@ -228,6 +259,61 @@ function sanitizeName(text) {
 function stripLeadingStrongLabel(html) {
   if (!html) return html;
   return html.replace(/^<p><strong>[^<]+?\.<\/strong>\s*/i, "<p>");
+}
+
+function normalizeMarkdownSource(markdown) {
+  if (!markdown) return "";
+  return markdown.replace(/\r\n/g, "\n").trim();
+}
+
+function renderMarkdownSegments(segments, desiredCount) {
+  if (!segments || !segments.length) return [];
+  let chunks = segments
+    .map((segment) => (segment || "").trim())
+    .filter(Boolean)
+    .map((segment) => markdownToHtml(segment));
+  if (!chunks.length) return [];
+  if (desiredCount && desiredCount > 0) {
+    if (chunks.length > desiredCount) {
+      chunks = chunks.slice(0, desiredCount);
+    } else if (chunks.length < desiredCount) {
+      const filler = chunks[chunks.length - 1];
+      while (chunks.length < desiredCount) {
+        chunks.push(filler);
+      }
+    }
+  }
+  return chunks;
+}
+
+function splitMarkdownWithRegex(markdown, regex) {
+  const source = normalizeMarkdownSource(markdown);
+  if (!source) return [];
+  const parts = source.split(regex).map((part) => part.trim()).filter(Boolean);
+  return parts;
+}
+
+function splitMarkdownParagraphs(markdown) {
+  const source = normalizeMarkdownSource(markdown);
+  if (!source) return [];
+  return source.split(/\n\s*\n+/).map((chunk) => chunk.trim()).filter(Boolean);
+}
+
+function splitIntroWithBullets(markdown) {
+  const source = normalizeMarkdownSource(markdown);
+  if (!source) return [];
+  const firstBulletIndex = source.search(/-\s+/);
+  if (firstBulletIndex === -1) return [];
+  const intro = source.slice(0, firstBulletIndex).trim();
+  const bulletsBlock = source.slice(firstBulletIndex);
+  const bulletRegex = /-\s+[\s\S]*?(?=\n-\s+|\n*$)/g;
+  const matches = bulletsBlock.match(bulletRegex);
+  if (!matches || !matches.length) return [];
+  return matches.map((bullet) => {
+    const cleaned = bullet.trim();
+    const prefix = intro ? `${intro}\n\n${cleaned}` : cleaned;
+    return prefix;
+  });
 }
 
 // Регулярные выражения для поиска специфичных для Foundry VTT тегов.
@@ -1444,8 +1530,39 @@ async function main() {
           const numActions = oldActionIds.length;
           if (numActions) {
             const previous = oldDomainActions[key] || {};
-            const { uniqueIds, duplicateMap } = deriveActionOrder(entry.actions, previous);
-            const segments = buildSegmentsForActions(features, fullDescSource, uniqueIds.length);
+            const splitterConfig = DOMAIN_ACTION_SPLITTERS[norm];
+            const forceUnique = splitterConfig?.forceUnique;
+            const orderInfo = forceUnique
+              ? { uniqueIds: oldActionIds.slice(), duplicateMap: {} }
+              : deriveActionOrder(entry.actions, previous);
+            const { uniqueIds, duplicateMap } = orderInfo;
+            const desiredUniqueCount = uniqueIds.length;
+            let segments = [];
+
+            if (splitterConfig?.split) {
+              const customSegments = splitterConfig.split({
+                markdown: fullDescSource,
+                html: fullDescHtml,
+                desiredCount: desiredUniqueCount,
+                features,
+                raw
+              });
+              segments = renderMarkdownSegments(customSegments, desiredUniqueCount);
+            }
+
+            if (!segments.length) {
+              if (desiredUniqueCount <= 1) {
+                if (fullDescHtml && desiredUniqueCount === 1) {
+                  segments = [fullDescHtml];
+                }
+              } else {
+                segments = buildSegmentsForActions(features, fullDescSource, desiredUniqueCount);
+              }
+            }
+
+            if (!segments.length && fullDescHtml && desiredUniqueCount) {
+              segments = Array(desiredUniqueCount).fill(fullDescHtml);
+            }
 
             if (segments.length) {
               for (let i = 0; i < uniqueIds.length; i += 1) {
