@@ -8,6 +8,12 @@
       "converter": "toAdversariesItems"
     }
   },
+  "folders": {
+    "Tier 1": "Ранг 1",
+    "Tier 2": "Ранг 2",
+    "Tier 3": "Ранг 3",
+    "Tier 4": "Ранг 4"
+  },
   "entries": {
     "Abandoned Grove": {
       "name": "Заброшенная роща",

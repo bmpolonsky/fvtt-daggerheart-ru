@@ -7,6 +7,21 @@
       "converter": "toActions"
     }
   },
+  "folders": {
+    "Bard": "Бард",
+    "Druid": "Друид",
+    "Guardian": "Страж",
+    "Ranger": "Следопыт",
+    "Rogue": "Плут",
+    "Seraph": "Серафим",
+    "Sorcerer": "Чародей",
+    "Warrior": "Воин",
+    "Wizard": "Волшебник",
+    "Subclass Features": "Свойства подкласса",
+    "Foundation Features": "Свойства основы",
+    "Specialization Features": "Свойства специализации",
+    "Mastery Features": "Свойства мастерства"
+  },
   "entries": {
     "Accomplished": {
       "name": "Опытный",

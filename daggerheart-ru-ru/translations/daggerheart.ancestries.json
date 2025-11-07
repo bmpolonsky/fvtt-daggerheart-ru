@@ -1,5 +1,8 @@
 {
   "label": "Родословные",
+  "folders": {
+    "Ancestry Features": "Свойства"
+  },
   "mapping": {
     "description": "system.description",
     "actions": "system.actions"

@@ -1,5 +1,8 @@
 {
   "label": "Сообщества",
+  "folders": {
+    "Community Features": "Свойства"
+  },
   "mapping": {
     "description": "system.description"
   },

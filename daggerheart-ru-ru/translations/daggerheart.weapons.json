@@ -1,5 +1,16 @@
 {
   "label": "Оружие",
+  "folders": {
+    "Tier 1": "Ранг 1",
+    "Tier 2": "Ранг 2",
+    "Tier 3": "Ранг 3",
+    "Tier 4": "Ранг 4",
+    "Combat Wheelchairs": "Боевые коляски",
+    "Magical Weapons": "Магическое оружие",
+    "Physical Weapons": "Физическое оружие",
+    "Primary Weapons": "Основное оружие",
+    "Secondary Weapons": "Вторичное оружие"
+  },
   "mapping": {
     "description": "system.description"
   },

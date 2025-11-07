@@ -1,5 +1,26 @@
 {
   "label": "Домены",
+  "folders": {
+    "Arcana": "Аркана",
+    "Blade": "Клинок",
+    "Bone": "Кость",
+    "Codex": "Кодекс",
+    "Grace": "Грация",
+    "Midnight": "Полночь",
+    "Sage": "Мудрость",
+    "Splendor": "Величие",
+    "Valor": "Доблесть",
+    "Level 1": "Уровень 1",
+    "Level 2": "Уровень 2",
+    "Level 3": "Уровень 3",
+    "Level 4": "Уровень 4",
+    "Level 5": "Уровень 5",
+    "Level 6": "Уровень 6",
+    "Level 7": "Уровень 7",
+    "Level 8": "Уровень 8",
+    "Level 9": "Уровень 9",
+    "Level 10": "Уровень 10"
+  },
   "mapping": {
     "description": "system.description",
     "actions": {
