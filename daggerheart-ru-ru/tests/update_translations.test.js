@@ -48,6 +48,10 @@ function getActionDescription(value) {
   return "";
 }
 
+function tmpDataPath(moduleDir, file) {
+  return path.join(moduleDir, "tmp_data", "api", file);
+}
+
 function withWorkspace(testFn) {
   const { tempRoot, moduleDir } = createWorkspace();
   return async (t) => {
@@ -59,7 +63,7 @@ function withWorkspace(testFn) {
 test(
   "domain actions reflect modified API text",
   withWorkspace(async ({ moduleDir }) => {
-    const ruDomainPath = path.join(moduleDir, "tmp_data", "domain-card.json");
+    const ruDomainPath = tmpDataPath(moduleDir, "domain-card.json");
     const ruDomainData = readJson(ruDomainPath);
     const domainEntry = ruDomainData.data.find((item) => item.slug === "adjust-reality");
     assert.ok(domainEntry, "Adjust Reality domain is present in cache");
@@ -80,7 +84,7 @@ test(
 test(
   "domain multi-action splitting keeps per-feature text",
   withWorkspace(async ({ moduleDir }) => {
-    const ruDomainPath = path.join(moduleDir, "tmp_data", "domain-card.json");
+    const ruDomainPath = tmpDataPath(moduleDir, "domain-card.json");
     const ruDomainData = readJson(ruDomainPath);
     const book = ruDomainData.data.find((item) => item.slug === "book-of-ava");
     assert.ok(book, "Book of Ava domain exists");
@@ -104,7 +108,7 @@ test(
 test(
   "environment item descriptions update while manual actions remain untouched",
   withWorkspace(async ({ moduleDir }) => {
-    const envPath = path.join(moduleDir, "tmp_data", "environment.json");
+    const envPath = tmpDataPath(moduleDir, "environment.json");
     const envData = readJson(envPath);
     const envEntry = envData.data.find((item) => item.slug === "abandoned-grove");
     assert.ok(envEntry, "Abandoned Grove environment is present in cache");
@@ -163,7 +167,7 @@ test(
     const baselineDesc =
       beforeTranslations.entries["Raging River"].items["4ILX7BCinmsGqrJM"].description;
 
-    const envPath = path.join(moduleDir, "tmp_data", "environment.json");
+    const envPath = tmpDataPath(moduleDir, "environment.json");
   const envData = readJson(envPath);
   const ragingRiver = envData.data.find((item) => item.slug === "raging-river");
   assert.ok(ragingRiver, "Raging River environment exists in cache");
@@ -191,7 +195,7 @@ test(
 test(
   "adversary feature changes propagate into translated items",
   withWorkspace(async ({ moduleDir }) => {
-    const adversaryPath = path.join(moduleDir, "tmp_data", "adversary.json");
+    const adversaryPath = tmpDataPath(moduleDir, "adversary.json");
     const adversaryData = readJson(adversaryPath);
     const ooze = adversaryData.data.find((item) => item.slug === "red-ooze");
     assert.ok(ooze, "Red Ooze entry exists");
@@ -211,7 +215,7 @@ test(
 test(
   "beastform advantage list is regenerated from ru API values",
   withWorkspace(async ({ moduleDir }) => {
-    const beastPath = path.join(moduleDir, "tmp_data", "beastform.json");
+    const beastPath = tmpDataPath(moduleDir, "beastform.json");
     const beastData = readJson(beastPath);
     const beastEntry = beastData.data.find((item) => item.slug === "agile-scout");
     assert.ok(beastEntry, "Agile Scout beastform must exist in cache");
@@ -228,7 +232,7 @@ test(
 test(
   "class descriptions update from API text",
   withWorkspace(async ({ moduleDir }) => {
-    const classPath = path.join(moduleDir, "tmp_data", "class.json");
+    const classPath = tmpDataPath(moduleDir, "class.json");
     const classData = readJson(classPath);
     const bard = classData.data.find((item) => item.slug === "bard");
     assert.ok(bard, "Bard class entry exists");
@@ -246,7 +250,7 @@ test(
 test(
   "equipment alias mapping (Elundrian Chain Mail) refreshes description",
   withWorkspace(async ({ moduleDir }) => {
-    const equipmentPath = path.join(moduleDir, "tmp_data", "equipment.json");
+    const equipmentPath = tmpDataPath(moduleDir, "equipment.json");
     const equipmentData = readJson(equipmentPath);
     const elundrian = equipmentData.data.find((item) => item.slug === "elundrian-chain-armor");
     assert.ok(elundrian, "Elundrian Chain Armor exists");
@@ -273,7 +277,7 @@ test(
 test(
   "Bare Bones domain always appends manual snippet",
   withWorkspace(async ({ moduleDir }) => {
-    const domainPath = path.join(moduleDir, "tmp_data", "domain-card.json");
+    const domainPath = tmpDataPath(moduleDir, "domain-card.json");
     const domainData = readJson(domainPath);
     const bareBones = domainData.data.find((item) => item.slug === "bare-bones");
     assert.ok(bareBones, "Bare Bones entry exists");
@@ -309,7 +313,7 @@ test(
 test(
   "action overrides take precedence over API text",
   withWorkspace(async ({ moduleDir }) => {
-    const subclassPath = path.join(moduleDir, "tmp_data", "subclass.json");
+    const subclassPath = tmpDataPath(moduleDir, "subclass.json");
     const subclassData = readJson(subclassPath);
     const elementalist = subclassData.data.find((item) => item.slug === "warden-of-the-elements");
     assert.ok(elementalist, "Elementalist subclass entry exists");

@@ -211,6 +211,7 @@ function capitalizeFirstLetter(text) {
 // Определение базовых директорий проекта.
 const BASE_DIR = path.resolve(__dirname, "..");
 const DATA_DIR = path.join(BASE_DIR, "tmp_data"); // Временная папка для скачанных данных
+const API_CACHE_DIR = path.join(DATA_DIR, "api"); // Отдельная папка для API-данных
 const TRANSLATIONS_DIR = path.join(BASE_DIR, "translations"); // Папка с файлами переводов
 
 /**
@@ -1295,7 +1296,7 @@ async function downloadEndpoint(endpoint, lang = "ru") {
 
 function getCachePath(endpoint, lang = "ru") {
   const suffix = lang === "ru" ? "" : `.${lang}`;
-  return path.join(DATA_DIR, `${endpoint}${suffix}.json`);
+  return path.join(API_CACHE_DIR, `${endpoint}${suffix}.json`);
 }
 
 async function writeCacheFile(endpoint, lang, buffer) {
@@ -1304,8 +1305,8 @@ async function writeCacheFile(endpoint, lang, buffer) {
 }
 
 async function refreshApiCache() {
-  await fs.rm(DATA_DIR, { recursive: true, force: true });
-  await fs.mkdir(DATA_DIR, { recursive: true });
+  await fs.rm(API_CACHE_DIR, { recursive: true, force: true });
+  await fs.mkdir(API_CACHE_DIR, { recursive: true });
   for (const endpoint of ENDPOINTS) {
     const [ruData, enData] = await Promise.all([
       downloadEndpoint(endpoint, "ru"),
@@ -1329,7 +1330,7 @@ async function loadLanguageDataset(endpoint, lang) {
   }
 
   const buffer = await downloadEndpoint(endpoint, lang);
-  await fs.mkdir(DATA_DIR, { recursive: true });
+  await fs.mkdir(API_CACHE_DIR, { recursive: true });
   await writeCacheFile(endpoint, lang, buffer);
   return JSON.parse(Buffer.from(buffer).toString("utf-8")).data;
 }
