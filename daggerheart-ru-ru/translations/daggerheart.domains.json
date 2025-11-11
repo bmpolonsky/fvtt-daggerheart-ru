@@ -25,7 +25,7 @@
     "description": "system.description",
     "actions": {
       "path": "system.actions",
-      "converter": "toActionsObj"
+      "converter": "toActions"
     }
   },
   "entries": {

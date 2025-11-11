@@ -79,7 +79,7 @@ Hooks.once('babele.init', (babele) => {
       return origItems;
     },
 
-    // Подменяет описания action-узлов переводами из JSON (строковый формат).
+    // Подменяет описания action-узлов переводами из JSON (объектная структура name/description).
     "toActions": (origActions, transActions) => {
       if (!origActions || !transActions) {
         return origActions;
@@ -89,34 +89,10 @@ Hooks.once('babele.init', (babele) => {
         if (!translated) continue;
         const action = origActions[actionId];
         if (!action) continue;
-        if (typeof translated === "string") {
-          action.description = translated;
-        } else if (typeof translated === "object") {
-          const { name, description } = translated;
-          if (name) action.name = name;
-          if (description) action.description = description;
-        }
-      }
-      return origActions;
-    },
-
-    // Поддерживает объектную структуру action-переводов с полями name/description.
-    "toActionsObj": (origActions, transActions) => {
-      if (!origActions || !transActions) {
-        return origActions;
-      }
-      for (const actionId of Object.keys(origActions)) {
-        const translated = transActions[actionId];
-        if (!translated) continue;
-        const action = origActions[actionId];
-        if (!action) continue;
-        if (typeof translated === "string") {
-          action.description = translated;
-        } else if (typeof translated === "object") {
-          const { name, description } = translated;
-          if (name) action.name = name;
-          if (description) action.description = description;
-        }
+        if (typeof translated !== "object") continue;
+        const { name, description } = translated;
+        if (name) action.name = name;
+        if (description) action.description = description;
       }
       return origActions;
     },
