@@ -1,0 +1,459 @@
+{
+  "label": "Beastforms",
+  "folders": {
+    "Beastform Features": "Beastform Features",
+    "Tier 1": "Tier 1",
+    "Tier 2": "Tier 2",
+    "Tier 3": "Tier 3",
+    "Tier 4": "Tier 4"
+  },
+  "mapping": {
+    "description": "system.description",
+    "examples": "system.examples",
+    "advantageOn": {
+      "path": "system.advantageOn",
+      "converter": "toAdvantageList"
+    }
+  },
+  "entries": {
+    "Agile Scout": {
+      "name": "Agile Scout",
+      "examples": "Fox, Mouse, Weasel, etc.",
+      "advantageOn": [
+        "Deceive",
+        "Locate",
+        "Sneak"
+      ]
+    },
+    "Aquatic Predator": {
+      "name": "Aquatic Predator",
+      "examples": "Dolphin, Orca, Shark, etc.",
+      "advantageOn": [
+        "Attack",
+        "Swim",
+        "Track"
+      ]
+    },
+    "Aquatic Scout": {
+      "name": "Aquatic Scout",
+      "examples": "Eel, Fish, Octopus, etc.",
+      "advantageOn": [
+        "Navigate",
+        "Sneak",
+        "Swim"
+      ]
+    },
+    "Armored Sentry": {
+      "name": "Armored Sentry",
+      "examples": "Armadillo, Pangolin, Turtle, etc.",
+      "advantageOn": [
+        "Dig",
+        "Locate",
+        "Protect"
+      ]
+    },
+    "Epic Aquatic Beast": {
+      "name": "Epic Aquatic Beast",
+      "examples": "Giant Squid, Whale, etc.",
+      "advantageOn": [
+        "Locate",
+        "Protect",
+        "Scare",
+        "Track"
+      ]
+    },
+    "Great Predator": {
+      "name": "Great Predator",
+      "examples": "Dire Wolf, Velociraptor, Sabertooth Tiger, etc.",
+      "advantageOn": [
+        "Attack",
+        "Sneak",
+        "Sprint"
+      ]
+    },
+    "Great Winged Beast": {
+      "name": "Great Winged Beast",
+      "examples": "Giant Eagle, Falcon, etc.",
+      "advantageOn": [
+        "Deceive",
+        "Distract",
+        "Locate"
+      ]
+    },
+    "Household Friend": {
+      "name": "Household Friend",
+      "examples": "Cat, Dog, Rabbit, etc.",
+      "advantageOn": [
+        "Climb",
+        "Locate",
+        "Protect"
+      ]
+    },
+    "Legendary Beast": {
+      "name": "Legendary Beast"
+    },
+    "Legendary Hybrid": {
+      "name": "Legendary Hybrid"
+    },
+    "Massive Behemoth": {
+      "name": "Massive Behemoth",
+      "examples": "Elephant, Mammoth, Rhinoceros, etc.",
+      "advantageOn": [
+        "Locate",
+        "Protect",
+        "Scare",
+        "Sprint"
+      ]
+    },
+    "Mighty Lizard": {
+      "name": "Mighty Lizard",
+      "examples": "Alligator, Crocodile, Gila Monster, etc.",
+      "advantageOn": [
+        "Attack",
+        "Sneak",
+        "Track"
+      ]
+    },
+    "Mighty Strider": {
+      "name": "Mighty Strider",
+      "examples": "Camel, Horse, Zebra, etc.",
+      "advantageOn": [
+        "Leap",
+        "Navigate",
+        "Sprint"
+      ]
+    },
+    "Mythic Aerial Hunter": {
+      "name": "Mythic Aerial Hunter",
+      "examples": "Dragon, Pterodactyl, Roc, Wyvern, etc.",
+      "advantageOn": [
+        "Attack",
+        "Deceive",
+        "Locate",
+        "Navigate"
+      ]
+    },
+    "Mythic Beast": {
+      "name": "Mythic Beast"
+    },
+    "Mythic Hybrid": {
+      "name": "Mythic Hybrid"
+    },
+    "Nimble Grazer": {
+      "name": "Nimble Grazer",
+      "examples": "Deer, Gazelle, Goat, etc.",
+      "advantageOn": [
+        "Leap",
+        "Sneak",
+        "Sprint"
+      ]
+    },
+    "Pack Predator": {
+      "name": "Pack Predator",
+      "examples": "Coyote, Hyena, Wolf, etc.",
+      "advantageOn": [
+        "Attack",
+        "Sprint",
+        "Track"
+      ]
+    },
+    "Pouncing Predator": {
+      "name": "Pouncing Predator",
+      "examples": "Cheetah, Lion, Panther, etc.",
+      "advantageOn": [
+        "Attack",
+        "Climb",
+        "Sneak"
+      ]
+    },
+    "Powerful Beast": {
+      "name": "Powerful Beast",
+      "examples": "Bear, Bull, Moose, etc.",
+      "advantageOn": [
+        "Navigate",
+        "Protect",
+        "Scare"
+      ]
+    },
+    "Stalking Arachnid": {
+      "name": "Stalking Arachnid",
+      "examples": "Tarantula, Wolf Spider, etc.",
+      "advantageOn": [
+        "Attack",
+        "Climb",
+        "Sneak"
+      ]
+    },
+    "Striking Serpent": {
+      "name": "Striking Serpent",
+      "examples": "Cobra, Rattlesnake, Viper, etc.",
+      "advantageOn": [
+        "Climb",
+        "Deceive",
+        "Sprint"
+      ]
+    },
+    "Terrible Lizard": {
+      "name": "Terrible Lizard",
+      "examples": "Brachiosaurus, Tyrannosaurus, etc.",
+      "advantageOn": [
+        "Attack",
+        "Deceive",
+        "Scare",
+        "Track"
+      ]
+    },
+    "Winged Beast": {
+      "name": "Winged Beast",
+      "examples": "Hawk, Owl, Raven, etc.",
+      "advantageOn": [
+        "Deceive",
+        "Locate",
+        "Scare"
+      ]
+    },
+    "Agile": {
+      "name": "Agile",
+      "description": "<p>Your movement is silent, and you can <strong>spend a Hope</strong> to move up to Far range without rolling.</p>",
+      "actions": {
+        "4yQ56hSL5LBkzrV6": {
+          "name": "Spend Hope"
+        }
+      }
+    },
+    "Aquatic": {
+      "name": "Aquatic",
+      "description": "<p>You can breathe and move naturally underwater.</p>"
+    },
+    "Armored Shell": {
+      "name": "Armored Shell",
+      "description": "<p>Your hardened exterior gives you resistance to physical damage. Additionally, <strong>mark an Armor Slot</strong> to retract into your shell. While in your shell, physical damage is reduced by a number equal to your Armor Score (after applying resistance), but you can’t perform other actions without leaving this form.</p>",
+      "actions": {
+        "15XSCpCAZ2JLspmN": {
+          "name": "Retract",
+          "description": "<p><strong>Mark an Armor Slot</strong> to retract into your shell. While in your shell, physical damage is reduced by a number equal to your Armor Score (after applying resistance), but you can’t perform other actions without leaving this form.</p>"
+        }
+      }
+    },
+    "Bird's-Eye View": {
+      "name": "Bird's-Eye View",
+      "description": "<p>You can fly at will. Once per rest while you are airborne, you can ask the GM a question about the scene below you without needing to roll. The first time a character makes a roll to act on this information, they gain advantage on the roll.</p>",
+      "actions": {
+        "JRCE5826Yhh09aaI": {
+          "name": "Ask Question",
+          "description": "<p>Once per rest while you are airborne, you can ask the GM a question about the scene below you without needing to roll. The first time a character makes a roll to act on this information, they gain advantage on the roll.</p>"
+        }
+      }
+    },
+    "Cannonball": {
+      "name": "Cannonball",
+      "description": "<p><strong>Mark a Stress</strong> to allow an ally to throw or launch you at an adversary. To do so, the ally makes an attack roll using Agility or Strength (their choice) against a target within Close range. On a success, the adversary takes <strong>d12+2</strong> physical damage using the thrower’s Proficiency. You can <strong>spend a Hope</strong> to target an additional adversary within Very Close range of the first. The second target takes half the damage dealt to the first target.</p>",
+      "actions": {
+        "5Vxm8LyBHE1GYbsv": {
+          "name": "Cannonball",
+          "description": "<p><strong>Mark a Stress</strong> to allow an ally to throw or launch you at an adversary. To do so, the ally makes an attack roll using Agility or Strength (their choice) against a target within Close range. On a success, the adversary takes <strong>d12+2</strong> physical damage using the thrower’s Proficiency.</p>"
+        },
+        "QCQzArBrajYi2D2I": {
+          "name": "Spend Hope",
+          "description": "<p>You can <strong>spend a Hope</strong> to target an additional adversary within Very Close range of the first. The second target takes half the damage dealt to the first target.</p>"
+        }
+      }
+    },
+    "Carrier": {
+      "name": "Carrier",
+      "description": "<p>You can carry up to two willing allies with you when you move.</p>"
+    },
+    "Companion": {
+      "name": "Companion",
+      "description": "<p>When you Help an Ally, you can roll a <strong>d8</strong> as your advantage die.</p>"
+    },
+    "Deadly Raptor": {
+      "name": "Deadly Raptor",
+      "description": "<p>You can fly at will and move up to Far range as part of your action. When you move in a straight line into Melee range of a target from at least Close range and make an attack against that target in the same action, you can reroll all damage dice that rolled a result lower than your Proficiency.</p>"
+    },
+    "Demolish": {
+      "name": "Demolish",
+      "description": "<p><strong>Spend a Hope</strong> to move up to Far range in a straight line and make an attack against all targets within Melee range of the line. Targets you succeed against take <strong>d8+10</strong> physical damage using your Proficiency and are temporarily <em>Vulnerable</em>.</p><p>@Template[type:ray|range:f]</p>",
+      "actions": {
+        "5SXMT39vrZoK7GBM": {
+          "name": "Attack",
+          "description": "<p>Spend a Hope to move up to Far range in a straight line and make an attack against all targets within Melee range of the line. Targets you succeed against take d8+10 physical damage using your Proficiency and are temporarily Vulnerable.</p>"
+        }
+      }
+    },
+    "Devastating Strikes": {
+      "name": "Devastating Strikes",
+      "description": "<p>When you deal Severe damage to a target within Melee range, you can <strong>mark a Stress</strong> to force them to mark an additional Hit Point.</p>",
+      "actions": {
+        "Il2C9zALU6a1gGrg": {
+          "name": "Mark Stress",
+          "description": "<p>When you deal Severe damage to a target within Melee range, you can <strong>mark a Stress</strong> to force them to mark an additional Hit Point.</p>"
+        }
+      }
+    },
+    "Elusive Prey": {
+      "name": "Elusive Prey",
+      "description": "<p>When an attack roll against you would succeed, you can <strong>mark a Stress</strong> and roll a <strong>d4</strong>. Add the result to your Evasion against this attack.</p>",
+      "actions": {
+        "9lvrqQKTEB3NRwvM": {
+          "name": "Mark Stress"
+        }
+      }
+    },
+    "Fleet": {
+      "name": "Fleet",
+      "description": "<p><strong>Spend a Hope</strong> to move up to Far range without rolling.</p>",
+      "actions": {
+        "pn5p2ocVvVPzDyAX": {
+          "name": "Move",
+          "description": "<p><strong>Spend a Hope</strong> to move up to Far range without rolling.</p>"
+        }
+      }
+    },
+    "Fragile": {
+      "name": "Fragile",
+      "description": "<p>When you take Major or greater damage, you drop out of Beastform.</p>"
+    },
+    "Hobbling Strike": {
+      "name": "Hobbling Strike",
+      "description": "<p>When you succeed on an attack against a target within Melee range, you can <strong>mark a Stress</strong> to make the target temporarily <em>Vulnerable</em>.</p>",
+      "actions": {
+        "p8DESOMGA6dLwEMz": {
+          "name": "Mark Stress"
+        }
+      }
+    },
+    "Hollow Bones": {
+      "name": "Hollow Bones",
+      "description": "<p>You gain a −2 penalty to your damage thresholds.</p>"
+    },
+    "Massive Stride": {
+      "name": "Massive Stride",
+      "description": "<p>You can move up to Far range without rolling. You ignore rough terrain (at the GM’s discretion) due to your size.</p>"
+    },
+    "Ocean Master": {
+      "name": "Ocean Master",
+      "description": "<p>You can breathe and move naturally underwater. When you succeed on an attack against a target within Melee range, you can temporarily <em>Restrain</em> them.</p>",
+      "actions": {
+        "ge2koBRj4snhIzDA": {
+          "name": "Restrain",
+          "description": "<p>When you succeed on an attack against a target within Melee range, you can temporarily <em>Restrain</em> them.</p>"
+        }
+      }
+    },
+    "Pack Hunting": {
+      "name": "Pack Hunting",
+      "description": "<p>When you succeed on an attack against the same target as an ally who acts immediately before you, add a <strong>d8</strong> to your damage roll.</p>"
+    },
+    "Physical Defense": {
+      "name": "Physical Defense",
+      "description": "<p>You gain a +3 bonus to your damage thresholds.</p>"
+    },
+    "Rampage": {
+      "name": "Rampage",
+      "description": "<p>When you roll a 1 on a damage die, you can roll a d10 and add the result to the damage roll. Additionally, before you make an attack roll, you can <strong>mark a Stress</strong> to gain a +1 bonus to your Proficiency for that attack.</p>",
+      "actions": {
+        "N7IoOHpqcvcJNsJQ": {
+          "name": "Mark Stress",
+          "description": "<p>Before you make an attack roll, you can mark a Stress to gain a +1 bonus to your Proficiency for that attack.</p>"
+        }
+      }
+    },
+    "Snapping Strike": {
+      "name": "Snapping Strike",
+      "description": "<p>When you succeed on an attack against a target within Melee range, you can <strong>spend a Hope</strong> to clamp that opponent in your jaws, making them temporarily <em>Restrained</em> and <em>Vulnerable</em>.</p>",
+      "actions": {
+        "ib94yYJ1HA0dm0VC": {
+          "name": "Spend Hope",
+          "description": "<p>When you succeed on an attack against a target within Melee range, you can <strong>spend a Hope</strong> to clamp that opponent in your jaws, making them temporarily <em>Restrained</em> and <em>Vulnerable</em>.</p>"
+        }
+      }
+    },
+    "Takedown": {
+      "name": "Takedown",
+      "description": "<p><strong>Mark a Stress</strong> to move into Melee range of a target and make an attack roll against them. On a success, you gain a +2 bonus to your Proficiency for this attack and the target must mark a Stress.</p>",
+      "actions": {
+        "DKorr1QzvtBz7d9y": {
+          "name": "Attack",
+          "description": "<p><strong>Mark a Stress</strong> to move into Melee range of a target and make an attack roll against them. On a success, you gain a +2 bonus to your Proficiency for this attack and the target must mark a Stress.</p>"
+        }
+      }
+    },
+    "Thick Hide": {
+      "name": "Thick Hide",
+      "description": "<p>You gain a +2 bonus to your damage thresholds.</p>"
+    },
+    "Trample": {
+      "name": "Trample",
+      "description": "<p><strong>Mark a Stress</strong> to move up to Close range in a straight line and make an attack against all targets within Melee range of the line. Targets you succeed against take <strong>d8+1</strong> physical damage using your Proficiency and are temporarily <em>Vulnerable</em>.</p><p>@Template[type:ray|range:close]</p>",
+      "actions": {
+        "YCOTIv9IVEKpumbJ": {
+          "name": "Attack",
+          "description": "<p><strong>Mark a Stress</strong> to move up to Close range in a straight line and make an attack against all targets within Melee range of the line. Targets you succeed against take d8+1 physical damage using your Proficiency and are temporarily <em>Vulnerable</em>.</p>"
+        }
+      }
+    },
+    "Undaunted": {
+      "name": "Undaunted",
+      "description": "<p>You gain a +2 bonus to all your damage thresholds.</p>"
+    },
+    "Unyielding": {
+      "name": "Unyielding",
+      "description": "<p>When you would mark an Armor Slot, roll a <strong>d6</strong>. On a result of 5 or higher, reduce the severity by one threshold without marking an Armor Slot.</p>",
+      "actions": {
+        "hiGZCQpdTVqE5W4B": {
+          "name": "Roll d6",
+          "description": "<p>When you would mark an Armor Slot, roll a <strong>d6</strong>. On a result of 5 or higher, reduce the severity by one threshold without marking an Armor Slot.</p>"
+        }
+      }
+    },
+    "Venomous Bite": {
+      "name": "Venomous Bite",
+      "description": "<p>When you succeed on an attack against a target within Melee range, the target becomes temporarily Poisoned. A Poisoned creature takes <strong>1d10</strong> direct physical damage each time they act.</p>",
+      "actions": {
+        "eow90DYK6cUWOk7g": {
+          "name": "Poison"
+        }
+      }
+    },
+    "Venomous Strike": {
+      "name": "Venomous Strike",
+      "description": "<p>Make an attack against any number of targets within Very Close range. On a success, a target is temporarily Poisoned. A Poisoned creature takes <strong>1d10</strong> physical direct damage each time they act.</p>",
+      "actions": {
+        "igRoXxgaTT9tBQS7": {
+          "name": "Attack",
+          "description": "<p>Make an attack against any number of targets within Very Close range. On a success, a target is temporarily Poisoned. A Poisoned creature takes <strong>1d10</strong> physical direct damage each time they act.</p>"
+        }
+      }
+    },
+    "Vicious Maul": {
+      "name": "Vicious Maul",
+      "description": "<p>When you succeed on an attack against a target, you can <strong>spend a Hope</strong> to make them temporarily Vulnerable and gain a +1 bonus to your Proficiency for this attack.</p>",
+      "actions": {
+        "Cc53vyYz5ggKdIbx": {
+          "name": "Spend Hope",
+          "description": "<p>When you succeed on an attack against a target within Melee range, you can <strong>spend a Hope</strong> to clamp that opponent in your jaws, making them temporarily Restrained and Vulnerable.</p>"
+        }
+      }
+    },
+    "Warning Hiss": {
+      "name": "Warning Hiss",
+      "description": "<p><strong>Mark a Stress</strong> to force any number of targets within Melee range to move back to Very Close range.</p>",
+      "actions": {
+        "D9YmUP1aeiCzNxcC": {
+          "name": "Mark Stress",
+          "description": "<p><strong>Mark a Stress</strong> to force any number of targets within Melee range to move back to Very Close range.</p>"
+        }
+      }
+    },
+    "Webslinger": {
+      "name": "Webslinger",
+      "description": "<p>You can create a strong web material useful for both adventuring and battle. The web is resilient enough to support one creature. You can temporarily <em>Restrain</em> a target within Close range by succeeding on a Finesse Roll against them.</p>",
+      "actions": {
+        "vRU6xutkp3VYxZ0i": {
+          "name": "Restrain"
+        }
+      }
+    }
+  }
+}

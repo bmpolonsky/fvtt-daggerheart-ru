@@ -1,0 +1,686 @@
+{
+  "label": "Subclasses",
+  "mapping": {
+    "description": "system.description",
+    "actions": {
+      "path": "system.actions",
+      "converter": "toActions"
+    }
+  },
+  "folders": {
+    "Bard": "Bard",
+    "Druid": "Druid",
+    "Guardian": "Guardian",
+    "Ranger": "Ranger",
+    "Rogue": "Rogue",
+    "Seraph": "Seraph",
+    "Sorcerer": "Sorcerer",
+    "Warrior": "Warrior",
+    "Wizard": "Wizard",
+    "Subclass Features": "Subclass Features",
+    "Foundation Features": "Foundation Features",
+    "Specialization Features": "Specialization Features",
+    "Mastery Features": "Mastery Features"
+  },
+  "entries": {
+    "Accomplished": {
+      "name": "Accomplished",
+      "description": "<p>Take an additional domain card of your level or lower from a domain you have access to.</p>"
+    },
+    "Act of Reprisal": {
+      "name": "Act of Reprisal",
+      "description": "<p>When an adversary damages an ally within Melee range, you gain a +1 bonus to your Proficiency for the next successful attack you make against that adversary.</p>",
+      "actions": {
+        "yalzg4VRmZvakshJ": {
+          "name": "Mark Adversary",
+          "description": "<p>When an adversary damages an ally within Melee range, you gain a +1 bonus to your Proficiency for the next successful attack you make against that adversary.</p>"
+        }
+      }
+    },
+    "Adept": {
+      "name": "Adept",
+      "description": "<p>When you Utilize an Experience, you can <strong>mark a Stress</strong> instead of spending a Hope. If you do, double your Experience modifier for that roll.</p>",
+      "actions": {
+        "FOl7kaOG6DFWIpMm": {
+          "name": "Mark Stress",
+          "description": "<p>When you Utilize an Experience, you can <strong>mark a Stress</strong> instead of spending a Hope. If you do, double your Experience modifier for that roll.</p>"
+        }
+      }
+    },
+    "Adrenaline": {
+      "name": "Adrenaline",
+      "description": "<p>While you're Vulnerable, add your level to your damage rolls.</p>"
+    },
+    "Advanced Training": {
+      "name": "Advanced Training",
+      "description": "<p>Choose two additional level-up options for your companion.</p>"
+    },
+    "Apex Predator": {
+      "name": "Apex Predator",
+      "description": "<p>Before you make an attack roll against your Focus, you can spend a Hope. On a successful attack, you remove a Fear from the GM’s Fear pool.</p>",
+      "actions": {
+        "LHDsuveQznbcFUhV": {
+          "name": "Spend Hope",
+          "description": "<p>Before you make an attack roll against your Focus, you can spend a Hope. On a successful attack, you remove a Fear from the GM’s Fear pool.</p>"
+        }
+      }
+    },
+    "Arcane Charge": {
+      "name": "Arcane Charge",
+      "description": "<p>You can gather magical energy to enhance your capabilities. When you take magic damage, you become Charged. Alternatively, you can spend 2 Hope to become Charged. When you successfully make an attack that deals magic damage while Charged, you can clear your Charge to either gain a +10 bonus to the damage roll or gain a +3 bonus to the Difficulty of a reaction roll the spell causes the target to make. You stop being Charged at your next long rest.</p>"
+    },
+    "Ascendant": {
+      "name": "Ascendant",
+      "description": "<p>Gain a permanent +4 bonus to your Severe damage threshold.</p>"
+    },
+    "At Ease": {
+      "name": "At Ease",
+      "description": "<p>Gain an additional Stress slot.</p>"
+    },
+    "Battlemage": {
+      "name": "Battlemage",
+      "description": "<p>You’ve focused your studies on becoming an unconquerable force on the battlefield. Gain an additional Hit Point slot.</p>"
+    },
+    "Battle-Bonded": {
+      "name": "Battle-Bonded",
+      "description": "<p>When an adversary attacks you while they’re within your companion’s Melee range, you gain a +2 bonus to your Evasion against the attack.</p>"
+    },
+    "Battle Ritual": {
+      "name": "Battle Ritual",
+      "description": "<p>Once per long rest, before you attempt something incredibly dangerous or face off against a foe who clearly outmatches you, describe what ritual you perform or preparations you make. When you do, clear 2 Stress and gain 2 Hope.</p>",
+      "actions": {
+        "UdZx74Vcz6ip4Plh": {
+          "name": "Prepare",
+          "description": "<p>Once per long rest, before you attempt something incredibly dangerous or face off against a foe who clearly outmatches you, describe what ritual you perform or preparations you make. When you do, clear 2 Stress and gain 2 Hope.</p>"
+        }
+      }
+    },
+    "Brilliant": {
+      "name": "Brilliant",
+      "description": "<p>Take an additional domain card of your level or lower from a domain you have access to.</p>"
+    },
+    "Clarity of Nature": {
+      "name": "Clarity of Nature",
+      "description": "<p>Once per long rest, you can create a space of natural serenity within Close range. When you spend a few minutes resting within the space, clear Stress equal to your Instinct, distributed as you choose between you and your allies.</p>",
+      "actions": {
+        "az7YUpxy1ysn12tO": {
+          "name": "Clear Stress",
+          "description": "<p>Once per long rest, you can create a space of natural serenity within Close range. When you spend a few minutes resting within the space, clear Stress equal to your Instinct, distributed as you choose between you and your allies.</p>"
+        }
+      }
+    },
+    "Comaraderie": {
+      "name": "Comaraderie",
+      "description": "<p>Your unwavering bravery is a rallying point for your allies. You can initiate a Tag Team Roll one additional time per session. Additionally, when an ally initiates a Tag Team Roll with you, they only need to spend 2 Hope to do so.</p>",
+      "actions": {
+        "eBSXC0l2IrRb1F8f": {
+          "name": "Comaraderie",
+          "description": "<p>You can initiate a Tag Team Roll one additional time per session.</p>"
+        }
+      }
+    },
+    "Companion": {
+      "name": "Companion",
+      "description": "<p>You have an animal companion of your choice (at the GM’s discretion). They stay by your side unless you tell them otherwise. Take the Ranger Companion sheet. When you level up your character, choose a level-up option for your companion from this sheet as well.</p>"
+    },
+    "Conjure Shield": {
+      "name": "Conjure Shield",
+      "description": "<p>You can maintain a protective barrier of magic. While you have at least 2 Hope, you add your Proficiency to your Evasion. </p>"
+    },
+    "Contacts Everywhere": {
+      "name": "Contacts Everywhere",
+      "description": "<p>Once per session, you can briefly call on a shady contact. Choose one of the following benefits and describe what brought them here to help you in this moment: </p><ul><li><p>They provide 1 handful of gold, a unique tool, or a mundane object that the situation requires.</p></li><li><p>On your next action roll, their help provides a +3 bonus to the result of your Hope or Fear Die. </p></li><li><p>The next time you deal damage, they snipe from the shadows, adding 2d8 to your damage roll.</p></li></ul>",
+      "actions": {
+        "GZDYjtPh0lCJ5VNq": {
+          "name": "Use Feature",
+          "description": "<p>Once per session, you can briefly call on a shady contact. Choose one of the following benefits and describe what brought them here to help you in this moment:</p><ul><li><p>They provide 1 handful of gold, a unique tool, or a mundane object that the situation requires.</p></li><li><p>On your next action roll, their help provides a +3 bonus to the result of your Hope or Fear Die.</p></li><li><p>The next time you deal damage, they snipe from the shadows, adding 2d8 to your damage roll.</p></li></ul>"
+        }
+      }
+    },
+    "Courage": {
+      "name": "Courage",
+      "description": "<p>When you fail a roll with Fear, you gain a Hope.</p>"
+    },
+    "Dark Cloud": {
+      "name": "Dark Cloud",
+      "description": "<p>Make <strong>a Spellcast Roll (15)</strong>. On a success, create a temporary dark cloud that covers any area within Close range. Anyone in this cloud can’t see outside of it, and anyone outside of it can’t see in. You’re considered Cloaked from any adversary for whom the cloud blocks line of sight.</p><p>@Template[type:emanation|range:c]</p>",
+      "actions": {
+        "nIgBwYfAVAJ98lzb": {
+          "name": "SpellCast: Dark Cloud",
+          "description": "<p>Make <strong>a Spellcast Roll (15)</strong>. On a success, create a temporary dark cloud that covers any area within Close range. Anyone in this cloud can’t see outside of it, and anyone outside of it can’t see in. You’re considered Cloaked from any adversary for whom the cloud blocks line of sight.</p><p>@Template[type:emanation|range:c]</p>"
+        }
+      }
+    },
+    "Defender": {
+      "name": "Defender",
+      "description": "<p>Your animal transformation embodies a healing guardian spirit. When you’re in Beastform and an ally within Close range marks 2 or more Hit Points, you can mark a Stress to reduce the number of Hit Points they mark by 1.</p>",
+      "actions": {
+        "9WxcZ3BuXUKfqUMz": {
+          "name": "Mark Stress",
+          "description": "<p>When you’re in Beastform and an ally within Close range marks 2 or more Hit Points, you can mark a Stress to reduce the number of Hit Points they mark by 1.</p>"
+        }
+      }
+    },
+    "Devout": {
+      "name": "Devout",
+      "description": "<p>When you roll your Prayer Dice, you can roll an additional die and discard the lowest result. Additionally, you can use your “Sparing Touch” feature twice instead of once per long rest.</p>"
+    },
+    "Elementalist": {
+      "name": "Elementalist",
+      "description": "<p>Choose one of the following elements at character creation: air, earth, fire, lightning, water.</p><p>You can shape this element into harmless effects. Additionally, <strong>spend a Hope</strong> and describe how your control over this element helps an action roll you’re about to make, then either gain a +2 bonus to the roll or a +3 bonus to the roll’s damage.</p>",
+      "actions": {
+        "rxuFLfHP1FILDpds": {
+          "name": "Bonus to Roll",
+          "description": "<p>S<strong>pend a Hope</strong> and describe how your control over this element helps an action roll you’re about to make, gain a +2 bonus to the roll.</p>"
+        },
+        "S7HvFD3qIR3ifJRL": {
+          "name": "Bonus to Damage",
+          "description": "<p>S<strong>pend a Hope</strong> and describe how your control over this element helps an action roll you’re about to make, gain a +3 bonus to the roll’s damage.</p>"
+        }
+      }
+    },
+    "Elemental Aura": {
+      "name": "Elemental Aura",
+      "description": "<p>Once per rest while Channeling, you can assume an aura matching your element. The aura affects targets within Close range until your Channeling ends.</p><ul><li><p><strong>Fire</strong>: When an adversary marks 1 or more Hit Points, they must also mark a Stress.</p></li><li><p><strong>Earth</strong>: Your allies gain a +1 bonus to Strength.</p></li><li><p><strong>Water</strong>: When an adversary deals damage to you, you can mark a Stress to move them anywhere within Very Close range of where they are.</p></li><li><p><strong>Air</strong>: When you or an ally takes damage from an attack beyond Melee range, reduce the damage by 1d8.</p></li></ul>",
+      "actions": {
+        "AdOnKhi7g6zQu2iv": {
+          "name": "Fire",
+          "description": "<p>When an adversary marks 1 or more Hit Points, they must also mark a Stress.</p>"
+        },
+        "xDBLH5TWidvrYF7z": {
+          "name": "Earth",
+          "description": "<p>When an adversary marks 1 or more Hit Points, they must also mark a Stress.</p>"
+        },
+        "S4t5HlgxWlHwaBDw": {
+          "name": "Water",
+          "description": "<p>When an adversary deals damage to you, you can mark a Stress to move them anywhere within Very Close range of where they are.</p>"
+        },
+        "hAsKFFewtTqd1gg9": {
+          "name": "Air",
+          "description": "<p>When you or an ally takes damage from an attack beyond Melee range, reduce the damage by 1d8.</p>"
+        }
+      }
+    },
+    "Elemental Dominion": {
+      "name": "Elemental Dominion",
+      "description": "<p>You further embody your element. While Channeling, you gain the following benefit:</p><ul><li><p><strong>Fire</strong>: You gain a +1 bonus to your Proficiency for attacks and spells that deal damage.</p></li><li><p><strong>Earth</strong>: When you would mark Hit Points, roll a d6 per Hit Point marked. For each result of 6, reduce the number of Hit Points you mark by 1.</p></li><li><p><strong>Water</strong>: When an attack against you succeeds, you can mark a Stress to make the attacker temporarily Vulnerable.</p></li><li><p><strong>Air</strong>: You gain a +1 bonus to your Evasion and can fly</p></li></ul>",
+      "actions": {
+        "ofdSzqY7IfAy5ayv": {
+          "name": "Fire",
+          "description": "<p>You gain a +1 bonus to your Proficiency for attacks and spells that deal damage.</p>"
+        },
+        "knGm3snaplWYDaue": {
+          "name": "Earth",
+          "description": "<p>When you would mark Hit Points, roll a d6 per Hit Point marked. For each result of 6, reduce the number of Hit Points you mark by 1.</p>"
+        },
+        "MocaqHUdyVwH0ZFu": {
+          "name": "Water",
+          "description": "<p>When an attack against you succeeds, you can mark a Stress to make the attacker temporarily Vulnerable.</p>"
+        },
+        "AQMNJRmVyhJTSCfR": {
+          "name": "Air",
+          "description": "<p>You gain a +1 bonus to your Evasion and can fly.</p>"
+        }
+      }
+    },
+    "Elemental Incarnation": {
+      "name": "Elemental Incarnation",
+      "description": "<p>Mark a Stress to Channel one of the following elements until you take Severe damage or until your next rest:</p><ul><li><p><strong>Fire</strong>: When an adversary within Melee range deals damage to you, they take 1d10 magic damage.</p></li><li><p><strong>Earth</strong>: Gain a bonus to your damage thresholds equal to your Proficiency.</p></li><li><p><strong>Wate</strong>r: When you deal damage to an adversary within Melee range, all other adversaries within Very Close range must mark a Stress. </p></li><li><p><strong>Air</strong>: You can hover, gaining advantage on Agility Rolls.</p></li></ul>",
+      "actions": {
+        "wVGSzAnJGs5eXKqI": {
+          "name": "Fire",
+          "description": "<p>When an adversary within Melee range deals damage to you, they take @Damage[type:magical|value:1d10].</p>"
+        },
+        "6QXTThhnJpGDIvhJ": {
+          "name": "Earth",
+          "description": "<p>Gain a bonus to your damage thresholds equal to your Proficiency.</p>"
+        },
+        "pY2EdEMoyLGYWjK5": {
+          "name": "Water",
+          "description": "<p>When you deal damage to an adversary within Melee range, all other adversaries within Very Close range must mark a Stress.</p><p>@Template[type:emanation|range:vc]</p>"
+        },
+        "uk8EgHMxCgoWENzt": {
+          "name": "Air",
+          "description": "<p>You can hover, gaining advantage on Agility Rolls.</p>"
+        }
+      }
+    },
+    "Eloquent": {
+      "name": "Eloquent",
+      "description": "<p>Your moving words boost morale. Once per session, when you encourage an ally, you can do one of the following: </p><ul><li><p>Allow them to find a mundane object or tool they need.</p></li><li><p>Help an Ally without spending Hope.</p></li><li><p>Give them an additional downtime move during their next rest.</p></li></ul>",
+      "actions": {
+        "o1MWnafbLsXnvSUl": {
+          "name": "Use Feature"
+        }
+      }
+    },
+    "Elusive Predator": {
+      "name": "Elusive Predator",
+      "description": "<p>When your Focus makes an attack against you, you gain a +2 bonus to your Evasion against the attack.</p>"
+    },
+    "Enchanted Aid": {
+      "name": "Enchanted Aid",
+      "description": "<p>You can enhance the magic of others with your essence. When you Help an Ally with a Spellcast Roll, you can roll a <strong>d8</strong> as your advantage die. Once per long rest, after an ally has made a Spellcast Roll with your help, you can swap the results of their Duality Dice.</p>",
+      "actions": {
+        "n8wSqR967o0pZDLR": {
+          "name": "Swap Dice Results",
+          "description": "<p>Once per long rest, after an ally has made a Spellcast Roll with your help, you can swap the results of their Duality Dice.</p>"
+        }
+      }
+    },
+    "Epic Poetry": {
+      "name": "Epic Poetry",
+      "description": "<p>Your Rally Die increases to a d10. Additionally, when you Help an Ally, you can narrate the moment as if you were writing the tale of their heroism in a memoir. When you do, roll a d10 as your advantage die.</p>"
+    },
+    "Ethereal Visage": {
+      "name": "Ethereal Visage",
+      "description": "<p>Your supernatural visage strikes awe and fear. While flying, you have advantage on Presence Rolls. When you succeed with Hope on a Presence Roll, you can remove a Fear from the GM’s Fear pool instead of gaining Hope.</p>"
+    },
+    "Expert Training": {
+      "name": "Expert Training",
+      "description": "<p>Choose an additional level-up option for your companion.</p>"
+    },
+    "Face Your Fear": {
+      "name": "Face Your Fear",
+      "description": "<p>When you succeed with Fear on an attack roll, you deal an extra <strong>1d10</strong> magic damage.</p>"
+    },
+    "Fleeting Shadow": {
+      "name": "Fleeting Shadow",
+      "description": "<p>Gain a permanent +1 bonus to your Evasion. You can use your “Shadow Stepper” feature to move within Very Far range.</p>"
+    },
+    "Fueled by Fear": {
+      "name": "Fueled by Fear",
+      "description": "<p>The extra magic damage from your “Face Your Fear” feature increases to <strong>2d10</strong>.</p>"
+    },
+    "Gifted Performer": {
+      "name": "Gifted Performer",
+      "description": "<p>You can play three different types of songs, once each per long rest; describe how you perform for others to gain the listed benefit: </p><ul><li><p><strong>Relaxing Song:</strong> You and all allies within Close range clear a Hit Point.</p></li><li><p><strong>Epic Song:</strong> Make a target within Close range temporarily Vulnerable. </p></li><li><p><strong>Heartbreaking Song:</strong> You and all allies within Close range gain a Hope.</p></li></ul>",
+      "actions": {
+        "xvs7ZKm93AlnZD3F": {
+          "name": "Relaxing Song",
+          "description": "<p><strong>You and all allies</strong> within <strong>Close</strong> range <strong>clear a Hit Point</strong>.</p>"
+        },
+        "nvfJ8rOx8baI6POZ": {
+          "name": "Epic Song",
+          "description": "<p>Make <strong>a target</strong> within <strong>Close</strong> range temporarily <strong>Vulnerable</strong>.</p>"
+        },
+        "QTTgKnhpNE2XHz4u": {
+          "name": "Heartbreaking Song",
+          "description": "<p><strong>You and all allies</strong> within <strong>Close</strong> range <strong>gain a Hope</strong>.</p>"
+        }
+      }
+    },
+    "Have No Fear": {
+      "name": "Have No Fear",
+      "description": "<p>The extra magic damage from your “Face Your Fear” feature increases to <strong>3d10</strong>.</p>"
+    },
+    "Heart of a Poet": {
+      "name": "Heart of a Poet",
+      "description": "<p>After you make an action roll to impress, persuade, or offend someone, you can spend a Hope to add a d4 to the roll.</p>",
+      "actions": {
+        "pHSfMDmfVQSgqk39": {
+          "name": "Spend Hope",
+          "description": "<p>After you make an action roll to impress, persuade, or offend someone, you can spend a Hope to add a [[/r d4]] to the roll.</p>"
+        }
+      }
+    },
+    "Honed Expertise": {
+      "name": "Honed Expertise",
+      "description": "<p>When you use an Experience, roll a <strong>d6</strong>. On a result of 5 or higher, you can use it without spending Hope.</p>",
+      "actions": {
+        "zCTrqPtGARSZ06CU": {
+          "name": "Roll d6",
+          "description": "<p>When you use an Experience, roll a <strong>d6</strong>. On a result of 5 or higher, you can use it without spending Hope.</p>"
+        }
+      }
+    },
+    "Iron Will": {
+      "name": "Iron Will",
+      "description": "<p>When you take physical damage, you can <strong>mark an additional Armor Slot</strong> to reduce the severity.</p>"
+    },
+    "Loyal Friend": {
+      "name": "Loyal Friend",
+      "description": "<p>Once per long rest, when the damage from an attack would mark your companion’s last Stress or your last Hit Point and you’re within Close range of each other, you or your companion can rush to the other’s side and take that damage instead.</p>",
+      "actions": {
+        "Z82YQzYWo4eektMa": {
+          "name": "Rush",
+          "description": "<p>Once per long rest, when the damage from an attack would mark your companion’s last Stress or your last Hit Point and you’re within Close range of each other, you or your companion can rush to the other’s side and take that damage instead.</p>"
+        }
+      }
+    },
+    "Loyal Protector": {
+      "name": "Loyal Protector",
+      "description": "<p>When an ally within Close range has 2 or fewer Hit Points and would take damage, you can <strong>mark a Stress</strong> to sprint to their side and take the damage instead.</p>",
+      "actions": {
+        "Dxnu3gPSTSysJnb8": {
+          "name": "Mark Stress",
+          "description": "<p>When an ally within Close range has 2 or fewer Hit Points and would take damage, you can <strong>mark a Stress</strong> to sprint to their side and take the damage instead.</p>"
+        }
+      }
+    },
+    "Maestro": {
+      "name": "Maestro",
+      "description": "<p>Your rallying songs steel the courage of those who listen. When you give a <strong>Rally Die</strong> to an ally, they can <strong>gain a Hope</strong> or <strong>clear a Stress</strong>.</p>"
+    },
+    "Manipulate Magic": {
+      "name": "Manipulate Magic",
+      "description": "<p>Your primal origin allows you to modify the essence of magic itself. After you cast a spell or make an attack using a weapon that deals magic damage, you can mark a Stress to do one of the following:</p><ul><li><p>Extend the spell or attack’s reach by one range</p></li><li><p>Gain a +2 bonus to the action roll’s result</p></li><li><p>Double a damage die of your choice</p></li><li><p>Hit an additional target within range</p></li></ul>",
+      "actions": {
+        "KL5l4QJjPtDiDBSv": {
+          "name": "Manipulate",
+          "description": "<p>Your primal origin allows you to modify the essence of magic itself. After you cast a spell or make an attack using a weapon that deals magic damage, you can mark a Stress to do one of the following:</p><ul><li><p>Extend the spell or attack’s reach by one range</p></li><li><p>Gain a +2 bonus to the action roll’s result</p></li><li><p>Double a damage die of your choice</p></li><li><p>Hit an additional target within range</p></li></ul>"
+        }
+      }
+    },
+    "Martial Preparation": {
+      "name": "Martial Preparation",
+      "description": "<p>You’re an inspirational warrior to all who travel with you. Your party gains access to the Martial Preparation downtime move. To use this move during a rest, describe how you instruct and train with your party. You and each ally who chooses this downtime move gain a <strong>d6</strong> Slayer Die. A PC with a Slayer Die can spend it to roll the die and add the result to an attack or damage roll of their choice.</p>"
+    },
+    "Natural Evasion": {
+      "name": "Natural Evasion",
+      "description": "<p>You can call forth your element to protect you from harm. When an attack roll against you succeeds, you can <strong>mark a Stress</strong> and describe how you use your element to defend you. When you do, roll a <strong>d6</strong> and add its result to your Evasion against the attack.</p>",
+      "actions": {
+        "amJMKDdSgJHsOsOB": {
+          "name": "Evade",
+          "description": "<p>You can call forth your element to protect you from harm. When an attack roll against you succeeds, you can <strong>mark a Stress</strong> and describe how you use your element to defend you. When you do, roll a <strong>d6</strong> and add its result to your Evasion against the attack.</p>"
+        }
+      }
+    },
+    "Nemesis": {
+      "name": "Nemesis",
+      "description": "<p><strong>Spend 2 Hope</strong> to Prioritize an adversary until your next rest. When you make an attack against your Prioritized adversary, you can swap the results of your Hope and Fear Dice. You can only Prioritize one adversary at a time.</p>",
+      "actions": {
+        "Rgc7kBmU3kjHKvfx": {
+          "name": "Spend Hope",
+          "description": "<p><strong>Spend 2 Hope</strong> to Prioritize an adversary until your next rest. When you make an attack against your Prioritized adversary, you can swap the results of your Hope and Fear Dice. You can only Prioritize one adversary at a time.</p>"
+        }
+      }
+    },
+    "Partner-in-Arms": {
+      "name": "Partner-in-Arms",
+      "description": "<p>When an ally within Very Close range takes damage, you can mark an Armor Slot to reduce the severity by one threshold.</p>",
+      "actions": {
+        "D6ClOGDgu6cLanjE": {
+          "name": "Mark Armor Slot",
+          "description": "<p>When an ally within Very Close range takes damage, you can mark an Armor Slot to reduce the severity by one threshold.</p>"
+        }
+      }
+    },
+    "Path Forward": {
+      "name": "Path Forward",
+      "description": "<p>When you’re traveling to a place you’ve previously visited or you carry an object that has been at the location before, you can identify the shortest, most direct path to your destination.</p>"
+    },
+    "Perfect Recall": {
+      "name": "Perfect Recall",
+      "description": "<p>Once per rest, when you recall a domain card in your vault, you can reduce its Recall Cost by 1.</p>",
+      "actions": {
+        "rFZj0ZsnJCc0PS3h": {
+          "name": "Recall",
+          "description": "<p>Once per rest, when you recall a domain card in your vault, you can reduce its Recall Cost by 1.</p>"
+        }
+      }
+    },
+    "Power of the Gods": {
+      "name": "Power of the Gods",
+      "description": "<p>While flying, you deal an extra 1d12 damage instead of 1d8 from your “Wings of Light” feature.</p>"
+    },
+    "Prepared": {
+      "name": "Prepared",
+      "description": "<p>Take an additional domain card of your level or lower from a domain you have access to.</p>"
+    },
+    "Regeneration": {
+      "name": "Regeneration",
+      "description": "<p>Touch a creature and spend 3 Hope. That creature clears 1d4 Hit Points.</p>",
+      "actions": {
+        "kD2kWWj0oR7ZxyVs": {
+          "name": "Heal a creature",
+          "description": "<p>Touch a creature and spend 3 Hope. That creature clears 1d4 Hit Points.</p>"
+        }
+      }
+    },
+    "Regenerative Reach": {
+      "name": "Regenerative Reach",
+      "description": "<p>You can target creatures within Very Close range with your “Regeneration” feature.</p>"
+    },
+    "Reliable Backup": {
+      "name": "Reliable Backup",
+      "description": "<p>You can use your “Contacts Everywhere” feature three times per session. The following options are added to the list of benefits you can choose from when you use that feature: </p><ul><li><p>When you mark 1 or more Hit Points, they can rush out to shield you, reducing the Hit Points marked by 1.</p></li><li><p>When you make a Presence Roll in conversation, they back you up. You can roll a d20 as your Hope Die.</p></li></ul>"
+    },
+    "Revenge": {
+      "name": "Revenge",
+      "description": "<p>When an adversary within Melee range succeeds on an attack against you, you can mark 2 Stress to force the attacker to mark a Hit Point.</p>",
+      "actions": {
+        "e00FXbyXZ8bHRY2t": {
+          "name": "Mark Stress",
+          "description": "<p>When an adversary within Melee range succeeds on an attack against you, you can mark 2 Stress to force the attacker to mark a Hit Point.</p>"
+        }
+      }
+    },
+    "Rise to the Challenge": {
+      "name": "Rise to the Challenge",
+      "description": "<p>You are vigilant in the face of mounting danger. While you have 2 or fewer Hit Points unmarked, you can roll a <strong>d20</strong> as your Hope Die.</p>"
+    },
+    "Rousing Speech": {
+      "name": "Rousing Speech",
+      "description": "<p><strong>Once per long rest</strong>, you can give a heartfelt, inspiring speech. <strong>All allies</strong> within <strong>Far</strong> range <strong>clear 2 Stress</strong>.</p>",
+      "actions": {
+        "WNtHiko4DRGbxKnm": {
+          "name": "Talk to your allies!",
+          "description": "<p><span style=\"box-sizing: border-box; scrollbar-width: thin; scrollbar-color: var(--color-scrollbar) var(--color-scrollbar-track); color: rgb(239, 230, 216); font-family: Montserrat, sans-serif; font-size: 14px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgba(24, 22, 46, 0.376); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial\"><strong>Once per long rest</strong></span><span style=\"color: rgb(239, 230, 216); font-family: Montserrat, sans-serif; font-size: 14px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgba(24, 22, 46, 0.376); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; display: inline !important; float: none\">, you can give a heartfelt, inspiring speech. </span><span style=\"box-sizing: border-box; scrollbar-width: thin; scrollbar-color: var(--color-scrollbar) var(--color-scrollbar-track); color: rgb(239, 230, 216); font-family: Montserrat, sans-serif; font-size: 14px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgba(24, 22, 46, 0.376); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial\"><strong>All allies</strong></span><span style=\"color: rgb(239, 230, 216); font-family: Montserrat, sans-serif; font-size: 14px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgba(24, 22, 46, 0.376); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; display: inline !important; float: none\"> within </span><span style=\"box-sizing: border-box; scrollbar-width: thin; scrollbar-color: var(--color-scrollbar) var(--color-scrollbar-track); color: rgb(239, 230, 216); font-family: Montserrat, sans-serif; font-size: 14px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgba(24, 22, 46, 0.376); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial\"><strong>Far</strong></span><span style=\"color: rgb(239, 230, 216); font-family: Montserrat, sans-serif; font-size: 14px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgba(24, 22, 46, 0.376); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; display: inline !important; float: none\"> range </span><span style=\"box-sizing: border-box; scrollbar-width: thin; scrollbar-color: var(--color-scrollbar) var(--color-scrollbar-track); color: rgb(239, 230, 216); font-family: Montserrat, sans-serif; font-size: 14px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgba(24, 22, 46, 0.376); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial\"><strong>clear 2 Stress</strong></span><span style=\"color: rgb(239, 230, 216); font-family: Montserrat, sans-serif; font-size: 14px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgba(24, 22, 46, 0.376); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; display: inline !important; float: none\"><strong>.</strong></span></p>"
+        }
+      }
+    },
+    "Ruthless Predator": {
+      "name": "Ruthless Predator",
+      "description": "<p>When you make a damage roll, you can mark a Stress to gain a +1 bonus to your Proficiency. Additionally, when you deal Severe damage to an adversary, they must mark a Stress.</p>",
+      "actions": {
+        "0YRLL1HC4XS3tX00": {
+          "name": "Mark Stress",
+          "description": "<p>When you make a damage roll, you can mark a Stress to gain a +1 bonus to your Proficiency. Additionally, when you deal Severe damage to an adversary, they must mark a Stress.</p>"
+        }
+      }
+    },
+    "Sacred Resonance": {
+      "name": "Sacred Resonance",
+      "description": "<p>When you roll damage for your “Spirit Weapon” feature, if any of the die results match, double the value of each matching die. For example, if you roll two 5s, they count as two 10s.</p>"
+    },
+    "Shadow Stepper": {
+      "name": "Shadow Stepper",
+      "description": "<p>You can move from shadow to shadow. When you move into an area of darkness or a shadow cast by another creature or object, you can mark a Stress to disappear from where you are and reappear inside another shadow within Far range. When you reappear, you are Cloaked.</p>",
+      "actions": {
+        "g1VIG6VjYKkm11qJ": {
+          "name": "Mark Stress",
+          "description": "<p>You can move from shadow to shadow. When you move into an area of darkness or a shadow cast by another creature or object, you can mark a Stress to disappear from where you are and reappear inside another shadow within Far range. When you reappear, you are Cloaked.</p>"
+        }
+      }
+    },
+    "Slayer": {
+      "name": "Slayer",
+      "description": "<p>You gain a pool of dice called Slayer Dice. On a roll with Hope, you can place a <strong>d6</strong> on this card instead of gaining a Hope, adding the die to the pool. You can store a number of Slayer Dice equal to your Proficiency. When you make an attack roll or damage roll, you can spend any number of these Slayer Dice, rolling them and adding their result to the roll. At the end of each session, clear any unspent Slayer Dice on this card and gain a Hope per die cleared.</p>"
+    },
+    "Sparing Touch": {
+      "name": "Sparing Touch",
+      "description": "<p>Once per long rest, touch a creature and clear 2 Hit Points or 2 Stress from them.</p>",
+      "actions": {
+        "aanLNQkeO2ZTIqBl": {
+          "name": "Clear Hit Points",
+          "description": "<p><span style=\"color: rgb(239, 230, 216); font-family: Montserrat, sans-serif; font-size: 14px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgba(24, 22, 46, 0.376); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; display: inline !important; float: none\">Once per long rest, touch a creature and clear 2 Hit Points or 2 Stress from them.</span></p>"
+        },
+        "cWdzCQJv8RFfi2NR": {
+          "name": "Clear Stress",
+          "description": "<p><span style=\"color: rgb(239, 230, 216); font-family: Montserrat, sans-serif; font-size: 14px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgba(24, 22, 46, 0.376); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; display: inline !important; float: none\">Once per long rest, touch a creature and clear 2 Hit Points or 2 Stress from them.</span></p>"
+        }
+      }
+    },
+    "Spirit Weapon": {
+      "name": "Spirit Weapon",
+      "description": "<p>When you have an equipped weapon with a range of Melee or Very Close, it can fly from your hand to attack an adversary within Close range and then return to you. You can <strong>mark a Stress</strong> to target an additional adversary within range with the same attack roll.</p>",
+      "actions": {
+        "TDvWFqAxu7V33UIC": {
+          "name": "Target Additional Adversary",
+          "description": "<p><span style=\"color: rgb(239, 230, 216); font-family: Montserrat, sans-serif; font-size: 14px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgba(24, 22, 46, 0.376); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; display: inline !important; float: none\">You can </span><span style=\"box-sizing: border-box; scrollbar-width: thin; scrollbar-color: rgb(93, 20, 43) rgba(0, 0, 0, 0); color: rgb(239, 230, 216); font-family: Montserrat, sans-serif; font-size: 14px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgba(24, 22, 46, 0.376); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial\">mark a Stress</span><span style=\"color: rgb(239, 230, 216); font-family: Montserrat, sans-serif; font-size: 14px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgba(24, 22, 46, 0.376); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; display: inline !important; float: none\"> to target an additional adversary within range with the same attack roll.</span></p>"
+        }
+      }
+    },
+    "Thrive in Chaos": {
+      "name": "Thrive in Chaos",
+      "description": "<p>When you succeed on an attack, you can <strong>mark a Stress</strong> after rolling damage to force the target to mark an additional Hit Point.</p>",
+      "actions": {
+        "7Z9v7GWswIQFD5YH": {
+          "name": "Mark Stress",
+          "description": "<p>When you succeed on an attack, you can <strong>mark a Stress</strong> after rolling damage to force the target to mark an additional Hit Point.</p>"
+        }
+      }
+    },
+    "Transcendence": {
+      "name": "Transcendence",
+      "description": "<p>Once per long rest, you can transform into a physical manifestation of your element. When you do, describe your transformation and choose two of the following benefits to gain until your next rest:</p><ul><li><p>+4 bonus to your Severe threshold</p></li><li><p>+1 bonus to a character trait of your choice</p></li><li><p>+1 bonus to your Proficiency</p></li><li><p>+2 bonus to your Evasion</p></li></ul>",
+      "actions": {
+        "RIbyJjEkCgqoDmyn": {
+          "name": "Transform",
+          "description": "<p>Once per long rest, you can transform into a physical manifestation of your element. When you do, describe your transformation and choose two of the following benefits to gain until your next rest:</p><ul><li><p>+4 bonus to your Severe threshold</p></li><li><p>+1 bonus to a character trait of your choice</p></li><li><p>+1 bonus to your Proficiency</p></li><li><p>+2 bonus to your Evasion</p></li></ul>"
+        }
+      }
+    },
+    "Undaunted": {
+      "name": "Undaunted",
+      "description": "<p>Gain a permanent +3 bonus to your damage thresholds.</p>"
+    },
+    "Unrelenting": {
+      "name": "Unrelenting",
+      "description": "<p>Gain a permanent +2 bonus to your damage thresholds.</p>"
+    },
+    "Unwavering": {
+      "name": "Unwavering",
+      "description": "<p>Gain a permanent +1 bonus to your damage thresholds.</p>"
+    },
+    "Vanishing Act": {
+      "name": "Vanishing Act",
+      "description": "<p><strong>Mark a Stress</strong> to become Cloaked at any time. When Cloaked from this feature, you automatically clear the Restrained condition if you have it. You remain Cloaked in this way until you roll with Fear or until your next rest.</p>",
+      "actions": {
+        "BjAECQULugmbVqXU": {
+          "name": "Mark Stress",
+          "description": "<p><strong>Mark a Stress</strong> to become Cloaked at any time. When Cloaked from this feature, you automatically clear the Restrained condition if you have it. You remain Cloaked in this way until you roll with Fear or until your next rest.</p>"
+        }
+      }
+    },
+    "Virtuoso": {
+      "name": "Virtuoso",
+      "description": "<p>You are among the greatest of your craft and your skill is boundless. You can perform each of your <strong>\"Gifted Performer\"</strong> feature’s songs <strong>twice per long rest.</strong></p>"
+    },
+    "Warden’s Protection": {
+      "name": "Warden’s Protection",
+      "description": "<p>Once per long rest, spend 2 Hope to clear 2 Hit Points on 1d4 allies within Close range.</p>",
+      "actions": {
+        "ozYzhQfRt5sp19di": {
+          "name": "Healing",
+          "description": "<p>Once per long rest, spend 2 Hope to clear 2 Hit Points on [[/r 1d4]] allies within Close range.</p>"
+        }
+      }
+    },
+    "Weapon Specialist": {
+      "name": "Weapon Specialist",
+      "description": "<p>You can wield multiple weapons with dangerous ease. When you succeed on an attack, you can <strong>spend a Hope</strong> to add one of the damage dice from your secondary weapon to the damage roll. Additionally, once per long rest when you roll your Slayer Dice, reroll any 1s.</p>",
+      "actions": {
+        "vay9rVXJS3iksaVR": {
+          "name": "Spend Hope",
+          "description": "<p>You can wield multiple weapons with dangerous ease. When you succeed on an attack, you can <strong>spend a Hope</strong> to add one of the damage dice from your secondary weapon to the damage roll.</p>"
+        },
+        "1bBFfxmywJpx5tfk": {
+          "name": "Reroll",
+          "description": "<p>Additionally, once per long rest when you roll your Slayer Dice, reroll any 1s.</p>"
+        }
+      }
+    },
+    "Well-Connected": {
+      "name": "Well-Connected",
+      "description": "<p>When you arrive in a prominent town or environment, you know somebody who calls this place home. Give them a name, note how you think they could be useful, and choose one fact from the following list: </p><ul><li><p>They owe me a favor, but they’ll be hard to find.</p></li><li><p>They’re going to ask for something in exchange. </p></li><li><p>They’re always in a great deal of trouble. </p></li><li><p>We used to be together. It’s a long story. </p></li><li><p>We didn’t part on great terms.</p></li></ul>"
+    },
+    "Wings of Light": {
+      "name": "Wings of Light",
+      "description": "<p>You can fly. While flying, you can do the following:</p><ul><li><p>Mark a Stress to pick up and carry another willing creature approximately your size or smaller.</p></li><li><p>Spend a Hope to deal an extra 1d8 damage on a successful attack.</p></li></ul>",
+      "actions": {
+        "rg2sLCTqY2rTo861": {
+          "name": "Mark Stress",
+          "description": "<p>Mark a Stress to pick up and carry another willing creature approximately your size or smaller.</p>"
+        },
+        "1qjnoz5I7NqrWMkp": {
+          "name": "Spend Hope",
+          "description": "<p>Spend a Hope to deal an extra 1d8 damage on a successful attack.</p>"
+        }
+      }
+    },
+    "Beastbound": {
+      "name": "Звериные Узы",
+      "description": "<p>Играйте за Звериные Узы, если хотите иметь глубокую связь с животным-союзником.</p>"
+    },
+    "Call Of The Brave": {
+      "name": "Зов Храбреца",
+      "description": "<p>Играйте за Зов Храбреца, если хотите использовать мощь своих врагов для увеличения собственной силы.</p>"
+    },
+    "Call Of The Slayer": {
+      "name": "Зов Истребителя",
+      "description": "<p>Играйте за Зов Истребителя, если хотите поражать врагов с невероятной мощью.</p>"
+    },
+    "Divine Wielder": {
+      "name": "Божественный Воитель",
+      "description": "<p>Играйте за Божественного Воитель, если хотите господствовать на поле боя с легендарным оружием.</p>"
+    },
+    "Elemental Origin": {
+      "name": "Стихийное Начало",
+      "description": "<p>Играйте за Стихийное Начало, если хотите использовать сырую магию, придав ей форму определенного элемента.</p>"
+    },
+    "Nightwalker": {
+      "name": "Тень",
+      "description": "<p>Играйте за Тень, если хотите управлять тенями, чтобы перемещаться по местности.</p>"
+    },
+    "Primal Origin": {
+      "name": "Первозданное Начало",
+      "description": "<p>Играйте за Первозданное Начало, если хотите значительно расширить возможности ваших заклинаний.</p>"
+    },
+    "School Of Knowledge": {
+      "name": "Школа Знаний",
+      "description": "<p>Играйте за Школу Знаний, если хотите обладать глубокими познаниями об окружающем вас мире.</p>"
+    },
+    "School Of War": {
+      "name": "Школа Войны",
+      "description": "<p>Играйте за Школу Войны, если хотите использовать отработанную магию в качестве средства насилия.</p>"
+    },
+    "Stalwart": {
+      "name": "Заступник",
+      "description": "<p>Играйте за Заступника, если хотите выдерживать мощные удары и продолжать сражаться.</p>"
+    },
+    "Syndicate": {
+      "name": "Синдикат",
+      "description": "<p>Играйте за Синдикат, если хотите иметь широкую сеть контактов, куда бы вы ни пошли.</p>"
+    },
+    "Troubadour": {
+      "name": "Трубадур",
+      "description": "<p>Играйте за Трубадура, если хотите поддержать своих союзников музыкой.</p>"
+    },
+    "Vengeance": {
+      "name": "Мститель",
+      "description": "<p>Играйте за Мстителя, если хотите сразить неприятелей, причиняющих вред вам или вашим союзникам.</p>"
+    },
+    "Warden of Renewal": {
+      "name": "Хранитель Жизни",
+      "description": "<p>Играйте за Хранителя Жизни, если хотите использовать мощную магию для исцеления вашей команды.</p>"
+    },
+    "Warden of the Elements": {
+      "name": "Хранитель Стихий",
+      "description": "<p>Играйте за Хранителя Стихий, если хотите воплотить в себе естественные элементы дикой природы.</p>"
+    },
+    "Wayfinder": {
+      "name": "Путевод",
+      "description": "<p>Играйте за Путевода, если хотите хотите охотиться на свою жертву и поражать цели смертоносной силой.</p>"
+    },
+    "Winged Sentinel": {
+      "name": "Крылатый Страж",
+      "description": "<p>Играйте за Крылатого Стража, если хотите взмыть в небеса и нанести сокрушительные удары с воздуха.</p>"
+    },
+    "Wordsmith": {
+      "name": "Оратор",
+      "description": "<p>Играйте за Оратора, если хотите применять искусные игры слов и завораживать публику.</p>"
+    }
+  }
+}

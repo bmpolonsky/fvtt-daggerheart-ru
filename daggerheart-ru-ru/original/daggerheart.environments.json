@@ -1,0 +1,806 @@
+{
+  "label": "Environments",
+  "mapping": {
+    "description": "system.description",
+    "impulses": "system.impulses",
+    "items": {
+      "path": "items",
+      "converter": "toEnvItems"
+    }
+  },
+  "folders": {
+    "Tier 1": "Tier 1",
+    "Tier 2": "Tier 2",
+    "Tier 3": "Tier 3",
+    "Tier 4": "Tier 4"
+  },
+  "entries": {
+    "Abandoned Grove": {
+      "name": "Abandoned Grove",
+      "description": "<p>A former druidic grove lying fallow and fully reclaimed by nature.</p>",
+      "impulses": "Draw in the curious, echo the past",
+      "items": {
+        "MX4q2xxuWts9gBfT": {
+          "name": "Overgrown Battlefield",
+          "description": "<p>There has been a battle here. A PC can make an Instinct Roll to identify evidence of that fight. On a success with Hope, learn all three pieces of information below. On a success with Fear, learn two. On a failure, a PC can mark a Stress to learn one and gain advantage on the next action roll to investigate this environment. A PC with an appropriate background or Experience can learn an additional detail and ask a follow-up question about the scene and get a truthful (if not always complete) answer.</p><ul><li><p>Traces of a battle (broken weapons and branches, gouges in the ground) litter the ground.</p></li><li><p>A moss-covered tree trunk is actually the corpse of a treant.</p></li><li><p>Still-standing trees are twisted in strange ways, as if by powerful magic.</p></li></ul><section id=\"secret-eSdgCltFm45vLh9H\" class=\"secret\"><p><em>Why did these groups come to blows? Why is the grove unused now?</em></p></section>"
+        },
+        "maK5OyfrOxcjCoPt": {
+          "name": "Barbed Vines",
+          "description": "<p>Pick a point within the grove. All targets within Very Close range of that point must succeed on an Agility Reaction Roll or take <strong>1d8+3</strong> physical damage and become Restrained by barbed vines. Restrained lasts until they’re freed with a successful Finesse or Strength roll or by dealing at least 6 damage to the vines.</p><section id=\"secret-WVGl1YkqOicSEwlf\" class=\"secret\"><p><em>How many vines are there? Where do they grab you? Do they pull you down or lift you off the ground?</em></p></section>",
+          "actions": {
+            "47fcdhe1FDdm9rQU": {
+              "name": "Roll Save",
+              "description": "<p>Pick a point within the grove. All targets within Very Close range of that point must succeed on an Agility Reaction Roll or take 1d8+3 physical damage and become Restrained by barbed vines. Restrained lasts until they’re freed with a successful Finesse or Strength roll or by dealing at least 6 damage to the vines.</p><p>@Template[type:rect|range:vc]</p>"
+            }
+          },
+          "effects": [
+            {
+              "name": "Barbed Vines",
+              "description": "<p><em>Restrained</em> lasts until you’re freed with a successful Finesse or Strength roll or by dealing at least 6 damage to the vines.</p>"
+            }
+          ]
+        },
+        "uG5A2XQuUcPsXzgP": {
+          "name": "You Are Not Welcome Here",
+          "description": "<p>A @UUID[Compendium.daggerheart.adversaries.Actor.8yUj2Mzvnifhxegm]{Young Dryad}, two @UUID[Compendium.daggerheart.adversaries.Actor.VtFBt9XBE0WrGGxP]{Sylvan Soldiers}, and a number of @UUID[Compendium.daggerheart.adversaries.Actor.G62k4oSkhkoXEs2D]{Minor Treants} equal to the number of PCs appear to confront the party for their intrusion.</p><section id=\"secret-01hkXuVJc5Kei4QW\" class=\"secret\"><p><em>What are the grove guardians concealing? What threat to the forest could the PCs confront to appease the Dryad?</em></p></section>"
+        },
+        "3kkkbnWEvXk5TPK8": {
+          "name": "Defiler",
+          "description": "<p><strong>Spend a Fear</strong> to summon a @UUID[Compendium.daggerheart.adversaries.Actor.sRn4bqerfARvhgSV]{Minor Chaos Elemental} drawn to the echoes of violence and discord. They appear within Far range of a chosen PC and immediately take the spotlight.</p><section id=\"secret-ChOafrgiTeYqsqoe\" class=\"secret\"><p><em>What color does the grass turn as the elemental appears? How does the chaos warp insects and small wildlife within the grove?</em></p></section>",
+          "actions": {
+            "p6V4k4yMwJ1UPZMz": {
+              "name": "Spend Fear",
+              "description": "<p><strong>Spend a Fear</strong> to summon a @UUID[Compendium.daggerheart.adversaries.Actor.sRn4bqerfARvhgSV]{Minor Chaos Elemental} drawn to the echoes of violence and discord. They appear within Far range of a chosen PC and immediately take the spotlight.</p><section id=\"secret-iCbXJnMeqDXXOc8n\" class=\"secret\"><p><em>What color does the grass turn as the elemental appears? How does the chaos warp insects and small wildlife within the grove?</em></p></section>"
+            }
+          }
+        }
+      }
+    },
+    "Ambushed": {
+      "name": "Ambushed",
+      "description": "<p>An ambush is set to catch an unsuspecting party off-guard.</p>",
+      "impulses": "Overwhelm, scatter, surround",
+      "items": {
+        "NMErq9B4NS3NSiMy": {
+          "name": "Relative Strength",
+          "description": "<p>The Difficulty of this environment equals that of the adversary with the highest Difficulty.</p><section class=\"secret\" id=\"secret-FZokhR7CFr2tXkGn\"><p><em>Who cues the ambush? What makes it clear they’re in charge?</em></p></section>"
+        },
+        "HfuVxgVidIVsapvI": {
+          "name": "Surprise",
+          "description": "<p>The ambushers reveal themselves to the party, you gain 2 Fear, and the spotlight immediately shifts to one of the ambushing adversaries.</p><section id=\"secret-LcyhfZXPS4MD9dMC\" class=\"secret\"><p><em>What do the ambushers want from the party? How do their tactics in the ambush refl ect that?</em> </p></section>",
+          "actions": {
+            "TRSiqdwc1mYTHv4d": {
+              "name": "Gain Fear",
+              "description": "<p>The ambushers reveal themselves to the party, you gain 2 Fear, and the spotlight immediately shifts to one of the ambushing adversaries.</p><section class=\"secret\" id=\"secret-HTrPBtn99ANW7ON7\"><p><em>What do the ambushers want from the party? How do their tactics in the ambush refl ect that?</em></p></section>"
+            }
+          }
+        }
+      }
+    },
+    "Ambushers": {
+      "name": "Ambushers",
+      "description": "<p>An ambush is set by the PCs to catch unsuspecting adversaries off-guard.</p>",
+      "impulses": "Escape, group up, protect the most vulnerable",
+      "items": {
+        "hAGzlRjI3lpadVs7": {
+          "name": "Ambushers",
+          "description": "<p>The Difficulty of this environment equals that of the adversary with the highest Difficulty.</p><section class=\"secret\" id=\"secret-zPYO0951x4IKM5FN\"><p><em>Which adversary is the least prepared? Which one is the most?</em></p></section>"
+        },
+        "b6Qviz1ANG8OrAYq": {
+          "name": "Where Did They Come From?",
+          "description": "<p>When a PC starts the ambush on unsuspecting adversaries, you lose 2 Fear and the first attack roll a PC makes has advantage.</p><section class=\"secret\" id=\"secret-0BW2MHYrwlL7iHiR\"><p><em>What are the adversaries in the middle of doing when the ambush starts? How does this impact their approach to the fight?</em></p></section>",
+          "actions": {
+            "6DKa1Pm605HpChPd": {
+              "name": "Lose Fear",
+              "description": "<p>When a PC starts the ambush on unsuspecting adversaries, you lose 2 Fear and the first attack roll a PC makes has advantage.</p><section class=\"secret\" id=\"secret-WV3oLdq2IoLoSZqe\"><p><em>What are the adversaries in the middle of doing when the ambush starts? How does this impact their approach to the fight?</em></p></section>"
+            }
+          }
+        }
+      }
+    },
+    "Burning Heart of the Woods": {
+      "name": "Burning Heart of the Woods",
+      "description": "<p>Thick indigo ash fills the air around a towering moss-covered tree that burns eternally with flames a sickly shade of blue.</p>",
+      "impulses": "Beat out an uncanny rhythm for all to follow, corrupt the woods",
+      "items": {
+        "hU32a8QZy62gdLGc": {
+          "name": "Chaos Magic Locus",
+          "description": "<p>When a PC makes a Spellcast Roll, they must roll two Fear Dice and take the higher result. </p><section id=\"secret-oR4iWlNQoOg4IXMr\" class=\"secret\"><p><em>What does it feel like to work magic in this chaostouched place? What do you fear will happen if you lose control of the spell?</em></p></section>"
+        },
+        "nrwEMjdl5F86oES9": {
+          "name": "The Indigo Flame",
+          "description": "<p>PCs who approach the central tree can make a Knowledge Roll to try to identify the magic that consumed this environment. </p><ul><li><p><strong>On a success:</strong> They learn three of the below details. On a success with Fear, they learn two. </p></li><li><p><strong>On a failure:</strong> They can mark a Stress to learn one and gain advantage on the next action roll to investigate this environment. </p></li><li><p><strong>Details:</strong> This is a result of Fallen magic. The corruption is spread through the ashen moss. It can be cleansed only by a ritual of nature magic with a Progress Countdown (8).</p></li></ul><section id=\"secret-SkDRzA8454MaIFU3\" class=\"secret\"><p><em>What Fallen cult corrupted these woods? What have they already done with the cursed wood and sap from this tree?</em></p></section>"
+        },
+        "1aOeMMX0XuDtZbbB": {
+          "name": "Grasping Vines",
+          "description": "<p>Animate vines bristling with thorns whip out from the underbrush to ensnare the PCs. A target must succeed on an Agility Reaction Roll or become Restrained and Vulnerable until they break free, clearing both conditions, with a successful Finesse or Strength Roll or by dealing 10 damage to the vines. When the target makes a roll to escape, they take <strong>1d8+4</strong> physical damage and lose a Hope. </p><section id=\"secret-ysaK5Lw0DGsZsgxO\" class=\"secret\"><p><em>What painful memories do the vines bring to the surface as they pierce flesh?</em></p></section>",
+          "actions": {
+            "SfUlV5CL2kWJvXQX": {
+              "name": "Roll Save",
+              "description": "<p>Animate vines bristling with thorns whip out from the underbrush to ensnare the PCs. A target must succeed on an Agility Reaction Roll or become <em>Restrained</em> and <em>Vulnerable</em> until they break free, clearing both conditions, with a successful Finesse or Strength Roll or by dealing 10 damage to the vines. When the target makes a roll to escape, they take <strong>1d8+4</strong> physical damage and lose a Hope.</p><section class=\"secret\" id=\"secret-MEwPtrJUdIHjgb1k\"><p><em>What painful memories do the vines bring to the surface as they pierce flesh?</em></p></section>"
+            }
+          },
+          "effects": [
+            {
+              "name": "Grasping Vines",
+              "description": "<p><em>Restrained</em> and <em>Vulnerable</em> until you break free, clearing both conditions, with a successful Finesse or Strength Roll or by dealing 10 damage to the vines. When the target makes a roll to escape, they take <strong>1d8+4</strong> physical damage and lose a Hope.</p><section class=\"secret\" id=\"secret-Eui1zx8GKoUhEXq6\"><p><em>What painful memories do the vines bring to the surface as they pierce flesh?</em></p></section>"
+            }
+          ]
+        },
+        "JKFkDvwUOP35Tsr1": {
+          "name": "Charcoal Constructs",
+          "description": "<p>Warped animals wreathed in indigo f l ame trample through a point of your choice. All targets within Close range of that point must make an Agility Reaction Roll. Targets who fail take <strong>3d12+3</strong> physical damage. Targets who succeed take half damage instead.</p><p>@Template[type:emanation|range:c]</p><section class=\"secret\" id=\"secret-696PMvOPzHmkdtYc\"><p><em>Are these real animals consumed by the fl ame or merely constructs of the corrupting magic?</em></p></section>",
+          "actions": {
+            "gbXIaKr8em134IZC": {
+              "name": "Roll Save",
+              "description": "<p>Warped animals wreathed in indigo f l ame trample through a point of your choice. All targets within Close range of that point must make an Agility Reaction Roll. Targets who fail take <strong>3d12+3</strong> physical damage. Targets who succeed take half damage instead.</p><p>@Template[type:emanation|range:c]</p><section class=\"secret\" id=\"secret-O068IjvyIOaaS29o\"><p><em>Are these real animals consumed by the fl ame or merely constructs of the corrupting magic?</em></p></section>"
+            }
+          }
+        },
+        "kYxuTZjH7HDUGeWh": {
+          "name": "Choking Ash",
+          "description": "<p>Countdown (Loop 6). When the PCs enter the Burning Heart of the Woods, activate the countdown. When it triggers, all characters must make a Strength or Instinct Reaction Roll. Targets who fail take <strong>4d6+5</strong> direct physical damage. Targets who succeed take half damage. Protective masks or clothes give advantage on the reaction roll. </p><section id=\"secret-qQq9TrwyjdayheMk\" class=\"secret\"><p><em>What hallucinations does the ash induce? What incongruous taste does it possess?</em></p></section>",
+          "actions": {
+            "U9O0nh0LkdKzjIXS": {
+              "name": "Countdown",
+              "description": "<p>Countdown (Loop 6). When the PCs enter the Burning Heart of the Woods, activate the countdown.</p><section class=\"secret\" id=\"secret-szFYk9lUNPPVUeUU\"><p><em>What hallucinations does the ash induce? What incongruous taste does it possess?</em></p></section>"
+            },
+            "4XVdHOzycOXM5bh9": {
+              "name": "Damage",
+              "description": "<p>When the countdown triggers, all characters must make a Strength or Instinct Reaction Roll. Targets who fail take <strong>4d6+5</strong> direct physical damage. Targets who succeed take half damage. Protective masks or clothes give advantage on the reaction roll. </p><section class=\"secret\" id=\"secret-pf0x4kYIYL4CathW\"><p><em>What hallucinations does the ash induce? What incongruous taste does it possess?</em></p></section>"
+            }
+          }
+        }
+      }
+    },
+    "Bustling Marketplace": {
+      "name": "Bustling Marketplace",
+      "description": "<p>The economic heart of the settlement, with local artisans, traveling merchants, and patrons across social classes.</p>",
+      "impulses": "Buy low, and sell high, tempt and tantalize with wares from near and far",
+      "items": {
+        "w8YmhoWPGc66Wrx3": {
+          "name": "Tip the Scales",
+          "description": "<p>PCs can gain advantage on a Presence Roll by off ering a handful of gold as part of the interaction. </p><section id=\"secret-SkvXxhBWKBtYdJaq\" class=\"secret\"><p><em>Will any coin be accepted or only local currency? How overt are the PCs in offering this bribe?</em></p></section>"
+        },
+        "60uDqt9omFifZ7xd": {
+          "name": "Unexpected Find",
+          "description": "<p>Reveal to the PCs that one of the merchants has something they want or need, such as food from their home, a rare book, magical components, a dubious treasure map, or a magical key. </p><section id=\"secret-vuqosTt63aXllb93\" class=\"secret\"><p><em>What cost beyond gold will the merchant ask for in exchange for this rarity?</em></p></section>"
+        },
+        "56qjiKMoN6S9riI6": {
+          "name": "Sticky Fingers",
+          "description": "<p>A thief tries to steal something from a PC. The PC must succeed on an Instinct Roll to notice the thief or lose an item of the GM’s choice as the thief escapes to a Close distance. To retrieve the stolen item, the PCs must complete a Progress Countdown (6) to chase down the thief before the thief completes a Consequence Countdown (4) and escapes to their hideout.</p><section id=\"secret-UHBqg2AqmIAxgB15\" class=\"secret\"><p><em>What drove this person to pickpocketing? Where is the thief’s hideout and how has it avoided notice?</em></p></section>",
+          "actions": {
+            "GMy6OcMQnNJDDmtV": {
+              "name": "Roll Save",
+              "description": "<p>A thief tries to steal something from a PC. The PC must succeed on an Instinct Roll to notice the thief or lose an item of the GM’s choice as the thief escapes to a Close distance.</p>"
+            },
+            "0V36HDEb9gpLubGL": {
+              "name": "Countdowns",
+              "description": "<p>To retrieve the stolen item, the PCs must complete a Progress Countdown (6) to chase down the thief before the thief completes a Consequence Countdown (4) and escapes to their hideout.</p>"
+            }
+          }
+        },
+        "l2FzZpR2reVmlkdp": {
+          "name": "Crowd Closes In",
+          "description": "<p> When one of the PCs splits from the group, the crowds shift and cut them off  from the party. </p><section id=\"secret-JECVv19GdEo8ngkq\" class=\"secret\"><p><em>Where does the crowd’s movement carry them? How do they feel about being alone but surrounded?</em></p></section>"
+        }
+      }
+    },
+    "Castle Siege": {
+      "name": "Castle Siege",
+      "description": "<p>An active siege with an attacking force fighting to gain entry to a fortified castle.</p>",
+      "impulses": "Bleed out the will to fi ght, breach the walls, build tension",
+      "items": {
+        "2qUw5c3e22eywSwg": {
+          "name": "Secret Entrance",
+          "description": "<p>A PC can find or recall a secret way into the castle with a successful Instinct or Knowledge Roll. </p><section id=\"secret-6U0wYxm3kM3G7mAX\" class=\"secret\"><p><em>How do they get in without revealing the pathway to the attackers? Are any of the defenders monitoring this path?</em></p></section>"
+        },
+        "eSTq8Y0v4Dwd13XU": {
+          "name": "Siege Weapons (Environment Change)",
+          "description": "<p>Consequence Countdown (6). The attacking force deploys siege weapons to try to raze the defenders’ fortifi cations. Activate the countdown when the siege begins (for a protracted siege, make this a long-term countdown instead). When it triggers, the defenders’ fortifi cations have been breached and the attackers fl ood inside. You gain 2 Fear, then shift to the Pitched Battle environment and spotlight it. </p><section id=\"secret-P5oJplxVBVJGtggb\" class=\"secret\"><p><em>What siege weapons are being deployed? Are they magical mundane or a mixture of both? What defenses must the characters overcome to storm the castle?</em></p></section>",
+          "actions": {
+            "F89TDp557TJ1vvgm": {
+              "name": "Countdown",
+              "description": "<p>Consequence Countdown (6). The attacking force deploys siege weapons to try to raze the defenders’ fortifi cations. Activate the countdown when the siege begins (for a protracted siege, make this a long-term countdown instead).</p><section class=\"secret\" id=\"secret-rgITC5rHTbEfm5Q2\"><p><em>What siege weapons are being deployed? Are they magical mundane or a mixture of both? What defenses must the characters overcome to storm the castle?</em></p></section>"
+            },
+            "TGWI1Kvw4ZEP3QEo": {
+              "name": "Gain Fear",
+              "description": "<p>When the cooldown triggers, the defenders’ fortifications have been breached and the attackers flood inside. You gain 2 Fear, then shift to the Pitched Battle environment and spotlight it.</p>"
+            }
+          }
+        },
+        "U59K0WKVjwbgzMZU": {
+          "name": "Reinforcements!",
+          "description": "<p>Summon a @UUID[Compendium.daggerheart.adversaries.Actor.7ai2opemrclQe3VF]{Knight of the Realm}, a number of Tier 3 Minions equal to the number of PCs, and two adversaries of your choice within Far range of a chosen PC as reinforcements. The Knight of the Realm immediately takes the spotlight. </p><section id=\"secret-qYx1WuL81hHF5XW8\" class=\"secret\"><p><em>Who are they targeting first? What formation do they take?</em></p></section>"
+        },
+        "bemKmwjBtbEFVWXM": {
+          "name": "Collateral Damage",
+          "description": "<p>When an adversary is defeated, you can <strong>spend a Fear</strong> to have a stray attack from a siege weapon hit a point on the battlefield. All targets within Very Close range of that point must make an Agility Reaction Roll. </p><p>@Template[type:circle|range:vc]</p><ul><li><p>Targets who fail take <strong>3d8+3</strong> physical or magic damage and must mark a Stress. </p></li><li><p>Targets who succeed must mark a Stress.</p></li></ul><section id=\"secret-JdhetLsgL626ouo7\" class=\"secret\"><p><em>What debris is scattered by the attack? What is broken by the strike that can’t be easily mended?</em></p></section>",
+          "actions": {
+            "r5JN5oFYL5DC6Qqw": {
+              "name": "Roll Save",
+              "description": "<p>When an adversary is defeated, you can <strong>spend a Fear</strong> to have a stray attack from a siege weapon hit a point on the battlefield. All targets within Very Close range of that point must make an Agility Reaction Roll. </p><p>@Template[type:circle|range:vc]</p><ul><li><p>Targets who fail take <strong>3d8+3</strong> physical or magic damage and must mark a Stress. </p></li><li><p>Targets who succeed must mark a Stress.</p></li></ul><section class=\"secret\" id=\"secret-qe1DM7HUSefRAplk\"><p><em>What debris is scattered by the attack? What is broken by the strike that can’t be easily mended?</em></p></section>"
+            }
+          }
+        }
+      }
+    },
+    "Chaos Realm": {
+      "name": "Chaos Realm",
+      "description": "<p>An otherworldly space where the laws of reality are unstable and dangerous.</p>",
+      "impulses": "Annihilate certainty, consume power, defy logic",
+      "items": {
+        "yXCBy1MQuh5GwH5Q": {
+          "name": "Impossible Architecture",
+          "description": "<p>Up is down, down is right, right is starward. Gravity and directionality themselves are in fl ux, and any attempt to move through this realm is an odyssey unto itself, requiring a Progress Countdown (8). On a failure, a PC must mark a Stress in addition to the roll’s other consequences. </p><section id=\"secret-j76pJfYX7Cbt61Pq\" class=\"secret\"><p><em>What does it feel like to move in a space so alien to the Mortal Realm? What landmark or point do you fi xate on to maintain your balance? What bizarre landmarks do you traverse on your journey?</em></p></section>",
+          "actions": {
+            "hli84bleKqYoU7YL": {
+              "name": "Mark Stress",
+              "description": "<p><span style=\"color: rgb(239, 230, 216); font-family: Montserrat, sans-serif; font-size: 14px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgba(24, 22, 46, 0.376); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; display: inline !important; float: none\">On a failure, a PC must mark a Stress in addition to the roll’s other consequences.</span></p>"
+            }
+          }
+        },
+        "0OYHJZqT0DlVz5be": {
+          "name": "Everything You Are This Place Will Take from You",
+          "description": "<p>Countdown (Loop 1d4). Activate the countdown. When it triggers, all PCs must succeed on a Presence Reaction Roll or their highest trait is temporarily reduced by [[/r 1d4]] unless they mark a number of Stress equal to its value. Any lost trait points are regained if the PC critically succeeds or escapes the Chaos Realm. </p><section id=\"secret-uG9quQrfVqBYix6p\" class=\"secret\"><p><em>How does this place try to steal from you that which makes you legendary? What does it feel like to have this power taken from you?</em></p></section>",
+          "actions": {
+            "IexEUqnefrcD0VCz": {
+              "name": "Countdown",
+              "description": "<p>Countdown (Loop 1d4). Activate the countdown.</p><section class=\"secret\" id=\"secret-dFnoVgNh7bMpAQF1\"><p><em>How does this place try to steal from you that which makes you legendary? What does it feel like to have this power taken from you?</em></p></section>"
+            },
+            "zOQMo13vSiX3QReJ": {
+              "name": "Roll Save",
+              "description": "<p>When the countdown triggers, all PCs must succeed on a Presence Reaction Roll or their highest trait is temporarily reduced by [[/r 1d4]] unless they mark a number of Stress equal to its value. Any lost trait points are regained if the PC critically succeeds or escapes the Chaos Realm. </p><section class=\"secret\" id=\"secret-nXjHVXTDY3UzkRVb\"><p><em>How does this place try to steal from you that which makes you legendary? What does it feel like to have this power taken from you?</em></p></section>"
+            }
+          }
+        },
+        "RNbAdBZM6gDNaRPn": {
+          "name": "Unmaking",
+          "description": "<p><strong>Spend a Fear</strong> to force a PC to make a Strength Reaction Roll. On a failure, they take <strong>4d10</strong> direct magic damage. On a success, they must mark a Stress. </p><section id=\"secret-HGAS3UaO0JcUPdlT\" class=\"secret\"><p><em>What glimpse of other worlds do you catch while this place tries to unmake you? What core facet of your personality does the unmaking try to erase?</em></p></section>",
+          "actions": {
+            "6AT7qvUE6I6eVHU8": {
+              "name": "Roll Save",
+              "description": "<p><strong>Spend a Fear</strong> to force a PC to make a Strength Reaction Roll. On a failure, they take <strong>4d10</strong> direct magic damage. On a success, they must mark a Stress. </p><section class=\"secret\" id=\"secret-ycMBQOJJjDI4wEwK\"><p><em>What glimpse of other worlds do you catch while this place tries to unmake you? What core facet of your personality does the unmaking try to erase?</em></p></section>"
+            }
+          }
+        },
+        "SZpUJeJETVQtZwae": {
+          "name": "Outer Realms Predators",
+          "description": "<p><strong>Spend a Fear</strong> to summon an @UUID[Compendium.daggerheart.adversaries.Actor.A0SeeDzwjvqOsyof]{Outer Realms Abomination}, an@UUID[Compendium.daggerheart.adversaries.Actor.ms6nuOl3NFkhPj1k]{Outer Realms Corrupter}, and [[/r 2d6]] @UUID[Compendium.daggerheart.adversaries.Actor.moJhHgKqTKPS2WYS]{Outer Realms Thrall}, who appear at Close range of a chosen PC in defiance of logic and causality. Immediately spotlight one of these adversaries, and you can spend an additional Fear to automatically succeed on that adversary’s standard attack.</p><section class=\"secret\" id=\"secret-psXRRXLoibTKFpaW\"><p><em>What halfconsumed remnants of the shattered world do these monstrosities cast aside in pursuit of living flesh? What jagged refl ections of former personhood do you catch between moments of unquestioning malice?</em></p></section>",
+          "actions": {
+            "5a8ESNroEQHAm7rO": {
+              "name": "Spend Fear",
+              "description": "<p><strong>Spend a Fear</strong> to summon an @UUID[Compendium.daggerheart.adversaries.Actor.A0SeeDzwjvqOsyof]{Outer Realms Abomination}, an@UUID[Compendium.daggerheart.adversaries.Actor.ms6nuOl3NFkhPj1k]{Outer Realms Corrupter}, and [[/r 2d6]] @UUID[Compendium.daggerheart.adversaries.Actor.moJhHgKqTKPS2WYS]{Outer Realms Thrall}, who appear at Close range of a chosen PC in defiance of logic and causality. Immediately spotlight one of these adversaries, and you can spend an additional Fear to automatically succeed on that adversary’s standard attack.</p><section class=\"secret\" id=\"secret-ADMZbUwBRqcZNks5\"><p><em>What halfconsumed remnants of the shattered world do these monstrosities cast aside in pursuit of living flesh? What jagged refl ections of former personhood do you catch between moments of unquestioning malice?</em></p></section>"
+            }
+          }
+        },
+        "MyIh4CJsDnkjmeYs": {
+          "name": "Disorientating Reality",
+          "description": "<p>On a result with Fear, you can ask the PC to describe which of their fears the Chaos Realm evokes as a vision of reality unmakes and reconstitutes itself to the PC. The PC loses a Hope. If it is their last Hope, you gain a Fear. </p><section id=\"secret-0TIAabOXzWKwGdZ4\" class=\"secret\"><p><em>What moment do they see? If it’s a memory how is it warped by this place? How hard will it be to hold on to the real memory?</em></p></section>",
+          "actions": {
+            "YIOvMuMMML7WeMWs": {
+              "name": "Lose Hope",
+              "description": "<p>On a result with Fear, you can ask the PC to describe which of their fears the Chaos Realm evokes as a vision of reality unmakes and reconstitutes itself to the PC. The PC loses a Hope. If it is their last Hope, you gain a Fear. </p><section class=\"secret\" id=\"secret-2PNCQTvkwRTu3IYz\"><p><em>What moment do they see? If it’s a memory how is it warped by this place? How hard will it be to hold on to the real memory?</em></p></section>"
+            }
+          }
+        }
+      }
+    },
+    "Cliffside Ascent": {
+      "name": "Cliffside Ascent",
+      "description": "<p>A steep, rocky cliffside tall enough to make traversal dangerous.</p>",
+      "impulses": "Cast the unready down to a rocky doom, draw people in with promise of what lies at the top",
+      "items": {
+        "bKBwM72OwVnlsHG6": {
+          "name": "The Climb",
+          "description": "<p>Climbing up the cliff side uses a Progress Countdown (12). It ticks down according to the following criteria when the PCs make an action roll to climb: </p><ul><li><p><strong>Critical Success</strong>: Tick down 3</p></li><li><p><strong>Success with Hope</strong>: Tick down 2</p></li><li><p><strong>Success with Fear</strong>: Tick down 1</p></li><li><p><strong>Failure with Hope</strong>: No Advancement</p></li><li><p><strong>Failure with Fear</strong>: Tick up 1</p></li></ul><p>When the countdown triggers, the party has made it to the top of the cliff .</p><section id=\"secret-TUIXsJs6D65YsP9f\" class=\"secret\"><p><em>What strange formations are the stones arranged in? What ominous warnings did previous adventurers leave?</em></p></section>",
+          "actions": {
+            "6GVdM7pIOpieLRA8": {
+              "name": "Countdown",
+              "description": "<p>Climbing up the cliff side uses a Progress Countdown (12). It ticks down according to the following criteria when the PCs make an action roll to climb: </p><ul><li><p><strong>Critical Success</strong>: Tick down 3</p></li><li><p><strong>Success with Hope</strong>: Tick down 2</p></li><li><p><strong>Success with Fear</strong>: Tick down 1</p></li><li><p><strong>Failure with Hope</strong>: No Advancement</p></li><li><p><strong>Failure with Fear</strong>: Tick up 1</p></li></ul><p>When the countdown triggers, the party has made it to the top of the cliff .</p><section class=\"secret\" id=\"secret-U5QekZcpE7tSEBy2\"><p><em>What strange formations are the stones arranged in? What ominous warnings did previous adventurers leave?</em></p></section>"
+            }
+          }
+        },
+        "t8ZbtlGiYC8MKqqu": {
+          "name": "Pitons Left Behind",
+          "description": "<p>Previous climbers left behind large metal rods that climbers can use to aid their ascent. If a PC using the pitons fails an action roll to climb, they can <strong>mark a Stress</strong> instead of ticking the countdown up.</p><section class=\"secret\" id=\"secret-qk9dYgHaJUBCtFBR\"><p><em>What do the shape and material of these pitons tell you about the previous climbers? How far apart are they from one another?</em></p></section>",
+          "actions": {
+            "p1UiGEiGyl6r7PrA": {
+              "name": "Mark Stress",
+              "description": "<p>Previous climbers left behind large metal rods that climbers can use to aid their ascent. If a PC using the pitons fails an action roll to climb, they can <strong>mark a Stress</strong> instead of ticking the countdown up.</p><section class=\"secret\" id=\"secret-fWHkzBQAxCLDmV6H\"><p><em>What do the shape and material of these pitons tell you about the previous climbers? How far apart are they from one another?</em></p></section>"
+            }
+          }
+        },
+        "EP4FXeQqbqFGQoIX": {
+          "name": "Fall",
+          "description": "<p>Spend a Fear to have a PC’s handhold fail, plummeting them toward the ground. If they aren’t saved on the next action, they hit the ground and tick up the countdown by 2. The PC takes <strong>1d12</strong> physical damage if the countdown is between 8 and 12, <strong>2d12</strong> between 4 and 7, and <strong>3d12</strong> at 3 or lower.</p><section class=\"secret\" id=\"secret-M5AEA24dk07O00FA\"><p><em>How can you tell many others have fallen here before? What lives in these walls that might try to scare adventurers into falling for an easy meal?</em></p></section>",
+          "actions": {
+            "LVEPUPIAJJMiCtbV": {
+              "name": "Roll 1d12"
+            },
+            "F9B1uVeil6z1ZWoz": {
+              "name": "Roll 2d12"
+            },
+            "gx8HEZvgf3yO9WOp": {
+              "name": "Roll 3d12"
+            },
+            "M8MfD2qBfYCwNKvH": {
+              "name": "Spend Fear",
+              "description": "<p>Spend a Fear to have a PC’s handhold fail, plummeting them toward the ground. If they aren’t saved on the next action, they hit the ground and tick up the countdown by 2. The PC takes <strong>1d12</strong> physical damage if the countdown is between 8 and 12, <strong>2d12</strong> between 4 and 7, and <strong>3d12</strong> at 3 or lower.</p><section class=\"secret\" id=\"secret-ufZ6ifPWxU4MkKow\"><p><em>How can you tell many others have fallen here before? What lives in these walls that might try to scare adventurers into falling for an easy meal?</em></p></section>"
+            }
+          }
+        }
+      }
+    },
+    "Cult Ritual": {
+      "name": "Cult Ritual",
+      "description": "<p>A Fallen cult assembles around a sigil of the defeated gods and a bonfire that burns a sickly shade of green.</p>",
+      "impulses": "Profane the land, unite the Mortal Realm with the Circles Below",
+      "items": {
+        "iiHjguQG2aBn9g8i": {
+          "name": "Desecrated Ground",
+          "description": "<p>Cultists dedicated this place to the Fallen Gods, and their foul influence seeps into it. Reduce the PCs’ Hope Die to a d10 while in this environment. The desecration can be removed with a Progress Countdown (6).</p><section class=\"secret\" id=\"secret-iPgKjrXJYw4cy0EX\"><p><em>How do the PCs fist notice that something is wrong about this place? What fears resurface while hope is kept at bay?</em></p></section>"
+        },
+        "0Rgqw1kUPeJ11ldd": {
+          "name": "Blashemous Might",
+          "description": "<p>A portion of the ritual’s power is diverted into a cult member to fight off interlopers. Choose one adversary to become Imbued with terrible magic until the scene ends or they’re defeated. An Imbued adversary immediately takes the spotlight and gains one of the following benefits, or all three if you <strong>spend a Fear</strong>:</p><ul><li><p>They gain advantage on all attacks.</p></li><li><p>They deal an extra <strong>1d10</strong> damage on a successful attack.</p></li><li><p>They gain the following feature: <strong>Relentless (2) - Passive</strong>. This adversary can be spotlighted up to two times per GM turn. Spend Fear as usual to spotlight them.</p></li></ul><section class=\"secret\" id=\"secret-600LhfEy1uNSxWdJ\"><p><em>How does the enemy change in appearance? What fears do their blows bring to the surface?</em></p></section>",
+          "actions": {
+            "EATw4ZkcuGeDfgLZ": {
+              "name": "Imbue",
+              "description": "<p>A portion of the ritual’s power is diverted into a cult member to fight off interlopers. Choose one adversary to become Imbued with terrible magic until the scene ends or they’re defeated. An Imbued adversary immediately takes the spotlight and gains one of the following benefits, or all three if you <strong>spend a Fear</strong>:</p><ul><li><p>They gain advantage on all attacks.</p></li><li><p>They deal an extra <strong>1d10</strong> damage on a successful attack.</p></li><li><p>They gain the following feature: <strong>Relentless (2) - Passive</strong>. This adversary can be spotlighted up to two times per GM turn. Spend Fear as usual to spotlight them.</p></li></ul><section class=\"secret\" id=\"secret-5wFIFufzFAPrIDaq\"><p><em>How does the enemy change in appearance? What fears do their blows bring to the surface?</em></p></section>"
+            }
+          },
+          "effects": [
+            {
+              "name": "Blashemous Might",
+              "description": "<p>An Imbued adversary immediately takes the spotlight and gains one of the following benefits, or all three if you <strong>spend a Fear</strong>:</p><ul><li><p>They gain advantage on all attacks.</p></li><li><p>They deal an extra <strong>1d10</strong> damage on a successful attack.</p></li><li><p>They gain the following feature: <strong>Relentless (2) - Passive</strong>. This adversary can be spotlighted up to two times per GM turn. Spend Fear as usual to spotlight them.</p></li></ul><section class=\"secret\" id=\"secret-YOHA68Na64uXDAxu\"><p><em>How does the enemy change in appearance? What fears do their blows bring to the surface?</em></p></section>"
+            },
+            {
+              "name": "Blashemous Might - Damage"
+            }
+          ]
+        },
+        "oFfu3hUhp4ta4qwT": {
+          "name": "The Summoning",
+          "description": "<p>Countdown (6). When the PCs enter the scene or the cult begins the ritual to summon a demon, activate the countdown. Designate one adversary to lead the ritual. The countdown ticks down when a PC rolls with Fear. When it triggers, summon a Minor Demon within Very Close range of the ritual’s leader. If the leader is defeated, the countdown ends with no effect as the ritual fails.</p><section class=\"secret\" id=\"secret-OXdRqIZ0R8wGn3Gm\"><p><em>What will the cult do with this leashed demon if they succeed? What will they try to summon next?</em></p></section>"
+        },
+        "WltEUhtYwfnX8WCc": {
+          "name": "Complete the Ritual",
+          "description": "<p>If the ritual’s leader is targeted by an attack or spell, an ally within Very Close range of them can <strong>mark a Stress</strong> to be targeted by that attack or spell instead. </p><section id=\"secret-4QYQNJKFywfwkGGp\" class=\"secret\"><p><em>What does it feel like to see such devotion turned to the pursuit of fear and domination?</em></p></section>"
+        }
+      }
+    },
+    "Divine Usurpation": {
+      "name": "Divine Usurpation",
+      "description": "<p>A massive ritual designed to breach the gates of the Hallows Above and unseat the New Gods themselves.</p>",
+      "impulses": "Collect power, overawe, silence dissent",
+      "items": {
+        "IHLJjpOQyWjmCLAL": {
+          "name": "Final Preparations",
+          "description": "<p>When the environment first takes the spotlight, designate one adversary as the Usurper seeking to overthrow the gods. Activate a Long-Term Countdown (8) as the Usurper assembles what they need to conduct the ritual. When it triggers, spotlight this environment to use the “Beginning of the End” feature. While this environment remains in play, you can hold up to 15 Fear. </p><section id=\"secret-5ezbFLP3BnyqQPov\" class=\"secret\"><p><em>What does the Usurper still require: The heart of a High Seraph? The lodestone of an ancient waygate? The loyalty of two archenemies? The heartbroken tears of a pure soul?</em></p></section>",
+          "actions": {
+            "pnAJNmZApL1Acsj1": {
+              "name": "Countdown",
+              "description": "<p>When the environment first takes the spotlight, designate one adversary as the Usurper seeking to overthrow the gods. Activate a Long-Term Countdown (8) as the Usurper assembles what they need to conduct the ritual. While this environment remains in play, you can hold up to 15 Fear.</p><section class=\"secret\" id=\"secret-Ilu20TRkfslT2a3K\"><p><em>What does the Usurper still require: The heart of a High Seraph? The lodestone of an ancient waygate? The loyalty of two archenemies? The heartbroken tears of a pure soul?</em></p></section>"
+            },
+            "UMGyEHdQhYXyGEss": {
+              "name": "Trigger Countdown",
+              "description": "<p>When the countdown triggers, spotlight this environment to use the “Beginning of the End” feature.</p><section class=\"secret\" id=\"secret-InHMXWLy76neQv3c\"><p><em>What does the Usurper still require: The heart of a High Seraph? The lodestone of an ancient waygate? The loyalty of two archenemies? The heartbroken tears of a pure soul?</em></p></section>"
+            }
+          }
+        },
+        "fA2wVTxpDPaTlP9v": {
+          "name": "Divine Blessing",
+          "description": "<p>When a PC critically succeeds, they can spend 2 Hope to refresh an ability normally limited by uses (such as once per rest, once per session). </p><section id=\"secret-IRlwaXlRxPqtJ6eg\" class=\"secret\"><p><em>What god favors you as you fi ght against this usurpation? How does your renewed power reflect their influence?</em></p></section>"
+        },
+        "OWUM3eFiZrIn0Bjd": {
+          "name": "Difilers Abound",
+          "description": "<p><strong>Spend 2 Fear</strong> to summon [[/r 1d4+2]] @UUID[Compendium.daggerheart.adversaries.Actor.OsLG2BjaEdTZUJU9]{Fallen Shock Troop} that appear within Close range of the Usurper to assist their divine siege. Immediately spotlight the Shock Troops to use a “Group Attack” action.</p><section class=\"secret\" id=\"secret-QJHdwGNSuTgS59gn\"><p><em>Which High Fallen do these troops serve? Which god’s fl esh do they wish to feast upon?</em></p></section>",
+          "actions": {
+            "qIQTEO5t72xFtKYI": {
+              "name": "Spend Fear",
+              "description": "<p><strong>Spend 2 Fear</strong> to summon [[/r 1d4+2]] @UUID[Compendium.daggerheart.adversaries.Actor.OsLG2BjaEdTZUJU9]{Fallen Shock Troop} that appear within Close range of the Usurper to assist their divine siege. Immediately spotlight the Shock Troops to use a “Group Attack” action.</p><section class=\"secret\" id=\"secret-fNfGy8lT8b7elPcE\"><p><em>Which High Fallen do these troops serve? Which god’s fl esh do they wish to feast upon?</em></p></section>"
+            }
+          }
+        },
+        "CL3wPZNOtw6m5WVT": {
+          "name": "Godslayer",
+          "description": "<p>If the Divine Siege Countdown (see “Beginning of the End”) has triggered, you can <strong>spend 3 Fear</strong> to describe the Usurper slaying one of the gods of the Hallows Above, feasting upon their power and growing stronger. The Usurper clears 2 HP. Increase their Difficulty, damage, attack modifier, or give them a new feature from the slain god. </p><section id=\"secret-OIyf1RZFfLopuMlg\" class=\"secret\"><p><em>Which god meets their end? What are their last words? How does the Usurper’s new stolen power manifest?</em></p></section>",
+          "actions": {
+            "hwQsng6Kt8pQBD3Z": {
+              "name": "Spend Fear",
+              "description": "<p>If the Divine Siege Countdown (see “Beginning of the End”) has triggered, you can <strong>spend 3 Fear</strong> to describe the Usurper slaying one of the gods of the Hallows Above, feasting upon their power and growing stronger. The Usurper clears 2 HP. Increase their Difficulty, damage, attack modifier, or give them a new feature from the slain god. </p><section class=\"secret\" id=\"secret-SDqxukOa9Sz8zbGZ\"><p><em>Which god meets their end? What are their last words? How does the Usurper’s new stolen power manifest?</em></p></section>"
+            }
+          },
+          "effects": [
+            {
+              "name": "Godslayer"
+            },
+            {
+              "name": "Godslayer",
+              "description": "<p>Increase their Difficulty, damage, attack modifier, or give them a new feature from the slain god.</p><section class=\"secret\" id=\"secret-BLw5aVqkkCtUQXnk\"><p><em>Which god meets their end? What are their last words? How does the Usurper’s new stolen power manifest?</em></p></section>"
+            }
+          ]
+        },
+        "AJdG1krRvixBFCZG": {
+          "name": "Beginning of the End",
+          "description": "<p>When the “Final Preparations” long-term countdown triggers, the Usurper begins hammering on the gates of the Hallows themselves. Activate a Divine Siege Countdown (10). Spotlight the Usurper to describe the Usurper’s assault and tick down this countdown by 1. If the Usurper takes Major or greater damage, tick up the countdown by 1. When it triggers, the Usurper shatters the barrier between the Mortal Realm and the Hallows Above to slay the gods and take their place. You gain a Fear for each unmarked HP the Usurper has. You can immediately use the “Godslayer” feature without spending Fear to make an additional GM move. </p><section id=\"secret-eVeMBBA7aAZgn9FO\" class=\"secret\"><p><em>How does the Mortal Realm writhe as the natural order is violated? What mortals witness this blasphemy from afar?</em></p></section>",
+          "actions": {
+            "lUTJqI8Z9AR7t4B2": {
+              "name": "Countdown",
+              "description": "<p>When the “Final Preparations” long-term countdown triggers, the Usurper begins hammering on the gates of the Hallows themselves. Activate a Divine Siege Countdown (10).</p><section class=\"secret\" id=\"secret-OqCr3uNWn5xOHis0\"><p><em>How does the Mortal Realm writhe as the natural order is violated? What mortals witness this blasphemy from afar?</em></p></section>"
+            },
+            "N83u4SKOlCfLvdYI": {
+              "name": "Spotlight Usurper",
+              "description": "<p>Spotlight the Usurper to describe the Usurper’s assault and tick down the countdown by 1. </p><section class=\"secret\" id=\"secret-5Nggk3PogQYR7pTg\"><p><em>How does the Mortal Realm writhe as the natural order is violated? What mortals witness this blasphemy from afar?</em></p></section>"
+            }
+          }
+        },
+        "GUAo44cJCnS1GE9p": {
+          "name": "Ritual Nexus",
+          "description": "<p>On any failure with Fear against the Usurper, the PC must mark <strong>1d4</strong> Stress from the backlash of magical power. </p><section id=\"secret-FROwYRDYLwvnn2lH\" class=\"secret\"><p><em>What visions of failures past torment you as your efforts fall short? How are these memories twisted by the Usurper?</em></p></section>",
+          "actions": {
+            "9qXDsVnWI436IWEk": {
+              "name": "Mark Stress",
+              "description": "<p>On any failure with Fear against the Usurper, the PC must mark <strong>1d4</strong> Stress from the backlash of magical power. </p><section class=\"secret\" id=\"secret-ysZhGlH7LtJS0qua\"><p><em>What visions of failures past torment you as your efforts fall short? How are these memories twisted by the Usurper?</em></p></section>"
+            }
+          }
+        }
+      }
+    },
+    "Hallowed Temple": {
+      "name": "Hallowed Temple",
+      "description": "<p>A bustling but well-kept temple that provides healing and hosts regular services, overseen by a priest or seraph.</p>",
+      "impulses": "Connect the Mortal Realm with the Hallows Above, display the power of the divine, provide aid and succor to the faithful",
+      "items": {
+        "hgHpS2k1sVxHKiG1": {
+          "name": "A Place of Healing",
+          "description": "<p>A PC who takes a rest in the Hallowed Temple automatically clears all HP.</p><section class=\"secret\" id=\"secret-L4xPjXbsFBvAJkG3\"><p><em>What does the incense smell like? What kinds of songs do the acolytes sing?</em></p></section>",
+          "actions": {
+            "uLCoTKa7Jn2HaRqR": {
+              "name": "Healing",
+              "description": "<p>A PC who takes a rest in the Hallowed Temple automatically clears all HP.</p><section class=\"secret\" id=\"secret-vN4UFTYIQW8nd2mC\"><p><em>What does the incense smell like? What kinds of songs do the acolytes sing?</em></p></section>"
+            }
+          }
+        },
+        "uqV1mTkJmXJwMYue": {
+          "name": "Divine Guidance",
+          "description": "<p>A PC who prays to a deity while in the Hallowed Temple can make an Instinct Roll to receive answers. If the god they beseech isn’t welcome in this temple, the roll is made with disadvantage.</p><ul><li><p><strong>Critical Success:</strong> The PC gains clear information. Additionally, they gain [[/r 1d4]] Hope, which can be distributed between the party if they share the vision and guidance they received. </p></li><li><p><strong>Success with Hope:</strong> The PC receives clear information. </p></li><li><p><strong>Success with Fear:</strong> The PC receives brief flashes of insight and an emotional impression conveying an answer. </p></li><li><p><strong>Any Failure:</strong> The PC receives only vague flashes. They can mark a Stress to receive one clear image without context.</p></li></ul><pre><code>What does it feel like as you are touched by this vision? What feeling lingers after the images have passed?</code></pre>"
+        },
+        "vICfHK2urDQ2Jm8s": {
+          "name": "Relentless Hope",
+          "description": "<p>Once per scene, each PC can mark a Stress to turn a result with Fear into a result with Hope. </p><section id=\"secret-z2wMjfAVnSoTHSlR\" class=\"secret\"><p><em>What emotions or memories do you connect with when fear presses in?</em></p></section>",
+          "actions": {
+            "VlBjJ32dXlboSANv": {
+              "name": "Mark Stress",
+              "description": "<p>Once per scene, each PC can mark a Stress to turn a result with Fear into a result with Hope.</p><section class=\"secret\" id=\"secret-1BKTtBh9igK1y871\"><p><em>What emotions or memories do you connect with when fear presses in?</em></p></section>"
+            }
+          }
+        },
+        "8tGAuFRyM4onvQ2o": {
+          "name": "Divine Censure",
+          "description": "<p>When the PCs have trespassed, blasphemed, or offended the clergy, you can <strong>spend a Fear</strong> to summon a @UUID[Compendium.daggerheart.adversaries.Actor.r1mbfSSwKWdcFdAU]{High Seraph} and [[/r 1d4]] @UUID[Compendium.daggerheart.adversaries.Actor.B4LZcGuBAHzyVdzy]{Bladed Guard} within Close range of the senior priest to reinforce their will.</p><section class=\"secret\" id=\"secret-bJG5Vk2KPgau6rQB\"><p><em>What symbols or icons do they bear that signal they are anointed agents of the divinity? Who leads the group and what led them to this calling?</em></p></section>",
+          "actions": {
+            "pJVipg7CbA9CB0Um": {
+              "name": "Generic",
+              "description": "<p>When the PCs have trespassed, blasphemed, or offended the clergy, you can <strong>spend a Fear</strong> to summon a @UUID[Compendium.daggerheart.adversaries.Actor.r1mbfSSwKWdcFdAU]{High Seraph} and [[/r 1d4]] @UUID[Compendium.daggerheart.adversaries.Actor.B4LZcGuBAHzyVdzy]{Bladed Guard} within Close range of the senior priest to reinforce their will.</p><section class=\"secret\" id=\"secret-tG902NbtYpyK0NFi\"><p><em>What symbols or icons do they bear that signal they are anointed agents of the divinity? Who leads the group and what led them to this calling?</em></p></section>"
+            }
+          }
+        }
+      }
+    },
+    "Haunted City": {
+      "name": "Haunted City",
+      "description": "<p>An abandoned city populated by the restless spirits of eras past.</p>",
+      "impulses": "Misdirect and disorient, replay apocalypses both public and personal",
+      "items": {
+        "h8Dv8pToiCVklPhv": {
+          "name": "Buried Knowledge",
+          "description": "<p>The city has countless mysteries to unfold. A PC who seeks knowledge about the fallen city can make an Instinct or Knowledge Roll to learn about this place and discover (potentially haunted) loot. </p><ul><li><p><strong>Critical Success</strong>: Gain valuable information and a related useful item. </p></li><li><p><strong>Success with Hope:</strong> Gain valuable information.</p></li><li><p><strong>Success with Fear:</strong> Uncover vague or incomplete information.</p></li><li><p><strong>Any Failure:</strong> Mark a Stress to find a lead after an exhaustive search.</p></li></ul><section id=\"secret-b7Tkr2KzblSvwAPj\" class=\"secret\"><p><em>What greater secrets does the city contain? Why have so many ghosts lingered here? What doomed adventurers have met a bad fate here already?</em></p></section>"
+        },
+        "gRpkBU3CLJvDnB7I": {
+          "name": "Ghostly Form",
+          "description": "<p>Adversaries who appear here are of a ghostly form. They have resistance to physical damage and can <strong>mark a Stress</strong> to move up to Close range through solid objects. </p><section id=\"secret-P15mCN36Cns7QUHw\" class=\"secret\"><p><em>What injuries to their physical form speak to their cause of death? What unfulfi lled purpose holds them in the Mortal Plane?</em> </p></section>",
+          "actions": {
+            "VCWX0P9kq2oGTpUo": {
+              "name": "Ghostly Form",
+              "description": "<p>Adversaries who appear here are of a ghostly form. They have resistance to physical damage and can <strong>mark a Stress</strong> to move up to Close range through solid objects.</p><section class=\"secret\" id=\"secret-Ol8146pzjrPjVjqt\"><p><em>What injuries to their physical form speak to their cause of death? What unfulfi lled purpose holds them in the Mortal Plane?</em></p></section>"
+            }
+          },
+          "effects": [
+            {
+              "name": "Ghostly Form",
+              "description": "<p>Adversaries who appear here are of a ghostly form. They have resistance to physical damage and can <strong>mark a Stress</strong> to move up to Close range through solid objects.</p><section class=\"secret\" id=\"secret-o5a4SMwemuVEfDMq\"><p><em>What injuries to their physical form speak to their cause of death? What unfulfi lled purpose holds them in the Mortal Plane?</em></p></section>"
+            }
+          ]
+        },
+        "ZA2RzxH5FlnrcYLN": {
+          "name": "Dead Ends",
+          "description": "<p>The ghosts of an earlier era manifest scenes from their bygone era, such as a street festival, a revolution, or a heist. These hauntings change the layout of the city around the PCs, blocking the way behind them, forcing a detour, or presenting them with a challenge, such as mistaking them for rival thieves during the heist.</p><section id=\"secret-ttpwol0cvVxPyK7e\" class=\"secret\"><p><em>What do the ghosts want from you? What do you need from them?</em></p></section>"
+        },
+        "i0FV2Djaq0vB57cq": {
+          "name": "Apocalypse Then",
+          "description": "<p><strong>Spend a Fear</strong> to manifest the echo of a past disaster that ravaged the city. Activate a Progress Countdown (5) as the disaster replays around the PCs. To complete the countdown and escape the catastrophe, the PCs must overcome threats such as rampaging fires, stampeding civilians, collapsing buildings, or crumbling streets, while recalling history and finding clues to escape the inevitable. </p><section id=\"secret-3MamLVZP4l2SxHzO\" class=\"secret\"><p><em>Is this the disaster that led the city to be abandoned? What is known about this disaster and how could that help the PCs escape?</em></p></section>",
+          "actions": {
+            "7H16PYHHgK0Z34NU": {
+              "name": "Countdown",
+              "description": "<p><strong>Spend a Fear</strong> to manifest the echo of a past disaster that ravaged the city. Activate a Progress Countdown (5) as the disaster replays around the PCs. </p>"
+            }
+          }
+        }
+      }
+    },
+    "Imperial Court": {
+      "name": "Imperial Court",
+      "description": "<p>The majestic domain of a powerful empire, lavishly appointed with stolen treasures.</p>",
+      "impulses": "Justify and perpetuate imperial rule, seduce rivals with promises of power and comfort",
+      "items": {
+        "OXUbWRt1Dj0vk7mW": {
+          "name": "All Roads Lead Here",
+          "description": "<p>While in the Imperial Court, a PC has disadvantage on Presence Rolls made to take actions that don’t fit the imperial way of life or support the empire’s dominance. </p><section id=\"secret-P8G0DAghe8QgaSZV\" class=\"secret\"><p><em>How does the way language is used make even discussing alternative ways of living difficult? What obvious benefits for loyalty create friction when you try to discuss alternatives?</em></p></section>"
+        },
+        "LURReixasmMbiP2C": {
+          "name": "Rival Vassals",
+          "description": "<p>The PCs can find imperial subjects, vassals, and supplicants in the court, each vying for favor, seeking proximity to power, exchanging favors for loyalty, and elevating their status above others’. Some might be desperate to undermine their rivals, while others might even be open to discussions that verge on sedition. </p><section id=\"secret-pDDW0dor0MhTdx4c\" class=\"secret\"><p><em>How do they benefit from vassalage and what has it cost them? What exploitation drives them to consider opposing the unstoppable?</em></p></section>"
+        },
+        "tm9FL5gJF7Oheu21": {
+          "name": "The Gravity of Empire",
+          "description": "<p><strong>Spend a Fear</strong> to present a PC with a golden opportunity or offer to satisfy a major goal in exchange for obeying or supporting the empire. The target must make a Presence Reaction Roll. On a failure, they must mark all their Stress or accept the off er. If they have already marked all their Stress, they must accept the off er or exile themselves from the empire. On a success, they must mark <strong>1d4</strong> Stress as they’re taxed by temptation.</p><section class=\"secret\" id=\"secret-4carYxEQygk6m4cQ\"><p><em>What do the PCs want so desperately they might consider throwing in with this ruthless power? How did imperial agents learn the PC’s greatest desires?</em></p></section>",
+          "actions": {
+            "Pr8CpaOehr1cE1b8": {
+              "name": "Roll Save",
+              "description": "<p><strong>Spend a Fear</strong> to present a PC with a golden opportunity or off er to satisfy a major goal in exchange for obeying or supporting the empire. The target must make a Presence Reaction Roll. On a failure, they must mark all their Stress or accept the offer. If they have already marked all their Stress, they must accept the off er or exile themselves from the empire. On a success, they must mark <strong>1d4</strong> Stress as they’re taxed by temptation.</p><section class=\"secret\" id=\"secret-jB2klJ9141Yiot3c\"><p><em>What do the PCs want so desperately they might consider throwing in with this ruthless power? How did imperial agents learn the PC’s greatest desires?</em></p></section>"
+            }
+          }
+        },
+        "HwSKX5r40ux0OfJN": {
+          "name": "Imperial Decree",
+          "description": "<p><strong>Spend a Fear</strong> to tick down a long-term countdown related to the empire’s agenda by [[/r 1d4]]. If this triggers the countdown, a proclamation related to the agenda is announced at court as the plan is executed.</p><section class=\"secret\" id=\"secret-kuZLu5mJvqvQ1NvT\"><p><em>What display of power or transfer of wealth was needed to expedite this plan? Whose lives were disrupted or upended to make this happen?</em></p></section>",
+          "actions": {
+            "9ipckCFMz9DVw8ab": {
+              "name": "Roll d4",
+              "description": "<p><strong>Spend a Fear</strong> to tick down a long-term countdown related to the empire’s agenda by [[/r 1d4]]. If this triggers the countdown, a proclamation related to the agenda is announced at court as the plan is executed.</p><section class=\"secret\" id=\"secret-ThoGDjazxfPoUvJS\"><p><em>What display of power or transfer of wealth was needed to expedite this plan? Whose lives were disrupted or upended to make this happen?</em></p></section>"
+            }
+          }
+        },
+        "YPMgWUagVq1Hicqo": {
+          "name": "Eyes Everywhere",
+          "description": "<p>On a result with Fear, you can <strong>spend a Fear</strong> to have someone loyal to the empire overhear seditious talk within the court. A PC must succeed on an Instinct Reaction Roll to notice that the group has been overheard so they can try to intercept the witness before the PCs are exposed.</p><section class=\"secret\" id=\"secret-kN4J3annyev9WWUs\"><p><em>How has the empire compromised this witness? Why is their first impulse to protect the empire even if doesn’t treat them well?</em></p></section>",
+          "actions": {
+            "czEbFu3uIlW5Spju": {
+              "name": "Roll Save",
+              "description": "<p>On a result with Fear, you can <strong>spend a Fear</strong> to have someone loyal to the empire overhear seditious talk within the court. A PC must succeed on an Instinct Reaction Roll to notice that the group has been overheard so they can try to intercept the witness before the PCs are exposed. </p><section class=\"secret\" id=\"secret-lCrNuPGNEGSBiTSY\"><p><em>How has the empire compromised this witness? Why is their first impulse to protect the empire even if doesn’t treat them well?</em></p></section>"
+            }
+          }
+        }
+      }
+    },
+    "Local Tavern": {
+      "name": "Local Tavern",
+      "description": "<p>A lively tavern that serves as the social hub for its town.</p>",
+      "impulses": "Provide opportunities for adventurers, nurture community",
+      "items": {
+        "7to5Zu0lNycExCQi": {
+          "name": "What's the Talk of the Town?",
+          "description": "<p>A PC can ask the bartender, staff , or patrons about local events, rumors, and potential work with a Presence Roll. On a success, they can pick two of the below details to learn—or three if they critically succeed. On a failure, they can pick one and mark a Stress as the local carries on about something irrelevant. </p><ul><li><p>A fascinating rumor with a connection to a PC’s background</p></li><li><p>A promising job for the party involving a nearby threat or situation </p></li><li><p>Local folklore that relates to something they’ve seen</p></li><li><p>Town gossip that hints at a community problem</p></li></ul><section id=\"secret-x6IPMS6Z4MFBE65u\" class=\"secret\"><p><em>Who has what kind of information? What gossip do the locals start spreading about the PCs?</em></p></section>"
+        },
+        "oLn3co1mN83OiFWo": {
+          "name": "Sing For Your Supper",
+          "description": "<p>A PC can perform one time for the guests by making a Presence Roll. On a success, they earn <strong>[[/r 1d4]]</strong> handfuls of gold (<strong>[[/r 2d4]]</strong> if they critically succeed). On a failure, they mark a Stress.</p><section id=\"secret-vrH9YdQGP2sTa3cV\" class=\"secret\"><p><em>What piece do you perform? What does that piece mean to you? When’s the last time you performed it for a crowd?</em></p></section>"
+        },
+        "cAbSo5VQHxJqJPKm": {
+          "name": "Mysterious Stranger",
+          "description": "<p> Reveal a stranger concealing their identity, lurking in a shaded booth.</p><section id=\"secret-tgxS9TgbDCpI1kZC\" class=\"secret\"><p><em>What do they want? What’s their impression of the PCs? What mannerisms or accessories do they have?</em></p></section>"
+        },
+        "QPezCAC18vIc5xRC": {
+          "name": "Someone Comes to Town",
+          "description": "<p>Introduce a signifi cant NPC who wants to hire the party for something or who relates to a PC’s background. </p><section id=\"secret-DB6Th0yGCjAsAZp6\" class=\"secret\"><p><em>Did they know the PCs were here? What do they want in this town?</em></p></section>"
+        },
+        "H3LNvVrUbsAkgjni": {
+          "name": "Bar Fight",
+          "description": "<p><strong>Spend a Fear</strong> to have a bar fight erupt in the tavern. When a PC tries to move through the tavern while the fight persists, they must succeed on an Agility or Presence Roll or take <strong>1d6+2</strong> physical damage from a wild swing or thrown object. A PC can try to activate this feature by succeeding on an action roll that would provoke tavern patrons.</p><section class=\"secret\" id=\"secret-xLK8VSKLM6JQRySG\"><p><em>Who started the fight? What will it take to stop it?</em></p></section>",
+          "actions": {
+            "4UjyjYaMdcnFmVrL": {
+              "name": "Damage"
+            }
+          }
+        }
+      }
+    },
+    "Mountain Pass": {
+      "name": "Mountain Pass",
+      "description": "<p>Stony peaks that pierce the clouds, with a twisting path winding its way up and over through many switchbacks.</p>",
+      "impulses": "Exact a chilling toll in supplies and stamina, reveal magical tampering, slow down travel",
+      "items": {
+        "cIAMenvMXHPTpOFn": {
+          "name": "Engraved Sigils",
+          "description": "<p>Large markings and engravings have been made in the mountainside. A PC with a relevant background or Experience identifi es them as weather magic increasing the power of the icy winds. A PC who succeeds on a Knowledge Roll can recall information about the sigils, potential information about their creators, and the knowledge of how to dispel them. If a PC critically succeeds, they recognize that the sigils are of a style created by ridgeborne enchanters and they gain advantage on a roll to dispel the sigils. </p><section id=\"secret-5FNK8Z7pIo0nEyCA\" class=\"secret\"><p><em>Who laid this enchantment? Are they nearby? Why did they want the weather to be more daunting?</em></p></section>"
+        },
+        "jkm03DXYYajsRk2j": {
+          "name": "Avalanche",
+          "description": "<p>Spend a Fear to carve the mountain with an icy torrent, causing an avalanche. All PCs in its path must succeed on an Agility or Strength Reaction Roll or be bowled over and carried down the mountain. A PC using rope, pitons, or other climbing gear gains advantage on this roll. Targets who fail are knocked down the mountain to Far range, take <strong>2d20</strong> physical damage, and must mark a Stress. Targets who succeed must mark a Stress. </p><section id=\"secret-3gM8fEJj1vD9W88k\" class=\"secret\"><p><em>How do the PCs try to weather the avalanche? What approach do the characters take to fi nd one another when their companions go hurtling down the mountainside?</em></p></section>",
+          "actions": {
+            "P2fHddwfyEGUwpCH": {
+              "name": "Damage",
+              "description": "<p>Spend a Fear to carve the mountain with an icy torrent, causing an avalanche. All PCs in its path must succeed on an Agility or Strength Reaction Roll or be bowled over and carried down the mountain. A PC using rope, pitons, or other climbing gear gains advantage on this roll. Targets who fail are knocked down the mountain to Far range, take <strong>2d20</strong> physical damage, and must mark a Stress. Targets who succeed must mark a Stress.</p><section class=\"secret\" id=\"secret-scxxru7P29oZ1dt8\"><p><em>How do the PCs try to weather the avalanche? What approach do the characters take to fi nd one another when their companions go hurtling down the mountainside?</em></p></section>"
+            }
+          }
+        },
+        "hkZVEduCWJFR0h2S": {
+          "name": "Raptor Nest",
+          "description": "<p>When the PCs enter the raptors’ hunting grounds, two @UUID[Compendium.daggerheart.adversaries.Actor.OMQ0v6PE8s1mSU0K]{Giant Eagles} appear at Very Far range of a chosen PC, identifying the PCs as likely prey. </p><section id=\"secret-aU19zKlmhVBdS2oF\" class=\"secret\"><p><em>How long has it been since the eagles last found prey? Do they have eggs in their nest or unfl edged young?</em></p></section>"
+        },
+        "K8ld4m5yTA6WZwUs": {
+          "name": "Icy Winds",
+          "description": "<p>Countdown (Loop 4). When the PCs enter the mountain pass, activate the countdown. When it triggers, all characters traveling through the pass must succeed on a Strength Reaction Roll or mark a Stress. A PC wearing clothes appropriate for extreme cold gains advantage on these rolls. </p><section id=\"secret-FsJMzj3ZZuf134s2\" class=\"secret\"><p><em>What parts of the PC’s bodies go numb fi rst? How do they try to keep warm as they press forward?</em></p></section>",
+          "actions": {
+            "P6U45vsXJmEW6BBj": {
+              "name": "Countdown",
+              "description": "<p>Countdown (Loop 4). When the PCs enter the mountain pass, activate the countdown. </p><section class=\"secret\" id=\"secret-v5D1PTyNviMNTlIO\"><p><em>What parts of the PC’s bodies go numb fi rst? How do they try to keep warm as they press forward?</em></p></section>"
+            },
+            "kDV2h9DhO6fEDcjl": {
+              "name": "Roll Save",
+              "description": "<p>When the countdown triggers, all characters traveling through the pass must succeed on a Strength Reaction Roll or mark a Stress. A PC wearing clothes appropriate for extreme cold gains advantage on these rolls. </p><section class=\"secret\" id=\"secret-nEZRdWaqMAIUoQG0\"><p><em>What parts of the PC’s bodies go numb fi rst? How do they try to keep warm as they press forward?</em></p></section>"
+            }
+          }
+        }
+      }
+    },
+    "Necromancer’s Ossuary": {
+      "name": "Necromancer’s Ossuary",
+      "description": "<p>A dusty crypt with a library, twisting corridors, and abundant sarcophagi, spattered with the blood of ill-fated invaders.</p>",
+      "impulses": "Confound intruders, delve into secrets best left buried, manifest unlife, unleash a tide of undead",
+      "items": {
+        "SJo1Pw0fE4vKnisr": {
+          "name": "No Place for the Living",
+          "description": "<p>A feature or action that clears HP requires spending a Hope to use. If it already costs Hope, a PC must spend an additional Hope.</p><section class=\"secret\" id=\"secret-kxbv8Ju7dkBJnduH\"><p><em>What does it feel like to try to heal in a place so antithetical to life?</em></p></section>",
+          "actions": {
+            "jVY198vniaTSlgsX": {
+              "name": "Lose Hope",
+              "description": "<p>A feature or action that clears HP requires spending a Hope to use. If it already costs Hope, a PC must spend an additional Hope.</p><section class=\"secret\" id=\"secret-Ls4rMO6N9zzuR2Ib\"><p><em>What does it feel like to try to heal in a place so antithetical to life?</em></p></section>"
+            }
+          }
+        },
+        "Egi337jsYlldHzEH": {
+          "name": "Centuries of Knowledge",
+          "description": "<p>A PC can investigate the library and laboratory and make a Knowledge Roll to learn information related to arcana, local history, and the Necromancer’s plans. </p><section id=\"secret-HAWRKErLm6NSqzHc\" class=\"secret\"><p><em>What are the names of the tomes? What project is the necromancer working on and what does it communicate about their plans?</em></p></section>"
+        },
+        "asSGMUdf4gG4PO8F": {
+          "name": "Skeletal Burst",
+          "description": "<p>All targets within Close range of a point you choose in this environment must succeed on an Agility Reaction Roll or take <strong>4d8+8</strong> physical damage from skeletal shrapnel as part of the ossuary detonates around them. </p><p>@Template[type:circle|range:c]</p><section id=\"secret-b6zF5gClmMcrmeVT\" class=\"secret\"><p><em>What ancient skeletal architecture is destroyed? What bones stick in your armor?</em></p></section>",
+          "actions": {
+            "M1mOwi4Limw2hRwL": {
+              "name": "Roll Save",
+              "description": "<p>All targets within Close range of a point you choose in this environment must succeed on an Agility Reaction Roll or take <strong>4d8+8</strong> physical damage from skeletal shrapnel as part of the ossuary detonates around them. </p><p>@Template[type:circle|range:c]</p><section class=\"secret\" id=\"secret-xjKFOtdFFWAgx2Cv\"><p><em>What ancient skeletal architecture is destroyed? What bones stick in your armor?</em></p></section>"
+            }
+          }
+        },
+        "mnpqMpYCjdlwtvBp": {
+          "name": "Aura of Death",
+          "description": "<p>Once per scene, roll a <strong>d4</strong>. Each undead within Far range of the Necromancer can clear HP and Stress equal to the result rolled. The undead can choose how that number is divided between HP and Stress. </p><section id=\"secret-LzevSyHyOxNxLwwh\" class=\"secret\"><p><em>How does their renewed vigor manifest? Do they look more lifelike or paradoxically are they more decayed but vigorous?</em></p></section>",
+          "actions": {
+            "UWCibXbQZG22PJ3l": {
+              "name": "Roll d4",
+              "description": "<p>Once per scene, roll a <strong>d4</strong>. Each undead within Far range of the Necromancer can clear HP and Stress equal to the result rolled. The undead can choose how that number is divided between HP and Stress. </p><section class=\"secret\" id=\"secret-frj3OBrXCjpKtWSg\"><p><em>How does their renewed vigor manifest? Do they look more lifelike or paradoxically are they more decayed but vigorous?</em></p></section>"
+            }
+          }
+        },
+        "chJRXNg5zyTGbcG5": {
+          "name": "They Just Keep Coming!",
+          "description": "<p><strong>Spend a Fear</strong> to summon [[/r 1d6]] @UUID[Compendium.daggerheart.adversaries.Actor.gP3fWTLzSFnpA8EJ]{Rotted Zombie}, two @UUID[Compendium.daggerheart.adversaries.Actor.CP6iRfHdyFWniTHY]{Perfected Zombie}, or a @UUID[Compendium.daggerheart.adversaries.Actor.YhJrP7rTBiRdX5Fp]{Zombie Legion}, who appear at Close range of a chosen PC.</p><section class=\"secret\" id=\"secret-O5DKa2eIgNp51OVK\"><p><em>Who were these people before they became the necromancer’s pawns? What vestiges of those lives remain for the heroes to see?</em></p></section>",
+          "actions": {
+            "hFeTdiHWeCYkb8Hg": {
+              "name": "Spend Fear",
+              "description": "<p><strong>Spend a Fear</strong> to summon [[/r 1d6]] @UUID[Compendium.daggerheart.adversaries.Actor.gP3fWTLzSFnpA8EJ]{Rotted Zombie}, two @UUID[Compendium.daggerheart.adversaries.Actor.CP6iRfHdyFWniTHY]{Perfected Zombie}, or a @UUID[Compendium.daggerheart.adversaries.Actor.YhJrP7rTBiRdX5Fp]{Zombie Legion}, who appear at Close range of a chosen PC.</p><section class=\"secret\" id=\"secret-Du2785Ih29RVrHpG\"><p><em>Who were these people before they became the necromancer’s pawns? What vestiges of those lives remain for the heroes to see?</em></p></section>"
+            }
+          }
+        }
+      }
+    },
+    "Outpost Town": {
+      "name": "Outpost Town",
+      "description": "<p>A small town on the outskirts of a nation or region, close to a dungeon, tombs, or other adventuring destinations.</p>",
+      "impulses": "Drive the desperate to certain doom, profi t off  of ragged hope",
+      "items": {
+        "whN2Ztn2wMqD7uW3": {
+          "name": "Rumors Abound",
+          "description": "<p>Gossip is the fastest-traveling currency in the realm. A PC can inquire about major events by making a Presence Roll. What they learn depends on the outcome of their roll, based on the following criteria: </p><ul><li><p><strong>Critical Success:</strong> Learn about two major events. The PC can ask one follow-up question about one of the rumors and get a truthful (if not always complete) answer. </p></li><li><p><strong>Success with Hope:</strong> Learn about two events, at least one of which is relevant to the character’s background. </p></li><li><p><strong>Success with Fear:</strong> Learn an alarming rumor related to the character’s background. </p></li><li><p><strong>Any Failure:</strong> The locals respond poorly to their inquiries. The PC must mark a Stress to learn one relevant rumor.</p></li></ul><section id=\"secret-IRa0gzmTR2psynpd\" class=\"secret\"><p><em>What news do the PCs have that they could pass along to curious travelers? What do the locals think about these events?</em></p></section>"
+        },
+        "nhf2TK7HSkuAgIi8": {
+          "name": "Society of the Broken Compass",
+          "description": "<p>An adventuring society maintains a chapterhouse here, where heroes trade boasts and rumors, drink to their imagined successes, and scheme to undermine their rivals. </p><section id=\"secret-dqbYBpMMEMIe3Woh\" class=\"secret\"><p><em>What boasts do the adventurers here make and which do you think are true?</em></p></section>"
+        },
+        "cPozA1iT4NLwsWqB": {
+          "name": "Rival Party",
+          "description": "<p>Another adventuring party is here, seeking the same treasure or leads as the PCs. </p><section id=\"secret-1CvOSOAzIzFqPzXt\" class=\"secret\"><p><em>Which PC has a connection to one of the rival party members? Do they approach the PC fi rst or do they wait for the PC to move?</em></p></section>"
+        },
+        "uxu8YrvYVxP3Qc2y": {
+          "name": "It'd Be a Shame If Something Happened to Your Store",
+          "description": "<p>The PCs witness as agents of a local crime boss shake down a general goods store. </p><section id=\"secret-QbURC6tIeF3hLLT6\" class=\"secret\"><p><em>What trouble does it cause if the PCs intervene?</em></p></section>"
+        },
+        "21tdueq5Wgvj3vG4": {
+          "name": "Wrong Place, Wrong Time",
+          "description": "<p>At night, or when the party is alone in a back alley, you can <strong>spend a Fear</strong> to introduce a group of thieves who try to rob them. The thieves appear at Close range of a chosen PC and include a @UUID[Compendium.daggerheart.adversaries.Actor.CBKixLH3yhivZZuL]{Jagged Knife Kneebreaker}, as many @UUID[Compendium.daggerheart.adversaries.Actor.C0OMQqV7pN6t7ouR]{Lackeys} as there are PCs, and a @UUID[Compendium.daggerheart.adversaries.Actor.aTljstqteGoLpCBq]{Lieutenant}. For a larger party, add a @UUID[Compendium.daggerheart.adversaries.Actor.MbBPIOxaxXYNApXz]{Hexer} or @UUID[Compendium.daggerheart.adversaries.Actor.1zuyof1XuIfi3aMG]{Jagged Knife Sniper}.</p><section class=\"secret\" id=\"secret-5MEuvRtxMnpLEwAA\"><p><em>What details show the party that these people are desperate former adventurers?</em></p></section>",
+          "actions": {
+            "UBHQzK5D6Dn5QuPc": {
+              "name": "Spend Fear",
+              "description": "<p>At night, or when the party is alone in a back alley, you can <strong>spend a Fear</strong> to introduce a group of thieves who try to rob them. The thieves appear at Close range of a chosen PC and include a @UUID[Compendium.daggerheart.adversaries.Actor.CBKixLH3yhivZZuL]{Jagged Knife Kneebreaker}, as many @UUID[Compendium.daggerheart.adversaries.Actor.C0OMQqV7pN6t7ouR]{Lackeys} as there are PCs, and a @UUID[Compendium.daggerheart.adversaries.Actor.aTljstqteGoLpCBq]{Lieutenant}. </p><section id=\"secret-8U6iwKGNeWQ27x1A\" class=\"secret\"><p>For a larger party, add a @UUID[Compendium.daggerheart.adversaries.Actor.MbBPIOxaxXYNApXz]{Hexer} or @UUID[Compendium.daggerheart.adversaries.Actor.1zuyof1XuIfi3aMG]{Jagged Knife Sniper}.</p><p><em>What details show the party that these people are desperate former adventurers?</em></p></section>"
+            }
+          }
+        }
+      }
+    },
+    "Pitched Battle": {
+      "name": "Pitched Battle",
+      "description": "<p>A massive combat between two large groups of armed combatants.</p>",
+      "impulses": "Seize people, land, and wealth, spill blood for greed and glory",
+      "items": {
+        "HG9GwIZoCDcqOEOc": {
+          "name": "Pitched Battle",
+          "description": "<p>Traversing a battlefield during an active combat is extremely dangerous. A PC must succeed on an Agility Roll to move at all, and can only go up to Close range on a success. If an adversary is within Melee range of them, they must mark a Stress to make an Agility Roll to move. </p><section id=\"secret-c0pwA8OrITyfhrCX\" class=\"secret\"><p><em>Do the combatants mistake you for the enemy or consider you interlopers? Can you tell the diff erence between friend and foe in the fray?</em></p></section>"
+        },
+        "fnvOiHKsd34EaLqG": {
+          "name": "Raze and Pillage",
+          "description": "<p>The attacking force raises the stakes by lighting a fire, stealing a valuable asset, kidnapping an important person, or killing the populace. </p><section id=\"secret-5JBRdq8QJcmurvLp\" class=\"secret\"><p><em>What is valuable here? Who is most vulnerable?</em></p></section>"
+        },
+        "r9kkodHghWm01mje": {
+          "name": "War Magic",
+          "description": "<p><strong>Spend a Fear</strong> as a mage from one side uses large-scale destructive magic. Pick a point on the battlefield within Very Far range of the mage. All targets within Close range of that point must make an Agility Reaction Roll. Targets who fail take <strong>3d12+8</strong> magic damage and must mark a Stress. </p><p>@Template[type:circle|range:c]</p><section id=\"secret-PpyF0dXMEudYnFqh\" class=\"secret\"><p><em>What form does the attack take—fireball raining acid a storm of blades? What tactical objective is this attack meant to accomplish and what comes next?</em></p></section>",
+          "actions": {
+            "1giAFbu3tGqXwi8g": {
+              "name": "Roll Save",
+              "description": "<p><strong>Spend a Fear</strong> as a mage from one side uses large-scale destructive magic. Pick a point on the battlefield within Very Far range of the mage. All targets within Close range of that point must make an Agility Reaction Roll. Targets who fail take <strong>3d12+8</strong> magic damage and must mark a Stress. </p><p>@Template[type:circle|range:c]</p><section class=\"secret\" id=\"secret-jbI9lwrzP59CTRUt\"><p><em>What form does the attack take—fireball raining acid a storm of blades? What tactical objective is this attack meant to accomplish and what comes next?</em></p></section>"
+            }
+          }
+        },
+        "ZAIvH5CfhehW48EY": {
+          "name": "Reinforcements",
+          "description": "<p>Summon a @UUID[Compendium.daggerheart.adversaries.Actor.7ai2opemrclQe3VF]{Knight of the Realm}, a number of Tier 3 Minions equal to the number of PCs, and two adversaries of your choice within Far range of a chosen PC as reinforcements. The Knight of the Realm immediately takes the spotlight. </p><section id=\"secret-ZNhg3daBKekzABSQ\" class=\"secret\"><p><em>Who are they targeting first? What formation do they take?</em></p></section>"
+        }
+      }
+    },
+    "Raging River": {
+      "name": "Raging River",
+      "description": "<p>A swift-moving river without a bridge crossing, deep enough to sweep away most people.</p>",
+      "impulses": "Bar crossing, carry away the unready, divide the land",
+      "items": {
+        "4ILX7BCinmsGqrJM": {
+          "name": "Dangerous Crossing",
+          "description": "<p>Crossing the river requires the party to complete a Progress Countdown (4).</p><section class=\"secret\" id=\"secret-l7tHfgFFOGdvlnll\"><p>A PC who rolls a failure with Fear is immediately targeted by the “Undertow” action without requiring a Fear to be spent on the feature.</p></section><p></p><section id=\"secret-VF0r7nXxQlmuwMpj\" class=\"secret\"><p><em>Have any of the PCs forded rivers like this before? Are any of them afraid of drowning?</em></p></section>",
+          "actions": {
+            "miodf3TMFrGRCvj6": {
+              "name": "Countdown",
+              "description": "<p>Crossing the river requires the party to complete a Progress Countdown (4). </p><section id=\"secret-mrmEGWrNJvoobYFZ\" class=\"secret\"><p>A PC who rolls a failure with Fear is immediately targeted by the “Undertow” action without requiring a Fear to be spent on the feature. </p><p><em>Have any of the PCs forded rivers like this before? Are any of them afraid of drowning?</em></p></section>"
+            }
+          }
+        },
+        "WsNoSwwtv0r80BMj": {
+          "name": "Undertow",
+          "description": "<p><strong>Spend a Fear</strong> to catch a PC in the undertow. They must make an Agility Reaction Roll. On a failure, they take <strong>1d6+1</strong> physical damage and are moved a Close distance down the river, becoming Vulnerable until they get out of the river. On a success, they must mark a Stress. </p><section id=\"secret-H6i1kuyHdtq9Eqgw\" class=\"secret\"><p><em>What trinkets and baubles lie along the bottom of the riverbed? Do predators swim these rivers?</em></p></section>",
+          "actions": {
+            "f2e3gbhzD7z8BdCc": {
+              "name": "Roll Save",
+              "description": "<p><strong>Spend a Fear</strong> to catch a PC in the undertow. They must make an Agility Reaction Roll. On a failure, they take <strong>1d6+1</strong> physical damage and are moved a Close distance down the river, becoming Vulnerable until they get out of the river. On a success, they must mark a Stress.</p><section class=\"secret\" id=\"secret-FmZbu6m2gtachqyE\"><p><em>What trinkets and baubles lie along the bottom of the riverbed? Do predators swim these rivers?</em></p></section>"
+            }
+          },
+          "effects": [
+            {
+              "name": "Undertow",
+              "description": "<p><em>Vulnerable</em> until you get out of the river.</p>"
+            }
+          ]
+        },
+        "SDTS3LOPMVJOt1S1": {
+          "name": "Patient Hunter",
+          "description": "<p><strong>Spend a Fear</strong> to summon a @UUID[Compendium.daggerheart.adversaries.Actor.8KWVLWXFhlY2kYx0]{Glass Snake} within Close range of a chosen PC. The Snake appears in or near the river and immediately takes the spotlight to use their “Spinning Serpent” action.</p><section class=\"secret\" id=\"secret-F8zsJQg3xWOPpH5v\"><p><em>What treasures does the beast have in their burrow? What travelers have already fallen victim to this predator?</em></p></section>",
+          "actions": {
+            "Mnp0Yzc7EPVXm8So": {
+              "name": "Spend Fear",
+              "description": "<p><strong>Spend a Fear</strong> to summon a @UUID[Compendium.daggerheart.adversaries.Actor.8KWVLWXFhlY2kYx0]{Glass Snake} within Close range of a chosen PC. The Snake appears in or near the river and immediately takes the spotlight to use their “Spinning Serpent” action.</p><section class=\"secret\" id=\"secret-YIc1Y8jgJKanim7f\"><p><em>What treasures does the beast have in their burrow? What travelers have already fallen victim to this predator?</em></p></section>"
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,340 @@
+{
+  "label": "Ancestries",
+  "folders": {
+    "Ancestry Features": "Ancestry Features"
+  },
+  "mapping": {
+    "description": "system.description",
+    "actions": "system.actions"
+  },
+  "entries": {
+    "Clank": {
+      "name": "Clank",
+      "description": "<p>Clanks are sentient mechanical beings built from a variety of materials, including metal, wood, and stone.<br><br><p class=\"green Body-Styles_Body\" chunk_id=\"cf73a44a-bad6-493d-9d72-4007c4b803e7\">They can resemble humanoids, animals, or even inanimate objects. Like organic beings, their bodies come in a wide array of sizes. Because of their bespoke construction, many clanks have highly specialized physical configurations. Examples include clawed hands for grasping, wheels for movement, or built-in weaponry.</p>\n<p class=\"green Body-Styles_Body\" chunk_id=\"89241f41-6ba6-40db-a272-c23b400e26e8\">Many clanks embrace body modifications for style as well as function, and members of other ancestries often turn to clank artisans to construct customized mobility aids and physical adornments. Other ancestries can create clanks, even using their own physical characteristics as inspiration, but it’s also common for clanks to build one another. A clank’s lifespan extends as long as they’re able to acquire or craft new parts, making their physical form effectively immortal. That said, their minds are subject to the effects of time, and deteriorate as the magic that powers them loses potency.</p></p>"
+    },
+    "Drakona": {
+      "name": "Drakona",
+      "description": "<p>Drakona resemble wingless dragons in humanoid form and possess a powerful elemental breath.<br><br><p>All drakona have thick scales that provide excellent natural armor against both attacks and the forces of nature. They are large in size, ranging from 5 feet to 7 feet on average, with long sharp teeth. New teeth grow throughout a Drakona’s approximately 350-year lifespan, so they are never in danger of permanently losing an incisor. Unlike their dragon ancestors, drakona don’t have wings and can’t fly without magical aid. Members of this ancestry pass down the element of their breath through generations, though in rare cases, a drakona’s elemental power will differ from the rest of their family’s.</p></p>"
+    },
+    "Dwarf": {
+      "name": "Dwarf",
+      "description": "<p>Dwarves are most easily recognized as short humanoids with square frames, dense musculature, and thick hair.<br><br><p>Their average height ranges from 4 to 5 ½ feet, and they are often broad in proportion to their stature. Their skin and nails contain a high amount of keratin, making them naturally resilient. This allows dwarves to embed gemstones into their bodies and decorate themselves with tattoos or piercings. Their hair grows thickly—usually on their heads, but some dwarves have thick hair across their bodies as well. Dwarves of all genders can grow facial hair, which they often style in elaborate arrangements. Typically, dwarves live up to 250 years of age, maintaining their muscle mass well into later life.</p></p>"
+    },
+    "Elf": {
+      "name": "Elf",
+      "description": "<p>Elves are typically tall humanoids with pointed ears and acutely attuned senses.<br><br><p class=\"green Body-Styles_Body\" chunk_id=\"977fe91c-fa57-4a66-83e1-1f62a922f018\">Their ears vary in size and pointed shape, and as they age, the tips begin to droop. While elves come in a wide range of body types, they are all fairly tall, with heights ranging from about 6 to 6 ½ feet. All elves have the ability to drop into a celestial trance, rather than sleep. This allows them to rest effectively in a short amount of time.</p>\n<p class=\"green Body-Styles_Body\" chunk_id=\"95498747-ff6e-4842-8706-a912c907bab6\">Some elves possess what is known as a “mystic form,” which occurs when an elf has dedicated themself to the study or protection of the natural world so deeply that their physical form changes. These characteristics can include celestial freckles, the presence of leaves, vines, or flowers in their hair, eyes that flicker like fire, and more. Sometimes these traits are inherited from parents, but if an elf changes their environment or magical focus, their appearance changes over time. Because elves live for about 350 years, these traits can shift more than once throughout their lifespan.</p><</p>"
+    },
+    "Faerie": {
+      "name": "Faerie",
+      "description": "<p>Faeries are winged humanoid creatures with insectile features.<br><br><p>These characteristics cover a broad spectrum from humanoid to insectoid—some possess additional arms, compound eyes, lantern organs, chitinous exoskeletons, or stingers. Because of their close ties to the natural world, they also frequently possess attributes that allow them to blend in with various plants. The average height of a faerie ranges from about 2 feet to 5 feet, but some faeries grow up to 7 feet tall. All faeries possess membranous wings and they each go through a process of metamorphosis. The process and changes differ from faerie to faerie, but during this transformation each individual manifests the unique appearance they will carry throughout the rest of their approximately 50-year lifespan.</p></p>"
+    },
+    "Faun": {
+      "name": "Faun",
+      "description": "<p>Fauns resemble humanoid goats with curving horns, square pupils, and cloven hooves.<br><br><p>Though their appearances may vary, most fauns have a humanoid torso and a goatlike lower body covered in dense fur. Faun faces can be more caprine or more humanlike, and they have a wide variety of ear and horn shapes. Faun horns range from short with minimal curvature to much larger with a distinct curl. The average faun ranges from 4 feet to 6 ½ feet tall, but their height can change dramatically from one moment to the next based on their stance. The majority of fauns have proportionately long limbs, no matter their size or shape, and are known for their ability to deliver powerful blows with their split hooves. Fauns live for roughly 225 years, and as they age, their appearance can become increasingly goatlike.</p></p>"
+    },
+    "Firbolg": {
+      "name": "Firbolg",
+      "description": "<p>Firbolgs are bovine humanoids typically recognized by their broad noses and long, drooping ears.<br><br><p>Some have faces that are a blend of humanoid and bison, ox, cow, or other bovine creatures. Others, often referred to as minotaurs, have heads that entirely resemble cattle. They are tall and muscular creatures, with heights ranging from around 5 feet to 7 feet, and possess remarkable strength no matter their age. Some firbolgs are known to use this strength to charge their adversaries, an action that is particuarly effective for those who have one of the many varieties of horn styles commonly found in this ancestry. Though their unique characteristics can vary, all firbolgs are covered in fur, which can be muted and earth-toned in color, or come in a variety of pastels, such as soft pinks and blues. On average, firbolgs live for about 150 years.</p></p>"
+    },
+    "Fungril": {
+      "name": "Fungril",
+      "description": "<p>Fungril resemble humanoid mushrooms.<br><br><p>They can be either more humanoid or more fungal in appearance, and they come in an assortment of colors, from earth tones to bright reds, yellows, purples, and blues. Fungril display an incredible variety of bodies, faces, and limbs, as there’s no single common shape among them. Even their heights range from a tiny 2 feet tall to a staggering 7 feet tall. While the common lifespan of a fungril is about 300 years, some have been reported to live much longer. They can communicate nonverbally, and many members of this ancestry use a mycelial array to chemically exchange information with other fungril across long distances.</p></p>"
+    },
+    "Galapa": {
+      "name": "Galapa",
+      "description": "<p>Galapa resemble anthropomorphic turtles with large, domed shells into which they can retract.<br><br><p>On average, they range from 4 feet to 6 feet in height, and their head and body shapes can resemble any type of turtle. Galapa come in a variety of earth tones—most often shades of green and brown— and possess unique patterns on their shells. Members of this ancestry can draw their head, arms, and legs into their shell for protection to use it as a natural shield when defensive measures are needed. Some supplement their shell's strength or appearance by attaching armor or carving unique designs, but the process is exceedingly painful. Most galapa move slowly no matter their age, and they can live approximately 150 years.</p></p>"
+    },
+    "Giant": {
+      "name": "Giant",
+      "description": "<p>Giants are towering humanoids with broad shoulders, long arms, and one to three eyes.<br><br><p>Adult giants range from 6 ½ to 8 ½ feet tall and are naturally muscular, regardless of body type. They are easily recognized by their wide frames and elongated arms and necks. Though they can have up to three eyes, all giants are born with none and remain sightless for their first year of life. Until a giant reaches the age of 10 and their features fully develop, the formation of their eyes may fluctuate. Those with a single eye are commonly known as cyclops. The average giant lifespan is about 75 years.</p></p>"
+    },
+    "Goblin": {
+      "name": "Goblin",
+      "description": "<p>Goblins are small humanoids easily recognizable by their large eyes and massive membranous ears.<br><br><p>With keen hearing and sharp eyesight, they perceive details both at great distances and in darkness, allowing them to move through less-optimal environments with ease. Their skin and eye colors are incredibly varied, with no one hue, either vibrant or subdued, more dominant than another. A typical goblin stands between 3 feet and 4 feet tall, and each of their ears is about the size of their head. Goblins are known to use ear positions to very specific effect when communicating nonverbally. A goblin’s lifespan is roughly 100 years, and many maintain their keen hearing and sight well into advanced age.</p></p>"
+    },
+    "Halfling": {
+      "name": "Halfling",
+      "description": "<p>Halflings are small humanoids with large hairy feet and prominent rounded ears.<br><br><p>On average, halflings are 3 to 4 feet in height, and their ears, nose, and feet are larger in proportion to the rest of their body. Members of this ancestry live for around 150 years, and a halfling’s appearance is likely to remain youthful even as they progress from adulthood into old age. Halflings are naturally attuned to the magnetic fields of the Mortal Realm, granting them a strong internal compass. They also possess acute senses of hearing and smell, and can often detect those who are familiar to them by the sound of their movements.</p></p>"
+    },
+    "Human": {
+      "name": "Human",
+      "description": "<p>Humans are most easily recognized by their dexterous hands, rounded ears, and bodies built for endurance.<br><br><p>Their average height ranges from just under 5 feet to about 6 ½ feet. They have a wide variety of builds, with some being quite broad, others lithe, and many inhabiting the spectrum in between. Humans are physically adaptable and adjust to harsh climates with relative ease. In general, humans live to an age of about 100, with their bodies changing dramatically between their youngest and oldest years.</p></p>"
+    },
+    "Infernis": {
+      "name": "Infernis",
+      "description": "<p>Infernis are humanoids who possess sharp canine teeth, pointed ears, and horns. They are the descendants of demons from the Circles Below.<br><br><p class=\"green Body-Styles_Body\" chunk_id=\"2472bb3d-27fb-4638-a3e6-210e0f852235\">On average, infernis range in height from 5 feet to 7 feet and are known to have long fingers and pointed nails. Some have long, thin, and smooth tails that end in points, forks, or arrowheads. It’s common for infernis to have two or four horns—though some have crowns of many horns, or only one. These horns can also grow asymmetrically, forming unique, often curving, shapes that infernis enhance with carving and ornamentation. Their skin, hair, and horns come in an assortment of colors that can include soft pastels, stark tones, or vibrant hues, such as rosy scarlet, deep purple, and pitch black.</p>\n<p class=\"green Body-Styles_Body\" chunk_id=\"d470cbaf-01bb-42ad-bb35-ac20f32b4825\">Infernis possess a “dread visage” that manifests both involuntarily, such as when they experience fear or other strong emotions, or purposefully, such as when they wish to intimidate an adversary. This visage can briefly modify their appearance in a variety of ways, including lengthening their teeth and nails, changing the colors of their eyes, twisting their horns, or enhancing their height. On average, infernis live up to 350 years, with some attributing this lifespan to their demonic lineage.</p></p>"
+    },
+    "Katari": {
+      "name": "Katari",
+      "description": "<p>Katari are feline humanoids with retractable claws, vertically slit pupils, and high, triangular ears.<br><br><p>They can also have small, pointed canine teeth, soft fur, and long whiskers that assist their perception and navigation. Their ears can swivel nearly 180 degrees to detect sound, adding to their heightened senses. Katari may look more or less feline or humanoid, with catlike attributes in the form of hair, whiskers, and a muzzle. About half of the katari population have tails. Their skin and fur come in a wide range of hues and patterns, including solid colors, calico tones, tabby stripes, and an array of spots, patches, marbling, or bands. Their height ranges from about 3 feet to 6 ½ feet, and they live to around 150 years.</p></p>"
+    },
+    "Orc": {
+      "name": "Orc",
+      "description": "<p>Orcs are humanoids most easily recognized by their square features and boar-like tusks that protrude from their lower jaw.<br><br><p>Tusks come in various sizes, and though they extend from the mouth, they aren’t used for consuming food. Instead, many orcs choose to decorate their tusks with significant ornamentation. Orcs typically live for 125 years, and unless altered, their tusks continue to grow throughout the course of their lives. Their ears are pointed, and their hair and skin typically have green, blue, pink, or gray tones. Orcs tend toward a muscular build, and their average height ranges from 5 feet to 6 ½ feet.</p></p>"
+    },
+    "Ribbet": {
+      "name": "Ribbet",
+      "description": "<p>Ribbets resemble anthropomorphic frogs with protruding eyes and webbed hands and feet.<br><br><p>They have smooth (though sometimes warty) moist skin and eyes positioned on either side of their head. Some ribbets have hind legs more than twice the length of their torso, while others have short limbs. No matter their size (which ranges from about 3 feet to 4 ½ feet), ribbets primarily move by hopping. All ribbets have webbed appendages, allowing them to swim with ease. Some ribbets possess a natural green-and-brown camouflage, while others are vibrantly colored with bold patterns. No matter their appearance, all ribbets are born from eggs laid in the water, hatch into tadpoles, and after about 6 to 7 years, grow into amphibians that can move around on land. Ribbets live for approximately 100 years.</p></p>"
+    },
+    "Simiah": {
+      "name": "Simiah",
+      "description": "<p>Simiah resemble anthropomorphic monkeys and apes with long limbs and prehensile feet.<br><br><p>While their appearance reflects all simian creatures, from the largest gorilla to the smallest marmoset, their size does not align with their animal counterparts, and they can be anywhere from 2 to 6 feet tall. All simiah can use their dexterous feet for nonverbal communication, work, and combat. Additionally, some also have prehensile tails that can grasp objects or help with balance during difficult maneuvers. These traits grant members of this ancestry unique agility that aids them in a variety of physical tasks. In particular, simiah are skilled climbers and can easily transition from bipedal movement to knuckle-walking and climbing, and back again. On average, simiah live for about 100 years.</p></p>"
+    },
+    "Adaptability": {
+      "name": "Adaptability",
+      "description": "<p>When you fail a roll that utilized one of your Experiences, you can <strong>mark a Stress</strong> to reroll.</p>",
+      "actions": {
+        "D7EE2L2Y96nfrfTW": {
+          "name": "Mark Stress",
+          "description": "<p>When you fail a roll that utilized one of your Experiences, you can <strong>mark a Stress</strong> to reroll.</p>"
+        }
+      }
+    },
+    "Amphibious": {
+      "name": "Amphibious",
+      "description": "<p>You can breathe and move naturally underwater.</p>"
+    },
+    "Caprine Leap": {
+      "name": "Caprine Leap",
+      "description": "<p>You can leap anywhere within Close range as though you were using normal movement, allowing you to vault obstacles, jump across gaps, or scale barriers with ease.</p>"
+    },
+    "Celestial Trance": {
+      "name": "Celestial Trance",
+      "description": "<p>During a rest, you can drop into a trance to choose an additional downtime move.</p>"
+    },
+    "Charge": {
+      "name": "Charge",
+      "description": "<p>When you succeed on an Agility Roll to move from Far or Very Far range into Melee range with one or more targets, you can <strong>mark a Stress</strong> to deal <strong>1d12</strong> physical damage to all targets within Melee range.</p>",
+      "actions": {
+        "KLg0T6I1w24sfIbH": {
+          "name": "Deal Damage",
+          "description": "<p>When you succeed on an Agility Roll to move from Far or Very Far range into Melee range with one or more targets, you can <strong>mark a Stress</strong> to deal <strong>1d12</strong> physical damage to all targets within Melee range.</p>"
+        }
+      }
+    },
+    "Danger Sense": {
+      "name": "Danger Sense",
+      "description": "<p>Once per rest, <strong>mark a Stress</strong> to force an adversary to reroll an attack against you or an ally within Very Close range.</p>",
+      "actions": {
+        "V2K3pMWOCVwBUnjq": {
+          "name": "Mark Stress",
+          "description": "<p>Once per rest, <strong>mark a Stress</strong> to force an adversary to reroll an attack against you or an ally within Very Close range.</p>"
+        }
+      }
+    },
+    "Death Connection": {
+      "name": "Death Connection",
+      "description": "<p>While touching a corpse that died recently, you can <strong>mark a Stress</strong> to extract one memory from the corpse related to a specific emotion or sensation of your choice.</p>",
+      "actions": {
+        "0RdKeWfbPRTHcAMf": {
+          "name": "Extract",
+          "description": "<p>While touching a corpse that died recently, you can <strong>mark a Stress</strong> to extract one memory from the corpse related to a specific emotion or sensation of your choice.</p>"
+        }
+      }
+    },
+    "Dread Visage": {
+      "name": "Dread Visage",
+      "description": "<p>You have advantage on rolls to intimidate hostile creatures.</p>"
+    },
+    "Efficient": {
+      "name": "Efficient",
+      "description": "<p>When you take a short rest, you can choose a long rest move instead of a short rest move.</p>"
+    },
+    "Elemental Breath": {
+      "name": "Elemental Breath",
+      "description": "<p>Choose an element for your breath (such as electricity, fire, or ice). You can use this breath against a target or group of targets within Very Close range, treating it as an Instinct weapon that deals <strong>d8</strong> magic damage using your Proficiency.</p>",
+      "actions": {
+        "a6WROv0OKx0lbYVa": {
+          "name": "Attack",
+          "description": "<p>Choose an element for your breath (such as electricity, fire, or ice). You can use this breath against a target or group of targets within Very Close range, treating it as an Instinct weapon that deals <strong>d8</strong> magic damage using your Proficiency.</p>"
+        }
+      }
+    },
+    "Endurance": {
+      "name": "Endurance",
+      "description": "<p>Gain an additional Hit Point slot at character creation.</p>"
+    },
+    "Fearless": {
+      "name": "Fearless",
+      "description": "<p>When you roll with Fear, you can <strong>mark 2 Stress</strong> to change it into a roll with Hope instead.</p>",
+      "actions": {
+        "G1H7k5RdvS1EJgFu": {
+          "name": "Mark Stress",
+          "description": "<p>When you roll with Fear, you can <strong>mark 2 Stress</strong> to change it into a roll with Hope instead.</p>"
+        }
+      }
+    },
+    "Feline Instincts": {
+      "name": "Feline Instincts",
+      "description": "<p>When you make an Agility Roll, you can <strong>spend 2 Hope</strong> to reroll your Hope Die.</p>",
+      "actions": {
+        "ALsGHOy0q5THGxz5": {
+          "name": "Spend Hope",
+          "description": "<p>When you make an Agility Roll, you can <strong>spend 2 Hope</strong> to reroll your Hope Die.</p>"
+        }
+      }
+    },
+    "Fungril Network": {
+      "name": "Fungril Network",
+      "description": "<p>Make an <strong>Instinct Roll (12)</strong> to use your mycelial array to speak with others of your ancestry. On a success, you can communicate across any distance.</p>",
+      "actions": {
+        "ZYfigAyUdDUteczO": {
+          "name": "Communicate",
+          "description": "<p>Make an <strong>Instinct Roll (12)</strong> to use your mycelial array to speak with others of your ancestry. On a success, you can communicate across any distance.</p>"
+        }
+      }
+    },
+    "High Stamina": {
+      "name": "High Stamina",
+      "description": "<p>Gain an additional Stress slot at character creation.</p>"
+    },
+    "Increased Fortitude": {
+      "name": "Increased Fortitude",
+      "description": "<p><strong>Spend 3 Hope</strong> to halve incoming physical damage.</p>",
+      "actions": {
+        "pFPbjyexOPx5gog6": {
+          "name": "Spend Hope",
+          "description": "<p><strong>Spend 3 Hope</strong> to halve incoming physical damage.</p>"
+        }
+      }
+    },
+    "Internal Compass": {
+      "name": "Internal Compass",
+      "description": "<p>When you roll a 1 on your Hope Die, you can reroll it.</p>"
+    },
+    "Kick": {
+      "name": "Kick",
+      "description": "<p>When you succeed on an attack against a target within Melee range, you can <strong>mark a Stress</strong> to kick yourself off them, dealing an extra <strong>2d6</strong> damage and knocking back either yourself or the target to Very Close range.</p>",
+      "actions": {
+        "bXbQ57CB1Hfj5XrS": {
+          "name": "Deal Damage",
+          "description": "<p>When you succeed on an attack against a target within Melee range, you can <strong>mark a Stress</strong> to kick yourself off them, dealing an extra <strong>2d6</strong> damage and knocking back either yourself or the target to Very Close range.</p>"
+        }
+      }
+    },
+    "Long Tongue": {
+      "name": "Long Tongue",
+      "description": "<p>You can use your long tongue to grab onto things within Close range. <strong>Mark a Stress</strong> to use your tongue as a Finesse Close weapon that deals <strong>d12</strong> physical damage using your Proficiency.</p>",
+      "actions": {
+        "MhAWv7tuvkfOf7wQ": {
+          "name": "Mark Stress",
+          "description": "<p>You can use your long tongue to grab onto things within Close range. <strong>Mark a Stress</strong> to use your tongue as a Finesse Close weapon that deals <strong>d12</strong> physical damage using your Proficiency.</p>"
+        }
+      }
+    },
+    "Luckbender": {
+      "name": "Luckbender",
+      "description": "<p>Once per session, after you or a willing ally within Close range makes an action roll, you can <strong>spend 3 Hope</strong> to reroll the Duality Dice.</p>",
+      "actions": {
+        "l1wUmqMzG8YF9sqb": {
+          "name": "Spend Hope",
+          "description": "<p>Once per session, after you or a willing ally within Close range makes an action roll, you can <strong>spend 3 Hope</strong> to reroll the Duality Dice.</p>"
+        }
+      }
+    },
+    "Luckbringer": {
+      "name": "Luckbringer",
+      "description": "<p>At the start of each session, everyone in your party gains a Hope.</p>",
+      "actions": {
+        "8sK3t73bFkpb999C": {
+          "name": "Gain Hope",
+          "description": "<p>At the start of each session, everyone in your party gains a Hope.</p>"
+        }
+      }
+    },
+    "Natural Climber": {
+      "name": "Natural Climber",
+      "description": "<p>You have advantage on Agility Rolls that involve balancing and climbing.</p>"
+    },
+    "Nimble": {
+      "name": "Nimble",
+      "description": "<p>Gain a permanent +1 bonus to your Evasion at character creation.</p>"
+    },
+    "Purposeful Design": {
+      "name": "Purposeful Design",
+      "description": "<p><strong>Note: Automation not implemented for permanent bonus. Manually increase the experience in the respective editing field.</strong> </p><p><br />Decide who made you and for what purpose. At character creation, choose one of your Experiences that best aligns with this purpose and gain a permanent +1 bonus to it.</p>"
+    },
+    "Quick Reactions": {
+      "name": "Quick Reactions",
+      "description": "<p><strong>Mark a Stress</strong> to gain advantage on a reaction roll.</p>",
+      "actions": {
+        "6Av1Y8JXWDkteLhc": {
+          "name": "Mark Stress",
+          "description": "<p><strong>Mark a Stress</strong> to gain advantage on a reaction roll.</p>"
+        }
+      }
+    },
+    "Reach": {
+      "name": "Reach",
+      "description": "<p>Treat any weapon, ability, spell, or other feature that has a Melee range as though it has a Very Close range instead.</p>"
+    },
+    "Retracting Claws": {
+      "name": "Retracting Claws",
+      "description": "<p>Make an <strong>Agility Roll</strong> to scratch a target within Melee range. On a success, they become temporarily Vulnerable.</p>",
+      "actions": {
+        "LcFhDb3sJk8sraAc": {
+          "name": "Scratch",
+          "description": "<p>Make an <strong>Agility Roll</strong> to scratch a target within Melee range. On a success, they become temporarily Vulnerable.</p>"
+        }
+      }
+    },
+    "Retract": {
+      "name": "Retract",
+      "description": "<p><strong>Mark a Stress</strong> to retract into your shell. While in your shell, you have resistance to physical damage, you have disadvantage on action rolls, and you can’t move.<br /><br />(When marked, manually enable the retract effect in effects tab and mark disadvantage when doing any action rolls)</p>",
+      "actions": {
+        "HfiAg14hrYt7Yvnj": {
+          "name": "Mark Stress"
+        }
+      }
+    },
+    "Scales": {
+      "name": "Scales",
+      "description": "<p>Your scales act as natural protection. When you would take Severe damage, you can <strong>mark a Stress</strong> to mark 1 fewer Hit Points.</p>"
+    },
+    "Shell": {
+      "name": "Shell",
+      "description": "<p>Gain a bonus to your damage thresholds equal to your Proficiency.</p>"
+    },
+    "Sturdy": {
+      "name": "Sturdy",
+      "description": "<p>When you have 1 Hit Point remaining, attacks against you have disadvantage.</p>"
+    },
+    "Surefooted": {
+      "name": "Surefooted",
+      "description": "<p>You ignore disadvantage on Agility Rolls.</p>"
+    },
+    "Thick Skin": {
+      "name": "Thick Skin",
+      "description": "<p>When you take Minor damage, you can <strong>mark 2 Stress</strong> instead of marking a Hit Point.</p>"
+    },
+    "Tusks": {
+      "name": "Tusks",
+      "description": "<p>When you succeed on an attack against a target within Melee range, you can <strong>spend a Hope</strong> to gore the target with your tusks, dealing an extra <strong>1d6</strong> damage.</p>",
+      "actions": {
+        "ytSFDCONRi5L4THz": {
+          "name": "Spend Hope",
+          "description": "<p>When you succeed on an attack against a target within Melee range, you can <strong>spend a Hope</strong> to gore the target with your tusks, dealing an extra <strong>1d6</strong> damage.</p>"
+        }
+      }
+    },
+    "Unshakeable": {
+      "name": "Unshakeable",
+      "description": "<p>When you would mark a Stress, roll a <strong>d6</strong>. On a result of 6, don’t mark it.</p>",
+      "actions": {
+        "x8xbjyCrJ0okOpIU": {
+          "name": "Use"
+        }
+      }
+    },
+    "Wings": {
+      "name": "Wings",
+      "description": "<p>You can fly. While flying, you can <strong>mark a Stress</strong> after an adversary makes an attack against you to gain a +2 bonus to your Evasion against that attack.</p>",
+      "actions": {
+        "dpKxkDSjXsP8kHMI": {
+          "name": "Mark Stress",
+          "description": "<p>You can fly. While flying, you can <strong>mark a Stress</strong> after an adversary makes an attack against you to gain a +2 bonus to your Evasion against that attack.</p>"
+        }
+      }
+    }
+  }
+}
