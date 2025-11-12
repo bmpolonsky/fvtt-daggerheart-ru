@@ -2367,6 +2367,9 @@
           },
           "useResourcePips": {
             "label": "Отображать ресурсы точками"
+          },
+          "displayCountdownUI": {
+            "label": "Отображать интерфейс отсчётов"
           }
         },
         "fearDisplay": {
@@ -2518,7 +2521,10 @@
         "adversaryType": {
           "title": "Пользовательские типы противников",
           "newType": "Тип противника"
-        }
+        },
+        "downtimeMove": "Ход отдыха",
+        "armorFeature": "Свойство брони",
+        "weaponFeature": "Свойство оружия"
       },
       "Menu": {
         "title": "Настройки игры Daggerheart",
