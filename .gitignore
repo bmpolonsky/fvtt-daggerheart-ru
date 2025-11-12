@@ -1,4 +1,4 @@
-*/tmp_data/
-/.idea/
-/release/
+tmp_data/*
+.idea/
+release/
 *.DS_Store

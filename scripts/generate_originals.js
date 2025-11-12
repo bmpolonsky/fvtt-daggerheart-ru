@@ -28,7 +28,7 @@ const FILE_CONFIGS = [
   {
     file: "daggerheart.ancestries.json",
     label: "Ancestries",
-    build: () => buildMixedCollection("ancestries", ["ancestry", "feature"]) 
+    build: () => buildMixedCollection("ancestries", ["ancestry", "feature"])
   },
   {
     file: "daggerheart.communities.json",
