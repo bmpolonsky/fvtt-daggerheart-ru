@@ -1,13 +1,43 @@
-# daggerheart-ru-ru
-Russian translation of Daggerheart SRD compendium and Charactersheets on FoundryVTT 
+# Daggerheart — Русская локализация (Foundry VTT)
 
-Link to install: https://raw.githubusercontent.com/bmpolonsky/daggerheart-ru-ru/main/daggerheart-ru-ru/module.json
+Почти полная русская локализация системы **Daggerheart** для Foundry VTT: переведены SRD-компедиумы, листы персонажей, а также почти все интерфейсные части, связанные с системой Daggerheart.
 
+> Основа текстов — перевод с сайта https://daggerheart.su/ (согласовано и адаптировано под структуру Foundry).
 
+---
 
-## Disclaimer:
+## Установка
 
-**Daggerheart System**
-Daggerheart is a trademark of Darrington Press LLC. All original content, mechanics, and intellectual property related to the Daggerheart roleplaying game are © Darrington Press LLC.
+### Через manifest-ссылку (рекомендуется)
+1. В **Foundry VTT** откройте **Add-on Modules → Install Module**.
+2. Вставьте manifest-ссылку и нажмите **Install**:
+```
+https://raw.githubusercontent.com/bmpolonsky/fvtt-daggerheart-ru/main/module/module.json
+```
+3. В своём **мире** включите модуль на вкладке **Manage Modules**.
 
-This project is intended for personal or non-commercial use. All rights to Daggerheart’s original materials remain with their respective owners.
+> Установка через Foundry Package Hub **не доступна**: модуль пока **не публиковался** в каталоге.
+
+---
+
+## Требования и совместимость
+
+- **Foundry VTT:** v13+
+- **Система Daggerheart для Foundry:** актуальная версия сообщества (ветка, совместимая с v13)
+
+> Модуль — это локализация, он ставится **поверх** установленной системы Daggerheart.
+
+---
+
+## Что внутри
+
+- Перевод интерфейса системы Daggerheart (UI-надписи, диалоги, подсказки).
+- Локализованные **компедиумы SRD**: классы, родословные, подклассы, домены, окружения, противники, оружие и др.
+- Сохранение Foundry-тегов и `@UUID`-ссылок в текстах для корректной работы карточек, макросов и бросков.
+
+---
+
+## License
+
+This project is licensed under the **MIT License**.  
+See the `LICENSE` file.

@@ -1,7 +1,9 @@
 {
-  "id": "daggerheart-ru-ru",
+  "id": "fvtt-daggerheart-ru",
+  "type": "module",
   "title": "Daggerheart Russian translation",
-  "version": "2025-11-08",
+  "description": "Русская локализация Daggerheart для Foundry VTT",
+  "version": "2025.11.12",
   "compatibility": {
     "minimum": "13",
     "verified": "13"
@@ -11,7 +13,19 @@
       {
         "id": "babele",
         "type": "module",
-        "compatibility": {}
+        "compatibility": {
+          "minimum": "2.0.0"
+        }
+      }
+    ],
+    "systems": [
+      {
+        "id": "daggerheart",
+        "type": "system",
+        "compatibility": {
+          "minimum": "1.2.1",
+          "verified": "1.2.1"
+        }
       }
     ]
   },
@@ -21,23 +35,26 @@
   "languages": [
     {
       "lang": "ru",
-      "path": "i18n/systems/daggerheart.json",
-      "system": "daggerheart"
+      "name": "Русский",
+      "system": "daggerheart",
+      "path": "i18n/systems/daggerheart.json"
     }
   ],
   "authors": [
     {
       "name": "bmpolonsky",
-      "url": "https://github.com/bmpolonsky",
-      "flags": {}
+      "url": "https://github.com/bmpolonsky"
     },
     {
       "name": "Evgen",
-      "url": "https://github.com/LooseSlives",
-      "flags": {}
+      "url": "https://github.com/LooseSlives"
     }
   ],
-  "url": "https://github.com/bmpolonsky/daggerheart-ru-ru",
-  "manifest": "https://raw.githubusercontent.com/bmpolonsky/daggerheart-ru-ru/main/daggerheart-ru-ru/module.json",
-  "download": "https://github.com/bmpolonsky/daggerheart-ru-ru/releases/download/latest/daggerheart-ru-ru.zip"
+  "url": "https://github.com/bmpolonsky/fvtt-daggerheart-ru",
+  "readme": "https://github.com/bmpolonsky/fvtt-daggerheart-ru#readme",
+  "changelog": "https://github.com/bmpolonsky/fvtt-daggerheart-ru/releases",
+  "bugs": "https://github.com/bmpolonsky/fvtt-daggerheart-ru/issues",
+  "license": "MIT",
+  "manifest": "https://raw.githubusercontent.com/bmpolonsky/fvtt-daggerheart-ru/main/module/module.json",
+  "download": "https://github.com/bmpolonsky/fvtt-daggerheart-ru/releases/download/v2025.11.12/fvtt-daggerheart-ru-v2025.11.12.zip"
 }

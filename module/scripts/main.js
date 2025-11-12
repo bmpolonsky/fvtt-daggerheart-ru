@@ -1,7 +1,7 @@
 // Регистрируем модуль перевода и все кастомные конвертеры после инициализации Babele.
 Hooks.once('babele.init', (babele) => {
   babele.register({
-    module: 'daggerheart-ru-ru',
+    module: 'fvtt-daggerheart-ru',
     lang: 'ru',
     dir: 'translations'
   });
