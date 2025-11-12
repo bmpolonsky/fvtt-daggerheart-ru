@@ -1633,70 +1633,80 @@
         }
       }
     },
-    "Fallen Warlord: Realm Breaker": {
-      "name": "Полководец Падших: Губитель Миров",
-      "description": "<p>Падший бог, охваченный яростью и обидой, обладающий тысячелетним опытом в ломании духа героев.</p>",
-      "motivesAndTactics": "Искажать, доминировать, наказывать, ломать слабых",
-      "attack": "Шипастый кнут",
+    "Fallen Warlord: Realm-Breaker": {
+      "name": "Fallen Warlord: Realm-Breaker",
+      "description": "<p><em>A Fallen God, wreathed in rage and resentment, bearing millennia of experience in breaking heroes’ spirits.</em></p>",
+      "motivesAndTactics": "Corrupt, dominate, punish, break the weak",
+      "attack": "Barbed Whip",
       "experiences": {
         "xmyO4KEYcwlFc0Xk": {
-          "name": "Завоевание"
+          "name": "Conquest"
         },
         "DKyCdPkOjtgaCsjU": {
-          "name": "История"
+          "name": "History"
         },
         "v1rgbqkBK4goqrl3": {
-          "name": "Запугивание"
+          "name": "Intimidation"
         }
       },
       "items": {
         "feb6vTfDsi1yQLpn": {
-          "name": "Неумолимый (2)",
-          "description": "<p>Губитель Миров может быть активирован до двух раз за ход Мастера. <strong>Потратьте Страх</strong>, как обычно, чтобы активировать его.</p>"
+          "name": "Relentless (2)",
+          "description": "<p>The Realm-Breaker can be spotlighted up to two times per GM turn. Spend Fear as usual to spotlight them.</p>",
+          "actions": {
+            "9IHzeKjP35M5jj3b": {
+              "name": "Spotlight: Relentless",
+              "description": "<p>The Realm-Breaker can be spotlighted up to two times per GM turn. Spend Fear as usual to spotlight them.</p>"
+            }
+          }
         },
         "onaJxgnUtf0ZDyD4": {
-          "name": "Броня Огненного Духа",
-          "description": "<p>Когда Губитель Миров получает урон, уменьшите его на <strong>2d10</strong>.</p>",
+          "name": "Firespite Plate Armor",
+          "description": "<p>When the Realm-Breaker takes damage, reduce it by <strong>2d10</strong>.</p>",
           "actions": {
             "djEIhnCsuCUdwC0m": {
-              "name": "",
-              "description": "<p>Когда Губитель Миров получает урон, уменьшите его на <strong>2d10</strong>.</p>"
+              "name": "Roll 2d10",
+              "description": "<p>When the Realm-Breaker takes damage, reduce it by <strong>2d10</strong>.</p>"
             }
           }
         },
         "PVLjJaQLH3LK3svk": {
-          "name": "Плеть мучений",
-          "description": "<p><strong>Отметьте Стресс</strong>, чтобы совершить стандартную атаку против всех целей в пределах Близкой дистанции. Когда цель использует броню для уменьшения урона от этой атаки, она должна <strong>отметить 2 Ячейки Брони</strong>.</p><p>@Template[type:emanation|range:vc]</p>",
+          "name": "Tormenting Lash",
+          "description": "<p><strong>Mark a Stress</strong> to make a standard attack against all targets within Very Close range. When a target uses armor to reduce damage from this attack, they must mark 2 Armor Slots.</p><p>@Template[type:emanation|range:vc]</p>",
           "actions": {
             "zMVhUekP8pcyQGFR": {
-              "name": "",
-              "description": "<p><strong>Отметьте Стресс</strong>, чтобы совершить стандартную атаку против всех целей в пределах Близкой дистанции. Когда цель использует броню для уменьшения урона от этой атаки, она должна <strong>отметить 2 Ячейки Брони</strong>.</p><p>@Template[type:emanation|range:vc]</p>"
+              "name": "Attack",
+              "description": "<p><strong>Mark a Stress</strong> to make a standard attack against all targets within Very Close range. When a target uses armor to reduce damage from this attack, they must mark 2 Armor Slots.</p><p>@Template[type:emanation|range:vc]</p>"
             }
           }
         },
         "48tIwFQr64IQ5LaY": {
-          "name": "Всепоглощающая Ярость",
-          "description": "<p><em>Отсчёт (Убывающий 8)</em>. Когда Губитель Миров впервые активирован, активируйте отсчёт. Когда он срабатывает, создайте поток воплощённой ярости, разрывающий плоть с костей. Все цели в пределах Далекой дистанции должны совершить Бросок Реакции на Влияние. Цели, провалившие бросок, получают <strong>2d6+10</strong> прямого магического урона. Цели, успешно прошедшие бросок, получают половину урона. За каждую Рану, отмеченную этим уроном, вызывайте @UUID[Compendium.daggerheart.adversaries.Actor.OsLG2BjaEdTZUJU9]{Падшего Пехотинца} в Близкой дистанции от цели, которая отметила эту Рану. Если отсчёт уменьшает своё максимальное значение до 0, Губитель Миров отмечает свои оставшиеся Раны, и все цели в пределах Дистанции Далеко должны <strong>отметить все оставшийся</strong> Раны и совершить Предсмертный Ход.</p><p>@Template[type:emanation|range:f]</p>",
+          "name": "All-Consuming Rage",
+          "description": "<p>Countdown (Decreasing 8). When the Realm-Breaker is in the spotlight for the first time, activate the countdown.</p><p>When it triggers, create a torrent of incarnate rage that rends flesh from bone. All targets within Far range must make a Presence Reaction Roll. Targets who fail take <strong>2d6+10</strong> direct magic damage. Targets who succeed take half damage. For each HP marked from this damage, summon a @UUID[Compendium.daggerheart.adversaries.Actor.OsLG2BjaEdTZUJU9]{Fallen Shock Troop} within Very Close range of the target who marked that HP. If the countdown ever decreases its maximum value to 0, the Realm-Breaker marks their remaining HP and all targets within Far range must mark all remaining HP and make a death move.</p><p>@Template[type:emanation|range:f]</p>",
           "actions": {
+            "58JxEuvnjaAlgs3E": {
+              "name": "Countdown",
+              "description": "<p>Countdown (Decreasing 8). When the Realm-Breaker is in the spotlight for the first time, activate the countdown.</p>"
+            },
             "rgy5wXyXJWh6uWxC": {
-              "name": "",
-              "description": "<p><em>Отсчёт (Убывающий 8)</em>. Когда Губитель Миров впервые активирован, активируйте отсчёт. Когда он срабатывает, создайте поток воплощённой ярости, разрывающий плоть с костей. Все цели в пределах Далекой дистанции должны совершить Бросок Реакции на Влияние. Цели, провалившие бросок, получают <strong>2d6+10</strong> прямого магического урона. Цели, успешно прошедшие бросок, получают половину урона. За каждую Рану, отмеченную этим уроном, вызывайте @UUID[Compendium.daggerheart.adversaries.Actor.OsLG2BjaEdTZUJU9]{Падшего Пехотинца} в Близкой дистанции от цели, которая отметила эту Рану. Если отсчёт уменьшает своё максимальное значение до 0, Губитель Миров отмечает свои оставшиеся Раны, и все цели в пределах Дистанции Далеко должны <strong>отметить все оставшийся</strong> Раны и совершить Предсмертный Ход.</p><p>@Template[type:emanation|range:f]</p>"
+              "name": "Roll Save",
+              "description": "<p>When it triggers, create a torrent of incarnate rage that rends flesh from bone. All targets within Far range must make a Presence Reaction Roll. Targets who fail take <strong>2d6+10</strong> direct magic damage. Targets who succeed take half damage. For each HP marked from this damage, summon a @UUID[Compendium.daggerheart.adversaries.Actor.OsLG2BjaEdTZUJU9]{Fallen Shock Troop} within Very Close range of the target who marked that HP. If the countdown ever decreases its maximum value to 0, the Realm-Breaker marks their remaining HP and all targets within Far range must mark all remaining HP and make a death move.</p><p>@Template[type:emanation|range:f]</p>"
             }
           }
         },
         "v74W0MUqVi9vPUEw": {
-          "name": "Вестник смерти",
-          "description": "<p>Когда цель отмечает Рану от атаки Губителя Миров, все персонажи в пределах Далекой дистанции от цели теряют Надежду.</p><p>@Template[type:emanation|range:f]</p>",
+          "name": "Doombringer",
+          "description": "<p>When a target marks HP from an attack by the Realm-Breaker, all PCs within Far range of the target must lose a Hope.</p><p>@Template[type:emanation|range:f]</p>",
           "actions": {
             "WEBPJCbXfBeyHFJ4": {
-              "name": "",
-              "description": "<p>Когда цель отмечает Рану от атаки Губителя Миров, все персонажи в пределах Далекой дистанции от цели теряют Надежду.</p><p>@Template[type:emanation|range:f]</p>"
+              "name": "Lose Hope",
+              "description": "<p>When a target marks HP from an attack by the Realm-Breaker, all PCs within Far range of the target must lose a Hope.</p><p>@Template[type:emanation|range:f]</p>"
             }
           }
         },
         "RscRTl8U8u6WcwAB": {
-          "name": "Я не знаю поражений (Смена фазы)",
-          "description": "<p>Когда Губитель Миров отмечает последнюю Рану, замените его @UUID[Compendium.daggerheart.adversaries.Actor.RXkZTwBRi4dJ3JE5]{Непобеждённым Чемпионом} и немедленно активируйте его.</p>"
+          "name": "I Have Never Known Defeat",
+          "description": "<p>When the Realm-Breaker marks their last HP, replace them with the @UUID[Compendium.daggerheart.adversaries.Actor.RXkZTwBRi4dJ3JE5]{Fallen Warlord: Undefeated Champion} and immediately spotlight them.</p>"
         }
       }
     },
@@ -5715,83 +5725,6 @@
               "description": "<p>When the Zombies mark HP from an attack within Melee range, you can <strong>mark a Stress</strong> to make a standard attack against the attacker.</p>"
             }
           }
-        }
-      }
-    },
-    "Fallen Warlord: Realm-Breaker": {
-      "name": "Fallen Warlord: Realm-Breaker",
-      "description": "<p><em>A Fallen God, wreathed in rage and resentment, bearing millennia of experience in breaking heroes’ spirits.</em></p>",
-      "motivesAndTactics": "Corrupt, dominate, punish, break the weak",
-      "attack": "Barbed Whip",
-      "experiences": {
-        "xmyO4KEYcwlFc0Xk": {
-          "name": "Conquest"
-        },
-        "DKyCdPkOjtgaCsjU": {
-          "name": "History"
-        },
-        "v1rgbqkBK4goqrl3": {
-          "name": "Intimidation"
-        }
-      },
-      "items": {
-        "feb6vTfDsi1yQLpn": {
-          "name": "Relentless (2)",
-          "description": "<p>The Realm-Breaker can be spotlighted up to two times per GM turn. Spend Fear as usual to spotlight them.</p>",
-          "actions": {
-            "9IHzeKjP35M5jj3b": {
-              "name": "Spotlight: Relentless",
-              "description": "<p>The Realm-Breaker can be spotlighted up to two times per GM turn. Spend Fear as usual to spotlight them.</p>"
-            }
-          }
-        },
-        "onaJxgnUtf0ZDyD4": {
-          "name": "Firespite Plate Armor",
-          "description": "<p>When the Realm-Breaker takes damage, reduce it by <strong>2d10</strong>.</p>",
-          "actions": {
-            "djEIhnCsuCUdwC0m": {
-              "name": "Roll 2d10",
-              "description": "<p>When the Realm-Breaker takes damage, reduce it by <strong>2d10</strong>.</p>"
-            }
-          }
-        },
-        "PVLjJaQLH3LK3svk": {
-          "name": "Tormenting Lash",
-          "description": "<p><strong>Mark a Stress</strong> to make a standard attack against all targets within Very Close range. When a target uses armor to reduce damage from this attack, they must mark 2 Armor Slots.</p><p>@Template[type:emanation|range:vc]</p>",
-          "actions": {
-            "zMVhUekP8pcyQGFR": {
-              "name": "Attack",
-              "description": "<p><strong>Mark a Stress</strong> to make a standard attack against all targets within Very Close range. When a target uses armor to reduce damage from this attack, they must mark 2 Armor Slots.</p><p>@Template[type:emanation|range:vc]</p>"
-            }
-          }
-        },
-        "48tIwFQr64IQ5LaY": {
-          "name": "All-Consuming Rage",
-          "description": "<p>Countdown (Decreasing 8). When the Realm-Breaker is in the spotlight for the first time, activate the countdown.</p><p>When it triggers, create a torrent of incarnate rage that rends flesh from bone. All targets within Far range must make a Presence Reaction Roll. Targets who fail take <strong>2d6+10</strong> direct magic damage. Targets who succeed take half damage. For each HP marked from this damage, summon a @UUID[Compendium.daggerheart.adversaries.Actor.OsLG2BjaEdTZUJU9]{Fallen Shock Troop} within Very Close range of the target who marked that HP. If the countdown ever decreases its maximum value to 0, the Realm-Breaker marks their remaining HP and all targets within Far range must mark all remaining HP and make a death move.</p><p>@Template[type:emanation|range:f]</p>",
-          "actions": {
-            "58JxEuvnjaAlgs3E": {
-              "name": "Countdown",
-              "description": "<p>Countdown (Decreasing 8). When the Realm-Breaker is in the spotlight for the first time, activate the countdown.</p>"
-            },
-            "rgy5wXyXJWh6uWxC": {
-              "name": "Roll Save",
-              "description": "<p>When it triggers, create a torrent of incarnate rage that rends flesh from bone. All targets within Far range must make a Presence Reaction Roll. Targets who fail take <strong>2d6+10</strong> direct magic damage. Targets who succeed take half damage. For each HP marked from this damage, summon a @UUID[Compendium.daggerheart.adversaries.Actor.OsLG2BjaEdTZUJU9]{Fallen Shock Troop} within Very Close range of the target who marked that HP. If the countdown ever decreases its maximum value to 0, the Realm-Breaker marks their remaining HP and all targets within Far range must mark all remaining HP and make a death move.</p><p>@Template[type:emanation|range:f]</p>"
-            }
-          }
-        },
-        "v74W0MUqVi9vPUEw": {
-          "name": "Doombringer",
-          "description": "<p>When a target marks HP from an attack by the Realm-Breaker, all PCs within Far range of the target must lose a Hope.</p><p>@Template[type:emanation|range:f]</p>",
-          "actions": {
-            "WEBPJCbXfBeyHFJ4": {
-              "name": "Lose Hope",
-              "description": "<p>When a target marks HP from an attack by the Realm-Breaker, all PCs within Far range of the target must lose a Hope.</p><p>@Template[type:emanation|range:f]</p>"
-            }
-          }
-        },
-        "RscRTl8U8u6WcwAB": {
-          "name": "I Have Never Known Defeat",
-          "description": "<p>When the Realm-Breaker marks their last HP, replace them with the @UUID[Compendium.daggerheart.adversaries.Actor.RXkZTwBRi4dJ3JE5]{Fallen Warlord: Undefeated Champion} and immediately spotlight them.</p>"
         }
       }
     }
