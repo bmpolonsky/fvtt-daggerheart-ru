@@ -5,7 +5,7 @@
     "impulses": "system.impulses",
     "items": {
       "path": "items",
-      "converter": "toEnvItems"
+      "converter": "toItemsWithActions"
     }
   },
   "folders": {

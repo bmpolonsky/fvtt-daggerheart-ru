@@ -6,112 +6,93 @@ Hooks.once('babele.init', (babele) => {
     dir: 'translations'
   });
 
-  Babele.get().registerConverters({
-    // Переносит имена/описания предметов противника и проставляет описания действиям.
-    "toAdversariesItems": (origItems, transItems) => {
-      if (!Array.isArray(origItems) || !transItems) {
-        return origItems;
-      }
-      for (const item of origItems) {
-        if (!item) continue;
-        const translation = transItems[item._id];
-        if (!translation) continue;
-        if (translation.name) {
-          item.name = translation.name;
-        }
-        if (!item.system) continue;
-        const desc = translation.description;
-        if (desc) {
-          item.system.description = desc;
-          if (item.system.actions) {
-            for (const actionId of Object.keys(item.system.actions)) {
-              const action = item.system.actions[actionId];
-              if (action) action.description = desc;
-            }
-          }
-        }
-      }
-      return origItems;
-    },
+  // Foundry хранит разные типы компендиев по-разному: Item-паки (классы, домены) содержат только
+  // system.* и обрабатываются простым mapping, а Actor-паки (противники, окружения) включают массив
+  // вложенных Item'ов. Вспомогательные функции ниже помогают проставлять переводы в те части,
+  // куда Babele сам не лезет (embedded items, action-узлы, advantage-листы).
+  const updateActionNode = (action, translated) => {
+    if (!action || !translated || typeof translated !== "object") {
+      return;
+    }
+    const { name, description } = translated;
+    if (name) {
+      action.name = name;
+    }
+    if (description) {
+      action.description = description;
+    }
+  };
 
-    // Переносит переводы окружений. Если ручных описаний действий нет, просто заливает общий текст.
-    "toEnvItems": (origItems, transItems) => {
+  const applyActionTranslations = (actions, translatedActions) => {
+    if (!actions || !translatedActions || typeof translatedActions !== "object") {
+      return;
+    }
+    for (const [actionId, action] of Object.entries(actions)) {
+      updateActionNode(action, translatedActions[actionId]);
+    }
+  };
+
+  Babele.get().registerConverters({
+    /**
+     * Actor-документы (противники, окружения) держат свои способности в массиве items.
+     * Нам нужно самим пройтись и обновить каждую запись по _id.
+     */
+    "toItemsWithActions": (origItems, transItems) => {
       if (!Array.isArray(origItems) || !transItems) {
         return origItems;
       }
       for (const item of origItems) {
-        if (!item) continue;
+        if (!item) {
+          continue;
+        }
         const translation = transItems[item._id];
-        if (!translation) continue;
+        if (!translation) {
+          continue;
+        }
         if (translation.name) {
           item.name = translation.name;
         }
-        if (!item.system) continue;
         const system = item.system;
+        if (!system) {
+          continue;
+        }
         const desc = translation.description;
         if (desc) {
           system.description = desc;
         }
-        const actions = system.actions;
-        if (!actions) continue;
-        const translatedActions = translation.actions;
-        if (translatedActions && typeof translatedActions === "object") {
-          for (const actionId of Object.keys(actions)) {
-            const action = actions[actionId];
-            if (!action) continue;
-            const translated = translatedActions[actionId];
-            if (!translated) continue;
-            if (typeof translated === "string") {
-              action.description = translated;
-            } else if (typeof translated === "object") {
-              const { name, description } = translated;
-              if (name) action.name = name;
-              if (description) action.description = description;
-            }
-          }
-        } else if (desc) {
-          for (const actionId of Object.keys(actions)) {
-            const action = actions[actionId];
-            if (action) action.description = desc;
-          }
-        }
+        applyActionTranslations(system.actions, translation.actions);
       }
       return origItems;
     },
 
-    // Подменяет описания action-узлов переводами из JSON (объектная структура name/description).
+    /**
+     * Item-паки (классы, домены, оружие и т. д.) сами по себе являются Item'ами Foundry,
+     * и их действия лежат в system.actions.
+     */
     "toActions": (origActions, transActions) => {
-      if (!origActions || !transActions) {
-        return origActions;
-      }
-      for (const actionId of Object.keys(origActions)) {
-        const translated = transActions[actionId];
-        if (!translated) continue;
-        const action = origActions[actionId];
-        if (!action) continue;
-        if (typeof translated !== "object") continue;
-        const { name, description } = translated;
-        if (name) action.name = name;
-        if (description) action.description = description;
-      }
+      applyActionTranslations(origActions, transActions);
       return origActions;
     },
 
-    // Проставляет список преимуществ звероформы в value поля объекта по порядку.
+    /**
+     * Преимущества у звероформ внутри Foundry хранятся объектом {id: { value }}.
+     * Но в переводах у нас есть просто список строк, поэтому конвертер проставляет строки в value в том же порядке.
+     */
     "toAdvantageList": (origObj, values) => {
       if (!Array.isArray(values)) {
         return origObj;
       }
-      let index = 0;
-      for (const id of Object.keys(origObj)) {
+      Object.keys(origObj).forEach((id, index) => {
         const node = origObj[id];
-        if (!node || typeof node.value !== "string") continue;
         const replacement = values[index];
-        if (typeof replacement === "string" && replacement.trim()) {
-          node.value = replacement.trim();
+        if (!node || typeof node.value !== "string" || typeof replacement !== "string") {
+          return;
         }
-        index += 1;
-      }
+        const trimmed = replacement.trim();
+        if (trimmed) {
+          node.value = trimmed;
+        }
+      });
       return origObj;
     }
   });

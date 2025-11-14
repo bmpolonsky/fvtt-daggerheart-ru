@@ -13,7 +13,7 @@
     "attack": "system.attack.name",
     "items": {
       "path": "items",
-      "converter": "toAdversariesItems"
+      "converter": "toItemsWithActions"
     }
   },
   "entries": {
