@@ -4,7 +4,11 @@
     "Community Features": "Community Features"
   },
   "mapping": {
-    "description": "system.description"
+    "description": "system.description",
+    "effects": {
+      "path": "effects",
+      "converter": "toEffects"
+    }
   },
   "entries": {
     "Highborne": {

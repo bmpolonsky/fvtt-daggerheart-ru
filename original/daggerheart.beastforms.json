@@ -13,6 +13,14 @@
     "advantageOn": {
       "path": "system.advantageOn",
       "converter": "toAdvantageList"
+    },
+    "actions": {
+      "path": "system.actions",
+      "converter": "toActions"
+    },
+    "effects": {
+      "path": "effects",
+      "converter": "toEffects"
     }
   },
   "entries": {

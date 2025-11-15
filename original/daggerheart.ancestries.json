@@ -5,7 +5,14 @@
   },
   "mapping": {
     "description": "system.description",
-    "actions": "system.actions"
+    "actions": {
+      "path": "system.actions",
+      "converter": "toActions"
+    },
+    "effects": {
+      "path": "effects",
+      "converter": "toEffects"
+    }
   },
   "entries": {
     "Clank": {
