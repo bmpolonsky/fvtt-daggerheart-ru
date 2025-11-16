@@ -260,9 +260,8 @@ function parsePotentialLabelList(text) {
     return "";
   });
 
-  const hasStandalone = /(?:^|,)\s*(?:\[[^\]]+\]|\b[^,()]+)\s*(?:,|$)/.test(
-    cleaned.replace(/([^,()]+)\([^)]*\)/g, "")
-  );
+  const remainder = cleaned.replace(/([^,()]+)\([^)]*\)/g, "").replace(/[,.\s]+/g, " ").trim();
+  const hasStandalone = remainder.length > 0;
   if (hasStandalone) {
     categories.push(DEFAULT_OTHER_LABEL);
   }
