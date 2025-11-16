@@ -192,6 +192,8 @@ const ATTACK_NAME_TRANSLATIONS = {
   attack: "Атака"
 };
 
+const DEFAULT_OTHER_LABEL = "Прочие";
+
 // Регулярные выражения для очистки HTML и Markdown.
 const HTML_LINK_RE = /<a\s+[^>]*>(.*?)<\/a>/gis;
 const MD_LINK_RE = /\[([^\]]+)\]\([^)]+\)/g;
@@ -229,6 +231,43 @@ function normalizeItemAttack(entry) {
   if (translated) {
     entry.attack = translated;
   }
+}
+
+function buildEnvironmentPotentialLabels(entries) {
+  const map = {};
+  for (const entry of entries || []) {
+    if (!entry || !entry.slug) continue;
+    const labels = parsePotentialLabelList(entry.potential_adversaries);
+    if (labels.length) {
+      map[entry.slug] = labels;
+    }
+  }
+  return map;
+}
+
+function parsePotentialLabelList(text) {
+  if (!text || typeof text !== "string") return [];
+  const cleaned = stripLinks(text);
+  const categories = [];
+  const seen = new Set();
+
+  cleaned.replace(/([^,()]+)\([^)]*\)/g, (_, raw) => {
+    const label = sanitizeName(raw.replace(/[:：]+$/, ""));
+    if (label && !seen.has(label)) {
+      categories.push(label);
+      seen.add(label);
+    }
+    return "";
+  });
+
+  const hasStandalone = /(?:^|,)\s*(?:\[[^\]]+\]|\b[^,()]+)\s*(?:,|$)/.test(
+    cleaned.replace(/([^,()]+)\([^)]*\)/g, "")
+  );
+  if (hasStandalone) {
+    categories.push(DEFAULT_OTHER_LABEL);
+  }
+
+  return categories;
 }
 
 // Определение базовых директорий проекта.
@@ -1620,6 +1659,7 @@ async function main() {
   const adversaryTop = buildTopLevelMap(adversaryData.en, adversaryData.ru, ["short_description"]);
   const environmentTop = buildTopLevelMap(environmentData.en, environmentData.ru, ["short_description"]);
   const ruleTop = buildTopLevelMap(ruleData.en, ruleData.ru, ["description"], "main_body");
+  const environmentPotentialLabels = buildEnvironmentPotentialLabels(environmentData.ru);
 
   // Создаем объект для хранения раздельных карт способностей.
   const scopedFeatureMaps = {
@@ -2375,7 +2415,7 @@ async function main() {
     }, { stats });
   }
 
-  async function updateEnvironmentsFile(path, { environmentTop, featureMap }, stats) {
+  async function updateEnvironmentsFile(path, { environmentTop, featureMap, potentialLabels }, stats) {
     return updateEntries(path, (norm, entry) => {
       if (!norm) return false;
       const info = environmentTop[norm];
@@ -2419,6 +2459,23 @@ async function main() {
           }
         }
         if (raw.impulses) setHtmlField(entry, "impulses", raw.impulses);
+        if (entry.potentialAdversaries && typeof entry.potentialAdversaries === "object") {
+          const slug = raw && raw.slug ? raw.slug : null;
+          const dynamicLabels = slug && potentialLabels ? potentialLabels[slug] || [] : [];
+          let index = 0;
+          for (const groupId of Object.keys(entry.potentialAdversaries)) {
+            const group = entry.potentialAdversaries[groupId];
+            if (!group || typeof group !== "object") {
+              index += 1;
+              continue;
+            }
+            const translated = dynamicLabels[index] || null;
+            if (translated) {
+              group.label = sanitizeName(translated);
+            }
+            index += 1;
+          }
+        }
         return true;
       }
       const featureInfo = featureMap[norm];
@@ -2546,7 +2603,8 @@ async function main() {
       run: () =>
         updateEnvironmentsFile(filePaths.environments, {
           environmentTop,
-          featureMap: scopedFeatureMaps.environment
+          featureMap: scopedFeatureMaps.environment,
+          potentialLabels: environmentPotentialLabels
         }, statsByFile.environments)
     },
     {

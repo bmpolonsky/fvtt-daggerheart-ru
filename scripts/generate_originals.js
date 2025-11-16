@@ -226,6 +226,17 @@ async function buildEnvironmentEntries() {
     if (entry.system?.impulses) {
       result.impulses = entry.system.impulses;
     }
+    const potential = entry.system?.potentialAdversaries;
+    if (potential && typeof potential === "object") {
+      const groups = {};
+      for (const [id, group] of Object.entries(potential)) {
+        if (!group) continue;
+        groups[id] = { label: group.label || "" };
+      }
+      if (Object.keys(groups).length) {
+        result.potentialAdversaries = groups;
+      }
+    }
     const items = convertItemList(entry.items);
     if (items && Object.keys(items).length) {
       result.items = items;

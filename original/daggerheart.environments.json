@@ -3,6 +3,10 @@
   "mapping": {
     "description": "system.description",
     "impulses": "system.impulses",
+    "potentialAdversaries": {
+      "path": "system.potentialAdversaries",
+      "converter": "toPotentialAdversaries"
+    },
     "items": {
       "path": "items",
       "converter": "toItemsWithActions"
@@ -19,6 +23,14 @@
       "name": "Abandoned Grove",
       "description": "<p>A former druidic grove lying fallow and fully reclaimed by nature.</p>",
       "impulses": "Draw in the curious, echo the past",
+      "potentialAdversaries": {
+        "VbbsqTQkmScgraqy": {
+          "label": "Beasts"
+        },
+        "oKq6LhpXvSWnmqyS": {
+          "label": "Grove Guardians"
+        }
+      },
       "items": {
         "MX4q2xxuWts9gBfT": {
           "name": "Overgrown Battlefield",
@@ -102,6 +114,17 @@
       "name": "Burning Heart of the Woods",
       "description": "<p>Thick indigo ash fills the air around a towering moss-covered tree that burns eternally with flames a sickly shade of blue.</p>",
       "impulses": "Beat out an uncanny rhythm for all to follow, corrupt the woods",
+      "potentialAdversaries": {
+        "x0uI3WUhqmIcqimN": {
+          "label": "Beasts"
+        },
+        "ndk8FXXrRjHiPN0R": {
+          "label": "Elementals"
+        },
+        "XD3YccQrTKsxtlSZ": {
+          "label": "Verdant Defenders"
+        }
+      },
       "items": {
         "hU32a8QZy62gdLGc": {
           "name": "Chaos Magic Locus",
@@ -157,6 +180,14 @@
       "name": "Bustling Marketplace",
       "description": "<p>The economic heart of the settlement, with local artisans, traveling merchants, and patrons across social classes.</p>",
       "impulses": "Buy low, and sell high, tempt and tantalize with wares from near and far",
+      "potentialAdversaries": {
+        "4rGNjVN6eT9xjsAa": {
+          "label": "Guards"
+        },
+        "ucd2xJvPBS43bybO": {
+          "label": "Other"
+        }
+      },
       "items": {
         "w8YmhoWPGc66Wrx3": {
           "name": "Tip the Scales",
@@ -190,6 +221,14 @@
       "name": "Castle Siege",
       "description": "<p>An active siege with an attacking force fighting to gain entry to a fortified castle.</p>",
       "impulses": "Bleed out the will to fi ght, breach the walls, build tension",
+      "potentialAdversaries": {
+        "yNuW3h5S2tsbgLm4": {
+          "label": "Mercenaries"
+        },
+        "djL6ySNZ1A0skdMT": {
+          "label": "Noble Forces"
+        }
+      },
       "items": {
         "2qUw5c3e22eywSwg": {
           "name": "Secret Entrance",
@@ -229,6 +268,11 @@
       "name": "Chaos Realm",
       "description": "<p>An otherworldly space where the laws of reality are unstable and dangerous.</p>",
       "impulses": "Annihilate certainty, consume power, defy logic",
+      "potentialAdversaries": {
+        "2E8iPHwHt7srzJRS": {
+          "label": "Outer Realm Monstrosities"
+        }
+      },
       "items": {
         "yXCBy1MQuh5GwH5Q": {
           "name": "Impossible Architecture",
@@ -290,6 +334,11 @@
       "name": "Cliffside Ascent",
       "description": "<p>A steep, rocky cliffside tall enough to make traversal dangerous.</p>",
       "impulses": "Cast the unready down to a rocky doom, draw people in with promise of what lies at the top",
+      "potentialAdversaries": {
+        "hWhlWzJ8nNKAMmXx": {
+          "label": "Other"
+        }
+      },
       "items": {
         "bKBwM72OwVnlsHG6": {
           "name": "The Climb",
@@ -336,6 +385,11 @@
       "name": "Cult Ritual",
       "description": "<p>A Fallen cult assembles around a sigil of the defeated gods and a bonfire that burns a sickly shade of green.</p>",
       "impulses": "Profane the land, unite the Mortal Realm with the Circles Below",
+      "potentialAdversaries": {
+        "hNREaghvi4LqHQ06": {
+          "label": "Cult of the Fallen"
+        }
+      },
       "items": {
         "iiHjguQG2aBn9g8i": {
           "name": "Desecrated Ground",
@@ -374,6 +428,11 @@
       "name": "Divine Usurpation",
       "description": "<p>A massive ritual designed to breach the gates of the Hallows Above and unseat the New Gods themselves.</p>",
       "impulses": "Collect power, overawe, silence dissent",
+      "potentialAdversaries": {
+        "IMQDBXkxdUIUSjsm": {
+          "label": "Other"
+        }
+      },
       "items": {
         "IHLJjpOQyWjmCLAL": {
           "name": "Final Preparations",
@@ -452,6 +511,11 @@
       "name": "Hallowed Temple",
       "description": "<p>A bustling but well-kept temple that provides healing and hosts regular services, overseen by a priest or seraph.</p>",
       "impulses": "Connect the Mortal Realm with the Hallows Above, display the power of the divine, provide aid and succor to the faithful",
+      "potentialAdversaries": {
+        "4oKNnCRPuWEFni6D": {
+          "label": "Guards"
+        }
+      },
       "items": {
         "hgHpS2k1sVxHKiG1": {
           "name": "A Place of Healing",
@@ -493,6 +557,11 @@
       "name": "Haunted City",
       "description": "<p>An abandoned city populated by the restless spirits of eras past.</p>",
       "impulses": "Misdirect and disorient, replay apocalypses both public and personal",
+      "potentialAdversaries": {
+        "h07vZopQbVt6dlY6": {
+          "label": "Ghosts"
+        }
+      },
       "items": {
         "h8Dv8pToiCVklPhv": {
           "name": "Buried Knowledge",
@@ -534,6 +603,11 @@
       "name": "Imperial Court",
       "description": "<p>The majestic domain of a powerful empire, lavishly appointed with stolen treasures.</p>",
       "impulses": "Justify and perpetuate imperial rule, seduce rivals with promises of power and comfort",
+      "potentialAdversaries": {
+        "JTuzman711Fqs3u1": {
+          "label": "Other"
+        }
+      },
       "items": {
         "OXUbWRt1Dj0vk7mW": {
           "name": "All Roads Lead Here",
@@ -579,6 +653,17 @@
       "name": "Local Tavern",
       "description": "<p>A lively tavern that serves as the social hub for its town.</p>",
       "impulses": "Provide opportunities for adventurers, nurture community",
+      "potentialAdversaries": {
+        "H53IurNOv7hOTz88": {
+          "label": "Guards"
+        },
+        "2g6jJtdA8WiA0ihA": {
+          "label": "Mercenaries"
+        },
+        "TzAxfdQKMVRRx5z5": {
+          "label": "Other"
+        }
+      },
       "items": {
         "7to5Zu0lNycExCQi": {
           "name": "What's the Talk of the Town?",
@@ -611,6 +696,14 @@
       "name": "Mountain Pass",
       "description": "<p>Stony peaks that pierce the clouds, with a twisting path winding its way up and over through many switchbacks.</p>",
       "impulses": "Exact a chilling toll in supplies and stamina, reveal magical tampering, slow down travel",
+      "potentialAdversaries": {
+        "f08TnNkCjPIzmQHh": {
+          "label": "Beasts"
+        },
+        "8aqHp1uxtxvnuNSU": {
+          "label": "Other"
+        }
+      },
       "items": {
         "cIAMenvMXHPTpOFn": {
           "name": "Engraved Sigils",
@@ -650,6 +743,11 @@
       "name": "Necromancer’s Ossuary",
       "description": "<p>A dusty crypt with a library, twisting corridors, and abundant sarcophagi, spattered with the blood of ill-fated invaders.</p>",
       "impulses": "Confound intruders, delve into secrets best left buried, manifest unlife, unleash a tide of undead",
+      "potentialAdversaries": {
+        "eYaDM6WMAmdzysKZ": {
+          "label": "Arch-Necromancer's Host"
+        }
+      },
       "items": {
         "SJo1Pw0fE4vKnisr": {
           "name": "No Place for the Living",
@@ -701,6 +799,14 @@
       "name": "Outpost Town",
       "description": "<p>A small town on the outskirts of a nation or region, close to a dungeon, tombs, or other adventuring destinations.</p>",
       "impulses": "Drive the desperate to certain doom, profi t off  of ragged hope",
+      "potentialAdversaries": {
+        "yZr3dTicergVkU0d": {
+          "label": "Jagged Knife Bandits"
+        },
+        "KZSZadT58Pd1kaDH": {
+          "label": "Other"
+        }
+      },
       "items": {
         "whN2Ztn2wMqD7uW3": {
           "name": "Rumors Abound",
@@ -734,6 +840,14 @@
       "name": "Pitched Battle",
       "description": "<p>A massive combat between two large groups of armed combatants.</p>",
       "impulses": "Seize people, land, and wealth, spill blood for greed and glory",
+      "potentialAdversaries": {
+        "tGf8mFL6DiGaOzxS": {
+          "label": "Mercenaries"
+        },
+        "E13BxwBg4sKl01IR": {
+          "label": "Noble Forces"
+        }
+      },
       "items": {
         "HG9GwIZoCDcqOEOc": {
           "name": "Pitched Battle",
@@ -763,6 +877,14 @@
       "name": "Raging River",
       "description": "<p>A swift-moving river without a bridge crossing, deep enough to sweep away most people.</p>",
       "impulses": "Bar crossing, carry away the unready, divide the land",
+      "potentialAdversaries": {
+        "UUdCj6oiRrJ4QWWD": {
+          "label": "Beasts"
+        },
+        "IOPWkNbGuLvPgnSy": {
+          "label": "Jagged Knife Bandits"
+        }
+      },
       "items": {
         "4ILX7BCinmsGqrJM": {
           "name": "Dangerous Crossing",

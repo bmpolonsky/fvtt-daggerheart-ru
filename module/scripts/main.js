@@ -125,6 +125,22 @@ Hooks.once('babele.init', (babele) => {
         }
       });
       return origObj;
+    },
+
+    "toPotentialAdversaries": (origGroups, translatedGroups) => {
+      if (!origGroups || typeof origGroups !== "object" || !translatedGroups || typeof translatedGroups !== "object") {
+        return origGroups;
+      }
+      for (const [groupId, group] of Object.entries(origGroups)) {
+        if (!group || typeof group !== "object") continue;
+        const translation = translatedGroups[groupId];
+        if (!translation || typeof translation.label !== "string") continue;
+        const trimmed = translation.label.trim();
+        if (trimmed) {
+          group.label = trimmed;
+        }
+      }
+      return origGroups;
     }
   });
 });
