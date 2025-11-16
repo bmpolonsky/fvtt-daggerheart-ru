@@ -188,6 +188,10 @@ const TRANSLATION_FILES = {
   environments: "daggerheart.environments.json"
 };
 
+const ATTACK_NAME_TRANSLATIONS = {
+  attack: "Атака"
+};
+
 // Регулярные выражения для очистки HTML и Markdown.
 const HTML_LINK_RE = /<a\s+[^>]*>(.*?)<\/a>/gis;
 const MD_LINK_RE = /\[([^\]]+)\]\([^)]+\)/g;
@@ -206,6 +210,25 @@ function parseAdvantagesList(value) {
 function capitalizeFirstLetter(text) {
   if (!text) return text;
   return text.charAt(0).toUpperCase() + text.slice(1);
+}
+
+function translateAttackName(value) {
+  if (!value) return null;
+  const trimmed = String(value).trim();
+  if (!trimmed) return null;
+  const lookup = trimmed.toLowerCase();
+  const translated = ATTACK_NAME_TRANSLATIONS[lookup];
+  return translated ? sanitizeName(translated) : null;
+}
+
+function normalizeItemAttack(entry) {
+  if (!entry || typeof entry.attack !== "string") return;
+  const trimmed = entry.attack.trim();
+  if (!trimmed) return;
+  const translated = translateAttackName(trimmed);
+  if (translated) {
+    entry.attack = translated;
+  }
 }
 
 // Определение базовых директорий проекта.
@@ -1736,17 +1759,20 @@ async function main() {
         ? buildDescription(ruEntry, enEntry)
         : defaultEquipmentDescription(ruEntry, enEntry);
       const description = rawDescription ? sanitizeHtml(rawDescription) : null;
-      map[norm] = {
+      const entryInfo = {
         name: sanitizeName(ruEntry.name || enEntry.name),
         description
       };
+      map[norm] = entryInfo;
     }
     return map;
   }
 
-  async function applyEquipmentMap(targetPath, map, fallback, options = {}) {
+  async function applyEquipmentMap(targetPath, map, fallback = {}, options = {}) {
     const { overrides = {}, preserveFallbackDescription = true, stats = null } = options;
+    const fallbackEntries = (fallback && fallback.entries) || {};
     return updateEntries(targetPath, (norm, entry, key) => {
+      const fallbackEntry = fallbackEntries[key];
       if (overrides[key]) {
         const override = overrides[key];
         entry.name = sanitizeName(override.name || entry.name);
@@ -1755,19 +1781,20 @@ async function main() {
         } else {
           delete entry.description;
         }
+        normalizeItemAttack(entry);
         return true;
       }
       if (!norm) return false;
       const info = map[norm] || map[resolveAlias(norm, EQUIPMENT_NAME_ALIASES)];
       if (!info) {
-        const oldEntries = fallback.entries || {};
-        if (oldEntries[key]) {
-          entry.name = oldEntries[key].name;
-          if (oldEntries[key].description) {
-            entry.description = oldEntries[key].description;
+        if (fallbackEntry) {
+          entry.name = fallbackEntry.name;
+          if (fallbackEntry.description) {
+            entry.description = fallbackEntry.description;
           } else {
             delete entry.description;
           }
+          normalizeItemAttack(entry);
           return true;
         }
         return false;
@@ -1775,16 +1802,12 @@ async function main() {
       entry.name = sanitizeName(info.name);
       if (info.description) {
         setHtmlField(entry, "description", info.description);
-      } else if (
-        preserveFallbackDescription &&
-        fallback.entries &&
-        fallback.entries[key] &&
-        fallback.entries[key].description
-      ) {
-        entry.description = fallback.entries[key].description;
+      } else if (preserveFallbackDescription && fallbackEntry && fallbackEntry.description) {
+        entry.description = fallbackEntry.description;
       } else {
         delete entry.description;
       }
+      normalizeItemAttack(entry);
       return true;
     }, { stats });
   }

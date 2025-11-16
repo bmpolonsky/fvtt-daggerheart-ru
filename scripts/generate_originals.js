@@ -293,6 +293,10 @@ async function buildItemEntries(relativePath, acceptedType) {
     if (effects) {
       result.effects = effects;
     }
+    const attackName = extractAttackName(entry.system?.attack);
+    if (attackName) {
+      result.attack = attackName;
+    }
     return result;
   });
 }
@@ -410,9 +414,19 @@ function convertItemList(items) {
     if (effects) {
       child.effects = effects;
     }
+    const attackName = extractAttackName(item.system?.attack);
+    if (attackName) {
+      child.attack = attackName;
+    }
     result[item._id] = child;
   }
   return result;
+}
+
+function extractAttackName(attackNode) {
+  if (!attackNode || typeof attackNode !== "object") return null;
+  const name = typeof attackNode.name === "string" ? attackNode.name.trim() : "";
+  return name || null;
 }
 
 function convertExperiences(payload) {

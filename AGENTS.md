@@ -1,33 +1,58 @@
 # Collaborative Brief
 
-## Initial Task
-- Integrate high-quality Russian translations into existing Foundry module without changing structure.
+## Project Overview
+- Foundry-borne Daggerheart module with full RU localization.
+- Goal: keep russian texts in `module/i18n` and `module/translations` synced with upstream data + API dumps without drifting from Foundry structure.
+- All automation lives in `scripts/*.js` (Node 18+). Manual edits go through these scripts to avoid diverging schemas.
 
-## Feedback & Translation Constraints
-1. Remove extra «+2/+3» etc. from experience names; UI already shows bonuses.
-2. Strip `<a href>` and markdown `[]()` links from all texts.
-3. Beastforms should not gain new descriptions beyond those used in the interface.
-4. Preserve original item IDs (no article/case changes) for class equipment.
-5. Provide alias handling for Camaraderie/Comaraderie and Partner(s)-in-Arms typos.
-6. Map Elundrian Chain Mail ↔ Elundrian Chain Armor for Foundry compatibility.
-7. Translate and format Bare Bones armor manually; ability must still map from API.
-8. Ensure starting equipment overrides (rope, torch, supplies) are script-driven.
-9. Weaponized wheelchairs and similar items should list feature text (not base stats).
-10. Restore domain card actions instead of deleting them during updates.
-11. Make sure adversary items align with ru features (fallback to ordering when IDs differ).
+## Translation Rules & Nuances
+1. Strip all `<a>` tags and Markdown links (`[]()`), keep plain text only.
+2. Experiences: remove inline bonuses like «+2», UI shows modifiers.
+3. Beastforms: do not invent descriptions—only text from API/UI and keep “full form” vs “feature item” behavior (see script logic).
+4. Preserve class equipment IDs and article/case from upstream; overrides are in `CLASS_ITEM_OVERRIDES`.
+5. Aliases baked into the script: Camaraderie/Comaraderie, Partner(s)-in-Arms, Elundrian Chain *Mail/Armor*, etc. Extend there if new typos show up.
+6. Weaponized/arcane wheelchairs output feature text, not stat blocks.
+7. Bare Bones armor is overridden manually (`ARMOR_OVERRIDES`) and must continue to resolve the API ability.
+8. Domain cards keep all actions; automation re-splits combined descriptions, so don’t delete action stubs.
+9. Adversary feature ordering is the fallback if IDs mis-match; keep ru items aligned with `raw.features`.
+10. Attack fields: adversaries get names from API, weapons default to `"Attack"` and are localized automatically; don’t hand-edit unless upstream changes.
 
-## Automation Requirements
-- Script must be self-sufficient: clear tmp cache, download endpoints via `?lang=ru`, update translations, report missing entries.
-- Always run/validate the script per iteration and inspect for blind spots.
-- Maintain CLASS_ITEM overrides in code (reflect current translations).
-- Flag remaining English strings from API and handle them appropriately.
-- Remove redundant alias checks to avoid double processing.
-- Prefer Node.js implementation for the automation script (legacy Python optional).
-- Store API cache as `tmp_data/<endpoint>.json` fetched via `?lang=ru` only (no `.en`).
-- Current JSON files were rolled back; next commits must rely on the updated automation.
+## Automation Workflow
+### 1. sync_i18n_structure.js
+- Mirrors schemas from `original/` snapshots into `module/`.
+- Run when upstream Foundry adds/removes fields (typically after updating `original/`).
+- Keeps optional entry-level `description` keys.
 
-## Outstanding Tasks
-1. Finalize the Node.js automation script per above requirements.
-2. Run the script end-to-end, validate diffs, and adjust logic as needed.
-3. Confirm all overrides/aliases (Camaraderie, Partner-in-Arms, Elundrian armor, etc.) are handled inside the script.
-4. Ensure all translation tweaks (experience bonuses, beastform descriptions, domain actions, adversary items, etc.) are preserved in the automated output.
+### 2. generate_originals.js
+- Pulls/updates `tmp_data/original-daggerheart` (skip with `SKIP_REMOTE_UPDATE=1`).
+- Rebuilds `original/*.json` + `original/lang/en.json` from the Foundry repo + current RU translations.
+- Purpose: provide canonical structure for sync + an easy git diff when upstream system changes.
+
+### 3. update_translations.js
+- Always run per localized iteration (unless explicitly told otherwise).
+- Steps:
+  - Refresh `tmp_data/api/*` (both `endpoint.json` and `endpoint.en.json` caches). Set `SKIP_API_REFRESH=1` to reuse downloads.
+  - Build top-level maps + feature maps using RU/EN API payloads.
+  - Apply translations to every `module/translations/daggerheart.*.json`, respecting overrides, alias rules, HTML cleanup, `CLASS_ITEM_OVERRIDES`, action/effect splitting, etc.
+  - Normalizes `system.attack.name` fields, adds advantages/examples, restores domain actions, ensures class items/starting equipment replacements.
+  - Prints per-file stats and missing entries list; treat missing entries as blockers until resolved.
+
+### General Notes
+- Scripts expect caches in `tmp_data/api` and the original Foundry repo in `tmp_data/original-daggerheart`.
+- Never edit `module/translations/*.json` directly; change automation or upstream data and rerun.
+- Review git diff after every script run—manual tweaks (e.g., new translations) must be reflected in automation immediately.
+- Use `TODO.md` for outstanding translation tasks (e.g., id-based mapping, “Void” beta content).
+
+## Overrides & Special Cases
+- `CLASS_ITEM_OVERRIDES`: ensures rope/torch/supplies and other class item names stay consistent despite API text changes.
+- `ACTION_OVERRIDES`: hardcoded HTML for split abilities (Elementalist foundation, Sparing Touch, Weapon Specialist, etc.).
+- `ARMOR_OVERRIDES`: Bare Bones custom card text.
+- `EQUIPMENT_NAME_ALIASES`: handles renamed/misspelled equipment (Elundrian chain pieces, Camaraderie variants, Partner-in-Arms typos).
+- `normalizeItemAttack`: only translates `"Attack"` → `"Атака"`; anything else is left as-is for manual follow-up.
+
+## Expectation for Contributions
+- Before adding/removing fields in translations, run `sync_i18n_structure.js`.
+- When the Foundry repo updates, rerun `generate_originals.js`, inspect diffs, then adjust automation.
+- Every localization pass: run `update_translations.js`, review stats/diffs, fix blind spots, and only then commit.
+- Keep scripts self-sufficient: they clear caches, fetch RU/EN payloads with `?lang=`, map overrides, and report unhandled entries.
+- If API returns English text, log/flag it; either add manual overrides or loop with maintainers until resolved. 

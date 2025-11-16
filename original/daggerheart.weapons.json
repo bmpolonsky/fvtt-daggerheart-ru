@@ -30,7 +30,8 @@
           "name": "Reload",
           "description": "After you make an attack, roll a d6. On a result of 1, you must mark a Stress to reload this weapon before you can fire it again."
         }
-      }
+      },
+      "attack": "Attack"
     },
     "Aantari Bow": {
       "name": "Aantari Bow",
@@ -39,7 +40,8 @@
           "name": "Reliable",
           "description": "+1 to attack rolls"
         }
-      }
+      },
+      "attack": "Attack"
     },
     "Advanced Arcane-Frame Wheelchair": {
       "name": "Advanced Arcane-Frame Wheelchair",
@@ -48,13 +50,16 @@
           "name": "Reliable",
           "description": "+1 to attack rolls"
         }
-      }
+      },
+      "attack": "Attack"
     },
     "Advanced Arcane Gauntlets": {
-      "name": "Advanced Arcane Gauntlets"
+      "name": "Advanced Arcane Gauntlets",
+      "attack": "Attack"
     },
     "Advanced Battleaxe": {
-      "name": "Advanced Battleaxe"
+      "name": "Advanced Battleaxe",
+      "attack": "Attack"
     },
     "Advanced Broadsword": {
       "name": "Advanced Broadsword",
@@ -63,22 +68,28 @@
           "name": "Reliable",
           "description": "+1 to attack rolls"
         }
-      }
+      },
+      "attack": "Attack"
     },
     "Advanced Crossbow": {
-      "name": "Advanced Crossbow"
+      "name": "Advanced Crossbow",
+      "attack": "Attack"
     },
     "Advanced Cutlass": {
-      "name": "Advanced Cutlass"
+      "name": "Advanced Cutlass",
+      "attack": "Attack"
     },
     "Advanced Dagger": {
-      "name": "Advanced Dagger"
+      "name": "Advanced Dagger",
+      "attack": "Attack"
     },
     "Advanced Dualstaff": {
-      "name": "Advanced Dualstaff"
+      "name": "Advanced Dualstaff",
+      "attack": "Attack"
     },
     "Advanced Glowing Rings": {
-      "name": "Advanced Glowing Rings"
+      "name": "Advanced Glowing Rings",
+      "attack": "Attack"
     },
     "Advanced Grappler": {
       "name": "Advanced Grappler",
@@ -87,7 +98,8 @@
           "name": "Hook",
           "description": "On a successful attack, you can pull the target into Melee range."
         }
-      }
+      },
+      "attack": "Attack"
     },
     "Advanced Greatstaff": {
       "name": "Advanced Greatstaff",
@@ -96,7 +108,8 @@
           "name": "Powerful",
           "description": "On a successful attack, roll an additional damage die and discard the lowest result."
         }
-      }
+      },
+      "attack": "Attack"
     },
     "Advanced Greatsword": {
       "name": "Advanced Greatsword",
@@ -105,7 +118,8 @@
           "name": "Massive",
           "description": "-1 to Evasion; on a successful attack, roll an additional damage die and discard the lowest result."
         }
-      }
+      },
+      "attack": "Attack"
     },
     "Advanced Halberd": {
       "name": "Advanced Halberd",
@@ -114,16 +128,20 @@
           "name": "Cumbersome",
           "description": "-1 to Finesse"
         }
-      }
+      },
+      "attack": "Attack"
     },
     "Advanced Hallowed Axe": {
-      "name": "Advanced Hallowed Axe"
+      "name": "Advanced Hallowed Axe",
+      "attack": "Attack"
     },
     "Advanced Hand Crossbow": {
-      "name": "Advanced Hand Crossbow"
+      "name": "Advanced Hand Crossbow",
+      "attack": "Attack"
     },
     "Advanced Hand Runes": {
-      "name": "Advanced Hand Runes"
+      "name": "Advanced Hand Runes",
+      "attack": "Attack"
     },
     "Advanced Heavy-Frame Wheelchair": {
       "name": "Advanced Heavy-Frame Wheelchair",
@@ -132,7 +150,8 @@
           "name": "Heavy",
           "description": "-1 to Evasion"
         }
-      }
+      },
+      "attack": "Attack"
     },
     "Advanced Light-Frame Wheelchair": {
       "name": "Advanced Light-Frame Wheelchair",
@@ -141,7 +160,8 @@
           "name": "Quick",
           "description": "When you make an attack, you can mark a Stress to target another creature within range."
         }
-      }
+      },
+      "attack": "Attack"
     },
     "Advanced Longbow": {
       "name": "Advanced Longbow",
@@ -150,16 +170,20 @@
           "name": "Cumbersome",
           "description": "-1 to Finesse"
         }
-      }
+      },
+      "attack": "Attack"
     },
     "Advanced Longsword": {
-      "name": "Advanced Longsword"
+      "name": "Advanced Longsword",
+      "attack": "Attack"
     },
     "Advanced Mace": {
-      "name": "Advanced Mace"
+      "name": "Advanced Mace",
+      "attack": "Attack"
     },
     "Advanced Quarterstaff": {
-      "name": "Advanced Quarterstaff"
+      "name": "Advanced Quarterstaff",
+      "attack": "Attack"
     },
     "Advanced Rapier": {
       "name": "Advanced Rapier",
@@ -168,7 +192,8 @@
           "name": "Quick",
           "description": "When you make an attack, you can mark a Stress to target another creature within range."
         }
-      }
+      },
+      "attack": "Attack"
     },
     "Advanced Returning Blade": {
       "name": "Advanced Returning Blade",
@@ -177,7 +202,8 @@
           "name": "Return",
           "description": "When this weapon is thrown within its range, it appears in your hand immediately after the attack."
         }
-      }
+      },
+      "attack": "Attack"
     },
     "Advanced Round Shield": {
       "name": "Advanced Round Shield",
@@ -186,7 +212,8 @@
           "name": "Protective",
           "description": "<p>Add the item's Tier to your Armor Score</p>"
         }
-      }
+      },
+      "attack": "Attack"
     },
     "Advanced Scepter": {
       "name": "Advanced Scepter",
@@ -194,13 +221,16 @@
         "4w1WlA4yZzUcRMXA": {
           "name": "Versatile Attack"
         }
-      }
+      },
+      "attack": "Attack"
     },
     "Advanced Shortbow": {
-      "name": "Advanced Shortbow"
+      "name": "Advanced Shortbow",
+      "attack": "Attack"
     },
     "Advanced Shortstaff": {
-      "name": "Advanced Shortstaff"
+      "name": "Advanced Shortstaff",
+      "attack": "Attack"
     },
     "Advanced Shortsword": {
       "name": "Advanced Shortsword",
@@ -209,7 +239,8 @@
           "name": "Paired",
           "description": "Add this Secondary Weapon's tier + 1 to your primary weapon against targets within Melee range"
         }
-      }
+      },
+      "attack": "Attack"
     },
     "Advanced Small Dagger": {
       "name": "Advanced Small Dagger",
@@ -218,10 +249,12 @@
           "name": "Paired",
           "description": "Add this Secondary Weapon's tier + 1 to your primary weapon against targets within Melee range"
         }
-      }
+      },
+      "attack": "Attack"
     },
     "Advanced Spear": {
-      "name": "Advanced Spear"
+      "name": "Advanced Spear",
+      "attack": "Attack"
     },
     "Advanced Tower Shield": {
       "name": "Advanced Tower Shield",
@@ -230,10 +263,12 @@
           "name": "Barrier",
           "description": "Gain Weapon Tier + 1 to Armor Score; -1 to Evasion"
         }
-      }
+      },
+      "attack": "Attack"
     },
     "Advanced Wand": {
-      "name": "Advanced Wand"
+      "name": "Advanced Wand",
+      "attack": "Attack"
     },
     "Advanced Warhammer": {
       "name": "Advanced Warhammer",
@@ -242,7 +277,8 @@
           "name": "Heavy",
           "description": "-1 to Evasion"
         }
-      }
+      },
+      "attack": "Attack"
     },
     "Advanced Whip": {
       "name": "Advanced Whip",
@@ -251,7 +287,8 @@
           "name": "Startle",
           "description": "Mark a Stress to crack the whip and force all adversaries within Melee range back to Close range."
         }
-      }
+      },
+      "attack": "Attack"
     },
     "Arcane-Frame Wheelchair": {
       "name": "Arcane-Frame Wheelchair",
@@ -260,10 +297,12 @@
           "name": "Reliable",
           "description": "+1 to attack rolls"
         }
-      }
+      },
+      "attack": "Attack"
     },
     "Arcane Gauntlets": {
-      "name": "Arcane Gauntlets"
+      "name": "Arcane Gauntlets",
+      "attack": "Attack"
     },
     "Axe of Fortunis": {
       "name": "Axe of Fortunis",
@@ -272,10 +311,12 @@
           "name": "Luck",
           "description": "On a failed attack, you can mark a Stress to reroll your attack."
         }
-      }
+      },
+      "attack": "Attack"
     },
     "Battleaxe": {
-      "name": "Battleaxe"
+      "name": "Battleaxe",
+      "attack": "Attack"
     },
     "Bladed Whip": {
       "name": "Bladed Whip",
@@ -284,7 +325,8 @@
           "name": "Quick",
           "description": "When you make an attack, you can mark a Stress to target another creature within range."
         }
-      }
+      },
+      "attack": "Attack"
     },
     "Blessed Anlace": {
       "name": "Blessed Anlace",
@@ -293,7 +335,8 @@
           "name": "Heal",
           "description": "During downtime, automatically clear a Hit Point."
         }
-      }
+      },
+      "attack": "Attack"
     },
     "Bloodstaff": {
       "name": "Bloodstaff",
@@ -302,7 +345,8 @@
           "name": "Pain",
           "description": "Each time you make a successful attack, you must mark a Stress."
         }
-      }
+      },
+      "attack": "Attack"
     },
     "Blunderbuss": {
       "name": "Blunderbuss",
@@ -311,7 +355,8 @@
           "name": "Reload",
           "description": "After you make an attack, roll a d6. On a result of 1, you must mark a Stress to reload this weapon before you can fire it again."
         }
-      }
+      },
+      "attack": "Attack"
     },
     "Braveshield": {
       "name": "Braveshield",
@@ -320,7 +365,8 @@
           "name": "Shelter",
           "description": "When you mark an Armor Slot, it reduces damage for you and all allies within Melee range of you who took the same damage."
         }
-      }
+      },
+      "attack": "Attack"
     },
     "Bravesword": {
       "name": "Bravesword",
@@ -329,7 +375,8 @@
           "name": "Brave",
           "description": "-1 to Evasion; + Weapon Tier to Severe damage threshold"
         }
-      }
+      },
+      "attack": "Attack"
     },
     "Broadsword": {
       "name": "Broadsword",
@@ -338,7 +385,8 @@
           "name": "Reliable",
           "description": "+1 to attack rolls"
         }
-      }
+      },
+      "attack": "Attack"
     },
     "Buckler": {
       "name": "Buckler",
@@ -353,7 +401,8 @@
           "name": "Deflecting",
           "description": "Gain a bonus to your Evasion equal to your Armor Score against the attack"
         }
-      }
+      },
+      "attack": "Attack"
     },
     "Casting Sword": {
       "name": "Casting Sword",
@@ -361,10 +410,12 @@
         "jMGBWGhvcxDgVH86": {
           "name": "Versatile Attack"
         }
-      }
+      },
+      "attack": "Attack"
     },
     "Crossbow": {
-      "name": "Crossbow"
+      "name": "Crossbow",
+      "attack": "Attack"
     },
     "Curved Dagger": {
       "name": "Curved Dagger",
@@ -373,13 +424,16 @@
           "name": "Serrated",
           "description": "When you roll a 1 on a damage die, it deals 8 damage instead."
         }
-      }
+      },
+      "attack": "Attack"
     },
     "Cutlass": {
-      "name": "Cutlass"
+      "name": "Cutlass",
+      "attack": "Attack"
     },
     "Dagger": {
-      "name": "Dagger"
+      "name": "Dagger",
+      "attack": "Attack"
     },
     "Devouring Dagger": {
       "name": "Devouring Dagger",
@@ -388,7 +442,8 @@
           "name": "Scare",
           "description": "On a successful attack, the target must mark a Stress."
         }
-      }
+      },
+      "attack": "Attack"
     },
     "Double Flail": {
       "name": "Double Flail",
@@ -397,10 +452,12 @@
           "name": "Powerful",
           "description": "On a successful attack, roll an additional damage die and discard the lowest result."
         }
-      }
+      },
+      "attack": "Attack"
     },
     "Dualstaff": {
-      "name": "Dualstaff"
+      "name": "Dualstaff",
+      "attack": "Attack"
     },
     "Dual-Ended Sword": {
       "name": "Dual-Ended Sword",
@@ -409,7 +466,8 @@
           "name": "Quick",
           "description": "When you make an attack, you can mark a Stress to target another creature within range."
         }
-      }
+      },
+      "attack": "Attack"
     },
     "Ego Blade": {
       "name": "Ego Blade",
@@ -418,7 +476,8 @@
           "name": "Pompous",
           "description": "You must have a Presence of 0 or lower to use this weapon."
         }
-      }
+      },
+      "attack": "Attack"
     },
     "Elder Bow": {
       "name": "Elder Bow",
@@ -427,7 +486,8 @@
           "name": "Powerful",
           "description": "On a successful attack, roll an additional damage die and discard the lowest result."
         }
-      }
+      },
+      "attack": "Attack"
     },
     "Extended Polearm": {
       "name": "Extended Polearm",
@@ -436,7 +496,8 @@
           "name": "Long",
           "description": "This weapon's attack targets all adversaries in a line within range."
         }
-      }
+      },
+      "attack": "Attack"
     },
     "Finehair Bow": {
       "name": "Finehair Bow",
@@ -445,7 +506,8 @@
           "name": "Reliable",
           "description": "+1 to attack rolls"
         }
-      }
+      },
+      "attack": "Attack"
     },
     "Firestaff": {
       "name": "Firestaff",
@@ -454,7 +516,8 @@
           "name": "Burn",
           "description": "When you roll a 6 on a damage die, the target must mark a Stress."
         }
-      }
+      },
+      "attack": "Attack"
     },
     "Flickerfly Blade": {
       "name": "Flickerfly Blade",
@@ -463,7 +526,8 @@
           "name": "Sharpwing",
           "description": "Gain a bonus to your damage rolls equal to your Agility."
         }
-      }
+      },
+      "attack": "Attack"
     },
     "Floating Bladeshards": {
       "name": "Floating Bladeshards",
@@ -472,7 +536,8 @@
           "name": "Powerful",
           "description": "On a successful attack, roll an additional damage die and discard the lowest result."
         }
-      }
+      },
+      "attack": "Attack"
     },
     "Fusion Gloves": {
       "name": "Fusion Gloves",
@@ -481,10 +546,12 @@
           "name": "Weapon Bond",
           "description": "Gain a bonus to your damage rolls equal to your level."
         }
-      }
+      },
+      "attack": "Attack"
     },
     "Ghostblade": {
-      "name": "Ghostblade"
+      "name": "Ghostblade",
+      "attack": "Attack"
     },
     "Gilded Bow": {
       "name": "Gilded Bow",
@@ -493,7 +560,8 @@
           "name": "Self Correcting",
           "description": "When you roll a 1 on a damage die, it deals 6 damage instead."
         }
-      }
+      },
+      "attack": "Attack"
     },
     "Gilded Falchion": {
       "name": "Gilded Falchion",
@@ -502,10 +570,12 @@
           "name": "Powerful",
           "description": "On a successful attack, roll an additional damage die and discard the lowest result."
         }
-      }
+      },
+      "attack": "Attack"
     },
     "Glowing Rings": {
-      "name": "Glowing Rings"
+      "name": "Glowing Rings",
+      "attack": "Attack"
     },
     "Grappler": {
       "name": "Grappler",
@@ -514,7 +584,8 @@
           "name": "Hook",
           "description": "On a successful attack, you can pull the target into Melee range."
         }
-      }
+      },
+      "attack": "Attack"
     },
     "Greatbow": {
       "name": "Greatbow",
@@ -523,7 +594,8 @@
           "name": "Powerful",
           "description": "On a successful attack, roll an additional damage die and discard the lowest result."
         }
-      }
+      },
+      "attack": "Attack"
     },
     "Greatstaff": {
       "name": "Greatstaff",
@@ -532,7 +604,8 @@
           "name": "Powerful",
           "description": "On a successful attack, roll an additional damage die and discard the lowest result."
         }
-      }
+      },
+      "attack": "Attack"
     },
     "Greatsword": {
       "name": "Greatsword",
@@ -541,7 +614,8 @@
           "name": "Massive",
           "description": "-1 to Evasion; on a successful attack, roll an additional damage die and discard the lowest result."
         }
-      }
+      },
+      "attack": "Attack"
     },
     "Halberd": {
       "name": "Halberd",
@@ -550,10 +624,12 @@
           "name": "Cumbersome",
           "description": "-1 to Finesse"
         }
-      }
+      },
+      "attack": "Attack"
     },
     "Hallowed Axe": {
-      "name": "Hallowed Axe"
+      "name": "Hallowed Axe",
+      "attack": "Attack"
     },
     "Hammer of Exota": {
       "name": "Hammer of Exota",
@@ -562,7 +638,8 @@
           "name": "Erupt",
           "description": "On a successful attack against a target within Melee range, all other adversaries within Very Close range must succeed on a reaction roll (14) or take half damage."
         }
-      }
+      },
+      "attack": "Attack"
     },
     "Hammer of Wrath": {
       "name": "Hammer of Wrath",
@@ -571,7 +648,8 @@
           "name": "Devastate",
           "description": "Before you make an attack roll, you can mark a Stress to use a d20 as your damage die."
         }
-      }
+      },
+      "attack": "Attack"
     },
     "Hand Cannon": {
       "name": "Hand Cannon",
@@ -580,13 +658,16 @@
           "name": "Reload",
           "description": "After you make an attack, roll a d6. On a result of 1, you must mark a Stress to reload this weapon before you can fire it again."
         }
-      }
+      },
+      "attack": "Attack"
     },
     "Hand Crossbow": {
-      "name": "Hand Crossbow"
+      "name": "Hand Crossbow",
+      "attack": "Attack"
     },
     "Hand Runes": {
-      "name": "Hand Runes"
+      "name": "Hand Runes",
+      "attack": "Attack"
     },
     "Hand Sling": {
       "name": "Hand Sling",
@@ -594,7 +675,8 @@
         "GgtsuUCtxGX9e4Kg": {
           "name": "Versatile Attack"
         }
-      }
+      },
+      "attack": "Attack"
     },
     "Heavy-Frame Wheelchair": {
       "name": "Heavy-Frame Wheelchair",
@@ -603,7 +685,8 @@
           "name": "Heavy",
           "description": "-1 to Evasion"
         }
-      }
+      },
+      "attack": "Attack"
     },
     "Ilmari's Rifle": {
       "name": "Ilmari's Rifle",
@@ -612,7 +695,8 @@
           "name": "Reload",
           "description": "After you make an attack, roll a d6. On a result of 1, you must mark a Stress to reload this weapon before you can fire it again."
         }
-      }
+      },
+      "attack": "Attack"
     },
     "Impact Gauntlet": {
       "name": "Impact Gauntlet",
@@ -621,7 +705,8 @@
           "name": "Concuss",
           "description": "On a successful attack, you can spend a Hope to knock the target back to Far range."
         }
-      }
+      },
+      "attack": "Attack"
     },
     "Improved Arcane-Frame Wheelchair": {
       "name": "Improved Arcane-Frame Wheelchair",
@@ -630,13 +715,16 @@
           "name": "Reliable",
           "description": "+1 to attack rolls"
         }
-      }
+      },
+      "attack": "Attack"
     },
     "Improved Arcane Gauntlets": {
-      "name": "Improved Arcane Gauntlets"
+      "name": "Improved Arcane Gauntlets",
+      "attack": "Attack"
     },
     "Improved Battleaxe": {
-      "name": "Improved Battleaxe"
+      "name": "Improved Battleaxe",
+      "attack": "Attack"
     },
     "Improved Broadsword": {
       "name": "Improved Broadsword",
@@ -645,22 +733,28 @@
           "name": "Reliable",
           "description": "+1 to attack rolls"
         }
-      }
+      },
+      "attack": "Attack"
     },
     "Improved Crossbow": {
-      "name": "Improved Crossbow"
+      "name": "Improved Crossbow",
+      "attack": "Attack"
     },
     "Improved Cutlass": {
-      "name": "Improved Cutlass"
+      "name": "Improved Cutlass",
+      "attack": "Attack"
     },
     "Improved Dagger": {
-      "name": "Improved Dagger"
+      "name": "Improved Dagger",
+      "attack": "Attack"
     },
     "Improved Dualstaff": {
-      "name": "Improved Dualstaff"
+      "name": "Improved Dualstaff",
+      "attack": "Attack"
     },
     "Improved Glowing Rings": {
-      "name": "Improved Glowing Rings"
+      "name": "Improved Glowing Rings",
+      "attack": "Attack"
     },
     "Improved Grappler": {
       "name": "Improved Grappler",
@@ -669,7 +763,8 @@
           "name": "Hook",
           "description": "On a successful attack, you can pull the target into Melee range."
         }
-      }
+      },
+      "attack": "Attack"
     },
     "Improved Greatstaff": {
       "name": "Improved Greatstaff",
@@ -678,7 +773,8 @@
           "name": "Powerful",
           "description": "On a successful attack, roll an additional damage die and discard the lowest result."
         }
-      }
+      },
+      "attack": "Attack"
     },
     "Improved Greatsword": {
       "name": "Improved Greatsword",
@@ -687,7 +783,8 @@
           "name": "Massive",
           "description": "-1 to Evasion; on a successful attack, roll an additional damage die and discard the lowest result."
         }
-      }
+      },
+      "attack": "Attack"
     },
     "Improved Halberd": {
       "name": "Improved Halberd",
@@ -696,16 +793,20 @@
           "name": "Cumbersome",
           "description": "-1 to Finesse"
         }
-      }
+      },
+      "attack": "Attack"
     },
     "Improved Hallowed Axe": {
-      "name": "Improved Hallowed Axe"
+      "name": "Improved Hallowed Axe",
+      "attack": "Attack"
     },
     "Improved Hand Crossbow": {
-      "name": "Improved Hand Crossbow"
+      "name": "Improved Hand Crossbow",
+      "attack": "Attack"
     },
     "Improved Hand Runes": {
-      "name": "Improved Hand Runes"
+      "name": "Improved Hand Runes",
+      "attack": "Attack"
     },
     "Improved Heavy-Frame Wheelchair": {
       "name": "Improved Heavy-Frame Wheelchair",
@@ -714,7 +815,8 @@
           "name": "Heavy",
           "description": "-1 to Evasion"
         }
-      }
+      },
+      "attack": "Attack"
     },
     "Improved Light-Frame Wheelchair": {
       "name": "Improved Light-Frame Wheelchair",
@@ -723,7 +825,8 @@
           "name": "Quick",
           "description": "When you make an attack, you can mark a Stress to target another creature within range."
         }
-      }
+      },
+      "attack": "Attack"
     },
     "Improved Longbow": {
       "name": "Improved Longbow",
@@ -732,16 +835,20 @@
           "name": "Cumbersome",
           "description": "-1 to Finesse"
         }
-      }
+      },
+      "attack": "Attack"
     },
     "Improved Longsword": {
-      "name": "Improved Longsword"
+      "name": "Improved Longsword",
+      "attack": "Attack"
     },
     "Improved Mace": {
-      "name": "Improved Mace"
+      "name": "Improved Mace",
+      "attack": "Attack"
     },
     "Improved Quarterstaff": {
-      "name": "Improved Quarterstaff"
+      "name": "Improved Quarterstaff",
+      "attack": "Attack"
     },
     "Improved Rapier": {
       "name": "Improved Rapier",
@@ -750,7 +857,8 @@
           "name": "Quick",
           "description": "When you make an attack, you can mark a Stress to target another creature within range."
         }
-      }
+      },
+      "attack": "Attack"
     },
     "Improved Returning Blade": {
       "name": "Improved Returning Blade",
@@ -759,7 +867,8 @@
           "name": "Return",
           "description": "When this weapon is thrown within its range, it appears in your hand immediately after the attack."
         }
-      }
+      },
+      "attack": "Attack"
     },
     "Improved Round Shield": {
       "name": "Improved Round Shield",
@@ -768,7 +877,8 @@
           "name": "Protective",
           "description": "<p>Add the item's Tier to your Armor Score</p>"
         }
-      }
+      },
+      "attack": "Attack"
     },
     "Improved Scepter": {
       "name": "Improved Scepter",
@@ -776,13 +886,16 @@
         "1g3dZUkJPaGCfYN6": {
           "name": "Versatile Attack"
         }
-      }
+      },
+      "attack": "Attack"
     },
     "Improved Shortbow": {
-      "name": "Improved Shortbow"
+      "name": "Improved Shortbow",
+      "attack": "Attack"
     },
     "Improved Shortstaff": {
-      "name": "Improved Shortstaff"
+      "name": "Improved Shortstaff",
+      "attack": "Attack"
     },
     "Improved Shortsword": {
       "name": "Improved Shortsword",
@@ -791,7 +904,8 @@
           "name": "Paired",
           "description": "Add this Secondary Weapon's tier + 1 to your primary weapon against targets within Melee range"
         }
-      }
+      },
+      "attack": "Attack"
     },
     "Improved Small Dagger": {
       "name": "Improved Small Dagger",
@@ -800,10 +914,12 @@
           "name": "Paired",
           "description": "Add this Secondary Weapon's tier + 1 to your primary weapon against targets within Melee range"
         }
-      }
+      },
+      "attack": "Attack"
     },
     "Improved Spear": {
-      "name": "Improved Spear"
+      "name": "Improved Spear",
+      "attack": "Attack"
     },
     "Improved Tower Shield": {
       "name": "Improved Tower Shield",
@@ -812,10 +928,12 @@
           "name": "Barrier",
           "description": "Gain Weapon Tier + 1 to Armor Score; -1 to Evasion"
         }
-      }
+      },
+      "attack": "Attack"
     },
     "Improved Wand": {
-      "name": "Improved Wand"
+      "name": "Improved Wand",
+      "attack": "Attack"
     },
     "Improved Warhammer": {
       "name": "Improved Warhammer",
@@ -824,7 +942,8 @@
           "name": "Heavy",
           "description": "-1 to Evasion"
         }
-      }
+      },
+      "attack": "Attack"
     },
     "Improved Whip": {
       "name": "Improved Whip",
@@ -833,7 +952,8 @@
           "name": "Startle",
           "description": "Mark a Stress to crack the whip and force all adversaries within Melee range back to Close range."
         }
-      }
+      },
+      "attack": "Attack"
     },
     "Keeper's Staff": {
       "name": "Keeper's Staff",
@@ -842,7 +962,8 @@
           "name": "Reliable",
           "description": "+1 to attack rolls"
         }
-      }
+      },
+      "attack": "Attack"
     },
     "Knuckle Blades": {
       "name": "Knuckle Blades",
@@ -851,7 +972,8 @@
           "name": "DAGGERHEART.CONFIG.WeaponFeature.brutal.actions.addDamage.name",
           "description": "DAGGERHEART.CONFIG.WeaponFeature.brutal.actions.addDamage.description"
         }
-      }
+      },
+      "attack": "Attack"
     },
     "Knuckle Claws": {
       "name": "Knuckle Claws",
@@ -860,7 +982,8 @@
           "name": "Double Up",
           "description": "When you make an attack with your primary weapon, you can deal damage to another target within Melee range."
         }
-      }
+      },
+      "attack": "Attack"
     },
     "Labrys Axe": {
       "name": "Labrys Axe",
@@ -869,7 +992,8 @@
           "name": "Protective",
           "description": "Add your character's Tier to your Armor Score"
         }
-      }
+      },
+      "attack": "Attack"
     },
     "Legendary Arcane-Frame Wheelchair": {
       "name": "Legendary Arcane-Frame Wheelchair",
@@ -878,13 +1002,16 @@
           "name": "Reliable",
           "description": "+1 to attack rolls"
         }
-      }
+      },
+      "attack": "Attack"
     },
     "Legendary Arcane Gauntlets": {
-      "name": "Legendary Arcane Gauntlets"
+      "name": "Legendary Arcane Gauntlets",
+      "attack": "Attack"
     },
     "Legendary Battleaxe": {
-      "name": "Legendary Battleaxe"
+      "name": "Legendary Battleaxe",
+      "attack": "Attack"
     },
     "Legendary Broadsword": {
       "name": "Legendary Broadsword",
@@ -893,22 +1020,28 @@
           "name": "Reliable",
           "description": "+1 to attack rolls"
         }
-      }
+      },
+      "attack": "Attack"
     },
     "Legendary Crossbow": {
-      "name": "Legendary Crossbow"
+      "name": "Legendary Crossbow",
+      "attack": "Attack"
     },
     "Legendary Cutlass": {
-      "name": "Legendary Cutlass"
+      "name": "Legendary Cutlass",
+      "attack": "Attack"
     },
     "Legendary Dagger": {
-      "name": "Legendary Dagger"
+      "name": "Legendary Dagger",
+      "attack": "Attack"
     },
     "Legendary Dualstaff": {
-      "name": "Legendary Dualstaff"
+      "name": "Legendary Dualstaff",
+      "attack": "Attack"
     },
     "Legendary Glowing Rings": {
-      "name": "Legendary Glowing Rings"
+      "name": "Legendary Glowing Rings",
+      "attack": "Attack"
     },
     "Legendary Grappler": {
       "name": "Legendary Grappler",
@@ -917,7 +1050,8 @@
           "name": "Hook",
           "description": "On a successful attack, you can pull the target into Melee range."
         }
-      }
+      },
+      "attack": "Attack"
     },
     "Legendary Greatstaff": {
       "name": "Legendary Greatstaff",
@@ -926,7 +1060,8 @@
           "name": "Powerful",
           "description": "On a successful attack, roll an additional damage die and discard the lowest result."
         }
-      }
+      },
+      "attack": "Attack"
     },
     "Legendary Greatsword": {
       "name": "Legendary Greatsword",
@@ -935,7 +1070,8 @@
           "name": "Massive",
           "description": "-1 to Evasion; on a successful attack, roll an additional damage die and discard the lowest result."
         }
-      }
+      },
+      "attack": "Attack"
     },
     "Legendary Halberd": {
       "name": "Legendary Halberd",
@@ -944,16 +1080,20 @@
           "name": "Cumbersome",
           "description": "-1 to Finesse"
         }
-      }
+      },
+      "attack": "Attack"
     },
     "Legendary Hallowed Axe": {
-      "name": "Legendary Hallowed Axe"
+      "name": "Legendary Hallowed Axe",
+      "attack": "Attack"
     },
     "Legendary Hand Crossbow": {
-      "name": "Legendary Hand Crossbow"
+      "name": "Legendary Hand Crossbow",
+      "attack": "Attack"
     },
     "Legendary Hand Runes": {
-      "name": "Legendary Hand Runes"
+      "name": "Legendary Hand Runes",
+      "attack": "Attack"
     },
     "Legendary Heavy-Frame Wheelchair": {
       "name": "Legendary Heavy-Frame Wheelchair",
@@ -962,7 +1102,8 @@
           "name": "Heavy",
           "description": "-1 to Evasion"
         }
-      }
+      },
+      "attack": "Attack"
     },
     "Legendary Light-Frame Wheelchair": {
       "name": "Legendary Light-Frame Wheelchair",
@@ -971,7 +1112,8 @@
           "name": "Quick",
           "description": "When you make an attack, you can mark a Stress to target another creature within range."
         }
-      }
+      },
+      "attack": "Attack"
     },
     "Legendary Longbow": {
       "name": "Legendary Longbow",
@@ -980,16 +1122,20 @@
           "name": "Cumbersome",
           "description": "-1 to Finesse"
         }
-      }
+      },
+      "attack": "Attack"
     },
     "Legendary Longsword": {
-      "name": "Legendary Longsword"
+      "name": "Legendary Longsword",
+      "attack": "Attack"
     },
     "Legendary Mace": {
-      "name": "Legendary Mace"
+      "name": "Legendary Mace",
+      "attack": "Attack"
     },
     "Legendary Quarterstaff": {
-      "name": "Legendary Quarterstaff"
+      "name": "Legendary Quarterstaff",
+      "attack": "Attack"
     },
     "Legendary Rapier": {
       "name": "Legendary Rapier",
@@ -998,7 +1144,8 @@
           "name": "Quick",
           "description": "When you make an attack, you can mark a Stress to target another creature within range."
         }
-      }
+      },
+      "attack": "Attack"
     },
     "Legendary Returning Blade": {
       "name": "Legendary Returning Blade",
@@ -1007,7 +1154,8 @@
           "name": "Return",
           "description": "When this weapon is thrown within its range, it appears in your hand immediately after the attack."
         }
-      }
+      },
+      "attack": "Attack"
     },
     "Legendary Round Shield": {
       "name": "Legendary Round Shield",
@@ -1016,7 +1164,8 @@
           "name": "Protective",
           "description": "<p>Add the item's Tier to your Armor Score</p>"
         }
-      }
+      },
+      "attack": "Attack"
     },
     "Legendary Scepter": {
       "name": "Legendary Scepter",
@@ -1024,13 +1173,16 @@
         "h6UfUEGdR11jD6g4": {
           "name": "Versatile Attack"
         }
-      }
+      },
+      "attack": "Attack"
     },
     "Legendary Shortbow": {
-      "name": "Legendary Shortbow"
+      "name": "Legendary Shortbow",
+      "attack": "Attack"
     },
     "Legendary Shortstaff": {
-      "name": "Legendary Shortstaff"
+      "name": "Legendary Shortstaff",
+      "attack": "Attack"
     },
     "Legendary Shortsword": {
       "name": "Legendary Shortsword",
@@ -1039,7 +1191,8 @@
           "name": "Paired",
           "description": "Add this Secondary Weapon's tier + 1 to your primary weapon against targets within Melee range"
         }
-      }
+      },
+      "attack": "Attack"
     },
     "Legendary Small Dagger": {
       "name": "Legendary Small Dagger",
@@ -1048,10 +1201,12 @@
           "name": "Paired",
           "description": "Add this Secondary Weapon's tier + 1 to your primary weapon against targets within Melee range"
         }
-      }
+      },
+      "attack": "Attack"
     },
     "Legendary Spear": {
-      "name": "Legendary Spear"
+      "name": "Legendary Spear",
+      "attack": "Attack"
     },
     "Legendary Tower Shield": {
       "name": "Legendary Tower Shield",
@@ -1060,10 +1215,12 @@
           "name": "Barrier",
           "description": "Gain Weapon Tier + 1 to Armor Score; -1 to Evasion"
         }
-      }
+      },
+      "attack": "Attack"
     },
     "Legendary Wand": {
-      "name": "Legendary Wand"
+      "name": "Legendary Wand",
+      "attack": "Attack"
     },
     "Legendary Warhammer": {
       "name": "Legendary Warhammer",
@@ -1072,7 +1229,8 @@
           "name": "Heavy",
           "description": "-1 to Evasion"
         }
-      }
+      },
+      "attack": "Attack"
     },
     "Legendary Whip": {
       "name": "Legendary Whip",
@@ -1081,7 +1239,8 @@
           "name": "Startle",
           "description": "Mark a Stress to crack the whip and force all adversaries within Melee range back to Close range."
         }
-      }
+      },
+      "attack": "Attack"
     },
     "Light-Frame Wheelchair": {
       "name": "Light-Frame Wheelchair",
@@ -1090,7 +1249,8 @@
           "name": "Quick",
           "description": "When you make an attack, you can mark a Stress to target another creature within range."
         }
-      }
+      },
+      "attack": "Attack"
     },
     "Longbow": {
       "name": "Longbow",
@@ -1099,13 +1259,16 @@
           "name": "Cumbersome",
           "description": "-1 to Finesse"
         }
-      }
+      },
+      "attack": "Attack"
     },
     "Longsword": {
-      "name": "Longsword"
+      "name": "Longsword",
+      "attack": "Attack"
     },
     "Mace": {
-      "name": "Mace"
+      "name": "Mace",
+      "attack": "Attack"
     },
     "Mage Orb": {
       "name": "Mage Orb",
@@ -1114,7 +1277,8 @@
           "name": "Powerful",
           "description": "On a successful attack, roll an additional damage die and discard the lowest result."
         }
-      }
+      },
+      "attack": "Attack"
     },
     "Magus Revolver": {
       "name": "Magus Revolver",
@@ -1123,7 +1287,8 @@
           "name": "Reload",
           "description": "After you make an attack, roll a d6. On a result of 1, you must mark a Stress to reload this weapon before you can fire it again."
         }
-      }
+      },
+      "attack": "Attack"
     },
     "Meridian Cutlass": {
       "name": "Meridian Cutlass",
@@ -1132,7 +1297,8 @@
           "name": "Duel",
           "description": "When there are no other creatures within Close range of the target, gain advantage on your attack roll against them."
         }
-      }
+      },
+      "attack": "Attack"
     },
     "Midas Scythe": {
       "name": "Midas Scythe",
@@ -1147,7 +1313,8 @@
           "name": "Greed",
           "description": "Spend a handful of gold to gain a +1 bonus to your Proficiency on a damage roll."
         }
-      }
+      },
+      "attack": "Attack"
     },
     "Parrying Dagger": {
       "name": "Parrying Dagger",
@@ -1156,7 +1323,8 @@
           "name": "Parry",
           "description": "When you are attacked, roll this weapon's damage dice. If any of the attacker's damage dice rolled the same value as your dice, the matching results are discarded from the attacker's damage dice before the damage you take is totaled."
         }
-      }
+      },
+      "attack": "Attack"
     },
     "Powered Gauntlet": {
       "name": "Powered Gauntlet",
@@ -1171,7 +1339,8 @@
           "name": "Charged",
           "description": "Mark a Stress to gain a +1 bonus to your Proficiency on a primary weapon attack."
         }
-      }
+      },
+      "attack": "Attack"
     },
     "Primer Shard": {
       "name": "Primer Shard",
@@ -1180,10 +1349,12 @@
           "name": "Lock On",
           "description": "On a successful attack, your next attack against the same target with your primary weapon automatically succeeds."
         }
-      }
+      },
+      "attack": "Attack"
     },
     "Quarterstaff": {
-      "name": "Quarterstaff"
+      "name": "Quarterstaff",
+      "attack": "Attack"
     },
     "Rapier": {
       "name": "Rapier",
@@ -1192,7 +1363,8 @@
           "name": "Quick",
           "description": "When you make an attack, you can mark a Stress to target another creature within range."
         }
-      }
+      },
+      "attack": "Attack"
     },
     "Retractable Saber": {
       "name": "Retractable Saber",
@@ -1201,7 +1373,8 @@
           "name": "Retract",
           "description": "The blade can be hidden in the hilt to avoid detection."
         }
-      }
+      },
+      "attack": "Attack"
     },
     "Returning Axe": {
       "name": "Returning Axe",
@@ -1210,7 +1383,8 @@
           "name": "Return",
           "description": "When this weapon is thrown within its range, it appears in your hand immediately after the attack."
         }
-      }
+      },
+      "attack": "Attack"
     },
     "Returning Blade": {
       "name": "Returning Blade",
@@ -1219,7 +1393,8 @@
           "name": "Return",
           "description": "When this weapon is thrown within its range, it appears in your hand immediately after the attack."
         }
-      }
+      },
+      "attack": "Attack"
     },
     "Ricochet Axes": {
       "name": "Ricochet Axes",
@@ -1228,7 +1403,8 @@
           "name": "Bounce",
           "description": "Mark 1 or more Stress to hit that many targets in range of the attack."
         }
-      }
+      },
+      "attack": "Attack"
     },
     "Round Shield": {
       "name": "Round Shield",
@@ -1237,7 +1413,8 @@
           "name": "Protective",
           "description": "<p>Add the item's Tier to your Armor Score</p>"
         }
-      }
+      },
+      "attack": "Attack"
     },
     "Runes of Ruination": {
       "name": "Runes of Ruination",
@@ -1246,7 +1423,8 @@
           "name": "Pain",
           "description": "Each time you make a successful attack, you must mark a Stress."
         }
-      }
+      },
+      "attack": "Attack"
     },
     "Scepter": {
       "name": "Scepter",
@@ -1254,7 +1432,8 @@
         "c7McXmzSWTNGOdHL": {
           "name": "Versatile Attack"
         }
-      }
+      },
+      "attack": "Attack"
     },
     "Scepter of Elias": {
       "name": "Scepter of Elias",
@@ -1263,13 +1442,16 @@
           "name": "Invigorate",
           "description": "On a successful attack, roll a d4. On a result of 4, clear a Stress."
         }
-      }
+      },
+      "attack": "Attack"
     },
     "Shortbow": {
-      "name": "Shortbow"
+      "name": "Shortbow",
+      "attack": "Attack"
     },
     "Shortstaff": {
-      "name": "Shortstaff"
+      "name": "Shortstaff",
+      "attack": "Attack"
     },
     "Shortsword": {
       "name": "Shortsword",
@@ -1278,7 +1460,8 @@
           "name": "Paired",
           "description": "<p>Add this Secondary Weapon's tier + 1 to your primary weapon against targets within Melee range</p>"
         }
-      }
+      },
+      "attack": "Attack"
     },
     "Siphoning Gauntlets": {
       "name": "Siphoning Gauntlets",
@@ -1287,7 +1470,8 @@
           "name": "Lifesteal",
           "description": "On a successful attack, roll a d6. On a result of 6, clear a Hit Point or clear a Stress."
         }
-      }
+      },
+      "attack": "Attack"
     },
     "Sledge Axe": {
       "name": "Sledge Axe",
@@ -1302,7 +1486,8 @@
           "name": "Destructive",
           "description": "DAGGERHEART.CONFIG.WeaponFeature.destructive.effects.agility"
         }
-      }
+      },
+      "attack": "Attack"
     },
     "Small Dagger": {
       "name": "Small Dagger",
@@ -1311,10 +1496,12 @@
           "name": "Paired",
           "description": "Add this Secondary Weapon's tier + 1 to your primary weapon against targets within Melee range"
         }
-      }
+      },
+      "attack": "Attack"
     },
     "Spear": {
-      "name": "Spear"
+      "name": "Spear",
+      "attack": "Attack"
     },
     "Spiked Bow": {
       "name": "Spiked Bow",
@@ -1322,7 +1509,8 @@
         "WqhixEUWiKK4gwuG": {
           "name": "Versatile Attack"
         }
-      }
+      },
+      "attack": "Attack"
     },
     "Spiked Shield": {
       "name": "Spiked Shield",
@@ -1331,7 +1519,8 @@
           "name": "Double Duty",
           "description": "+1 to Armor Score; +1 to primary weapon damage within Melee range"
         }
-      }
+      },
+      "attack": "Attack"
     },
     "Steelforged Halberd": {
       "name": "Steelforged Halberd",
@@ -1340,7 +1529,8 @@
           "name": "Scare",
           "description": "On a successful attack, the target must mark a Stress."
         }
-      }
+      },
+      "attack": "Attack"
     },
     "Swinging Ropeblade": {
       "name": "Swinging Ropeblade",
@@ -1349,7 +1539,8 @@
           "name": "Grapple",
           "description": "On a successful attack, you can spend a Hope to Restrain the target or pull them into Melee range with you."
         }
-      }
+      },
+      "attack": "Attack"
     },
     "Sword of Light & Flame": {
       "name": "Sword of Light & Flame",
@@ -1358,7 +1549,8 @@
           "name": "Hot",
           "description": "This weapon cuts through solid material."
         }
-      }
+      },
+      "attack": "Attack"
     },
     "Talon Blades": {
       "name": "Talon Blades",
@@ -1367,7 +1559,8 @@
           "name": "DAGGERHEART.CONFIG.WeaponFeature.brutal.actions.addDamage.name",
           "description": "DAGGERHEART.CONFIG.WeaponFeature.brutal.actions.addDamage.description"
         }
-      }
+      },
+      "attack": "Attack"
     },
     "Thistlebow": {
       "name": "Thistlebow",
@@ -1376,7 +1569,8 @@
           "name": "Reliable",
           "description": "+1 to attack rolls"
         }
-      }
+      },
+      "attack": "Attack"
     },
     "Tower Shield": {
       "name": "Tower Shield",
@@ -1385,7 +1579,8 @@
           "name": "Barrier",
           "description": "Gain Weapon Tier + 1 to Armor Score; -1 to Evasion"
         }
-      }
+      },
+      "attack": "Attack"
     },
     "Urok Broadsword": {
       "name": "Urok Broadsword",
@@ -1394,10 +1589,12 @@
           "name": "Deadly",
           "description": "When you deal Severe damage, the target must mark an additional HP."
         }
-      }
+      },
+      "attack": "Attack"
     },
     "Wand": {
-      "name": "Wand"
+      "name": "Wand",
+      "attack": "Attack"
     },
     "Wand of Enthrallment": {
       "name": "Wand of Enthrallment",
@@ -1412,7 +1609,8 @@
           "name": "Persuasive",
           "description": "Gain a +2 bonus to the Presence roll"
         }
-      }
+      },
+      "attack": "Attack"
     },
     "Wand of Essek": {
       "name": "Wand of Essek",
@@ -1421,7 +1619,8 @@
           "name": "Bend Time",
           "description": "DAGGERHEART.CONFIG.WeaponFeature.timebending.actions.bendTime.description"
         }
-      }
+      },
+      "attack": "Attack"
     },
     "Warhammer": {
       "name": "Warhammer",
@@ -1430,7 +1629,8 @@
           "name": "Heavy",
           "description": "-1 to Evasion"
         }
-      }
+      },
+      "attack": "Attack"
     },
     "War Scythe": {
       "name": "War Scythe",
@@ -1439,7 +1639,8 @@
           "name": "Reliable",
           "description": "+1 to attack rolls"
         }
-      }
+      },
+      "attack": "Attack"
     },
     "Whip": {
       "name": "Whip",
@@ -1448,7 +1649,8 @@
           "name": "Startle",
           "description": "Mark a Stress to crack the whip and force all adversaries within Melee range back to Close range."
         }
-      }
+      },
+      "attack": "Attack"
     },
     "Widogast Pendant": {
       "name": "Widogast Pendant",
@@ -1457,7 +1659,8 @@
           "name": "Bend Time",
           "description": "DAGGERHEART.CONFIG.WeaponFeature.timebending.actions.bendTime.description"
         }
-      }
+      },
+      "attack": "Attack"
     },
     "Yutari Bloodbow": {
       "name": "Yutari Bloodbow",
@@ -1466,7 +1669,8 @@
           "name": "DAGGERHEART.CONFIG.WeaponFeature.brutal.actions.addDamage.name",
           "description": "DAGGERHEART.CONFIG.WeaponFeature.brutal.actions.addDamage.description"
         }
-      }
+      },
+      "attack": "Attack"
     }
   }
 }
