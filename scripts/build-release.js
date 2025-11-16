@@ -17,7 +17,8 @@ const RELEASE_CONTENT = [
   "module.json",
   "i18n",
   "translations",
-  "scripts/main.js"
+  "scripts/main.js",
+  "styles/daggerheart-ru.css"
 ];
 const IGNORED_STAGING_ITEMS = new Set([".DS_Store"]);
 

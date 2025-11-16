@@ -13,6 +13,7 @@
   },
   "mapping": {
     "description": "system.description",
+    "attack": "system.attack.name",
     "actions": {
       "path": "system.actions",
       "converter": "toActions"

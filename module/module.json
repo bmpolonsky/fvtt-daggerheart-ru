@@ -31,6 +31,9 @@
   "scripts": [
     "scripts/main.js"
   ],
+  "styles": [
+    "styles/daggerheart-ru.css"
+  ],
   "languages": [
     {
       "lang": "ru",
