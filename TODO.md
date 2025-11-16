@@ -3,8 +3,6 @@
 ### В работе
 - [ ] Поддерживающие правки перевода по фидбеку игроков (всегда открытый пункт).
 - [ ] (опционально) Перевести всё на id, чтобы не зависеть от будущих правок текста в Foundryborne.
-- [ ] Перевести potentialAdversaries у environments
-- [ ] Перевести backgroundQuestions и connections у классов
 - [ ] Добавить перевод бета-контента из The Void.
 
 ### Сделано
@@ -14,3 +12,5 @@
 - [x] Перевести все эффекты.
 - [x] Перевести поля `attack` (не только у врагов, используя данные из `original-daggerheart`).
 - [x] Поправить невлезающие пороги урона в UI
+- [x] Перевести potentialAdversaries у environments
+- [x] Перевести backgroundQuestions и connections у классов

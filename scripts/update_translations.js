@@ -1886,6 +1886,29 @@ async function main() {
     }
   }
 
+  function applyClassQuestionLists(entry, rawInfo) {
+    if (!entry || !rawInfo) return;
+    const sanitizeList = (values) => {
+      if (!Array.isArray(values)) return null;
+      const cleaned = values
+        .map((value) => sanitizeName(value))
+        .filter((value) => typeof value === "string" && value.length > 0);
+      return cleaned.length ? cleaned : null;
+    };
+    const backgrounds = sanitizeList(rawInfo.background_questions) || null;
+    if (backgrounds) {
+      entry.backgroundQuestions = backgrounds;
+    } else {
+      delete entry.backgroundQuestions;
+    }
+    const connections = sanitizeList(rawInfo.connection_questions) || null;
+    if (connections) {
+      entry.connections = connections;
+    } else {
+      delete entry.connections;
+    }
+  }
+
   async function updateClassesFile(path, { classTop, featureMap, classItemsMap, ruleTop }, stats) {
     return updateEntries(path, (norm, entry, key) => {
       if (!norm) return false;
@@ -1900,6 +1923,7 @@ async function main() {
             delete entry.description;
           }
         }
+        applyClassQuestionLists(entry, classInfo.raw);
         if (entry.actions) delete entry.actions;
         handled = true;
       }

@@ -374,9 +374,21 @@ function featureEntry(entry) {
   return result;
 }
 
+function copyStringArrayField(target, values, key) {
+  if (!target || !Array.isArray(values)) return;
+  const cleaned = values
+    .map((value) => (typeof value === "string" ? value.trim() : ""))
+    .filter((value) => value.length > 0);
+  if (cleaned.length) {
+    target[key] = cleaned;
+  }
+}
+
 function simpleEntry(entry) {
   const result = { name: entry.name };
   addDescription(result, entry.system?.description);
+  copyStringArrayField(result, entry.system?.backgroundQuestions, "backgroundQuestions");
+  copyStringArrayField(result, entry.system?.connections, "connections");
   return result;
 }
 
