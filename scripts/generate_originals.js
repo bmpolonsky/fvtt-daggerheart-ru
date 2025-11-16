@@ -520,11 +520,10 @@ function alignWithTemplate(template, source) {
   return result;
 }
 
-async function buildSystemLang(template) {
+async function buildSystemLang() {
   const langPath = path.join(REMOTE_REPO_DIR, "lang", "en.json");
   const content = await fs.readFile(langPath, "utf-8");
-  const source = JSON.parse(content);
-  return alignWithTemplate(template || {}, source || {});
+  return JSON.parse(content);
 }
 
 function extractAdvantageList(payload) {

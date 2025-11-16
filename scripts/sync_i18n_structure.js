@@ -92,7 +92,10 @@ async function syncFile({ label, sourcePath, targetPath }) {
     }
   } else {
     syncStructures(source, target, "", stats);
-    stats.changed = Boolean(stats.added.length || stats.removed.length || stats.replaced.length);
+    const aligned = alignObjectOrder(source, target);
+    const orderingChanged = JSON.stringify(aligned) !== JSON.stringify(target);
+    target = aligned;
+    stats.changed = orderingChanged || Boolean(stats.added.length || stats.removed.length || stats.replaced.length);
   }
 
   if (stats.changed) {
@@ -139,6 +142,25 @@ function syncStructures(source, target, prefix, stats) {
       stats.replaced.push(fullKey);
     }
   }
+}
+
+function alignObjectOrder(source, target) {
+  if (!isPlainObject(source) || !isPlainObject(target)) {
+    return target;
+  }
+  const ordered = {};
+  for (const key of Object.keys(source)) {
+    if (Object.prototype.hasOwnProperty.call(target, key)) {
+      ordered[key] = alignObjectOrder(source[key], target[key]);
+    } else {
+      ordered[key] = deepClone(source[key]);
+    }
+  }
+  for (const key of Object.keys(target)) {
+    if (Object.prototype.hasOwnProperty.call(ordered, key)) continue;
+    ordered[key] = target[key];
+  }
+  return ordered;
 }
 
 function shouldKeepExtraField(prefix, key) {

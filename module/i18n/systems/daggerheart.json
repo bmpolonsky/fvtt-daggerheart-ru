@@ -27,6 +27,13 @@
   "CONTROLS": {
     "inFront": "Спереди"
   },
+  "SCENE": {
+    "TABS": {
+      "SHEET": {
+        "dh": "Daggerheart"
+      }
+    }
+  },
   "DAGGERHEART": {
     "ACTIONS": {
       "TYPES": {
@@ -65,7 +72,6 @@
           "exactHint": "Если пусто, используется Ранг персонажа",
           "label": "Звериная форма"
         },
-        "displayInChat": "Отображать в чате",
         "damage": {
           "multiplier": "Множитель",
           "flatMultiplier": "Фиксированный множитель"
@@ -73,7 +79,8 @@
         "general": {
           "customFormula": "Пользовательская формула",
           "formula": "Формула"
-        }
+        },
+        "displayInChat": "Отображать в чате"
       },
       "RollField": {
         "diceRolling": {
@@ -91,6 +98,7 @@
           "label": "Включая урон предмета"
         },
         "multiplier": "Множитель",
+        "saveHint": "Укажите характеристику по умолчанию, чтобы включить бросок реакции. Ее можно будет изменить позже в диалоговом окне броска реакции.",
         "resultBased": {
           "label": "Формула на основе результата Надежды/Страха."
         },
@@ -103,8 +111,7 @@
         },
         "cost": {
           "stepTooltip": "+{step} за шаг"
-        },
-        "saveHint": "Укажите характеристику по умолчанию, чтобы включить бросок реакции. Ее можно будет изменить позже в диалоговом окне броска реакции."
+        }
       }
     },
     "ACTIVEEFFECT": {
@@ -201,7 +208,9 @@
           "hint": "Добавляйте отдельные слова или короткий текст в качестве напоминаний и подсказок о том, в чём у персонажа есть преимущество."
         },
         "age": "Возраст",
+        "backgroundQuestions": "Предыстория",
         "companionFeatures": "Свойства компаньона",
+        "connections": "Связи",
         "contextMenu": {
           "consume": "Потребить предмет",
           "equip": "Надеть",
@@ -242,11 +251,9 @@
           "confirmTitle": "Повышение уровня компаньона",
           "confirmText": "Хотите ли вы сейчас повысить уровень вашего компаньона {name} на {levelChange}? (Вы можете сделать это вручную позже)"
         },
+        "viewLevelups": "Просмотр повышений уровня",
         "InvalidOldCharacterImportTitle": "Импорт старого персонажа",
-        "InvalidOldCharacterImportText": "Данные персонажа, экспортированные до версии системы 1.1, не позволят создать полноценного персонажа. Желаете продолжить?",
-        "backgroundQuestions": "Предыстория",
-        "connections": "Связи",
-        "viewLevelups": "Просмотр повышений уровня"
+        "InvalidOldCharacterImportText": "Данные персонажа, экспортированные до версии системы 1.1, не позволят создать полноценного персонажа. Желаете продолжить?"
       },
       "Companion": {
         "FIELDS": {
@@ -301,6 +308,9 @@
       }
     },
     "APPLICATIONS": {
+      "Attribution": {
+        "title": "Источники"
+      },
       "CharacterCreation": {
         "tabs": {
           "ancestry": "Родословная",
@@ -331,14 +341,14 @@
         "selectSubclass": "Выберите подкласс",
         "startingItems": "Стартовые предметы",
         "story": "История",
+        "storyExplanation": "Выберите, какие зацепки предыстории и связей вы хотите скопировать в историю вашего персонажа.",
         "suggestedArmor": "Рекомендуемый доспех",
         "suggestedPrimaryWeapon": "Рекомендуемое основное оружие",
         "suggestedSecondaryWeapon": "Рекомендуемое вспомогательное оружие",
         "suggestedTraits": "Рекомендуемые характеристики",
         "suggestedWeapons": "Рекомендуемое оружие",
         "title": "{actor} - Создание персонажа",
-        "traitIncreases": "Увеличение характеристик",
-        "storyExplanation": "Выберите, какие зацепки предыстории и связей вы хотите скопировать в историю вашего персонажа."
+        "traitIncreases": "Увеличение характеристик"
       },
       "CombatTracker": {
         "combatStarted": "Активно",
@@ -399,6 +409,25 @@
           "narrative": "Повествовательные",
           "encounter": "Боевые"
         }
+      },
+      "CountdownEdit": {
+        "title": "Редактирование отсчёта",
+        "viewTitle": "Отсчёты",
+        "editTitle": "Редактировать отсчёты",
+        "newCountdown": "Новый отсчёт",
+        "removeCountdownTitle": "Удалить отсчёт",
+        "removeCountdownText": "Вы уверены, что хотите удалить отсчёт: {name}?",
+        "current": "Текущее",
+        "max": "Макс.",
+        "currentCountdownValue": "Текущее: {value}",
+        "currentCountdownMax": "Макс.: {value}",
+        "category": "Категория",
+        "type": "Тип",
+        "defaultOwnershipTooltip": "Владение отсчётами для игроков по умолчанию",
+        "hideNewCountdowns": "Скрывать новые отсчёты"
+      },
+      "DaggerheartMenu": {
+        "title": "Инструменты Мастера"
       },
       "DeleteConfirmation": {
         "title": "Удалить {type} - {name}",
@@ -475,6 +504,10 @@
           "depositPartyTokens": "Выложить токены группы",
           "retrievePartyTokens": "Забрать токены группы"
         }
+      },
+      "ImageSelect": {
+        "title": "Выбор изображения",
+        "selectImage": "Выбрать изображение"
       },
       "Levelup": {
         "actions": {
@@ -600,32 +633,6 @@
       "ResourceDice": {
         "title": "Ресурс {name}",
         "rerollDice": "Перебросить кости"
-      },
-      "Attribution": {
-        "title": "Источники"
-      },
-      "CountdownEdit": {
-        "title": "Редактирование отсчёта",
-        "viewTitle": "Отсчёты",
-        "editTitle": "Редактировать отсчёты",
-        "newCountdown": "Новый отсчёт",
-        "removeCountdownTitle": "Удалить отсчёт",
-        "removeCountdownText": "Вы уверены, что хотите удалить отсчёт: {name}?",
-        "current": "Текущее",
-        "max": "Макс.",
-        "currentCountdownValue": "Текущее: {value}",
-        "currentCountdownMax": "Макс.: {value}",
-        "category": "Категория",
-        "type": "Тип",
-        "defaultOwnershipTooltip": "Владение отсчётами для игроков по умолчанию",
-        "hideNewCountdowns": "Скрывать новые отсчёты"
-      },
-      "DaggerheartMenu": {
-        "title": "Инструменты Мастера"
-      },
-      "ImageSelect": {
-        "title": "Выбор изображения",
-        "selectImage": "Выбрать изображение"
       },
       "TagTeamSelect": {
         "title": "Командный бросок",
@@ -1983,6 +1990,10 @@
           }
         }
       },
+      "SpotlightRequests": {
+        "singular": "Запрос на активацию",
+        "plural": "Запросы на активацию"
+      },
       "Tabs": {
         "details": "Детали",
         "attack": "Атака",
@@ -2007,6 +2018,7 @@
         "story": "История",
         "biography": "Биография",
         "general": "Общее",
+        "resources": "Ресурсы",
         "foundation": "Основа",
         "specialization": "Специализация",
         "mastery": "Мастерство",
@@ -2022,16 +2034,15 @@
         "tier4": "Ранг 4",
         "domains": "Домены",
         "downtime": "Отдых",
-        "rules": "Правила",
-        "configuration": "Конфигурация",
-        "base": "Базовое",
-        "resources": "Ресурсы",
         "roll": "Бросок",
+        "rules": "Правила",
         "partyMembers": "Члены группы",
         "projects": "Проекты",
         "types": "Типы",
         "itemFeatures": "Свойства предмета",
-        "questions": "Вопросы"
+        "questions": "Вопросы",
+        "configuration": "Конфигурация",
+        "base": "Базовое"
       },
       "Tiers": {
         "1": "Ранг 1",
@@ -2048,10 +2059,12 @@
       "amount": "Количество",
       "any": "Любой",
       "armor": "Броня",
+      "armorFeatures": "Свойства брони",
       "armors": "Броня",
       "armorScore": "Показатель Брони",
       "activeEffects": "Активные эффекты",
       "armorSlots": "Броня",
+      "artistAttribution": "Художник: {artist}",
       "attack": "Атака",
       "basics": "Основы",
       "bonus": "Бонус",
@@ -2059,6 +2072,7 @@
       "continue": "Продолжить",
       "criticalSuccess": "Критический успех",
       "criticalShort": "Крит",
+      "custom": "Пользовательский",
       "d20Roll": "Бросок d20",
       "damage": "Урон",
       "damageRoll": "Бросок Урона",
@@ -2081,6 +2095,7 @@
       "fear": "Страх",
       "features": "Свойства",
       "formula": "Формула",
+      "gm": "Мастер",
       "healing": "Исцеление",
       "healingRoll": "Бросок исцеления",
       "hit": {
@@ -2099,6 +2114,7 @@
       "inactiveEffects": "Неактивные эффекты",
       "inventory": "Инвентарь",
       "itemResource": "Ресурс предмета",
+      "itemQuantity": "Количество предметов",
       "items": "Предметы",
       "label": "Название",
       "level": "Уровень",
@@ -2117,11 +2133,16 @@
       "none": "Нет",
       "noTarget": "Нет текущей цели",
       "partner": "Напарник",
+      "player": {
+        "single": "Игрок",
+        "plurial": "Игроки"
+      },
       "proficiency": "Мастерство",
       "quantity": "Количество",
       "range": "Дистанция",
       "reactionRoll": "Бросок Реакции",
       "recovery": "Восстановление",
+      "refresh": "Обновить",
       "reroll": "Перебросить",
       "rerollThing": "Перебросить {thing}",
       "resource": "Ресурс",
@@ -2144,6 +2165,7 @@
       },
       "title": "Название",
       "total": "Итог",
+      "traitModifier": "Модификатор Характеристики",
       "true": "Истина",
       "type": "Тип",
       "unarmed": "Безоружный",
@@ -2153,27 +2175,23 @@
       "used": "Использовано",
       "uses": "Использования",
       "value": "Значение",
+      "weaponFeatures": "Свойства оружия",
       "weapons": "Оружие",
-      "withThing": "С {thing}",
-      "SpotlightRequests": {
-        "singular": "Запрос на активацию",
-        "plural": "Запросы на активацию"
-      },
-      "armorFeatures": "Свойства брони",
-      "artistAttribution": "Художник: {artist}",
-      "custom": "Пользовательский",
-      "gm": "Мастер",
-      "itemQuantity": "Количество предметов",
-      "player": {
-        "single": "Игрок",
-        "plurial": "Игроки"
-      },
-      "refresh": "Обновить",
-      "traitModifier": "Модификатор Характеристики",
-      "weaponFeatures": "Свойства оружия"
+      "withThing": "С {thing}"
     },
     "ITEMS": {
       "FIELDS": {
+        "attribution": {
+          "source": {
+            "label": "Источник"
+          },
+          "page": {
+            "label": "Страница"
+          },
+          "artist": {
+            "label": "Художник"
+          }
+        },
         "resource": {
           "amount": {
             "label": "Количество"
@@ -2198,17 +2216,6 @@
           },
           "value": {
             "label": "Значение"
-          }
-        },
-        "attribution": {
-          "source": {
-            "label": "Источник"
-          },
-          "page": {
-            "label": "Страница"
-          },
-          "artist": {
-            "label": "Художник"
           }
         }
       },
@@ -2328,11 +2335,14 @@
           "displayFear": {
             "label": "Отображение страха"
           },
-          "dualityColorScheme": {
-            "label": "Стиль чата"
+          "displayCountdownUI": {
+            "label": "Отображать интерфейс отсчётов"
           },
           "showGenericStatusEffects": {
             "label": "Показывать эффекты статуса Foundry"
+          },
+          "hideAttribution": {
+            "label": "Скрыть источники"
           },
           "expandedTitle": "Автоматически разворачивать описания",
           "extendCharacterDescriptions": {
@@ -2346,9 +2356,6 @@
           },
           "extendItemDescriptions": {
             "label": "Предметы"
-          },
-          "hideAttribution": {
-            "label": "Скрыть источники"
           },
           "expandRollMessage": {
             "title": "Авто-раскрытие секций в сообщениях",
@@ -2367,9 +2374,6 @@
           },
           "useResourcePips": {
             "label": "Отображать ресурсы точками"
-          },
-          "displayCountdownUI": {
-            "label": "Отображать интерфейс отсчётов"
           }
         },
         "fearDisplay": {
@@ -2475,7 +2479,12 @@
       },
       "Homebrew": {
         "newDowntimeMove": "Ход отдыха",
+        "downtimeMove": "Ход отдыха",
+        "armorFeature": "Свойство брони",
+        "weaponFeature": "Свойство оружия",
+        "newFeature": "Новое свойство предмета",
         "downtimeMoves": "Ходы отдыха",
+        "itemFeatures": "Свойства предмета",
         "nrChoices": "Кол-во ходов за отдых",
         "resetMovesTitle": "Сбросить ходы отдыха типа {type}",
         "resetMovesText": "Вы уверены, что хотите сбросить?",
@@ -2516,15 +2525,10 @@
           "deleteDomainText": "Вы уверены, что хотите удалить домен {name}? Он будет немедленно удалён у всех персонажей в этом мире, где он сейчас используется. Компендиумы не затрагиваются.",
           "duplicateDomain": "Домен с таким идентификатором уже существует."
         },
-        "newFeature": "Новое свойство предмета",
-        "itemFeatures": "Свойства предмета",
         "adversaryType": {
           "title": "Пользовательские типы противников",
           "newType": "Тип противника"
-        },
-        "downtimeMove": "Ход отдыха",
-        "armorFeature": "Свойство брони",
-        "weaponFeature": "Свойство оружия"
+        }
       },
       "Menu": {
         "title": "Настройки игры Daggerheart",
@@ -2609,6 +2613,7 @@
         "action": {
           "title": "Действие"
         },
+        "appliedTo": "Применено к",
         "applyEffect": {
           "title": "Применить эффекты - {name}"
         },
@@ -2617,6 +2622,11 @@
           "rollDamage": "Бросок Урона",
           "rollHealing": "Бросок лечения",
           "applyEffect": "Применить эффекты"
+        },
+        "clearResource": "Очистить {quantity} {resource}",
+        "damageSummary": {
+          "title": "Нанесенный урон",
+          "healingTitle": "Примененное исцеление"
         },
         "damageRoll": {
           "title": "Урон - {damage}",
@@ -2639,28 +2649,10 @@
         "dualityRoll": {
           "abilityCheckTitle": "Проверка {ability}"
         },
-        "featureTitle": "Свойство класса",
-        "healingRoll": {
-          "title": "Исцеление - {damage}",
-          "heal": "Исцелить",
-          "applyHealing": "Применить исцеление"
-        },
-        "reroll": {
-          "confirmTitle": "Перебросить кости",
-          "confirmText": "Вы уверены, что хотите перебросить кости?"
-        },
-        "resourceRoll": {
-          "playerMessage": "{user} перебросил(а) свой {name}"
-        },
-        "appliedTo": "Применено к",
-        "clearResource": "Очистить {quantity} {resource}",
-        "damageSummary": {
-          "title": "Нанесенный урон",
-          "healingTitle": "Примененное исцеление"
-        },
         "effectSummary": {
           "title": "Примененные эффекты"
         },
+        "featureTitle": "Свойство класса",
         "groupRoll": {
           "title": "Групповой бросок",
           "leader": "Лидер",
@@ -2672,117 +2664,27 @@
           "rerollContent": "Вы уверены, что хотите перебросить вашу проверку {trait}?",
           "rerollTooltip": "Перебросить"
         },
+        "healingRoll": {
+          "title": "Исцеление - {damage}",
+          "heal": "Исцелить",
+          "applyHealing": "Применить исцеление"
+        },
         "markResource": "Отметить {quantity} {resource}",
         "refreshMessage": {
           "title": "Восстановление свойства",
           "header": "Восстановлено"
         },
+        "reroll": {
+          "confirmTitle": "Перебросить кости",
+          "confirmText": "Вы уверены, что хотите перебросить кости?"
+        },
+        "resourceRoll": {
+          "playerMessage": "{user} перебросил(а) свой {name}"
+        },
         "tagTeam": {
           "title": "Командный бросок",
           "membersTitle": "Участники"
         }
-      },
-      "Notifications": {
-        "adversaryMissing": "Связанный противник не существует в этом мире.",
-        "beastformInapplicable": "Звериная форма может быть применена только к персонажу.",
-        "beastformAlreadyApplied": "У персонажа уже применена звериная форма!",
-        "noTargetsSelected": "Цели не выбраны.",
-        "attackTargetDoesNotExist": "Токен цели больше не существует.",
-        "insufficentAdvancements": "У вас недостаточно оставшихся продвижений.",
-        "noAssignedPlayerCharacter": "У вас нет назначенного персонажа.",
-        "noSelectedToken": "У вас нет выбранного токена.",
-        "onlyUseableByPC": "Это можно использовать только с токеном персонажа игрока.",
-        "dualityParsing": "Бросок дуальности неправильно отформатирован.",
-        "attributeFaulty": "Указанная характеристика не существует.",
-        "domainCardWrongDomain": "У вас нет доступа к этому домену.",
-        "domainCardToHighLevel": "Карта домена слишком высокого уровня для выбора.",
-        "domainCardDuplicate": "У вас уже есть эта карта домена!",
-        "noSelectionsLeft": "Больше нечего выбирать!",
-        "alreadySelectedClass": "У вас уже есть этот класс!",
-        "classAlreadySelected": "У персонажа уже есть класс.",
-        "subclassAlreadySelected": "У персонажа уже есть подкласс для этого класса.",
-        "noClassSelected": "У вашего персонажа не выбран класс!",
-        "lacksDomain": "У вашего персонажа нет домена этой карты!",
-        "duplicateDomainCard": "У вас уже есть карта домена с таким названием!",
-        "missingClassOrSubclass": "У персонажа нет класса и подкласса.",
-        "tooHighLevel": "Вы не можете поднять уровень персонажа выше максимального.",
-        "tooLowLevel": "Вы не можете опустить уровень персонажа ниже начального.",
-        "subclassNotInClass": "Этот подкласс не принадлежит вашему выбранному классу.",
-        "subclassNotInMulticlass": "Этот подкласс не принадлежит вашему выбранному мультиклассу.",
-        "missingClass": "Вы еще не выбрали класс.",
-        "missingMulticlass": "Отсутствует мультикласс.",
-        "wrongDomain": "Карта не принадлежит одному из доменов вашего класса.",
-        "cardTooHighLevel": "Карта слишком высокого уровня!",
-        "duplicateCard": "Вы не можете выбрать одну и ту же карту более одного раза.",
-        "notPrimary": "Это оружие не является основным!",
-        "notSecondary": "Это оружие не является вспомогательным!",
-        "itemTooHighTier": "Предмет должен быть 1-го Ранга.",
-        "primaryIsTwoHanded": "Нельзя выбрать вспомогательное оружие с двуручным основным!",
-        "noMoreMoves": "Вы не можете выбрать больше ходов отдыха.",
-        "damageAlreadyNone": "Урон уже был снижен до нуля.",
-        "noAvailableArmorMarks": "У вас больше нет доступных отметок брони.",
-        "notEnoughStress": "У вас недостаточно стресса.",
-        "damageIgnore": "{character} не получил(а) урон.",
-        "featureIsMissing": "Свойство отсутствует.",
-        "actionIsMissing": "Действие отсутствует.",
-        "attackIsMissing": "Атака отсутствует.",
-        "unownedActionMacro": "Невозможно создать макрос для действия, которого нет у вашего персонажа",
-        "unownedAttackMacro": "Невозможно создать макрос для атаки, которая не принадлежит одному из ваших персонажей",
-        "featureNotHope": "Это свойство используется не как свойство надежды и не может быть применено здесь.",
-        "featureNotClass": "Это свойство используется не как классовое свойство и не может быть применено здесь.",
-        "featureNotPrimary": "Это свойство используется не как основное свойство и не может быть применено здесь.",
-        "featureNotSecondary": "Это свойство используется не как второстепенное свойство и не может быть применено здесь.",
-        "featureNotFoundation": "Это свойство используется не как базовое свойство и не может быть применено здесь.",
-        "featureNotSpecialization": "Это свойство используется не как свойство специализации и не может быть применено здесь.",
-        "featureNotMastery": "Это свойство используется не как свойство мастерства и не может быть применено здесь.",
-        "beastformMissingEffect": "У звериной формы отсутствует эффект звериной формы. Невозможно использовать.",
-        "beastformToManyAdvantages": "Вы не можете выбрать больше преимуществ.",
-        "beastformToManyFeatures": "Вы не можете выбрать больше свойств.",
-        "beastformEquipWeapon": "Вы не можете использовать оружие, находясь в звериной форме.",
-        "loadoutMaxReached": "Вы достигли лимита карт в снаряжении. Переместите хотя бы одну карту домена в хранилище или увеличьте лимит в настройках хоумбрю, если хотите.",
-        "domainMaxReached": "Вы достигли максимального количества доменов для этого класса. Увеличьте лимит в настройках хоумбрю, если хотите.",
-        "insufficientResources": "У вас недостаточно ресурсов",
-        "multiclassAlreadyPresent": "У вас уже есть класс и мультикласс",
-        "subclassesAlreadyPresent": "У вас уже есть подкласс класса и мультикласса",
-        "noDiceSystem": "В выбранной вами системе костей {system} нет кости с {faces} гранями",
-        "subclassAlreadyLinked": "{name} уже является подклассом класса {class}. Удалите его оттуда, если хотите назначить его этому классу.",
-        "noTargetsSelectedOrPerm": "Цели не выбраны или у вас нет прав на их изменение.",
-        "duplicateCharacter": "Этот персонаж уже добавлен в список членов группы.",
-        "onlyCharactersInPartySheet": "Вы можете перетаскивать только персонажей на лист группы.",
-        "actionNoUsesRemaining": "У этого действия не осталось использований.",
-        "gmMenuRefresh": "Вы обновили все действия и ресурсы: {types}",
-        "gmRequired": "Для этого действия требуется Мастер в сети.",
-        "gmOnly": "Доступно только Мастеру.",
-        "noActorOwnership": "У вас нет прав на этого персонажа"
-      },
-      "Tooltip": {
-        "disableEffect": "Отключить эффект",
-        "enableEffect": "Включить эффект",
-        "openItemWorld": "Открыть мир предметов",
-        "openActorWorld": "Открыть мир персонажей",
-        "sendToChat": "Отправить в чат",
-        "maxEvasionClassBound": "Ваше базовое уклонение определяется вашим классом. Это увеличение сверх этого значения.",
-        "maxHPClassBound": "Ваши базовые максимальные Раны определяются вашим классом. Это увеличение сверх этого значения.",
-        "moreOptions": "Больше опций",
-        "equip": "Экипировать",
-        "unequip": "Снять",
-        "sendToVault": "Отправить в хранилище",
-        "sendToLoadout": "Отправить в снаряжение",
-        "makeDeathMove": "Сделать предсмертный ход",
-        "rangeAndTarget": "Дистанция и цель",
-        "dragApplyEffect": "Перетащите эффект, чтобы применить его к персонажу",
-        "appliedEvenIfSuccessful": "Применяется даже при успешном броске Реакции",
-        "diceIsRerolled": "Кость была переброшена (x{times})",
-        "pendingSaves": "Ожидающие броски реакции",
-        "openSheetSettings": "Открыть настройки",
-        "compendiumBrowser": "Обозреватель компендиума",
-        "rulesOn": "Правила вкл.",
-        "rulesOff": "Правила выкл.",
-        "remainingUses": "Использования восстанавливаются при {type}",
-        "rightClickExtand": "Щелкните правой кнопкой мыши, чтобы развернуть",
-        "companionPartnerLevelBlock": "Компаньону нужен назначенный партнёр для повышения уровня.",
-        "configureAttribution": "Настроить источники",
-        "deleteItem": "Удалить предмет"
       },
       "ChatLog": {
         "rerollDamage": "Перебросить урон",
@@ -2815,6 +2717,7 @@
         "evasionMin": "Уклонение (мин.)",
         "evasionMax": "Уклонение (макс.)",
         "subtype": "Подтип",
+        "missing": "<i>Missing</i>",
         "folders": {
           "characters": "Персонажи",
           "adversaries": "Противники",
@@ -2834,19 +2737,115 @@
           "loots": "Добыча"
         }
       },
+      "Notifications": {
+        "adversaryMissing": "Связанный противник не существует в этом мире.",
+        "beastformInapplicable": "Звериная форма может быть применена только к персонажу.",
+        "beastformAlreadyApplied": "У персонажа уже применена звериная форма!",
+        "noTargetsSelected": "Цели не выбраны.",
+        "noTargetsSelectedOrPerm": "Цели не выбраны или у вас нет прав на их изменение.",
+        "attackTargetDoesNotExist": "Токен цели больше не существует.",
+        "insufficentAdvancements": "У вас недостаточно оставшихся продвижений.",
+        "noAssignedPlayerCharacter": "У вас нет назначенного персонажа.",
+        "noSelectedToken": "У вас нет выбранного токена.",
+        "onlyUseableByPC": "Это можно использовать только с токеном персонажа игрока.",
+        "dualityParsing": "Бросок дуальности неправильно отформатирован.",
+        "attributeFaulty": "Указанная характеристика не существует.",
+        "domainCardWrongDomain": "У вас нет доступа к этому домену.",
+        "domainCardToHighLevel": "Карта домена слишком высокого уровня для выбора.",
+        "domainCardDuplicate": "У вас уже есть эта карта домена!",
+        "noSelectionsLeft": "Больше нечего выбирать!",
+        "alreadySelectedClass": "У вас уже есть этот класс!",
+        "classAlreadySelected": "У персонажа уже есть класс.",
+        "subclassAlreadySelected": "У персонажа уже есть подкласс для этого класса.",
+        "noClassSelected": "У вашего персонажа не выбран класс!",
+        "lacksDomain": "У вашего персонажа нет домена этой карты!",
+        "duplicateDomainCard": "У вас уже есть карта домена с таким названием!",
+        "missingClassOrSubclass": "У персонажа нет класса и подкласса.",
+        "tooHighLevel": "Вы не можете поднять уровень персонажа выше максимального.",
+        "tooLowLevel": "Вы не можете опустить уровень персонажа ниже начального.",
+        "subclassNotInClass": "Этот подкласс не принадлежит вашему выбранному классу.",
+        "subclassNotInMulticlass": "Этот подкласс не принадлежит вашему выбранному мультиклассу.",
+        "missingClass": "Вы еще не выбрали класс.",
+        "missingMulticlass": "Отсутствует мультикласс.",
+        "wrongDomain": "Карта не принадлежит одному из доменов вашего класса.",
+        "cardTooHighLevel": "Карта слишком высокого уровня!",
+        "duplicateCard": "Вы не можете выбрать одну и ту же карту более одного раза.",
+        "duplicateCharacter": "Этот персонаж уже добавлен в список членов группы.",
+        "onlyCharactersInPartySheet": "Вы можете перетаскивать только персонажей на лист группы.",
+        "notPrimary": "Это оружие не является основным!",
+        "notSecondary": "Это оружие не является вспомогательным!",
+        "itemTooHighTier": "Предмет должен быть 1-го Ранга.",
+        "primaryIsTwoHanded": "Нельзя выбрать вспомогательное оружие с двуручным основным!",
+        "noMoreMoves": "Вы не можете выбрать больше ходов отдыха.",
+        "damageAlreadyNone": "Урон уже был снижен до нуля.",
+        "noAvailableArmorMarks": "У вас больше нет доступных отметок брони.",
+        "notEnoughStress": "У вас недостаточно стресса.",
+        "damageIgnore": "{character} не получил(а) урон.",
+        "featureIsMissing": "Свойство отсутствует.",
+        "actionIsMissing": "Действие отсутствует.",
+        "attackIsMissing": "Атака отсутствует.",
+        "unownedActionMacro": "Невозможно создать макрос для действия, которого нет у вашего персонажа",
+        "unownedAttackMacro": "Невозможно создать макрос для атаки, которая не принадлежит одному из ваших персонажей",
+        "featureNotHope": "Это свойство используется не как свойство надежды и не может быть применено здесь.",
+        "featureNotClass": "Это свойство используется не как классовое свойство и не может быть применено здесь.",
+        "featureNotPrimary": "Это свойство используется не как основное свойство и не может быть применено здесь.",
+        "featureNotSecondary": "Это свойство используется не как второстепенное свойство и не может быть применено здесь.",
+        "featureNotFoundation": "Это свойство используется не как базовое свойство и не может быть применено здесь.",
+        "featureNotSpecialization": "Это свойство используется не как свойство специализации и не может быть применено здесь.",
+        "featureNotMastery": "Это свойство используется не как свойство мастерства и не может быть применено здесь.",
+        "beastformMissingEffect": "У звериной формы отсутствует эффект звериной формы. Невозможно использовать.",
+        "beastformToManyAdvantages": "Вы не можете выбрать больше преимуществ.",
+        "beastformToManyFeatures": "Вы не можете выбрать больше свойств.",
+        "beastformEquipWeapon": "Вы не можете использовать оружие, находясь в звериной форме.",
+        "loadoutMaxReached": "Вы достигли лимита карт в снаряжении. Переместите хотя бы одну карту домена в хранилище или увеличьте лимит в настройках хоумбрю, если хотите.",
+        "domainMaxReached": "Вы достигли максимального количества доменов для этого класса. Увеличьте лимит в настройках хоумбрю, если хотите.",
+        "insufficientResources": "У вас недостаточно ресурсов",
+        "actionNoUsesRemaining": "У этого действия не осталось использований.",
+        "multiclassAlreadyPresent": "У вас уже есть класс и мультикласс",
+        "subclassesAlreadyPresent": "У вас уже есть подкласс класса и мультикласса",
+        "noDiceSystem": "В выбранной вами системе костей {system} нет кости с {faces} гранями",
+        "gmMenuRefresh": "Вы обновили все действия и ресурсы: {types}",
+        "subclassAlreadyLinked": "{name} уже является подклассом класса {class}. Удалите его оттуда, если хотите назначить его этому классу.",
+        "gmRequired": "Для этого действия требуется Мастер в сети.",
+        "gmOnly": "Доступно только Мастеру.",
+        "noActorOwnership": "У вас нет прав на этого персонажа",
+        "documentIsMissing": "The {documentType} is missing from the world."
+      },
       "Sidebar": {
         "daggerheartMenu": {
           "title": "Меню Daggerheart",
           "startSession": "Начать сессию",
           "startScene": "Начать сцену"
         }
-      }
-    }
-  },
-  "SCENE": {
-    "TABS": {
-      "SHEET": {
-        "dh": "Daggerheart"
+      },
+      "Tooltip": {
+        "disableEffect": "Отключить эффект",
+        "enableEffect": "Включить эффект",
+        "openItemWorld": "Открыть мир предметов",
+        "openActorWorld": "Открыть мир персонажей",
+        "sendToChat": "Отправить в чат",
+        "maxEvasionClassBound": "Ваше базовое уклонение определяется вашим классом. Это увеличение сверх этого значения.",
+        "maxHPClassBound": "Ваши базовые максимальные Раны определяются вашим классом. Это увеличение сверх этого значения.",
+        "moreOptions": "Больше опций",
+        "equip": "Экипировать",
+        "unequip": "Снять",
+        "sendToVault": "Отправить в хранилище",
+        "sendToLoadout": "Отправить в снаряжение",
+        "makeDeathMove": "Сделать предсмертный ход",
+        "rangeAndTarget": "Дистанция и цель",
+        "dragApplyEffect": "Перетащите эффект, чтобы применить его к персонажу",
+        "appliedEvenIfSuccessful": "Применяется даже при успешном броске Реакции",
+        "diceIsRerolled": "Кость была переброшена (x{times})",
+        "pendingSaves": "Ожидающие броски реакции",
+        "openSheetSettings": "Открыть настройки",
+        "compendiumBrowser": "Обозреватель компендиума",
+        "rulesOn": "Правила вкл.",
+        "rulesOff": "Правила выкл.",
+        "remainingUses": "Использования восстанавливаются при {type}",
+        "rightClickExtand": "Щелкните правой кнопкой мыши, чтобы развернуть",
+        "companionPartnerLevelBlock": "Компаньону нужен назначенный партнёр для повышения уровня.",
+        "configureAttribution": "Настроить источники",
+        "deleteItem": "Удалить предмет"
       }
     }
   }
