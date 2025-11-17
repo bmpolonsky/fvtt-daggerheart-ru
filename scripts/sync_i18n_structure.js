@@ -14,6 +14,7 @@ const BASE_DIR = path.resolve(__dirname, "..");
 const UI_SOURCE_PATH = path.join(BASE_DIR, "original", "lang", "en.json");
 const UI_TARGET_PATH = path.join(BASE_DIR, "module", "i18n", "systems", "daggerheart.json");
 const ORIGINAL_TRANSLATIONS_DIR = path.join(BASE_DIR, "original");
+const ORIGINAL_VOID_DIR = path.join(ORIGINAL_TRANSLATIONS_DIR, "void");
 const TARGET_TRANSLATIONS_DIR = path.join(BASE_DIR, "module", "translations");
 
 const TOP_LEVEL_ENTRY_OPTIONAL_KEYS = new Set(["description"]);
@@ -29,17 +30,11 @@ async function main() {
     })
   );
 
-  const translationFiles = await listOriginalTranslationFiles();
-  for (const fileName of translationFiles) {
-    const sourcePath = path.join(ORIGINAL_TRANSLATIONS_DIR, fileName);
-    const targetPath = path.join(TARGET_TRANSLATIONS_DIR, fileName);
-    results.push(
-      await syncFile({
-        label: `Перевод ${fileName}`,
-        sourcePath,
-        targetPath
-      })
-    );
+  const translationMappings = await gatherTranslationMappings();
+  for (const mapping of translationMappings) {
+    const exists = await fileExists(mapping.sourcePath);
+    if (!exists) continue;
+    results.push(await syncFile(mapping));
   }
 
   const anyChanges = results.some((result) => result.changed);
@@ -52,8 +47,37 @@ async function main() {
   }
 }
 
-async function listOriginalTranslationFiles() {
-  const entries = await fs.readdir(ORIGINAL_TRANSLATIONS_DIR, { withFileTypes: true });
+async function gatherTranslationMappings() {
+  const mappings = [];
+  const rootFiles = await listJsonFiles(ORIGINAL_TRANSLATIONS_DIR);
+  for (const fileName of rootFiles) {
+    mappings.push({
+      label: `Перевод ${fileName}`,
+      sourcePath: path.join(ORIGINAL_TRANSLATIONS_DIR, fileName),
+      targetPath: path.join(TARGET_TRANSLATIONS_DIR, fileName)
+    });
+  }
+  const voidFiles = await listJsonFiles(ORIGINAL_VOID_DIR);
+  for (const fileName of voidFiles) {
+    mappings.push({
+      label: `Перевод ${fileName}`,
+      sourcePath: path.join(ORIGINAL_VOID_DIR, fileName),
+      targetPath: path.join(TARGET_TRANSLATIONS_DIR, fileName)
+    });
+  }
+  return mappings;
+}
+
+async function listJsonFiles(directory) {
+  let entries;
+  try {
+    entries = await fs.readdir(directory, { withFileTypes: true });
+  } catch (error) {
+    if (error.code === "ENOENT") {
+      return [];
+    }
+    throw error;
+  }
   return entries.filter((entry) => entry.isFile() && entry.name.endsWith(".json")).map((entry) => entry.name);
 }
 

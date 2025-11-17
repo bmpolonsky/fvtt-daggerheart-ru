@@ -1,0 +1,274 @@
+{
+  "label": "Classes",
+  "folders": {
+    "Assassin": "Assassin",
+    "Blood Hunter": "Blood Hunter",
+    "Brawler": "Brawler",
+    "Warlock": "Warlock",
+    "Witch": "Witch",
+    "Class Features": "Class Features",
+    "Class Items": "Class Items",
+    "Standard Take": "Standard Take"
+  },
+  "mapping": {
+    "description": "system.description",
+    "backgroundQuestions": "system.backgroundQuestions",
+    "connections": "system.connections",
+    "actions": {
+      "path": "system.actions",
+      "converter": "toActions"
+    },
+    "effects": {
+      "path": "effects",
+      "converter": "toEffects"
+    }
+  },
+  "entries": {
+    "50ft of Rope": {
+      "name": "50ft of Rope"
+    },
+    "A Carving That Symbolizes Your Patron": {
+      "name": "A Carving That Symbolizes Your Patron"
+    },
+    "A List of Names with Several Marked Off": {
+      "name": "A List of Names with Several Marked Off"
+    },
+    "A Ring You Can't Remove": {
+      "name": "A Ring You Can't Remove"
+    },
+    "Assassin": {
+      "name": "Assassin",
+      "description": "<p>Assassins are masters in the art of slipping past their opponents’ defenses to inflict terrible pain and deadly strikes. When an assassin marks someone for death, they pursue their prey with unwavering intent.</p>"
+    },
+    "Basic Supplies": {
+      "name": "Basic Supplies"
+    },
+    "Blood Hunter": {
+      "name": "Blood Hunter",
+      "description": "<p>Master the art of hemocraft and explore what secrets may be unlocked within the power of your own blood. Bloodhunters are skilled practitioner in relentless pursuit of new magics and the grim abilities waiting to be discovered within themselves!</p><p></p><h3>Suggested Traits</h3><p>+1 Instinct, 0 Presense, 0 Knowledge</p><p><strong>Ghost Slayer / Mutant:</strong> +2 Agility, −1 Strength, +1 Finesse</p><p><strong>Lycan:</strong> +1 Agility, +2 Strength, −1 Finesse</p><p></p><h3>Suggested Primary Weapon</h3><p><strong>Ghost Slayer / Mutant:</strong> Longsword (Agility Melee, d8 + 3 phy, Two-Handed)</p><p><strong>Lycan:</strong> Battleaxe (Strength Melee, d10 + 3 phy, Two Handed)</p>"
+    },
+    "Blood Maledict": {
+      "name": "Blood Maledict",
+      "description": "<p>Spend 3 Hope to target a creature within Far range or in a vision from your Grim Psychometry. Until you finish a rest, take Severe damage, or use this feature again, you have advantage on all action rolls against the target.</p>",
+      "actions": {
+        "Z9pHUbpS5aoHCOPt": {
+          "name": "Spend Hope"
+        }
+      }
+    },
+    "Book about a Hobby": {
+      "name": "Book about a Hobby",
+      "description": "<p>This book is dedicated to a particular hobby of yours. You name it.</p>"
+    },
+    "Brawler": {
+      "name": "Brawler",
+      "description": "<p>Experts in unarmed combat, brawlers hone their bodies into lethal weapons using impressive physical prowess. Whether they learned in a structured school environment or picked up their skills one fight at a time, the process is always rigorous, with brawlers developing their body and mind to work as one.</p><p></p>"
+    },
+    "Combo Strikes (D10)": {
+      "name": "Combo Strikes (D10)",
+      "description": "<p>After making a damage roll with a Melee weapon but before dealing that damage to the target, <strong>mark a Stress</strong> to start a combo strike. When you do, roll a Combo Die and note its value. Then, roll another Combo Die again. If the value of the second die is equal to or greater than your first Combo Die, continue rolling until the latest Combo Die’s roll is less than the roll that preceeded it. Total all rolled values and add that amount to your weapon’s damage. These values cannot be adjusted by features that affect damage dice.</p><p>Your Combo Die starts as a <strong>d4</strong>. When you level up, once per tier you may use one of your advancement options to increase your Combo Die instead.</p>",
+      "actions": {
+        "iR7sJDYH2qxJ3XUa": {
+          "name": "Combo!"
+        }
+      }
+    },
+    "Combo Strikes (D4)": {
+      "name": "Combo Strikes (D4)",
+      "description": "<p>After making a damage roll with a Melee weapon but before dealing that damage to the target, <strong>mark a Stress</strong> to start a combo strike. When you do, roll a Combo Die and note its value. Then, roll another Combo Die again. If the value of the second die is equal to or greater than your first Combo Die, continue rolling until the latest Combo Die’s roll is less than the roll that preceeded it. Total all rolled values and add that amount to your weapon’s damage. These values cannot be adjusted by features that affect damage dice.</p><p>Your Combo Die starts as a <strong>d4</strong>. When you level up, once per tier you may use one of your advancement options to increase your Combo Die instead.</p>",
+      "actions": {
+        "iR7sJDYH2qxJ3XUa": {
+          "name": "Combo!"
+        }
+      }
+    },
+    "Combo Strikes (D6)": {
+      "name": "Combo Strikes (D6)",
+      "description": "<p>After making a damage roll with a Melee weapon but before dealing that damage to the target, <strong>mark a Stress</strong> to start a combo strike. When you do, roll a Combo Die and note its value. Then, roll another Combo Die again. If the value of the second die is equal to or greater than your first Combo Die, continue rolling until the latest Combo Die’s roll is less than the roll that preceeded it. Total all rolled values and add that amount to your weapon’s damage. These values cannot be adjusted by features that affect damage dice.</p><p>Your Combo Die starts as a <strong>d4</strong>. When you level up, once per tier you may use one of your advancement options to increase your Combo Die instead.</p>",
+      "actions": {
+        "iR7sJDYH2qxJ3XUa": {
+          "name": "Combo!"
+        }
+      }
+    },
+    "Combo Strikes (D8)": {
+      "name": "Combo Strikes (D8)",
+      "description": "<p>After making a damage roll with a Melee weapon but before dealing that damage to the target, <strong>mark a Stress</strong> to start a combo strike. When you do, roll a Combo Die and note its value. Then, roll another Combo Die again. If the value of the second die is equal to or greater than your first Combo Die, continue rolling until the latest Combo Die’s roll is less than the roll that preceeded it. Total all rolled values and add that amount to your weapon’s damage. These values cannot be adjusted by features that affect damage dice.</p><p>Your Combo Die starts as a <strong>d4</strong>. When you level up, once per tier you may use one of your advancement options to increase your Combo Die instead.</p>",
+      "actions": {
+        "iR7sJDYH2qxJ3XUa": {
+          "name": "Combo!"
+        }
+      }
+    },
+    "Commune": {
+      "name": "Commune",
+      "description": "<p>Once per long rest, during a moment of calm, you can commune with an ancestor, deity, nature spirit, or otherworldly being. Ask them a question, then roll a number of d6s equal to your Spellcast trait. Choose one value from the rolled results and reference the chart below for the effect:</p><p>[[/r 1d6]]</p><ul><li><p>1-3: You taste a flavor, smell a scent, or feel a sensation relevant to the answer.</p></li><li><p>4-5: You hear sounds or see a vision relevant to the answer.</p></li><li><p>6: You psychically experience a scene relevant to the answer as if you were there.</p></li></ul>",
+      "actions": {
+        "ukjfQXHHCr2d2TbU": {
+          "name": "Commune",
+          "description": "<p>Once per long rest, during a moment of calm, you can commune with an ancestor, deity, nature spirit, or otherworldly being. Ask them a question, then roll a number of d6s equal to your Spellcast trait. Choose one value from the rolled results and reference the chart below for the effect:</p><ul><li><p>1-3: You taste a flavor, smell a scent, or feel a sensation relevant to the answer.</p></li><li><p>4-5: You hear sounds or see a vision relevant to the answer.</p></li><li><p>6: You psychically experience a scene relevant to the answer as if you were there.</p></li></ul>"
+        }
+      }
+    },
+    "Crimson Rite": {
+      "name": "Crimson Rite",
+      "description": "<p>You can enchant your strikes with bloodthirsty power at the cost of your vitality. Mark a Hit Point to enchant one of your active weapons.</p><p></p><p>Until you finish your next rest, that weapon deals physical or magic damage (choose when you use this feature) and an extra 1d6 damage when you hit with it. This extra damage increases to 2d6 at level 5 and 3d6 at level 8.</p>",
+      "actions": {
+        "eQ44S7qWqk3UoKTT": {
+          "name": "Mark HP"
+        }
+      },
+      "effects": {
+        "m8FpjPisLRkUpcaD": {
+          "name": "Tier 1"
+        },
+        "7DRdwl3LsnIGzWPI": {
+          "name": "Level 5"
+        },
+        "OA51Rp7Se2RdGh4O": {
+          "name": "Level 8"
+        }
+      }
+    },
+    "Favor": {
+      "name": "Favor",
+      "description": "<p>Start with 3 Favor. During a rest, take one of your <strong>downtime</strong> actions to commune with your patron. When you do, gain Favor equal to your Presence. If you choose to forgo this offering, the GM instead gains a <strong>Fear</strong>.</p>"
+    },
+    "Get In & Get Out": {
+      "name": "Get In & Get Out",
+      "description": "<p><strong>Spend a Hope</strong> to ask the GM for either a quick or inconspicuous way into or out of a building or structure you can see. The next roll you make that capitalizes on this information has <strong>advantage</strong>.</p>",
+      "actions": {
+        "V9BXDm9xen2flEZx": {
+          "name": "Spend a Hope"
+        }
+      }
+    },
+    "Grim Psychometry": {
+      "name": "Grim Psychometry",
+      "description": "<p>While inspecting a creature, a location, or an object within Very Close range, make a Spellcast Roll (12). On a success, mark a Stress to have a vision of the most recent violence involving the target, and until you finish a rest, you have advantage on any action roll to recall lore about things in the vision.</p>"
+    },
+    "Grim Resolve": {
+      "name": "Grim Resolve",
+      "description": "<p><strong>Spend 3 Hope</strong> to clea<strong>r 2 Stress.</strong></p>",
+      "actions": {
+        "ksk3CYijTOKkSjiE": {
+          "name": "Spend Hope"
+        }
+      }
+    },
+    "Hand Wraps": {
+      "name": "Hand Wraps",
+      "description": "<p>Those hand wraps were passed down to you by your mentor.</p>"
+    },
+    "Hex": {
+      "name": "Hex",
+      "description": "<p>When a creature causes you or an ally within Close range to mark any number of Hit Points, you can <strong>mark a Stress</strong> to <em>Hex</em> them. Action and damage rolls against a <em>Hexed</em> creature gain a bonus equal to your tier.</p><p></p><p>This condition lasts until the GM spends a number of Fear equal to your Spellcast trait to remove it or you <em>Hex</em> another creature. Otherwise, remove it when the scene ends.</p>",
+      "actions": {
+        "12QoobkmHaZw8yDx": {
+          "name": "Mark Stress",
+          "description": "<p><span>When a creature causes you or an ally within Close range to mark any number of Hit Points, you can <strong>mark a Stress</strong> to <em>Hex</em> them. Action and damage rolls against a <em>Hexed</em> creature gain a bonus equal to your tier.</span></p>"
+        }
+      },
+      "effects": {
+        "PtMSqVyzo52cGpJn": {
+          "name": "Hex",
+          "description": "<p>Action and damage rolls against a Hexed creature gain a bonus equal to your tier.</p>"
+        }
+      }
+    },
+    "I Am the Weapon": {
+      "name": "I Am the Weapon",
+      "description": "<p>While you don’t have any equipped weapons:</p><ul><li><p>You gain +1 bonus to Evasion.</p></li><li><p>Your unarmed strikes are considered a Melee weapon, use the trait of your choice, and deal d8+d6 phy damage using your Proficiency.</p></li></ul>",
+      "actions": {
+        "VYXl3fEMzbWMUSQ8": {
+          "name": "Unarmed Strike",
+          "description": "<p><span>Your unarmed strikes are considered a Melee weapon, use the trait of your choice, and deal d8+d6 phy damage using your Proficiency.</span></p>"
+        }
+      },
+      "effects": {
+        "RzQRBURPH5ZgxMOO": {
+          "name": "Evasion +1",
+          "description": "<p>I Am the Weapon : You gain +1 bonus to Evasion.</p>"
+        }
+      }
+    },
+    "Marked for Death": {
+      "name": "Marked for Death",
+      "description": "<p>On a successful weapon attack, you can <strong>mark a Stress</strong> to make the target Marked for Death. Attacks you make against a target that’s Marked for Death gain a bonus to damage equal to <strong>+1d4</strong> per tier.</p><p>You can only have one adversary <em>Marked for Death</em> at a time, and can’t transfer or remove the condition except by defeating the target. The GM can spend a number of Fear equal to your Proficiency to remove the <em>Marked for Death</em> condition. Otherwise, it ends automatically when you take a rest.</p>",
+      "actions": {
+        "f6GryCLwsDo0ejCu": {
+          "name": "Mark a Stress"
+        },
+        "U9jFMI21QDXEsi2Q": {
+          "name": "Damage"
+        }
+      }
+    },
+    "Mortar and Pestle Inscribed With a Mysterious Insignia": {
+      "name": "Mortar and Pestle Inscribed With a Mysterious Insignia"
+    },
+    "Patron's Boon": {
+      "name": "Patron's Boon",
+      "description": "<p><strong>Spend 3 Hope</strong> to call out to your patron for help, gaining <strong>1d4 Favor.</strong></p>",
+      "actions": {
+        "LswokIXWOo1W01ec": {
+          "name": "Spend Hope"
+        }
+      },
+      "effects": {
+        "JO6GClT2A29xddR1": {
+          "name": "Patron's Boon"
+        }
+      }
+    },
+    "Staggering Strike": {
+      "name": "Staggering Strike",
+      "description": "<p><strong>Spend 3 Hope</strong> when you succeed on an attack to temporarily Stagger your target and force them to mark a Stress. While Staggered, they have disadvantage on attack rolls.</p>",
+      "actions": {
+        "F8rse36409E4a9As": {
+          "name": "Spend Hope",
+          "description": "<p><span>Spend 3 Hope</span><span> when you succeed on an attack to temporarily Stagger your target and force them to mark a Stress. While Staggered, they have disadvantage on attack rolls.</span></p>"
+        }
+      }
+    },
+    "Steel Needle": {
+      "name": "Steel Needle"
+    },
+    "Talking Skull": {
+      "name": "Talking Skull",
+      "description": "<p>An enchanted, talking skull.</p>"
+    },
+    "Tiny Pet": {
+      "name": "Tiny Pet",
+      "description": "<p>A small, harmless animal bound as your familiar.</p>"
+    },
+    "Torch": {
+      "name": "Torch"
+    },
+    "Vial Holding a Foe’s Blood": {
+      "name": "Vial Holding a Foe’s Blood"
+    },
+    "Warlock": {
+      "name": "Warlock",
+      "description": "<p>As a warlock, you've pledged your life to a patron in exchange for great power.</p><p></p>"
+    },
+    "Warlock Patron": {
+      "name": "Warlock Patron",
+      "description": "<p>You have committed yourself to a patron (god, demon, fae, or other supernatural entity) in exchange for power. Write their name in the space on your sheet. Then, choose their spheres of influence at GM discretion (like Nature &amp; Mischief, Love &amp; War, Knowledge &amp; Shadow, etc.), record them in the space provided and set their value to +2. Anytime you increase your <strong>tier</strong>, these spheres of influence also gain a permanent +1 bonus. Before making an <strong>action roll</strong> that relates to one of your patron’s spheres of influence, you can spend a Favor to call on them and add its value to the roll.</p>"
+    },
+    "Witch": {
+      "name": "Witch",
+      "description": "<p>Magical practitioners who commune with the forces of nature and entities from realms beyond. Witches call forth their power through craft, rituals, incantations, herbs, stones, candles, and other tools to enact their will and conjure powerful spells.</p><h3><br />Background Questions</h3><ul><li><p>How did you first discover your affinity for magical craft?</p></li><li><p>You once used your power to help someone in a dire situation. Who were they and why did they come to you?</p></li><li><p>Your magic once opened a door best left closed. Who or what was on the other side?</p></li></ul><p></p><h3>Connections</h3><ul><li><p>What about my magical practice makes you most ill at ease?</p></li><li><p>I once appeared to you in a dream and shared a vision of the future. What did I tell you?</p></li><li><p>Why do you come to me for advice?</p></li></ul>"
+    },
+    "Witch's Charm": {
+      "name": "Witch's Charm",
+      "description": "<p>When you or an ally within Far range rolls a failure on an action roll, you can <strong>spend 3 Hope</strong> to change it into a success with Fear instead.</p>",
+      "actions": {
+        "vLCzHEepLS96g9Ff": {
+          "name": "Spend Hope",
+          "description": "<p><span>When you or an ally within Far range rolls a failure on an action roll, you can </span><span>spend 3 Hope</span><span> to change it into a success with Fear instead.</span></p>"
+        }
+      }
+    }
+  }
+}

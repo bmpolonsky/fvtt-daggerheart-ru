@@ -1,0 +1,130 @@
+{
+  "label": "Ancestries",
+  "folders": {
+    "Ancestry Features": "Ancestry Features"
+  },
+  "mapping": {
+    "description": "system.description",
+    "actions": {
+      "path": "system.actions",
+      "converter": "toActions"
+    },
+    "effects": {
+      "path": "effects",
+      "converter": "toEffects"
+    }
+  },
+  "entries": {
+    "Aetheris": {
+      "name": "Aetheris",
+      "description": "<p><em>Aetheris are humanoids who possess radiant auras and glowing eyes. They are descendants of celestials from the Hallows Above.</em></p>"
+    },
+    "Amphibious": {
+      "name": "Amphibious",
+      "description": "<p>You can breathe and move naturally underwater.</p>"
+    },
+    "Divine Countenance": {
+      "name": "Divine Countenance",
+      "description": "<p>You have advantage on rolls to command or persuade.</p>"
+    },
+    "Drow": {
+      "name": "Drow"
+    },
+    "Earthkin": {
+      "name": "Earthkin"
+    },
+    "Emberkin": {
+      "name": "Emberkin"
+    },
+    "Eye of the Storm": {
+      "name": "Eye of the Storm",
+      "description": "<p><strong>Spend 2 Hope</strong> to grant a <strong>+1</strong> bonus to either your or an ally's Evasion until you next take Severe damage or you use Eye of the Storm again.</p>",
+      "actions": {
+        "vAye9U4dccbe1k2L": {
+          "name": "Spend 2 Hope"
+        }
+      }
+    },
+    "Fireproof": {
+      "name": "Fireproof",
+      "description": "<p>You are immune to damage from magical or mundane flame.</p>"
+    },
+    "Gale Force": {
+      "name": "Gale Force",
+      "description": "<p><strong>Mark a Stress</strong> to conjure a gust of wind that carries you or an ally up to Very Far range. Additionally, you can always control the speed at which you fall.</p>",
+      "actions": {
+        "fhLkxWEPFFNWetCf": {
+          "name": "Mark a Stress"
+        }
+      }
+    },
+    "Gnome": {
+      "name": "Gnome",
+      "description": "<p><em>Gnomes are small humanoids most easily recognized by their dense musculature, long arms, and large facial features.</em></p>"
+    },
+    "Hallowed Aura": {
+      "name": "Hallowed Aura",
+      "description": "<p>Once per rest, when an ally within Close range rolls with Fear, you can make it a roll with Hope instead.</p>"
+    },
+    "Ignition": {
+      "name": "Ignition",
+      "description": "<p><strong>Mark a Stress</strong> to wreathe your primary weapon in flame until the end of the scene. While ablaze, it gives off a bright light and grants a <strong>1d6</strong> bonus to damage rolls against targets within melee range.</p>",
+      "actions": {
+        "BTfApd0klK0V4X2g": {
+          "name": "Mark a Stress"
+        }
+      }
+    },
+    "Immoveable": {
+      "name": "Immoveable",
+      "description": "<p>While your feet are touching the ground, you cannot be lifted or moved against your will.</p>"
+    },
+    "Lifespring": {
+      "name": "Lifespring",
+      "description": "<p>Once per rest, when you have access to a small amount of water, you can <strong>mark 2 Stress</strong> to heal a Hit Point on yourself or an ally.</p>",
+      "actions": {
+        "jSfUr06O577wK8Pl": {
+          "name": "Mark 2 Stress"
+        }
+      }
+    },
+    "Low-Light Living": {
+      "name": "Low-Light Living",
+      "description": "<p>When you’re in an area with low light or heavy shadow, you have advantage on rolls to hide, investigate, or perceive details within that area.</p>",
+      "effects": {
+        "LqQvZJJLNMnFkt1D": {
+          "name": "Celestial Trance"
+        }
+      }
+    },
+    "Magical Sense": {
+      "name": "Magical Sense",
+      "description": "<p>You can sense the presence of magical creatures. You have advantage on rolls to track or locate creatures with magical ability.</p>"
+    },
+    "Nimble Fingers": {
+      "name": "Nimble Fingers",
+      "description": "<p>When you make a Finesse Roll, you can <strong>spend 2 Hope</strong> to reroll your Hope Die.</p>",
+      "actions": {
+        "oeDdOJHLKQf7vjPb": {
+          "name": "Nimble Fingers",
+          "description": "<p>When you make a Finesse Roll, you can <strong>spend 2 Hope</strong> to reroll your Hope Die.</p>"
+        }
+      }
+    },
+    "Skykin": {
+      "name": "Skykin"
+    },
+    "Stoneskin": {
+      "name": "Stoneskin",
+      "description": "<p>Gain a <strong>+1</strong> bonus to your armor score and Damage Thresholds.</p>",
+      "effects": {
+        "UFpatriYCNtw7g4S": {
+          "name": "Stoneskin"
+        }
+      }
+    },
+    "Tidekin": {
+      "name": "Tidekin"
+    }
+  }
+}

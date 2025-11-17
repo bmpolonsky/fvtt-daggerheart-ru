@@ -188,6 +188,17 @@ const TRANSLATION_FILES = {
   environments: "daggerheart.environments.json"
 };
 
+const VOID_TRANSLATION_SUFFIXES = [
+  "classes",
+  "subclasses",
+  "ancestries",
+  "communities",
+  "domains",
+  "adversaries",
+  "beastforms"
+];
+const VOID_TRANSLATION_PREFIX = "the-void-unofficial.";
+
 const ATTACK_NAME_TRANSLATIONS = {
   attack: "Атака"
 };
@@ -1567,6 +1578,35 @@ function createStatsTracker(file) {
   };
 }
 
+async function detectVoidTranslationFiles() {
+  const specs = [];
+  for (const suffix of VOID_TRANSLATION_SUFFIXES) {
+    const file = `${VOID_TRANSLATION_PREFIX}${suffix}.json`;
+    const fullPath = path.join(TRANSLATIONS_DIR, file);
+    if (await fileExists(fullPath)) {
+      specs.push({
+        key: `void${capitalizeFirstLetter(suffix)}`,
+        suffix,
+        file,
+        fullPath
+      });
+    }
+  }
+  return specs;
+}
+
+async function fileExists(filePath) {
+  try {
+    await fs.access(filePath);
+    return true;
+  } catch (error) {
+    if (error.code === "ENOENT") {
+      return false;
+    }
+    throw error;
+  }
+}
+
 async function updateEntries(filePath, updater, options = {}) {
   let sortKeys = false;
   let stats = null;
@@ -1627,13 +1667,25 @@ async function main() {
     ruleData
   ] = await Promise.all(ENDPOINTS.map((endpoint) => loadApi(endpoint)));
 
-  const oldTranslations = {};
-  const translationFiles = Object.values(TRANSLATION_FILES);
+  const voidTranslationSpecs = await detectVoidTranslationFiles();
 
-  for (const file of translationFiles) {
-    const fullPath = path.join(TRANSLATIONS_DIR, file);
-    const raw = await fs.readFile(fullPath, "utf-8");
-    oldTranslations[file] = JSON.parse(raw);
+  const translationFileInfos = [
+    ...Object.entries(TRANSLATION_FILES).map(([key, file]) => ({
+      key,
+      file,
+      fullPath: path.join(TRANSLATIONS_DIR, file)
+    })),
+    ...voidTranslationSpecs.map((spec) => ({
+      key: spec.key,
+      file: spec.file,
+      fullPath: spec.fullPath
+    }))
+  ];
+
+  const oldTranslations = {};
+  for (const info of translationFileInfos) {
+    const raw = await fs.readFile(info.fullPath, "utf-8");
+    oldTranslations[info.file] = JSON.parse(raw);
   }
 
   const classTop = buildTopLevelMap(classData.en, classData.ru, ["description"]);
@@ -1721,12 +1773,22 @@ async function main() {
     }
   }
 
-  const domainsOld = oldTranslations[TRANSLATION_FILES.domains];
-  const oldDomainActions = {};
-  if (domainsOld) {
-    for (const [key, value] of Object.entries(domainsOld.entries || {})) {
-      if (value.actions) oldDomainActions[key] = value.actions;
+  const collectDomainActions = (entries = {}) => {
+    const bucket = {};
+    for (const [key, value] of Object.entries(entries)) {
+      if (value && value.actions) {
+        bucket[key] = value.actions;
+      }
     }
+    return bucket;
+  };
+
+  const domainActionsByKey = new Map();
+  const baseDomainsOld = oldTranslations[TRANSLATION_FILES.domains] || {};
+  domainActionsByKey.set("domains", collectDomainActions(baseDomainsOld.entries || {}));
+  for (const spec of voidTranslationSpecs.filter((item) => item.suffix === "domains")) {
+    const source = oldTranslations[spec.file] || {};
+    domainActionsByKey.set(spec.key, collectDomainActions(source.entries || {}));
   }
 
   const weaponsOld = oldTranslations[TRANSLATION_FILES.weapons] || {};
@@ -2537,11 +2599,29 @@ async function main() {
   const filePaths = Object.fromEntries(
     Object.entries(TRANSLATION_FILES).map(([key, file]) => [key, path.join(TRANSLATIONS_DIR, file)])
   );
+  for (const spec of voidTranslationSpecs) {
+    filePaths[spec.key] = spec.fullPath;
+  }
 
   const statsByFile = {};
-  for (const key of Object.keys(TRANSLATION_FILES)) {
-    statsByFile[key] = createStatsTracker(TRANSLATION_FILES[key]);
+  for (const info of translationFileInfos) {
+    statsByFile[info.key] = createStatsTracker(info.file);
   }
+
+  const runAncestryUpdate = (fileKey) => async () => {
+    const stats = statsByFile[fileKey];
+    const missing = await updateAncestriesFile(filePaths[fileKey], {
+      ancestryTop,
+      featureMap: scopedFeatureMaps.ancestry
+    }, stats);
+    const filtered = missing.filter((key) => !LEGACY_ANCESTRY_KEYS.has(key));
+    const legacyRemoved = stats.missing.length - filtered.length;
+    if (legacyRemoved > 0) {
+      stats.total -= legacyRemoved;
+    }
+    stats.missing = stats.missing.filter((key) => !LEGACY_ANCESTRY_KEYS.has(key));
+    return filtered;
+  };
 
   const tasks = [
     {
@@ -2567,20 +2647,7 @@ async function main() {
     {
       key: "ancestries",
       file: TRANSLATION_FILES.ancestries,
-      run: async () => {
-        const stats = statsByFile.ancestries;
-        const missing = await updateAncestriesFile(filePaths.ancestries, {
-          ancestryTop,
-          featureMap: scopedFeatureMaps.ancestry
-        }, stats);
-        const filtered = missing.filter((key) => !LEGACY_ANCESTRY_KEYS.has(key));
-        const legacyRemoved = stats.missing.length - filtered.length;
-        if (legacyRemoved > 0) {
-          stats.total -= legacyRemoved;
-        }
-        stats.missing = stats.missing.filter((key) => !LEGACY_ANCESTRY_KEYS.has(key));
-        return filtered;
-      }
+      run: runAncestryUpdate("ancestries")
     },
     {
       key: "communities",
@@ -2598,7 +2665,7 @@ async function main() {
         updateDomainsFile(filePaths.domains, {
           domainTop,
           featureMap: scopedFeatureMaps["domain-card"],
-          oldDomainActions
+          oldDomainActions: domainActionsByKey.get("domains") || {}
         }, statsByFile.domains)
     },
     {
@@ -2656,6 +2723,94 @@ async function main() {
       run: () => applyEquipmentMap(filePaths.loot, lootMap, lootOld, { stats: statsByFile.loot })
     }
   ];
+
+  for (const spec of voidTranslationSpecs) {
+    let task = null;
+    const stats = statsByFile[spec.key];
+    switch (spec.suffix) {
+      case "classes":
+        task = {
+          key: spec.key,
+          file: spec.file,
+          run: () =>
+            updateClassesFile(filePaths[spec.key], {
+              classTop,
+              featureMap: scopedFeatureMaps.class,
+              classItemsMap,
+              ruleTop
+            }, stats)
+        };
+        break;
+      case "subclasses":
+        task = {
+          key: spec.key,
+          file: spec.file,
+          run: () =>
+            updateSubclassesFile(filePaths[spec.key], {
+              subclassTop,
+              featureMap: scopedFeatureMaps.subclass
+            }, stats)
+        };
+        break;
+      case "ancestries":
+        task = {
+          key: spec.key,
+          file: spec.file,
+          run: runAncestryUpdate(spec.key)
+        };
+        break;
+      case "communities":
+        task = {
+          key: spec.key,
+          file: spec.file,
+          run: () =>
+            updateCommunitiesFile(filePaths[spec.key], {
+              communityTop,
+              featureMap: scopedFeatureMaps.community
+            }, stats)
+        };
+        break;
+      case "domains":
+        task = {
+          key: spec.key,
+          file: spec.file,
+          run: () =>
+            updateDomainsFile(filePaths[spec.key], {
+              domainTop,
+              featureMap: scopedFeatureMaps["domain-card"],
+              oldDomainActions: domainActionsByKey.get(spec.key) || {}
+            }, stats)
+        };
+        break;
+      case "adversaries":
+        task = {
+          key: spec.key,
+          file: spec.file,
+          run: () =>
+            updateAdversariesFile(filePaths[spec.key], {
+              adversaryTop,
+              featureMap: scopedFeatureMaps.adversary
+            }, stats)
+        };
+        break;
+      case "beastforms":
+        task = {
+          key: spec.key,
+          file: spec.file,
+          run: () =>
+            updateBeastformsFile(filePaths[spec.key], {
+              beastTop,
+              featureMap: scopedFeatureMaps.beastform
+            }, stats)
+        };
+        break;
+      default:
+        break;
+    }
+    if (task) {
+      tasks.push(task);
+    }
+  }
 
   const taskResults = {};
   for (const task of tasks) {

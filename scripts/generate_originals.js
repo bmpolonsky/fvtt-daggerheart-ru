@@ -1,9 +1,7 @@
 #!/usr/bin/env node
 
 const fs = require("fs/promises");
-const { existsSync } = require("fs");
 const path = require("path");
-const { spawnSync } = require("child_process");
 
 const BASE_DIR = path.resolve(__dirname, "..");
 const MODULE_DIR = path.join(BASE_DIR, "module");
@@ -11,9 +9,12 @@ const TRANSLATIONS_DIR = path.join(BASE_DIR, "module", "translations");
 const ORIGINAL_DIR = path.join(BASE_DIR, "original");
 const TMP_DATA_DIR = path.join(BASE_DIR, "tmp_data");
 const REMOTE_REPO_DIR = path.join(TMP_DATA_DIR, "original-daggerheart");
-const REMOTE_URL = "https://github.com/Foundryborne/daggerheart";
 const PACKS_DIR = path.join(REMOTE_REPO_DIR, "src", "packs");
-const SKIP_REMOTE_UPDATE = process.env.SKIP_REMOTE_UPDATE === "1";
+const VOID_ORIGINAL_DIR = path.join(ORIGINAL_DIR, "void");
+const VOID_UNPACKED_DIR = path.join(TMP_DATA_DIR, "the-void-unofficial-json");
+const VOID_DOCUMENT_CACHE = new Map();
+const UPDATE_SOURCES_HINT =
+  "Запустите npm run update:sources для обновления исходников (tmp_data/original-daggerheart и the-void-unofficial).";
 
 const FILE_CONFIGS = [
   {
@@ -91,9 +92,88 @@ const FILE_CONFIGS = [
 ];
 
 const generationWarnings = [];
+const VOID_FILE_CONFIGS = [
+  {
+    file: "the-void-unofficial.classes.json",
+    label: "Classes",
+    template: "daggerheart.classes.json",
+    packName: "classes",
+    build: buildVoidClassEntries
+  },
+  {
+    file: "the-void-unofficial.subclasses.json",
+    label: "Subclasses",
+    template: "daggerheart.subclasses.json",
+    packName: "subclasses",
+    build: buildVoidSubclassEntries
+  },
+  {
+    file: "the-void-unofficial.ancestries.json",
+    label: "Ancestries",
+    template: "daggerheart.ancestries.json",
+    packName: "ancestries",
+    build: buildVoidAncestryEntries
+  },
+  {
+    file: "the-void-unofficial.communities.json",
+    label: "Communities",
+    template: "daggerheart.communities.json",
+    packName: "communities",
+    build: buildVoidCommunityEntries
+  },
+  {
+    file: "the-void-unofficial.domains.json",
+    label: "Domains",
+    template: "daggerheart.domains.json",
+    packName: "domains",
+    build: buildVoidDomainEntries
+  },
+  {
+    file: "the-void-unofficial.transformations.json",
+    label: "Transformations",
+    template: "daggerheart.beastforms.json",
+    packName: "transformations",
+    build: buildVoidTransformationEntries
+  },
+  {
+    file: "the-void-unofficial.weapons.json",
+    label: "Weapons",
+    template: "daggerheart.weapons.json",
+    packName: "weapons",
+    build: () => buildVoidItemEntries("weapons")
+  },
+  {
+    file: "the-void-unofficial.adversaries--environments.json",
+    label: "Adversaries / Environments",
+    template: "daggerheart.adversaries.json",
+    packName: "adversaries--environments",
+    prepareTemplate: (template) => {
+      template.mapping = template.mapping || {};
+      template.mapping.impulses = "system.impulses";
+      template.mapping.potentialAdversaries = {
+        path: "system.potentialAdversaries",
+        converter: "toPotentialAdversaries"
+      };
+      return template;
+    },
+    build: buildVoidAdversaryEnvironmentEntries
+  }
+];
 
 async function main() {
-  await ensureRemoteRepo();
+  await generateDaggerheartOriginals();
+  await generateVoidOriginals();
+  console.log("Original snapshots updated.");
+  if (generationWarnings.length) {
+    console.warn("Получены предупреждения во время генерации:");
+    for (const warning of generationWarnings) {
+      console.warn(` - ${warning}`);
+    }
+  }
+}
+
+async function generateDaggerheartOriginals() {
+  await assertPathExists(PACKS_DIR, `Не найден каталог Foundryborne daggerheart (${PACKS_DIR}). ${UPDATE_SOURCES_HINT}`);
   await fs.mkdir(ORIGINAL_DIR, { recursive: true });
 
   for (const config of FILE_CONFIGS) {
@@ -109,13 +189,31 @@ async function main() {
     }
     await fs.writeFile(path.join(ORIGINAL_DIR, config.file), JSON.stringify(payload, null, 2) + "\n");
   }
+}
 
-  console.log("Original snapshots updated.");
-  if (generationWarnings.length) {
-    console.warn("Получены предупреждения во время генерации:");
-    for (const warning of generationWarnings) {
-      console.warn(` - ${warning}`);
+async function generateVoidOriginals() {
+  await assertPathExists(
+    VOID_UNPACKED_DIR,
+    `Не найдены распакованные паки The Void (${VOID_UNPACKED_DIR}). ${UPDATE_SOURCES_HINT}`
+  );
+  await fs.mkdir(VOID_ORIGINAL_DIR, { recursive: true });
+
+  for (const config of VOID_FILE_CONFIGS) {
+    console.log(`Generating original/void/${config.file}`);
+    let template = await loadTemplate(config.template);
+    if (typeof config.prepareTemplate === "function") {
+      template = config.prepareTemplate({ ...template });
     }
+    let entries = await config.build();
+    entries = sortEntries(entries);
+    const folderNames = config.packName ? await buildVoidFolderNames(config.packName) : [];
+    const folderMap = buildFolderMapFromNames(folderNames);
+    const payload = { ...template, entries, folders: folderMap };
+    if (config.label) {
+      payload.label = config.label;
+    }
+    const targetPath = path.join(VOID_ORIGINAL_DIR, config.file);
+    await fs.writeFile(targetPath, JSON.stringify(payload, null, 2) + "\n");
   }
 }
 
@@ -164,28 +262,6 @@ function buildEntriesWithTemplate(templateEntries, englishEntries) {
   return result;
 }
 
-async function ensureRemoteRepo() {
-  await fs.mkdir(TMP_DATA_DIR, { recursive: true });
-  if (!existsSync(REMOTE_REPO_DIR)) {
-    console.log("Cloning Daggerheart source...");
-    runGitCommand(["clone", REMOTE_URL, path.basename(REMOTE_REPO_DIR)], TMP_DATA_DIR);
-    return;
-  }
-  if (SKIP_REMOTE_UPDATE) {
-    console.log("Skipping Daggerheart source update (cached repo).");
-    return;
-  }
-  console.log("Updating Daggerheart source...");
-  runGitCommand(["-C", REMOTE_REPO_DIR, "pull", "--ff-only"]);
-}
-
-function runGitCommand(args, cwd = undefined) {
-  const result = spawnSync("git", args, { cwd, stdio: "inherit" });
-  if (result.status !== 0) {
-    throw new Error(`Git command failed: git ${args.join(" ")}`);
-  }
-}
-
 async function loadEntries(relativePath) {
   const directory = path.join(PACKS_DIR, relativePath);
   const names = await fs.readdir(directory);
@@ -197,6 +273,128 @@ async function loadEntries(relativePath) {
     entries.push(JSON.parse(content));
   }
   return entries;
+}
+
+async function loadTemplate(templateName) {
+  if (!templateName) {
+    throw new Error("Template name is required for Void payload generation.");
+  }
+  const fullPath = path.join(ORIGINAL_DIR, templateName);
+  const raw = JSON.parse(await fs.readFile(fullPath, "utf-8"));
+  const { entries, ...rest } = raw;
+  return rest;
+}
+
+async function assertPathExists(targetPath, errorMessage) {
+  try {
+    await fs.access(targetPath);
+  } catch (error) {
+    if (error.code === "ENOENT") {
+      throw new Error(errorMessage);
+    }
+    throw error;
+  }
+}
+
+async function loadVoidPackDocuments(packName) {
+  if (VOID_DOCUMENT_CACHE.has(packName)) {
+    return VOID_DOCUMENT_CACHE.get(packName);
+  }
+  const packPath = path.join(VOID_UNPACKED_DIR, packName);
+  try {
+    await fs.access(packPath);
+  } catch (error) {
+    if (error.code === "ENOENT") {
+      throw new Error(`Не найден каталог распакованных данных для пака ${packName}.`);
+    }
+    throw error;
+  }
+  const documents = [];
+  await readDirectoryRecursive(packPath, documents);
+  VOID_DOCUMENT_CACHE.set(packName, documents);
+  return documents;
+}
+
+async function readDirectoryRecursive(directory, bucket) {
+  const dirents = await fs.readdir(directory, { withFileTypes: true });
+  for (const dirent of dirents) {
+    const fullPath = path.join(directory, dirent.name);
+    if (dirent.isDirectory()) {
+      await readDirectoryRecursive(fullPath, bucket);
+      continue;
+    }
+    if (!dirent.isFile() || !dirent.name.endsWith(".json") || dirent.name.startsWith("_Folder")) {
+      continue;
+    }
+    const content = await fs.readFile(fullPath, "utf-8");
+    try {
+      bucket.push(JSON.parse(content));
+    } catch (error) {
+      throw new Error(`Не удалось распарсить ${fullPath}: ${error.message}`);
+    }
+  }
+}
+
+async function buildVoidFolderNames(packName) {
+  if (!packName) {
+    return [];
+  }
+  const packPath = path.join(VOID_UNPACKED_DIR, packName);
+  try {
+    await fs.access(packPath);
+  } catch (error) {
+    if (error.code === "ENOENT") {
+      return [];
+    }
+    throw error;
+  }
+  const records = [];
+  await collectFolderRecords(packPath, records);
+  const seen = new Set();
+  const sorted = records
+    .filter((record) => record && record.name)
+    .sort((a, b) => {
+      if (a.sort !== b.sort) {
+        return a.sort - b.sort;
+      }
+      return a.name.localeCompare(b.name, "en");
+    });
+  const names = [];
+  for (const record of sorted) {
+    if (seen.has(record.name)) {
+      continue;
+    }
+    seen.add(record.name);
+    names.push(record.name);
+  }
+  return names;
+}
+
+async function collectFolderRecords(directory, bucket) {
+  const dirents = await fs.readdir(directory, { withFileTypes: true });
+  for (const dirent of dirents) {
+    const fullPath = path.join(directory, dirent.name);
+    if (dirent.isDirectory()) {
+      await collectFolderRecords(fullPath, bucket);
+      continue;
+    }
+    if (!dirent.isFile() || dirent.name !== "_Folder.json") {
+      continue;
+    }
+    try {
+      const data = JSON.parse(await fs.readFile(fullPath, "utf-8"));
+      if (!data?.name) continue;
+      const sortValue =
+        typeof data.sort === "number"
+          ? data.sort
+          : Number.isFinite(Number(data.sort))
+            ? Number(data.sort)
+            : Number.MAX_SAFE_INTEGER;
+      bucket.push({ name: data.name, sort: sortValue });
+    } catch (error) {
+      throw new Error(`Не удалось прочитать ${fullPath}: ${error.message}`);
+    }
+  }
 }
 
 async function buildClassEntries() {
@@ -347,6 +545,188 @@ async function buildJournalEntries() {
   return result;
 }
 
+function buildFolderMapFromNames(folderNames) {
+  if (!Array.isArray(folderNames) || !folderNames.length) {
+    return {};
+  }
+  return folderNames.reduce((acc, name) => {
+    acc[name] = name;
+    return acc;
+  }, {});
+}
+
+async function buildVoidClassEntries() {
+  const documents = await loadVoidPackDocuments("classes");
+  const result = {};
+  for (const entry of documents) {
+    if (!entry?.name) continue;
+    let converted = null;
+    if (entry.type === "class") {
+      converted = simpleEntry(entry);
+    } else if (entry.type === "feature") {
+      converted = featureEntry(entry);
+    } else {
+      converted = genericItemEntry(entry, "class-item");
+    }
+    if (converted) {
+      result[entry.name] = converted;
+    }
+  }
+  return result;
+}
+
+async function buildVoidSubclassEntries() {
+  const documents = await loadVoidPackDocuments("subclasses");
+  const result = {};
+  for (const entry of documents) {
+    if (!entry?.name) continue;
+    let converted = null;
+    if (entry.type === "subclass") {
+      converted = descriptionEntry(entry);
+    } else if (entry.type === "feature") {
+      converted = featureEntry(entry);
+    }
+    if (converted) {
+      result[entry.name] = converted;
+    }
+  }
+  return result;
+}
+
+async function buildVoidAncestryEntries() {
+  const documents = await loadVoidPackDocuments("ancestries");
+  const result = {};
+  for (const entry of documents) {
+    if (!entry?.name) continue;
+    const converted = entry.type === "feature" ? featureEntry(entry) : descriptionEntry(entry);
+    if (converted) {
+      result[entry.name] = converted;
+    }
+  }
+  return result;
+}
+
+async function buildVoidCommunityEntries() {
+  const documents = await loadVoidPackDocuments("communities");
+  const result = {};
+  for (const entry of documents) {
+    if (!entry?.name) continue;
+    const converted = entry.type === "feature" ? featureEntry(entry) : descriptionEntry(entry);
+    if (converted) {
+      result[entry.name] = converted;
+    }
+  }
+  return result;
+}
+
+async function buildVoidDomainEntries() {
+  const documents = await loadVoidPackDocuments("domains");
+  const result = {};
+  for (const entry of documents) {
+    if (!entry?.name || entry.type !== "domainCard") continue;
+    const payload = { name: entry.name };
+    addDescription(payload, entry.system?.description);
+    const actions = convertActions(entry.system?.actions);
+    if (actions) payload.actions = actions;
+    const effects = convertEffects(entry.effects || entry.system?.effects, `void-domain:${entry._id || entry.name}`);
+    if (effects) payload.effects = effects;
+    result[entry.name] = payload;
+  }
+  return result;
+}
+
+async function buildVoidTransformationEntries() {
+  const documents = await loadVoidPackDocuments("transformations");
+  const result = {};
+  for (const entry of documents) {
+    if (!entry?.name) continue;
+    const converted = featureEntry(entry);
+    if (converted) {
+      result[entry.name] = converted;
+    }
+  }
+  return result;
+}
+
+async function buildVoidItemEntries(packName) {
+  const documents = await loadVoidPackDocuments(packName);
+  const result = {};
+  for (const entry of documents) {
+    if (!entry?.name) continue;
+    const converted = genericItemEntry(entry, `${packName}`);
+    if (converted) {
+      result[entry.name] = converted;
+    }
+  }
+  return result;
+}
+
+async function buildVoidAdversaryEnvironmentEntries() {
+  const documents = await loadVoidPackDocuments("adversaries--environments");
+  const result = {};
+  for (const entry of documents) {
+    if (!entry?.name) continue;
+    if (entry.type === "adversary") {
+      result[entry.name] = buildVoidAdversary(entry);
+    } else if (entry.type === "environment") {
+      result[entry.name] = buildVoidEnvironment(entry);
+    }
+  }
+  return result;
+}
+
+function buildVoidAdversary(entry) {
+  const payload = { name: entry.name };
+  addDescription(payload, entry.system?.description);
+  if (entry.system?.motivesAndTactics) {
+    payload.motivesAndTactics = entry.system.motivesAndTactics;
+  }
+  if (entry.system?.attack?.name) {
+    payload.attack = entry.system.attack.name;
+  }
+  const experiences = convertExperiences(entry.system?.experiences);
+  if (experiences && Object.keys(experiences).length) {
+    payload.experiences = experiences;
+  }
+  const items = convertItemList(entry.items);
+  if (items && Object.keys(items).length) {
+    payload.items = items;
+  }
+  const effects = convertEffects(entry.effects || entry.system?.effects, `void-adversary:${entry._id || entry.name}`);
+  if (effects) {
+    payload.effects = effects;
+  }
+  return payload;
+}
+
+function buildVoidEnvironment(entry) {
+  const payload = { name: entry.name };
+  addDescription(payload, entry.system?.description);
+  if (entry.system?.impulses) {
+    payload.impulses = entry.system.impulses;
+  }
+  const potential = entry.system?.potentialAdversaries;
+  if (potential && typeof potential === "object") {
+    const groups = {};
+    for (const [id, group] of Object.entries(potential)) {
+      if (!group) continue;
+      groups[id] = { label: group.label || "" };
+    }
+    if (Object.keys(groups).length) {
+      payload.potentialAdversaries = groups;
+    }
+  }
+  const items = convertItemList(entry.items);
+  if (items && Object.keys(items).length) {
+    payload.items = items;
+  }
+  const effects = convertEffects(entry.effects || entry.system?.effects, `void-environment:${entry._id || entry.name}`);
+  if (effects) {
+    payload.effects = effects;
+  }
+  return payload;
+}
+
 async function gatherEntries(relativePath, types, converter) {
   const entries = await loadEntries(relativePath);
   const result = {};
@@ -389,6 +769,30 @@ function simpleEntry(entry) {
   addDescription(result, entry.system?.description);
   copyStringArrayField(result, entry.system?.backgroundQuestions, "backgroundQuestions");
   copyStringArrayField(result, entry.system?.connections, "connections");
+  return result;
+}
+
+function descriptionEntry(entry) {
+  const result = { name: entry.name };
+  addDescription(result, entry.system?.description);
+  return result;
+}
+
+function genericItemEntry(entry, contextPrefix) {
+  const result = { name: entry.name };
+  addDescription(result, entry.system?.description);
+  const actions = convertActions(entry.system?.actions);
+  if (actions) {
+    result.actions = actions;
+  }
+  const effects = convertEffects(entry.effects || entry.system?.effects, `${contextPrefix}:${entry._id || entry.name}`);
+  if (effects) {
+    result.effects = effects;
+  }
+  const attackName = extractAttackName(entry.system?.attack);
+  if (attackName) {
+    result.attack = attackName;
+  }
   return result;
 }
 
@@ -593,6 +997,14 @@ function sortObject(value) {
       acc[key] = sortObject(value[key]);
       return acc;
     }, {});
+}
+
+function sortEntries(entries) {
+  const sorted = {};
+  for (const key of Object.keys(entries || {}).sort((a, b) => a.localeCompare(b, "en"))) {
+    sorted[key] = entries[key];
+  }
+  return sorted;
 }
 
 function sanitizeRichText(value) {

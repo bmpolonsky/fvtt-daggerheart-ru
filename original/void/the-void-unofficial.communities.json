@@ -1,0 +1,68 @@
+{
+  "label": "Communities",
+  "folders": {
+    "Community Features": "Community Features"
+  },
+  "mapping": {
+    "description": "system.description",
+    "effects": {
+      "path": "effects",
+      "converter": "toEffects"
+    }
+  },
+  "entries": {
+    "Brave Face": {
+      "name": "Brave Face",
+      "description": "<p>Once per session, when an attack would cause you to mark a Stress, you can <strong>spend a Hope</strong> instead.</p>"
+    },
+    "Close-Knit": {
+      "name": "Close-Knit",
+      "description": "<p>Once per long rest, you can <strong>spend any number of Hope </strong>to give an ally the same number of Hope.</p>"
+    },
+    "Duneborne": {
+      "name": "Duneborne",
+      "description": "<p><em>Being part of a duneborne community means you’ve made a home among the shifting sands and arid climate of the desert.</em></p>"
+    },
+    "Found Family": {
+      "name": "Found Family",
+      "description": "<p>Once per session, you can <strong>spend a Hope</strong> to use an ally’s community ability. When you do, your ally gains a Hope.</p>",
+      "actions": {
+        "Wrq0vEGLsiLWy8tl": {
+          "name": "Spend a Hope"
+        }
+      }
+    },
+    "Freeborne": {
+      "name": "Freeborne",
+      "description": "<p><em>Being part of a freeborne community means you’re from a collective that lived under tyrannical rule and is now liberated.</em></p>"
+    },
+    "Frostborne": {
+      "name": "Frostborne",
+      "description": "<p><em>Being a part of a frostborne community means you come from a place of snow and ice.</em></p>"
+    },
+    "Hardy": {
+      "name": "Hardy",
+      "description": "<p>Once per rest, you can Help an Ally traverse difficult terrain without spending a Hope.</p>"
+    },
+    "Hearthborne": {
+      "name": "Hearthborne",
+      "description": "<p><em>Coming from a hearthborne community means you come from humble origins, having lived in a small village or the countryside.</em></p>"
+    },
+    "Oasis": {
+      "name": "Oasis",
+      "description": "<p>During a short rest, you or an ally can reroll a die used for a downtime action.</p>"
+    },
+    "Reborne": {
+      "name": "Reborne",
+      "description": "<p><em>You were once a member of another community, but you can no longer remember it.</em></p><p></p><p>At any point, when you’ve discovered the community you were once a part of, or have joined a new community, you can permanently trade this community card for that one instead.</p>"
+    },
+    "Unbound": {
+      "name": "Unbound",
+      "description": "<p>Once per session, when you make an action roll with Fear, you can change it to a roll with Hope instead.</p>"
+    },
+    "Warborne": {
+      "name": "Warborne",
+      "description": "<p><em>Being part of a warborne community means you come from a place that is, or was, ravaged by war.</em></p>"
+    }
+  }
+}

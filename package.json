@@ -1,0 +1,20 @@
+{
+  "name": "fvtt-daggerheart-ru",
+  "version": "2025.11.16",
+  "description": "Русская локализация Daggerheart для Foundry VTT",
+  "private": true,
+  "license": "MIT",
+  "engines": {
+    "node": ">=18"
+  },
+  "scripts": {
+    "update:sources": "node scripts/update_sources.js",
+    "generate:originals": "node scripts/generate_originals.js",
+    "sync:i18n": "node scripts/sync_i18n_structure.js",
+    "update:translations": "node scripts/update_translations.js",
+    "build:release": "node scripts/build-release.js"
+  },
+  "devDependencies": {
+    "@foundryvtt/foundryvtt-cli": "^1.0.0"
+  }
+}
