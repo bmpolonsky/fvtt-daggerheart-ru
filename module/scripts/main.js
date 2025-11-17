@@ -10,6 +10,8 @@ Hooks.once('babele.init', (babele) => {
   // system.* и обрабатываются простым mapping, а Actor-паки (противники, окружения) включают массив
   // вложенных Item'ов. Вспомогательные функции ниже помогают проставлять переводы в те части,
   // куда Babele сам не лезет (embedded items, action-узлы, advantage-листы).
+
+  // Обновляет одно действие (name/description) исходя из перевода.
   const updateActionNode = (action, translated) => {
     if (!action || !translated || typeof translated !== "object") {
       return;
@@ -23,6 +25,7 @@ Hooks.once('babele.init', (babele) => {
     }
   };
 
+  // Применяет перевод к эффекту, включая вложенные advantage/disadvantage sources.
   const updateEffectNode = (effect, translated) => {
     if (!effect || !translated || typeof translated !== "object") {
       return;
@@ -34,8 +37,11 @@ Hooks.once('babele.init', (babele) => {
     if (description) {
       effect.description = description;
     }
+    applySourceTranslations(effect, translated.advantageSources, "system.advantageSources");
+    applySourceTranslations(effect, translated.disadvantageSources, "system.disadvantageSources");
   };
 
+  // Проставляет переведённые имена/описания action-нодам по их ID.
   const applyActionTranslations = (actions, translatedActions) => {
     if (!actions || !translatedActions || typeof translatedActions !== "object") {
       return;
@@ -45,6 +51,7 @@ Hooks.once('babele.init', (babele) => {
     }
   };
 
+  // Синхронизирует массив эффектов с переводами, включая advantageSources.
   const applyEffectTranslations = (effects, translatedEffects) => {
     if (!Array.isArray(effects) || !translatedEffects || typeof translatedEffects !== "object") {
       return;
@@ -54,6 +61,31 @@ Hooks.once('babele.init', (babele) => {
       const effectId = typeof effect._id === "string" ? effect._id : null;
       if (!effectId) continue;
       updateEffectNode(effect, translatedEffects[effectId]);
+    }
+  };
+
+  // Меняет строки advantage/disadvantageSources внутри effect.changes на переведённые значения.
+  const applySourceTranslations = (effect, replacementMap, targetKey) => {
+    if (!effect || !replacementMap || typeof replacementMap !== "object") {
+      return;
+    }
+    const changes = Array.isArray(effect.changes) ? effect.changes : [];
+    for (const change of changes) {
+      if (!change || change.key !== targetKey) {
+        continue;
+      }
+      const current = typeof change.value === "string" ? change.value : "";
+      if (!current) {
+        continue;
+      }
+      const candidate = replacementMap[current];
+      if (typeof candidate !== "string") {
+        continue;
+      }
+      const trimmed = candidate.trim();
+      if (trimmed) {
+        change.value = trimmed;
+      }
     }
   };
 
@@ -100,6 +132,9 @@ Hooks.once('babele.init', (babele) => {
       return origActions;
     },
 
+    /**
+     * Сопоставляет эффекты по _id и применяет переводы.
+     */
     "toEffects": (origEffects, transEffects) => {
       applyEffectTranslations(origEffects, transEffects);
       return origEffects;
@@ -127,6 +162,9 @@ Hooks.once('babele.init', (babele) => {
       return origObj;
     },
 
+    /**
+     * Обновляет подписи потенциальных противников у окружений.
+     */
     "toPotentialAdversaries": (origGroups, translatedGroups) => {
       if (!origGroups || typeof origGroups !== "object" || !translatedGroups || typeof translatedGroups !== "object") {
         return origGroups;

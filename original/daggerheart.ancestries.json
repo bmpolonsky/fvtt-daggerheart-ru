@@ -151,7 +151,10 @@
       "effects": {
         "2Gd6iHQX521aAZqC": {
           "name": "Dread Visage",
-          "description": "<p>You have advantage on rolls to intimidate hostile creatures</p>"
+          "description": "<p>You have advantage on rolls to intimidate hostile creatures</p>",
+          "advantageSources": {
+            "Dread Visage: Rolls to intimidate hostile creatures": "Dread Visage: Rolls to intimidate hostile creatures"
+          }
         }
       }
     },
@@ -285,7 +288,10 @@
       "effects": {
         "HQeQH9gUfrjlWWcg": {
           "name": "Natural Climber",
-          "description": "<p>You have advantage on Agility Rolls that involve balancing and climbing.</p>"
+          "description": "<p>You have advantage on Agility Rolls that involve balancing and climbing.</p>",
+          "advantageSources": {
+            "Agility Rolls that involve balancing and climbing": "Agility Rolls that involve balancing and climbing"
+          }
         }
       }
     },
@@ -343,7 +349,10 @@
       "effects": {
         "3V4FPoyjJUnFP9WS": {
           "name": "Retract",
-          "description": "<p>While in your shell, you have resistance to physical damage, you have disadvantage on action rolls, and you can’t move.</p>"
+          "description": "<p>While in your shell, you have resistance to physical damage, you have disadvantage on action rolls, and you can’t move.</p>",
+          "disadvantageSources": {
+            "Retract": "Retract"
+          }
         }
       }
     },

@@ -66,7 +66,10 @@
       "description": "<p>Your movement is naturally silent. You have advantage on rolls to move without being heard.</p>",
       "effects": {
         "4my9X5XC3uwDSx7B": {
-          "name": "Lightfoot"
+          "name": "Lightfoot",
+          "advantageSources": {
+            "Move without being heard.": "Move without being heard."
+          }
         }
       }
     },
@@ -75,7 +78,10 @@
       "description": "<p>When you’re in an area with low light or heavy shadow, you have advantage on rolls to hide, investigate, or perceive details within that area.</p>",
       "effects": {
         "pCp32u7UwqxCI4WW": {
-          "name": "Low-Light Living"
+          "name": "Low-Light Living",
+          "advantageSources": {
+            "In an area with low light or heavy shadow: hide, investigate, or perceive": "In an area with low light or heavy shadow: hide, investigate, or perceive"
+          }
         }
       }
     },
@@ -93,7 +99,12 @@
       "description": "<p>You have advantage on rolls to consort with nobles, negotiate prices, or leverage your reputation to get what you want.</p>",
       "effects": {
         "xgtjykfgvg142urA": {
-          "name": "Privilege"
+          "name": "Privilege",
+          "advantageSources": {
+            "Consort with nobles": "Consort with nobles",
+            "Negotiate prices": "Negotiate prices",
+            "Leverage your reputation to get what you want": "Leverage your reputation to get what you want"
+          }
         }
       }
     },
@@ -102,7 +113,12 @@
       "description": "<p>You have advantage on rolls to negotiate with criminals, detect lies, or find a safe place to hide.</p>",
       "effects": {
         "snkYmZ22Q8HHLY9M": {
-          "name": "Scoundrel"
+          "name": "Scoundrel",
+          "advantageSources": {
+            "Negotiate with criminals": "Negotiate with criminals",
+            "Detect lies": "Detect lies",
+            "Find a safe place to hide": "Find a safe place to hide"
+          }
         }
       }
     },
@@ -111,7 +127,12 @@
       "description": "<p>You have advantage on rolls to traverse dangerous cliffs and ledges, navigate harsh environments, and use your survival knowledge.</p>",
       "effects": {
         "QDf9LD8Mhd0Cw0CB": {
-          "name": "Steady"
+          "name": "Steady",
+          "advantageSources": {
+            "Traverse dangerous cliffs and ledges": "Traverse dangerous cliffs and ledges",
+            "Navigate harsh environment": "Navigate harsh environment",
+            "Use your survival knowledge": "Use your survival knowledge"
+          }
         }
       }
     },
@@ -120,7 +141,10 @@
       "description": "<p>You have advantage on rolls that involve the history, culture, or politics of a prominent person or place.</p>",
       "effects": {
         "RwhxYOAAKKlYZiz0": {
-          "name": "Well-Read"
+          "name": "Well-Read",
+          "advantageSources": {
+            "History, culture, or politics of a prominent person or place": "History, culture, or politics of a prominent person or place"
+          }
         }
       }
     }

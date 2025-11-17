@@ -342,7 +342,10 @@
         },
         "3ck6CeapLxQVjE2W": {
           "name": "Elemental Incarnation (Air)",
-          "description": "<p>You can hover, gaining advantage on Agility Rolls.</p>"
+          "description": "<p>You can hover, gaining advantage on Agility Rolls.</p>",
+          "advantageSources": {
+            "Advantage on Agility Rolls": "Advantage on Agility Rolls"
+          }
         },
         "Jy6dpEbzkZ2eRDf5": {
           "name": "Elemental Incarnation (Water)"
@@ -397,7 +400,10 @@
       "effects": {
         "Ns1DcQ8wo47LhlL3": {
           "name": "Ethereal Visage",
-          "description": "<p><span>While flying, you have advantage on Presence Rolls.</p>"
+          "description": "<p><span>While flying, you have advantage on Presence Rolls.</p>",
+          "advantageSources": {
+            "Presence rolls while flying": "Presence rolls while flying"
+          }
         }
       }
     },

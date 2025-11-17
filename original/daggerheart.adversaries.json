@@ -207,7 +207,10 @@
           "effects": {
             "wGuxOLokMqdxVSOo": {
               "name": "Hobbling Shot",
-              "description": "<p>You have disadvantage on Agility Rolls until you clear at least 1 HP.</p>"
+              "description": "<p>You have disadvantage on Agility Rolls until you clear at least 1 HP.</p>",
+              "disadvantageSources": {
+                "Agility Rolls": "Agility Rolls"
+              }
             }
           }
         }
@@ -362,7 +365,10 @@
           "effects": {
             "qT5nh7OcQ6aGdiWS": {
               "name": "Out of Nowhere",
-              "description": "<p>The Assassin has advantage on attacks if they are <em>Hidden.</em></p>"
+              "description": "<p>The Assassin has advantage on attacks if they are <em>Hidden.</em></p>",
+              "advantageSources": {
+                "On attacks if they are Hidden.": "On attacks if they are Hidden."
+              }
             }
           }
         },
@@ -2306,7 +2312,10 @@
           "effects": {
             "WYqjt1tVqPEdVV5l": {
               "name": "Water Jet",
-              "description": "<p>Your next action has disadvantage. On a failure, you must mark a Stress.</p>"
+              "description": "<p>Your next action has disadvantage. On a failure, you must mark a Stress.</p>",
+              "disadvantageSources": {
+                "Your next action": "Your next action"
+              }
             }
           }
         },
@@ -2955,7 +2964,10 @@
           "effects": {
             "w5VTwlHmUjl8XCQ4": {
               "name": "Cloaked",
-              "description": "<p>Become <em>Hidden</em> until after the Shadow’s next attack. Attacks made while Hidden from this feature have advantage.</p>"
+              "description": "<p>Become <em>Hidden</em> until after the Shadow’s next attack. Attacks made while Hidden from this feature have advantage.</p>",
+              "advantageSources": {
+                "Attacks made while Hidden": "Attacks made while Hidden"
+              }
             }
           }
         }
@@ -3782,7 +3794,10 @@
           "effects": {
             "rpkjVdlJYI5dB99B": {
               "name": "Disorienting Presence",
-              "description": "<p>Disadvantage on your next action roll.</p>"
+              "description": "<p>Disadvantage on your next action roll.</p>",
+              "disadvantageSources": {
+                "On your next action roll.": "On your next action roll."
+              }
             }
           }
         },
@@ -5125,7 +5140,10 @@
           "effects": {
             "Fo5bLYlmYGtQFAGg": {
               "name": "Box In",
-              "description": "<p>You have<strong> </strong>disadvantage on attack rolls while you're within Very Close range of the Sentinel. The Sentinel can only focus on one target at a time.</p>"
+              "description": "<p>You have<strong> </strong>disadvantage on attack rolls while you're within Very Close range of the Sentinel. The Sentinel can only focus on one target at a time.</p>",
+              "disadvantageSources": {
+                "On attack rolls while you're within Very Close range of the Sentinel": "On attack rolls while you're within Very Close range of the Sentinel"
+              }
             }
           }
         },
@@ -5683,7 +5701,10 @@
           "effects": {
             "1JlRxa07i8T1a9x6": {
               "name": "Chilled",
-              "description": "<p>Chilled until your next rest or you clear a Stress. While you are Chilled, you have disadvantage on attack rolls.</p>"
+              "description": "<p>Chilled until your next rest or you clear a Stress. While you are Chilled, you have disadvantage on attack rolls.</p>",
+              "disadvantageSources": {
+                "On attack rolls.": "On attack rolls."
+              }
             }
           }
         },

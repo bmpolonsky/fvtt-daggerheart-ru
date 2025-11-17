@@ -836,7 +836,10 @@
       "effects": {
         "qtHDKXJ1pH8Cu7by": {
           "name": "Deft Deceiver",
-          "description": "<p><span>Gain </span><span class=\"tooltip-convert\">advantage</span><span> on a roll to deceive or trick someone into believing a lie you tell them.</p>"
+          "description": "<p><span>Gain </span><span class=\"tooltip-convert\">advantage</span><span> on a roll to deceive or trick someone into believing a lie you tell them.</p>",
+          "advantageSources": {
+            "Deceive or trick someone into believing a lie you told them": "Deceive or trick someone into believing a lie you told them"
+          }
         }
       }
     },
@@ -907,7 +910,10 @@
       "effects": {
         "ARMcw2FtKfaYr902": {
           "name": "In the Eclipse",
-          "description": "<p><span class=\"tooltip-convert\">Attack rolls</span><span> have </span><span class=\"tooltip-convert\">disadvantage</span><span> when targeting you or an ally within this shadow.</p>"
+          "description": "<p><span class=\"tooltip-convert\">Attack rolls</span><span> have </span><span class=\"tooltip-convert\">disadvantage</span><span> when targeting you or an ally within this shadow.</p>",
+          "disadvantageSources": {
+            "Attacking you or an ally within this eclipse's shadow": "Attacking you or an ally within this eclipse's shadow"
+          }
         }
       }
     },
@@ -1206,7 +1212,10 @@
       "effects": {
         "Jccsuc48gmA6QAni": {
           "name": "Goaded",
-          "description": "<p><span>The next time this Adversary is </span><span class=\"tooltip-convert\">spotlighted</span><span>, they must target the Goading Character with an attack, which they make with </span><span class=\"tooltip-convert\">disadvantage</span><span>.</p>"
+          "description": "<p><span>The next time this Adversary is </span><span class=\"tooltip-convert\">spotlighted</span><span>, they must target the Goading Character with an attack, which they make with </span><span class=\"tooltip-convert\">disadvantage</span><span>.</p>",
+          "disadvantageSources": {
+            "Attacking the goading creature": "Attacking the goading creature"
+          }
         }
       }
     },
@@ -1374,7 +1383,10 @@
       "effects": {
         "wX4BFGaM0bdzHPn2": {
           "name": "Inevitable",
-          "description": "<p><span>When you fail an action roll, your next </span><span class=\"tooltip-convert\">action roll</span><span> has </span><span class=\"tooltip-convert\">advantage</span><span>.</p>"
+          "description": "<p><span>When you fail an action roll, your next </span><span class=\"tooltip-convert\">action roll</span><span> has </span><span class=\"tooltip-convert\">advantage</span><span>.</p>",
+          "advantageSources": {
+            "If you failed your previous action roll": "If you failed your previous action roll"
+          }
         }
       }
     },
@@ -1520,7 +1532,10 @@
       "effects": {
         "HgF4n0idPcdz8Bi7": {
           "name": "Disguised",
-          "description": "<p><span>A disguised creature has advantage on </span><span class=\"tooltip-convert\">Presence</span><span> Rolls to avoid scrutiny.</p>"
+          "description": "<p><span>A disguised creature has advantage on </span><span class=\"tooltip-convert\">Presence</span><span> Rolls to avoid scrutiny.</p>",
+          "advantageSources": {
+            "Presence Rolls to avoid scrutiny.": "Presence Rolls to avoid scrutiny."
+          }
         }
       }
     },
@@ -1775,7 +1790,12 @@
       "effects": {
         "6IkjF8qNR0NVvvv8": {
           "name": "Pick and Pull",
-          "description": "<p><span>You have </span><span class=\"tooltip-convert\">advantage</span><span> on action rolls to pick nonmagical locks, disarm nonmagical traps, or steal items from a target (either through stealth or by force).</p>"
+          "description": "<p><span>You have </span><span class=\"tooltip-convert\">advantage</span><span> on action rolls to pick nonmagical locks, disarm nonmagical traps, or steal items from a target (either through stealth or by force).</p>",
+          "advantageSources": {
+            "Pick nonmagical locks": "Pick nonmagical locks",
+            "Disarm nonmagical traps": "Disarm nonmagical traps",
+            "Steal items from a target (either through stealth or by force)": "Steal items from a target (either through stealth or by force)"
+          }
         }
       }
     },
@@ -2119,7 +2139,10 @@
           "description": "<p><span>While you’re shrouded in low light or darkness, you gain a +1 bonus to your </span><span class=\"tooltip-convert\">Evasion</span><span> and make </span><span class=\"tooltip-convert\">attack rolls</span><span> with </span><span class=\"tooltip-convert\">advantage</span><span>.</p>"
         },
         "a1hDCNYDvF4dWt58": {
-          "name": "Shadowhunter Advantage Hint"
+          "name": "Shadowhunter Advantage Hint",
+          "advantageSources": {
+            "Attack rolls while shrouded in low light or darkness.": "Attack rolls while shrouded in low light or darkness."
+          }
         }
       }
     },
@@ -2544,7 +2567,10 @@
       "effects": {
         "ZMDyDwI5RHe427O4": {
           "name": "Disguised",
-          "description": "<p><span>Don the facade of any humanoid you can picture clearly in your mind. While disguised, you have </span><span class=\"tooltip-convert\">advantage</span><span> on </span><span class=\"tooltip-convert\">Presence</span><span> Rolls to avoid scrutiny.</p>"
+          "description": "<p><span>Don the facade of any humanoid you can picture clearly in your mind. While disguised, you have </span><span class=\"tooltip-convert\">advantage</span><span> on </span><span class=\"tooltip-convert\">Presence</span><span> Rolls to avoid scrutiny.</p>",
+          "advantageSources": {
+            "Presence Rolls to avoid scrutiny": "Presence Rolls to avoid scrutiny"
+          }
         }
       }
     },
@@ -2624,7 +2650,10 @@
       },
       "effects": {
         "eSfBBZ7IP8qirLu7": {
-          "name": "Veiled"
+          "name": "Veiled",
+          "advantageSources": {
+            "Attack rolls you make through the darkness": "Attack rolls you make through the darkness"
+          }
         }
       }
     },
@@ -2690,7 +2719,11 @@
       "effects": {
         "qWDojebJXMPIP629": {
           "name": "Advantage",
-          "description": "<p><span>You have </span><span class=\"tooltip-convert\">advantage</span><span> on </span><span class=\"tooltip-convert\">action rolls</span><span> to de-escalate violent situations or convince someone to follow your lead.</p>"
+          "description": "<p><span>You have </span><span class=\"tooltip-convert\">advantage</span><span> on </span><span class=\"tooltip-convert\">action rolls</span><span> to de-escalate violent situations or convince someone to follow your lead.</p>",
+          "advantageSources": {
+            "De-escalate violent situations.": "De-escalate violent situations.",
+            "Convince someone to follow your lead.": "Convince someone to follow your lead."
+          }
         },
         "i5dnpOxTtWV1J46k": {
           "name": "Emboldened (activate manually)",

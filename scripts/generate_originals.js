@@ -479,6 +479,7 @@ function convertEffects(payload, context = "effects") {
         entry.description = trimmed;
       }
     }
+    copySourcesFromChanges(effect.changes, entry);
     if (!Object.keys(entry).length) return;
     let effectId = typeof effect._id === "string" && effect._id.trim() ? effect._id.trim() : null;
     if (!effectId) {
@@ -558,6 +559,25 @@ function extractAdvantageList(payload) {
     if (text) values.push(text);
   }
   return values;
+}
+
+function copySourcesFromChanges(changes, target) {
+  if (!Array.isArray(changes) || !changes.length) return null;
+  const sources = {
+    "system.advantageSources": {},
+    "system.disadvantageSources": {}
+  };
+  for (const change of changes) {
+    if (!change || !sources[change.key]) continue;
+    const value = typeof change.value === "string" ? change.value.trim() : "";
+    if (!value) continue;
+    sources[change.key][value] = value;
+  }
+  for (const [key, bucket] of Object.entries(sources)) {
+    if (!Object.keys(bucket).length) continue;
+    const prop = key === "system.advantageSources" ? "advantageSources" : "disadvantageSources";
+    target[prop] = bucket;
+  }
 }
 
 function sortObject(value) {
