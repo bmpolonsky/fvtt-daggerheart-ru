@@ -1,7 +1,7 @@
 {
-  "label": "Communities",
+  "label": "Сообщества",
   "folders": {
-    "Community Features": "Community Features"
+    "Community Features": "Свойства"
   },
   "mapping": {
     "description": "system.description",
@@ -12,57 +12,57 @@
   },
   "entries": {
     "Brave Face": {
-      "name": "Brave Face",
-      "description": "<p>Once per session, when an attack would cause you to mark a Stress, you can <strong>spend a Hope</strong> instead.</p>"
+      "name": "Сдержанная Храбрость",
+      "description": "<p>Один раз за сессию, когда атака заставляет вас отметить Стресс, вы можете <strong>потратить Надежду</strong> вместо этого.</p>"
     },
     "Close-Knit": {
-      "name": "Close-Knit",
-      "description": "<p>Once per long rest, you can <strong>spend any number of Hope </strong>to give an ally the same number of Hope.</p>"
+      "name": "Сплоченные",
+      "description": "<p>Один раз до следующего продолжительного отдыха, вы можете потратить любое количество Надежды, чтобы дать союзнику такое же количество Надежды.</p>"
     },
     "Duneborne": {
-      "name": "Duneborne",
-      "description": "<p><em>Being part of a duneborne community means you’ve made a home among the shifting sands and arid climate of the desert.</em></p>"
+      "name": "Пустынное",
+      "description": "<p>Принадлежность к пустынному сообществу означает, что вы обрели дом среди сменяющихся песков и засушливого климата пустыни.</p>"
     },
     "Found Family": {
-      "name": "Found Family",
-      "description": "<p>Once per session, you can <strong>spend a Hope</strong> to use an ally’s community ability. When you do, your ally gains a Hope.</p>",
+      "name": "Найденная Семья",
+      "description": "<p>Раз за сессию вы можете <strong>потратить Надежду</strong>, чтобы использовать свойство сообщества союзника. Когда вы это делаете, союзник получает Надежду.</p>",
       "actions": {
         "Wrq0vEGLsiLWy8tl": {
-          "name": "Spend a Hope"
+          "name": "Потратить Надежду"
         }
       }
     },
     "Freeborne": {
-      "name": "Freeborne",
-      "description": "<p><em>Being part of a freeborne community means you’re from a collective that lived under tyrannical rule and is now liberated.</em></p>"
+      "name": "Освобождённое",
+      "description": "<p>Принадлежность к освобождённому сообществу означает, что вы происходите из народа, который жил под гнётом и обрел освобождение.</p>"
     },
     "Frostborne": {
-      "name": "Frostborne",
-      "description": "<p><em>Being a part of a frostborne community means you come from a place of snow and ice.</em></p>"
+      "name": "Морозное",
+      "description": "<p>Принадлежность к морозному сообществу означает, что вы выросли среди снегов и льдов.</p>"
     },
     "Hardy": {
-      "name": "Hardy",
-      "description": "<p>Once per rest, you can Help an Ally traverse difficult terrain without spending a Hope.</p>"
+      "name": "Закалённый",
+      "description": "<p>Один раз до следующего отдыха вы можете Помочь Союзнику преодолеть труднопроходимую местность, не тратя Надежду.</p>"
     },
     "Hearthborne": {
-      "name": "Hearthborne",
-      "description": "<p><em>Coming from a hearthborne community means you come from humble origins, having lived in a small village or the countryside.</em></p>"
+      "name": "Сельское",
+      "description": "<p>Принадлежность к сельскому сообществу означает, что вы происходите из скромных деревень и хуторов, где всё держится на близости и заботе.</p>"
     },
     "Oasis": {
-      "name": "Oasis",
-      "description": "<p>During a short rest, you or an ally can reroll a die used for a downtime action.</p>"
+      "name": "Оазис",
+      "description": "<p>Во время короткого отдыха вы или ваш союзник можете перебросить одну кость хода отдыха.</p>"
     },
     "Reborne": {
-      "name": "Reborne",
-      "description": "<p><em>You were once a member of another community, but you can no longer remember it.</em></p><p></p><p>At any point, when you’ve discovered the community you were once a part of, or have joined a new community, you can permanently trade this community card for that one instead.</p>"
+      "name": "Забытое",
+      "description": "<p>Вы некогда принадлежали другому сообществу, но больше этого не помните.</p><p>В любой момент, когда вы найдете сообщество, частью которого вы когда-то были, или присоединитесь к новому сообществу, вы можете навсегда обменять эту карту сообщества на новую.</p>"
     },
     "Unbound": {
-      "name": "Unbound",
-      "description": "<p>Once per session, when you make an action roll with Fear, you can change it to a roll with Hope instead.</p>"
+      "name": "Неукротимость",
+      "description": "<p>Один раз за сессию, когда вы совершаете бросок действия со Страхом, вы можете заменить его на бросок с Надеждой.</p>"
     },
     "Warborne": {
-      "name": "Warborne",
-      "description": "<p><em>Being part of a warborne community means you come from a place that is, or was, ravaged by war.</em></p>"
+      "name": "Военное",
+      "description": "<p>Принадлежность к военному сообществу означает, что вы выросли в землях, опалённых войной — прошлой или всё ещё бушующей</p>"
     }
   }
 }

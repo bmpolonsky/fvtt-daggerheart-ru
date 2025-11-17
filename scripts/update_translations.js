@@ -107,7 +107,8 @@ const ADVERSARY_FEATURE_RENDERERS = {
 // Алиасы для нормализации названий подклассов (исправление опечаток в API или системе).
 const SUBCLASS_NAME_ALIASES = {
   comaraderie: "camaraderie",
-  partnerinarms: "partnersinarms"
+  partnerinarms: "partnersinarms",
+  draininginvoaction: "draininginvocation"
 };
 
 // Алиасы для названий снаряжения.
@@ -194,8 +195,9 @@ const VOID_TRANSLATION_SUFFIXES = [
   "ancestries",
   "communities",
   "domains",
-  "adversaries",
-  "beastforms"
+  "transformations",
+  "weapons",
+  "adversaries--environments"
 ];
 const VOID_TRANSLATION_PREFIX = "the-void-unofficial.";
 
@@ -2448,130 +2450,161 @@ async function main() {
     }, { stats });
   }
 
-  async function updateAdversariesFile(path, { adversaryTop, featureMap }, stats) {
-    return updateEntries(path, (norm, entry, key) => {
-      if (!norm) return false;
-      const info = adversaryTop[norm];
-      if (info) {
-        entry.name = sanitizeName(info.name);
-        const raw = info.raw;
-        const desc = markdownToHtml(raw.short_description || raw.main_body || "");
-        if (desc) {
-          setHtmlField(entry, "description", desc);
-        } else {
-          delete entry.description;
-        }
-        if (raw.motives) setHtmlField(entry, "motivesAndTactics", raw.motives);
-        if (raw.weapon_name) entry.attack = sanitizeName(raw.weapon_name);
-        const experiences = raw.experiences;
-        if (experiences && entry.experiences) {
-          const values = experiences.split(",").map((v) => v.trim()).filter(Boolean);
-          const keys = Object.keys(entry.experiences);
-          for (let i = 0; i < keys.length; i += 1) {
-            const value = values[i] || experiences;
-            if (value) {
-              entry.experiences[keys[i]].name = sanitizeName(stripExperienceBonus(value));
-            }
-          }
-        }
-        const ruFeatures = raw.features || [];
-        const items = entry.items || {};
-        if (raw.slug === "battle-box") {
-          applyBattleBoxOverrides(entry, raw);
-        } else {
-          const featureList = ruFeatures.slice();
-          for (const itemEntry of Object.values(items)) {
-            const nextFeature = featureList.shift();
-            if (!nextFeature) break;
-            applyFeatureToItemEntry(itemEntry, nextFeature);
-          }
-        }
-        applyActionOverrides(entry);
-        return true;
+  function translateAdversaryEntry(norm, entry, adversaryTop, featureMap) {
+    if (!norm) return false;
+    const info = adversaryTop[norm];
+    if (info) {
+      entry.name = sanitizeName(info.name);
+      const raw = info.raw;
+      const desc = markdownToHtml(raw.short_description || raw.main_body || "");
+      if (desc) {
+        setHtmlField(entry, "description", desc);
+      } else {
+        delete entry.description;
       }
-      const featureInfo = featureMap[norm];
-      if (featureInfo) {
-        _updateFeature(entry, featureInfo);
-        applyActionOverrides(entry);
-        return true;
+      if (raw.motives) setHtmlField(entry, "motivesAndTactics", raw.motives);
+      if (raw.weapon_name) entry.attack = sanitizeName(raw.weapon_name);
+      const experiences = raw.experiences;
+      if (experiences && entry.experiences) {
+        const values = experiences.split(",").map((v) => v.trim()).filter(Boolean);
+        const keys = Object.keys(entry.experiences);
+        for (let i = 0; i < keys.length; i += 1) {
+          const value = values[i] || experiences;
+          if (value) {
+            entry.experiences[keys[i]].name = sanitizeName(stripExperienceBonus(value));
+          }
+        }
+      }
+      const ruFeatures = raw.features || [];
+      const items = entry.items || {};
+      if (raw.slug === "battle-box") {
+        applyBattleBoxOverrides(entry, raw);
+      } else {
+        const featureList = ruFeatures.slice();
+        for (const itemEntry of Object.values(items)) {
+          const nextFeature = featureList.shift();
+          if (!nextFeature) break;
+          applyFeatureToItemEntry(itemEntry, nextFeature);
+        }
       }
       applyActionOverrides(entry);
-      return false;
-    }, { stats });
+      return true;
+    }
+    const featureInfo = featureMap[norm];
+    if (featureInfo) {
+      _updateFeature(entry, featureInfo);
+      applyActionOverrides(entry);
+      return true;
+    }
+    applyActionOverrides(entry);
+    return false;
+  }
+
+  function translateEnvironmentEntry(norm, entry, environmentTop, featureMap, potentialLabels) {
+    if (!norm) return false;
+    const info = environmentTop[norm];
+    if (info) {
+      entry.name = sanitizeName(info.name);
+      const raw = info.raw;
+      const desc = markdownToHtml(raw.short_description || raw.main_body || "");
+      if (desc) {
+        setHtmlField(entry, "description", desc);
+      } else {
+        delete entry.description;
+      }
+      const ruFeatures = raw.features || [];
+      const items = entry.items || {};
+      if (ruFeatures.length && Object.keys(items).length) {
+        const featureList = ruFeatures.slice();
+        for (const [itemId, itemEntry] of Object.entries(items)) {
+          const feature = featureList.shift();
+          if (!feature) break;
+          const markdownSource = feature.main_body || "";
+          let body = markdownToHtml(markdownSource);
+          const previousDescription = itemEntry.description;
+          if (previousDescription) {
+            const prevPlain = extractPlainText(previousDescription);
+            const nextPlain = extractPlainText(body);
+            if (prevPlain && nextPlain && prevPlain === nextPlain) {
+              body = previousDescription;
+            } else {
+              body = preserveSecretSectionsFromSource(body, previousDescription);
+            }
+          }
+          itemEntry.name = sanitizeName(cleanAdversaryItemName(feature.name || ""));
+          if (body) {
+            setHtmlField(itemEntry, "description", body);
+            if (itemEntry.description) {
+              itemEntry.description = dedupeSecretContent(itemEntry.description);
+            }
+          } else {
+            delete itemEntry.description;
+          }
+        }
+      }
+      if (raw.impulses) setHtmlField(entry, "impulses", raw.impulses);
+      if (entry.potentialAdversaries && typeof entry.potentialAdversaries === "object") {
+        const slug = raw && raw.slug ? raw.slug : null;
+        const dynamicLabels = slug && potentialLabels ? potentialLabels[slug] || [] : [];
+        let index = 0;
+        for (const groupId of Object.keys(entry.potentialAdversaries)) {
+          const group = entry.potentialAdversaries[groupId];
+          if (!group || typeof group !== "object") {
+            index += 1;
+            continue;
+          }
+          const translated = dynamicLabels[index] || null;
+          if (translated) {
+            group.label = sanitizeName(translated);
+          }
+          index += 1;
+        }
+      }
+      applyActionOverrides(entry);
+      return true;
+    }
+    const featureInfo = featureMap[norm];
+    if (featureInfo) {
+      _updateFeature(entry, featureInfo);
+      applyActionOverrides(entry);
+      return true;
+    }
+    applyActionOverrides(entry);
+    return false;
+  }
+
+  async function updateAdversariesFile(path, { adversaryTop, featureMap }, stats) {
+    return updateEntries(path, (norm, entry) => translateAdversaryEntry(norm, entry, adversaryTop, featureMap), { stats });
   }
 
   async function updateEnvironmentsFile(path, { environmentTop, featureMap, potentialLabels }, stats) {
-    return updateEntries(path, (norm, entry) => {
-      if (!norm) return false;
-      const info = environmentTop[norm];
-      if (info) {
-        entry.name = sanitizeName(info.name);
-        const raw = info.raw;
-        const desc = markdownToHtml(raw.short_description || raw.main_body || "");
-        if (desc) {
-          setHtmlField(entry, "description", desc);
-        } else {
-          delete entry.description;
+    return updateEntries(
+      path,
+      (norm, entry) => translateEnvironmentEntry(norm, entry, environmentTop, featureMap, potentialLabels),
+      { stats }
+    );
+  }
+
+  async function updateAdversariesEnvironmentsFile(
+    path,
+    { adversaryTop, adversaryFeatureMap, environmentTop, environmentFeatureMap, potentialLabels },
+    stats
+  ) {
+    return updateEntries(
+      path,
+      (norm, entry) => {
+        const hasAdversaryData = adversaryTop[norm] || adversaryFeatureMap[norm];
+        if (hasAdversaryData) {
+          return translateAdversaryEntry(norm, entry, adversaryTop, adversaryFeatureMap);
         }
-        const ruFeatures = raw.features || [];
-        const items = entry.items || {};
-        if (ruFeatures.length && Object.keys(items).length) {
-          const featureList = ruFeatures.slice();
-          for (const [itemId, itemEntry] of Object.entries(items)) {
-            const feature = featureList.shift();
-            if (!feature) break;
-            const markdownSource = feature.main_body || "";
-            let body = markdownToHtml(markdownSource);
-            const previousDescription = itemEntry.description;
-            if (previousDescription) {
-              const prevPlain = extractPlainText(previousDescription);
-              const nextPlain = extractPlainText(body);
-              if (prevPlain && nextPlain && prevPlain === nextPlain) {
-                body = previousDescription;
-              } else {
-                body = preserveSecretSectionsFromSource(body, previousDescription);
-              }
-            }
-            itemEntry.name = sanitizeName(cleanAdversaryItemName(feature.name || ""));
-            if (body) {
-              setHtmlField(itemEntry, "description", body);
-              if (itemEntry.description) {
-                itemEntry.description = dedupeSecretContent(itemEntry.description);
-              }
-            } else {
-              delete itemEntry.description;
-            }
-          }
+        const hasEnvironmentData = environmentTop[norm] || environmentFeatureMap[norm];
+        if (hasEnvironmentData) {
+          return translateEnvironmentEntry(norm, entry, environmentTop, environmentFeatureMap, potentialLabels);
         }
-        if (raw.impulses) setHtmlField(entry, "impulses", raw.impulses);
-        if (entry.potentialAdversaries && typeof entry.potentialAdversaries === "object") {
-          const slug = raw && raw.slug ? raw.slug : null;
-          const dynamicLabels = slug && potentialLabels ? potentialLabels[slug] || [] : [];
-          let index = 0;
-          for (const groupId of Object.keys(entry.potentialAdversaries)) {
-            const group = entry.potentialAdversaries[groupId];
-            if (!group || typeof group !== "object") {
-              index += 1;
-              continue;
-            }
-            const translated = dynamicLabels[index] || null;
-            if (translated) {
-              group.label = sanitizeName(translated);
-            }
-            index += 1;
-          }
-        }
-        return true;
-      }
-      const featureInfo = featureMap[norm];
-      if (featureInfo) {
-        _updateFeature(entry, featureInfo);
-        applyActionOverrides(entry);
-        return true;
-      }
-      applyActionOverrides(entry);
-      return false;
-    }, { stats });
+        return false;
+      },
+      { stats }
+    );
   }
 
   const armorMap = createEquipmentMap(equipmentData, new Set(["armor"]), {
@@ -2801,6 +2834,44 @@ async function main() {
             updateBeastformsFile(filePaths[spec.key], {
               beastTop,
               featureMap: scopedFeatureMaps.beastform
+            }, stats)
+        };
+        break;
+      case "transformations":
+        task = {
+          key: spec.key,
+          file: spec.file,
+          run: () =>
+            updateBeastformsFile(filePaths[spec.key], {
+              beastTop,
+              featureMap: scopedFeatureMaps.beastform
+            }, stats)
+        };
+        break;
+      case "weapons":
+        task = {
+          key: spec.key,
+          file: spec.file,
+          run: () =>
+            applyEquipmentMap(
+              filePaths[spec.key],
+              weaponMap,
+              oldTranslations[spec.file] || {},
+              { stats }
+            )
+        };
+        break;
+      case "adversaries--environments":
+        task = {
+          key: spec.key,
+          file: spec.file,
+          run: () =>
+            updateAdversariesEnvironmentsFile(filePaths[spec.key], {
+              adversaryTop,
+              adversaryFeatureMap: scopedFeatureMaps.adversary,
+              environmentTop,
+              environmentFeatureMap: scopedFeatureMaps.environment,
+              potentialLabels: environmentPotentialLabels
             }, stats)
         };
         break;
