@@ -27,6 +27,7 @@ const ENDPOINTS = [
   "domain-card",
   "equipment",
   "beastform",
+  "transformation",
   "adversary",
   "environment",
   "rule"
@@ -120,7 +121,12 @@ const EQUIPMENT_NAME_ALIASES = {
 const FEATURE_NAME_ALIASES = {
   unshakeable: "unshakable",
   wailingleap: "jumpscare",
-  umbraveil: "umbralveil",
+  umbraveil: "umbralveil"
+};
+
+// Алиасы для записей трансформаций (расхождения имен в модуле и API).
+const TRANSFORMATION_ENTRY_ALIASES = {
+  demigodichorofthegod: "demigodichorofthegods"
 };
 
 const UNSTOPPABLE_NOTE_HTML =
@@ -1536,6 +1542,102 @@ function buildTopLevelMap(enEntries, ruEntries, descriptionFields, mainField = n
   return result;
 }
 
+function buildTransformationEntriesMap(enEntries, ruEntries) {
+  const ruBySlug = new Map();
+  for (const entry of ruEntries || []) {
+    if (!entry) continue;
+    const slug = entry.slug || (entry.id !== undefined && entry.id !== null ? String(entry.id) : null);
+    if (slug) {
+      ruBySlug.set(slug, entry);
+    }
+  }
+
+  const map = {};
+  for (const enEntry of enEntries || []) {
+    if (!enEntry) continue;
+    const slug = enEntry.slug || (enEntry.id !== undefined && enEntry.id !== null ? String(enEntry.id) : null);
+    if (!slug) continue;
+    const ruEntry = ruBySlug.get(slug);
+    if (!ruEntry) continue;
+    const ruFeatures = new Map();
+    for (const feature of ruEntry.features || []) {
+      if (!feature || feature.id === undefined || feature.id === null) continue;
+      ruFeatures.set(feature.id, feature);
+    }
+    const shortDescription = ruEntry.short_description || "";
+    const baseName = sanitizeName(ruEntry.name || enEntry.name || "") || "";
+    for (const feature of enEntry.features || []) {
+      if (!feature || feature.id === undefined || feature.id === null) continue;
+      const ruFeature = ruFeatures.get(feature.id);
+      if (!ruFeature) continue;
+      const keyName = `${enEntry.name || ""} - ${feature.name || ""}`.trim();
+      const norm = normalize(keyName);
+      if (!norm) continue;
+      const featureName = sanitizeName(ruFeature.name || feature.name || "") || "";
+      map[norm] = {
+        name: featureName ? `${baseName} - ${featureName}` : baseName,
+        shortDescription,
+        featureName,
+        featureBody: ruFeature.main_body || ""
+      };
+    }
+  }
+  return map;
+}
+
+function renderTransformationDescription(info) {
+  if (!info) return "";
+  const sections = [];
+  const shortHtml = markdownToHtml(info.shortDescription || "");
+  if (shortHtml) {
+    sections.push(shortHtml);
+  }
+  const body = (info.featureBody || "").trim();
+  if (body) {
+    const featureMarkdown = info.featureName ? `${info.featureName}: ${body}` : body;
+    const featureHtml = markdownToHtml(featureMarkdown);
+    if (featureHtml) {
+      sections.push(featureHtml);
+    }
+  }
+  return sections.join("");
+}
+
+function extractUuidParagraphs(html) {
+  if (!html) return [];
+  const matches = html.match(/<p[^>]*>[\s\S]*?@UUID\[[^\]]+\][\s\S]*?<\/p>/gi);
+  return matches ? matches : [];
+}
+
+function appendUuidParagraphs(html, legacyHtml) {
+  const fragments = extractUuidParagraphs(legacyHtml);
+  if (!fragments.length) return html;
+  let result = html || "";
+  for (const fragment of fragments) {
+    if (!result.includes(fragment)) {
+      result = `${result}${fragment}`;
+    }
+  }
+  return result;
+}
+
+const TRANSFORMATION_ACTION_NAME_TRANSLATIONS = {
+  "mark stress": "Отметить Стресс",
+  damage: "Урон"
+};
+
+function translateTransformationActionNames(actions) {
+  if (!actions) return;
+  for (const action of Object.values(actions)) {
+    if (!action || typeof action.name !== "string") continue;
+    const normalized = action.name.trim().toLowerCase();
+    const translated = TRANSFORMATION_ACTION_NAME_TRANSLATIONS[normalized];
+    if (translated) {
+      action.name = translated;
+    }
+  }
+}
+
 function prepareCommunityMainBody({ value }) {
   if (!value) return value;
   const withoutImages = value
@@ -1666,6 +1768,7 @@ async function main() {
     domainData,
     equipmentData,
     beastData,
+    transformationData,
     adversaryData,
     environmentData,
     ruleData
@@ -1711,6 +1814,7 @@ async function main() {
   const domainTop = buildTopLevelMap(domainData.en, domainData.ru, [], "main_body");
   const equipmentTop = buildTopLevelMap(equipmentData.en, equipmentData.ru, [], "main_body");
   const beastTop = buildTopLevelMap(beastData.en, beastData.ru, ["main_body", "short_description"]);
+  const transformationEntries = buildTransformationEntriesMap(transformationData.en, transformationData.ru);
   const adversaryTop = buildTopLevelMap(adversaryData.en, adversaryData.ru, ["short_description"]);
   const environmentTop = buildTopLevelMap(environmentData.en, environmentData.ru, ["short_description"]);
   const ruleTop = buildTopLevelMap(ruleData.en, ruleData.ru, ["description"], "main_body");
@@ -2453,6 +2557,31 @@ async function main() {
     }, { stats });
   }
 
+  async function updateTransformationsFile(path, { transformationEntries }, stats) {
+    return updateEntries(path, (norm, entry) => {
+      if (!norm) return false;
+      const lookup = resolveAlias(norm, TRANSFORMATION_ENTRY_ALIASES);
+      const info = transformationEntries[lookup];
+      if (!info) return false;
+
+      if (info.name) {
+        entry.name = sanitizeName(info.name);
+      }
+      const originalDescription = entry.description;
+      let descriptionHtml = renderTransformationDescription(info);
+      descriptionHtml = appendUuidParagraphs(descriptionHtml, originalDescription);
+      if (descriptionHtml) {
+        setHtmlField(entry, "description", descriptionHtml);
+      } else {
+        delete entry.description;
+      }
+
+      translateTransformationActionNames(entry.actions);
+      applyActionOverrides(entry);
+      return true;
+    }, { stats });
+  }
+
   function translateAdversaryEntry(norm, entry, adversaryTop, featureMap) {
     if (!norm) return false;
     const info = adversaryTop[norm];
@@ -2845,9 +2974,8 @@ async function main() {
           key: spec.key,
           file: spec.file,
           run: () =>
-            updateBeastformsFile(filePaths[spec.key], {
-              beastTop,
-              featureMap: scopedFeatureMaps.beastform
+            updateTransformationsFile(filePaths[spec.key], {
+              transformationEntries
             }, stats)
         };
         break;

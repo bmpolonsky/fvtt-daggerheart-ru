@@ -26,70 +26,70 @@
   },
   "entries": {
     "Demigod - Ichor of the God": {
-      "name": "Demigod - Ichor of the God",
-      "description": "<p>Demigods are creatures whose veins flow with the blood of the gods.</p><p><br /></p><p>Ichor of the Gods: Your advantage die is always a d10 instead of a d6.</p>"
+      "name": "Полубог - Ихор Богов",
+      "description": "<p>Полубоги — существа, в жилах которых течет кровь богов.</p><p>Ихор Богов: Ваша кость преимущества всегда равна <strong>d10</strong> вместо d6.</p>"
     },
     "Demigod - Weight of Divinity": {
-      "name": "Demigod - Weight of Divinity",
-      "description": "<p>Demigods are creatures whose veins flow with the blood of the gods.</p><p><br /></p><p>Weight of Divinity: When you roll a failure with Fear, you must mark a Stress or give the GM an additional Fear.</p>",
+      "name": "Полубог - Бремя Божественности",
+      "description": "<p>Полубоги — существа, в жилах которых течет кровь богов.</p><p>Бремя Божественности: Когда вы проваливаете бросок со Страхом, вы должны <strong>отметить Стресс</strong> или дать Мастеру дополнительный Страх.</p>",
       "actions": {
         "91OiwLVKKsTTn1tH": {
-          "name": "Mark Stress"
+          "name": "Отметить Стресс"
         }
       }
     },
     "Ghost - Ephemeral": {
-      "name": "Ghost - Ephemeral",
-      "description": "<p>Ghosts are a spirit trapped between the mortal realm and the veil of death.</p><p><br /></p><p>Ephemeral: Cross out a Hit Point slot when you take this card and when you increase your tier. When you mark your last Hit Point, you must choose Blaze of Glory as your death move.</p>"
+      "name": "Призрак - Эфемерный",
+      "description": "<p>Призраки — духи, застрявшие между миром смертных и завесой смерти.</p><p>Эфемерный: Когда вы берёте эту карту — и каждый раз, когда повышаете ранг, — зачеркните одну Ячейку Ран.</p><p>Если вы отмечаете последнюю Ячейку, вашим Предсмертным Ходом должен стать \"Пламя Славы\".</p>"
     },
     "Ghost - Spirit Form": {
-      "name": "Ghost - Spirit Form",
-      "description": "<p>Ghosts are a spirit trapped between the mortal realm and the veil of death.</p><p><br /></p><p>Spirit Form: Your physical form can shift between corporeal and incorporeal. Mark a Stress to transition into and out of your Spirit Form. While in Spirit Form, you can move through solid objects, are immune to physical damage, and take double magic damage. You can spend 2 Hope to attack or physically interact with the material world.</p>",
+      "name": "Призрак - Призрачная Форма",
+      "description": "<p>Призраки — духи, застрявшие между миром смертных и завесой смерти.</p><p>Призрачная Форма: Ваша физическая оболочка может переходить из материального состояния в нематериальное.</p><p><strong>Отметьте Стресс</strong>, чтобы войти в или выйти из Призрачной Формы.</p><p>Пока вы в этом состоянии, вы можете проходить сквозь твёрдые объекты,</p><p>а также становитесь иммунным к физическому урону, но получаете удвоенный магический урон.</p><p>Чтобы атаковать или взаимодействовать с материальным миром, потратьте <strong>2 Надежды</strong>.</p>",
       "actions": {
         "N8EWQEXilcjeXn3X": {
-          "name": "Mark Stress"
+          "name": "Отметить Стресс"
         }
       }
     },
     "Reanimated - Corpse": {
-      "name": "Reanimated - Corpse",
-      "description": "<p>Reanimated are corpses who have been brought back to life.</p><p><br /></p><p>Corpse: When you Risk It All on a death move, if you fail, you can permanently mark a Hit Point to succeed instead. When you do, you still use the Hope Die’s value to clear Hit Points and Stress.</p>"
+      "name": "Оживший - Труп",
+      "description": "<p>Ожившие — трупы, которые были возвращены к жизни.</p><p>Труп: Когда в качестве предсмертного хода вы выбираете \"Рискнуть Всем\" и терпите неудачу, вы можете вместо этого навсегда <strong>отметить Рану</strong>, чтобы добиться успеха. Когда вы это делаете, вы все равно используете значение кости Надежды, чтобы снять Раны и Стресс.</p>"
     },
     "Reanimated - Stitch Up": {
-      "name": "Reanimated - Stitch Up",
-      "description": "<p>Reanimated are corpses who have been brought back to life.</p><p><br /></p><p>Stitch Up: During a rest, you can only clear Hit Points if you have access to remains from a recently deceased creature. Describe how using this material affects your appearance. You cannot clear Hit Points by any means except a downtime move or the Risk It All death move.</p>"
+      "name": "Оживший - Зашивание",
+      "description": "<p>Ожившие — трупы, которые были возвращены к жизни.</p><p>Зашивание: Во время отдыха вы можете очищать Раны только если у вас есть доступ к останкам недавно умершего существа. Опишите, как использование этого материала повлияло на ваш внешний вид. Вы не можете очищать Раны никаким образом, помимо ходов отдыха или предсмертного хода \"Рискнуть Всем\".</p>"
     },
     "Shapeshifter - Change Shape": {
-      "name": "Shapeshifter - Change Shape",
-      "description": "<p>Shapeshifters are creatures that can change their physical form.</p><p><br /></p><p>Change Shape: During a long rest, you can spend a downtime move to swap your current ancestry with another. When you do, describe how your appearance changes.</p>"
+      "name": "Перевертыш - Изменение Облика",
+      "description": "<p>Перевертыши — существа, способные изменять свою физическую форму.</p><p>Изменение Облика: Во время продолжительного отдыха вы можете потратить ход отдыха, чтобы заменить вашу текущую родословную на другую. При этом опишите, как изменился ваш внешний вид.</p>"
     },
     "Shapeshifter - Only Skin Deep": {
-      "name": "Shapeshifter - Only Skin Deep",
-      "description": "<p>Shapeshifters are creatures that can change their physical form.</p><p><br /></p><p>Only Skin Deep: When you Change Shape, you only gain the benefit of one of the ancestry’s features, which you select when you choose the ancestry. You can spend a downtime move to switch which of your ancestry’s features you gain the benefit of.</p>"
+      "name": "Перевертыш - Лишь Кожа",
+      "description": "<p>Перевертыши — существа, способные изменять свою физическую форму.</p><p>Лишь Кожа: Меняя облик, вы перенимаете лишь одно свойство новой родословной, на ваш выбор.</p><p>Вы также можете тратить ход отдыха чтобы сменить это свойство на другое свойство этой родословной.</p>"
     },
     "Vampire - Fangs": {
-      "name": "Vampire - Fangs",
-      "description": "<p>Vampires are undead, fanged creatures that drink the blood of the living.</p><p></p><p><br /></p><p>Fangs: Make a Strength Roll to bite a target within Melee range, dealing d8 physical damage using your Proficiency.</p><p>@UUID[Compendium.the-void-unofficial.weapons.Item.8LzsXmE2aEgjDPRP]{Fangs}</p>"
+      "name": "Вампир - Клыки",
+      "description": "<p>Вампиры — нежить с клыками, питающаяся кровью живых существ.</p><p>Клыки: Совершите <strong>Бросок Силы</strong>, чтобы укусить цель, находящуюся Вплотную, нанеся ей <strong>d8</strong> физического урона, используя ваше Мастерство.</p><p>@UUID[Compendium.the-void-unofficial.weapons.Item.8LzsXmE2aEgjDPRP]{Клыки}</p>"
     },
     "Vampire - Feed": {
-      "name": "Vampire - Feed",
-      "description": "<p>Vampires are undead, fanged creatures that drink the blood of the living.</p><p></p><p><br /></p><p>Feed: On a successful Fangs attack against a living creature, you can mark a Stress to Feed. Place a number of tokens on this card equal to the number of Hit Points your target marks. You can hold up to 5 tokens at a time. Spend a token before an action roll to make your Fear Die a d20 instead. When you take a Long Rest, remove a token. If there are no tokens on this card, all your action and reaction rolls are made with disadvantage.</p>"
+      "name": "Вампир - Питание",
+      "description": "<p>Вампиры — нежить с клыками, питающаяся кровью живых существ.</p><p>Питание: При успешной атаке Клыками против живого существа вы можете <strong>отметить Стресс</strong> для Питания. Поместите на эту карту количество жетонов, равное количеству Ран, которая отметила ваша цель. Вы можете держать до <strong>5</strong> жетонов одновременно. Потратьте жетон перед броском действия, чтобы ваша кость Страха стала <strong>d20</strong>. Когда вы делаете Продолжительный Отдых, снимите жетон. Если на этой карте нет жетонов, все ваши броски действия и реакции совершаются с помехой.</p>"
     },
     "Werewolf - Frenzy": {
-      "name": "Werewolf - Frenzy",
-      "description": "<p>Werewolves are creatures who transform into supernatural wolves.</p><p></p><p><br /></p><p>Frenzy: When you mark your last Stress while in Wolf Form, you go into a Frenzy. Roll a number of d20s equal to your tier and automatically deal that much physical damage to all creatures within Very Close range. Then drop out of Wolf Form.</p>",
+      "name": "Оборотень - Бешенство",
+      "description": "<p>Оборотни — существа, которые превращаются в сверхъестественных волков.</p><p>Бешенство: Когда вы отмечаете свой последний Стресс находясь в Облике Волка, вы впадаете в Бешенство. Бросьте количество <strong>d20</strong>, равное вашему рангу, и автоматически нанесите столько же физического урона всем существам в пределах Близкой дистанции. После этого покиньте Облик Волка.</p>",
       "actions": {
         "LUtAWVWH5JaDlixp": {
-          "name": "Damage"
+          "name": "Урон"
         }
       }
     },
     "Werewolf - Wolf Form": {
-      "name": "Werewolf - Wolf Form",
-      "description": "<p>Werewolves are creatures who transform into supernatural wolves.</p><p></p><p><br /></p><p>Wolf Form: When you mark one or more Hit Points, you can also mark a Stress to enter your Wolf Form. While in this form, gain a d10 Wolf Die that you add to all attack and damage rolls. When you would gain a Hope while in Wolf Form, you mark a Stress instead.</p>",
+      "name": "Оборотень - Облик Волка",
+      "description": "<p>Оборотни — существа, которые превращаются в сверхъестественных волков.</p><p>Облик Волка: Когда вы отмечаете одну или несколько Ран, вы можете <strong>отметить Стресс</strong>, чтобы принять Облик Волка. Находясь в этом облике, вы получаете <strong>d10</strong> Кость Волка, которая прибавляется ко всем броскам атак и урона. Когда вы получаете Надежду находясь в Облике Волка, вместо этого вы отмечаете Стресс.</p>",
       "actions": {
         "DK7iGDB26DGrdxG9": {
-          "name": "Mark Stress"
+          "name": "Отметить Стресс"
         }
       }
     }
