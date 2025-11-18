@@ -47,6 +47,7 @@ const VERSION = toCalVer(process.argv[2] || new Date().toISOString().slice(0, 10
 // --- Пути ---
 const MODULE_PATH = path.resolve(BASE_DIR, MODULE_FOLDER);
 const MANIFEST_PATH = path.join(MODULE_PATH, "module.json");
+const PACKAGE_JSON_PATH = path.join(BASE_DIR, "package.json");
 
 // --- Утилиты ---
 const fail = (msg) => {
@@ -101,6 +102,15 @@ function updateManifest(manifest, zipName) {
   return manifest;
 }
 
+function updatePackageJsonVersion() {
+  ensureExists(PACKAGE_JSON_PATH, "package.json не найден в корне репозитория");
+  const raw = fs.readFileSync(PACKAGE_JSON_PATH, "utf8");
+  const pkg = JSON.parse(raw);
+  pkg.version = VERSION;
+  fs.writeFileSync(PACKAGE_JSON_PATH, JSON.stringify(pkg, null, 2) + "\n");
+  console.log("📝 package.json обновлён (version)");
+}
+
 function stageReleaseContent() {
   // Пересобираем release/ с нуля
   fs.rmSync(RELEASE_ROOT, { recursive: true, force: true });
@@ -133,6 +143,7 @@ function zipReleaseFolder(zipName) {
 function main() {
   ensureExists(MODULE_PATH, `Папка ${MODULE_FOLDER} не найдена`);
   ensureExists(MANIFEST_PATH, "Файл module.json не найден в корне модуля");
+  ensureExists(PACKAGE_JSON_PATH, "package.json не найден в корне репозитория");
 
   const initial = readManifest();
 
@@ -142,6 +153,7 @@ function main() {
 
   // Обновляем manifest (version + download)
   const manifest = updateManifest(initial, ZIP_NAME);
+  updatePackageJsonVersion();
 
   // Стадия релиза и упаковка
   stageReleaseContent();
