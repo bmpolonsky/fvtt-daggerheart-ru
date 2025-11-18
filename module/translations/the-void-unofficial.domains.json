@@ -1,18 +1,18 @@
 {
   "label": "Domains",
   "folders": {
-    "Blood": "Blood",
-    "Level 01": "Level 01",
-    "Level 02": "Level 02",
-    "Level 03": "Level 03",
-    "Level 04": "Level 04",
-    "Level 05": "Level 05",
-    "Level 06": "Level 06",
-    "Level 07": "Level 07",
-    "Level 08": "Level 08",
-    "Level 09": "Level 09",
-    "Level 10": "Level 10",
-    "Dread": "Dread"
+    "Blood": "Кровь",
+    "Level 01": "Уровень 01",
+    "Level 02": "Уровень 02",
+    "Level 03": "Уровень 03",
+    "Level 04": "Уровень 04",
+    "Level 05": "Уровень 05",
+    "Level 06": "Уровень 06",
+    "Level 07": "Уровень 07",
+    "Level 08": "Уровень 08",
+    "Level 09": "Уровень 09",
+    "Level 10": "Уровень 10",
+    "Dread": "Ужас"
   },
   "mapping": {
     "description": "system.description",
@@ -27,7 +27,7 @@
       "description": "<p><strong>Отметьте Стресс</strong>, чтобы превратиться в существо, питающееся страхом. Находясь в этой форме, ваши броски урона получают <strong>+1d6</strong>, за каждый жетон Страха у Мастера. Кроме того, вы получаете Надежду, когда Мастер использует свойство страха противника в пределах Средней дистанции.</p><p>Вы должны <strong>потратить Надежду</strong>, чтобы совершать броски действия в этой форме. В противном случае вы выходите из этой формы.</p>",
       "actions": {
         "h0M9skrk3ZHoJN3y": {
-          "name": "Mark a Stress"
+          "name": "Отметить Стресс"
         }
       }
     },
@@ -36,13 +36,13 @@
       "description": "<p>Совершите <strong>Бросок Заклинания</strong> против цели в пределах Далекой дистанции. При успехе цель получает <strong>d6+1</strong> магического урона, используя ваше Мастерство, и в следующий раз, когда цель наносит урон союзнику, он будет уменьшен наполовину. Если вы преуспеваете со Страхом, вместо этого цель получает <strong>d10+1</strong> магического урона, используя ваше Мастерство.</p>",
       "actions": {
         "uV0uqW0vTYOU8G5a": {
-          "name": "Spellcast Roll"
+          "name": "Бросок Заклинания"
         },
         "U9WzF1ggi2gD6GhS": {
-          "name": "Damage (Hope)"
+          "name": "Урон (Надежда)"
         },
         "bE8h8BujouIvRe6I": {
-          "name": "Damage (Fear)"
+          "name": "Урон (Страх)"
         }
       }
     },
@@ -51,10 +51,10 @@
       "description": "<p>Make a Spellcast Roll against a target within Far range. On a success, mark a Stress as you slow the target’s vitality. The target is temporarily Restrained and temporarily Vulnerable. Each time the target is spotlighted while either of these conditions persists on them, the target takes d10 magic damage using your Profi ciency. The spell ends early on the target if you use it again.</p>",
       "actions": {
         "a7O0qVSCOvL6460p": {
-          "name": "Mark Stress"
+          "name": "Отметить Стресс"
         },
         "JoF7vm39bqE7elsT": {
-          "name": "Damage"
+          "name": "Урон"
         }
       }
     },
@@ -63,7 +63,7 @@
       "description": "<p>Make a Spellcast Roll against a creature (living or dead) within Far range. On a success, spend a Hope to control the target by causing them to move, attack, or both. If you do both, you choose the order. If you cause the creature to move, they move to a location you choose that’s within Close range of them. If you cause the creature to attack, make a Spellcast Roll against a target within Melee range of them. On a success, deal d10 physical damage using your Proficiency</p>",
       "actions": {
         "1XsZ5bi8etvZSkAc": {
-          "name": "Spend Hope"
+          "name": "Потратить Надежду"
         }
       }
     },
@@ -72,7 +72,7 @@
       "description": "<p>Make a Spellcast Roll against a target within Far range. On a success, mark a Stress to deal d10 magic damage to the target using your Proficiency. On a success with Hope, the target also marks a Stress. On a roll with Fear, mark a Stress.</p>",
       "actions": {
         "heFBYHKGNPMnWV6N": {
-          "name": "Damage"
+          "name": "Урон"
         }
       }
     },
@@ -85,7 +85,7 @@
       "description": "<p>Once perrest, spend a Hope to unleash waves of blood around yourself. Make a single Spellcast Roll against each adversary within Close range. On a success, a target marks a Hit Point and a Stress. On a failure, a target marks a Stress. Each ally within Close range marks a Stress but clears a Hit Point.</p>",
       "actions": {
         "iwOmlSsL1300AuKm": {
-          "name": "Spend Hope"
+          "name": "Потратить Надежду"
         }
       }
     },
@@ -94,7 +94,7 @@
       "description": "<p>When you deal damage to a creature, mark a Stress to sear a red, magical mark on them. Until this mark disappears, you always know the direction of the marked creature relative to you, and that creature marks a Stress each time it deals damage to you or an ally of yours within Very Close range of you. The mark disappears when you use this spell again.</p>",
       "actions": {
         "NPHmC7BSCkxKuyp3": {
-          "name": "Mark a Stress"
+          "name": "Отметить Стресс"
         }
       }
     },
@@ -103,7 +103,7 @@
       "description": "<p>Make a Spellcast Roll (12). On a success, mark a Hit Point as you conjure a bead of blood, which you lob at a point within Farrange. A wave of heat fi lls the area within Very Close range of that point, igniting the internal vitals of those caught within. Each target within the area marks 1 Hit Point. On a success with Hope, each target within the area instead marks 2 Hit Points.</p>",
       "actions": {
         "qwSGmwPfVdo73QVO": {
-          "name": "Mark HP"
+          "name": "Отметить Рану"
         }
       }
     },
@@ -112,7 +112,7 @@
       "description": "<p>Отметьте <strong>2 Стресса</strong>, чтобы временно <em>Сковать</em> цель в пределах Средней дистанции. Когда <em>Скованное</em> существо наносит урон, цель его атаки уменьшает количество отмеченных Ран на одну. Вы не можете иметь более одного <em>Скованного</em> существа одновременно.</p>",
       "actions": {
         "ggYMquEUvkhGNNDU": {
-          "name": "Mark 2 Stress"
+          "name": "Отметить 2 Стресса"
         }
       }
     },
@@ -121,7 +121,7 @@
       "description": "<p>When you would mark your last Hit Point, spend a Hope to mark a Stress instead.</p>",
       "actions": {
         "Ru8giJeYjpj4Wkc5": {
-          "name": "Spend Hope/Mark Stress"
+          "name": "Потратить Надежду/Отметить Стресс"
         }
       }
     },
@@ -138,7 +138,7 @@
       "description": "<p>Совершите <strong>Бросок Заклинания</strong> против всех противников в пределах Средней дистанции. Вы можете <strong>потратить Надежду</strong> для любых целей, против которых вы преуспели, и они должны совершить <strong>Бросок Реакции (14)</strong>. При провале, они получают <strong>d8+6</strong> магического урона, используя ваше Мастерство, будучи охваченными темным огнем. При успехе они получают половину урона.</p>",
       "actions": {
         "82rtYgOuXmZRCuog": {
-          "name": "Spellcast Roll"
+          "name": "Бросок Заклинания"
         }
       }
     },
@@ -147,7 +147,7 @@
       "description": "<p>После совершения успешной атаки, вы можете <strong>потратить 2 Надежды</strong>, чтобы поглотить силу цели. За каждую Рану, отмеченной целью от этой атаки, Мастер теряет Страх.</p>",
       "actions": {
         "jxbwIhqmWYtIQd9X": {
-          "name": "Spend 2 Hope"
+          "name": "Потратить 2 Надежды"
         }
       }
     },
@@ -156,14 +156,14 @@
       "description": "<p>Когда 4 или более карт домена в вашем инвентаре относятся к домену \"Ужаса\", вы получаете следующие преимущества:</p><ul><li>Когда вы преуспеваете со Страхом, вы можете <strong>отметить 2 Стресса</strong>, чтобы Мастер не получил Страх.</li></ul><ul><li>Один раз до следующего отдыха, при броске действия, вы можете добавить +1 к броску за каждый жетон Страха у Мастера.</li></ul>",
       "actions": {
         "Ky5wcwBqgm5bJCK1": {
-          "name": "Mark Stress",
+          "name": "Отметить Стресс",
           "description": "<p>Когда вы преуспеваете со Страхом, вы можете <strong>отметить 2 Стресса</strong>, чтобы Мастер не получил Страх.</p>"
         }
       },
       "effects": {
         "sNBuI2xIZAI4RgZy": {
-          "name": "Midnight-Touched",
-          "description": "<p class=\"Body-Foundation\">When 4 or more of the domain cards in your loadout are from the Midnight domain, gain the following benefits:</p><ul><li class=\"vertical-card-list-found\"><p>Once per rest, when you have 0 Hope and the GM would gain a Fear, you can gain a Hope instead.</p></li><li class=\"vertical-card-list-found\"><p>When you make a successful attack, you can <strong>mark a Stress</strong> to add the result of your Fear Die to your damage roll.</p></li></ul>"
+          "name": "Затронутый Ужасом",
+          "description": "<p>Когда 4 или более карт домена в вашем инвентаре относятся к домену \"Ужаса\", вы получаете следующие преимущества:</p><ul><li>Когда вы преуспеваете со Страхом, вы можете <strong>отметить 2 Стресса</strong>, чтобы Мастер не получил Страх.</li><li>Один раз до следующего отдыха, при броске действия, вы можете добавить +1 к броску за каждый жетон Страха у Мастера.</li></ul>"
         }
       }
     },
@@ -176,10 +176,10 @@
       "description": "<p>Make a Spellcast Roll against a creature within Far range. On a success, mark a Hit Point to sear the target with a magical glyph that lasts until the GM spends 2 Fear to remove it or you take Severe damage. Whenever the target marks any Hit Points while the glyph remains, you can mark a Stress to make them mark an additional Hit Point.</p>",
       "actions": {
         "eJjJL3MIVLViaO3r": {
-          "name": "Mark HP"
+          "name": "Отметить Рану"
         },
         "5A3yXgfg8W01OdTC": {
-          "name": "Mark Stress"
+          "name": "Отметить Стресс"
         }
       }
     },
@@ -188,10 +188,10 @@
       "description": "<p>You launch a harpoon of blood at a location or creature within Farrange. If the target is a location, make a Spellcast Roll (13). On a success, mark a Stress to pull yourself to a position within Melee range of it. If the target is a creature, make a Spellcast Roll against it. On a success, mark a Stress to deal 3d8 magic damage to the target. You then pull the target straight toward yourself or pull yourself straight toward the target, ending within Melee range of each other.</p>",
       "actions": {
         "ogTYoxej37HWFOVO": {
-          "name": "Mark Stress"
+          "name": "Отметить Стресс"
         },
         "1mJczo48w5cuNl2B": {
-          "name": "Mark Stress and Damage"
+          "name": "Отметить Стресс и нанести урон"
         }
       }
     },
@@ -200,10 +200,10 @@
       "description": "<p>Когда союзник в пределах Средней дистанции получает урон от противника, которого вы видите, вы можете совершить <strong>Бросок Реакции</strong> против противника, используя вашу характеристику заклинателя. При успехе <strong>отметьте Стресс</strong>, чтобы нанести ему <strong>d6</strong> магического урона, используя ваше Мастерство.</p>",
       "actions": {
         "WVhpGOGf4znrsFxy": {
-          "name": "Spellcast Roll"
+          "name": "Бросок Заклинания"
         },
         "gGXHLdoNuiTv2Zgu": {
-          "name": "Mark a Stress"
+          "name": "Отметить Стресс"
         }
       }
     },
@@ -238,10 +238,10 @@
       "description": "<p>Make a Spellcast Roll against a creature within Very Far range. On a success, mark a Hit Point to conjure a tiny magical bloodworm that burrows into the target. On a success with Hope, the target isn’t aware of the worm within. </p><p></p><p>You have advantage on any Presence roll against the target, and whenever they make a roll, you can spend a Hope to give the roll disadvantage. You can destroy the bloodworm to cause the target to mark a Hit Point.</p>",
       "actions": {
         "ZPc1ahPAntVaVuqx": {
-          "name": "Mark HP"
+          "name": "Отметить Рану"
         },
         "lzsSCH6X5zBOsa7e": {
-          "name": "Spend Hope"
+          "name": "Потратить Надежду"
         }
       }
     },
@@ -254,7 +254,7 @@
       "description": "<p>Your practice of blood magic has seeped into your bloodstream, enhancing your vitals in moments of urgency. When you roll with advantage, use a d8 instead of a d6 as your advantage die if you have 1 or more Hit Points marked. After you make a Strength, an Agility, or a Finesse roll, you can mark a Hit Point to roll 1d8 and add it to the result.</p>",
       "actions": {
         "PJFq9megcZzATmj9": {
-          "name": "Mark HP"
+          "name": "Отметить Рану"
         }
       }
     },
@@ -263,7 +263,7 @@
       "description": "<p>Make a Spellcast Roll against an adversary within Close range. On a success, spend 2 Hope to mark 1–3 Hit Points, and the target marks twice the number of the Hit Points you marked. If this causes the target to mark their last Hit Point, you can clear the Hit Points you marked to cast this spell.</p>",
       "actions": {
         "6epIeOe2FMQ24mw8": {
-          "name": "Spend Hope"
+          "name": "Потратить Надежду"
         }
       }
     },
@@ -272,7 +272,7 @@
       "description": "<p>Когда противних в пределах Средней дистанции отмечает Стресс или получает Тяжелый урон, вы можете <strong>потратить Надежду</strong>, чтобы очистить Стресс или заставить Мастера потерять жетон Страха.</p>",
       "actions": {
         "vbMcxqfAgg6uykxh": {
-          "name": "Spend a Hope"
+          "name": "Потратить Надежду"
         }
       }
     },
@@ -285,7 +285,7 @@
       "description": "<p>Совершите <strong>Бросок Заклинания</strong> против цели в пределах Близкой дистанции. При успехе, один раз до следующего продолжительного отдыха, цель получает <strong>d20</strong> магического урона, используя ваше Мастерство. Вы очищаете количество Ран, равное количеству Ран, отмеченных целью от этой атаки. При успехе со Страхом, вы получаете +1 к Мастерству для этой атаки.</p>",
       "actions": {
         "ZUxdiPgJWHSc2Ig9": {
-          "name": "Spellcast Roll"
+          "name": "Бросок Заклинания"
         }
       }
     },
@@ -294,7 +294,7 @@
       "description": "<p><strong>Отметьте Стресс</strong>, чтобы призвать жуткий туман, который делает вас и всех целей в пределах Средней дистанции на мгновение нематериальными. Пока существо нематериально, оно может проходить сквозь твердые предметы и имеют иммунитет к физическому урону. Существо снова становится материальным после того, как пройдет сквозь твердый предмет или совершит бросок действия. Иначе этот эффект пропадает в конце сцены.</p>",
       "actions": {
         "zNvUolwaFrSNiAu4": {
-          "name": "Mark a Stress"
+          "name": "Отметить Стресс"
         }
       }
     },
@@ -307,23 +307,23 @@
       "description": "<p>Совершите <strong>Бросок Заклинания</strong> против цели в пределах Далекой дистанции. При успехе цель отмечает <strong>1d4 Стресса</strong>, и вы можете заставить ее убежать на одну ступень дистанции от вас (Средне -> Далеко, Далеко -> Очень Далеко, т.д.). При успехе со Страхом, цель становится временно <em>Уязвимой</em>.</p>",
       "actions": {
         "wklmI4hh5xUYL4OS": {
-          "name": "Spellcast Roll"
+          "name": "Бросок Заклинания"
         }
       }
     },
     "Umbra Veil": {
-      "name": "Umbra Veil",
-      "description": "<p>Once per rest, when you roll with Fear, you can <strong data-start=\"850\" data-end=\"878\">spend any number of Hope</strong> to place an equal number of tokens on this card, encasing yourself in a shadowy energy. After an attack roll is made against you, you can spend any number of tokens to give the attack roll a –1 penalty per token. On your next rest, remove all tokens from this card.</p>"
+      "name": "Завеса Теней",
+      "description": "<p>Один раз до следующего отдыха, при броске со Страхом, вы можете <strong>потратить любое количество Надежды</strong> и поместить на эту карту столько же жетонов, чтобы окружить себя теневой энергией. После того, как против вас был совершен бросок атаки, вы можете потратить любое количество жетонов, чтобы наложить на бросок атаки штраф <strong>-1</strong>, за каждый жетон. Во время следующего отдыха, снимите все жетоны с этой карты.</p>"
     },
     "Vampiric Strike": {
       "name": "Vampiric Strike",
       "description": "<p>When you make a successful attack roll against an adversary and cause them to mark 2 or more Hit Points, you can spend a Hope to clear a Hit Point or Stress.</p>",
       "actions": {
         "CyA18XaKclBsJfs6": {
-          "name": "Clear HP"
+          "name": "Очистить Рану"
         },
         "jsgezt0GPEZwKfkp": {
-          "name": "Clear Stress"
+          "name": "Очистить Стресс"
         }
       }
     },
@@ -341,16 +341,16 @@
       "description": "<p>Make a Spellcast Roll against a target within Very Close range. If you cast this on an ally, make the roll with advantage. On a success, mark a Stress, and choose one of the following eff ects: </p><ul><li><p>The target grows calmer and clears a Stress. On a success with Hope, they clear 2 Stress. </p></li><li><p>The target grows more anxious and marks a Stress. On a success with Hope, they mark 2 Stress.</p></li></ul>",
       "actions": {
         "2exmeeTCAD4WqgiU": {
-          "name": "Clear 1 Stress"
+          "name": "Очистить 1 Стресс"
         },
         "aUoh8aQcHJOUWMlI": {
-          "name": "Clear 2 Stress"
+          "name": "Очистить 2 Стресса"
         },
         "1FPv6RARCS5PXVQD": {
-          "name": "Mark 1 Stress"
+          "name": "Отметить 1 Стресс"
         },
         "CjLIfCbNE2P3obQY": {
-          "name": "Mark 2 Stress"
+          "name": "Отметить 2 Стресса"
         }
       }
     },
@@ -359,16 +359,16 @@
       "description": "<p>Вы можете магическим образом говорить прямо в уши существа, которое вы видите. Чтобы истязать его своими словами, совершите <strong>Бросок Заклинания</strong> против него. При успехе оно должно отметить Стресс и становится временно <em>Уязвимым</em>.</p>",
       "actions": {
         "JrGujKVX0intRWfj": {
-          "name": "Attack"
+          "name": "Атака"
         }
       }
     },
     "Wailing Leap": {
-      "name": "Wailing Leap",
-      "description": "<p>Whenever you deal magic damage to a target, you can mark a <strong>Stress</strong> to immediately teleport into Melee with that creature.</p>",
+      "name": "Пугающий скачок",
+      "description": "<p>Когда вы наносите магический урон цели, вы можете отметить <strong>Стресс</strong>, чтобы немедленно телепортироваться Вплотную к ней. Когда вы это делаете, цель становится <em>Уязвимой</em>, пока не отметит одну или больше Ран.</p>",
       "actions": {
         "bMbVBpDdepXrLbjs": {
-          "name": "Mark a Stress"
+          "name": "Отметить Стресс"
         }
       }
     },
@@ -381,16 +381,16 @@
       "description": "<p>Once per rest, mark a Hit Point to allow each ally within Close range to clear a Hit Point or a Stress. You can mark a Stress to allow those allies to clear one of each.</p>",
       "actions": {
         "WNAIadDdOxFPKDnI": {
-          "name": "Mark HP"
+          "name": "Отметить Рану"
         },
         "zYtMOEnJwxtOVxVI": {
-          "name": "Mark Stress"
+          "name": "Отметить Стресс"
         },
         "7HRAhpwU01ONCgkb": {
-          "name": "Clear HP"
+          "name": "Очистить Рану"
         },
         "lxtpj9N7niFoN2LW": {
-          "name": "Clear Stress"
+          "name": "Очистить Стресс"
         }
       }
     }
