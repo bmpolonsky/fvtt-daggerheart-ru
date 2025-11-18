@@ -1,14 +1,14 @@
 {
   "label": "Classes",
   "folders": {
-    "Assassin": "Assassin",
-    "Blood Hunter": "Blood Hunter",
-    "Brawler": "Brawler",
-    "Warlock": "Warlock",
-    "Witch": "Witch",
-    "Class Features": "Class Features",
-    "Class Items": "Class Items",
-    "Standard Take": "Standard Take"
+    "Assassin": "Ассасин",
+    "Blood Hunter": "Кровавый Охотник",
+    "Brawler": "Боец",
+    "Warlock": "Колдун",
+    "Witch": "Ведьма",
+    "Class Features": "Свойства",
+    "Class Items": "Предметы",
+    "Standard Take": "Базовый набор"
   },
   "mapping": {
     "description": "system.description",
@@ -25,23 +25,23 @@
   },
   "entries": {
     "50ft of Rope": {
-      "name": "50ft of Rope"
+      "name": "Верёвка (15 м)"
     },
     "A Carving That Symbolizes Your Patron": {
-      "name": "A Carving That Symbolizes Your Patron"
+      "name": "Вырезанный символ вашего покровителя"
     },
     "A List of Names with Several Marked Off": {
-      "name": "A List of Names with Several Marked Off"
+      "name": "Список имён, часть из которых уже вычеркнута"
     },
     "A Ring You Can't Remove": {
-      "name": "A Ring You Can't Remove"
+      "name": "Кольцо, которое нельзя снять"
     },
     "Assassin": {
-      "name": "Assassin",
-      "description": "<p>Assassins are masters in the art of slipping past their opponents’ defenses to inflict terrible pain and deadly strikes. When an assassin marks someone for death, they pursue their prey with unwavering intent.</p>"
+      "name": "Ассасин",
+      "description": "<p>Ассасины — настоящие мастера искусства проникать сквозь защиту противников, нанося страшную боль и смертельные удары. Когда ассасин метит жертву на смерть, он преследует её с неумолимой решимостью.</p>"
     },
     "Basic Supplies": {
-      "name": "Basic Supplies"
+      "name": "Базовые припасы"
     },
     "Blood Hunter": {
       "name": "Blood Hunter",
@@ -52,17 +52,17 @@
       "description": "<p>Spend 3 Hope to target a creature within Far range or in a vision from your Grim Psychometry. Until you finish a rest, take Severe damage, or use this feature again, you have advantage on all action rolls against the target.</p>",
       "actions": {
         "Z9pHUbpS5aoHCOPt": {
-          "name": "Spend Hope"
+          "name": "Потратить Надежду"
         }
       }
     },
     "Book about a Hobby": {
-      "name": "Book about a Hobby",
-      "description": "<p>This book is dedicated to a particular hobby of yours. You name it.</p>"
+      "name": "Книга о хобби",
+      "description": "<p>Эта книга посвящена вашему особому хобби. Назовите его.</p>"
     },
     "Brawler": {
-      "name": "Brawler",
-      "description": "<p>Experts in unarmed combat, brawlers hone their bodies into lethal weapons using impressive physical prowess. Whether they learned in a structured school environment or picked up their skills one fight at a time, the process is always rigorous, with brawlers developing their body and mind to work as one.</p><p></p>"
+      "name": "Боец",
+      "description": "<p>Эксперты в области рукопашного боя, бойцы превращают свои тела в смертоносное оружие, используя впечатляющие боевые приемы. Независимо от того, обучались ли они в организованной школе или приобретали навыки в ходе боевых столкновений, процесс всегда является жестким, в ходе которого бойцы развивают свое тело и разум, чтобы они работали как единое целое.</p>"
     },
     "Combo Strikes (D10)": {
       "name": "Combo Strikes (D10)",
@@ -101,12 +101,12 @@
       }
     },
     "Commune": {
-      "name": "Commune",
-      "description": "<p>Once per long rest, during a moment of calm, you can commune with an ancestor, deity, nature spirit, or otherworldly being. Ask them a question, then roll a number of d6s equal to your Spellcast trait. Choose one value from the rolled results and reference the chart below for the effect:</p><p>[[/r 1d6]]</p><ul><li><p>1-3: You taste a flavor, smell a scent, or feel a sensation relevant to the answer.</p></li><li><p>4-5: You hear sounds or see a vision relevant to the answer.</p></li><li><p>6: You psychically experience a scene relevant to the answer as if you were there.</p></li></ul>",
+      "name": "Гадание",
+      "description": "<p>Один раз до следующего отдыха, в момент спокойствия, вы можете установить контакт с предком, божеством, духом или потусторонним существом. Задайте им вопрос, после чего бросьте количество <strong>[[/r d6]]</strong>, равное вашей Характеристике Заклинателя. Выберите одно значение из полученных результатов и обратитесь к таблице ниже, чтобы узнать эффект:</p><ul><li><strong>1-3:</strong> Вы ощущаете вкус, запах или физическое чувство, связанное с ответом.</li></ul><ul><li><strong>4-5:</strong> Вы слышите звуки или видите видение, связанное с ответом.</li></ul><ul><li><strong>6:</strong> Вы ментально проживаете сцену, связанную с ответом, как если бы вы были там.</li></ul>",
       "actions": {
         "ukjfQXHHCr2d2TbU": {
-          "name": "Commune",
-          "description": "<p>Once per long rest, during a moment of calm, you can commune with an ancestor, deity, nature spirit, or otherworldly being. Ask them a question, then roll a number of d6s equal to your Spellcast trait. Choose one value from the rolled results and reference the chart below for the effect:</p><ul><li><p>1-3: You taste a flavor, smell a scent, or feel a sensation relevant to the answer.</p></li><li><p>4-5: You hear sounds or see a vision relevant to the answer.</p></li><li><p>6: You psychically experience a scene relevant to the answer as if you were there.</p></li></ul>"
+          "name": "Гадать",
+          "description": "<p>Один раз до следующего отдыха, в момент спокойствия, вы можете установить контакт с предком, божеством, духом или потусторонним существом. Задайте им вопрос, после чего бросьте количество <strong>d6</strong>, равное вашей Характеристике Заклинателя. Выберите одно значение из полученных результатов и обратитесь к таблице ниже, чтобы узнать эффект:</p><ul><li><strong>1-3:</strong> Вы ощущаете вкус, запах или физическое чувство, связанное с ответом.</li></ul><ul><li><strong>4-5:</strong> Вы слышите звуки или видите видение, связанное с ответом.</li></ul><ul><li><strong>6:</strong> Вы ментально проживаете сцену, связанную с ответом, как если бы вы были там.</li></ul>"
         }
       }
     },
@@ -115,7 +115,7 @@
       "description": "<p>You can enchant your strikes with bloodthirsty power at the cost of your vitality. Mark a Hit Point to enchant one of your active weapons.</p><p></p><p>Until you finish your next rest, that weapon deals physical or magic damage (choose when you use this feature) and an extra 1d6 damage when you hit with it. This extra damage increases to 2d6 at level 5 and 3d6 at level 8.</p>",
       "actions": {
         "eQ44S7qWqk3UoKTT": {
-          "name": "Mark HP"
+          "name": "Отметить Рану"
         }
       },
       "effects": {
@@ -131,15 +131,15 @@
       }
     },
     "Favor": {
-      "name": "Favor",
-      "description": "<p>Start with 3 Favor. During a rest, take one of your <strong>downtime</strong> actions to commune with your patron. When you do, gain Favor equal to your Presence. If you choose to forgo this offering, the GM instead gains a <strong>Fear</strong>.</p>"
+      "name": "Милость",
+      "description": "<p>Начните с 3 очками Милости. Во время отдыха, потратьте один из своих Ходов Отдыха в качестве дани вашему покровителю. Когда вы это сделаете, получите количество Милости, равное вашему Влиянию. Если вы решите воздержаться от этого подношения, Мастер получает Страх.</p>"
     },
     "Get In & Get Out": {
-      "name": "Get In & Get Out",
-      "description": "<p><strong>Spend a Hope</strong> to ask the GM for either a quick or inconspicuous way into or out of a building or structure you can see. The next roll you make that capitalizes on this information has <strong>advantage</strong>.</p>",
+      "name": "Вошёл — Вышел",
+      "description": "<p><strong>Потратьте Надежду</strong>, чтобы попросить Мастера указать либо быстрый, либо незаметный путь внутрь или наружу видимого вами здания или сооружения. Ваш следующий бросок, в котором вы используете эту информацию, совершается с преимуществом.</p>",
       "actions": {
         "V9BXDm9xen2flEZx": {
-          "name": "Spend a Hope"
+          "name": "Потратить Надежду"
         }
       }
     },
@@ -148,125 +148,125 @@
       "description": "<p>While inspecting a creature, a location, or an object within Very Close range, make a Spellcast Roll (12). On a success, mark a Stress to have a vision of the most recent violence involving the target, and until you finish a rest, you have advantage on any action roll to recall lore about things in the vision.</p>"
     },
     "Grim Resolve": {
-      "name": "Grim Resolve",
-      "description": "<p><strong>Spend 3 Hope</strong> to clea<strong>r 2 Stress.</strong></p>",
+      "name": "Мрачная Решимость",
+      "description": "<p><strong>Потратьте 3 Надежды</strong>, чтобы очистить 2 Стресса.</p>",
       "actions": {
         "ksk3CYijTOKkSjiE": {
-          "name": "Spend Hope"
+          "name": "Потратить Надежду"
         }
       }
     },
     "Hand Wraps": {
-      "name": "Hand Wraps",
-      "description": "<p>Those hand wraps were passed down to you by your mentor.</p>"
+      "name": "Обмотки для рук",
+      "description": "<p>Эти обмотки для рук достались вам от вашего наставника.</p>"
     },
     "Hex": {
-      "name": "Hex",
-      "description": "<p>When a creature causes you or an ally within Close range to mark any number of Hit Points, you can <strong>mark a Stress</strong> to <em>Hex</em> them. Action and damage rolls against a <em>Hexed</em> creature gain a bonus equal to your tier.</p><p></p><p>This condition lasts until the GM spends a number of Fear equal to your Spellcast trait to remove it or you <em>Hex</em> another creature. Otherwise, remove it when the scene ends.</p>",
+      "name": "Сглаз",
+      "description": "<p>Когда существо заставляет вас или союзника в пределах Средней дистанции отметить любое количество Ран, вы можете <strong>отметить Стресс</strong>, чтобы <em>Сглазить</em> его. Броски действий и урона против цели со <em>Сглазом</em> получают бонус, равный вашему рангу.</p><p>Это состояние действует до тех пор, пока Мастер не потратит количество Страха, равное вашей Характеристике Заклинателя, или пока вы не <em>Сглазите</em> другое существо. В противном случае, состояние заканчивается в конце сцены.</p>",
       "actions": {
         "12QoobkmHaZw8yDx": {
-          "name": "Mark Stress",
-          "description": "<p><span>When a creature causes you or an ally within Close range to mark any number of Hit Points, you can <strong>mark a Stress</strong> to <em>Hex</em> them. Action and damage rolls against a <em>Hexed</em> creature gain a bonus equal to your tier.</span></p>"
+          "name": "Отметить Стресс",
+          "description": "<p>Когда существо заставляет вас или союзника в пределах Средней дистанции отметить любое количество Ран, вы можете <strong>отметить Стресс</strong>, чтобы <em>Сглазить</em> его. Броски действий и урона против цели со <em>Сглазом</em> получают бонус, равный вашему рангу.</p>"
         }
       },
       "effects": {
         "PtMSqVyzo52cGpJn": {
-          "name": "Hex",
-          "description": "<p>Action and damage rolls against a Hexed creature gain a bonus equal to your tier.</p>"
+          "name": "Сглаз",
+          "description": "<p>Броски действий и урона против существа со Сглазом получают бонус, равный вашему рангу.</p>"
         }
       }
     },
     "I Am the Weapon": {
-      "name": "I Am the Weapon",
-      "description": "<p>While you don’t have any equipped weapons:</p><ul><li><p>You gain +1 bonus to Evasion.</p></li><li><p>Your unarmed strikes are considered a Melee weapon, use the trait of your choice, and deal d8+d6 phy damage using your Proficiency.</p></li></ul>",
+      "name": "Я и Есть Оружие",
+      "description": "<p>Пока у вас не экипировано любое оружие:</p><ul><li>Вы получаете <strong>+1</strong> к Уклонению.</li></ul><ul><li>Ваши безоружные удары считаются оружием с дистанцией Вплотную, используют характеристику по вашему выбору и наносят <strong>d8+d6</strong> физического урона используя ваше Мастерство.</li></ul>",
       "actions": {
         "VYXl3fEMzbWMUSQ8": {
-          "name": "Unarmed Strike",
-          "description": "<p><span>Your unarmed strikes are considered a Melee weapon, use the trait of your choice, and deal d8+d6 phy damage using your Proficiency.</span></p>"
+          "name": "Безоружный удар",
+          "description": "<p>Ваши безоружные удары считаются оружием с дистанцией Вплотную, используют характеристику по вашему выбору и наносят <strong>d8+d6</strong> физического урона используя ваше Мастерство.</p>"
         }
       },
       "effects": {
         "RzQRBURPH5ZgxMOO": {
-          "name": "Evasion +1",
-          "description": "<p>I Am the Weapon : You gain +1 bonus to Evasion.</p>"
+          "name": "Уклонение +1",
+          "description": "<p>Я и Есть Оружие: Вы получаете бонус +1 к Уклонению.</p>"
         }
       }
     },
     "Marked for Death": {
-      "name": "Marked for Death",
-      "description": "<p>On a successful weapon attack, you can <strong>mark a Stress</strong> to make the target Marked for Death. Attacks you make against a target that’s Marked for Death gain a bonus to damage equal to <strong>+1d4</strong> per tier.</p><p>You can only have one adversary <em>Marked for Death</em> at a time, and can’t transfer or remove the condition except by defeating the target. The GM can spend a number of Fear equal to your Proficiency to remove the <em>Marked for Death</em> condition. Otherwise, it ends automatically when you take a rest.</p>",
+      "name": "Метка Смерти",
+      "description": "<p>При успешной атаке оружием вы можете <strong>отметить Стресс</strong>, чтобы дать цели <em>Метку Смерти</em>. Атаки, которые вы совершаете против цели с <em>Меткой Смерти</em>, получают бонус к урону, равный <strong>+1d4</strong> за каждый ранг.</p><p>У вас может быть только один противник с <em>Меткой Смерти</em>, и вы не можете передавать или снимать это состояние, кроме как победив цель. Мастер может потратить количество Страха, равное вашему Мастерству, чтобы снять <em>Метку Смерти</em>. В противном случае она заканчивается автоматически, когда вы отдыхаете.</p>",
       "actions": {
         "f6GryCLwsDo0ejCu": {
-          "name": "Mark a Stress"
+          "name": "Отметить Стресс"
         },
         "U9jFMI21QDXEsi2Q": {
-          "name": "Damage"
+          "name": "Урон"
         }
       }
     },
     "Mortar and Pestle Inscribed With a Mysterious Insignia": {
-      "name": "Mortar and Pestle Inscribed With a Mysterious Insignia"
+      "name": "Ступка и пестик с загадочным символом"
     },
     "Patron's Boon": {
-      "name": "Patron's Boon",
-      "description": "<p><strong>Spend 3 Hope</strong> to call out to your patron for help, gaining <strong>1d4 Favor.</strong></p>",
+      "name": "Дар Покровителя",
+      "description": "<p><strong>Потратьте 3 Надежды</strong>, чтобы попросить вашего покровителя о помощи и получите <strong>1d4</strong> Милости.</p>",
       "actions": {
         "LswokIXWOo1W01ec": {
-          "name": "Spend Hope"
+          "name": "Потратить Надежду"
         }
       },
       "effects": {
         "JO6GClT2A29xddR1": {
-          "name": "Patron's Boon"
+          "name": "Дар Покровителя"
         }
       }
     },
     "Staggering Strike": {
-      "name": "Staggering Strike",
-      "description": "<p><strong>Spend 3 Hope</strong> when you succeed on an attack to temporarily Stagger your target and force them to mark a Stress. While Staggered, they have disadvantage on attack rolls.</p>",
+      "name": "Ошеломляющий Удар",
+      "description": "<p><strong>Потратьте 3 Надежды</strong>, когда вы преуспеете в атаке, чтобы временно <em>Ошеломить</em> цель и заставить ее отметить Стресс. Пока цель <em>Ошеломлена</em>, все ее броски атаки совершаются с помехой.</p>",
       "actions": {
         "F8rse36409E4a9As": {
-          "name": "Spend Hope",
-          "description": "<p><span>Spend 3 Hope</span><span> when you succeed on an attack to temporarily Stagger your target and force them to mark a Stress. While Staggered, they have disadvantage on attack rolls.</span></p>"
+          "name": "Потратить Надежду",
+          "description": "<p><strong>Потратьте 3 Надежды</strong>, когда вы преуспеете в атаке, чтобы временно <em>Ошеломить</em> цель и заставить ее отметить Стресс. Пока цель <em>Ошеломлена</em>, все ее броски атаки совершаются с помехой.</p>"
         }
       }
     },
     "Steel Needle": {
-      "name": "Steel Needle"
+      "name": "Стальная игла"
     },
     "Talking Skull": {
-      "name": "Talking Skull",
-      "description": "<p>An enchanted, talking skull.</p>"
+      "name": "Говорящий череп",
+      "description": "<p>Зачарованный, говорящий череп.</p>"
     },
     "Tiny Pet": {
-      "name": "Tiny Pet",
-      "description": "<p>A small, harmless animal bound as your familiar.</p>"
+      "name": "Крошечный питомец",
+      "description": "<p>Маленькое, безвредное животное, связанное с вами как ваш фамильяр.</p>"
     },
     "Torch": {
-      "name": "Torch"
+      "name": "Факел"
     },
     "Vial Holding a Foe’s Blood": {
-      "name": "Vial Holding a Foe’s Blood"
+      "name": "Флакон с кровью врага"
     },
     "Warlock": {
-      "name": "Warlock",
-      "description": "<p>As a warlock, you've pledged your life to a patron in exchange for great power.</p><p></p>"
+      "name": "Колдун",
+      "description": "<p>Те, кто отдал свою жизнь, а может быть, и душу, потустороннему покровителю в обмен на невероятную силу, известны как колдуны. Часто эти смертные находятся в отчаянии, которое приводит их к такой жертве — чтобы защитить себя или любимого человека, помочь своему сообществу, отомстить, повысить свой статус или иным образом продвинуть свои амбиции.</p>"
     },
     "Warlock Patron": {
-      "name": "Warlock Patron",
-      "description": "<p>You have committed yourself to a patron (god, demon, fae, or other supernatural entity) in exchange for power. Write their name in the space on your sheet. Then, choose their spheres of influence at GM discretion (like Nature &amp; Mischief, Love &amp; War, Knowledge &amp; Shadow, etc.), record them in the space provided and set their value to +2. Anytime you increase your <strong>tier</strong>, these spheres of influence also gain a permanent +1 bonus. Before making an <strong>action roll</strong> that relates to one of your patron’s spheres of influence, you can spend a Favor to call on them and add its value to the roll.</p>"
+      "name": "Покровитель Колдуна",
+      "description": "<p>Вы посвятили себя покровителю (богу, демону, фее или другому сверхъестественному существу) в обмен на силу. Запишите его имя выше. Затем выберите сферы его влияния, посоветовавшись с Мастером (Природа и Раздор, Любовь и Война, Знания и Тень и т.д.), запишите их ниже и выставите им значение +2. Каждый раз, когда вы повышаете свой ранг, эти сферы влияния также получают постоянный бонус +1. Перед тем, как совершить бросок действия, связанный с одной из сфер влияния вашего покровителя, вы можете <strong>потратить Милость</strong>, чтобы попросить его помощи и добавить его значение к броску.</p>"
     },
     "Witch": {
-      "name": "Witch",
-      "description": "<p>Magical practitioners who commune with the forces of nature and entities from realms beyond. Witches call forth their power through craft, rituals, incantations, herbs, stones, candles, and other tools to enact their will and conjure powerful spells.</p><h3><br />Background Questions</h3><ul><li><p>How did you first discover your affinity for magical craft?</p></li><li><p>You once used your power to help someone in a dire situation. Who were they and why did they come to you?</p></li><li><p>Your magic once opened a door best left closed. Who or what was on the other side?</p></li></ul><p></p><h3>Connections</h3><ul><li><p>What about my magical practice makes you most ill at ease?</p></li><li><p>I once appeared to you in a dream and shared a vision of the future. What did I tell you?</p></li><li><p>Why do you come to me for advice?</p></li></ul>"
+      "name": "Ведьма",
+      "description": "<p>Маги, которые вступают в контакт с силами природы и сущностями из миров за гранью. Ведьмы черпают свою силу через ремесло, ритуалы, заклинания, травы, камни, свечи и прочие атрибуты, чтобы воплощать свою волю и творить могущественные чары.</p>"
     },
     "Witch's Charm": {
-      "name": "Witch's Charm",
-      "description": "<p>When you or an ally within Far range rolls a failure on an action roll, you can <strong>spend 3 Hope</strong> to change it into a success with Fear instead.</p>",
+      "name": "Очарование Ведьмы",
+      "description": "<p>Когда вы или союзник в пределах Далекой дистанции проваливаете бросок действия, вы можете <strong>потратить 3 Надежды</strong>, чтобы превратить его в успех со Страхом.</p>",
       "actions": {
         "vLCzHEepLS96g9Ff": {
-          "name": "Spend Hope",
-          "description": "<p><span>When you or an ally within Far range rolls a failure on an action roll, you can </span><span>spend 3 Hope</span><span> to change it into a success with Fear instead.</span></p>"
+          "name": "Потратить Надежду",
+          "description": "<p>Когда вы или союзник в пределах Далекой дистанции проваливаете бросок действия, вы можете <strong>потратить 3 Надежды</strong>, чтобы превратить его в успех со Страхом.</p>"
         }
       }
     }
