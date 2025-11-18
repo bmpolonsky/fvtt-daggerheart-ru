@@ -23,8 +23,8 @@
   },
   "entries": {
     "Avatar of Terror": {
-      "name": "Avatar of Terror",
-      "description": "<p><strong data-start=\"6717\" data-end=\"6734\">Mark a Stress</strong> to transform into a creature fueled by fear. While in this form, your damage rolls gain a <strong data-start=\"6825\" data-end=\"6833\">+1d6</strong> bonus for each Fear the GM has. Additionally, gain a Hope when the GM uses a Fear feature on an adversary within Close range.<br data-start=\"6959\" data-end=\"6962\" />You must <strong data-start=\"6971\" data-end=\"6987\">spend a Hope</strong> to make an action roll while in this form. Otherwise, you drop out of this form.</p>",
+      "name": "Аватар Страха",
+      "description": "<p><strong>Отметьте Стресс</strong>, чтобы превратиться в существо, питающееся страхом. Находясь в этой форме, ваши броски урона получают <strong>+1d6</strong>, за каждый жетон Страха у Мастера. Кроме того, вы получаете Надежду, когда Мастер использует свойство страха противника в пределах Средней дистанции.</p><p>Вы должны <strong>потратить Надежду</strong>, чтобы совершать броски действия в этой форме. В противном случае вы выходите из этой формы.</p>",
       "actions": {
         "h0M9skrk3ZHoJN3y": {
           "name": "Mark a Stress"
@@ -32,8 +32,8 @@
       }
     },
     "Blighting Strike": {
-      "name": "Blighting Strike",
-      "description": "<p>Make a <strong>Spellcast Roll </strong>against a target within Far range. On a success, the target takes <strong>d6+1</strong> magic damage using your Proficiency and the next time the target deals damage to an ally, it is reduced by half. If you succeed with Fear, the target instead takes <strong>d10+1</strong> magic damage using your Proficiency.</p>",
+      "name": "Увядающий Удар",
+      "description": "<p>Совершите <strong>Бросок Заклинания</strong> против цели в пределах Далекой дистанции. При успехе цель получает <strong>d6+1</strong> магического урона, используя ваше Мастерство, и в следующий раз, когда цель наносит урон союзнику, он будет уменьшен наполовину. Если вы преуспеваете со Страхом, вместо этого цель получает <strong>d10+1</strong> магического урона, используя ваше Мастерство.</p>",
       "actions": {
         "uV0uqW0vTYOU8G5a": {
           "name": "Spellcast Roll"
@@ -108,8 +108,8 @@
       }
     },
     "Chains of Affliction": {
-      "name": "Chains of Affliction",
-      "description": "<p>Mark <strong data-start=\"2494\" data-end=\"2506\">2 Stress</strong> to temporarily <em data-start=\"2522\" data-end=\"2529\">Chain</em> a target within Close range. When a Chained creature deals damage, the target of their attack reduces the number of Hit Points they mark by one. You can't have more than one creature Chained at a time.</p>",
+      "name": "Оковы Мучений",
+      "description": "<p>Отметьте <strong>2 Стресса</strong>, чтобы временно <em>Сковать</em> цель в пределах Средней дистанции. Когда <em>Скованное</em> существо наносит урон, цель его атаки уменьшает количество отмеченных Ран на одну. Вы не можете иметь более одного <em>Скованного</em> существа одновременно.</p>",
       "actions": {
         "ggYMquEUvkhGNNDU": {
           "name": "Mark 2 Stress"
@@ -126,16 +126,16 @@
       }
     },
     "Damnation": {
-      "name": "Damnation",
-      "description": "<p>Make a <strong data-start=\"5969\" data-end=\"5987\">Spellcast Roll</strong> against a target within Far range. On a success, <strong data-start=\"6037\" data-end=\"6066\">mark any number of Stress</strong> to roll an equal number of <strong data-start=\"6094\" data-end=\"6102\">d20s</strong>, dealing magic damage equal to the total result. If the target is defeated as a result of this attack, all adversaries within Far range of the target mark a Stress.</p>"
+      "name": "Ужасная Кара",
+      "description": "<p>Совершите <strong>Бросок Заклинания</strong> против цели в пределах Далекой дистанции. При успехе, <strong>отметьте любое количество Стресса</strong>, чтобы бросить столько же <strong>d20</strong> и нанести магический урон, равный общему результату. Если цель была побеждена в результате этой атаки, то все противники в пределах Далекой дистанции отмечают Стресс.</p>"
     },
     "Dark Army": {
-      "name": "Dark Army",
-      "description": "<p>Make a <strong data-start=\"5176\" data-end=\"5199\">Spellcast Roll (14)</strong>. Once per long rest, on a success you can summon a group of fiends that surround and move with you. Place 8 tokens on this card. When you deal damage to a target within Very Close range, you can spend a token to increase it by <strong data-start=\"5427\" data-end=\"5434\">1d8</strong>. Additionally, when you take damage, you can spend a token to reduce it by <strong data-start=\"5510\" data-end=\"5517\">1d8</strong>. Each time you spend a token, a fiend acts on your behalf, then disappears. Remove all tokens from this card on your next rest.</p>"
+      "name": "Армия Тьмы",
+      "description": "<p>Совершите <strong>Бросок Заклинания (14)</strong>. Один раз до следующего продолжительного отдыха, при успехе вы можете призвать группу демонов, которые окружают вас и движутся вместе с вами. Положите 8 жетонов на эту карту. Когда вы наносите урон цели в пределах Близкой дистанции, вы можете потратить жетон, чтобы увеличить его на <strong>+1d8</strong>. Кроме того, когда вы получаете урон, вы можете потратить жетон, чтобы уменьшить его на <strong>1d8</strong>. Каждый раз, когда вы тратите жетон, демон действует в ваших интересах, после чего исчезает.</p><p>Снимите все жетоны с этой карты во время вашего следующего отдыха.</p>"
     },
     "Darkfire": {
-      "name": "Darkfire",
-      "description": "<p>Make a <strong data-start=\"3791\" data-end=\"3809\">Spellcast Roll</strong> against all adversaries within Close range. You can spend a Hope for any you succeed against, and they must make a <strong data-start=\"3925\" data-end=\"3947\">Reaction Roll (14)</strong>. On a failure, they take <strong data-start=\"3973\" data-end=\"3981\">d8+6</strong> magic damage using your Proficiency as they are engulfed in dark fire. On a success, they take half damage.</p>",
+      "name": "Темное Пламя",
+      "description": "<p>Совершите <strong>Бросок Заклинания</strong> против всех противников в пределах Средней дистанции. Вы можете <strong>потратить Надежду</strong> для любых целей, против которых вы преуспели, и они должны совершить <strong>Бросок Реакции (14)</strong>. При провале, они получают <strong>d8+6</strong> магического урона, используя ваше Мастерство, будучи охваченными темным огнем. При успехе они получают половину урона.</p>",
       "actions": {
         "82rtYgOuXmZRCuog": {
           "name": "Spellcast Roll"
@@ -143,8 +143,8 @@
       }
     },
     "Dire Strike": {
-      "name": "Dire Strike",
-      "description": "<p>After making a successful attack, you can <strong data-start=\"3623\" data-end=\"3639\">spend 2 Hope</strong> to leech power from the target. For each Hit Point your target marked from this attack, the GM loses a Fear.</p>",
+      "name": "Роковой Удар",
+      "description": "<p>После совершения успешной атаки, вы можете <strong>потратить 2 Надежды</strong>, чтобы поглотить силу цели. За каждую Рану, отмеченной целью от этой атаки, Мастер теряет Страх.</p>",
       "actions": {
         "jxbwIhqmWYtIQd9X": {
           "name": "Spend 2 Hope"
@@ -152,12 +152,12 @@
       }
     },
     "Dread-Touched": {
-      "name": "Dread-Touched",
-      "description": "<p class=\"Body-Foundation\">When 4 or more of the domain cards in your loadout are from the Dread domain, gain the following benefits:</p><ul><li class=\"vertical-card-list-found\"><p><em>When you succeed with Fear, you can mark <strong>2 Stress</strong> to keep the GM from gaining a Fear.</em></p></li><li class=\"vertical-card-list-found\"><p><em>Once per short rest, when making an action roll, you can add a +1 bonus to the roll for each Fear token the GM has stored.</em></p></li></ul>",
+      "name": "Затронутый Ужасом",
+      "description": "<p>Когда 4 или более карт домена в вашем инвентаре относятся к домену \"Ужаса\", вы получаете следующие преимущества:</p><ul><li>Когда вы преуспеваете со Страхом, вы можете <strong>отметить 2 Стресса</strong>, чтобы Мастер не получил Страх.</li></ul><ul><li>Один раз до следующего отдыха, при броске действия, вы можете добавить +1 к броску за каждый жетон Страха у Мастера.</li></ul>",
       "actions": {
         "Ky5wcwBqgm5bJCK1": {
           "name": "Mark Stress",
-          "description": "<p><span>When you succeed with Fear, you can <strong>mark 2 Stress</strong> to keep the GM from gaining a Fear.</span></p>"
+          "description": "<p>Когда вы преуспеваете со Страхом, вы можете <strong>отметить 2 Стресса</strong>, чтобы Мастер не получил Страх.</p>"
         }
       },
       "effects": {
@@ -168,8 +168,8 @@
       }
     },
     "Eldritch Flesh": {
-      "name": "Eldritch Flesh",
-      "description": "<p data-start=\"5677\" data-end=\"5770\">You embody the darkness you have dallied with. When this card is in your loadout:</p><ul data-start=\"5771\" data-end=\"5925\"><li data-start=\"5771\" data-end=\"5849\"><p data-start=\"5773\" data-end=\"5849\"><em>Gain a +1 bonus to your damage thresholds for each Stress you have marked.</em></p></li><li data-start=\"5850\" data-end=\"5925\"><p data-start=\"5852\" data-end=\"5925\"><em>When you roll with Fear, you can <strong data-start=\"5885\" data-end=\"5901\">spend 2 Hope</strong> to clear an Armor Slot.</em></p></li></ul>"
+      "name": "Плоть Древнего",
+      "description": "<p>Вы воплощаете тьму, с которой прежде лишь игрались. Пока эта карта в вашем инвентаре:</p><ul><li>Получите +1 к вашим порогам урона за каждый отмеченный вами Стресс.</li></ul><ul><li>При бросках со Страхом, вы можете <strong>потратить 2 Надежды</strong>, чтобы очистить Ячейку Брони.</li></ul>"
     },
     "Glyph of Hemorrhaging": {
       "name": "Glyph of Hemorrhaging",
@@ -196,8 +196,8 @@
       }
     },
     "Hideous Retribution": {
-      "name": "Hideous Retribution",
-      "description": "<p>When an ally within Close range takes damage from a target you can see, you can make a <strong data-start=\"1278\" data-end=\"1305\">Spellcast Reaction Roll</strong> against that target. On a success, <strong data-start=\"1341\" data-end=\"1358\">mark a Stress</strong> to deal them <strong data-start=\"1372\" data-end=\"1378\">d6</strong> magic damage using your Proficiency.</p>",
+      "name": "Безобразная Кара",
+      "description": "<p>Когда союзник в пределах Средней дистанции получает урон от противника, которого вы видите, вы можете совершить <strong>Бросок Реакции</strong> против противника, используя вашу характеристику заклинателя. При успехе <strong>отметьте Стресс</strong>, чтобы нанести ему <strong>d6</strong> магического урона, используя ваше Мастерство.</p>",
       "actions": {
         "WVhpGOGf4znrsFxy": {
           "name": "Spellcast Roll"
@@ -208,8 +208,8 @@
       }
     },
     "Invoke Torment": {
-      "name": "Invoke Torment",
-      "description": "<p>Targets with all of their Stress marked take double damage from your attacks.<br data-start=\"6579\" data-end=\"6582\" />Additionally, when you defeat a creature with all of its Stress marked, you clear a Stress.</p>"
+      "name": "Призыв Терзаний",
+      "description": "<p>Существа, у которых отмечены все ячейки Стресса, получают двойной урон от ваших атак.</p><p>Кроме того, когда вы побеждаете существо, у которого отмечены все ячейки Стресса, вы очищаете Стресс.</p>"
     },
     "Life Leash": {
       "name": "Life Leash",
@@ -268,8 +268,8 @@
       }
     },
     "Savor the Anguish": {
-      "name": "Savor the Anguish",
-      "description": "<p>When an adversary within Close range marks Stress or takes Severe damage, you can <strong data-start=\"6394\" data-end=\"6410\">spend a Hope</strong> to clear a Stress or force the GM to lose a Fear.</p>",
+      "name": "Наслаждение Муками",
+      "description": "<p>Когда противних в пределах Средней дистанции отмечает Стресс или получает Тяжелый урон, вы можете <strong>потратить Надежду</strong>, чтобы очистить Стресс или заставить Мастера потерять жетон Страха.</p>",
       "actions": {
         "vbMcxqfAgg6uykxh": {
           "name": "Spend a Hope"
@@ -277,12 +277,12 @@
       }
     },
     "Shared Trauma": {
-      "name": "Shared Trauma",
-      "description": "<p>You can transfer suffering from one creature to another. Once per rest, mark any number of Hit Points on a willing creature within Melee range to clear an equal number of Hit Points on another willing creature within Melee range. You can choose yourself in place of either creature.</p>"
+      "name": "Разделённая Травма",
+      "description": "<p>Вы можете передать страдания от одного существа к другому. Один раз до следующего отдыха, отметьте любое количество Ран у согласного существа, находящегося Вплотную, чтобы очистить столько же Ран у другого согласного существа, находящегося Вплотную. Вы можете выбрать себя вместо любого из этих существ.</p>"
     },
     "Siphon Essence": {
-      "name": "Siphon Essence",
-      "description": "<p>Make a <strong data-start=\"1464\" data-end=\"1482\">Spellcast Roll</strong> against a target within Very Close range. On a success, once per long rest, the target takes <strong data-start=\"1576\" data-end=\"1583\">d20</strong> magic damage using your Proficiency. You clear a number of Hit Points equal to the number of Hit Points the target marked from this attack. On a success with Fear, you gain a +1 bonus to your Proficiency for this attack.</p>",
+      "name": "Вытягивание Сущности",
+      "description": "<p>Совершите <strong>Бросок Заклинания</strong> против цели в пределах Близкой дистанции. При успехе, один раз до следующего продолжительного отдыха, цель получает <strong>d20</strong> магического урона, используя ваше Мастерство. Вы очищаете количество Ран, равное количеству Ран, отмеченных целью от этой атаки. При успехе со Страхом, вы получаете +1 к Мастерству для этой атаки.</p>",
       "actions": {
         "ZUxdiPgJWHSc2Ig9": {
           "name": "Spellcast Roll"
@@ -290,8 +290,8 @@
       }
     },
     "Spectral Mist": {
-      "name": "Spectral Mist",
-      "description": "<p><strong data-start=\"3170\" data-end=\"3187\">Mark a Stress</strong> to summon an eerie mist that turns you and any targets within Close range momentarily incorporeal. While a creature is incorporeal, they can move through solid objects and are immune to physical damage. A creature becomes corporeal again after they pass through a solid object or make an action roll. Otherwise, this effect drops at the end of the scene.</p>",
+      "name": "Призрачный Туман",
+      "description": "<p><strong>Отметьте Стресс</strong>, чтобы призвать жуткий туман, который делает вас и всех целей в пределах Средней дистанции на мгновение нематериальными. Пока существо нематериально, оно может проходить сквозь твердые предметы и имеют иммунитет к физическому урону. Существо снова становится материальным после того, как пройдет сквозь твердый предмет или совершит бросок действия. Иначе этот эффект пропадает в конце сцены.</p>",
       "actions": {
         "zNvUolwaFrSNiAu4": {
           "name": "Mark a Stress"
@@ -299,12 +299,12 @@
       }
     },
     "Summon Horror": {
-      "name": "Summon Horror",
-      "description": "<p>Make a <strong data-start=\"2779\" data-end=\"2797\">Spellcast Roll</strong> against a target within Far range. On a success, spend a Hope to call forth an otherworldly creature to attack them and deal <strong data-start=\"2923\" data-end=\"2930\">d10</strong> magic damage using your Proficiency. The target must succeed on a <strong data-start=\"2997\" data-end=\"3019\">Reaction Roll (12)</strong> to steel themselves from the horror or mark <strong data-start=\"3064\" data-end=\"3078\">1d4 Stress</strong>. After making the attack, the creature dissipates.</p>"
+      "name": "Призыв Ужаса",
+      "description": "<p>Совершите <strong>Бросок Заклинания</strong> против цели в пределах Далекой дистанции. При успехе, <strong>потратьте Надежду</strong>, чтобы вызвать потустороннее существо, которое атакует цель и нанесет <strong>d10</strong> магического урона, используя ваше Мастерство. Цель также должна преуспеть в <strong>Бросоке Реакции (12)</strong>, чтобы противостоять этому ужасу, иначе она должна отметить <strong>1d4</strong> Стресса.</p><p>После совершения атаки существо рассеивается.</p>"
     },
     "Terrify": {
-      "name": "Terrify",
-      "description": "<p>Make a <strong data-start=\"1846\" data-end=\"1864\">Spellcast Roll</strong> against a target within Far range. On a success, the target marks <strong data-start=\"1931\" data-end=\"1945\">1d4 Stress</strong> and you can choose to make the target run one range away from you (Close to Far, Far to Very Far, etc). On a success with Fear, the target becomes temporarily <em data-start=\"2105\" data-end=\"2117\">Vulnerable</em>.</p>",
+      "name": "Вселить Ужас",
+      "description": "<p>Совершите <strong>Бросок Заклинания</strong> против цели в пределах Далекой дистанции. При успехе цель отмечает <strong>1d4 Стресса</strong>, и вы можете заставить ее убежать на одну ступень дистанции от вас (Средне -> Далеко, Далеко -> Очень Далеко, т.д.). При успехе со Страхом, цель становится временно <em>Уязвимой</em>.</p>",
       "actions": {
         "wklmI4hh5xUYL4OS": {
           "name": "Spellcast Roll"
@@ -355,8 +355,8 @@
       }
     },
     "Voice of Dread": {
-      "name": "Voice of Dread",
-      "description": "<p>You can magically speak directly into the ears of a creature you can see. To torment them with your words, make a <strong data-start=\"656\" data-end=\"674\">Spellcast Roll</strong> against them. On a success, they must mark a Stress and become temporarily <em data-start=\"750\" data-end=\"762\">Vulnerable</em>.</p>",
+      "name": "Глас Ужаса",
+      "description": "<p>Вы можете магическим образом говорить прямо в уши существа, которое вы видите. Чтобы истязать его своими словами, совершите <strong>Бросок Заклинания</strong> против него. При успехе оно должно отметить Стресс и становится временно <em>Уязвимым</em>.</p>",
       "actions": {
         "JrGujKVX0intRWfj": {
           "name": "Attack"
@@ -373,8 +373,8 @@
       }
     },
     "Wall of Hunger": {
-      "name": "Wall of Hunger",
-      "description": "<p>Succeed on a <strong data-start=\"4742\" data-end=\"4765\">Spellcast Roll (13)</strong> to create a visible wall of writhing, necrotic energy in a line between two points within Far range that lasts until you mark a Hit Point or cast this spell again. Any creatures inside the wall when it appears or who try to pass through the wall must mark <strong data-start=\"5022\" data-end=\"5034\">2 Stress</strong>, then make a <strong data-start=\"5048\" data-end=\"5070\">Reaction Roll (16)</strong>. On a failure, they are temporarily <em data-start=\"5107\" data-end=\"5119\">Restrained</em> by the wall.</p>"
+      "name": "Стена Ненасытности",
+      "description": "<p>Совершите успешный <strong>Бросок Заклинания (13)</strong>, чтобы создать видимую стену из извивающейся некротической энергии линией между двумя точками в пределах Далекой дистанции. Она существует до тех пор, пока вы не отметите Рану или не используете это заклинание повторно. Любые существа, находящиеся внутри стены в момент ее появления или пытающиеся пройти через нее, должны <strong>отметить 2 Стресса</strong> и совершить <strong>Бросок Реакции (16)</strong>. При провале они временно <em>Обездвижены</em> стеной.</p>"
     },
     "Weave The Flesh": {
       "name": "Weave The Flesh",
