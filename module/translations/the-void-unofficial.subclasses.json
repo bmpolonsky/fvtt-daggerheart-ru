@@ -12,201 +12,201 @@
     }
   },
   "folders": {
-    "Assassin": "Assassin",
-    "Blood Hunter": "Blood Hunter",
-    "Brawler": "Brawler",
-    "Brawler Stances": "Brawler Stances",
-    "Tier 1": "Tier 1",
-    "Tier 2": "Tier 2",
-    "Tier 3": "Tier 3",
-    "Tier 4": "Tier 4",
-    "Warlock": "Warlock",
-    "Witch": "Witch",
-    "Foundation Features": "Foundation Features",
-    "Subclass Features": "Subclass Features",
-    "Specialization Features": "Specialization Features",
-    "Mastery Features": "Mastery Features"
+    "Assassin": "Ассасин",
+    "Blood Hunter": "Кровавый Охотник",
+    "Brawler": "Боец",
+    "Brawler Stances": "Стойки Бойца",
+    "Tier 1": "Ранг 1",
+    "Tier 2": "Ранг 2",
+    "Tier 3": "Ранг 3",
+    "Tier 4": "Ранг 4",
+    "Warlock": "Колдун",
+    "Witch": "Ведьма",
+    "Subclass Features": "Свойства подкласса",
+    "Foundation Features": "Свойства основы",
+    "Specialization Features": "Свойства специализации",
+    "Mastery Features": "Свойства мастерства"
   },
   "entries": {
     "Adder's Blessing": {
-      "name": "Adder's Blessing",
-      "description": "<p>You are <strong>immune</strong> to poisons and other toxins.</p>"
+      "name": "Дар Гадюки",
+      "description": "<p>Вы невосприимчивы к ядам и токсинам.</p>"
     },
     "Ambush": {
-      "name": "Ambush",
-      "description": "<p>Your \"Marked for Death\" feature uses <strong>d6s</strong> instead of <strong>d4s</strong>.</p>",
+      "name": "Внезапная Атака",
+      "description": "<p>Ваше свойство \"Метка Смерти\" теперь использует <strong>d6</strong> вместо <strong>d4</strong>.</p>",
       "actions": {
         "5O9hGdbSO9vHjSy0": {
-          "name": "Damage"
+          "name": "Урон"
         }
       }
     },
     "Backstab": {
-      "name": "Backstab",
-      "description": "<p>Your \"<em>Marked for Death</em>\" feature uses <strong>d8s</strong> instead of <strong>d6s</strong>.</p>"
+      "name": "Удар в Спину",
+      "description": "<p>Ваше свойство \"Метка Смерти\" теперь использует <strong>d8</strong> вместо <strong>d6</strong>.</p>"
     },
     "Chasing Death": {
       "name": "Chasing Death",
       "description": "<p>While you have 1–3 unmarked Hit Points, you can use your Crimson Rite feature without paying the Hit Point cost. If you have only 1 unmarked Hit Point, you roll d8s instead of d6s for the extra damage of your Crimson Rite.</p>"
     },
     "Circle of Power": {
-      "name": "Circle of Power",
-      "description": "<p>Once per rest, mark a circle on the ground around you up to Very Close range and place a number of tokens equal to your Spellcast Trait on this card. Each time you or any ally within the circle makes an action roll or is hit with an attack, remove a token. This spell lasts until the last token is removed or you step out of the circle. While within this circle, you and any allies:</p><ul><li><p>Gain a +4 bonus to your damage thresholds.</p></li><li><p>Gain a +2 bonus to your attack rolls.</p></li><li><p>Gain a +1 bonus to your Evasion.</p></li></ul>"
+      "name": "Круг Силы",
+      "description": "<p>Один раз до следующего отдыха, вы можете начертить круг на земле в пределах Близкой дистанции и поместить на эту карту количество жетонов, равное вашей Характеристике Заклинателя. Каждый раз, когда вы или ваши союзники в круге совершают бросок действия или становятся целью успешной атаки, снимите один жетон. Заклинание действует, пока вы не потратите последний жетон или не покинете круг. Находясь внутри круга, вы и ваши союзники:</p><ul><li>Получаете <strong>+4</strong> к порогам урона.</li></ul><ul><li>Получаете <strong>+2</strong> к броскам атак.</li></ul><ul><li>Получаете <strong>+1</strong> к Уклонению.</li></ul>"
     },
     "Control the Beast": {
       "name": "Control the Beast",
       "description": "<p>While in your Wolf Form, you can apply that form’s bonus die to your Agility and Strength Action Rolls.</p>"
     },
     "Dark Aegis": {
-      "name": "Dark Aegis",
-      "description": "<p>Once per long rest, when you would mark any number of Hit Points, you can <strong>spend a Favor</strong> instead.</p>"
+      "name": "Темная Эгида",
+      "description": "<p>Один раз до следующего продолжительного отдыха, когда вы отмечаете любое количество Ран, вы можете вместо этого <strong>потратить Милость</strong>.</p>"
     },
     "Deadly Devotion": {
-      "name": "Deadly Devotion",
-      "description": "<p>On a successful attack, you can <strong>spend a Favor</strong> to gain a +1 bonus to your Evasion until you mark a Hit Point or take a rest.</p>"
+      "name": "Роковая Преданность",
+      "description": "<p>После успешной атаки вы можете <strong>потратить Милость</strong>, чтобы получить +1 к Уклонению, до тех пор, пока не отметите Рану или до вашего следующего отдыха.</p>"
     },
     "Death Strike": {
-      "name": "Death Strike",
-      "description": "<p>When you deal Severe damage to a creature, you can <strong>mark a Stress</strong> to make them mark an additional Hit Point.</p>",
+      "name": "Смертельный Удар",
+      "description": "<p>Когда вы наносите Тяжелый урон существу, вы можете <strong>отметить Стресс</strong>, чтобы заставить его отметить дополнительную Рану.</p>",
       "actions": {
         "BtDEnyNem2nDgadf": {
-          "name": "Mark a Stress"
+          "name": "Отметить Стресс"
         }
       }
     },
     "Diminish My Foes": {
-      "name": "Diminish My Foes",
-      "description": "<p>When you succeed with Hope on an action roll against a target, you can <strong>spend a Hope </strong>to make your target mark a Stress.</p>"
+      "name": "Ослабить Моих Недругов",
+      "description": "<p>Когда вы преуспеваете с Надеждой в броске действия против цели, вы можете <strong>потратить Надежду</strong>, чтобы ваша цель отметила Стресс.</p>"
     },
     "Divine Ire": {
-      "name": "Divine Ire",
-      "description": "<p>Once per rest, when you take damage, you can <strong>spend any number of Favor</strong> to target that many adversaries within Close range. Each target must mark a Hit Point.</p>"
+      "name": "Божественная Ярость",
+      "description": "<p>Один раз до следующего отдыха, когда вы получаете урон, вы можете <strong>потратить любое количество Милости</strong>, чтобы нацелиться на то же количество целей в пределах Средней дистанции. Каждая цель должна отметить Рану.</p>"
     },
     "Draining Bane": {
-      "name": "Draining Bane",
-      "description": "<p>When an adversary attacks you or an ally within Very Close range, you can <strong>spend 2 Favor</strong> to temporarily <em>Drain</em> them. When you do, they must mark a Stress and you can clear a Stress. A <em>Drained</em> creature uses a <strong>d12</strong> instead of a<strong> d20</strong> for attack rolls.</p>"
+      "name": "Истощающее Проклятье",
+      "description": "<p>Когда противник атакует вас или вашего союзника в пределах Близкой дистанции, вы можете <strong>потратить 2 Милости</strong>, чтобы сделать цель временно <em>Истощенной</em>. Когда вы это сделаете, они должны отметить Стресс, а вы можете очистить Стресс. Броски Атаки <em>Истощенной</em> цели используют <strong>d12</strong> вместо <strong>d20</strong>.</p>"
     },
     "Draining Invoaction": {
-      "name": "Draining Invoaction",
-      "description": "<p>When an adversary attacks you or an ally within Very Close range, you can <strong>spend a Favor</strong> to make them use a <strong>d12</strong> instead of a <strong>d20</strong> for the attack roll. Additionally, the adversary must mark a Stress, and you can clear a Stress.</p>"
+      "name": "Истощающее Воззвание",
+      "description": "<p>Когда противник атакует вас или вашего союзника в пределах Близкой дистанции, вы можете <strong>потратить Милость</strong>, чтобы его бросок атаки использовал кость <strong>d12</strong> вместо <strong>d20</strong>. Кроме того, противник должен отметить Стресс, а вы можете очистить Стресс.</p>"
     },
     "Enhanced Hex": {
-      "name": "Enhanced Hex",
-      "description": "<p>Attacks you make against <em>Hexed</em> creatures gain a damage bonus equal to your Proficiency.</p>"
+      "name": "Усиленный Сглаз",
+      "description": "<p>Атаки, которые вы совершаете против существ со <em>Сглазом</em>, получают бонус к урону, равный вашему Мастерству.</p>"
     },
     "Envenomate": {
-      "name": "Envenomate",
-      "description": "<p>On a successful weapon attack, you can spend a token from this card to afflict the target with a known poison’s effect.</p><ul><li><p><em><strong>Gorgon’s Root</strong>: The target’s <strong>Difficulty</strong> gains a permanent <strong>-1</strong> penalty. This can only affect them once.</em></p></li><li><p><em><strong>Grave Spore</strong>: The target must also mark a <strong>Stress</strong>.</em></p></li><li><p><em><strong>Leech Weed</strong>: Gain a <strong>+1d6</strong> bonus to damage on this attack.</em></p></li></ul>"
+      "name": "Отравление",
+      "description": "<p>При успешной атаке оружием, вы можете потратить жетон с этой карты, чтобы наложить на цель эффект одного из известных ядов.</p>"
     },
     "Executioner's Guild": {
-      "name": "Executioner's Guild"
+      "name": "Гильдия Палачей"
     },
     "Eye for an Eye": {
-      "name": "Eye for an Eye",
-      "description": "<p>When you mark more than one Hit Point from an attack in melee range, the attacker must make a <strong>Reaction Roll (13)</strong>. On a failure, once per rest, they immediately mark the same number of Hit Points in return.</p>",
+      "name": "Око за Око",
+      "description": "<p>Когда вы отмечаете более одной Раны от атаки Вплотную к вам, атакующий должен совершить <strong>Бросок Реакции (13)</strong>. При провале, один раз за отдых, он немедленно отмечает такое же количество Ран в ответ.</p>",
       "actions": {
         "cPacNVvx5zNc1FmQ": {
-          "name": "Counterattack",
-          "description": "<p>When you mark more than one Hit Point from an attack in melee range, the attacker must make a Reaction Roll (13). On a failure, once per rest, they immediately mark the same number of Hit Points in return.</p>"
+          "name": "Контратака",
+          "description": "<p>Когда вы отмечаете более одной Раны от атаки Вплотную к вам, атакующий должен совершить <strong>Бросок Реакции (13)</strong>. При провале, один раз за отдых, он немедленно отмечает такое же количество Ран в ответ.</p>"
         }
       }
     },
     "Favored Weapon": {
-      "name": "Favored Weapon",
-      "description": "<p><strong>Mark a Stress</strong> to <em>Imbue</em> your weapon with your Patron's fury until you deal Severe damage. On a successful <em>Imbued </em>weapon attack, you can <strong>spend any number of Favor</strong> to gain a <strong>+1d6</strong> damage bonus for each Favor spent.</p>"
+      "name": "Избранное Оружие",
+      "description": "<p><strong>Отметьте Стресс</strong>, чтобы <em>Зарядить</em> ваше оружие яростью вашего покровителя, пока вы не нанесете Тяжелый урон. При успешной атаке <em>Заряженным</em> оружием, вы можете <strong>потратить любое количество Милости</strong>, чтобы получить <strong>+1d6</strong> к урону за каждую потраченную Милость.</p>"
     },
     "Fearsome Attack": {
-      "name": "Fearsome Attack",
-      "description": "<p>You can always <strong>spend a Favor</strong> to reroll any number of your damage dice. You can continue spending Favor to reroll the same dice as many times as you'd like.</p>"
+      "name": "Грозная Атака",
+      "description": "<p>Вы всегда можете <strong>потратить Милость</strong>, чтобы перебросить любое количество ваших костей урона. Вы можете продолжать тратить Милость, чтобы перебросить те же кости столько раз, сколько захотите.</p>"
     },
     "Feral Hide": {
       "name": "Feral Hide",
       "description": "<p>While in your Wolf Form, you gain a bonus to your Damage Thresholds equal to your Tier.</p>",
       "effects": {
         "rOdpVbqwuw4oMrXY": {
-          "name": "Feral Hide"
+          "name": "Звериная Шкура"
         }
       }
     },
     "First Strike": {
-      "name": "First Strike",
-      "description": "<p>The first time in a scene you succeed on an attack roll, double the damage of the attack.</p>"
+      "name": "Первый Удар",
+      "description": "<p>Первый раз в сцене, когда вы преуспеваете в броске атаки, удвойте урон для этой атаки.</p>"
     },
     "Focus": {
-      "name": "Focus",
-      "description": "<p>Click here to roll: [[/r 1d6]].</p><p>During a rest, roll a number of <strong>d6s</strong> equal to your Instinct and place a number of Focus tokens equal to the highest value rolled on this card. <strong>Spend a Focus</strong> to shift into a stance until you you take Severe damage, the scene ends, you mark your last Hit Point, or you shift into another stance.</p><p></p>"
+      "name": "Концентрация",
+      "description": "<p>Во время отдыха бросьте количество костей <strong>d6</strong>, равное вашему Инстинкту и поместите количество жетонов <em>Концентрации</em>, равное наибольшему выпавшему числу, на эту карту. <strong>Потратьте Концентрацию</strong>, чтобы встать в стойку до тех пор, пока вы не получите Тяжелый урон, не закончится сцена, не отметите последнюю Рану или вы не встанете в другую стойку.</p><p>[[/r 1d6]]</p>"
     },
     "Hedge": {
-      "name": "Hedge",
-      "description": "<p>You channel the powers of nature to create both boon and bane.</p>"
+      "name": "Ведунья",
+      "description": "<p>Вы направляете силы природы, чтобы создавать как блага, так и проклятия.</p>"
     },
     "Herald of Death": {
-      "name": "Herald of Death",
-      "description": "<p>When you fail an attack roll, you can <strong>spend a Favor</strong> to reroll it. If it fails again, mark a Stress and take the new result.</p>"
+      "name": "Вестник Смерти",
+      "description": "<p>Когда вы проваливаете бросок атаки, вы можете <strong>потратить Милость</strong>, чтобы перебросить его. Если он снова проваливается, вы должны отметить Стресс и использовать новый результат.</p>"
     },
     "Herbal Remedies": {
-      "name": "Herbal Remedies",
-      "description": "<p>When you or an ally clear one or more Hit Points or Stress as the result of using a consumable, increase the number cleared by one.</p>"
+      "name": "Лечебные Травы",
+      "description": "<p>Когда вы или ваш союзник очищаете одну или больше Ран или Стресса в результате использования расходника, увеличьте количество очищенных очков на одно.</p>"
     },
     "Improved Mutagens": {
       "name": "Improved Mutagens",
       "description": "<p>When you choose a mutagen benefit, your options also include the following: </p><ul><li><p>Nerves of Steel. Whenever you must mark a Stress, you can spend 2 Hope instead. </p></li><li><p>Rapidity. Your Evasion increases by 1. </p></li><li><p>Ironskin. Your Severe damage threshold increases by a number equal to your Proficiency.</p></li></ul>",
       "actions": {
         "JoE1j2EK2MfFupSr": {
-          "name": "Spend 2 Hope"
+          "name": "Потратить 2 Надежды"
         }
       },
       "effects": {
         "kLbVYo5ogREgCmTS": {
-          "name": "Improved Mutagens - Rapidity"
+          "name": "Улучшенные Мутагены - Стремительность"
         },
         "9XErPc7AYx93ozbA": {
-          "name": "Improved Mutagens - Ironskin"
+          "name": "Улучшенные Мутагены - Железная Кожа"
         }
       }
     },
     "Ire of Pale Light": {
-      "name": "Ire of Pale Light",
-      "description": "<p>When a <em>Hexed</em> creature within Far range fails an attack roll, they must mark a Stress.</p>"
+      "name": "Гнев Бледного Света",
+      "description": "<p>Когда существо, отмеченное <em>Сглазом</em>, в пределах Далекой дистанции проваливает бросок атаки, оно должно отметить Стресс.</p>"
     },
     "Juggernaut": {
-      "name": "Juggernaut",
-      "description": "<p>You have toned your body into a weapon of sheer force, able to take and return mighty blows.</p>"
+      "name": "Джаггернаут",
+      "description": "<p>Вы превратили свое тело в оружие чистой силы, способное выдерживать и наносить сокрушительные удары.</p>"
     },
     "Keen Defenses": {
-      "name": "Keen Defenses",
-      "description": "<p>When you are targeted by an attack, you can <strong>spend a Focus</strong> to make the adversary’s attack roll have disadvantage.</p>"
+      "name": "Превосходная Защита",
+      "description": "<p>Когда вы становитесь целью атаки, вы можете <strong>потратить Концентрацию</strong>, чтобы дать помеху на бросок атаки противника.</p>"
     },
     "Limit Breaker": {
-      "name": "Limit Breaker",
-      "description": "<p>Once per rest, you can pull off an unbelievable feat like running across water, leaping between distant rooftops, or scaling the side of a building without needing to roll. When you do, gain a Hope and clear a Stress.</p>",
+      "name": "Преодоление Пределов",
+      "description": "<p>Один раз до следующего отдыха вы можете совершить невообразимый подвиг, например, бежать по воде, прыгать между далекими крышами или лазать по стене здания, не совершая бросок. Когда вы это сделаете, получите Надежду и снимите Стресс.</p>",
       "actions": {
         "vd31YZgnJkEQSU4d": {
-          "name": "Limit Break",
-          "description": "<p>Once per rest, you can pull off an unbelievable feat like running across water, leaping between distant rooftops, or scaling the side of a building without needing to roll. When you do, gain a Hope and clear a Stress.</p>"
+          "name": "Преодолеть Предел",
+          "description": "<p>Один раз до следующего отдыха вы можете совершить невообразимый подвиг, например, бежать по воде, прыгать между далекими крышами или лазать по стене здания, не совершая бросок. Когда вы это сделаете, получите Надежду и снимите Стресс.</p>"
         }
       }
     },
     "Lunar Phases": {
-      "name": "Lunar Phases",
-      "description": "<p>Your spirit ebbs and flows like the phases of the moon. At the beginning of each session, roll a <strong>d4</strong> and gain the matching effect until the end of the session:</p><ul><li><p><strong>1</strong>: New - You can always <strong>spend a Hope</strong> to reduce Minor damage to None.</p></li><li><p><strong>2</strong>: Waxing - Gain a <strong>+2</strong> bonus to your damage rolls.</p></li><li><p><strong>3</strong>: Full - Gain a <strong>+2</strong> bonus to your damage thresholds.</p></li><li><p><strong>4</strong>: Waning - Gain a <strong>+1</strong> bonus to your Evasion.</p></li></ul>",
+      "name": "Лунные Фазы",
+      "description": "<p>Ваш дух растет и убывает, подобно фазам луны. В начале каждой сессии бросьте <strong>d4</strong> и получите соответствующий эффект до конца сессии:</p><ul><li><strong><em>1:</strong> Новолуние - вы всегда можете потратить <strong>Надежду</strong>, чтобы уменьшить Легкий урон до нуля.</em></li></ul><ul><li><strong><em>2:</strong> Растущая Луна - Получите <strong>+2</strong> к броскам урона.</em></li></ul><ul><li><strong><em>3:</strong> Полная - Получите <strong>+2</strong> к порогам урона.</em></li></ul><ul><li><strong><em>4:</strong> Убывающая - Получите <strong>+1</strong> к Уклонению.</em></li></ul>",
       "actions": {
         "zcqQvd0UftoWTuA8": {
-          "name": "Spend Hope"
+          "name": "Потратить Надежду"
         }
       },
       "effects": {
         "2cgsUItFz9IOKDmq": {
-          "name": "Waxing Moon",
-          "description": "<p>Gain a +2 bonus to your damage rolls.</p>"
+          "name": "Растущая Луна",
+          "description": "<p>Получите бонус +2 к броскам урона.</p>"
         },
         "iKkLKp5rPtl6A0Lc": {
-          "name": "Full Moon",
-          "description": "<p>Gain a +2 bonus to your damage thresholds.</p>"
+          "name": "Полная Луна",
+          "description": "<p>Получите бонус +2 к порогам урона.</p>"
         },
         "WodgSFen9Yaysaht": {
-          "name": "Waning Moon",
-          "description": "<p>Gain a +1 bonus to your Evasion.</p>"
+          "name": "Убывающая Луна",
+          "description": "<p>Получите бонус +1 к Уклонению.</p>"
         }
       }
     },
@@ -215,24 +215,24 @@
       "description": "<p>While in your Wolf Form with all your Hit Points marked, you can mark a Stress to clear a Hit Point. You can do this while unconscious.</p>",
       "actions": {
         "TfRiNmCx716o0XOQ": {
-          "name": "Healing"
+          "name": "Исцеление"
         }
       }
     },
     "Martial Artist": {
-      "name": "Martial Artist",
-      "description": "<p>You have studied and mastered specific fighting styles, letting your moves flow seamelessly in battle.</p>"
+      "name": "Мастер Боевых Искусств",
+      "description": "<p>Вы изучили и освоили особые боевые стили, позволяя вашим движениям плавно перетекать друг в друга в бою.</p>"
     },
     "Martial Form": {
-      "name": "Martial Form",
-      "description": "<p>You start with two martial stances from Tier 1. When you reach a new tier, take two additional stances at your tier or lower.</p>"
+      "name": "Боевая Форма",
+      "description": "<p>Возьмите лист Боевых Форм. Вы начинаете с двух боевых стоек 1 Ранга. Когда вы достигаете нового ранга, вы можете взять две дополнительные стойки своего ранга или ниже.</p>"
     },
     "Master the Beast": {
       "name": "Master the Beast",
       "description": "<p>When you are in your Wolf Form and would mark your last Stress, you can instead put one of your Domain cards from your Loadout into your Vault; you can’t Recall that Domain card until you fi nish a long rest. </p><p></p><p>When you Frenzy from marking your last Stress while in Wolf Form, you gain 2 Hope.</p>",
       "actions": {
         "xceWFmPWUeVuc0H5": {
-          "name": "Earn 2 Hope"
+          "name": "Получить 2 Надежды"
         }
       }
     },
@@ -241,30 +241,30 @@
       "description": "<p>The trait bonus and penalty you get from your Mutagens feature changes to +2 and −2, respectively. When you choose a mutagen benefi t, your options also include the following: </p><ul><li><p>Aetherblood. Within your line of sight, you can see creatures and objects that are invisible, and visual illusions appear transparent to you. If a creature or an object within your line of sight has been transformed by magic, you can see its true form. </p></li><li><p>Fury. When you make an attack roll, you can mark a Stress to gain a bonus to the roll equal to your Proficiency. </p></li><li><p>Steelflesh. Your Major damage threshold increases by a number equal to your Proficiency.</p></li></ul>",
       "actions": {
         "e7VsTp0OCPkAgRg0": {
-          "name": "Mark Stress"
+          "name": "Отметить Стресс"
         }
       },
       "effects": {
         "gUXFfQ0tIClq6lde": {
-          "name": "Mastered Mutagens - Steelflesh"
+          "name": "Совершенные Мутагены - Стальная Плоть"
         }
       }
     },
     "Menacing Reach": {
-      "name": "Menacing Reach",
-      "description": "<p>When you <em>Imbue</em> your weapon with your Patron's fury, you can <strong>mark an additional Stress</strong> to increase its range by one step (Melee to Very Close, Very Close to Close, etc.).</p>"
+      "name": "Устрашающая Досягаемость",
+      "description": "<p>Когда вы <em>Заряжаете</em> ваше оружие яростью вашего покровителя, вы можете <strong>отметить дополнительный Стресс</strong>, чтобы увеличить его дистанцию на одну ступень (Вплотную -> Близко, Близко -> Средне, и т.д.).</p>"
     },
     "Moon": {
-      "name": "Moon",
-      "description": "<p>You channel the powers of the moon to both deceive and protect.</p>"
+      "name": "Лунная",
+      "description": "<p>Вы направляете силы луны, чтобы обманывать и защищать.</p>"
     },
     "Moonbeam": {
-      "name": "Moonbeam",
-      "description": "<p>Once per session, you can conjure a column of moonlight that illuminates the area within Close range until the end of the scene. While bathed in this moonlight, you and any allies gain a +1 bonus to Spellcast Rolls and advantage on rolls to see through illusions.</p>",
+      "name": "Лунный Луч",
+      "description": "<p>Один раз за сессию, вы можете создать столб лунного света, который освещает область в пределах Средней дистанции до конца сцены. Находясь в лунном свете, вы и ваши союзники получают +1 к броскам заклинаний и преимущество на броски, чтобы распознать иллюзии.</p>",
       "actions": {
         "zEqPJ7UKSy561b9U": {
-          "name": "Moonbeam",
-          "description": "<p>Once per session, you can conjure a column of moonlight that illuminates the area within Close range until the end of the scene. While bathed in this moonlight, you and any allies gain a +1 bonus to Spellcast Rolls and advantage on rolls to see through illusions.</p>"
+          "name": "Лунный Луч",
+          "description": "<p>Один раз за сессию, вы можете создать столб лунного света, который освещает область в пределах Средней дистанции до конца сцены. Находясь в лунном свете, вы и ваши союзники получают +1 к броскам заклинаний и преимущество на броски, чтобы распознать иллюзии.</p>"
         }
       }
     },
@@ -273,36 +273,36 @@
       "description": "<p>You employ mutagenic toxins created to enhance your abilities. When you finish a rest, you can drink one such toxin to gain its effects, which last until you fi nish your next rest. These eff ects include a +1 bonus to one trait of your choice, a −1 penalty to a diff erent trait of your choice, and your choice of one of the following benefi ts:</p><ul><li><p>Celerity. If you are Restrained or Vulnerable, you can mark a Stress to end the condition on yourself.</p></li><li><p>Durable. Your Armor Score increases by 2.</p></li><li><p>Hunter’s Senses. You have advantage on any action roll you make to track a creature, and you can see in complete darkness.</p></li></ul>",
       "actions": {
         "TyXYjNxEEeCKOtM2": {
-          "name": "Mark Stress"
+          "name": "Отметить Стресс"
         }
       },
       "effects": {
         "06AAWZJTxlspR8pP": {
-          "name": "Mutagens - Durable"
+          "name": "Мутагены - Прочность"
         }
       }
     },
     "Night's Glamour": {
-      "name": "Night's Glamour",
-      "description": "<p><strong>Mark a Stress</strong> to <em>Glamour</em> yourself in a magical facade that lasts until you mark a Hit Point, make an attack, or take a rest. While <em>Glamoured</em>, you can:</p><ul><li><p>Disguise yourself to look like any creature of your approximate size that you’ve seen.</p></li><li><p>Enhance your own appearance. You gain advantage on Presence Rolls that leverage this change.</p></li></ul>",
+      "name": "Облачение Ночи",
+      "description": "<p><strong>Отметьте Стресс</strong>, чтобы <em>Облачить</em> себя волшебной аурой, действующей до тех пор, пока вы не отметите Рану, совершите атаку или отдохнете. Пока вы <em>Облачены</em>, вы можете:</p><ul><li>Замаскироваться под любое существо примерно вашего размера, которое вы видели.</li></ul><ul><li>Преобразить свой внешний вид. Вы получаете преимущество для Бросков Влияния, опирающихся на это изменение.</li></ul>",
       "actions": {
         "vq6us2ZBcGStBPOe": {
-          "name": "Mark Stress",
-          "description": "<p>Mark a Stress to Glamour yourself in a magical facade that lasts until you mark a Hit Point, make an attack, or take a rest. While Glamoured, you can:</p><p>Disguise yourself to look like any creature of your approximate size that you’ve seen.</p><p>Enhance your own appearance. You gain advantage on Presence Rolls that leverage this change.</p>"
+          "name": "Отметить Стресс",
+          "description": "<p><strong>Отметьте Стресс</strong>, чтобы <em>Облачить</em> себя волшебной аурой, действующей до тех пор, пока вы не отметите Рану, совершите атаку или отдохнете. Пока вы <em>Облачены</em>, вы можете:</p><ul><li>Замаскироваться под любое существо примерно вашего размера, которое вы видели.</li></ul><ul><li>Преобразить свой внешний вид. Вы получаете преимущество для Бросков Влияния, опирающихся на это изменение.</li></ul>"
         }
       }
     },
     "Not Done Yet": {
-      "name": "Not Done Yet",
-      "description": "<p>When you mark more than one HP from an attack, you may gain a Hope or clear a Stress.</p>",
+      "name": "Я Ещё Стою",
+      "description": "<p>Когда вы отмечаете более одной Раны от атаки, вы можете получить Надежду или очистить Стресс.</p>",
       "actions": {
         "HjDHMhLPO0ZnFucy": {
-          "name": "Gain Hope",
-          "description": "<p>When you mark more than one HP from an attack, you may gain a Hope or clear a Stress.</p>"
+          "name": "Получить Надежду",
+          "description": "<p>Когда вы отмечаете более одной Раны от атаки, вы можете получить Надежду или очистить Стресс.</p>"
         },
         "ueQbbXkCceB7uYJZ": {
-          "name": "Clear Stress",
-          "description": "<p>When you mark more than one HP from an attack, you may gain a Hope or clear a Stress.</p>"
+          "name": "Очистить Стресс",
+          "description": "<p>Когда вы отмечаете более одной Раны от атаки, вы можете получить Надежду или очистить Стресс.</p>"
         }
       }
     },
@@ -316,64 +316,64 @@
       "name": "Order of the Mutant"
     },
     "Overwhelm": {
-      "name": "Overwhelm",
-      "description": "<p>On a successful attack, you can <strong>spend a Hope</strong> to force the target to mark a Stress or to throw them within Close range.</p>",
+      "name": "Сокрушение",
+      "description": "<p>При успешной атаке, вы можете потратить Надежду, чтобы заставить цель отметить Стресс или отбросить ее в пределах Средней дистанции.</p>",
       "actions": {
         "wxX1JhvRDUjEBY4g": {
-          "name": "Stress Damage",
-          "description": "<p>On a successful attack, you can spend a Hope to force the target to mark a Stress or to throw them within Close range.</p>"
+          "name": "Нанести Стресс",
+          "description": "<p>При успешной атаке, вы можете потратить Надежду, чтобы заставить цель отметить Стресс или отбросить ее в пределах Средней дистанции.</p>"
         },
         "kOdV6pn4xkdwRqvT": {
-          "name": "Throw Enemy"
+          "name": "Отбросить врага"
         }
       }
     },
     "Pact of the Endless": {
-      "name": "Pact of the Endless"
+      "name": "Пакт Вечности"
     },
     "Pact of the Wrathful": {
-      "name": "Pact of the Wrathful"
+      "name": "Пакт Мести"
     },
     "Patron's Mantle": {
-      "name": "Patron's Mantle",
-      "description": "<p><strong>Mark a Stress</strong> to cloak yourself in a terrifying aspect of your Patron that lasts until you take Severe damage or the scene ends:</p><ul><li><p><em>When you would mark an Armor Slot, you can <strong>spend 2 Favor</strong> instead.</em></p></li><li><p><em>You gain a bonus equal to your tier on action rolls to intimidate a target.</em></p></li></ul>",
+      "name": "Мантия Покровителя",
+      "description": "<p><strong>Отметьте Стресс</strong>, чтобы облачиться в устрашающий аспект вашего покровителя, действующий до тех пор, пока вы не получите Тяжелый урон или до конца сцены. Пока вы облачены:</p><ul><li><em>Когда вы отмечаете Ячейку Брони, вместо этого мы можете <strong>потратить 2 Милости</strong>.</em></li></ul><ul><li><em>Вы получаете бонус, равный вашему рангу, к броскам действий на запугивание цели.</em></li></ul>",
       "actions": {
         "zjdjIrCA7bTP9sJN": {
-          "name": "Mark a Stress",
-          "description": "<p><strong>Mark a Stress</strong> to transform into a terrifying visage that lasts until you take <strong>Severe</strong> damage or the scene ends. While transformed:</p><ul><li><p><em>You can <strong>spend a Favor</strong> in place of an <strong>Armor Slot</strong>.</em></p></li><li><p><em>You have <strong>advantage</strong> on rolls to intimidate a target.</em></p></li></ul>"
+          "name": "Отметить Стресс",
+          "description": "<p><strong>Отметьте Стресс</strong>, чтобы облачиться в устрашающий аспект вашего покровителя, действующий до тех пор, пока вы не получите Тяжелый урон или до конца сцены. Пока вы облачены:</p><ul><li><em>Когда вы отмечаете Ячейку Брони, вместо этого мы можете <strong>потратить 2 Милости</strong>.</em></li></ul><ul><li><em>Вы получаете бонус, равный вашему рангу, к броскам действий на запугивание цели.</em></li></ul>"
         }
       }
     },
     "Poison Compendium": {
-      "name": "Poison Compendium",
-      "description": "<p>You also know these poisons:</p><ul><li><p><em><strong>Midnight’s Veil:</strong> The target gains a permanent <strong>-2</strong> penalty to attack rolls. This can only affect them once.</em></p></li><li><p><em><strong>Ghost Petal</strong>: Permanently decrease the damage dice of the target’s standard attack by one step (d10 to d8, d8 to d6, etc.). This can only affect them once.</em></p></li></ul>"
+      "name": "Сборник Ядов",
+      "description": "<p>Вы также знаете следующие яды:</p><ul><li><strong><em>Полуночная Вуаль</strong>: Цель получает постоянный штраф <strong>-2</strong> к броскам атаки. Это может подействовать на нее только один раз.</em></li></ul><ul><li><strong><em>Призрачный Лепесток</strong>: Навсегда уменьшите кость урона цели от стандартных атак на одну ступень (d10 до d8, d8 до d6 и т.д.). Это может подействовать на нее только один раз.</em></li></ul>"
     },
     "Poisoner's Guild": {
-      "name": "Poisoner's Guild"
+      "name": "Гильдия Отравителей"
     },
     "Powerhouse": {
-      "name": "Powerhouse",
-      "description": "<p>Increase the d8 damage dice for your unarmed attack to d10s. Additionally, you can <strong>mark a Stress</strong> to target two creatures within Melee range with a single attack roll.</p><p></p>",
+      "name": "Мощь во Плоти",
+      "description": "<p>Увеличьте вашу <strong>d8</strong> кость урона для безоружных атак до <strong>d10</strong>. Кроме того, вы можете <strong>отметить Стресс</strong>, чтобы нацелиться на двух существ, находящихся Вплотную, одним броском атаки.</p>",
       "actions": {
         "MgrzTu1dsA6lXmMV": {
-          "name": "Mark Stress",
-          "description": "<p>Additionally, you can mark a Stress to target two creatures within Melee range with a single attack roll.</p>"
+          "name": "Отметить Стресс",
+          "description": "<p>Кроме того, вы можете <strong>отметить Стресс</strong>, чтобы нацелиться на двух существ, находящихся Вплотную, одним броском атаки.</p>"
         }
       }
     },
     "Pummeljoy": {
-      "name": "Pummeljoy",
-      "description": "<p>When you critically succeed on a weapon attack in Melee range, you gain an additional Hope, clear an additional Stress, and gain a +1 bonus to your Proficiency for the attack.</p>",
+      "name": "Ударное Наслаждение",
+      "description": "<p>Каждый раз, когда вы выбрасываете критический успех при атаке оружием против противника, находящегося Вплотную, вы получаете дополнительную Надежду, очищаете дополнительный Стресс и получаете +1 к Мастерству для этой атаки.</p>",
       "actions": {
         "WcdLyH5rBN5WmkHd": {
-          "name": "Extra healing",
-          "description": "<p>When you critically succeed on a weapon attack in Melee range, you gain an additional Hope, clear an additional Stress, and gain a +1 bonus to your Proficiency for the attack.</p>"
+          "name": "Дополнительное исцеление",
+          "description": "<p>Каждый раз, когда вы выбрасываете критический успех при атаке оружием против противника, находящегося Вплотную, вы получаете дополнительную Надежду, очищаете дополнительный Стресс и получаете +1 к Мастерству для этой атаки.</p>"
         }
       }
     },
     "Rugged": {
-      "name": "Rugged",
-      "description": "<p>Gain a permanent <strong>+3</strong> bonus to your Severe damage threshold. Additionally, your “Powerhouse” feature can target three creatures instead of two.</p>",
+      "name": "Стойкий",
+      "description": "<p>Получите постоянный бонус +3 к порогу Тяжелого урона. Кроме того, ваше свойство \"Мощь во Плоти\" может нацеливаться на трех существ вместо двух.</p>",
       "effects": {
         "0JcKDuNPUlv4Avbc": {
           "name": "Rugged",
@@ -382,8 +382,8 @@
       }
     },
     "Scorpion's Poise": {
-      "name": "Scorpion's Poise",
-      "description": "<p>You gain a <strong>+2</strong> bonus to your Evasion against any attacks made by a creature <em>Marked for Death.</em></p>"
+      "name": "Поза Скорпиона",
+      "description": "<p>Вы получаете <strong>+2</strong> к Уклонению против любых атак, сделанных существом с <em>Меткой Смерти</em>.</p>"
     },
     "Shadowed Grit": {
       "name": "Shadowed Grit",
@@ -399,12 +399,12 @@
       "description": "<p>You have another death move option: Spectral Form. When you choose this option, you clear a Hit Point, your body becomes spectral, you have resistance to physical damage, and you can pass through objects. This form ends if you clear any more Hit Points. It also ends if you mark your last Hit Point, which forces you to take a diff erent death move. You’re shunted to the nearest open space if you’re inside an object when the form ends.</p>"
     },
     "Spirit Blast": {
-      "name": "Spirit Blast",
-      "description": "<p><strong>Spend a Focus</strong> to make an <strong>Instinct Roll</strong> against an adversary within Close range. On a success, you deal <strong>d20+3</strong> magic damage using your Proficiency and can spend an additional Focus to make them temporarily <em>Vulnerable</em>.</p>",
+      "name": "Духовный Взрыв",
+      "description": "<p><strong>Потратьте Концентрацию</strong>, чтобы совершить бросок Инстинкта против противника в пределах Средней дистанции. При успехе нанесите <strong>d20+3</strong> магического урона, используя ваше Мастерство, а также можете <strong>потратить дополнительную Концентрацию</strong>, чтобы сделать противника временно Уязвимым.</p>",
       "actions": {
         "dIHUBfsBFO0Kei40": {
-          "name": "Spirit Blast",
-          "description": "<p>Spend a Focus to make an Instinct Roll against an adversary within Close range. On a success, you deal d20+3 magic damage using your Proficiency and can spend an additional Focus to make them temporarily Vulnerable.</p>"
+          "name": "Духовный Взрыв",
+          "description": "<p><strong>Потратьте Концентрацию</strong>, чтобы совершить бросок Инстинкта против противника в пределах Средней дистанции. При успехе нанесите <strong>d20+3</strong> магического урона, используя ваше Мастерство, а также можете <strong>потратить дополнительную Концентрацию</strong>, чтобы сделать противника временно Уязвимым.</p>"
         }
       }
     },
@@ -505,66 +505,66 @@
       "description": "<p>Sweeping: Your attack targets all adversaries within Very Close range. Deal half damage to all targets you succeed against.</p>"
     },
     "Tethered Talisman": {
-      "name": "Tethered Talisman",
-      "description": "<p>Once per rest, you can imbue a small item with your protective essence. When the person holding the talisman takes damage, you can expend its magic to reduce the number of Hit Points they mark by one. You can’t create a new talisman until the old one has been used.</p>",
+      "name": "Талисман Связи",
+      "description": "<p>Один раз до следующего отдыха, вы можете зачаровать небольшой предмет вашей защитной эссенцией. Когда человек, держащий талисман, получает урон, вы можете потратить магию талисмана, чтобы уменьшить количество отмеченных Ран на одну. Вы не можете создать новый талисман, пока предыдущий не будет использован.</p>",
       "actions": {
         "JvGfIDjfeKa26pr1": {
-          "name": "Tether",
-          "description": "<p>Once per rest, you can imbue a small item with your protective essence. When the person holding the talisman takes damage, you can expend its magic to reduce the number of Hit Points they mark by one. You can’t create a new talisman until the old one has been used.</p>"
+          "name": "Связать",
+          "description": "<p>Один раз до следующего отдыха, вы можете зачаровать небольшой предмет вашей защитной эссенцией. Когда человек, держащий талисман, получает урон, вы можете потратить магию талисмана, чтобы уменьшить количество отмеченных Ран на одну. Вы не можете создать новый талисман, пока предыдущий не будет использован.</p>"
         }
       }
     },
     "Toxic Concoctions": {
-      "name": "Toxic Concoctions",
-      "description": "<p><strong>Mark a Stress</strong> to add [[/r 1d4+1]] tokens to this card. On your next long rest, clear this card. You know these poisons:</p><ul><li><p><em><strong>Gorgon’s Root</strong>: The target’s <strong>Difficulty</strong> gains a permanent <strong>-1</strong> penalty. This can only affect them once.</em></p></li><li><p><em><strong>Grave Spore</strong>: The target must also mark a <strong>Stress</strong>.</em></p></li><li><p><em><strong>Leech Weed</strong>: Gain a <strong>+1d6</strong> bonus to damage on this attack.</em></p></li></ul>",
+      "name": "Токсичные Смеси",
+      "description": "<p><strong>Отметьте Стресс</strong>, чтобы добавить <strong>[[/r 1d4+1]]</strong> жетонов на эту карту. Во время следующего продолжительного отдыха, снимите все жетоны. Вы знаете следующие яды:</p><ul><li><strong><em>Корень Горгоны</strong>: Цель получает постоянный штраф <strong>-1</strong> к Сложности. Это может подействовать на нее только один раз.</em></li></ul><ul><li><strong><em>Могильная Спора</strong>: Цель также должна отметить <strong>Стресс</strong>.</em></li></ul><ul><li><strong><em>Плющ Пиявки</strong>: Добавьте <strong>+1d6</strong> к урону для этой атаки.</em></li></ul>",
       "actions": {
         "FKyTGtBLvh6Or7cS": {
-          "name": "Mark a stress"
+          "name": "Отметить стресс"
         }
       }
     },
     "True Strike": {
-      "name": "True Strike",
-      "description": "<p>Once per long rest, when you fail an attack roll, you can <strong>spend a Hope</strong> to make it a success instead.</p>",
+      "name": "Верный Удар",
+      "description": "<p>Один раз до следующего продолжительного отдыха, когда вы проваливаете бросок атаки, вы можете <strong>потратить Надежду</strong>, чтобы сделать ее успешной.</p>",
       "actions": {
         "oP50d3Hy89j5M39a": {
-          "name": "Spend a Hope"
+          "name": "Потратить Надежду"
         }
       }
     },
     "Twin Fang": {
-      "name": "Twin Fang",
-      "description": "<p>When you afflict a target with a known poison’s effect, you can spend an additional token to inflict the effect of a second known poison.</p>"
+      "name": "Двойной Клык",
+      "description": "<p>Когда вы накладываете на цель эффект известного яда, вы можете потратить дополнительный жетон, чтобы наложить эффект второго известного яда.</p>"
     },
     "Veilwalker": {
       "name": "Veilwalker",
       "description": "<p>You can briefl y slip into the realm between the living and the dead. Spend 2 Hope to disappear and then reappear next to a creature or a corpse within Far range. You then have advantage on the next attack roll you make in this scene.</p>",
       "actions": {
         "T2fgFkNFX2WWU8TT": {
-          "name": "Spend 2 Hope"
+          "name": "Потратить 2 Надежды"
         }
       }
     },
     "Venomancer": {
-      "name": "Venomancer",
-      "description": "<p>You also know these poisons:</p><ul><li><p><em><strong>Blight Seed:</strong> The target gains a permanent <strong>-3</strong> penalty to their <strong>damage thresholds</strong>. This can only affect them once.</em></p></li><li><p><em><strong>Fear Leaf:</strong> The damage from this attack gains a bonus equal to the result of your <strong>Fear</strong> Die.</em></p></li></ul>"
+      "name": "Веномант",
+      "description": "<p>Вы также знаете следующие яды:</p><ul><li><strong><em>Семя Гнили</strong>: Цель получает постоянный штраф <strong>-3</strong> к порогам урона. Это может подействовать на нее только один раз.</em></li></ul><ul><li><strong><em>Лист Страха</strong>: Урон от этой атаки получает бонус, равный результату вашей Кости Страха.</em></li></ul>"
     },
     "Volatile Toxins": {
       "name": "Volatile Toxins",
       "description": "<p>You can choose two mutagen benefits instead of one. If you do, mark a Hit Point that can’t be cleared until you finish your next rest.</p>",
       "actions": {
         "S2P9d1idmgJnIQEO": {
-          "name": "Mark HP"
+          "name": "Отметить Рану"
         }
       }
     },
     "Walk Between Worlds": {
-      "name": "Walk Between Worlds",
-      "description": "<p>Make a <strong>Spellcast Roll (13)</strong> to step beyond the veil of death and converse with any nearby spirits. Place a number of tokens equal to your Spellcast trait on this card and remove one each time a spirit answers a question. You return to the mortal realm when the last token is removed.</p>",
+      "name": "Хождение Между Мирами",
+      "description": "<p>Совершите <strong>Бросок Заклинания (13)</strong>, чтобы переступить завесу смерти и поговорить с любыми духами поблизости. Положите на эту карту количество жетонов, равное вашей Характеристике Заклинателя, и снимайте по одному жетону каждый раз, когда дух отвечает на вопрос. Вы возвращаетесь в мир смертных, когда снимете последний жетон.</p>",
       "actions": {
         "oaWeFrfXwY2yEUEd": {
-          "name": "Converse with Spirits",
-          "description": "<p>Make a <strong>Spellcast Roll (13</strong>) to step beyond the veil of death and converse with any nearby spirits. Place a number of tokens equal to your Spellcast trait on this card and remove one each time a spirit answers a question. You return to the mortal realm when the last token is removed.</p>"
+          "name": "Разговор с духами",
+          "description": "<p>Совершите <strong>Бросок Заклинания (13)</strong>, чтобы переступить завесу смерти и поговорить с любыми духами поблизости. Положите на эту карту количество жетонов, равное вашей Характеристике Заклинателя, и снимайте по одному жетону каждый раз, когда дух отвечает на вопрос. Вы возвращаетесь в мир смертных, когда снимете последний жетон.</p>"
         }
       }
     },

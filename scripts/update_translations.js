@@ -118,7 +118,9 @@ const EQUIPMENT_NAME_ALIASES = {
 
 // Алиасы для названий способностей.
 const FEATURE_NAME_ALIASES = {
-  unshakeable: "unshakable"
+  unshakeable: "unshakable",
+  wailingleap: "jumpscare",
+  umbraveil: "umbralveil",
 };
 
 const UNSTOPPABLE_NOTE_HTML =
@@ -2242,8 +2244,9 @@ async function main() {
   async function updateDomainsFile(path, { domainTop, featureMap, oldDomainActions }, stats) {
     return updateEntries(path, (norm, entry, key) => {
       if (!norm) return false;
+      const lookup = resolveAlias(norm, FEATURE_NAME_ALIASES);
       let handled = false;
-      const domainInfo = domainTop[norm];
+      const domainInfo = domainTop[lookup];
 
       if (domainInfo) {
         entry.name = sanitizeName(domainInfo.name);
@@ -2348,7 +2351,7 @@ async function main() {
         handled = true;
       }
 
-      const featureInfo = featureMap[norm];
+      const featureInfo = featureMap[lookup] || featureMap[norm];
       if (featureInfo && !handled) {
         _updateFeature(entry, featureInfo);
         handled = true;
