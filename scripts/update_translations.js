@@ -1363,42 +1363,8 @@ function markdownToHtml(text) {
   return stripLinks(resultHtml);
 }
 
-async function fetchEndpoint(endpoint, lang) {
-  const url = `https://daggerheart.su/api/${endpoint}?lang=${lang}`;
-  const response = await fetch(url);
-  if (!response.ok) {
-    throw new Error(`Failed to fetch ${url}: ${response.status} ${response.statusText}`);
-  }
-  return response.arrayBuffer();
-}
-
-async function downloadEndpoint(endpoint, lang = "ru") {
-  return fetchEndpoint(endpoint, lang);
-}
-
 function getCachePath(endpoint, lang = "ru") {
-  const suffix = lang === "ru" ? "" : `.${lang}`;
-  return path.join(API_CACHE_DIR, `${endpoint}${suffix}.json`);
-}
-
-async function writeCacheFile(endpoint, lang, buffer) {
-  const target = getCachePath(endpoint, lang);
-  await fs.writeFile(target, Buffer.from(buffer));
-}
-
-async function refreshApiCache() {
-  await fs.rm(API_CACHE_DIR, { recursive: true, force: true });
-  await fs.mkdir(API_CACHE_DIR, { recursive: true });
-  for (const endpoint of ENDPOINTS) {
-    const [ruData, enData] = await Promise.all([
-      downloadEndpoint(endpoint, "ru"),
-      downloadEndpoint(endpoint, "en")
-    ]);
-    await Promise.all([
-      writeCacheFile(endpoint, "ru", ruData),
-      writeCacheFile(endpoint, "en", enData)
-    ]);
-  }
+  return path.join(API_CACHE_DIR, lang, `${endpoint}.json`);
 }
 
 async function loadLanguageDataset(endpoint, lang) {
@@ -1410,11 +1376,9 @@ async function loadLanguageDataset(endpoint, lang) {
       throw err;
     }
   }
-
-  const buffer = await downloadEndpoint(endpoint, lang);
-  await fs.mkdir(API_CACHE_DIR, { recursive: true });
-  await writeCacheFile(endpoint, lang, buffer);
-  return JSON.parse(Buffer.from(buffer).toString("utf-8")).data;
+  throw new Error(
+    `API cache file is missing: ${cachePath}. Run scripts/update_sources.js to refresh API data.`
+  );
 }
 
 async function loadApi(endpoint) {
@@ -1756,10 +1720,6 @@ async function updateEntries(filePath, updater, options = {}) {
 }
 
 async function main() {
-  if (process.env.SKIP_API_REFRESH !== "1") {
-    await refreshApiCache();
-  }
-
   const [
     classData,
     subclassData,

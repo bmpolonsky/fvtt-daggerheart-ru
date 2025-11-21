@@ -7,6 +7,8 @@ const { spawnSync } = require("child_process");
 
 const BASE_DIR = path.resolve(__dirname, "..");
 const TMP_DATA_DIR = path.join(BASE_DIR, "tmp_data");
+const API_CACHE_DIR = path.join(TMP_DATA_DIR, "api");
+const API_LANGUAGES = ["ru", "en"];
 const DAGGERHEART_REPO_DIR = path.join(TMP_DATA_DIR, "original-daggerheart");
 const DAGGERHEART_REPO_URL = "https://github.com/Foundryborne/daggerheart";
 const VOID_REPO_DIR = path.join(TMP_DATA_DIR, "the-void-unofficial");
@@ -26,7 +28,22 @@ const VOID_PACK_NAMES = [
   "adversaries--environments"
 ];
 
+const API_ENDPOINTS = [
+  "class",
+  "subclass",
+  "ancestry",
+  "community",
+  "domain-card",
+  "equipment",
+  "beastform",
+  "transformation",
+  "adversary",
+  "environment",
+  "rule"
+];
+
 const SKIP_REMOTE_UPDATE = process.env.SKIP_REMOTE_UPDATE === "1";
+const SKIP_API_REFRESH = process.env.SKIP_API_REFRESH === "1";
 const SKIP_VOID_UPDATE = process.env.SKIP_VOID_UPDATE === "1";
 const SKIP_VOID_UNPACK = process.env.SKIP_VOID_UNPACK === "1";
 
@@ -35,6 +52,7 @@ async function main() {
   await ensureDaggerheartRepo();
   await ensureVoidRepo();
   await unpackVoidPacks();
+  await refreshApiData();
   console.log("Исходники обновлены.");
 }
 
@@ -109,6 +127,43 @@ function runGitCommand(args, cwd = undefined) {
   if (result.status !== 0) {
     throw new Error(`Git command failed: git ${args.join(" ")}`);
   }
+}
+
+async function refreshApiData() {
+  await fs.mkdir(API_CACHE_DIR, { recursive: true });
+  if (SKIP_API_REFRESH) {
+    console.log("Skipping Daggerheart API data refresh (cached data).");
+    return;
+  }
+  console.log("Refreshing Daggerheart API cache...");
+  await fs.rm(API_CACHE_DIR, { recursive: true, force: true });
+  await fs.mkdir(API_CACHE_DIR, { recursive: true });
+  await Promise.all(
+    API_LANGUAGES.map((lang) => fs.mkdir(path.join(API_CACHE_DIR, lang), { recursive: true }))
+  );
+  for (const endpoint of API_ENDPOINTS) {
+    console.log(`  Fetching ${endpoint} data from API...`);
+    const buffers = await Promise.all(
+      API_LANGUAGES.map((lang) => fetchApiEndpoint(endpoint, lang))
+    );
+    await Promise.all(
+      API_LANGUAGES.map((lang, index) => writeApiCacheFile(endpoint, lang, buffers[index]))
+    );
+  }
+}
+
+async function fetchApiEndpoint(endpoint, lang) {
+  const url = `https://daggerheart.su/api/${endpoint}?lang=${lang}`;
+  const response = await fetch(url);
+  if (!response.ok) {
+    throw new Error(`Failed to fetch ${url}: ${response.status} ${response.statusText}`);
+  }
+  return response.arrayBuffer();
+}
+
+async function writeApiCacheFile(endpoint, lang, buffer) {
+  const target = path.join(API_CACHE_DIR, lang, `${endpoint}.json`);
+  await fs.writeFile(target, Buffer.from(buffer));
 }
 
 main().catch((error) => {
