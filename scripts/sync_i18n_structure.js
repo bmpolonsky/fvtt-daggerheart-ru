@@ -18,8 +18,12 @@ const ORIGINAL_VOID_DIR = path.join(ORIGINAL_TRANSLATIONS_DIR, "void");
 const TARGET_TRANSLATIONS_DIR = path.join(BASE_DIR, "module", "translations");
 
 const TOP_LEVEL_ENTRY_OPTIONAL_KEYS = new Set(["description"]);
+const ADD_ONLY_MODE = process.argv.includes("--add-only");
 
 async function main() {
+  if (ADD_ONLY_MODE) {
+    console.log("Режим только добавления: лишние ключи сохраняются для обратной совместимости.");
+  }
   const results = [];
 
   results.push(
@@ -116,7 +120,7 @@ async function syncFile({ label, sourcePath, targetPath }) {
     }
   } else {
     syncStructures(source, target, "", stats);
-    const aligned = alignObjectOrder(source, target);
+    const aligned = ADD_ONLY_MODE ? target : alignObjectOrder(source, target);
     const orderingChanged = JSON.stringify(aligned) !== JSON.stringify(target);
     target = aligned;
     stats.changed = orderingChanged || Boolean(stats.added.length || stats.removed.length || stats.replaced.length);
@@ -136,7 +140,7 @@ function syncStructures(source, target, prefix, stats) {
   for (const key of Object.keys(target)) {
     if (sourceKeys.has(key)) continue;
     const fullKey = prefix ? `${prefix}.${key}` : key;
-    if (shouldKeepExtraField(prefix, key)) continue;
+    if (ADD_ONLY_MODE || shouldKeepExtraField(prefix, key)) continue;
     delete target[key];
     stats.removed.push(fullKey);
   }

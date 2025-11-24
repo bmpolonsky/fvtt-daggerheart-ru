@@ -1,10 +1,10 @@
 #!/usr/bin/env node
 
 /**
- * Скрипт для обновления русских переводов Daggerheart.
- * Он получает данные напрямую с API сайта daggerheart.su и обновляет
- * JSON файлы в директории module/translations.
- *
+ * Обновляет русские переводы без вмешательства в Foundry-специфичные поля:
+ * только имена, описания и текстовые поля данных. Действия/эффекты и прочие
+ * элементы UI не трогаются. Для полной пересборки используйте
+ * scripts/update_translations_full.js.
  */
 
 // Подключение встроенных модулей Node.js для работы с файловой системой и путями.
@@ -63,49 +63,6 @@ const CLASS_ITEM_OVERRIDES = {
   "Broken Compass": { name: "Кажущийся сломанным компас" }
 };
 
-/**
- * Ручные переопределения для HTML-содержимого отдельных действий (actions).
- * Используется в случаях, когда API отдает одну большую способность,
- * а в системе Foundry она должна быть разделена на несколько отдельных действий.
- */
-const ACTION_OVERRIDES = {
-  // Elementalist foundation: flavour text split into two separate actions.
-  rxuFLfHP1FILDpds:
-    "<p><strong>Потратьте Надежду</strong>, опишите, как контроль над вашей стихией помогает в броске действия, который вы собираетесь сделать, и получите +2 к броску действия.</p>",
-  S7HvFD3qIR3ifJRL:
-    "<p><strong>Потратьте Надежду</strong>, опишите, как контроль над вашей стихией помогает в броске действия, который вы собираетесь сделать, и получите +3 к броску урона.</p>",
-
-  // Sparing Touch split: healing HP vs Stress.
-  aanLNQkeO2ZTIqBl:
-    "<p>Один раз до следующего Продолжительного отдыха коснитесь существа и очистите ему 2 Раны.</p>",
-  cWdzCQJv8RFfi2NR:
-    "<p>Один раз до следующего Продолжительного отдыха коснитесь существа и очистите ему 2 Стресса.</p>",
-
-  // Weapon Specialist split.
-  "vay9rVXJS3iksaVR": "<p>Вы владеете многими видами оружия с ужасающей легкостью. Когда вы преуспеваете в атаке, вы можете <strong>потратить Надежду</strong>, чтобы добавить одну из костей урона от вашего вторичного оружия к Броску Урона.</p>",
-  "1bBFfxmywJpx5tfk": "<p>Кроме того, один раз до следующего Продолжительного отдыха, когда вы бросаете Кости Истребления, перебросьте любые выпавшие <strong>1</strong>.</p>",
-
-  // Wings of Light split.
-  rg2sLCTqY2rTo861:
-    "<p><strong>Отметьте Стресс</strong>, чтобы во время полёта поднять и нести союзника вашего размера или меньше.</p>",
-  "1qjnoz5I7NqrWMkp":
-    "<p><strong>Потратьте Надежду</strong>, чтобы нанести дополнительный <strong>1d8</strong> урона при успешной атаке в полёте.</p>"
-};
-
-// Генераторы действий для способностей, которые описаны списком.
-// Ключ - ID способности из API.
-const FEATURE_ACTION_GENERATORS = {
-  147: generateBulletActions,
-  159: generateBulletActions,
-  160: generateBulletActions,
-  161: generateBulletActions
-};
-
-const ADVERSARY_FEATURE_RENDERERS = {
-  1599: renderBattleBoxRandomTactics
-};
-
-// Алиасы для нормализации названий подклассов (исправление опечаток в API или системе).
 const SUBCLASS_NAME_ALIASES = {
   comaraderie: "camaraderie",
   partnerinarms: "partnersinarms",
@@ -129,9 +86,6 @@ const TRANSFORMATION_ENTRY_ALIASES = {
   demigodichorofthegod: "demigodichorofthegods"
 };
 
-const UNSTOPPABLE_NOTE_HTML =
-  "<p>><strong>Примечание:</strong> если ваша кость Неудержимости d4 и на данный момент значение 4 находится сверху, вы убираете кость в следующий раз, когда значение пришлось бы увеличить. Но если ваша кость увеличилась до d6 и значение 4 находится сверху, вы переворачиваете кость на 5 в следующий раз, когда увеличиваете значение. В этом случае вы убираете кость, когда её значение нужно повысить до значения больше 6.</p>";
-
 const MANUAL_ENTRY_PATCHES = {
   classes: {
     Bard: {
@@ -140,8 +94,6 @@ const MANUAL_ENTRY_PATCHES = {
     },
     Evolution: {
       descriptionSuffix:
-        "<p>><strong>Примечание:</strong> Не забудьте вручную увеличить выбранную Характеристику на +1 на вашем листе персонажа. Система пока не применяет этот бонус автоматически.</p>",
-      actionSuffix:
         "<p>><strong>Примечание:</strong> Не забудьте вручную увеличить выбранную Характеристику на +1 на вашем листе персонажа. Система пока не применяет этот бонус автоматически.</p>"
     },
     Unstoppable: {
@@ -150,10 +102,12 @@ const MANUAL_ENTRY_PATCHES = {
       descriptionReplacements: [
         {
           pattern: /<p>><strong>Совет:[\s\S]*?<\/p>/i,
-          value: UNSTOPPABLE_NOTE_HTML
+          value:
+            "<p>><strong>Примечание:</strong> если ваша кость Неудержимости d4 и на данный момент значение 4 находится сверху, вы убираете кость в следующий раз, когда значение пришлось бы увеличить. Но если ваша кость увеличилась до d6 и значение 4 находится сверху, вы переворачиваете кость на 5 в следующий раз, когда увеличиваете значение. В этом случае вы убираете кость, когда её значение нужно повысить до значения больше 6.</p>"
         }
       ],
-      descriptionSuffix: UNSTOPPABLE_NOTE_HTML
+      descriptionSuffix:
+        "<p>><strong>Примечание:</strong> если ваша кость Неудержимости d4 и на данный момент значение 4 находится сверху, вы убираете кость в следующий раз, когда значение пришлось бы увеличить. Но если ваша кость увеличилась до d6 и значение 4 находится сверху, вы переворачиваете кость на 5 в следующий раз, когда увеличиваете значение. В этом случае вы убираете кость, когда её значение нужно повысить до значения больше 6.</p>"
     }
   }
 };
@@ -167,7 +121,6 @@ const ARMOR_OVERRIDES = {
     name: "Без доспехов",
     description: "<p>Благодаря карте домена <strong>«Ничего лишнего»</strong>, пока на вас не экипирована броня, ваш базовый Показатель Брони равен 3 + ваша Сила, а также вы используете следующие значения как ваши базовые пороги урона:</p><ul><li><strong><em>Ранг 1:</em></strong> 9/19</li><li><strong><em>Ранг 2:</em></strong> 11/24</li><li><strong><em>Ранг 3:</em></strong> 13/31</li><li><strong><em>Ранг 4:</em></strong> 15/38</li></ul>"
   }
-
 };
 
 // Устаревшие ключи родословных, которые нужно игнорировать.
@@ -213,8 +166,6 @@ const ATTACK_NAME_TRANSLATIONS = {
   attack: "Атака"
 };
 
-const DEFAULT_OTHER_LABEL = "Прочие";
-
 // Регулярные выражения для очистки HTML и Markdown.
 const HTML_LINK_RE = /<a\s+[^>]*>(.*?)<\/a>/gis;
 const MD_LINK_RE = /\[([^\]]+)\]\([^)]+\)/g;
@@ -254,42 +205,6 @@ function normalizeItemAttack(entry) {
   }
 }
 
-function buildEnvironmentPotentialLabels(entries) {
-  const map = {};
-  for (const entry of entries || []) {
-    if (!entry || !entry.slug) continue;
-    const labels = parsePotentialLabelList(entry.potential_adversaries);
-    if (labels.length) {
-      map[entry.slug] = labels;
-    }
-  }
-  return map;
-}
-
-function parsePotentialLabelList(text) {
-  if (!text || typeof text !== "string") return [];
-  const cleaned = stripLinks(text);
-  const categories = [];
-  const seen = new Set();
-
-  cleaned.replace(/([^,()]+)\([^)]*\)/g, (_, raw) => {
-    const label = sanitizeName(raw.replace(/[:：]+$/, ""));
-    if (label && !seen.has(label)) {
-      categories.push(label);
-      seen.add(label);
-    }
-    return "";
-  });
-
-  const remainder = cleaned.replace(/([^,()]+)\([^)]*\)/g, "").replace(/[,.\s]+/g, " ").trim();
-  const hasStandalone = remainder.length > 0;
-  if (hasStandalone) {
-    categories.push(DEFAULT_OTHER_LABEL);
-  }
-
-  return categories;
-}
-
 // Определение базовых директорий проекта.
 const BASE_DIR = path.resolve(__dirname, "..");
 const DATA_DIR = path.join(BASE_DIR, "tmp_data"); // Временная папка для скачанных данных
@@ -314,134 +229,6 @@ function normalize(text) {
   return key || null;
 }
 
-const DOMAIN_ACTION_SPLITTERS = (() => {
-  const map = {};
-  const add = (name, config) => {
-    const norm = normalize(name);
-    if (!norm) return;
-    map[norm] = config;
-  };
-
-  add("Book of Exota", {
-    forceUnique: true,
-    split: ({ features }) => {
-      const segments = [];
-      if (features && features[0] && features[0].main_body) {
-        segments.push(features[0].main_body);
-      }
-      if (features && features[1] && features[1].main_body) {
-        const second = normalizeMarkdownSource(features[1].main_body);
-        if (second) {
-          const parts = second.split(/(?=Совершите)/i).map((part) => part.trim()).filter(Boolean);
-          if (parts.length > 1) {
-            segments.push(parts[0]);
-            segments.push(parts.slice(1).join(" ").trim());
-          } else {
-            segments.push(second);
-          }
-        }
-      }
-      return segments;
-    }
-  });
-
-  add("Chain Lightning", {
-    forceUnique: true,
-    split: ({ markdown }) => splitMarkdownWithRegex(markdown, /(?=Дополнительные|Additional\s+targets?)/i)
-  });
-
-  add("Chokehold", {
-    forceUnique: true,
-    split: ({ markdown }) => splitMarkdownParagraphs(markdown)
-  });
-
-  add("Cinder Grasp", {
-    forceUnique: true,
-    split: ({ markdown }) => splitMarkdownParagraphs(markdown)
-  });
-
-  add("Codex-Touched", {
-    forceUnique: true,
-    split: ({ markdown }) => {
-      const lines = normalizeMarkdownSource(markdown)
-        .split(/\n/)
-        .map((line) => line.trim())
-        .filter((line) => line.startsWith("- "));
-      if (!lines.length) return [];
-      return lines.map((line) => line.replace(/^-+\s*/, "").trim());
-    }
-  });
-
-  add("Enrapture", {
-    forceUnique: true,
-    split: ({ markdown }) => splitMarkdownWithRegex(markdown, /(?=Один раз)/i)
-  });
-
-  add("Rain of Blades", {
-    forceUnique: true,
-    split: ({ markdown }) => splitMarkdownWithRegex(markdown, /(?=Если)/i)
-  });
-
-  add("Restoration", {
-    forceUnique: true,
-    split: ({ markdown }) => splitRestorationSegments(markdown)
-  });
-
-  add("Unleash Chaos", {
-    forceUnique: true,
-    split: ({ markdown }) => {
-      const paragraphs = splitMarkdownParagraphs(markdown);
-      if (!paragraphs.length) return [];
-      if (paragraphs.length === 1) return [paragraphs[0]];
-      const first = paragraphs[0];
-      const second = paragraphs[1] || "";
-      const stressMatch = second.match(/(\*\*\s*(?:Отметьте|Mark\s+Stress)[\s\S]*)/i);
-      let mainSecond = second;
-      let stressPart = "";
-      if (stressMatch) {
-        mainSecond = second.slice(0, stressMatch.index).trim();
-        stressPart = stressMatch[0].trim();
-      }
-      const combined = mainSecond ? `${first}\n\n${mainSecond}` : first;
-      const segments = [combined];
-      if (stressPart) {
-        segments.push(stressPart);
-      }
-      return segments;
-    }
-  });
-
-  return map;
-})();
-
-const ENVIRONMENT_ACTION_SPLITTERS = {
-  kYxuTZjH7HDUGeWh: createMarkdownPhraseSplitter("Когда он срабатывает"),
-  "56qjiKMoN6S9riI6": createMarkdownPhraseSplitter("Чтобы вернуть украденный предмет"),
-  eSTq8Y0v4Dwd13XU: createMarkdownPhraseSplitter("Когда отсчёт срабатывает"),
-  "0OYHJZqT0DlVz5be": createMarkdownPhraseSplitter("Когда он срабатывает"),
-  EP4FXeQqbqFGQoIX: ({ markdown }) => splitCliffsideFallSegments(markdown),
-  IHLJjpOQyWjmCLAL: createMarkdownPhraseSplitter("Когда он срабатывает"),
-  AJdG1krRvixBFCZG: createMarkdownPhraseSplitter("Когда отсчёт завершён"),
-  K8ld4m5yTA6WZwUs: createMarkdownPhraseSplitter("Когда он срабатывает")
-};
-
-// Вспомогательная функция для разрешения алиасов.
-function resolveAlias(norm, aliases) {
-  if (!norm) return norm;
-  return aliases[norm] || norm;
-}
-
-// Нормализует текст: убирает лишние переносы строк и пробелы.
-function normaliseText(text) {
-  if (!text) return "";
-  return text.replace(/\r\n/g, "\n").trim();
-}
-
-/**
- * Удаляет из текста HTML/Markdown ссылки и лишние HTML-атрибуты.
- * @param {string} text - Исходный HTML или Markdown.
- * @returns {string} Очищенный текст.
- */
 function stripLinks(text) {
   if (!text) return text;
   let result = text;
@@ -472,138 +259,45 @@ function sanitizeName(text) {
   return stripLinks(text).trim();
 }
 
-function stripLeadingStrongLabel(html) {
-  if (!html) return html;
-  return html.replace(/^<p><strong>[^<]+?\.<\/strong>\s*/i, "<p>");
-}
-
 function normalizeMarkdownSource(markdown) {
   if (!markdown) return "";
   return markdown.replace(/\r\n/g, "\n").trim();
 }
 
-function renderMarkdownSegments(segments, desiredCount) {
-  if (!segments || !segments.length) return [];
-  let chunks = segments
-    .map((segment) => (segment || "").trim())
-    .filter(Boolean)
-    .map((segment) => markdownToHtml(segment));
-  if (!chunks.length) return [];
-  if (desiredCount && desiredCount > 0) {
-    if (chunks.length > desiredCount) {
-      chunks = chunks.slice(0, desiredCount);
-    } else if (chunks.length < desiredCount) {
-      const filler = chunks[chunks.length - 1];
-      while (chunks.length < desiredCount) {
-        chunks.push(filler);
+function collapseAdjacentInlineTags(html, tagName) {
+  if (!html) return html;
+  const pattern = new RegExp(
+    `<${tagName}([^>]*)>([^<]*)</${tagName}>((?:\\s|&nbsp;)+)<${tagName}([^>]*)>([^<]*)</${tagName}>`,
+    "gi"
+  );
+  let result = html;
+  let previous;
+  do {
+    previous = result;
+    result = result.replace(pattern, (_match, attrsLeft, left, gap, attrsRight, right) => {
+      const attrString = attrsLeft || attrsRight || "";
+      const leftTrimmed = left.replace(/\s+$/, "");
+      const rightTrimmed = right.replace(/^\s+/, "");
+      const leftEnd = leftTrimmed.slice(-1);
+      const rightStart = rightTrimmed.slice(0, 1);
+      const gapHasNbsp = /&nbsp;/.test(gap || "");
+      let spacer = "";
+      if (gapHasNbsp) {
+        spacer = "&nbsp;";
+      } else if (
+        !leftTrimmed ||
+        !rightTrimmed ||
+        /[([{«]$/.test(leftEnd) ||
+        /^[)\]},.:;!?]/.test(rightStart)
+      ) {
+        spacer = "";
+      } else {
+        spacer = " ";
       }
-    }
-  }
-  return chunks;
-}
-
-function normalizeMarkdownText(markdown) {
-  if (!markdown) return "";
-  return markdown.replace(/\r\n/g, "\n").trim();
-}
-
-function splitMarkdownByPhrase(markdown, phrase) {
-  if (!markdown || !phrase) return null;
-  const normalized = normalizeMarkdownText(markdown);
-  const idx = normalized.indexOf(phrase);
-  if (idx === -1) return null;
-  const before = normalized.slice(0, idx).trim();
-  const after = normalized.slice(idx).trim();
-  const segments = [];
-  if (before) segments.push(before);
-  if (after) segments.push(after);
-  return segments.length >= 2 ? segments : null;
-}
-
-function splitMarkdownAndQuestion(markdown) {
-  const normalized = normalizeMarkdownText(markdown);
-  const markerIndex = normalized.lastIndexOf("\n\n*");
-  if (markerIndex === -1) {
-    return { body: normalized, question: "" };
-  }
-  return {
-    body: normalized.slice(0, markerIndex).trim(),
-    question: normalized.slice(markerIndex).trim()
-  };
-}
-
-function createMarkdownPhraseSplitter(phrase) {
-  return ({ markdown }) => splitMarkdownByPhrase(markdown, phrase);
-}
-
-function splitCliffsideFallSegments(markdown) {
-  if (!markdown) return null;
-  const { body, question } = splitMarkdownAndQuestion(markdown);
-  const normalized = normalizeMarkdownText(body);
-  const anchor = "Персонаж получает";
-  const idx = normalized.indexOf(anchor);
-  const intro = idx === -1 ? normalized : normalized.slice(0, idx).trim();
-  const segments = [
-    intro,
-    "Если отсчёт находится между 8 и 12, персонаж получает **1d12** физического урона.",
-    "Если отсчёт находится между 4 и 7, персонаж получает **2d12** физического урона.",
-    "Если отсчёт равен 3 или ниже, персонаж получает **3d12** физического урона."
-  ];
-  if (question) {
-    segments[segments.length - 1] = `${segments[segments.length - 1]}\n\n${question}`;
-  }
-  return segments;
-}
-
-function splitMarkdownWithRegex(markdown, regex) {
-  const source = normalizeMarkdownSource(markdown);
-  if (!source) return [];
-  const parts = source.split(regex).map((part) => part.trim()).filter(Boolean);
-  return parts;
-}
-
-function splitMarkdownParagraphs(markdown) {
-  const source = normalizeMarkdownSource(markdown);
-  if (!source) return [];
-  return source.split(/\n\s*\n+/).map((chunk) => chunk.trim()).filter(Boolean);
-}
-
-function splitRestorationSegments(markdown) {
-  const source = normalizeMarkdownSource(markdown);
-  if (!source) return [];
-  const paragraphs = source.split(/\n\s*\n+/).map((chunk) => chunk.trim()).filter(Boolean);
-  if (!paragraphs.length) return [];
-  const segments = [];
-  const healingParagraph =
-    paragraphs.find((p) => /2\s*[Рр]ан/i.test(p) && /Стресс/i.test(p)) || paragraphs[0];
-  const stripIntro = (text) => {
-    if (!text) return text;
-    const lower = text.toLowerCase();
-    const marker = "прикоснитесь";
-    const idx = lower.indexOf(marker);
-    if (idx > -1) {
-      return text.slice(idx).trim();
-    }
-    return text.trim();
-  };
-
-  if (healingParagraph) {
-    const healingPlain = stripLinks(healingParagraph);
-    const choiceRegex = /2\s*[Рр]ан[аыё]\s+или\s+2\s*[Сс]тресс[аыё]/i;
-    if (choiceRegex.test(healingPlain)) {
-      const woundsVariant = healingPlain.replace(choiceRegex, "2 Раны");
-      const stressVariant = healingPlain.replace(choiceRegex, "2 Стресса");
-      segments.push(stripIntro(woundsVariant));
-      segments.push(stripIntro(stressVariant));
-    } else {
-      segments.push(stripIntro(healingPlain));
-    }
-  }
-  const conditionParagraph = paragraphs.find((p) => /состояни/i.test(p) || /заболеван/i.test(p));
-  if (conditionParagraph) {
-    segments.push(stripLinks(conditionParagraph).trim());
-  }
-  return segments;
+      return `<${tagName}${attrString}>${leftTrimmed}${spacer}${rightTrimmed}</${tagName}>`;
+    });
+  } while (result !== previous);
+  return result;
 }
 
 // Регулярные выражения для поиска специфичных для Foundry VTT тегов.
@@ -736,94 +430,6 @@ function normalizeSecretSections(html) {
   });
 }
 
-function preserveSecretSectionsFromSource(newHtml, oldHtml) {
-  if (!newHtml || !oldHtml) return newHtml;
-  const secretMatches = Array.from(oldHtml.matchAll(SECRET_SECTION_RE));
-  if (!secretMatches.length) return newHtml;
-  let result = newHtml;
-  const pending = [];
-  for (const match of secretMatches) {
-    const block = (match[0] || "").trim();
-    if (!block || result.includes(block)) continue;
-    const idMatch = block.match(/\bid=['"]([^'"]+)['"]/i);
-    if (idMatch) {
-      const id = idMatch[1];
-      const sectionById = new RegExp(
-        `<section\\b[^>]*id=['"]${escapeRegExp(id)}['"][^>]*>[\\s\\S]*?<\\/section>`,
-        "i"
-      );
-      if (sectionById.test(result)) {
-        result = result.replace(sectionById, block);
-        continue;
-      }
-    }
-    const innerMatch = block.match(/^<section[^>]*>([\s\S]*?)<\/section>$/i);
-    const inner = innerMatch ? innerMatch[1].trim() : "";
-    if (inner) {
-      const idx = result.indexOf(inner);
-      if (idx !== -1) {
-        result = `${result.slice(0, idx)}${result.slice(idx + inner.length)}`;
-      } else {
-        const plainInner = stripLinks(inner)
-          .replace(/\s+/g, " ")
-          .trim();
-        if (plainInner) {
-          const removalResult = removePlainTextOutsideSecrets(result, plainInner);
-          result = removalResult.html;
-        }
-      }
-    }
-    pending.push(block);
-  }
-  if (pending.length) {
-    result = result.replace(/\s*$/, "") + pending.join("");
-  }
-  return result;
-}
-
-function collapseAdjacentInlineTags(html, tagName) {
-  if (!html) return html;
-  const pattern = new RegExp(
-    `<${tagName}([^>]*)>([^<]*)</${tagName}>((?:\\s|&nbsp;)+)<${tagName}([^>]*)>([^<]*)</${tagName}>`,
-    "gi"
-  );
-  let result = html;
-  let previous;
-  do {
-    previous = result;
-    result = result.replace(pattern, (_match, attrsLeft, left, gap, attrsRight, right) => {
-      const attrString = attrsLeft || attrsRight || "";
-      const leftTrimmed = left.replace(/\s+$/, "");
-      const rightTrimmed = right.replace(/^\s+/, "");
-      const leftEnd = leftTrimmed.slice(-1);
-      const rightStart = rightTrimmed.slice(0, 1);
-      const gapHasNbsp = /&nbsp;/.test(gap || "");
-      let spacer = "";
-      if (gapHasNbsp) {
-        spacer = "&nbsp;";
-      } else if (
-        !leftTrimmed ||
-        !rightTrimmed ||
-        /[([{«]$/.test(leftEnd) ||
-        /^[)\]},.:;!?]/.test(rightStart)
-      ) {
-        spacer = "";
-      } else {
-        spacer = " ";
-      }
-      return `<${tagName}${attrString}>${leftTrimmed}${spacer}${rightTrimmed}</${tagName}>`;
-    });
-  } while (result !== previous);
-  return result;
-}
-
-/**
- * Пытается перенести технические теги Foundry из старого HTML в новый.
- * ВАЖНО: Эта функция не идеальна и может давать сбои.
- * @param {string} oldHtml - Старый HTML, содержащий теги.
- * @param {string} newHtml - Новый HTML, куда нужно перенести теги.
- * @returns {string} Новый HTML с (надеюсь) перенесенными тегами.
- */
 function mergeFoundryTags(oldHtml, newHtml) {
   if (!newHtml) return newHtml;
   const source = oldHtml || "";
@@ -859,7 +465,6 @@ function mergeFoundryTags(oldHtml, newHtml) {
     }
   }
 
-  // Обработка инлайн-бросков [[/r ...]]
   const inlineMatches = Array.from(source.matchAll(INLINE_ROLL_RE));
   const appendedRolls = [];
   const appendedRollSet = new Set();
@@ -891,7 +496,6 @@ function mergeFoundryTags(oldHtml, newHtml) {
       }
     }
     if (replaced) continue;
-    // Пытается найти текст броска в новом HTML и заменить его полной версией тега.
     const regex = new RegExp(escapeRegExp(expr), "i");
     if (regex.test(result)) {
       result = result.replace(regex, full);
@@ -905,7 +509,6 @@ function mergeFoundryTags(oldHtml, newHtml) {
       result = result.replace(wrapperRegex, `$1${full}$2`);
       continue;
     }
-    // Если не нашел, добавляет в конец.
     if (!result.includes(full)) {
       if (!appendedRollSet.has(full)) {
         appendedRollSet.add(full);
@@ -917,23 +520,18 @@ function mergeFoundryTags(oldHtml, newHtml) {
     result = appendBeforeSecret(result, appendedRolls);
   }
 
-  // Обработка ссылок на документы @UUID
-  // Логика: ищет текст ссылки (label) из старого тега в новом HTML.
-  // Если находит, "оборачивает" его обратно в тег.
-  // ОШИБКА: Если текст ссылки в переводе изменился, сопоставление не сработает и тег пропадет.
   const uuidMatches = Array.from(source.matchAll(UUID_TAG_RE));
   for (const match of uuidMatches) {
     const full = match[0];
-    const path = match[1];
+    const pathRef = match[1];
     const label = (match[2] || "").trim();
-    if (!path || !label || result.includes(full)) continue;
+    if (!pathRef || !label || result.includes(full)) continue;
     const regex = new RegExp(escapeRegExp(label));
     if (regex.test(result)) {
-      result = result.replace(regex, `@UUID[${path}]{${label}}`);
+      result = result.replace(regex, `@UUID[${pathRef}]{${label}}`);
     }
   }
 
-  // Обработка секретных секций
   const secretMatches = Array.from(source.matchAll(SECRET_SECTION_RE));
   if (secretMatches.length) {
     const appended = [];
@@ -994,52 +592,6 @@ function mergeFoundryTags(oldHtml, newHtml) {
   return normalizeSecretSections(result);
 }
 
-function ensureHtmlFragment(html, fragment, { position }) {
-  if (!fragment) return html || "";
-  const base = html || "";
-  if (base.includes(fragment)) return base;
-  return position === "prefix" ? `${fragment}${base}` : `${base}${fragment}`;
-}
-
-function applyManualEntryPatches(sectionKey, entryKey, entry) {
-  if (!entry) return;
-  const sectionConfig = MANUAL_ENTRY_PATCHES[sectionKey];
-  if (!sectionConfig) return;
-  const patch = sectionConfig[entryKey];
-  if (!patch) return;
-  if (patch.descriptionReplacements && entry.description) {
-    for (const replacement of patch.descriptionReplacements) {
-      if (!replacement) continue;
-      const { pattern, value } = replacement;
-      if (value === undefined || value === null) continue;
-      if (pattern instanceof RegExp) {
-        entry.description = entry.description.replace(pattern, value);
-      } else if (pattern) {
-        entry.description = entry.description.replace(pattern, value);
-      }
-    }
-  }
-  if (patch.descriptionPrefix) {
-    entry.description = ensureHtmlFragment(entry.description, patch.descriptionPrefix, { position: "prefix" });
-  }
-  if (patch.descriptionSuffix) {
-    entry.description = ensureHtmlFragment(entry.description, patch.descriptionSuffix, { position: "suffix" });
-  }
-  if (entry.actions && (patch.actionPrefix || patch.actionSuffix)) {
-    for (const actionId of Object.keys(entry.actions)) {
-      let updated = getActionHtml(entry.actions, actionId);
-      if (patch.actionPrefix) {
-        updated = ensureHtmlFragment(updated, patch.actionPrefix, { position: "prefix" });
-      }
-      if (patch.actionSuffix) {
-        updated = ensureHtmlFragment(updated, patch.actionSuffix, { position: "suffix" });
-      }
-      setActionHtml(entry.actions, actionId, updated);
-    }
-  }
-}
-
-// Проверяет, есть ли в HTML видимый текст.
 function hasVisibleText(html) {
   if (typeof html !== "string") return false;
   const plain = html
@@ -1049,31 +601,15 @@ function hasVisibleText(html) {
   return plain.length > 0;
 }
 
-/**
- * Устанавливает значение HTML-поля в объекте, предварительно очистив его
- * и попытавшись перенести теги Foundry.
- * @param {object} target - Целевой объект (например, entry.actions).
- * @param {string} key - Ключ в объекте.
- * @param {string} html - Новое HTML-содержимое.
- */
 function setHtmlField(target, key, html) {
   if (!target) return;
-  if (html === null || html === undefined) {
-    delete target[key];
-    return;
-  }
+  if (html === null || html === undefined) return;
   const sanitized = sanitizeHtml(html);
-  if (!sanitized) {
-    delete target[key];
-    return;
-  }
+  if (!sanitized) return;
   let merged = mergeFoundryTags(target[key], sanitized);
   merged = collapseAdjacentInlineTags(merged, "em");
   merged = collapseAdjacentInlineTags(merged, "strong");
-  if (!hasVisibleText(merged)) {
-    delete target[key];
-    return;
-  }
+  if (!hasVisibleText(merged)) return;
   target[key] = merged;
 }
 
@@ -1081,64 +617,6 @@ function isPlainObject(value) {
   return Boolean(value) && typeof value === "object" && !Array.isArray(value);
 }
 
-function extractActionDescription(value) {
-  if (typeof value === "string") {
-    return value;
-  }
-  if (isPlainObject(value) && typeof value.description === "string") {
-    return value.description;
-  }
-  return "";
-}
-
-function getActionHtml(actions, key) {
-  if (!actions || !key) return "";
-  if (!Object.prototype.hasOwnProperty.call(actions, key)) return "";
-  return extractActionDescription(actions[key]);
-}
-
-function setActionHtml(actions, key, html) {
-  if (!actions || !key) return;
-  if (html === null || html === undefined) {
-    delete actions[key];
-    return;
-  }
-
-  const carrier = { value: getActionHtml(actions, key) };
-  setHtmlField(carrier, "value", html);
-  const processed = carrier.value;
-  if (!processed) {
-    delete actions[key];
-    return;
-  }
-
-  const existing = actions[key];
-  if (isPlainObject(existing)) {
-    actions[key] = { ...existing, description: processed };
-  } else if (typeof existing === "string" || existing === undefined) {
-    actions[key] = processed;
-  } else {
-    actions[key] = { description: processed };
-  }
-}
-
-// Вспомогательная функция, которая убирает тег <p> вокруг текста, если он единственный.
-function unwrapSingleParagraph(html) {
-  if (!html) return html;
-  const match = html.match(/^<p>(.*)<\/p>$/is);
-  if (match) {
-    return match[1];
-  }
-  return html;
-}
-
-/**
- * Генерирует HTML-описание из массива способностей (features).
- * Если способность одна, возвращает ее описание.
- * Если несколько — создает сводку вида "<p><strong>Название:</strong> Описание</p>".
- * @param {Array} features - Массив объектов способностей из API.
- * @returns {string|null} Сгенерированный HTML.
- */
 function buildFeatureDescription(features) {
   if (!features || !features.length) return null;
   const chunks = [];
@@ -1163,155 +641,13 @@ function stripExperienceBonus(name) {
   return name.replace(/\s*[+\-]\d+\s*$/u, "").trim();
 }
 
-function cleanAdversaryItemName(name) {
-  if (!name) return name;
-  return name.replace(/\s*[-–—]\s*(?:action|reaction|passive|действие|реакция|пассив[^\s]*)$/iu, "").trim();
-}
-
-function generateBulletActions(rawFeature) {
-  if (!rawFeature) return [];
-  const source = (rawFeature.main_body || "").replace(/\r\n/g, "\n");
-  const matches = source.match(/- .*?(?=\n- |\n*$)/gs);
-  if (!matches) return [];
-  return matches.map((segment) => {
-    const cleaned = segment.replace(/^-\s*/, "").replace(/\*\*\*/g, "**").trim();
-    return sanitizeHtml(markdownToHtml(cleaned));
-  });
-}
-
-function renderBattleBoxRandomTactics(feature) {
-  if (!feature || !feature.main_body) return null;
-  const source = feature.main_body.replace(/\r\n/g, "\n").trim();
-  if (!source) return null;
-
-  const introText = source.split(/\n-\s/)[0]?.trim() || "";
-  const introHtml = introText ? markdownToHtml(introText) : "";
-
-  const items = Array.from(source.matchAll(/-\s+\*\*(.+?)\*\*/g))
-    .map((match) => {
-      const rawName = match[1] ? match[1].replace(/\.+$/, "").trim() : "";
-      const name = sanitizeName(rawName);
-      return name ? `<li><p><strong>${name}</strong></p></li>` : null;
-    })
-    .filter(Boolean);
-
-  const listHtml = items.length ? `<ol>${items.join("")}</ol>` : "";
-  const combined = `${introHtml || ""}${listHtml}`;
-  return combined || null;
-}
-
-function applyFeatureToItemEntry(itemEntry, feature) {
-  if (!itemEntry || !feature) return;
-  const cleanedName = sanitizeName(cleanAdversaryItemName(feature.name || ""));
-  if (cleanedName) {
-    itemEntry.name = cleanedName;
+function unwrapSingleParagraph(html) {
+  if (!html) return html;
+  const match = html.match(/^<p>(.*)<\/p>$/is);
+  if (match) {
+    return match[1];
   }
-  const customRenderer = ADVERSARY_FEATURE_RENDERERS[feature.id];
-  const body =
-    customRenderer !== null && customRenderer !== undefined
-      ? customRenderer(feature)
-      : markdownToHtml(feature.main_body || "");
-  if (body) {
-    setHtmlField(itemEntry, "description", body);
-    if (itemEntry.actions) {
-      for (const actionId of Object.keys(itemEntry.actions)) {
-        setActionHtml(itemEntry.actions, actionId, body);
-      }
-    }
-  } else {
-    delete itemEntry.description;
-  }
-}
-
-function applyBattleBoxOverrides(entry, raw) {
-  if (!entry || !raw) return;
-  const items = entry.items || {};
-  const itemKeys = Object.keys(items);
-  if (itemKeys.length < 2) return;
-  const features = raw.features || [];
-  if (features.length < 2) return;
-
-  const unstoppable = features[0];
-  const randomTactics = features[1];
-  const overload = features[2];
-  const deathQuake = features[3];
-
-  const unstoppableItem = items[itemKeys[0]];
-  if (unstoppableItem) {
-    applyFeatureToItemEntry(unstoppableItem, unstoppable);
-  }
-
-  const randomItem = items[itemKeys[1]];
-  if (randomItem) {
-    applyFeatureToItemEntry(randomItem, randomTactics);
-  }
-
-  const bulletHtml = generateBulletActions(randomTactics) || [];
-  const bulletTargets = itemKeys.slice(2, 2 + bulletHtml.length);
-  for (let i = 0; i < bulletTargets.length; i += 1) {
-    const html = stripLeadingStrongLabel(bulletHtml[i]);
-    if (!html) continue;
-    const target = items[bulletTargets[i]];
-    if (!target) continue;
-    setHtmlField(target, "description", html);
-    if (target.actions) {
-      for (const actionId of Object.keys(target.actions)) {
-        setActionHtml(target.actions, actionId, html);
-      }
-    }
-  }
-
-  if (overload) {
-    const overloadItem = items[itemKeys[itemKeys.length - 2]];
-    if (overloadItem) {
-      applyFeatureToItemEntry(overloadItem, overload);
-    }
-  }
-
-  if (deathQuake) {
-    const deathQuakeItem = items[itemKeys[itemKeys.length - 1]];
-    if (deathQuakeItem) {
-      applyFeatureToItemEntry(deathQuakeItem, deathQuake);
-    }
-  }
-}
-
-function applyFeatureGeneratedActions(entry, featureInfo) {
-  if (!entry || !entry.actions || !featureInfo || !featureInfo.raw) return;
-  const generator = FEATURE_ACTION_GENERATORS[featureInfo.raw.id];
-  if (!generator) return;
-  const generated = generator(featureInfo.raw);
-  if (!generated || !generated.length) return;
-  const ids = Object.keys(entry.actions);
-  for (let i = 0; i < ids.length && i < generated.length; i += 1) {
-    const html = generated[i];
-    if (!html) continue;
-    setActionHtml(entry.actions, ids[i], html);
-  }
-}
-
-/**
- * Общая функция для обновления одной способности (feature).
- * @param {object} entry - Запись для обновления.
- * @param {object} featureInfo - Информация о способности из API.
- */
-function _updateFeature(entry, featureInfo) {
-  if (!featureInfo) return;
-  if (featureInfo.name) {
-    entry.name = sanitizeName(featureInfo.name);
-  }
-  if (featureInfo.description !== null && featureInfo.description !== undefined) {
-    if (featureInfo.description) {
-      setHtmlField(entry, "description", featureInfo.description);
-      if (entry.actions) {
-        for (const actionId of Object.keys(entry.actions)) {
-          setActionHtml(entry.actions, actionId, featureInfo.description);
-        }
-      }
-    } else {
-      delete entry.description;
-    }
-  }
+  return html;
 }
 
 function markdownToHtml(text) {
@@ -1453,6 +789,11 @@ function enFeatureName(feature) {
   return feature.name || "";
 }
 
+function normaliseText(text) {
+  if (!text) return "";
+  return text.replace(/\r\n/g, "\n").trim();
+}
+
 function buildTopLevelMap(enEntries, ruEntries, descriptionFields, mainField = null, options = {}) {
   const { processMainField } = options;
   const ruBySlug = new Map();
@@ -1585,23 +926,6 @@ function appendUuidParagraphs(html, legacyHtml) {
   return result;
 }
 
-const TRANSFORMATION_ACTION_NAME_TRANSLATIONS = {
-  "mark stress": "Отметить Стресс",
-  damage: "Урон"
-};
-
-function translateTransformationActionNames(actions) {
-  if (!actions) return;
-  for (const action of Object.values(actions)) {
-    if (!action || typeof action.name !== "string") continue;
-    const normalized = action.name.trim().toLowerCase();
-    const translated = TRANSFORMATION_ACTION_NAME_TRANSLATIONS[normalized];
-    if (translated) {
-      action.name = translated;
-    }
-  }
-}
-
 function prepareCommunityMainBody({ value }) {
   if (!value) return value;
   const withoutImages = value
@@ -1719,6 +1043,606 @@ async function updateEntries(filePath, updater, options = {}) {
   return missing;
 }
 
+async function applyLabelOverride(filePath, newLabel) {
+  if (!newLabel) return;
+  const source = await fs.readFile(filePath, "utf-8");
+  const hadTrailingNewline = source.endsWith("\n");
+  const raw = JSON.parse(source);
+  if (raw.label !== newLabel) {
+    raw.label = newLabel;
+    const suffix = hadTrailingNewline ? "\n" : "";
+    await fs.writeFile(filePath, `${JSON.stringify(raw, null, 2)}${suffix}`, "utf-8");
+  }
+}
+
+function applyClassQuestionLists(entry, rawInfo) {
+  if (!entry || !rawInfo) return;
+  const sanitizeList = (values) => {
+    if (!Array.isArray(values)) return null;
+    const cleaned = values
+      .map((value) => sanitizeName(value))
+      .filter((value) => typeof value === "string" && value.length > 0);
+    return cleaned.length ? cleaned : null;
+  };
+  const backgrounds = sanitizeList(rawInfo.background_questions) || null;
+  if (backgrounds) {
+    entry.backgroundQuestions = backgrounds;
+  }
+  const connections = sanitizeList(rawInfo.connection_questions) || null;
+  if (connections) {
+    entry.connections = connections;
+  }
+}
+
+function applyManualEntryPatches(sectionKey, entryKey, entry) {
+  if (!entry) return;
+  const sectionConfig = MANUAL_ENTRY_PATCHES[sectionKey];
+  if (!sectionConfig) return;
+  const patch = sectionConfig[entryKey];
+  if (!patch) return;
+  if (patch.descriptionReplacements && entry.description) {
+    for (const replacement of patch.descriptionReplacements) {
+      if (!replacement) continue;
+      const { pattern, value } = replacement;
+      if (value === undefined || value === null) continue;
+      if (pattern instanceof RegExp) {
+        entry.description = entry.description.replace(pattern, value);
+      } else if (pattern) {
+        entry.description = entry.description.replace(pattern, value);
+      }
+    }
+  }
+  if (patch.descriptionPrefix) {
+    entry.description = ensureHtmlFragment(entry.description, patch.descriptionPrefix, { position: "prefix" });
+  }
+  if (patch.descriptionSuffix) {
+    entry.description = ensureHtmlFragment(entry.description, patch.descriptionSuffix, { position: "suffix" });
+  }
+}
+
+function ensureHtmlFragment(html, fragment, { position }) {
+  if (!fragment) return html || "";
+  const base = html || "";
+  if (base.includes(fragment)) return base;
+  return position === "prefix" ? `${fragment}${base}` : `${base}${fragment}`;
+}
+
+function defaultEquipmentDescription(ruEntry, enEntry) {
+  const ruBody = normaliseText(ruEntry.main_body || "");
+  const enBody = normaliseText(enEntry.main_body || "");
+  if (ruBody && (!enBody || ruBody !== enBody)) {
+    return markdownToHtml(ruEntry.main_body || "");
+  }
+  return null;
+}
+
+function createEquipmentMap(equipmentData, typeSlugs, options = {}) {
+  const { buildDescription } = options;
+  const ruBySlug = new Map(equipmentData.ru.map((entry) => [entry.slug, entry]));
+  const map = {};
+  for (const enEntry of equipmentData.en) {
+    if (!typeSlugs.has(enEntry.type_slug)) continue;
+    const ruEntry = ruBySlug.get(enEntry.slug);
+    if (!ruEntry) continue;
+    const norm = normalize(enEntry.name);
+    if (!norm) continue;
+    const rawDescription = buildDescription
+      ? buildDescription(ruEntry, enEntry)
+      : defaultEquipmentDescription(ruEntry, enEntry);
+    const description = rawDescription ? sanitizeHtml(rawDescription) : null;
+    const entryInfo = {
+      name: sanitizeName(ruEntry.name || enEntry.name),
+      description
+    };
+    map[norm] = entryInfo;
+  }
+  return map;
+}
+
+async function applyEquipmentMap(targetPath, map, fallback = {}, options = {}) {
+  const { overrides = {}, preserveFallbackDescription = true, stats = null } = options;
+  const fallbackEntries = (fallback && fallback.entries) || {};
+  return updateEntries(
+    targetPath,
+    (norm, entry, key) => {
+      const fallbackEntry = fallbackEntries[key];
+      if (overrides[key]) {
+        const override = overrides[key];
+        entry.name = sanitizeName(override.name || entry.name);
+        if (override.description) {
+          setHtmlField(entry, "description", override.description);
+        }
+        normalizeItemAttack(entry);
+        return true;
+      }
+      if (!norm) return false;
+      const info = map[norm] || map[resolveAlias(norm, EQUIPMENT_NAME_ALIASES)];
+      if (!info) {
+        if (fallbackEntry) {
+          entry.name = fallbackEntry.name;
+          if (fallbackEntry.description) {
+            entry.description = fallbackEntry.description;
+          }
+          normalizeItemAttack(entry);
+          return true;
+        }
+        return false;
+      }
+      entry.name = sanitizeName(info.name);
+      if (info.description) {
+        setHtmlField(entry, "description", info.description);
+      } else if (preserveFallbackDescription && fallbackEntry && fallbackEntry.description) {
+        entry.description = fallbackEntry.description;
+      }
+      normalizeItemAttack(entry);
+      return true;
+    },
+    { stats }
+  );
+}
+
+function resolveAlias(norm, aliases) {
+  if (!norm) return norm;
+  return aliases[norm] || norm;
+}
+
+async function updateClassesFile(path, { classTop, featureMap, classItemsMap, ruleTop }, stats) {
+  return updateEntries(
+    path,
+    (norm, entry, key) => {
+      if (!norm) return false;
+      let handled = false;
+      const classInfo = classTop[norm];
+      if (classInfo) {
+        entry.name = sanitizeName(classInfo.name);
+        if (classInfo.description) {
+          setHtmlField(entry, "description", classInfo.description);
+        }
+        applyClassQuestionLists(entry, classInfo.raw);
+        handled = true;
+      }
+
+      const featureInfo = featureMap[norm];
+      if (featureInfo) {
+        if (featureInfo.name) entry.name = sanitizeName(featureInfo.name);
+        if (featureInfo.description) {
+          setHtmlField(entry, "description", featureInfo.description);
+        }
+        handled = true;
+      }
+
+      if (norm === normalize("Rally Level 5") && featureMap[normalize("Rally")]) {
+        const info = featureMap[normalize("Rally")];
+        entry.name = `${sanitizeName(info.name)} (уровень 5)`;
+        if (info.description) {
+          setHtmlField(entry, "description", info.description);
+        }
+        handled = true;
+      }
+
+      const itemOverride = classItemsMap[norm];
+      if (itemOverride) {
+        entry.name = itemOverride;
+        handled = true;
+      }
+
+      const staticOverride = CLASS_ITEM_OVERRIDES[key];
+      if (staticOverride) {
+        const override =
+          typeof staticOverride === "string" ? { name: staticOverride } : staticOverride;
+        if (override.name) {
+          entry.name = override.name;
+        }
+        if (override.description) {
+          setHtmlField(entry, "description", override.description);
+        }
+        handled = true;
+      }
+
+      const ruleInfo = ruleTop[norm];
+      if (ruleInfo && (!handled || !entry.description)) {
+        entry.name = sanitizeName(ruleInfo.name);
+        if (ruleInfo.description) {
+          setHtmlField(entry, "description", ruleInfo.description);
+        }
+        handled = true;
+      }
+
+      applyManualEntryPatches("classes", key, entry);
+      return handled;
+    },
+    { stats }
+  );
+}
+
+async function updateSubclassesFile(path, { subclassTop, featureMap }, stats) {
+  return updateEntries(
+    path,
+    (norm, entry) => {
+      if (!norm) return false;
+      const lookup = resolveAlias(norm, SUBCLASS_NAME_ALIASES);
+      let handled = false;
+      const subclassInfo = subclassTop[lookup];
+      if (subclassInfo) {
+        entry.name = sanitizeName(subclassInfo.name);
+        if (subclassInfo.description) {
+          setHtmlField(entry, "description", subclassInfo.description);
+        }
+        handled = true;
+      }
+      const featureInfo = featureMap[lookup] || featureMap[norm];
+      if (featureInfo) {
+        if (featureInfo.name) entry.name = sanitizeName(featureInfo.name);
+        if (featureInfo.description) {
+          setHtmlField(entry, "description", featureInfo.description);
+        }
+        handled = true;
+      }
+      return handled;
+    },
+    { stats }
+  );
+}
+
+async function updateAncestriesFile(path, { ancestryTop, featureMap }, stats) {
+  return updateEntries(
+    path,
+    (norm, entry) => {
+      if (!norm) return false;
+      const lookup = resolveAlias(norm, FEATURE_NAME_ALIASES);
+      let handled = false;
+      const topInfo = ancestryTop[lookup];
+      if (topInfo) {
+        entry.name = sanitizeName(topInfo.name);
+        if (topInfo.description) {
+          setHtmlField(entry, "description", topInfo.description);
+        }
+        handled = true;
+      }
+      const featureInfo = featureMap[lookup] || featureMap[norm];
+      if (featureInfo) {
+        if (featureInfo.name) entry.name = sanitizeName(featureInfo.name);
+        if (featureInfo.description) {
+          setHtmlField(entry, "description", featureInfo.description);
+        }
+        handled = true;
+      }
+      return handled;
+    },
+    { stats }
+  );
+}
+
+async function updateCommunitiesFile(path, { communityTop, featureMap }, stats) {
+  return updateEntries(
+    path,
+    (norm, entry) => {
+      if (!norm) return false;
+      let handled = false;
+      const topInfo = communityTop[norm];
+      if (topInfo) {
+        entry.name = sanitizeName(topInfo.name);
+        if (topInfo.description) {
+          setHtmlField(entry, "description", topInfo.description);
+        }
+        handled = true;
+      }
+      const featureInfo = featureMap[norm];
+      if (featureInfo) {
+        if (featureInfo.name) entry.name = sanitizeName(featureInfo.name);
+        if (featureInfo.description) {
+          setHtmlField(entry, "description", featureInfo.description);
+        }
+        handled = true;
+      }
+      return handled;
+    },
+    { stats }
+  );
+}
+
+async function updateDomainsFile(path, { domainTop, featureMap }, stats) {
+  return updateEntries(
+    path,
+    (norm, entry, key) => {
+      if (!norm) return false;
+      const lookup = resolveAlias(norm, FEATURE_NAME_ALIASES);
+      let handled = false;
+      const domainInfo = domainTop[lookup];
+
+      if (domainInfo) {
+        entry.name = sanitizeName(domainInfo.name);
+        const raw = domainInfo.raw;
+        const features = raw.features || [];
+
+        let fullDescSource = raw.main_body || "";
+        if (!fullDescSource && features.length > 0) {
+          fullDescSource = features
+            .map((feature) => {
+              const namePart = feature.name ? `**${sanitizeName(feature.name)}:** ` : "";
+              return `${namePart}${feature.main_body || ""}`;
+            })
+            .join("\n\n");
+        }
+        const fullDescHtml = markdownToHtml(fullDescSource);
+        if (fullDescHtml) {
+          setHtmlField(entry, "description", fullDescHtml);
+        }
+        if (key === "Bare Bones" && entry.description) {
+          if (!entry.description.includes("Compendium.daggerheart.armors.Item.ITAjcigTcUw5pMCN")) {
+            const appended = `${entry.description.replace(/\s*$/, "")}${BARE_BONES_DOMAIN_SNIPPET}`;
+            setHtmlField(entry, "description", appended);
+          }
+        }
+
+        handled = true;
+      }
+
+      const featureInfo = featureMap[lookup] || featureMap[norm];
+      if (featureInfo && !handled) {
+        if (featureInfo.name) entry.name = sanitizeName(featureInfo.name);
+        if (featureInfo.description) {
+          setHtmlField(entry, "description", featureInfo.description);
+        }
+        handled = true;
+      }
+
+      return handled;
+    },
+    { stats }
+  );
+}
+
+async function updateBeastformsFile(path, { beastTop, featureMap }, stats) {
+  return updateEntries(
+    path,
+    (norm, entry) => {
+      if (!norm) return false;
+
+      const info = beastTop[norm];
+      if (info) {
+        entry.name = sanitizeName(info.name);
+
+        const raw = info.raw;
+        const ruFeatures = raw.features || [];
+        const items = entry.items || {};
+        const hadDescription = !!entry.description;
+        const allowDescription = hadDescription && Object.keys(items).length > 0;
+
+        if (ruFeatures.length > 0 && Object.keys(items).length === 0) {
+          const descriptionHtml = buildFeatureDescription(ruFeatures);
+          if (allowDescription && descriptionHtml) {
+            setHtmlField(entry, "description", descriptionHtml);
+          } else {
+            delete entry.description;
+          }
+        } else if (info.description) {
+          if (allowDescription) {
+            setHtmlField(entry, "description", info.description);
+          } else {
+            delete entry.description;
+          }
+        } else {
+          delete entry.description;
+        }
+
+        const ruAdvantages = parseAdvantagesList(raw.advantages);
+        if (ruAdvantages.length) {
+          entry.advantageOn = ruAdvantages.map((value) => capitalizeFirstLetter(value));
+        } else {
+          delete entry.advantageOn;
+        }
+
+        if (raw && raw.examples) {
+          const examples = sanitizeHtml(stripLinks(raw.examples));
+          if (examples) {
+            entry.examples = examples;
+          } else {
+            delete entry.examples;
+          }
+        } else {
+          delete entry.examples;
+        }
+
+        return true;
+      }
+
+      // Фолбэк для редких случаев (когда способность - отдельная запись)
+      const featureInfo = featureMap[norm];
+      if (featureInfo) {
+        if (featureInfo.name) entry.name = sanitizeName(featureInfo.name);
+        if (featureInfo.description) {
+          setHtmlField(entry, "description", featureInfo.description);
+        }
+        return true;
+      }
+      return false;
+    },
+    { stats }
+  );
+}
+
+async function updateTransformationsFile(path, { transformationEntries }, stats) {
+  return updateEntries(
+    path,
+    (norm, entry) => {
+      if (!norm) return false;
+      const lookup = resolveAlias(norm, TRANSFORMATION_ENTRY_ALIASES);
+      const info = transformationEntries[lookup];
+      if (!info) return false;
+
+      if (info.name) {
+        entry.name = sanitizeName(info.name);
+      }
+      const originalDescription = entry.description;
+      let descriptionHtml = renderTransformationDescription(info);
+      descriptionHtml = appendUuidParagraphs(descriptionHtml, originalDescription);
+      if (descriptionHtml) {
+        setHtmlField(entry, "description", descriptionHtml);
+      }
+
+      return true;
+    },
+    { stats }
+  );
+}
+
+async function updateAdversariesFile(path, { adversaryTop, featureMap }, stats) {
+  return updateEntries(
+    path,
+    (norm, entry) => {
+      if (!norm) return false;
+      const info = adversaryTop[norm];
+      if (info) {
+        entry.name = sanitizeName(info.name);
+        const raw = info.raw;
+        const desc = markdownToHtml(raw.short_description || raw.main_body || "");
+        if (desc) {
+          setHtmlField(entry, "description", desc);
+        }
+        if (raw.motives) setHtmlField(entry, "motivesAndTactics", raw.motives);
+        if (raw.weapon_name) entry.attack = sanitizeName(raw.weapon_name);
+        const experiences = raw.experiences;
+        if (experiences && entry.experiences) {
+          const values = experiences.split(",").map((v) => v.trim()).filter(Boolean);
+          const keys = Object.keys(entry.experiences);
+          for (let i = 0; i < keys.length; i += 1) {
+            const value = values[i] || experiences;
+            if (value) {
+              entry.experiences[keys[i]].name = sanitizeName(stripExperienceBonus(value));
+            }
+          }
+        }
+        return true;
+      }
+      const featureInfo = featureMap[norm];
+      if (featureInfo) {
+        if (featureInfo.name) entry.name = sanitizeName(featureInfo.name);
+        if (featureInfo.description) {
+          setHtmlField(entry, "description", featureInfo.description);
+        }
+        return true;
+      }
+      return false;
+    },
+    { stats }
+  );
+}
+
+async function updateEnvironmentsFile(path, { environmentTop, featureMap }, stats) {
+  return updateEntries(
+    path,
+    (norm, entry) => {
+      if (!norm) return false;
+      const info = environmentTop[norm];
+      if (info) {
+        entry.name = sanitizeName(info.name);
+        const raw = info.raw;
+        const desc = markdownToHtml(raw.short_description || raw.main_body || "");
+        if (desc) {
+          setHtmlField(entry, "description", desc);
+          entry.description = dedupeSecretContent(entry.description);
+        }
+        if (raw.impulses) setHtmlField(entry, "impulses", raw.impulses);
+        return true;
+      }
+      const featureInfo = featureMap[norm];
+      if (featureInfo) {
+        if (featureInfo.name) entry.name = sanitizeName(featureInfo.name);
+        if (featureInfo.description) {
+          setHtmlField(entry, "description", featureInfo.description);
+        }
+        return true;
+      }
+      return false;
+    },
+    { stats }
+  );
+}
+
+async function updateAdversariesEnvironmentsFile(
+  path,
+  { adversaryTop, adversaryFeatureMap, environmentTop, environmentFeatureMap },
+  stats
+) {
+  return updateEntries(
+    path,
+    (norm, entry) => {
+      const hasAdversaryData = adversaryTop[norm] || adversaryFeatureMap[norm];
+      if (hasAdversaryData) {
+        return translateAdversaryEntry(norm, entry, adversaryTop, adversaryFeatureMap);
+      }
+      const hasEnvironmentData = environmentTop[norm] || environmentFeatureMap[norm];
+      if (hasEnvironmentData) {
+        return translateEnvironmentEntry(norm, entry, environmentTop, environmentFeatureMap);
+      }
+      return false;
+    },
+    { stats }
+  );
+}
+
+function translateAdversaryEntry(norm, entry, adversaryTop, featureMap) {
+  if (!norm) return false;
+  const info = adversaryTop[norm];
+  if (info) {
+    entry.name = sanitizeName(info.name);
+    const raw = info.raw;
+    const desc = markdownToHtml(raw.short_description || raw.main_body || "");
+    if (desc) {
+      setHtmlField(entry, "description", desc);
+    }
+    if (raw.motives) setHtmlField(entry, "motivesAndTactics", raw.motives);
+    if (raw.weapon_name) entry.attack = sanitizeName(raw.weapon_name);
+    const experiences = raw.experiences;
+    if (experiences && entry.experiences) {
+      const values = experiences.split(",").map((v) => v.trim()).filter(Boolean);
+      const keys = Object.keys(entry.experiences);
+      for (let i = 0; i < keys.length; i += 1) {
+        const value = values[i] || experiences;
+        if (value) {
+          entry.experiences[keys[i]].name = sanitizeName(stripExperienceBonus(value));
+        }
+      }
+    }
+    return true;
+  }
+  const featureInfo = featureMap[norm];
+  if (featureInfo) {
+    if (featureInfo.name) entry.name = sanitizeName(featureInfo.name);
+    if (featureInfo.description) {
+      setHtmlField(entry, "description", featureInfo.description);
+    }
+    return true;
+  }
+  return false;
+}
+
+function translateEnvironmentEntry(norm, entry, environmentTop, featureMap) {
+  if (!norm) return false;
+  const info = environmentTop[norm];
+  if (info) {
+    entry.name = sanitizeName(info.name);
+    const raw = info.raw;
+    const desc = markdownToHtml(raw.short_description || raw.main_body || "");
+    if (desc) {
+      setHtmlField(entry, "description", desc);
+      entry.description = dedupeSecretContent(entry.description);
+    }
+    if (raw.impulses) setHtmlField(entry, "impulses", raw.impulses);
+    return true;
+  }
+  const featureInfo = featureMap[norm];
+  if (featureInfo) {
+    if (featureInfo.name) entry.name = sanitizeName(featureInfo.name);
+    if (featureInfo.description) {
+      setHtmlField(entry, "description", featureInfo.description);
+    }
+    return true;
+  }
+  return false;
+}
+
 async function main() {
   const [
     classData,
@@ -1778,9 +1702,7 @@ async function main() {
   const adversaryTop = buildTopLevelMap(adversaryData.en, adversaryData.ru, ["short_description"]);
   const environmentTop = buildTopLevelMap(environmentData.en, environmentData.ru, ["short_description"]);
   const ruleTop = buildTopLevelMap(ruleData.en, ruleData.ru, ["description"], "main_body");
-  const environmentPotentialLabels = buildEnvironmentPotentialLabels(environmentData.ru);
 
-  // Создаем объект для хранения раздельных карт способностей.
   const scopedFeatureMaps = {
     class: {},
     subclass: {},
@@ -1792,6 +1714,7 @@ async function main() {
     environment: {}
   };
   const conflicts = new Set();
+  const featureSources = {};
 
   const buildFeature = (enEntries, ruEntries, fields, label, targetMap) => {
     const ruBySlug = new Map();
@@ -1799,18 +1722,29 @@ async function main() {
       const slug = entry.slug || String(entry.id);
       if (slug) ruBySlug.set(slug, entry);
     }
-    // featureSources больше не нужен в глобальном скоупе.
-    buildFeatureMap(enEntries, ruBySlug, fields, label, targetMap, {}, conflicts);
+    buildFeatureMap(enEntries, ruBySlug, fields, label, targetMap, featureSources, conflicts);
   };
 
   buildFeature(classData.en, classData.ru, ["features"], "class", scopedFeatureMaps.class);
-  buildFeature(subclassData.en, subclassData.ru, ["foundation_features", "specialization_features", "mastery_features"], "subclass", scopedFeatureMaps.subclass);
+  buildFeature(
+    subclassData.en,
+    subclassData.ru,
+    ["foundation_features", "specialization_features", "mastery_features"],
+    "subclass",
+    scopedFeatureMaps.subclass
+  );
   buildFeature(ancestryData.en, ancestryData.ru, ["features"], "ancestry", scopedFeatureMaps.ancestry);
   buildFeature(communityData.en, communityData.ru, ["features"], "community", scopedFeatureMaps.community);
   buildFeature(domainData.en, domainData.ru, ["features"], "domain-card", scopedFeatureMaps["domain-card"]);
   buildFeature(beastData.en, beastData.ru, ["features"], "beastform", scopedFeatureMaps.beastform);
   buildFeature(adversaryData.en, adversaryData.ru, ["features"], "adversary", scopedFeatureMaps.adversary);
-  buildFeature(environmentData.en, environmentData.ru, ["features"], "environment", scopedFeatureMaps.environment);
+  buildFeature(
+    environmentData.en,
+    environmentData.ru,
+    ["features"],
+    "environment",
+    scopedFeatureMaps.environment
+  );
 
   if (conflicts.size) {
     logInfo("Conflicting feature translations detected:");
@@ -1841,863 +1775,10 @@ async function main() {
     }
   }
 
-  const collectDomainActions = (entries = {}) => {
-    const bucket = {};
-    for (const [key, value] of Object.entries(entries)) {
-      if (value && value.actions) {
-        bucket[key] = value.actions;
-      }
-    }
-    return bucket;
-  };
-
-  const domainActionsByKey = new Map();
-  const baseDomainsOld = oldTranslations[TRANSLATION_FILES.domains] || {};
-  domainActionsByKey.set("domains", collectDomainActions(baseDomainsOld.entries || {}));
-  for (const spec of voidTranslationSpecs.filter((item) => item.suffix === "domains")) {
-    const source = oldTranslations[spec.file] || {};
-    domainActionsByKey.set(spec.key, collectDomainActions(source.entries || {}));
-  }
-
   const weaponsOld = oldTranslations[TRANSLATION_FILES.weapons] || {};
   const armorsOld = oldTranslations[TRANSLATION_FILES.armors] || {};
   const consumablesOld = oldTranslations[TRANSLATION_FILES.consumables] || {};
   const lootOld = oldTranslations[TRANSLATION_FILES.loot] || {};
-
-  const updateSimpleTop = (topMap, aliases) => (norm, entry, key) =>
-    !!topMap[resolveAlias(norm, aliases || {})] &&
-    ((() => {
-      const info = topMap[resolveAlias(norm, aliases || {})];
-      entry.name = sanitizeName(info.name);
-      if (info.description !== null && info.description !== undefined) {
-        if (info.description) {
-          setHtmlField(entry, "description", info.description);
-        } else {
-          delete entry.description;
-        }
-      }
-      if (entry.actions) delete entry.actions;
-      return true;
-    })());
-
-  const updateTopWithFeatures = (topMap, featureMap, aliases = {}) => (norm, entry) => {
-    if (!norm) return false;
-    const lookup = resolveAlias(norm, aliases);
-    let handled = false;
-    const topInfo = topMap[lookup];
-    if (topInfo) {
-      entry.name = sanitizeName(topInfo.name);
-      if (topInfo.description !== null && topInfo.description !== undefined) {
-        if (topInfo.description) {
-          setHtmlField(entry, "description", topInfo.description);
-        } else {
-          delete entry.description;
-        }
-      }
-      if (entry.actions) delete entry.actions;
-      handled = true;
-    }
-    const featureInfo = featureMap[lookup] || featureMap[norm];
-    if (featureInfo) {
-      _updateFeature(entry, featureInfo);
-      handled = true;
-    }
-    return handled;
-  };
-
-  function defaultEquipmentDescription(ruEntry, enEntry) {
-    const ruBody = normaliseText(ruEntry.main_body || "");
-    const enBody = normaliseText(enEntry.main_body || "");
-    if (ruBody && (!enBody || ruBody !== enBody)) {
-      return markdownToHtml(ruEntry.main_body || "");
-    }
-    return null;
-  }
-
-  function createEquipmentMap(equipmentData, typeSlugs, options = {}) {
-    const { buildDescription } = options;
-    const ruBySlug = new Map(equipmentData.ru.map((entry) => [entry.slug, entry]));
-    const map = {};
-    for (const enEntry of equipmentData.en) {
-      if (!typeSlugs.has(enEntry.type_slug)) continue;
-      const ruEntry = ruBySlug.get(enEntry.slug);
-      if (!ruEntry) continue;
-      const norm = normalize(enEntry.name);
-      if (!norm) continue;
-      const rawDescription = buildDescription
-        ? buildDescription(ruEntry, enEntry)
-        : defaultEquipmentDescription(ruEntry, enEntry);
-      const description = rawDescription ? sanitizeHtml(rawDescription) : null;
-      const entryInfo = {
-        name: sanitizeName(ruEntry.name || enEntry.name),
-        description
-      };
-      map[norm] = entryInfo;
-    }
-    return map;
-  }
-
-  async function applyEquipmentMap(targetPath, map, fallback = {}, options = {}) {
-    const { overrides = {}, preserveFallbackDescription = true, stats = null } = options;
-    const fallbackEntries = (fallback && fallback.entries) || {};
-    return updateEntries(targetPath, (norm, entry, key) => {
-      const fallbackEntry = fallbackEntries[key];
-      if (overrides[key]) {
-        const override = overrides[key];
-        entry.name = sanitizeName(override.name || entry.name);
-        if (override.description) {
-          setHtmlField(entry, "description", override.description);
-        } else {
-          delete entry.description;
-        }
-        normalizeItemAttack(entry);
-        return true;
-      }
-      if (!norm) return false;
-      const info = map[norm] || map[resolveAlias(norm, EQUIPMENT_NAME_ALIASES)];
-      if (!info) {
-        if (fallbackEntry) {
-          entry.name = fallbackEntry.name;
-          if (fallbackEntry.description) {
-            entry.description = fallbackEntry.description;
-          } else {
-            delete entry.description;
-          }
-          normalizeItemAttack(entry);
-          return true;
-        }
-        return false;
-      }
-      entry.name = sanitizeName(info.name);
-      if (info.description) {
-        setHtmlField(entry, "description", info.description);
-      } else if (preserveFallbackDescription && fallbackEntry && fallbackEntry.description) {
-        entry.description = fallbackEntry.description;
-      } else {
-        delete entry.description;
-      }
-      normalizeItemAttack(entry);
-      return true;
-    }, { stats });
-  }
-
-  function updateActionsFromFeatures(entry, features) {
-    if (!entry || !entry.actions) return;
-    const actionIds = Object.keys(entry.actions);
-    if (!actionIds.length) return;
-    for (let i = 0; i < actionIds.length; i += 1) {
-      const feature = features[i];
-      if (!feature) break;
-      if (ACTION_OVERRIDES[actionIds[i]]) continue;
-      const body = markdownToHtml(feature.main_body || "");
-      if (!body) continue;
-      setActionHtml(entry.actions, actionIds[i], body);
-    }
-  }
-
-  function applyActionOverrides(entry) {
-    if (!entry || !entry.actions) return;
-    for (const actionId of Object.keys(entry.actions)) {
-      if (ACTION_OVERRIDES[actionId]) {
-        setActionHtml(entry.actions, actionId, ACTION_OVERRIDES[actionId]);
-      }
-    }
-  }
-
-  async function applyLabelOverride(filePath, newLabel) {
-    if (!newLabel) return;
-    const source = await fs.readFile(filePath, "utf-8");
-    const hadTrailingNewline = source.endsWith("\n");
-    const raw = JSON.parse(source);
-    if (raw.label !== newLabel) {
-      raw.label = newLabel;
-      const suffix = hadTrailingNewline ? "\n" : "";
-      await fs.writeFile(filePath, `${JSON.stringify(raw, null, 2)}${suffix}`, "utf-8");
-    }
-  }
-
-  function applyClassQuestionLists(entry, rawInfo) {
-    if (!entry || !rawInfo) return;
-    const sanitizeList = (values) => {
-      if (!Array.isArray(values)) return null;
-      const cleaned = values
-        .map((value) => sanitizeName(value))
-        .filter((value) => typeof value === "string" && value.length > 0);
-      return cleaned.length ? cleaned : null;
-    };
-    const backgrounds = sanitizeList(rawInfo.background_questions) || null;
-    if (backgrounds) {
-      entry.backgroundQuestions = backgrounds;
-    } else {
-      delete entry.backgroundQuestions;
-    }
-    const connections = sanitizeList(rawInfo.connection_questions) || null;
-    if (connections) {
-      entry.connections = connections;
-    } else {
-      delete entry.connections;
-    }
-  }
-
-  async function updateClassesFile(path, { classTop, featureMap, classItemsMap, ruleTop }, stats) {
-    return updateEntries(path, (norm, entry, key) => {
-      if (!norm) return false;
-      let handled = false;
-      const classInfo = classTop[norm];
-      if (classInfo) {
-        entry.name = sanitizeName(classInfo.name);
-        if (classInfo.description !== null && classInfo.description !== undefined) {
-          if (classInfo.description) {
-            setHtmlField(entry, "description", classInfo.description);
-          } else {
-            delete entry.description;
-          }
-        }
-        applyClassQuestionLists(entry, classInfo.raw);
-        if (entry.actions) delete entry.actions;
-        handled = true;
-      }
-
-      const featureInfo = featureMap[norm];
-      if (featureInfo) {
-        if (featureInfo.name) entry.name = sanitizeName(featureInfo.name);
-        if (featureInfo.description !== null && featureInfo.description !== undefined) {
-          if (featureInfo.description) {
-            setHtmlField(entry, "description", featureInfo.description);
-            if (entry.actions) {
-              for (const actionId of Object.keys(entry.actions)) {
-                setActionHtml(entry.actions, actionId, featureInfo.description);
-              }
-            }
-          } else {
-            delete entry.description;
-          }
-        }
-        handled = true;
-      }
-
-      if (norm === normalize("Rally Level 5") && featureMap[normalize("Rally")]) {
-        const info = featureMap[normalize("Rally")];
-        entry.name = `${sanitizeName(info.name)} (уровень 5)`;
-        if (info.description) {
-          setHtmlField(entry, "description", info.description);
-          if (entry.actions) {
-            for (const actionId of Object.keys(entry.actions)) {
-              setActionHtml(entry.actions, actionId, info.description);
-            }
-          }
-        } else {
-          delete entry.description;
-        }
-        handled = true;
-        applyFeatureGeneratedActions(entry, info);
-      }
-
-      if (featureInfo) applyFeatureGeneratedActions(entry, featureInfo);
-
-      const itemOverride = classItemsMap[norm];
-      // if (key === "Whispering Orb") {
-      //   console.log("Whispering Orb debug:", norm, itemOverride);
-      // }
-      if (itemOverride) {
-        entry.name = itemOverride;
-        delete entry.description;
-        delete entry.actions;
-        handled = true;
-      }
-
-      const staticOverride = CLASS_ITEM_OVERRIDES[key];
-      if (staticOverride) {
-        const override =
-          typeof staticOverride === "string" ? { name: staticOverride } : staticOverride;
-        if (override.name) {
-          entry.name = override.name;
-        }
-        if (override.description !== undefined) {
-          if (override.description) {
-            setHtmlField(entry, "description", override.description);
-          } else {
-            delete entry.description;
-          }
-        } else {
-          delete entry.description;
-        }
-        delete entry.actions;
-        handled = true;
-      }
-
-      const ruleInfo = ruleTop[norm];
-      if (ruleInfo && (!handled || !entry.description)) {
-        entry.name = sanitizeName(ruleInfo.name);
-        if (ruleInfo.description !== null && ruleInfo.description !== undefined) {
-          if (ruleInfo.description) {
-            setHtmlField(entry, "description", ruleInfo.description);
-          } else {
-            delete entry.description;
-          }
-        }
-        handled = true;
-      }
-
-      if (!handled) {
-        // no-op: keep entry for further manual review
-      }
-      applyManualEntryPatches("classes", key, entry);
-      applyActionOverrides(entry);
-
-      return handled;
-    }, { stats });
-  }
-
-  async function updateSubclassesFile(path, { subclassTop, featureMap }, stats) {
-    const result = await updateEntries(path, (norm, entry) => {
-      if (!norm) return false;
-      const lookup = resolveAlias(norm, SUBCLASS_NAME_ALIASES);
-      let handled = false;
-      const subclassInfo = subclassTop[lookup];
-      if (subclassInfo) {
-        entry.name = sanitizeName(subclassInfo.name);
-        if (subclassInfo.description !== null && subclassInfo.description !== undefined) {
-          if (subclassInfo.description) {
-            setHtmlField(entry, "description", subclassInfo.description);
-          } else {
-            delete entry.description;
-          }
-        }
-        if (entry.actions) delete entry.actions;
-        handled = true;
-      }
-      const featureInfo = featureMap[lookup] || featureMap[norm];
-      if (featureInfo) {
-        if (featureInfo.name) entry.name = sanitizeName(featureInfo.name);
-        if (featureInfo.description !== null && featureInfo.description !== undefined) {
-          if (featureInfo.description) {
-            setHtmlField(entry, "description", featureInfo.description);
-            if (entry.actions) {
-              for (const actionId of Object.keys(entry.actions)) {
-                setActionHtml(entry.actions, actionId, featureInfo.description);
-              }
-            }
-          } else {
-            delete entry.description;
-          }
-        }
-        handled = true;
-      }
-
-      if (featureInfo) applyFeatureGeneratedActions(entry, featureInfo);
-      applyActionOverrides(entry);
-      return handled;
-    }, { stats });
-    return result;
-  }
-
-  async function updateAncestriesFile(path, { ancestryTop, featureMap }, stats) {
-    return updateEntries(path, updateTopWithFeatures(ancestryTop, featureMap, FEATURE_NAME_ALIASES), { stats });
-  }
-
-  async function updateCommunitiesFile(path, { communityTop, featureMap }, stats) {
-    return updateEntries(path, updateTopWithFeatures(communityTop, featureMap), { stats });
-  }
-
-  function normaliseHtmlForComparison(html) {
-    if (!html) return "";
-    return html
-      .replace(/<[^>]*>/g, " ")
-      .replace(/\s+/g, " ")
-      .trim()
-      .toLowerCase();
-  }
-
-  function deriveActionOrder(currentActions, oldActions) {
-    const actionIds = Object.keys(currentActions || {});
-    const uniqueIds = [];
-    const duplicateMap = {};
-    const seen = new Map();
-
-    for (const actionId of actionIds) {
-      const source =
-        oldActions && Object.prototype.hasOwnProperty.call(oldActions, actionId)
-          ? extractActionDescription(oldActions[actionId])
-          : getActionHtml(currentActions, actionId);
-      const key = normaliseHtmlForComparison(source) || actionId;
-      if (seen.has(key)) {
-        duplicateMap[actionId] = seen.get(key);
-      } else {
-        seen.set(key, actionId);
-        uniqueIds.push(actionId);
-      }
-    }
-
-    return { uniqueIds, duplicateMap };
-  }
-
-  function splitMarkdownToHtmlSections(markdown) {
-    if (!markdown) return [];
-    const prepared = markdown.replace(/\r\n/g, "\n").trim();
-    if (!prepared) return [];
-    const parts = prepared.split(/\n\s*\n/).map((piece) => piece.trim()).filter(Boolean);
-    if (!parts.length) return [];
-    return parts
-      .map((piece) => markdownToHtml(piece))
-      .filter(Boolean);
-  }
-
-  function buildActionHtmlFromFeature(feature) {
-    if (!feature) return null;
-    const bodyHtml = markdownToHtml(feature.main_body || "");
-    if (!bodyHtml) return null;
-    const name = sanitizeName(feature.name || "");
-    if (!name) return bodyHtml;
-    if (bodyHtml.startsWith("<p>")) {
-      return bodyHtml.replace("<p>", `<p><strong>${name}:</strong> `);
-    }
-    return `<p><strong>${name}:</strong></p>${bodyHtml}`;
-  }
-
-  function buildSegmentsForActions(features, fullMarkdownSource, desiredCount) {
-    let segments = [];
-
-    if (features && features.length) {
-      for (const feature of features) {
-        const chunk = buildActionHtmlFromFeature(feature);
-        if (chunk) segments.push(chunk);
-      }
-    }
-
-    if (!segments.length && fullMarkdownSource) {
-      segments = splitMarkdownToHtmlSections(fullMarkdownSource);
-    }
-
-    if (!segments.length && fullMarkdownSource) {
-      const html = markdownToHtml(fullMarkdownSource);
-      if (html) segments = [html];
-    }
-
-    if (!segments.length) return [];
-
-    if (desiredCount <= 0) {
-      return segments.slice();
-    }
-
-    if (segments.length < desiredCount && fullMarkdownSource) {
-      const fallback = splitMarkdownToHtmlSections(fullMarkdownSource);
-      if (fallback.length >= desiredCount) {
-        segments = fallback;
-      }
-    }
-
-    if (!segments.length) return [];
-
-    const adjusted = segments.slice();
-    if (adjusted.length > desiredCount) {
-      while (adjusted.length > desiredCount) {
-        const extra = adjusted.pop();
-        adjusted[adjusted.length - 1] = `${adjusted[adjusted.length - 1]}${extra}`;
-      }
-    } else if (adjusted.length < desiredCount) {
-      const filler = adjusted[adjusted.length - 1];
-      while (adjusted.length < desiredCount) {
-        adjusted.push(filler);
-      }
-    }
-
-    return adjusted;
-  }
-
-  async function updateDomainsFile(path, { domainTop, featureMap, oldDomainActions }, stats) {
-    return updateEntries(path, (norm, entry, key) => {
-      if (!norm) return false;
-      const lookup = resolveAlias(norm, FEATURE_NAME_ALIASES);
-      let handled = false;
-      const domainInfo = domainTop[lookup];
-
-      if (domainInfo) {
-        entry.name = sanitizeName(domainInfo.name);
-        const raw = domainInfo.raw;
-        const features = raw.features || [];
-
-        // ШАГ 1: Собираем полное описание (без изменений)
-        let fullDescSource = raw.main_body || "";
-        if (!fullDescSource && features.length > 0) {
-          fullDescSource = features.map(feature => {
-            const namePart = feature.name ? `**${sanitizeName(feature.name)}:** ` : "";
-            return `${namePart}${feature.main_body || ""}`;
-          }).join('\n\n');
-        }
-        const fullDescHtml = markdownToHtml(fullDescSource);
-        if (fullDescHtml) {
-          setHtmlField(entry, "description", fullDescHtml);
-        } else {
-          delete entry.description;
-        }
-
-        if (key === "Bare Bones" && entry.description) {
-          if (!entry.description.includes("Compendium.daggerheart.armors.Item.ITAjcigTcUw5pMCN")) {
-            const appended = `${entry.description.replace(/\s*$/, "")}${BARE_BONES_DOMAIN_SNIPPET}`;
-            setHtmlField(entry, "description", appended);
-          }
-        }
-
-        // ШАГ 2: Обрабатываем 'actions' с новой "гибкой" логикой
-        if (entry.actions) {
-          const oldActionIds = Object.keys(entry.actions);
-          const numActions = oldActionIds.length;
-          if (numActions) {
-            const previous = oldDomainActions[key] || {};
-            const splitterConfig = DOMAIN_ACTION_SPLITTERS[norm];
-            const forceUnique = splitterConfig?.forceUnique;
-            const orderInfo = forceUnique
-              ? { uniqueIds: oldActionIds.slice(), duplicateMap: {} }
-              : deriveActionOrder(entry.actions, previous);
-            const { uniqueIds, duplicateMap } = orderInfo;
-            const desiredUniqueCount = uniqueIds.length;
-            let segments = [];
-
-            if (splitterConfig?.split) {
-              const customSegments = splitterConfig.split({
-                markdown: fullDescSource,
-                html: fullDescHtml,
-                desiredCount: desiredUniqueCount,
-                features,
-                raw
-              });
-              segments = renderMarkdownSegments(customSegments, desiredUniqueCount);
-            }
-
-            if (!segments.length) {
-              if (desiredUniqueCount <= 1) {
-                if (fullDescHtml && desiredUniqueCount === 1) {
-                  segments = [fullDescHtml];
-                }
-              } else {
-                segments = buildSegmentsForActions(features, fullDescSource, desiredUniqueCount);
-              }
-            }
-
-            if (!segments.length && fullDescHtml && desiredUniqueCount) {
-              segments = Array(desiredUniqueCount).fill(fullDescHtml);
-            }
-
-            if (segments.length) {
-              for (let i = 0; i < uniqueIds.length; i += 1) {
-                const actionId = uniqueIds[i];
-                const html = segments[i] || fullDescHtml;
-                if (html) {
-                  setActionHtml(entry.actions, actionId, html);
-                } else if (fullDescHtml) {
-                  setActionHtml(entry.actions, actionId, fullDescHtml);
-                } else {
-                  delete entry.actions[actionId];
-                }
-              }
-
-              for (const [dupId, originalId] of Object.entries(duplicateMap)) {
-                const cloned = getActionHtml(entry.actions, originalId) || fullDescHtml;
-                if (cloned) {
-                  setActionHtml(entry.actions, dupId, cloned);
-                } else {
-                  delete entry.actions[dupId];
-                }
-              }
-            } else if (entry.description) {
-              for (const actionId of oldActionIds) {
-                setActionHtml(entry.actions, actionId, entry.description);
-              }
-            } else {
-              for (const actionId of oldActionIds) {
-                delete entry.actions[actionId];
-              }
-            }
-          }
-        }
-
-        handled = true;
-      }
-
-      const featureInfo = featureMap[lookup] || featureMap[norm];
-      if (featureInfo && !handled) {
-        _updateFeature(entry, featureInfo);
-        handled = true;
-      }
-
-      applyActionOverrides(entry);
-      return handled;
-    }, { stats });
-  }
-
-  async function updateBeastformsFile(path, { beastTop, featureMap }, stats) {
-    return updateEntries(path, (norm, entry, key) => {
-      if (!norm) return false;
-
-      const info = beastTop[norm];
-      if (info) {
-        // 1. Обновляем основную информацию о форме (имя и общее описание)
-        entry.name = sanitizeName(info.name);
-
-        const raw = info.raw;
-        const ruFeatures = raw.features || [];
-        const items = entry.items || {};
-        const hadDescription = !!entry.description;
-        const allowDescription = hadDescription && Object.keys(items).length > 0;
-
-        // 2. Определяем, как генерировать описание
-        if (ruFeatures.length > 0 && Object.keys(items).length === 0) {
-          // СЦЕНАРИЙ 1: "Цельная" форма (напр. "Легендарный Зверь")
-          // Есть features в API, но нет вложенных items в JSON.
-          // Значит, features - это и есть основное описание.
-          const descriptionHtml = buildFeatureDescription(ruFeatures);
-          if (allowDescription && descriptionHtml) {
-            setHtmlField(entry, "description", descriptionHtml);
-          } else {
-            delete entry.description;
-          }
-        } else {
-          // СЦЕНАРИЙ 2: "Стандартная" форма (составная или простая)
-          // Обновляем основное описание из short_description, а потом (если нужно) вложенные items.
-          if (allowDescription && info.description) {
-            setHtmlField(entry, "description", info.description);
-          } else {
-            delete entry.description;
-          }
-
-          // Обновляем вложенные 'items', если они есть
-          if (ruFeatures.length > 0 && Object.keys(items).length > 0) {
-            const featureList = ruFeatures.slice();
-            for (const itemEntry of Object.values(items)) {
-              const feature = featureList.shift();
-              if (!feature) break;
-
-              itemEntry.name = sanitizeName(feature.name || "");
-              const body = markdownToHtml(feature.main_body || "");
-              if (body) {
-                setHtmlField(itemEntry, "description", body);
-                if (itemEntry.actions) {
-                  for (const actionId of Object.keys(itemEntry.actions)) {
-                    setActionHtml(itemEntry.actions, actionId, body);
-                  }
-                }
-              } else {
-                delete itemEntry.description;
-              }
-            }
-          }
-        }
-
-        // 3. Обновляем список действий с преимуществом
-        const ruAdvantages = parseAdvantagesList(raw.advantages);
-        if (ruAdvantages.length) {
-          entry.advantageOn = ruAdvantages.map((value) => capitalizeFirstLetter(value));
-        } else {
-          delete entry.advantageOn;
-        }
-
-        // 4. Добавляем "Примеры"
-        if (raw && raw.examples) {
-          const examples = sanitizeHtml(stripLinks(raw.examples));
-          if (examples) {
-            entry.examples = examples;
-          }
-        }
-
-        applyActionOverrides(entry);
-        return true;
-      }
-
-      // Фолбэк для редких случаев (когда способность - отдельная запись)
-      const featureInfo = featureMap[norm];
-      if (featureInfo) {
-        _updateFeature(entry, featureInfo);
-        applyActionOverrides(entry);
-        return true;
-      }
-
-      applyActionOverrides(entry);
-      return false;
-    }, { stats });
-  }
-
-  async function updateTransformationsFile(path, { transformationEntries }, stats) {
-    return updateEntries(path, (norm, entry) => {
-      if (!norm) return false;
-      const lookup = resolveAlias(norm, TRANSFORMATION_ENTRY_ALIASES);
-      const info = transformationEntries[lookup];
-      if (!info) return false;
-
-      if (info.name) {
-        entry.name = sanitizeName(info.name);
-      }
-      const originalDescription = entry.description;
-      let descriptionHtml = renderTransformationDescription(info);
-      descriptionHtml = appendUuidParagraphs(descriptionHtml, originalDescription);
-      if (descriptionHtml) {
-        setHtmlField(entry, "description", descriptionHtml);
-      } else {
-        delete entry.description;
-      }
-
-      translateTransformationActionNames(entry.actions);
-      applyActionOverrides(entry);
-      return true;
-    }, { stats });
-  }
-
-  function translateAdversaryEntry(norm, entry, adversaryTop, featureMap) {
-    if (!norm) return false;
-    const info = adversaryTop[norm];
-    if (info) {
-      entry.name = sanitizeName(info.name);
-      const raw = info.raw;
-      const desc = markdownToHtml(raw.short_description || raw.main_body || "");
-      if (desc) {
-        setHtmlField(entry, "description", desc);
-      } else {
-        delete entry.description;
-      }
-      if (raw.motives) setHtmlField(entry, "motivesAndTactics", raw.motives);
-      if (raw.weapon_name) entry.attack = sanitizeName(raw.weapon_name);
-      const experiences = raw.experiences;
-      if (experiences && entry.experiences) {
-        const values = experiences.split(",").map((v) => v.trim()).filter(Boolean);
-        const keys = Object.keys(entry.experiences);
-        for (let i = 0; i < keys.length; i += 1) {
-          const value = values[i] || experiences;
-          if (value) {
-            entry.experiences[keys[i]].name = sanitizeName(stripExperienceBonus(value));
-          }
-        }
-      }
-      const ruFeatures = raw.features || [];
-      const items = entry.items || {};
-      if (raw.slug === "battle-box") {
-        applyBattleBoxOverrides(entry, raw);
-      } else {
-        const featureList = ruFeatures.slice();
-        for (const itemEntry of Object.values(items)) {
-          const nextFeature = featureList.shift();
-          if (!nextFeature) break;
-          applyFeatureToItemEntry(itemEntry, nextFeature);
-        }
-      }
-      applyActionOverrides(entry);
-      return true;
-    }
-    const featureInfo = featureMap[norm];
-    if (featureInfo) {
-      _updateFeature(entry, featureInfo);
-      applyActionOverrides(entry);
-      return true;
-    }
-    applyActionOverrides(entry);
-    return false;
-  }
-
-  function translateEnvironmentEntry(norm, entry, environmentTop, featureMap, potentialLabels) {
-    if (!norm) return false;
-    const info = environmentTop[norm];
-    if (info) {
-      entry.name = sanitizeName(info.name);
-      const raw = info.raw;
-      const desc = markdownToHtml(raw.short_description || raw.main_body || "");
-      if (desc) {
-        setHtmlField(entry, "description", desc);
-      } else {
-        delete entry.description;
-      }
-      const ruFeatures = raw.features || [];
-      const items = entry.items || {};
-      if (ruFeatures.length && Object.keys(items).length) {
-        const featureList = ruFeatures.slice();
-        for (const [itemId, itemEntry] of Object.entries(items)) {
-          const feature = featureList.shift();
-          if (!feature) break;
-          const markdownSource = feature.main_body || "";
-          let body = markdownToHtml(markdownSource);
-          const previousDescription = itemEntry.description;
-          if (previousDescription) {
-            const prevPlain = extractPlainText(previousDescription);
-            const nextPlain = extractPlainText(body);
-            if (prevPlain && nextPlain && prevPlain === nextPlain) {
-              body = previousDescription;
-            } else {
-              body = preserveSecretSectionsFromSource(body, previousDescription);
-            }
-          }
-          itemEntry.name = sanitizeName(cleanAdversaryItemName(feature.name || ""));
-          if (body) {
-            setHtmlField(itemEntry, "description", body);
-            if (itemEntry.description) {
-              itemEntry.description = dedupeSecretContent(itemEntry.description);
-            }
-          } else {
-            delete itemEntry.description;
-          }
-        }
-      }
-      if (raw.impulses) setHtmlField(entry, "impulses", raw.impulses);
-      if (entry.potentialAdversaries && typeof entry.potentialAdversaries === "object") {
-        const slug = raw && raw.slug ? raw.slug : null;
-        const dynamicLabels = slug && potentialLabels ? potentialLabels[slug] || [] : [];
-        let index = 0;
-        for (const groupId of Object.keys(entry.potentialAdversaries)) {
-          const group = entry.potentialAdversaries[groupId];
-          if (!group || typeof group !== "object") {
-            index += 1;
-            continue;
-          }
-          const translated = dynamicLabels[index] || null;
-          if (translated) {
-            group.label = sanitizeName(translated);
-          }
-          index += 1;
-        }
-      }
-      applyActionOverrides(entry);
-      return true;
-    }
-    const featureInfo = featureMap[norm];
-    if (featureInfo) {
-      _updateFeature(entry, featureInfo);
-      applyActionOverrides(entry);
-      return true;
-    }
-    applyActionOverrides(entry);
-    return false;
-  }
-
-  async function updateAdversariesFile(path, { adversaryTop, featureMap }, stats) {
-    return updateEntries(path, (norm, entry) => translateAdversaryEntry(norm, entry, adversaryTop, featureMap), { stats });
-  }
-
-  async function updateEnvironmentsFile(path, { environmentTop, featureMap, potentialLabels }, stats) {
-    return updateEntries(
-      path,
-      (norm, entry) => translateEnvironmentEntry(norm, entry, environmentTop, featureMap, potentialLabels),
-      { stats }
-    );
-  }
-
-  async function updateAdversariesEnvironmentsFile(
-    path,
-    { adversaryTop, adversaryFeatureMap, environmentTop, environmentFeatureMap, potentialLabels },
-    stats
-  ) {
-    return updateEntries(
-      path,
-      (norm, entry) => {
-        const hasAdversaryData = adversaryTop[norm] || adversaryFeatureMap[norm];
-        if (hasAdversaryData) {
-          return translateAdversaryEntry(norm, entry, adversaryTop, adversaryFeatureMap);
-        }
-        const hasEnvironmentData = environmentTop[norm] || environmentFeatureMap[norm];
-        if (hasEnvironmentData) {
-          return translateEnvironmentEntry(norm, entry, environmentTop, environmentFeatureMap, potentialLabels);
-        }
-        return false;
-      },
-      { stats }
-    );
-  }
 
   const armorMap = createEquipmentMap(equipmentData, new Set(["armor"]), {
     buildDescription: (ruEntry) => {
@@ -2735,10 +1816,14 @@ async function main() {
 
   const runAncestryUpdate = (fileKey) => async () => {
     const stats = statsByFile[fileKey];
-    const missing = await updateAncestriesFile(filePaths[fileKey], {
-      ancestryTop,
-      featureMap: scopedFeatureMaps.ancestry
-    }, stats);
+    const missing = await updateAncestriesFile(
+      filePaths[fileKey],
+      {
+        ancestryTop,
+        featureMap: scopedFeatureMaps.ancestry
+      },
+      stats
+    );
     const filtered = missing.filter((key) => !LEGACY_ANCESTRY_KEYS.has(key));
     const legacyRemoved = stats.missing.length - filtered.length;
     if (legacyRemoved > 0) {
@@ -2753,21 +1838,29 @@ async function main() {
       key: "classes",
       file: TRANSLATION_FILES.classes,
       run: () =>
-        updateClassesFile(filePaths.classes, {
-          classTop,
-          featureMap: scopedFeatureMaps.class,
-          classItemsMap,
-          ruleTop
-        }, statsByFile.classes)
+        updateClassesFile(
+          filePaths.classes,
+          {
+            classTop,
+            featureMap: scopedFeatureMaps.class,
+            classItemsMap,
+            ruleTop
+          },
+          statsByFile.classes
+        )
     },
     {
       key: "subclasses",
       file: TRANSLATION_FILES.subclasses,
       run: () =>
-        updateSubclassesFile(filePaths.subclasses, {
-          subclassTop,
-          featureMap: scopedFeatureMaps.subclass
-        }, statsByFile.subclasses)
+        updateSubclassesFile(
+          filePaths.subclasses,
+          {
+            subclassTop,
+            featureMap: scopedFeatureMaps.subclass
+          },
+          statsByFile.subclasses
+        )
     },
     {
       key: "ancestries",
@@ -2778,49 +1871,66 @@ async function main() {
       key: "communities",
       file: TRANSLATION_FILES.communities,
       run: () =>
-        updateCommunitiesFile(filePaths.communities, {
-          communityTop,
-          featureMap: scopedFeatureMaps.community
-        }, statsByFile.communities)
+        updateCommunitiesFile(
+          filePaths.communities,
+          {
+            communityTop,
+            featureMap: scopedFeatureMaps.community
+          },
+          statsByFile.communities
+        )
     },
     {
       key: "domains",
       file: TRANSLATION_FILES.domains,
       run: () =>
-        updateDomainsFile(filePaths.domains, {
-          domainTop,
-          featureMap: scopedFeatureMaps["domain-card"],
-          oldDomainActions: domainActionsByKey.get("domains") || {}
-        }, statsByFile.domains)
+        updateDomainsFile(
+          filePaths.domains,
+          {
+            domainTop,
+            featureMap: scopedFeatureMaps["domain-card"]
+          },
+          statsByFile.domains
+        )
     },
     {
       key: "beastforms",
       file: TRANSLATION_FILES.beastforms,
       run: () =>
-        updateBeastformsFile(filePaths.beastforms, {
-          beastTop,
-          featureMap: scopedFeatureMaps.beastform
-        }, statsByFile.beastforms)
+        updateBeastformsFile(
+          filePaths.beastforms,
+          {
+            beastTop,
+            featureMap: scopedFeatureMaps.beastform
+          },
+          statsByFile.beastforms
+        )
     },
     {
       key: "adversaries",
       file: TRANSLATION_FILES.adversaries,
       run: () =>
-        updateAdversariesFile(filePaths.adversaries, {
-          adversaryTop,
-          featureMap: scopedFeatureMaps.adversary,
-          oldEntries: oldTranslations[TRANSLATION_FILES.adversaries]
-        }, statsByFile.adversaries)
+        updateAdversariesFile(
+          filePaths.adversaries,
+          {
+            adversaryTop,
+            featureMap: scopedFeatureMaps.adversary
+          },
+          statsByFile.adversaries
+        )
     },
     {
       key: "environments",
       file: TRANSLATION_FILES.environments,
       run: () =>
-        updateEnvironmentsFile(filePaths.environments, {
-          environmentTop,
-          featureMap: scopedFeatureMaps.environment,
-          potentialLabels: environmentPotentialLabels
-        }, statsByFile.environments)
+        updateEnvironmentsFile(
+          filePaths.environments,
+          {
+            environmentTop,
+            featureMap: scopedFeatureMaps.environment
+          },
+          statsByFile.environments
+        )
     },
     {
       key: "armors",
@@ -2840,7 +1950,8 @@ async function main() {
     {
       key: "consumables",
       file: TRANSLATION_FILES.consumables,
-      run: () => applyEquipmentMap(filePaths.consumables, consumableMap, consumablesOld, { stats: statsByFile.consumables })
+      run: () =>
+        applyEquipmentMap(filePaths.consumables, consumableMap, consumablesOld, { stats: statsByFile.consumables })
     },
     {
       key: "loot",
@@ -2858,12 +1969,16 @@ async function main() {
           key: spec.key,
           file: spec.file,
           run: () =>
-            updateClassesFile(filePaths[spec.key], {
-              classTop,
-              featureMap: scopedFeatureMaps.class,
-              classItemsMap,
-              ruleTop
-            }, stats)
+            updateClassesFile(
+              filePaths[spec.key],
+              {
+                classTop,
+                featureMap: scopedFeatureMaps.class,
+                classItemsMap,
+                ruleTop
+              },
+              stats
+            )
         };
         break;
       case "subclasses":
@@ -2871,10 +1986,14 @@ async function main() {
           key: spec.key,
           file: spec.file,
           run: () =>
-            updateSubclassesFile(filePaths[spec.key], {
-              subclassTop,
-              featureMap: scopedFeatureMaps.subclass
-            }, stats)
+            updateSubclassesFile(
+              filePaths[spec.key],
+              {
+                subclassTop,
+                featureMap: scopedFeatureMaps.subclass
+              },
+              stats
+            )
         };
         break;
       case "ancestries":
@@ -2889,10 +2008,14 @@ async function main() {
           key: spec.key,
           file: spec.file,
           run: () =>
-            updateCommunitiesFile(filePaths[spec.key], {
-              communityTop,
-              featureMap: scopedFeatureMaps.community
-            }, stats)
+            updateCommunitiesFile(
+              filePaths[spec.key],
+              {
+                communityTop,
+                featureMap: scopedFeatureMaps.community
+              },
+              stats
+            )
         };
         break;
       case "domains":
@@ -2900,11 +2023,14 @@ async function main() {
           key: spec.key,
           file: spec.file,
           run: () =>
-            updateDomainsFile(filePaths[spec.key], {
-              domainTop,
-              featureMap: scopedFeatureMaps["domain-card"],
-              oldDomainActions: domainActionsByKey.get(spec.key) || {}
-            }, stats)
+            updateDomainsFile(
+              filePaths[spec.key],
+              {
+                domainTop,
+                featureMap: scopedFeatureMaps["domain-card"]
+              },
+              stats
+            )
         };
         break;
       case "adversaries":
@@ -2912,10 +2038,14 @@ async function main() {
           key: spec.key,
           file: spec.file,
           run: () =>
-            updateAdversariesFile(filePaths[spec.key], {
-              adversaryTop,
-              featureMap: scopedFeatureMaps.adversary
-            }, stats)
+            updateAdversariesFile(
+              filePaths[spec.key],
+              {
+                adversaryTop,
+                featureMap: scopedFeatureMaps.adversary
+              },
+              stats
+            )
         };
         break;
       case "beastforms":
@@ -2923,10 +2053,14 @@ async function main() {
           key: spec.key,
           file: spec.file,
           run: () =>
-            updateBeastformsFile(filePaths[spec.key], {
-              beastTop,
-              featureMap: scopedFeatureMaps.beastform
-            }, stats)
+            updateBeastformsFile(
+              filePaths[spec.key],
+              {
+                beastTop,
+                featureMap: scopedFeatureMaps.beastform
+              },
+              stats
+            )
         };
         break;
       case "transformations":
@@ -2934,9 +2068,13 @@ async function main() {
           key: spec.key,
           file: spec.file,
           run: () =>
-            updateTransformationsFile(filePaths[spec.key], {
-              transformationEntries
-            }, stats)
+            updateTransformationsFile(
+              filePaths[spec.key],
+              {
+                transformationEntries
+              },
+              stats
+            )
         };
         break;
       case "weapons":
@@ -2944,12 +2082,7 @@ async function main() {
           key: spec.key,
           file: spec.file,
           run: () =>
-            applyEquipmentMap(
-              filePaths[spec.key],
-              weaponMap,
-              oldTranslations[spec.file] || {},
-              { stats }
-            )
+            applyEquipmentMap(filePaths[spec.key], weaponMap, oldTranslations[spec.file] || {}, { stats })
         };
         break;
       case "adversaries--environments":
@@ -2957,13 +2090,16 @@ async function main() {
           key: spec.key,
           file: spec.file,
           run: () =>
-            updateAdversariesEnvironmentsFile(filePaths[spec.key], {
-              adversaryTop,
-              adversaryFeatureMap: scopedFeatureMaps.adversary,
-              environmentTop,
-              environmentFeatureMap: scopedFeatureMaps.environment,
-              potentialLabels: environmentPotentialLabels
-            }, stats)
+            updateAdversariesEnvironmentsFile(
+              filePaths[spec.key],
+              {
+                adversaryTop,
+                adversaryFeatureMap: scopedFeatureMaps.adversary,
+                environmentTop,
+                environmentFeatureMap: scopedFeatureMaps.environment
+              },
+              stats
+            )
         };
         break;
       default:

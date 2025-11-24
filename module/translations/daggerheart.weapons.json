@@ -272,8 +272,7 @@
     },
     "Advanced Spear": {
       "name": "Продвинутое Копьё",
-      "attack": "Атака",
-      "description": "<p><strong>Громоздкое</strong>: −1 к Искусности</p>"
+      "attack": "Атака"
     },
     "Advanced Tower Shield": {
       "name": "Продвинутый Башенный Щит",
@@ -994,8 +993,7 @@
     },
     "Improved Spear": {
       "name": "Улучшенное Копьё",
-      "attack": "Атака",
-      "description": "<p><strong>Громоздкое</strong>: −1 к Искусности</p>"
+      "attack": "Атака"
     },
     "Improved Tower Shield": {
       "name": "Улучшенный Башенный Щит",
@@ -1304,8 +1302,7 @@
     },
     "Legendary Spear": {
       "name": "Легендарное Копьё",
-      "attack": "Атака",
-      "description": "<p><strong>Громоздкое</strong>: −1 к Искусности</p>"
+      "attack": "Атака"
     },
     "Legendary Tower Shield": {
       "name": "Легендарный Башенный Щит",
@@ -1625,8 +1622,7 @@
     },
     "Spear": {
       "name": "Копьё",
-      "attack": "Атака",
-      "description": "<p><strong>Громоздкое</strong>: −1 к Искусности</p>"
+      "attack": "Атака"
     },
     "Spiked Bow": {
       "name": "Шипастый Лук",

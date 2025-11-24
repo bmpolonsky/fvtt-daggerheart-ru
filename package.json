@@ -11,7 +11,9 @@
     "update:sources": "node scripts/update_sources.js",
     "generate:originals": "node scripts/generate_originals.js",
     "sync:i18n": "node scripts/sync_i18n_structure.js",
+    "sync:i18n:add-only": "node scripts/sync_i18n_structure.js --add-only",
     "update:translations": "node scripts/update_translations.js",
+    "update:translations:full": "node scripts/update_translations_full.js",
     "build:release": "node scripts/build-release.js"
   },
   "devDependencies": {
