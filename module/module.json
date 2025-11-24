@@ -13,7 +13,7 @@
         "id": "babele",
         "type": "module",
         "compatibility": {
-          "minimum": "2.0.0"
+          "minimum": "2.7.5"
         }
       }
     ],
