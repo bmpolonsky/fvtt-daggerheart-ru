@@ -1084,7 +1084,7 @@
       "effects": {
         "ptBC882plZW39Ld9": {
           "name": "Force of Nature",
-          "description": "<ul><li><p><span class=\"vertical-card-list\">When you succeed on an attack or Spellcast Roll, gain a +10 bonus to the damage roll.</p></li><li><p><span class=\"vertical-card-list\">When you deal enough damage to defeat a creature within Close range, you absorb them and clear an Armor Slot.</p></li><li><p><span class=\"vertical-card-list\">You can’t be <em>Restrained</em>.</p></li><li><p><span>Before you make an action roll, you must </span><span>spend a Hope</span><span>. If you can’t, you revert to your normal form.</p></li></ul>"
+          "description": "<ul><li><p><span class=\"vertical-card-list\">When you succeed on an attack or Spellcast Roll, gain a +10 bonus to the damage roll.</span></p></li><li><p><span class=\"vertical-card-list\">When you deal enough damage to defeat a creature within Close range, you absorb them and clear an Armor Slot.</span></p></li><li><p><span class=\"vertical-card-list\">You can’t be <em>Restrained</em>.</span></p></li><li><p><span>Before you make an action roll, you must </span><span>spend a Hope</span><span>. If you can’t, you revert to your normal form.</span></p></li></ul>"
         }
       }
     },
@@ -1527,6 +1527,10 @@
         "Gl41dsOBTG2p8qwo": {
           "name": "Cast",
           "description": "<p>When you have a few minutes of silence to focus, you can <strong>mark a Stress</strong> to change the appearance of all willing creatures within Close range. Their new forms must share a general body structure and size, and can be somebody or something you’ve seen before or entirely fabricated. A disguised creature has advantage on Presence Rolls to avoid scrutiny.</p><p class=\"Body-Foundation\">Activate a Countdown (8). It ticks down as a consequence the GM chooses. When it triggers, the disguise drops.</p>"
+        },
+        "ZM96wFu3YuAeUXel": {
+          "name": "Start Countdown",
+          "description": "<p>Activate a <em>Countdown (8)</em>. It ticks down as a consequence the GM chooses. When it triggers, the disguise drops.</p>"
         }
       },
       "effects": {
