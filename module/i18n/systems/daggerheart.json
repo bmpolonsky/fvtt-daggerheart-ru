@@ -45,6 +45,10 @@
           "name": "Звериная форма",
           "tooltip": "Превращает персонажа в звериную форму."
         },
+        "countdown": {
+          "name": "Отсчёт",
+          "tooltip": "Запустить отсчёт"
+        },
         "damage": {
           "name": "Урон",
           "tooltip": "Прямой урон без броска."
@@ -71,6 +75,10 @@
           "exact": "Макс. уровень звериной формы",
           "exactHint": "Если пусто, используется Ранг персонажа",
           "label": "Звериная форма"
+        },
+        "countdown": {
+          "defaultOwnership": "Владение по умолчанию",
+          "startCountdown": "Запустить отсчёт"
         },
         "damage": {
           "multiplier": "Множитель",
@@ -123,7 +131,8 @@
       "RangeDependance": {
         "hint": "Настройки для опциональной дистанции, на которой этот эффект должен активироваться",
         "title": "Зависит от дальности"
-      }
+      },
+      "immuneStatusText": "Иммунитет: {status}"
     },
     "ACTORS": {
       "Adversary": {
@@ -371,6 +380,12 @@
       },
       "Countdown": {
         "addCountdown": "Добавить отсчёт",
+        "loopingTypes": {
+          "noLooping": "Без цикла",
+          "looping": "Цикл",
+          "increasing": "Возрастающий",
+          "decreasing": "Убывающий"
+        },
         "FIELDS": {
           "countdowns": {
             "element": {
@@ -380,6 +395,9 @@
               "progress": {
                 "current": {
                   "label": "Текущее"
+                },
+                "looping": {
+                  "label": "Цикл"
                 },
                 "max": {
                   "label": "Макс."
@@ -395,7 +413,7 @@
                 }
               },
               "type": {
-                "label": "Тип отсчёта"
+                "label": "Тип прогрессии"
               }
             }
           }
@@ -407,8 +425,8 @@
         "title": "Отсчёты: {type}",
         "toggleSimple": "Переключить упрощённый вид",
         "types": {
-          "narrative": "Повествовательные",
-          "encounter": "Боевые"
+          "narrative": "Повествование",
+          "encounter": "Боевой"
         }
       },
       "CountdownEdit": {
@@ -424,8 +442,11 @@
         "currentCountdownMax": "Макс.: {value}",
         "category": "Категория",
         "type": "Тип",
+        "progressionType": "Тип прогрессии",
+        "decreasing": "Убывающий",
+        "looping": "Цикл",
         "defaultOwnershipTooltip": "Владение отсчётами для игроков по умолчанию",
-        "hideNewCountdowns": "Скрывать новые отсчёты"
+        "hideNewCountdowns": "Скрывать новые"
       },
       "DaggerheartMenu": {
         "title": "Инструменты Мастера"
@@ -442,7 +463,8 @@
         "stressReduction": "Снижение за счёт стресса",
         "title": "Снижение урона",
         "unncessaryStress": "Вам не нужно тратить стресс",
-        "usedMarks": "Использованные отметки"
+        "usedMarks": "Использованные отметки",
+        "reduceSeverity": "Тяжесть снижена на {nr}"
       },
       "DeathMove": {
         "selectMove": "Выберите ход",
@@ -509,6 +531,9 @@
       "ImageSelect": {
         "title": "Выбор изображения",
         "selectImage": "Выбрать изображение"
+      },
+      "ItemTransfer": {
+        "transfer": "Передать"
       },
       "Levelup": {
         "actions": {
@@ -978,9 +1003,12 @@
         }
       },
       "CountdownType": {
-        "spotlight": "Активирован",
+        "actionRoll": "Бросок действия",
+        "characterAttack": "Атака персонажа",
+        "characterSpotlight": "Активация персонажа",
         "custom": "Пользовательский",
-        "characterAttack": "Атака персонажа"
+        "fear": "Страх",
+        "spotlight": "Активация"
       },
       "DamageType": {
         "physical": {
@@ -1074,7 +1102,8 @@
       },
       "ItemResourceType": {
         "simple": "Простой",
-        "diceValue": "Значение кости"
+        "diceValue": "Значение кости",
+        "die": "Кость"
       },
       "Range": {
         "self": {
@@ -2419,6 +2448,10 @@
               "label": "Игроки"
             }
           },
+          "countdownAutomation": {
+            "label": "Автоматизация отсчётов",
+            "hint": "Автоматически продвигать отсчёты на основе их настроек прогрессии"
+          },
           "levelupAuto": {
             "label": "Автоматизация повышения уровня",
             "hint": "Когда вы сделаете свой выбор и завершите повышение уровня, числовые изменения будут автоматически применены к вашему персонажу."
@@ -2564,7 +2597,8 @@
             "texture": "Текстура",
             "colorset": "Тема",
             "material": "Материал",
-            "system": "Набор костей"
+            "system": "Набор костей",
+            "font": "Шрифт"
           }
         },
         "variantRules": {
@@ -2651,7 +2685,8 @@
           "abilityCheckTitle": "Проверка {ability}"
         },
         "effectSummary": {
-          "title": "Примененные эффекты"
+          "title": "Примененные эффекты",
+          "immunityTo": "Иммунитет: {immunities}"
         },
         "featureTitle": "Свойство класса",
         "groupRoll": {
@@ -2694,7 +2729,10 @@
       "Countdowns": {
         "title": "Отсчёты",
         "toggleIconMode": "Переключить режим иконок",
-        "noPlayerAccess": "Этот отсчёт не виден ни одному из игроков"
+        "noPlayerAccess": "Этот отсчёт не виден ни одному из игроков",
+        "loop": "Цикл",
+        "decreasingLoop": "Убывающий цикл",
+        "increasingLoop": "Возрастающий цикл"
       },
       "ItemBrowser": {
         "title": "Обозреватель компендиума Daggerheart",
@@ -2718,7 +2756,7 @@
         "evasionMin": "Уклонение (мин.)",
         "evasionMax": "Уклонение (макс.)",
         "subtype": "Подтип",
-        "missing": "<i>Missing</i>",
+        "missing": "<i>Отсутствует</i>",
         "folders": {
           "characters": "Персонажи",
           "adversaries": "Противники",
@@ -2810,7 +2848,7 @@
         "gmRequired": "Для этого действия требуется Мастер в сети.",
         "gmOnly": "Доступно только Мастеру.",
         "noActorOwnership": "У вас нет прав на этого персонажа",
-        "documentIsMissing": "The {documentType} is missing from the world."
+        "documentIsMissing": "{documentType} отсутствует в мире."
       },
       "Sidebar": {
         "daggerheartMenu": {
@@ -2846,7 +2884,8 @@
         "rightClickExtand": "Щелкните правой кнопкой мыши, чтобы развернуть",
         "companionPartnerLevelBlock": "Компаньону нужен назначенный партнёр для повышения уровня.",
         "configureAttribution": "Настроить источники",
-        "deleteItem": "Удалить предмет"
+        "deleteItem": "Удалить предмет",
+        "immune": "Иммунитет"
       }
     }
   },
