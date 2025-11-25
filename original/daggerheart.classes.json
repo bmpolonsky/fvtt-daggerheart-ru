@@ -197,11 +197,37 @@
     },
     "Evolution": {
       "name": "Evolution",
-      "description": "<p><strong>Spend 3 Hope</strong> to transform into a Beastform without marking a Stress. When you do, choose one trait to raise by +1 until you drop out of that Beastform.<br /><br /><strong>Note: Manually increase your trait on character sheet if this is in effect.</strong></p>",
+      "description": "<p><strong>Spend 3 Hope</strong> to transform into a Beastform without marking a Stress. When you do, choose one trait to raise by +1 until you drop out of that Beastform.<br /><br /><strong>Note: Toggle one of the Evolution Traits in the effects tab to raise a trait by 1, e.g. Evolution: Agility</strong></p>",
       "actions": {
         "bj4m9E8ObFT0xDQ4": {
           "name": "Beastform",
           "description": "<p>Spend 3 Hope to transform into a Beastform without marking a Stress. When you do, choose one trait to raise by +1 until you drop out of that Beastform. </p>"
+        }
+      },
+      "effects": {
+        "vQOqLZAxOltAzsVv": {
+          "name": "Evolution: Agility",
+          "description": "<p>Toggle this for +1 to Agility when using Evolution. Turn it off when you leave Beastform.</p>"
+        },
+        "cwEsO1NZpkQHuoTT": {
+          "name": "Evolution: Strength",
+          "description": "<p>Toggle this for +1 to Strength when using Evolution. Turn it off when you leave Beastform.</p>"
+        },
+        "8P0nwRHNsVnHVPjq": {
+          "name": "Evolution: Finesse",
+          "description": "<p>Toggle this for +1 to Finesse when using Evolution. Turn it off when you leave Beastform.</p>"
+        },
+        "i2GhNGo5TnGtLuA0": {
+          "name": "Evolution: Instinct",
+          "description": "<p>Toggle this for +1 to Instinct when using Evolution. Turn it off when you leave Beastform.</p>"
+        },
+        "APQF1in1LXjBZh9n": {
+          "name": "Evolution: Presence",
+          "description": "<p>Toggle this for +1 to Presence when using Evolution. Turn it off when you leave Beastform.</p>"
+        },
+        "WwOvGJYJb4d37cOy": {
+          "name": "Evolution: Knowledge",
+          "description": "<p>Toggle this for +1 to Knowledge when using Evolution. Turn it off when you leave Beastform.</p>"
         }
       }
     },
@@ -374,7 +400,18 @@
     },
     "Unstoppable": {
       "name": "Unstoppable",
-      "description": "<p><strong>(Note: This needs to be manually implemented. Unstoppable die feature is not implemented as of this time)</strong><br /><br />Once per long rest, you can become Unstoppable. You gain an Unstoppable Die. At level 1, your Unstoppable Die is a d4. Place it on your character sheet in the space provided, starting with the 1 value facing up. After you make a damage roll that deals 1 or more Hit Points to a target, increase the Unstoppable Die value by one. When the die’s value would exceed its maximum value or when the scene ends, remove the die and drop out of Unstoppable. At level 5, your Unstoppable Die increases to a d6. While Unstoppable, you gain the following benefits:</p><ul><li><p>You reduce the severity of physical damage by one threshold (Severe to Major, Major to Minor, Minor to None).</p></li><li><p>You add the current value of the Unstoppable Die to your damage roll.</p></li><li><p>You can’t be Restrained or Vulnerable.</p></li></ul><blockquote><p>Tip: If your Unstoppable Die is a d4 and the 4 is currently facing up, you remove the die the next time you would increase it. However, if your Unstoppable Die has increased to a d6 and the 4 is currently facing up, you’ll turn it to 5 the next time you would increase it. In this case, you’ll remove the die after you would need to increase it higher than 6.</p></blockquote>"
+      "description": "<p>Once per long rest, you can become Unstoppable. You gain an Unstoppable Die. At level 1, your Unstoppable Die is a d4. Place it on your character sheet in the space provided, starting with the 1 value facing up. After you make a damage roll that deals 1 or more Hit Points to a target, increase the Unstoppable Die value by one. When the die’s value would exceed its maximum value or when the scene ends, remove the die and drop out of Unstoppable. At level 5, your Unstoppable Die increases to a d6. While Unstoppable, you gain the following benefits:</p><ul><li><p>You reduce the severity of physical damage by one threshold (Severe to Major, Major to Minor, Minor to None).</p></li><li><p>You add the current value of the Unstoppable Die to your damage roll.</p></li><li><p>You can’t be Restrained or Vulnerable.</p></li></ul><blockquote><p>Tip: If your Unstoppable Die is a d4 and the 4 is currently facing up, you remove the die the next time you would increase it. However, if your Unstoppable Die has increased to a d6 and the 4 is currently facing up, you’ll turn it to 5 the next time you would increase it. In this case, you’ll remove the die after you would need to increase it higher than 6.</p></blockquote>",
+      "actions": {
+        "KZiZ8m8uqH5iG96d": {
+          "name": "Become Unstoppable",
+          "description": "<p>Once per long rest, you can become Unstoppable. You gain an Unstoppable Die. At level 1, your Unstoppable Die is a d4. Place it on your character sheet in the space provided, starting with the 1 value facing up. After you make a damage roll that deals 1 or more Hit Points to a target, increase the Unstoppable Die value by one. When the die’s value would exceed its maximum value or when the scene ends, remove the die and drop out of Unstoppable. At level 5, your Unstoppable Die increases to a d6. While Unstoppable, you gain the following benefits:</p><ul><li><p>You reduce the severity of physical damage by one threshold (Severe to Major, Major to Minor, Minor to None).</p></li><li><p>You add the current value of the Unstoppable Die to your damage roll.</p></li><li><p>You can’t be Restrained or Vulnerable.</p></li></ul><blockquote><p>Tip: If your Unstoppable Die is a d4 and the 4 is currently facing up, you remove the die the next time you would increase it. However, if your Unstoppable Die has increased to a d6 and the 4 is currently facing up, you’ll turn it to 5 the next time you would increase it. In this case, you’ll remove the die after you would need to increase it higher than 6.</p></blockquote>"
+        }
+      },
+      "effects": {
+        "xzQtFSuDS48kUdAZ": {
+          "name": "Unstoppable"
+        }
+      }
     },
     "Volatile Magic": {
       "name": "Volatile Magic",
