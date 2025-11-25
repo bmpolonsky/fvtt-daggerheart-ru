@@ -102,6 +102,7 @@
       "Settings": {
         "attackBonus": "Attack Bonus",
         "attackName": "Attack Name",
+        "criticalThreshold": "Critical Threshold",
         "includeBase": {
           "label": "Include Item Damage"
         },
@@ -398,8 +399,11 @@
                 "looping": {
                   "label": "Looping"
                 },
-                "max": {
-                  "label": "Max"
+                "start": {
+                  "label": "Start"
+                },
+                "startFormula": {
+                  "label": "Start Formula"
                 },
                 "type": {
                   "label": {
@@ -435,12 +439,13 @@
         "newCountdown": "New Countdown",
         "removeCountdownTitle": "Remove Countdown",
         "removeCountdownText": "Are you sure you want to remove the countdown: {name}?",
-        "current": "Current",
-        "max": "Max",
-        "currentCountdownValue": "Current: {value}",
-        "currentCountdownMax": "Max: {value}",
+        "current": "Current Value",
+        "start": "Start Value",
+        "startFormula": "Randomized Start Value Formula",
+        "currentCountdownCurrent": "Current: {value}",
+        "currentCountdownStart": "Start: {value}",
         "category": "Category",
-        "progressionType": "Progression Type",
+        "progressionType": "Progression",
         "decreasing": "Decreasing",
         "looping": "Looping",
         "defaultOwnershipTooltip": "The default player ownership of countdowns",
@@ -1282,7 +1287,7 @@
         },
         "burning": {
           "name": "Burning",
-          "description": "When you roll the maximum value on a damage die, roll an additional damage die.",
+          "description": "When you roll a 6 on a damage die, the target must mark a Stress.",
           "actions": {
             "burn": {
               "name": "Burn",
