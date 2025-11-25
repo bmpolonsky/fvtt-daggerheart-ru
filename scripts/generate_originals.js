@@ -819,10 +819,35 @@ function convertActions(payload) {
         entry.description = trimmed;
       }
     }
+    const countdown = convertCountdowns(action.countdown);
+    if (countdown) {
+      entry.countdown = countdown;
+    }
     if (Object.keys(entry).length) {
       result[id] = entry;
     }
   }
+  return Object.keys(result).length ? result : null;
+}
+
+function convertCountdowns(list, context = "countdown") {
+  if (!Array.isArray(list) || !list.length) return null;
+  const result = {};
+  list.forEach((node, index) => {
+    const name = typeof node?.name === "string" ? node.name.trim() : "";
+    if (!name) {
+      generationWarnings.push(`Countdown без name в ${context}. Пропускаю элемент ${index + 1}.`);
+      return;
+    }
+    let key = name;
+    let suffix = 2;
+    while (Object.prototype.hasOwnProperty.call(result, key)) {
+      generationWarnings.push(`Дублирующийся countdown name "${name}" в ${context}. Использую суффикс.`);
+      key = `${name} (${suffix})`;
+      suffix += 1;
+    }
+    result[key] = name;
+  });
   return Object.keys(result).length ? result : null;
 }
 

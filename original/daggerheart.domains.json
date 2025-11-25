@@ -1530,7 +1530,10 @@
         },
         "ZM96wFu3YuAeUXel": {
           "name": "Start Countdown",
-          "description": "<p>Activate a <em>Countdown (8)</em>. It ticks down as a consequence the GM chooses. When it triggers, the disguise drops.</p>"
+          "description": "<p>Activate a <em>Countdown (8)</em>. It ticks down as a consequence the GM chooses. When it triggers, the disguise drops.</p>",
+          "countdown": {
+            "Mass Disguise": "Mass Disguise"
+          }
         }
       },
       "effects": {

@@ -23,6 +23,7 @@ Hooks.once('babele.init', (babele) => {
     if (description) {
       action.description = description;
     }
+    applyCountdownTranslations(action.countdown, translated.countdown);
   };
 
   // Применяет перевод к эффекту, включая вложенные advantage/disadvantage sources.
@@ -85,6 +86,26 @@ Hooks.once('babele.init', (babele) => {
       const trimmed = candidate.trim();
       if (trimmed) {
         change.value = trimmed;
+      }
+    }
+  };
+
+  // Проставляет переводы имен шагов отсчётов внутри action.countdown.
+  const applyCountdownTranslations = (countdownList, translatedMap) => {
+    if (!Array.isArray(countdownList) || !translatedMap || typeof translatedMap !== "object") {
+      return;
+    }
+    for (const node of countdownList) {
+      if (!node || typeof node.name !== "string") {
+        continue;
+      }
+      const translatedName = translatedMap[node.name];
+      if (typeof translatedName !== "string") {
+        continue;
+      }
+      const trimmed = translatedName.trim();
+      if (trimmed) {
+        node.name = trimmed;
       }
     }
   };

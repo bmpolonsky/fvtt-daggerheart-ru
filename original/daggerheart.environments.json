@@ -170,7 +170,10 @@
             },
             "3L0T97ZzTqZU6BE6": {
               "name": "Start Countdown",
-              "description": "<p><em>Countdown (Loop 6)</em>. When the PCs enter the Burning Heart of the Woods, activate the countdown.</p>"
+              "description": "<p><em>Countdown (Loop 6)</em>. When the PCs enter the Burning Heart of the Woods, activate the countdown.</p>",
+              "countdown": {
+                "Choking Ash": "Choking Ash"
+              }
             }
           }
         }
@@ -206,7 +209,11 @@
               "description": "<p>A thief tries to steal something from a PC. The PC must succeed on an Instinct Roll to notice the thief or lose an item of the GM’s choice as the thief escapes to a Close distance.</p>"
             },
             "L2TFexCvxvuCOCXe": {
-              "name": "Start Countdowns"
+              "name": "Start Countdowns",
+              "countdown": {
+                "Chase Thief": "Chase Thief",
+                "Escape To Hideout": "Escape To Hideout"
+              }
             }
           }
         },
@@ -243,7 +250,10 @@
             },
             "udKS3ME8VKuayEyO": {
               "name": "Start Countdown",
-              "description": "<p><em>Consequence Countdown (6)</em>. The attacking force deploys siege weapons to try to raze the defenders’ fortifications. Activate the countdown when the siege begins (for a protracted siege, make this a long-term countdown instead). </p>"
+              "description": "<p><em>Consequence Countdown (6)</em>. The attacking force deploys siege weapons to try to raze the defenders’ fortifications. Activate the countdown when the siege begins (for a protracted siege, make this a long-term countdown instead). </p>",
+              "countdown": {
+                "Siege Weapons (Environment Change)": "Siege Weapons (Environment Change)"
+              }
             }
           }
         },
@@ -283,7 +293,10 @@
             },
             "uZgtjZJVCedm93aJ": {
               "name": "Start Countdown",
-              "description": "<p>Up is down, down is right, right is starward. Gravity and directionality themselves are in flux, and any attempt to move through this realm is an odyssey unto itself, requiring a <em>Progress Countdown (8)</em>.</p><section class=\"secret\" id=\"secret-rsf1tT4N3HBDgKna\"><p><em>What does it feel like to move in a space so alien to the Mortal Realm? What landmark or point do you fixate on to maintain your balance? What bizarre landmarks do you traverse on your journey?</em></p></section>"
+              "description": "<p>Up is down, down is right, right is starward. Gravity and directionality themselves are in flux, and any attempt to move through this realm is an odyssey unto itself, requiring a <em>Progress Countdown (8)</em>.</p><section class=\"secret\" id=\"secret-rsf1tT4N3HBDgKna\"><p><em>What does it feel like to move in a space so alien to the Mortal Realm? What landmark or point do you fixate on to maintain your balance? What bizarre landmarks do you traverse on your journey?</em></p></section>",
+              "countdown": {
+                "Impossible Architecture": "Impossible Architecture"
+              }
             }
           }
         },
@@ -297,7 +310,10 @@
             },
             "FxAFpgPbGcmi3nlh": {
               "name": "Start Countdown",
-              "description": "<p><em>Countdown (Loop 1d4)</em>. Activate the countdown.</p>"
+              "description": "<p><em>Countdown (Loop 1d4)</em>. Activate the countdown.</p>",
+              "countdown": {
+                "Everything You Are This Place Will Take from You": "Everything You Are This Place Will Take from You"
+              }
             }
           }
         },
@@ -349,7 +365,10 @@
           "actions": {
             "TMEBwqlfvL3mb3hQ": {
               "name": "Start Countdown",
-              "description": "<p>Climbing up the cliff side uses a <em>Progress Countdown (12)</em>. It ticks down according to the following criteria when the PCs make an action roll to climb:</p><ul><li><p><strong>Critical Success</strong>: Tick down 3</p></li><li><p><strong>Success with Hope</strong>: Tick down 2</p></li><li><p><strong>Success with Fear</strong>: Tick down 1</p></li><li><p><strong>Failure with Hope</strong>: No Advancement</p></li><li><p><strong>Failure with Fear</strong>: Tick up 1</p></li></ul><p>When the countdown triggers, the party has made it to the top of the cliff .</p><section class=\"secret\" id=\"secret-5teov2eI5kV1P3LD\"><p><em>What strange formations are the stones arranged in? What ominous warnings did previous adventurers leave?</em></p></section>"
+              "description": "<p>Climbing up the cliff side uses a <em>Progress Countdown (12)</em>. It ticks down according to the following criteria when the PCs make an action roll to climb:</p><ul><li><p><strong>Critical Success</strong>: Tick down 3</p></li><li><p><strong>Success with Hope</strong>: Tick down 2</p></li><li><p><strong>Success with Fear</strong>: Tick down 1</p></li><li><p><strong>Failure with Hope</strong>: No Advancement</p></li><li><p><strong>Failure with Fear</strong>: Tick up 1</p></li></ul><p>When the countdown triggers, the party has made it to the top of the cliff .</p><section class=\"secret\" id=\"secret-5teov2eI5kV1P3LD\"><p><em>What strange formations are the stones arranged in? What ominous warnings did previous adventurers leave?</em></p></section>",
+              "countdown": {
+                "The Climb": "The Climb"
+              }
             }
           }
         },
@@ -423,7 +442,10 @@
           "actions": {
             "bUIfzuWd1VfiV8sc": {
               "name": "Start Countdown",
-              "description": "<p><em>Countdown (6)</em>. When the PCs enter the scene or the cult begins the ritual to summon a demon, activate the countdown. Designate one adversary to lead the ritual. The countdown ticks down when a PC rolls with Fear.</p>"
+              "description": "<p><em>Countdown (6)</em>. When the PCs enter the scene or the cult begins the ritual to summon a demon, activate the countdown. Designate one adversary to lead the ritual. The countdown ticks down when a PC rolls with Fear.</p>",
+              "countdown": {
+                "The Summoning": "The Summoning"
+              }
             },
             "suFEnfpOfeVRvnJF": {
               "name": "Summon Demon",
@@ -457,7 +479,10 @@
             },
             "uJSaDLFcrtvIPFaD": {
               "name": "Start Countdown",
-              "description": "<p>When the environment first takes the spotlight, designate one adversary as the Usurper seeking to overthrow the gods. Activate a Long-Term <em>Countdown (8)</em> as the Usurper assembles what they need to conduct the ritual.</p><section class=\"secret\" id=\"secret-FyeeA41DYc7DdjY7\"><p><em>What does the Usurper still require: The heart of a High Seraph? The lodestone of an ancient waygate? The loyalty of two archenemies? The heartbroken tears of a pure soul?</em></p></section>"
+              "description": "<p>When the environment first takes the spotlight, designate one adversary as the Usurper seeking to overthrow the gods. Activate a Long-Term <em>Countdown (8)</em> as the Usurper assembles what they need to conduct the ritual.</p><section class=\"secret\" id=\"secret-FyeeA41DYc7DdjY7\"><p><em>What does the Usurper still require: The heart of a High Seraph? The lodestone of an ancient waygate? The loyalty of two archenemies? The heartbroken tears of a pure soul?</em></p></section>",
+              "countdown": {
+                "Final Preparations": "Final Preparations"
+              }
             }
           }
         },
@@ -504,7 +529,10 @@
             },
             "KNWpWnJboRIaZ3Yu": {
               "name": "Countdown",
-              "description": "<p>When the “Final Preparations” long-term countdown triggers, the Usurper begins hammering on the gates of the Hallows themselves. Activate a Divine Siege <em>Countdown (10)</em>. Spotlight the Usurper to describe the Usurper’s assault and tick down this countdown by 1. If the Usurper takes Major or greater damage, tick up the countdown by 1.</p><section class=\"secret\" id=\"secret-u7mt9OivMXWU5s3S\"><p><em>How does the Mortal Realm writhe as the natural order is violated? What mortals witness this blasphemy from afar?</em></p></section>"
+              "description": "<p>When the “Final Preparations” long-term countdown triggers, the Usurper begins hammering on the gates of the Hallows themselves. Activate a Divine Siege <em>Countdown (10)</em>. Spotlight the Usurper to describe the Usurper’s assault and tick down this countdown by 1. If the Usurper takes Major or greater damage, tick up the countdown by 1.</p><section class=\"secret\" id=\"secret-u7mt9OivMXWU5s3S\"><p><em>How does the Mortal Realm writhe as the natural order is violated? What mortals witness this blasphemy from afar?</em></p></section>",
+              "countdown": {
+                "Beginning of the End": "Beginning of the End"
+              }
             }
           }
         },
@@ -606,7 +634,10 @@
           "actions": {
             "VhqZKDA4032i8zY3": {
               "name": "Start Countdown",
-              "description": "<p><strong>Spend a Fear</strong> to manifest the echo of a past disaster that ravaged the city. Activate a <em>Progress Countdown (5)</em> as the disaster replays around the PCs. To complete the countdown and escape the catastrophe, the PCs must overcome threats such as rampaging fires, stampeding civilians, collapsing buildings, or crumbling streets, while recalling history and finding clues to escape the inevitable.</p><section class=\"secret\" id=\"secret-2Ou4kbqfCwCgsG5X\"><p><em>Is this the disaster that led the city to be abandoned? What is known about this disaster and how could that help the PCs escape?</em></p></section>"
+              "description": "<p><strong>Spend a Fear</strong> to manifest the echo of a past disaster that ravaged the city. Activate a <em>Progress Countdown (5)</em> as the disaster replays around the PCs. To complete the countdown and escape the catastrophe, the PCs must overcome threats such as rampaging fires, stampeding civilians, collapsing buildings, or crumbling streets, while recalling history and finding clues to escape the inevitable.</p><section class=\"secret\" id=\"secret-2Ou4kbqfCwCgsG5X\"><p><em>Is this the disaster that led the city to be abandoned? What is known about this disaster and how could that help the PCs escape?</em></p></section>",
+              "countdown": {
+                "Apocalypse Then": "Apocalypse Then"
+              }
             }
           }
         }
@@ -746,7 +777,10 @@
             },
             "yJj6IsNNTEyKndvO": {
               "name": "Start Countdown",
-              "description": "<p><em>Countdown (Loop 4)</em>. When the PCs enter the mountain pass, activate the countdown.</p>"
+              "description": "<p><em>Countdown (Loop 4)</em>. When the PCs enter the mountain pass, activate the countdown.</p>",
+              "countdown": {
+                "Icy Winds": "Icy Winds"
+              }
             }
           }
         }
@@ -905,7 +939,10 @@
           "actions": {
             "91HPIEEcVKPQ5qqn": {
               "name": "Start Countdown",
-              "description": "<p>Crossing the river requires the party to complete a <em>Progress Countdown (4)</em>.</p><section class=\"secret\" id=\"secret-aKJuTbAZaPUFxoiE\"><p>A PC who rolls a failure with Fear is immediately targeted by the “Undertow” action without requiring a Fear to be spent on the feature.</p></section><p></p><section class=\"secret\" id=\"secret-GSYTFIq8J3k2a4Ww\"><p><em>Have any of the PCs forded rivers like this before? Are any of them afraid of drowning?</em></p></section>"
+              "description": "<p>Crossing the river requires the party to complete a <em>Progress Countdown (4)</em>.</p><section class=\"secret\" id=\"secret-aKJuTbAZaPUFxoiE\"><p>A PC who rolls a failure with Fear is immediately targeted by the “Undertow” action without requiring a Fear to be spent on the feature.</p></section><p></p><section class=\"secret\" id=\"secret-GSYTFIq8J3k2a4Ww\"><p><em>Have any of the PCs forded rivers like this before? Are any of them afraid of drowning?</em></p></section>",
+              "countdown": {
+                "Dangerous Crossing": "Dangerous Crossing"
+              }
             }
           }
         },

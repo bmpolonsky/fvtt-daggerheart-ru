@@ -141,7 +141,10 @@
             },
             "lBhmLc33pcXzJHT3": {
               "name": "Start Countdown",
-              "description": "<p><em>Countdown (Loop 1d6)</em>. When the Flickerfly takes damage for the first time, activate the countdown.</p>"
+              "description": "<p><em>Countdown (Loop 1d6)</em>. When the Flickerfly takes damage for the first time, activate the countdown.</p>",
+              "countdown": {
+                "Hallucinatory Breath": "Hallucinatory Breath"
+              }
             }
           }
         },
@@ -330,7 +333,10 @@
             },
             "LXhwkNCDFeUric8D": {
               "name": "Start Countdown",
-              "description": "<p><em>Countdown (Loop 2d6)</em>. When the Necromancer has marked 6 or more of their HP, activate the countdown.</p>"
+              "description": "<p><em>Countdown (Loop 2d6)</em>. When the Necromancer has marked 6 or more of their HP, activate the countdown.</p>",
+              "countdown": {
+                "Your Life Is Mine": "Your Life Is Mine"
+              }
             }
           }
         }
@@ -1330,7 +1336,10 @@
           "actions": {
             "szg3qA09aJUt9WKS": {
               "name": "Countdown",
-              "description": "<p><em>Countdown (Loop 6)</em>. Activate the first time an attack is made within sight of the Demon. It ticks down when a PC takes a violent action.</p>"
+              "description": "<p><em>Countdown (Loop 6)</em>. Activate the first time an attack is made within sight of the Demon. It ticks down when a PC takes a violent action.</p>",
+              "countdown": {
+                "Blood and Souls": "Blood and Souls"
+              }
             },
             "7G6uWlFEeOLsJIWY": {
               "name": "Summon",
@@ -1662,7 +1671,10 @@
             },
             "11PtfoxbgOXxNlkG": {
               "name": "Start Countdown",
-              "description": "<p><em>Countdown (Loop 2d6)</em>. When the Sorcerer is in the spotlight for the first time, activate the countdown.</p>"
+              "description": "<p><em>Countdown (Loop 2d6)</em>. When the Sorcerer is in the spotlight for the first time, activate the countdown.</p>",
+              "countdown": {
+                "Shackles of Guilt": "Shackles of Guilt"
+              }
             }
           },
           "effects": {
@@ -1731,7 +1743,10 @@
             },
             "8e3BHmOFLvRwPbTW": {
               "name": "Start Countdown",
-              "description": "<p><em>Countdown (Decreasing 8)</em>. When the Realm-Breaker is in the spotlight for the first time, activate the countdown.</p>"
+              "description": "<p><em>Countdown (Decreasing 8)</em>. When the Realm-Breaker is in the spotlight for the first time, activate the countdown.</p>",
+              "countdown": {
+                "All-Consuming Rage": "All-Consuming Rage"
+              }
             }
           }
         },
@@ -1818,7 +1833,10 @@
             },
             "4x13WyksHU0u0j20": {
               "name": "Start Countdown",
-              "description": "<p><em>Countdown (1d8)</em>. When the Undefeated Champion is in the spotlight for the first time, activate the countdown.</p>"
+              "description": "<p><em>Countdown (1d8)</em>. When the Undefeated Champion is in the spotlight for the first time, activate the countdown.</p>",
+              "countdown": {
+                "Circle of Defilement": "Circle of Defilement"
+              }
             }
           },
           "effects": {
@@ -2244,7 +2262,10 @@
             },
             "ywZTs3D8ClT7tAsa": {
               "name": "Start Countdown",
-              "description": "<p>On a failure, they begin to turn to stone, marking a HP and starting a Petrification Countdown (4). This countdown ticks down when the Gorgon is attacked. When it triggers, the target must make a death move. If the Gorgon is defeated, all petrification countdowns end.</p>"
+              "description": "<p>On a failure, they begin to turn to stone, marking a HP and starting a Petrification Countdown (4). This countdown ticks down when the Gorgon is attacked. When it triggers, the target must make a death move. If the Gorgon is defeated, all petrification countdowns end.</p>",
+              "countdown": {
+                "Petrifying Gaze": "Petrifying Gaze"
+              }
             }
           }
         },
@@ -2535,7 +2556,10 @@
           "actions": {
             "xyhaCmPGiVMsTViH": {
               "name": "Start Countdown",
-              "description": "<p><em>Countdown (5)</em>. When the Head Guard is in the spotlight for the first time, activate the countdown. It ticks down when a PC makes an attack roll. When it triggers, all Archer Guards within Far range make a standard attack with advantage against the nearest target within their range. If any attacks succeed on the same target, combine their damage.</p>"
+              "description": "<p><em>Countdown (5)</em>. When the Head Guard is in the spotlight for the first time, activate the countdown. It ticks down when a PC makes an attack roll. When it triggers, all Archer Guards within Far range make a standard attack with advantage against the nearest target within their range. If any attacks succeed on the same target, combine their damage.</p>",
+              "countdown": {
+                "On My Signal": "On My Signal"
+              }
             }
           }
         },
@@ -3078,7 +3102,10 @@
             },
             "n8ZuLjwTf2FJ7V6n": {
               "name": "Start Countdown",
-              "description": "<p>Countdown (Loop 1d6). When the Flickerfly takes damage for the first time, activate the countdown.</p>"
+              "description": "<p>Countdown (Loop 1d6). When the Flickerfly takes damage for the first time, activate the countdown.</p>",
+              "countdown": {
+                "Hallucinatory Breath": "Hallucinatory Breath"
+              }
             }
           }
         }
@@ -3633,7 +3660,10 @@
           "actions": {
             "CNEOOdPI4xVJ2JeP": {
               "name": "Start Countdown",
-              "description": "<p><em>Long-Term Countdown (8)</em>. <strong>Spend a Fear</strong> to activate after the Monarch’s desire for war is first revealed.</p>"
+              "description": "<p><em>Long-Term Countdown (8)</em>. <strong>Spend a Fear</strong> to activate after the Monarch’s desire for war is first revealed.</p>",
+              "countdown": {
+                "Casus Belli": "Casus Belli"
+              }
             },
             "QnZoH9LjJvKl5YcF": {
               "name": "Gain Fear",
@@ -3700,7 +3730,10 @@
             },
             "BhA3vxCuMs4UbbQU": {
               "name": "Start Countdown",
-              "description": "<p><em>Countdown (Loop 1d6)</em>. When the Hunter is in the spotlight for the first time, activate the countdown.</p>"
+              "description": "<p><em>Countdown (Loop 1d6)</em>. When the Hunter is in the spotlight for the first time, activate the countdown.</p>",
+              "countdown": {
+                "Rampage": "Rampage"
+              }
             }
           }
         }
@@ -4332,7 +4365,10 @@
             },
             "ZVXHY2fpomoKV7jG": {
               "name": "Start Countdown",
-              "description": "<p><em>Countdown (6)</em>. When the Secret-Keeper is in the spotlight for the first time, activate the countdown.</p>"
+              "description": "<p><em>Countdown (6)</em>. When the Secret-Keeper is in the spotlight for the first time, activate the countdown.</p>",
+              "countdown": {
+                "Summoning Ritual": "Summoning Ritual"
+              }
             }
           }
         },
@@ -4883,7 +4919,10 @@
             },
             "UurIzyyMRAJc2DUX": {
               "name": "Start Countdown",
-              "description": "<p>The rubble can be cleared with a <em>Progress Countdown (8)</em>.</p>"
+              "description": "<p>The rubble can be cleared with a <em>Progress Countdown (8)</em>.</p>",
+              "countdown": {
+                "Avalanche Roar": "Avalanche Roar"
+              }
             }
           }
         },
@@ -5341,7 +5380,10 @@
             },
             "rZ7IwBnDzw7VmBT6": {
               "name": "Start Countdown",
-              "description": "<p><em>Countdown (1d12)</em>. <strong>Spend a Fear</strong> to activate. It ticks down when a PC rolls with Fear.</p>"
+              "description": "<p><em>Countdown (1d12)</em>. <strong>Spend a Fear</strong> to activate. It ticks down when a PC rolls with Fear.</p>",
+              "countdown": {
+                "Apocalyptic Thrasing": "Apocalyptic Thrasing"
+              }
             }
           },
           "effects": {
