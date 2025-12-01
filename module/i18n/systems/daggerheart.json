@@ -2110,6 +2110,7 @@
       "basics": "Основы",
       "bonus": "Бонус",
       "burden": "Хватка",
+      "condition": "Состояние",
       "continue": "Продолжить",
       "criticalSuccess": "Критический успех",
       "criticalShort": "Крит",
@@ -2745,6 +2746,10 @@
         "decreasingLoop": "Убывающий цикл",
         "increasingLoop": "Возрастающий цикл"
       },
+      "EffectsDisplay": {
+        "removeThing": "[ПКМ] Удалить {thing}",
+        "appliedBy": "Применено: {by}"
+      },
       "ItemBrowser": {
         "title": "Обозреватель компендиума Daggerheart",
         "hint": "Выберите папку в боковой панели, чтобы начать просмотр компендиума",
@@ -2862,6 +2867,12 @@
         "documentIsMissing": "{documentType} отсутствует в мире."
       },
       "Sidebar": {
+        "actorDirectory": {
+          "tier": "Ранг {tier} {type}",
+          "character": "Уровень {level} Персонаж",
+          "companion": "Уровень {level} - {partner}",
+          "companionNoPartner": "Нет партнёра"
+        },
         "daggerheartMenu": {
           "title": "Меню Daggerheart",
           "startSession": "Начать сессию",

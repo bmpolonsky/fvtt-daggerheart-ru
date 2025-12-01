@@ -2102,6 +2102,7 @@
       "basics": "Basics",
       "bonus": "Bonus",
       "burden": "Burden",
+      "condition": "Condition",
       "continue": "Continue",
       "criticalSuccess": "Critical Success",
       "criticalShort": "Critical",
@@ -2734,6 +2735,10 @@
         "decreasingLoop": "Decreasing Looping",
         "increasingLoop": "Increasing Looping"
       },
+      "EffectsDisplay": {
+        "removeThing": "[Right Click] Remove {thing}",
+        "appliedBy": "Applied By: {by}"
+      },
       "ItemBrowser": {
         "title": "Daggerheart Compendium Browser",
         "hint": "Select a Folder in sidebar to start browsing through the compendium",
@@ -2851,6 +2856,12 @@
         "documentIsMissing": "The {documentType} is missing from the world."
       },
       "Sidebar": {
+        "actorDirectory": {
+          "tier": "Tier {tier} {type}",
+          "character": "Level {level} Character",
+          "companion": "Level {level} - {partner}",
+          "companionNoPartner": "No Partner"
+        },
         "daggerheartMenu": {
           "title": "Daggerheart Menu",
           "startSession": "Start Session",
