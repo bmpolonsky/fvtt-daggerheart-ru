@@ -120,7 +120,7 @@ async function syncFile({ label, sourcePath, targetPath }) {
     }
   } else {
     syncStructures(source, target, "", stats);
-    const aligned = ADD_ONLY_MODE ? target : alignObjectOrder(source, target);
+    const aligned = alignObjectOrder(source, target);
     const orderingChanged = JSON.stringify(aligned) !== JSON.stringify(target);
     target = aligned;
     stats.changed = orderingChanged || Boolean(stats.added.length || stats.removed.length || stats.replaced.length);
@@ -176,17 +176,41 @@ function alignObjectOrder(source, target) {
   if (!isPlainObject(source) || !isPlainObject(target)) {
     return target;
   }
+  const sourceKeys = Object.keys(source);
+  const targetKeys = Object.keys(target);
   const ordered = {};
-  for (const key of Object.keys(source)) {
+  const added = new Set();
+  let sourceCursor = 0;
+
+  const addFromSource = (key) => {
+    if (added.has(key)) return;
+    added.add(key);
     if (Object.prototype.hasOwnProperty.call(target, key)) {
       ordered[key] = alignObjectOrder(source[key], target[key]);
     } else {
       ordered[key] = deepClone(source[key]);
     }
+  };
+
+  for (const key of targetKeys) {
+    const inSource = Object.prototype.hasOwnProperty.call(source, key);
+
+    if (!inSource) {
+      ordered[key] = deepClone(target[key]);
+      continue;
+    }
+
+    if (added.has(key)) continue;
+
+    while (sourceCursor < sourceKeys.length) {
+      const sourceKey = sourceKeys[sourceCursor++];
+      addFromSource(sourceKey);
+      if (sourceKey === key) break;
+    }
   }
-  for (const key of Object.keys(target)) {
-    if (Object.prototype.hasOwnProperty.call(ordered, key)) continue;
-    ordered[key] = target[key];
+
+  while (sourceCursor < sourceKeys.length) {
+    addFromSource(sourceKeys[sourceCursor++]);
   }
   return ordered;
 }
