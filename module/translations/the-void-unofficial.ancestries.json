@@ -28,7 +28,7 @@
       "description": "<p>Вы получаете преимущество при бросках на командование или убеждение.</p>"
     },
     "Drow": {
-      "name": "Drow"
+      "name": "Дроу"
     },
     "Earthkin": {
       "name": "Терран",
@@ -91,17 +91,17 @@
       }
     },
     "Low-Light Living": {
-      "name": "Low-Light Living",
-      "description": "<p>When you’re in an area with low light or heavy shadow, you have advantage on rolls to hide, investigate, or perceive details within that area.</p>",
+      "name": "Жизнь в полумраке",
+      "description": "<p>Когда вы находитесь в области с тусклым светом или сильной тенью, вы имеете преимущество на броски на скрытность, расследование или восприятие деталей в этой области.</p>",
       "effects": {
         "LqQvZJJLNMnFkt1D": {
-          "name": "Celestial Trance"
+          "name": "Небесный Транс"
         }
       }
     },
     "Magical Sense": {
-      "name": "Magical Sense",
-      "description": "<p>You can sense the presence of magical creatures. You have advantage on rolls to track or locate creatures with magical ability.</p>"
+      "name": "Магическое чутьё",
+      "description": "<p>Вы можете чувствовать присутствие магических существ. Вы имеете преимущество на броски на отслеживание или обнаружение существ с магическими способностями.</p>"
     },
     "Nimble Fingers": {
       "name": "Ловкие Пальцы",

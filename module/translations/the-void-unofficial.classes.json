@@ -54,12 +54,12 @@
       "name": "Базовые припасы"
     },
     "Blood Hunter": {
-      "name": "Blood Hunter",
-      "description": "<p>Master the art of hemocraft and explore what secrets may be unlocked within the power of your own blood. Bloodhunters are skilled practitioner in relentless pursuit of new magics and the grim abilities waiting to be discovered within themselves!</p><p></p><h3>Suggested Traits</h3><p>+1 Instinct, 0 Presense, 0 Knowledge</p><p><strong>Ghost Slayer / Mutant:</strong> +2 Agility, −1 Strength, +1 Finesse</p><p><strong>Lycan:</strong> +1 Agility, +2 Strength, −1 Finesse</p><p></p><h3>Suggested Primary Weapon</h3><p><strong>Ghost Slayer / Mutant:</strong> Longsword (Agility Melee, d8 + 3 phy, Two-Handed)</p><p><strong>Lycan:</strong> Battleaxe (Strength Melee, d10 + 3 phy, Two Handed)</p>"
+      "name": "Кровавый Охотник",
+      "description": "<p>Овладейте искусством магии крови и узнайте, какие тайны могут быть открыты в силе вашей собственной крови. Кровавые охотники — искусные практики, неустанно ищущие новую магию и мрачные способности, ожидающие своего открытия внутри них самих!</p><p></p><h3>Рекомендуемые Черты</h3><p>+1 Инстинкт, 0 Влияние, 0 Знание</p><p><strong>Убийца Призраков / Мутант:</strong> +2 Проворность, −1 Сила, +1 Искусность</p><p><strong>Ликан:</strong> +1 Проворность, +2 Сила, −1 Искусность</p><p></p><h3>Рекомендуемое Основное Оружие</h3><p><strong>Убийца Призраков / Мутант:</strong> Длинный меч (Проворность Вплотную, d8 + 3 физ, Двуручное)</p><p><strong>Ликан:</strong> Боевой топор (Сила Вплотную, d10 + 3 физ, Двуручное)</p>"
     },
     "Blood Maledict": {
-      "name": "Blood Maledict",
-      "description": "<p>Spend 3 Hope to target a creature within Far range or in a vision from your Grim Psychometry. Until you finish a rest, take Severe damage, or use this feature again, you have advantage on all action rolls against the target.</p>",
+      "name": "Проклятие Крови",
+      "description": "<p>Потратьте 3 Надежды, чтобы выбрать существо в пределах Далекой дистанции или в видении из вашей Мрачной Психометрии. Пока вы не закончите отдых, не получите Тяжелый урон или не используете это свойство снова, вы имеете преимущество на все броски действий против этой цели.</p>",
       "actions": {
         "Z9pHUbpS5aoHCOPt": {
           "name": "Потратить Надежду"
@@ -85,38 +85,38 @@
       ]
     },
     "Combo Strikes (D10)": {
-      "name": "Combo Strikes (D10)",
-      "description": "<p>After making a damage roll with a Melee weapon but before dealing that damage to the target, <strong>mark a Stress</strong> to start a combo strike. When you do, roll a Combo Die and note its value. Then, roll another Combo Die again. If the value of the second die is equal to or greater than your first Combo Die, continue rolling until the latest Combo Die’s roll is less than the roll that preceeded it. Total all rolled values and add that amount to your weapon’s damage. These values cannot be adjusted by features that affect damage dice.</p><p>Your Combo Die starts as a <strong>d4</strong>. When you level up, once per tier you may use one of your advancement options to increase your Combo Die instead.</p>",
+      "name": "Комбо Удары (D10)",
+      "description": "<p>После совершения броска урона оружием, имеющим дистанцию Вплотную, но до нанесения урона цели, отметьте Стресс, чтобы начать комбо удар. Когда вы это сделаете, бросьте <em>Кость Комбо</em> и запишите ее значение. Затем бросьте еще одну <em>Кость Комбо</em>. Если результат второй кости равен или больше результата вашей первой <em>Кости Комбо</em>, продолжайте бросать дополнительные кости, пока результат последней <em>Кости Комбо</em> не станет меньше результата предыдущей. Сложите все значения костей и добавьте этот результат к урону вашего оружия. Эти значения не могут быть изменены свойствами, которые влияют на кости урона.</p><p>Ваша <em>Кость Комбо</em> начинается с <strong>d4</strong>. Когда вы получаете новый уровень, один раз за ранг вы можете использовать одну из ваших опций продвижения, чтобы увеличить вашу <em>Кость Комбо</em> на одну ступень (d4 -> d6, d6 -> d8 и т.д.).</p>",
       "actions": {
         "iR7sJDYH2qxJ3XUa": {
-          "name": "Combo!"
+          "name": "Комбо!"
         }
       }
     },
     "Combo Strikes (D4)": {
-      "name": "Combo Strikes (D4)",
-      "description": "<p>After making a damage roll with a Melee weapon but before dealing that damage to the target, <strong>mark a Stress</strong> to start a combo strike. When you do, roll a Combo Die and note its value. Then, roll another Combo Die again. If the value of the second die is equal to or greater than your first Combo Die, continue rolling until the latest Combo Die’s roll is less than the roll that preceeded it. Total all rolled values and add that amount to your weapon’s damage. These values cannot be adjusted by features that affect damage dice.</p><p>Your Combo Die starts as a <strong>d4</strong>. When you level up, once per tier you may use one of your advancement options to increase your Combo Die instead.</p>",
+      "name": "Комбо Удары (D4)",
+      "description": "<p>После совершения броска урона оружием, имеющим дистанцию Вплотную, но до нанесения урона цели, отметьте Стресс, чтобы начать комбо удар. Когда вы это сделаете, бросьте <em>Кость Комбо</em> и запишите ее значение. Затем бросьте еще одну <em>Кость Комбо</em>. Если результат второй кости равен или больше результата вашей первой <em>Кости Комбо</em>, продолжайте бросать дополнительные кости, пока результат последней <em>Кости Комбо</em> не станет меньше результата предыдущей. Сложите все значения костей и добавьте этот результат к урону вашего оружия. Эти значения не могут быть изменены свойствами, которые влияют на кости урона.</p><p>Ваша <em>Кость Комбо</em> начинается с <strong>d4</strong>. Когда вы получаете новый уровень, один раз за ранг вы можете использовать одну из ваших опций продвижения, чтобы увеличить вашу <em>Кость Комбо</em> на одну ступень (d4 -> d6, d6 -> d8 и т.д.).</p>",
       "actions": {
         "iR7sJDYH2qxJ3XUa": {
-          "name": "Combo!"
+          "name": "Комбо!"
         }
       }
     },
     "Combo Strikes (D6)": {
-      "name": "Combo Strikes (D6)",
-      "description": "<p>After making a damage roll with a Melee weapon but before dealing that damage to the target, <strong>mark a Stress</strong> to start a combo strike. When you do, roll a Combo Die and note its value. Then, roll another Combo Die again. If the value of the second die is equal to or greater than your first Combo Die, continue rolling until the latest Combo Die’s roll is less than the roll that preceeded it. Total all rolled values and add that amount to your weapon’s damage. These values cannot be adjusted by features that affect damage dice.</p><p>Your Combo Die starts as a <strong>d4</strong>. When you level up, once per tier you may use one of your advancement options to increase your Combo Die instead.</p>",
+      "name": "Комбо Удары (D6)",
+      "description": "<p>После совершения броска урона оружием, имеющим дистанцию Вплотную, но до нанесения урона цели, отметьте Стресс, чтобы начать комбо удар. Когда вы это сделаете, бросьте <em>Кость Комбо</em> и запишите ее значение. Затем бросьте еще одну <em>Кость Комбо</em>. Если результат второй кости равен или больше результата вашей первой <em>Кости Комбо</em>, продолжайте бросать дополнительные кости, пока результат последней <em>Кости Комбо</em> не станет меньше результата предыдущей. Сложите все значения костей и добавьте этот результат к урону вашего оружия. Эти значения не могут быть изменены свойствами, которые влияют на кости урона.</p><p>Ваша <em>Кость Комбо</em> начинается с <strong>d4</strong>. Когда вы получаете новый уровень, один раз за ранг вы можете использовать одну из ваших опций продвижения, чтобы увеличить вашу <em>Кость Комбо</em> на одну ступень (d4 -> d6, d6 -> d8 и т.д.).</p>",
       "actions": {
         "iR7sJDYH2qxJ3XUa": {
-          "name": "Combo!"
+          "name": "Комбо!"
         }
       }
     },
     "Combo Strikes (D8)": {
-      "name": "Combo Strikes (D8)",
-      "description": "<p>After making a damage roll with a Melee weapon but before dealing that damage to the target, <strong>mark a Stress</strong> to start a combo strike. When you do, roll a Combo Die and note its value. Then, roll another Combo Die again. If the value of the second die is equal to or greater than your first Combo Die, continue rolling until the latest Combo Die’s roll is less than the roll that preceeded it. Total all rolled values and add that amount to your weapon’s damage. These values cannot be adjusted by features that affect damage dice.</p><p>Your Combo Die starts as a <strong>d4</strong>. When you level up, once per tier you may use one of your advancement options to increase your Combo Die instead.</p>",
+      "name": "Комбо Удары (D8)",
+      "description": "<p>После совершения броска урона оружием, имеющим дистанцию Вплотную, но до нанесения урона цели, отметьте Стресс, чтобы начать комбо удар. Когда вы это сделаете, бросьте <em>Кость Комбо</em> и запишите ее значение. Затем бросьте еще одну <em>Кость Комбо</em>. Если результат второй кости равен или больше результата вашей первой <em>Кости Комбо</em>, продолжайте бросать дополнительные кости, пока результат последней <em>Кости Комбо</em> не станет меньше результата предыдущей. Сложите все значения костей и добавьте этот результат к урону вашего оружия. Эти значения не могут быть изменены свойствами, которые влияют на кости урона.</p><p>Ваша <em>Кость Комбо</em> начинается с <strong>d4</strong>. Когда вы получаете новый уровень, один раз за ранг вы можете использовать одну из ваших опций продвижения, чтобы увеличить вашу <em>Кость Комбо</em> на одну ступень (d4 -> d6, d6 -> d8 и т.д.).</p>",
       "actions": {
         "iR7sJDYH2qxJ3XUa": {
-          "name": "Combo!"
+          "name": "Комбо!"
         }
       }
     },
@@ -131,8 +131,8 @@
       }
     },
     "Crimson Rite": {
-      "name": "Crimson Rite",
-      "description": "<p>You can enchant your strikes with bloodthirsty power at the cost of your vitality. Mark a Hit Point to enchant one of your active weapons.</p><p></p><p>Until you finish your next rest, that weapon deals physical or magic damage (choose when you use this feature) and an extra 1d6 damage when you hit with it. This extra damage increases to 2d6 at level 5 and 3d6 at level 8.</p>",
+      "name": "Алый Ритуал",
+      "description": "<p>Вы можете зачаровать свои удары кровожадной силой ценой своей жизненной силы. Отметьте Рану, чтобы зачаровать одно из ваших активных оружий.</p><p></p><p>Пока вы не закончите следующий отдых, это оружие наносит физический или магический урон (выберите при использовании этого свойства) и дополнительные 1d6 урона при попадании. Этот дополнительный урон увеличивается до 2d6 на 5 уровне и до 3d6 на 8 уровне.</p>",
       "actions": {
         "eQ44S7qWqk3UoKTT": {
           "name": "Отметить Рану"
@@ -140,13 +140,13 @@
       },
       "effects": {
         "m8FpjPisLRkUpcaD": {
-          "name": "Tier 1"
+          "name": "Ранг 1"
         },
         "7DRdwl3LsnIGzWPI": {
-          "name": "Level 5"
+          "name": "Уровень 5"
         },
         "OA51Rp7Se2RdGh4O": {
-          "name": "Level 8"
+          "name": "Уровень 8"
         }
       }
     },
@@ -164,8 +164,8 @@
       }
     },
     "Grim Psychometry": {
-      "name": "Grim Psychometry",
-      "description": "<p>While inspecting a creature, a location, or an object within Very Close range, make a Spellcast Roll (12). On a success, mark a Stress to have a vision of the most recent violence involving the target, and until you finish a rest, you have advantage on any action roll to recall lore about things in the vision.</p>"
+      "name": "Мрачная Психометрия",
+      "description": "<p>Осматривая существо, место или предмет в пределах Близкой дистанции, совершите Бросок Заклинания (12). При успехе отметьте Стресс, чтобы увидеть видение о последнем случае насилия, связанном с целью. Пока вы не закончите отдых, у вас есть преимущество на любой бросок действия для воспоминания знаний о вещах из видения.</p>"
     },
     "Grim Resolve": {
       "name": "Мрачная Решимость",

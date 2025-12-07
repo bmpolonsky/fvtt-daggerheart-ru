@@ -46,16 +46,16 @@
       "description": "<p>Ваше свойство \"Метка Смерти\" теперь использует <strong>d8</strong> вместо <strong>d6</strong>.</p>"
     },
     "Chasing Death": {
-      "name": "Chasing Death",
-      "description": "<p>While you have 1–3 unmarked Hit Points, you can use your Crimson Rite feature without paying the Hit Point cost. If you have only 1 unmarked Hit Point, you roll d8s instead of d6s for the extra damage of your Crimson Rite.</p>"
+      "name": "Погоня за Смертью",
+      "description": "<p>Пока у вас есть 1–3 неотмеченных Ячейки Ран, вы можете использовать свойство Алый Ритуал без траты Ран. Если у вас осталась только 1 неотмеченная Ячейка Ран, вы бросаете d8 вместо d6 для дополнительного урона Алого Ритуала.</p>"
     },
     "Circle of Power": {
       "name": "Круг Силы",
       "description": "<p>Один раз до следующего отдыха, вы можете начертить круг на земле в пределах Близкой дистанции и поместить на эту карту количество жетонов, равное вашей Характеристике Заклинателя. Каждый раз, когда вы или ваши союзники в круге совершают бросок действия или становятся целью успешной атаки, снимите один жетон. Заклинание действует, пока вы не потратите последний жетон или не покинете круг. Находясь внутри круга, вы и ваши союзники:</p><ul><li>Получаете <strong>+4</strong> к порогам урона.</li></ul><ul><li>Получаете <strong>+2</strong> к броскам атак.</li></ul><ul><li>Получаете <strong>+1</strong> к Уклонению.</li></ul>"
     },
     "Control the Beast": {
-      "name": "Control the Beast",
-      "description": "<p>While in your Wolf Form, you can apply that form’s bonus die to your Agility and Strength Action Rolls.</p>"
+      "name": "Контроль Зверя",
+      "description": "<p>Находясь в Облике Волка, вы можете применять бонусную кость этой формы к вашим Броскам Действия Проворности и Силы.</p>"
     },
     "Dark Aegis": {
       "name": "Темная Эгида",
@@ -120,8 +120,8 @@
       "description": "<p>Вы всегда можете <strong>потратить Милость</strong>, чтобы перебросить любое количество ваших костей урона. Вы можете продолжать тратить Милость, чтобы перебросить те же кости столько раз, сколько захотите.</p>"
     },
     "Feral Hide": {
-      "name": "Feral Hide",
-      "description": "<p>While in your Wolf Form, you gain a bonus to your Damage Thresholds equal to your Tier.</p>",
+      "name": "Звериная Шкура",
+      "description": "<p>Находясь в Облике Волка, вы получаете бонус к вашим Порогам Урона, равный вашему Рангу.</p>",
       "effects": {
         "rOdpVbqwuw4oMrXY": {
           "name": "Звериная Шкура"
@@ -149,8 +149,8 @@
       "description": "<p>Когда вы или ваш союзник очищаете одну или больше Ран или Стресса в результате использования расходника, увеличьте количество очищенных очков на одно.</p>"
     },
     "Improved Mutagens": {
-      "name": "Improved Mutagens",
-      "description": "<p>When you choose a mutagen benefit, your options also include the following: </p><ul><li><p>Nerves of Steel. Whenever you must mark a Stress, you can spend 2 Hope instead. </p></li><li><p>Rapidity. Your Evasion increases by 1. </p></li><li><p>Ironskin. Your Severe damage threshold increases by a number equal to your Proficiency.</p></li></ul>",
+      "name": "Улучшенные Мутагены",
+      "description": "<p>Когда вы выбираете преимущество мутагена, ваши варианты также включают следующее: </p><ul><li><p>Стальные Нервы. Всякий раз, когда вы должны отметить Стресс, вы можете вместо этого потратить 2 Надежды. </p></li><li><p>Стремительность. Ваше Уклонение увеличивается на 1. </p></li><li><p>Железная Кожа. Ваш порог Тяжелого урона увеличивается на число, равное вашему Мастерству.</p></li></ul>",
       "actions": {
         "JoE1j2EK2MfFupSr": {
           "name": "Потратить 2 Надежды"
@@ -211,8 +211,8 @@
       }
     },
     "Lycan Regeneration": {
-      "name": "Lycan Regeneration",
-      "description": "<p>While in your Wolf Form with all your Hit Points marked, you can mark a Stress to clear a Hit Point. You can do this while unconscious.</p>",
+      "name": "Регенерация Ликана",
+      "description": "<p>Находясь в Облике Волка со всеми отмеченными Ячейками Ран, вы можете отметить Стресс, чтобы очистить Рану. Вы можете делать это, находясь без сознания.</p>",
       "actions": {
         "TfRiNmCx716o0XOQ": {
           "name": "Исцеление"
@@ -228,8 +228,8 @@
       "description": "<p>Возьмите лист Боевых Форм. Вы начинаете с двух боевых стоек 1 Ранга. Когда вы достигаете нового ранга, вы можете взять две дополнительные стойки своего ранга или ниже.</p>"
     },
     "Master the Beast": {
-      "name": "Master the Beast",
-      "description": "<p>When you are in your Wolf Form and would mark your last Stress, you can instead put one of your Domain cards from your Loadout into your Vault; you can’t Recall that Domain card until you fi nish a long rest. </p><p></p><p>When you Frenzy from marking your last Stress while in Wolf Form, you gain 2 Hope.</p>",
+      "name": "Власть над Зверем",
+      "description": "<p>Когда вы находитесь в Облике Волка и должны отметить последний Стресс, вы можете вместо этого поместить одну из карт Домена из вашей руки в Хранилище; вы не можете Вернуть эту карту Домена, пока не закончите продолжительный отдых. </p><p></p><p>Когда вы впадаете в Бешенство от отметки последнего Стресса в Облике Волка, вы получаете 2 Надежды.</p>",
       "actions": {
         "xceWFmPWUeVuc0H5": {
           "name": "Получить 2 Надежды"
@@ -237,8 +237,8 @@
       }
     },
     "Mastered Mutagens": {
-      "name": "Mastered Mutagens",
-      "description": "<p>The trait bonus and penalty you get from your Mutagens feature changes to +2 and −2, respectively. When you choose a mutagen benefi t, your options also include the following: </p><ul><li><p>Aetherblood. Within your line of sight, you can see creatures and objects that are invisible, and visual illusions appear transparent to you. If a creature or an object within your line of sight has been transformed by magic, you can see its true form. </p></li><li><p>Fury. When you make an attack roll, you can mark a Stress to gain a bonus to the roll equal to your Proficiency. </p></li><li><p>Steelflesh. Your Major damage threshold increases by a number equal to your Proficiency.</p></li></ul>",
+      "name": "Совершенные Мутагены",
+      "description": "<p>Бонус и штраф к характеристикам от вашего свойства Мутагены меняются на +2 и −2 соответственно. Когда вы выбираете преимущество мутагена, ваши варианты также включают следующее: </p><ul><li><p>Эфирная Кровь. В пределах вашей линии обзора вы видите невидимых существ и предметы, а визуальные иллюзии кажутся вам прозрачными. Если существо или предмет в пределах вашей линии обзора были трансформированы магией, вы видите их истинную форму. </p></li><li><p>Ярость. Когда вы совершаете бросок атаки, вы можете отметить Стресс, чтобы получить бонус к броску, равный вашему Мастерству. </p></li><li><p>Стальная Плоть. Ваш порог Ощутимого урона увеличивается на число, равное вашему Мастерству.</p></li></ul>",
       "actions": {
         "e7VsTp0OCPkAgRg0": {
           "name": "Отметить Стресс"
@@ -269,8 +269,8 @@
       }
     },
     "Mutagens": {
-      "name": "Mutagens",
-      "description": "<p>You employ mutagenic toxins created to enhance your abilities. When you finish a rest, you can drink one such toxin to gain its effects, which last until you fi nish your next rest. These eff ects include a +1 bonus to one trait of your choice, a −1 penalty to a diff erent trait of your choice, and your choice of one of the following benefi ts:</p><ul><li><p>Celerity. If you are Restrained or Vulnerable, you can mark a Stress to end the condition on yourself.</p></li><li><p>Durable. Your Armor Score increases by 2.</p></li><li><p>Hunter’s Senses. You have advantage on any action roll you make to track a creature, and you can see in complete darkness.</p></li></ul>",
+      "name": "Мутагены",
+      "description": "<p>Вы используете мутагенные токсины, созданные для улучшения ваших способностей. Когда вы заканчиваете отдых, вы можете выпить один такой токсин, чтобы получить его эффекты, которые длятся до вашего следующего отдыха. Эти эффекты включают бонус +1 к одной характеристике по вашему выбору, штраф −1 к другой характеристике по вашему выбору и одно из следующих преимуществ на ваш выбор:</p><ul><li><p>Стремительность. Если вы Обездвижены или Уязвимы, вы можете отметить Стресс, чтобы снять с себя это состояние.</p></li><li><p>Прочность. Ваш Показатель Брони увеличивается на 2.</p></li><li><p>Чувства Охотника. Вы имеете преимущество на любой бросок действия для выслеживания существа, и вы можете видеть в полной темноте.</p></li></ul>",
       "actions": {
         "TyXYjNxEEeCKOtM2": {
           "name": "Отметить Стресс"
@@ -307,13 +307,13 @@
       }
     },
     "Order of the Ghost Slayer": {
-      "name": "Order of the Ghost Slayer"
+      "name": "Орден Убийц Призраков"
     },
     "Order of the Lycan": {
-      "name": "Order of the Lycan"
+      "name": "Орден Ликана"
     },
     "Order of the Mutant": {
-      "name": "Order of the Mutant"
+      "name": "Орден Мутанта"
     },
     "Overwhelm": {
       "name": "Сокрушение",
@@ -376,8 +376,8 @@
       "description": "<p>Получите постоянный бонус +3 к порогу Тяжелого урона. Кроме того, ваше свойство \"Мощь во Плоти\" может нацеливаться на трех существ вместо двух.</p>",
       "effects": {
         "0JcKDuNPUlv4Avbc": {
-          "name": "Rugged",
-          "description": "<p>Gain a permanent <strong>+3</strong> bonus to your Severe damage threshold.</p>"
+          "name": "Стойкий",
+          "description": "<p>Получите постоянный бонус <strong>+3</strong> к порогу Тяжелого урона.</p>"
         }
       }
     },
@@ -386,17 +386,17 @@
       "description": "<p>Вы получаете <strong>+2</strong> к Уклонению против любых атак, сделанных существом с <em>Меткой Смерти</em>.</p>"
     },
     "Shadowed Grit": {
-      "name": "Shadowed Grit",
-      "description": "<p>When the GM gains a Fear from a Duality Dice roll, you can mark a Stress to gain a Hope.</p>",
+      "name": "Теневая Выдержка",
+      "description": "<p>Когда Мастер получает Страх от броска Костей Дуальности, вы можете отметить Стресс, чтобы получить Надежду.</p>",
       "actions": {
         "GB0ZzQF3wENibTA7": {
-          "name": "Earn Hope"
+          "name": "Получить Надежду"
         }
       }
     },
     "Spectral Form": {
-      "name": "Spectral Form",
-      "description": "<p>You have another death move option: Spectral Form. When you choose this option, you clear a Hit Point, your body becomes spectral, you have resistance to physical damage, and you can pass through objects. This form ends if you clear any more Hit Points. It also ends if you mark your last Hit Point, which forces you to take a diff erent death move. You’re shunted to the nearest open space if you’re inside an object when the form ends.</p>"
+      "name": "Призрачная Форма",
+      "description": "<p>У вас есть еще один вариант предсмертного хода: Призрачная Форма. Когда вы выбираете этот вариант, вы очищаете Рану, ваше тело становится призрачным, вы получаете сопротивление физическому урону и можете проходить сквозь предметы. Эта форма заканчивается, если вы очистите еще какие-либо Раны. Она также заканчивается, если вы отметите свою последнюю Рану, что вынуждает вас совершить другой предсмертный ход. Вы перемещаетесь в ближайшее свободное пространство, если находитесь внутри объекта, когда форма заканчивается.</p>"
     },
     "Spirit Blast": {
       "name": "Духовный Взрыв",
@@ -409,100 +409,100 @@
       }
     },
     "Stance - Brutal": {
-      "name": "Stance - Brutal",
-      "description": "<p>Brutal: When you roll the maximum value on a damage die, roll an</p><p>additional damage die.</p>"
+      "name": "Стойка - Жестокая",
+      "description": "<p>Жестокая: Когда вы выбрасываете максимальное значение на кости урона, бросьте дополнительную кость урона.</p>"
     },
     "Stance - Compounding": {
-      "name": "Stance - Compounding",
-      "description": "<p>Compounding: When you roll the maximum value on a Combo Die, increase the size of the subsequent Combo Dice you roll for the attack (at a maximum of d12s).</p>"
+      "name": "Стойка - Нарастающая",
+      "description": "<p>Нарастающая: Когда вы выбрасываете максимальное значение на Кости Комбо, увеличьте размер последующих Костей Комбо, которые вы бросаете для атаки (максимум до d12).</p>"
     },
     "Stance - Crushing": {
-      "name": "Stance - Crushing",
-      "description": "<p>Crushing: When you roll a 1 on a damage die, it can be treated as the highest value on the die instead.</p>"
+      "name": "Стойка - Сокрушительная",
+      "description": "<p>Сокрушительная: Когда вы выбрасываете 1 на кости урона, это можно считать наивысшим значением на кости.</p>"
     },
     "Stance - Deadly": {
-      "name": "Stance - Deadly",
-      "description": "<p>Deadly: When you deal Severe damage, the target marks an additional HP</p>"
+      "name": "Стойка - Смертоносная",
+      "description": "<p>Смертоносная: Когда вы наносите Тяжелый урон, цель отмечает дополнительную Рану.</p>"
     },
     "Stance - Defensive": {
-      "name": "Stance - Defensive",
-      "description": "<p>Defensive: Attack rolls against you have disadvantage unless the</p><p>adversary marks a Stress.</p>"
+      "name": "Стойка - Оборонительная",
+      "description": "<p>Оборонительная: Броски атаки против вас имеют помеху, если противник не отметит Стресс.</p>"
     },
     "Stance - Deflecting": {
-      "name": "Stance - Deflecting",
-      "description": "<p>Deflecting: When you are targeted by an attack, you can spend 2 Focus to gain a bonus to your Evasion equal to your Armor Score against the attack.</p>"
+      "name": "Стойка - Отражающая",
+      "description": "<p>Отражающая: Когда вы становитесь целью атаки, вы можете потратить 2 Концентрации, чтобы получить бонус к Уклонению, равный вашему Показателю Брони, против этой атаки.</p>"
     },
     "Stance - Devastating": {
-      "name": "Stance - Devastating",
-      "description": "<p>Devastating: Spend a Focus before your attack roll to use d20s as your damage dice instead.</p>"
+      "name": "Стойка - Разрушительная",
+      "description": "<p>Разрушительная: Потратьте Концентрацию перед броском атаки, чтобы использовать d20 в качестве костей урона.</p>"
     },
     "Stance - Discerning": {
-      "name": "Stance - Discerning",
-      "description": "<p>Discerning: You may choose the target of your attack after making your attack roll. The GM will tell you who the attack would succeed against.</p>"
+      "name": "Стойка - Проницательная",
+      "description": "<p>Проницательная: Вы можете выбрать цель вашей атаки после совершения броска атаки. Мастер скажет вам, против кого атака была бы успешной.</p>"
     },
     "Stance - Dueling": {
-      "name": "Stance - Dueling",
-      "description": "<p>Dueling: Gain advantage on attack rolls when there are no other adversaries or allies in Very Close range of you or your target.</p>"
+      "name": "Стойка - Дуэльная",
+      "description": "<p>Дуэльная: Получите преимущество на броски атаки, когда в пределах Близкой дистанции от вас или вашей цели нет других противников или союзников.</p>"
     },
     "Stance - Favored": {
-      "name": "Stance - Favored",
-      "description": "<p>Favored: Add the trait of your choice to your damage roll.</p>"
+      "name": "Стойка - Избранная",
+      "description": "<p>Избранная: Добавьте характеристику по вашему выбору к вашему броску урона.</p>"
     },
     "Stance - Grappling": {
-      "name": "Stance - Grappling",
-      "description": "<p>Grappling: On a successful attack, you can spend a Focus to make the target temporarily Restrained.</p>"
+      "name": "Стойка - Захватывающая",
+      "description": "<p>Захватывающая: При успешной атаке вы можете потратить Концентрацию, чтобы сделать цель временно Обездвиженной.</p>"
     },
     "Stance - Hindering": {
-      "name": "Stance - Hindering",
-      "description": "<p>Hindering: On a successful attack, you can spend a Focus to make the target temporarily Hindered. While Hindered, their attack rolls have a -2 penalty.</p>"
+      "name": "Стойка - Мешающая",
+      "description": "<p>Мешающая: При успешной атаке вы можете потратить Концентрацию, чтобы сделать цель временно Затрудненной. Будучи Затрудненной, её броски атаки имеют штраф -2.</p>"
     },
     "Stance - Immovable": {
-      "name": "Stance - Immovable",
-      "description": "<p>Immovable: Gain a +2 bonus to your damage thresholds and you cannot be moved unwillingly.</p>"
+      "name": "Стойка - Неподвижная",
+      "description": "<p>Неподвижная: Получите бонус +2 к вашим порогам урона, и вас нельзя переместить против воли.</p>"
     },
     "Stance - Inexorable": {
-      "name": "Stance - Inexorable",
-      "description": "<p>Inexorable: Attacks against you have disadvantage if you have more than two adversaries within Melee of you.</p>"
+      "name": "Стойка - Неумолимая",
+      "description": "<p>Неумолимая: Атаки против вас имеют помеху, если в пределах дистанции Вплотную к вам находится более двух противников.</p>"
     },
     "Stance - Infuriating": {
-      "name": "Stance - Infuriating",
-      "description": "<p>Infuriating: On a successful attack, the target becomes Furious. While Furious, they are Vulnerable and have a -2 penalty to their attack rolls. They can only clear Furious by succeeding on an attack against you.</p>"
+      "name": "Стойка - Разъяряющая",
+      "description": "<p>Разъяряющая: При успешной атаке цель становится Яростной. Будучи Яростной, она Уязвима и имеет штраф -2 к броскам атаки. Она может снять состояние Ярости только успешной атакой против вас.</p>"
     },
     "Stance - Invigorating": {
-      "name": "Stance - Invigorating",
-      "description": "<p>Invigorating: When you make a successful attack, roll a d4. On a 4, gain a Focus.</p>"
+      "name": "Стойка - Бодрящая",
+      "description": "<p>Бодрящая: Когда вы совершаете успешную атаку, бросьте d4. На 4 вы получаете Концентрацию.</p>"
     },
     "Stance - Nimble": {
-      "name": "Stance - Nimble",
-      "description": "<p>Nimble: When an adversary makes a successful attack roll against you, you can spend a number of Focus up to your Tier. Roll a number of d6s equal to 1 + the Focus spent. If any of the dice values match, you take no damage from the attack.</p>"
+      "name": "Стойка - Ловкая",
+      "description": "<p>Ловкая: Когда противник совершает успешный бросок атаки против вас, вы можете потратить количество Концентрации вплоть до вашего Ранга. Бросьте количество d6, равное 1 + потраченная Концентрация. Если значения любых костей совпадают, вы не получаете урона от атаки.</p>"
     },
     "Stance - Otherworldly": {
-      "name": "Stance - Otherworldly",
-      "description": "<p>Otherworldly: You can choose whether to do Physical or Magic damage.</p>"
+      "name": "Стойка - Потусторонняя",
+      "description": "<p>Потусторонняя: Вы можете выбирать, наносить физический или магический урон.</p>"
     },
     "Stance - Precise": {
-      "name": "Stance - Precise",
-      "description": "<p>Precise: Gain a +1 bonus to your attack rolls.</p>"
+      "name": "Стойка - Точная",
+      "description": "<p>Точная: Получите бонус +1 к вашим броскам атаки.</p>"
     },
     "Stance - Quick": {
-      "name": "Stance - Quick",
-      "description": "<p>Quick: When making an attack roll, spend a Focus to include an additional target within range.</p>"
+      "name": "Стойка - Быстрая",
+      "description": "<p>Быстрая: При совершении броска атаки потратьте Концентрацию, чтобы включить дополнительную цель в пределах досягаемости.</p>"
     },
     "Stance - Scary": {
-      "name": "Stance - Scary",
-      "description": "<p>Scary: Successful attacks also force the target to mark a Stress.</p>"
+      "name": "Стойка - Пугающая",
+      "description": "<p>Пугающая: Успешные атаки также заставляют цель отметить Стресс.</p>"
     },
     "Stance - Sheltering": {
-      "name": "Stance - Sheltering",
-      "description": "<p>Sheltering: When you mark an Armor Slot, it reduces damage for you and all allies within Melee range of you who took the same damage.</p>"
+      "name": "Стойка - Укрывающая",
+      "description": "<p>Укрывающая: Когда вы отмечаете Ячейку Брони, это снижает урон для вас и всех союзников в пределах дистанции Вплотную, получивших тот же урон.</p>"
     },
     "Stance - Steady": {
-      "name": "Stance - Steady",
-      "description": "<p>Steady: Gain a -1 penalty to your Evasion. When you deal damage on a</p><p>successful attack, roll an additional damage die and drop the lowest.</p>"
+      "name": "Стойка - Устойчивая",
+      "description": "<p>Устойчивая: Получите штраф -1 к Уклонению. Когда вы наносите урон при успешной атаке, бросьте дополнительную кость урона и отбросьте наименьшую.</p>"
     },
     "Stance - Sweeping": {
-      "name": "Stance - Sweeping",
-      "description": "<p>Sweeping: Your attack targets all adversaries within Very Close range. Deal half damage to all targets you succeed against.</p>"
+      "name": "Стойка - Размашистая",
+      "description": "<p>Размашистая: Ваша атака нацелена на всех противников в пределах Близкой дистанции. Нанесите половину урона всем целям, против которых вы преуспели.</p>"
     },
     "Tethered Talisman": {
       "name": "Талисман Связи",
@@ -537,8 +537,8 @@
       "description": "<p>Когда вы накладываете на цель эффект известного яда, вы можете потратить дополнительный жетон, чтобы наложить эффект второго известного яда.</p>"
     },
     "Veilwalker": {
-      "name": "Veilwalker",
-      "description": "<p>You can briefl y slip into the realm between the living and the dead. Spend 2 Hope to disappear and then reappear next to a creature or a corpse within Far range. You then have advantage on the next attack roll you make in this scene.</p>",
+      "name": "Странник Вуали",
+      "description": "<p>Вы можете ненадолго скользнуть в мир между живыми и мертвыми. Потратьте 2 Надежды, чтобы исчезнуть и появиться рядом с существом или трупом в пределах Далекой дистанции. Вы получаете преимущество на следующий бросок атаки в этой сцене.</p>",
       "actions": {
         "T2fgFkNFX2WWU8TT": {
           "name": "Потратить 2 Надежды"
@@ -550,8 +550,8 @@
       "description": "<p>Вы также знаете следующие яды:</p><ul><li><strong><em>Семя Гнили</strong>: Цель получает постоянный штраф <strong>-3</strong> к порогам урона. Это может подействовать на нее только один раз.</em></li></ul><ul><li><strong><em>Лист Страха</strong>: Урон от этой атаки получает бонус, равный результату вашей Кости Страха.</em></li></ul>"
     },
     "Volatile Toxins": {
-      "name": "Volatile Toxins",
-      "description": "<p>You can choose two mutagen benefits instead of one. If you do, mark a Hit Point that can’t be cleared until you finish your next rest.</p>",
+      "name": "Нестабильные Токсины",
+      "description": "<p>Вы можете выбрать два преимущества мутагена вместо одного. Если вы это сделаете, отметьте Рану, которую нельзя очистить, пока вы не закончите следующий отдых.</p>",
       "actions": {
         "S2P9d1idmgJnIQEO": {
           "name": "Отметить Рану"
@@ -569,8 +569,8 @@
       }
     },
     "Werewolf": {
-      "name": "Werewolf",
-      "description": "<p>You gain the Werewolf Transformation card. Your rolls to perceive via hearing and scent have advantage.</p><p></p><p></p>"
+      "name": "Оборотень",
+      "description": "<p>Вы получаете карту Трансформации Оборотня. Ваши броски на восприятие через слух и обоняние получают преимущество.</p><p></p><p></p>"
     }
   }
 }

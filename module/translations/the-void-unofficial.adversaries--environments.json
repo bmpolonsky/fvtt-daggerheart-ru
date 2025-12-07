@@ -1,12 +1,12 @@
 {
-  "label": "Adversaries / Environments",
+  "label": "Противники / Окружения",
   "folders": {
-    "Tier 1": "Tier 1",
-    "Tier 2": "Tier 2",
-    "Tier 3": "Tier 3",
-    "Tier 4": "Tier 4",
-    "Environments - The Void": "Environments - The Void",
-    "Adversaries - The Void": "Adversaries - The Void"
+    "Tier 1": "Ранг 1",
+    "Tier 2": "Ранг 2",
+    "Tier 3": "Ранг 3",
+    "Tier 4": "Ранг 4",
+    "Environments - The Void": "Окружения - The Void",
+    "Adversaries - The Void": "Противники - The Void"
   },
   "mapping": {
     "description": "system.description",
@@ -25,850 +25,850 @@
   },
   "entries": {
     "Cephilith Priest": {
-      "name": "Cephilith Priest",
-      "description": "<p>A robe\u001dwearing, squid\u001dheaded humanoid from the Outer Realms</p>",
-      "motivesAndTactics": "Attack the weak, minded, avoid melee, lord over, oppress",
-      "attack": "Psychic Strike",
+      "name": "Жрец Цефилитов",
+      "description": "<p>Гуманоид с головой кальмара в мантии, пришедший из Внешних миров.</p>",
+      "motivesAndTactics": "Нападать на слабых разумом, избегать ближнего боя, властвовать, угнетать",
+      "attack": "Психический Удар",
       "experiences": {
         "o13hM97YmzLMamkC": {
-          "name": "Outer Realms"
+          "name": "Внешние миры"
         }
       },
       "items": {
         "Us0w5JVEDijLPiR1": {
-          "name": "Psychic Blast - Action",
-          "description": "<p>Psychic Blast - Action: <strong>Spend a Fear</strong> and choose up to three targets within Close range to make a Knowledge or Instinct Reaction Roll (20). </p><p></p><p>Targets who succeed take 2d10+5 direct magical damage. </p><p></p><p>Targets who fail take 4d10+10 direct magical damage and are Vulnerable until spotlighted.</p>",
+          "name": "Психический Взрыв - Действие",
+          "description": "<p>Психический Взрыв - Действие: <strong>Потратьте Страх</strong> и выберите до трех целей в пределах Средней дистанции. Они должны совершить Бросок Реакции Знания или Инстинкта (20). </p><p></p><p>Цели, прошедшие проверку, получают 2d10+5 прямого магического урона. </p><p></p><p>Цели, провалившие проверку, получают 4d10+10 прямого магического урона и становятся Уязвимыми до тех пор, пока не станут активными.</p>",
           "actions": {
             "XfcYIwquSpnwqy9U": {
-              "name": "Spend Fear"
+              "name": "Потратить Страх"
             },
             "niCti0gF1zfXe0Lk": {
-              "name": "Attack (Knowledge Reaction)"
+              "name": "Атака (Реакция Знания)"
             },
             "zj4x03dJvsy2DTHO": {
-              "name": "Attack (Instinct Reaction)"
+              "name": "Атака (Реакция Инстинкта)"
             }
           }
         },
         "Wwykcb6R9UB9ky2w": {
-          "name": "Cerebral Suction - Action",
-          "description": "<p>Cerebral Suction - Action: Spend a Fear to choose a Vulnerable target within Melee range. </p><p></p><p>The Priest grabs the target and tries to insert their face tentacles into the target’s ears, nose, and mouth. </p><p></p><p>The target must succeed on a Strength Reaction Roll or mark \u001d[[/r 1d6]] Stress. </p><p></p><p>The Priest clears a number of Stress equal to the number of Stress the target marked.</p>",
+          "name": "Церебральное Высасывание - Действие",
+          "description": "<p>Церебральное Высасывание - Действие: Потратьте Страх, чтобы выбрать Уязвимую цель в пределах дистанции Вплотную. </p><p></p><p>Жрец хватает цель и пытается вставить щупальца со своего лица в уши, нос и рот жертвы. </p><p></p><p>Цель должна преуспеть в Броске Реакции Силы или отметить [[/r 1d6]] Стресса. </p><p></p><p>Жрец очищает количество Стресса, равное количеству Стресса, отмеченного целью.</p>",
           "actions": {
             "Uj15XIfkRxMmUDk6": {
-              "name": "Attack"
+              "name": "Атака"
             }
           }
         },
         "ZrvHSB3ROgVLI87a": {
-          "name": "Telekinetic Grasp - Reaction",
-          "description": "<p>Telekinetic Grasp - Reaction: When the Priest succeeds on a standard attack, you can mark a Stress to Restrain the target until they spend a Hope to clear this condition.</p>",
+          "name": "Телекинетический Захват - Реакция",
+          "description": "<p>Телекинетический Захват - Реакция: Когда Жрец преуспевает в стандартной атаке, вы можете отметить Стресс, чтобы Обездвижить цель до тех пор, пока она не потратит Надежду, чтобы снять это состояние.</p>",
           "actions": {
             "w2NnXCrJTnQCofgO": {
-              "name": "Mark Stress"
+              "name": "Отметить Стресс"
             }
           }
         }
       }
     },
     "Chimera": {
-      "name": "Chimera",
-      "description": "<p>A giant, fire\u001dbreathing monster with a lion’s head, a goat’s body, and a serpent’s tail</p>",
-      "motivesAndTactics": "Play with their food, prowl their territory, reveal their bestial nature, slay cattle",
-      "attack": "Claws",
+      "name": "Химера",
+      "description": "<p>Гигантское огнедышащее чудовище с головой льва, телом козла и хвостом змеи.</p>",
+      "motivesAndTactics": "Играть с едой, рыскать по своей территории, проявлять звериную натуру, убивать скот",
+      "attack": "Когти",
       "experiences": {
         "F2Jy7wbZqZpa6o50": {
-          "name": "Predator"
+          "name": "Хищник"
         }
       },
       "items": {
         "TGMst7sdw28kXlpT": {
-          "name": "Rending Jaws - Passive",
-          "description": "<p>Rending Jaws - Passive: When the Chimera makes a successful attack, the target must mark 2 Armor Slots instead of 1 to reduce the damage by one threshold.</p>"
+          "name": "Раздирающие Челюсти - Пассивно",
+          "description": "<p>Раздирающие Челюсти - Пассивно: Когда Химера совершает успешную атаку, цель должна отметить 2 Ячейки Брони вместо 1, чтобы снизить урон на один порог.</p>"
         },
         "5niAdKEb8bu1CBe3": {
-          "name": "Breath of Fire - Action",
-          "description": "<p>Breath of Fire - Action: Spend a Fear to target up to three PCs in front of the Chimera within Close range.</p><p></p><p>All targets must make an Agility Reaction Roll (20).</p><p></p><p>Targets who fail take 3d12 magic damage. Targets who succeed must to either mark an Armor Slot or mark a Stress.</p>",
+          "name": "Огненное Дыхание - Действие",
+          "description": "<p>Огненное Дыхание - Действие: Потратьте Страх, чтобы выбрать целью до трех персонажей перед Химерой в пределах Средней дистанции.</p><p></p><p>Все цели должны совершить Бросок Реакции Проворности (20).</p><p></p><p>Цели, провалившие проверку, получают 3d12 магического урона. Цели, прошедшие проверку, должны либо отметить Ячейку Брони, либо отметить Стресс.</p>",
           "actions": {
             "CAKAeVBSCoP7wZlS": {
-              "name": "Attack"
+              "name": "Атака"
             }
           }
         },
         "Tcs8htm0m5fjoHxm": {
-          "name": "Serpent Strike - Reaction",
-          "description": "<p>Serpent Strike - Reaction: When the Chimera is attacked by a PC within Very Close range, you can mark a Stress to make an attack against them. </p><p></p><p>On a success, deal 4d4+10 physical damage and Poison them until their next rest or they succeed on a Knowledge Roll (20). </p><p></p><p>While Poisoned, the target must roll a d6 before they make an action roll. On a result of 3 or lower, they must mark a Stress.</p>",
+          "name": "Змеиный Укус - Реакция",
+          "description": "<p>Змеиный Укус - Реакция: Когда Химеру атакует персонаж в пределах Близкой дистанции, вы можете отметить Стресс, чтобы совершить атаку против него. </p><p></p><p>При успехе нанесите 4d4+10 физического урона и Отравите цель до её следующего отдыха или пока она не преуспеет в Броске Знания (20). </p><p></p><p>Будучи Отравленной, цель должна бросить d6 перед совершением броска действия. При результате 3 или ниже она должна отметить Стресс.</p>",
           "actions": {
             "AfjH9ALO0cup9t6i": {
-              "name": "Attack"
+              "name": "Атака"
             }
           }
         },
         "R4xIqFflUXNhWsgD": {
-          "name": "Double Claw - Reaction",
-          "description": "<p>Double Claw - Reaction: After the Chimera makes a standard attack, you can mark a Stress to make an additional standard attack, If both attacks target the same creature, combine the damage.</p>",
+          "name": "Двойной Коготь - Реакция",
+          "description": "<p>Двойной Коготь - Реакция: После того как Химера совершает стандартную атаку, вы можете отметить Стресс, чтобы совершить дополнительную стандартную атаку. Если обе атаки направлены на одно и то же существо, объедините урон.</p>",
           "actions": {
             "i9iz4JOa8kAi9DVj": {
-              "name": "Mark Stress"
+              "name": "Отметить Стресс"
             }
           }
         }
       }
     },
     "Convergence, The City Of Portals": {
-      "name": "Convergence, The City Of Portals",
-      "description": "<p>A sprawling metropolis at the nexus of creation, where influential figures from across the realms gather.</p>",
-      "impulses": "Confront tthem with alien customs, dazzle them with infinite variety, tempt them with the impossible",
+      "name": "Слияние, Город Порталов",
+      "description": "<p>Раскинувшийся мегаполис на стыке мироздания, где собираются влиятельные фигуры со всех миров.</p>",
+      "impulses": "Столкнуть их с чуждыми обычаями, ослепить бесконечным разнообразием, искусить невозможным",
       "potentialAdversaries": {
         "58O2QqdemNiANjkj": {
-          "label": "Potential Adversaries"
+          "label": "Потенциальные противники"
         }
       },
       "items": {
         "qFPN23JIJxZpYKWl": {
-          "name": "Impossibilities Abound - Passive",
-          "description": "<p>Impossibilities Abound - Passive: Convergence is a nexus of gods, monsters, aliens, and all manner of dimension-hoppers. Because mortal life is generally beneath these beings’ concern, PCs have disadvantage on action rolls to influence them unless they have leverage against them or know what the NPC cares about. </p><p></p><p></p><p>What manner of being currently holds sway in the city? What strange customs do they practice? Which PC is most confused or offended by them- and which PC adopts these customs as their own?</p>"
+          "name": "Невозможности Повсюду - Пассивно",
+          "description": "<p>Невозможности Повсюду - Пассивно: Слияние — это узел богов, монстров, пришельцев и всех видов путешественников между измерениями. Поскольку жизнь смертных обычно ниже интересов этих существ, персонажи имеют помеху на броски действий для влияния на них, если только у них нет рычагов давления или они не знают, что важно для НИП. </p><p></p><p></p><p>Какого рода существо сейчас имеет власть в городе? Какие странные обычаи они практикуют? Кто из персонажей больше всего сбит с толку или оскорблен ими — и кто из персонажей принимает эти обычаи как свои собственные?</p>"
         },
         "NgZSEunHCWFvsVIR": {
-          "name": "Into the Multiverse - Passive",
-          "description": "<p>Into the Multiverse - Passive: The city of Convergence has a portal or door to every plane of existence. </p><p></p><p></p><p>Where (or when) does the party want to go? Where is that portal located- and who controls that area?</p>"
+          "name": "В Мультивселенную - Пассивно",
+          "description": "<p>В Мультивселенную - Пассивно: В городе Слияние есть портал или дверь в каждый план бытия. </p><p></p><p></p><p>Куда (или когда) хочет отправиться группа? Где находится этот портал — и кто контролирует эту зону?</p>"
         },
         "AS0Ps2LBESu6BFv0": {
-          "name": "Everything Everywhere All at Once - Passive",
-          "description": "<p>Everything Everywhere All at Once - Passive: This city has the solution to any problem, if you can find it. A PC seeking a particular item with wondrous properties can make an Instinct or Presence Roll to find it in the city’s pandimensional marketplace.</p><ul><li><p>Critical Success: The PC finds the perfect item, and the merchant who has it only wants something the PC considers inconsequential in exchange. </p></li><li><p>Success with Hope: The PC finds the perfect item, and can exchange something of equal value for it. </p></li><li><p>Success with Fear: The PC finds the perfect item, but the merchant who has it will only exchange it for something the party can’t give them... yet. </p></li><li><p>Any Failure: The PC must mark a Stress as they go on a wild goose chase but come up empty-handed. The PC can mark an additional Stress to change this result into a success with Fear. </p></li></ul><p>Who has the item the party needs? What do they want in return?</p>"
+          "name": "Всё Везде и Сразу - Пассивно",
+          "description": "<p>Всё Везде и Сразу - Пассивно: В этом городе есть решение любой проблемы, если вы сможете его найти. Персонаж, ищущий определенный предмет с чудесными свойствами, может совершить Бросок Инстинкта или Влияния, чтобы найти его на пандименсиональном рынке города.</p><ul><li><p>Критический Успех: Персонаж находит идеальный предмет, и торговец, у которого он есть, хочет взамен только то, что персонаж считает несущественным. </p></li><li><p>Успех с Надеждой: Персонаж находит идеальный предмет и может обменять его на что-то равной ценности. </p></li><li><p>Успех со Страхом: Персонаж находит идеальный предмет, но торговец обменяет его только на то, что группа не может дать... пока. </p></li><li><p>Любой провал: Персонаж должен отметить Стресс, так как отправляется в погоню за призраками и возвращается с пустыми руками. Персонаж может отметить дополнительный Стресс, чтобы изменить этот результат на успех со Страхом. </p></li></ul><p>У кого есть предмет, нужный группе? Чего они хотят взамен?</p>"
         },
         "v2Sh7lL2Yz1Tmzmu": {
-          "name": "Don’t Make Waves - Passive",
-          "description": "<p>Don’t Make Waves - Passive: Countdown (6)- Because anything is possible in Convergence, the city maintains a labyrinthine bureacracy that issues and enforces ordinances regarding all exchanges and interactions between the Realms. </p><p></p><p>When the party arrives in Convergence, start a Countdown (6) that ticks down whenever a PC does something that upsets the city’s delicate political equilibrium. When it triggers, the PCs become Wanted until they clear their names with the authorities. When a Wanted PC rolls with Fear, you can summon [[/r 1d4]] Temporal Enforcers who appear within Very Close range, immediately take the spotlight, and try to apprehend the party. </p><p></p><p></p><p>What has the party done (or what do they plan to do) that draws the attention and ire of the Consortium? How can they fix the problem they caused?</p>"
+          "name": "Не гони волну - Пассивно",
+          "description": "<p>Не гони волну - Пассивно: Счетчик (6) - Поскольку в Слиянии возможно всё, город поддерживает запутанную бюрократию, которая издает и обеспечивает соблюдение указов, касающихся всех обменов и взаимодействий между Мирами. </p><p></p><p>Когда группа прибывает в Слияние, запустите Счетчик (6), который тикает вниз каждый раз, когда персонаж делает что-то, что нарушает хрупкое политическое равновесие города. Когда он срабатывает, персонажи становятся Разыскиваемыми, пока не очистят свои имена перед властями. Когда Разыскиваемый персонаж совершает бросок со Страхом, вы можете призвать [[/r 1d4]] Темпоральных Стражей, которые появляются в пределах Близкой дистанции, немедленно становятся активными и пытаются задержать группу. </p><p></p><p></p><p>Что сделала группа (или что планирует сделать), что привлекло внимание и гнев Консорциума? Как они могут исправить проблему, которую вызвали?</p>"
         },
         "UbXz46rAzEXNsv2r": {
-          "name": "An Offer You Can’t Refuse - Action",
-          "description": "<p>An Offer You Can’t Refuse - Action: Convergence is home to a tenuous network of rival factions. Spend a Fear to have one of them present the party with an easy solution to a difficult problem in exchange for their allegiance. If the party refuses, each PC must mark a Stress and they can’t return to that faction for help in the future. </p><p></p><p></p><p>Which faction offers the party their support? Who do they want the party to act against?</p>",
+          "name": "Предложение, от которого нельзя отказаться - Действие",
+          "description": "<p>Предложение, от которого нельзя отказаться - Действие: Слияние — дом для шаткой сети соперничающих фракций. Потратьте Страх, чтобы одна из них предложила группе простое решение сложной проблемы в обмен на их преданность. Если группа отказывается, каждый персонаж должен отметить Стресс, и они не смогут обратиться к этой фракции за помощью в будущем. </p><p></p><p></p><p>Какая фракция предлагает группе свою поддержку? Против кого они хотят, чтобы группа действовала?</p>",
           "actions": {
             "CtZkI2RhDj9htfEm": {
-              "name": "Spend Fear"
+              "name": "Потратить Страх"
             }
           }
         }
       }
     },
     "Crystal Wasteland": {
-      "name": "Crystal Wasteland",
-      "description": "<p>A harsh and alien landscape that shines with towers of glittering crystal</p>",
-      "impulses": "Cut them to their core, fracture their psyches, show their true reflection",
+      "name": "Кристальная Пустошь",
+      "description": "<p>Суровый и чуждый ландшафт, сияющий башнями из сверкающих кристаллов.</p>",
+      "impulses": "Ранить до глубины души, расколоть психику, показать истинное отражение",
       "potentialAdversaries": {
         "cg8U4ywcSBuUPp6q": {
-          "label": "Potential Adversaries"
+          "label": "Потенциальные противники"
         }
       },
       "items": {
         "buy6H7xXsKrbncb0": {
-          "name": "Harmonic Resonance - Passive",
-          "description": "<p>Harmonic Resonance - Passive: The crystals here reverberate with magical energy. </p><p></p><p>A PC can make a downtime move to try and Attune to the environment with a successful Spellcast Roll. </p><p></p><p>Spellcast Rolls made by an Attuned PC inside the Crystal Wasteland have advantage. </p><p></p><p>A PC clears the condition when they leave the wasteland. </p><p></p><p></p><p>How does attunement to this place alter your sensory experience of it? What sound or song from your childhood does this place conjure?</p>"
+          "name": "Гармонический Резонанс - Пассивно",
+          "description": "<p>Гармонический Резонанс - Пассивно: Кристаллы здесь вибрируют магической энергией. </p><p></p><p>Персонаж может совершить ход отдыха, чтобы попытаться Настроиться на окружение успешным Броском Заклинания. </p><p></p><p>Броски Заклинаний, сделанные Настроенным персонажем внутри Кристальной Пустоши, имеют преимущество. </p><p></p><p>Персонаж теряет это состояние, когда покидает пустошь. </p><p></p><p></p><p>Как настройка на это место меняет ваше сенсорное восприятие? Какой звук или песню из вашего детства вызывает это место?</p>"
         },
         "KTOo73AqVbSAaa8S": {
-          "name": "Gravitational Anomalies - Action",
-          "description": "<p>Gravitational Anomalies - Action: Strange, localized phenomena dot the landscape, warping distance and direction.</p><p></p><p>Spend a Fear to alter the gravity at a point of your choice. All targets within Close range of that point must make a Knowledge Reaction Roll to calculate their new trajectories.</p><p></p><p>Targets who fail take 3d8+4 physical damage as they are thrown up and away. Targets who succeed must mark a Stress or take half damage.</p><p></p><p></p><p>What does it feel like as your body and mind fight to re\u001cestablish equilibrium? Is there any way to use this to your advantage?</p>"
+          "name": "Гравитационные Аномалии - Действие",
+          "description": "<p>Гравитационные Аномалии - Действие: Странные локальные феномены усеивают ландшафт, искривляя расстояние и направление.</p><p></p><p>Потратьте Страх, чтобы изменить гравитацию в выбранной точке. Все цели в пределах Средней дистанции от этой точки должны совершить Бросок Реакции Знания, чтобы рассчитать свои новые траектории.</p><p></p><p>Цели, провалившие проверку, получают 3d8+4 физического урона, так как их подбрасывает вверх и в сторону. Цели, прошедшие проверку, должны отметить Стресс или получить половину урона.</p><p></p><p></p><p>Что вы чувствуете, когда ваше тело и разум борются за восстановление равновесия? Есть ли способ использовать это в своих интересах?</p>"
         },
         "vgq657P422FiyPmE": {
-          "name": "Arcane Reflection - Action",
-          "description": "<p>Arcane Reflection - Action: <strong>Spend a Fear</strong> to have any number of PCs glimpse a reflection in the crystal of who they once were or might become. </p><p></p><p>Each target makes a Fate Roll ([[/r 1d12]]). Targets who succeed see a vision of their better self and can replace one Experience. </p><p></p><p>Targets see a vision of their dark past–or an even darker future–and must mark a Stress, and you gain a fear. </p><p></p><p></p><p>Who do the PCs see on the other side of the crystal? How does it make them feel?</p>"
+          "name": "Тайное Отражение - Действие",
+          "description": "<p>Тайное Отражение - Действие: <strong>Потратьте Страх</strong>, чтобы любое количество персонажей мельком увидели в кристалле отражение того, кем они когда-то были или кем могут стать. </p><p></p><p>Каждая цель совершает Бросок Судьбы ([[/r 1d12]]). Цели, которые преуспели, видят видение своей лучшей версии и могут заменить один Опыт. </p><p></p><p>Цели видят видение своего темного прошлого — или еще более темного будущего — и должны отметить Стресс, а вы получаете Страх. </p><p></p><p></p><p>Кого персонажи видят по ту сторону кристалла? Что они при этом чувствуют?</p>"
         },
         "dlKyw0Awnh2cjWgg": {
-          "name": "Razor-Sharp Terrain - Reaction",
-          "description": "<p>Razor-Sharp Terrain - Reaction: When a PC fails a roll to navigate the wasteland, they make a Finesse Reaction Roll. </p><p></p><p>On a failure, they cut themselves on the sharp edges of the terrain. Shards of magic crystal become embedded in their wound and slowly grow, Crystallizing them. </p><p></p><p>Activate a Crystal Countdown (1) for that PC. </p><p></p><p>Until they remove the condition with a successful Knowledge Roll, a Crystallizing PC ticks up their Crystal Countdown at the start of each rest and has a penalty to their Evasion equal to its value. </p><p></p><p>The countdown ends with the condition is cleared. </p><p></p><p></p><p>What does the crystal look like as it grows? What does it feel like?</p>"
+          "name": "Острая как бритва местность - Реакция",
+          "description": "<p>Острая как бритва местность - Реакция: Когда персонаж проваливает бросок на навигацию по пустоши, он совершает Бросок Реакции Искусности. </p><p></p><p>При провале они режутся об острые края местности. Осколки магического кристалла вонзаются в рану и медленно растут, Кристаллизуя их. </p><p></p><p>Активируйте Кристальный Счетчик (1) для этого персонажа. </p><p></p><p>Пока они не снимут состояние успешным Броском Знания, Кристаллизующийся персонаж увеличивает значение своего Кристального Счетчика в начале каждого отдыха и получает штраф к Уклонению, равный его значению. </p><p></p><p>Счетчик заканчивается, когда состояние снято. </p><p></p><p></p><p>Как выглядит кристалл, когда он растет? Как это ощущается?</p>"
         },
         "BnqgezbIDdDFcPEl": {
-          "name": "Psychic Shuffle - Reaction",
-          "description": "<p>Psychic Shuffle - Reaction: When the PCs take a long rest\u001f you can spend a Fear to swap their psyches. Collect all the players’ character sheets, then shuffle and randomly redistribute them. </p><p></p><p>Each character sheet comes with that PC’s Domain cards and player aids. A PC can regain their psyche with a successful Knowledge Roll, at which point they trade sheets with the player who has their original character sheet. </p><p></p><p></p><p>How does it feel being in someone else’s skin? If you could choose to stay like them in one way\u001e what would it be? CONVERGENCE, THE CITY OF PORTALS Tier \u001c Social A sprawling metropolis at the nexus of creation\u001f where influential figures from across the realms gather\u001e Impulses: Confront tthem with alien customs\u001f dazzle them with infinite variety\u001f tempt them with the impossible Difficulty: \u0019\u0018 Potential Adversaries: Power Players (Monarch\u001f Demon Lord Orthrax\u001f Fire Giant Warlord\u001f Arch\u0016Necromancer\u001f High Seraph\u001f Vampire Lord\u001f Oracle of Doom)\u001f Travelers and Residents (any) FEATURES Impossibilities Abound \u001e Passive: Convergence is a nexus of gods\u001f monsters\u001f aliens\u001f and all manner of dimension\u0016hoppers\u0017 Because mortal life is generally beneath these beings’ concern\u001f PCs have disadvantage on action rolls to influence them unless they have leverage against them or know what the NPC cares about\u0017 What manner of being currently holds sway in the city? What strange customs do they practice? Which PC is most confused or offended by them\u001e and which PC adopts these customs as their own? Into the Multiverse \u001e Passive: The city of Convergence has a portal or door to every plane of existence\u0017 Where (or when) does the party want to go? Where is that portal located\u001e and who controls that area? Everything Everywhere All at Once \u001e Passive: This city has the solution to any problem\u001f if you can find it\u0017 A PC seeking a particular item with wondrous properties can make an Instinct or Presence Roll to find it in the city’s pandimensional marketplace\u0017 • Critical Success: The PC finds the perfect item\u001f and the merchant who has it only wants something the PC considers inconsequential in exchange\u0017 • Success with Hope: The PC finds the perfect item\u001f and can exchange something of equal value for it\u0017 • Success with Fear: The PC finds the perfect item\u001f but the merchant who has it will only exchange it for something the party can’t give them\u0017\u0017\u0017 yet\u0017 • Any Failure: The PC must mark a Stress as they go on a wild goose chase but come up empty\u0016handed\u0017 The PC can mark an additional Stress to change this result into a success with Fear\u0017 Who has the item the party needs? What do they want in return? Don’t Make Waves \u001e Passive: Countdown (\u0015)\u001e Because anything is possible in Convergence\u001f the city maintains a labyrinthine bureacracy that issues and enforces ordinances regarding all exchanges and interactions between the Realms\u0017 When the party arrives in Convergence\u001f start a Countdown (\u0012) that ticks down whenever a PC does something that upsets the city’s delicate political equilibrium\u0017 When it triggers\u001f the PCs become Wanted until they clear their names with the authorities\u0017 When a Wanted PC rolls with Fear\u001f you can summon \u001dd\u001a Temporal Enforcers who appear within Very Close range\u001f immediately take the spotlight\u001f and try to apprehend the party\u0017 What has the party done (or what do they plan to do) that draws the attention and ire of the Consortium? How can they fix the problem they caused? An Offer You Can’t Refuse \u001e Action: Convergence is home to a tenuous network of rival factions\u0017 Spend a Fear to have one of them present the party with an easy solution to a difficult problem in exchange for their allegiance\u0017 If the party refuses\u001f each PC must mark a Stress and they can’t return to that faction for help in the future\u0017 Which faction offers the party their support? Who do they want the party to act against?</p>"
+          "name": "Психическое Перемешивание - Реакция",
+          "description": "<p>Психическое Перемешивание - Реакция: Когда персонажи совершают продолжительный отдых, вы можете потратить Страх, чтобы поменять их психику местами. Соберите все листы персонажей игроков, затем перемешайте и случайно раздайте их. </p><p></p><p>Каждый лист персонажа поставляется с картами Домена этого персонажа и памятками игрока. Персонаж может вернуть свою психику успешным Броском Знания, после чего он обменивается листами с игроком, у которого находится его оригинальный лист персонажа. </p><p></p><p></p><p>Каково это — быть в чужой шкуре? Если бы вы могли оставить одну черту от них, что бы это было?</p>"
         }
       }
     },
     "Doppelhünd": {
-      "name": "Doppelhünd",
-      "description": "<p>A vicious magical six\u001dlegged hellhound with glowing red eyes and two long, toothy squid arms. They confuse enemies by conjuring an illusory duplicate of themself.</p>",
-      "motivesAndTactics": "Ambush prey, kill for sport, play with food, trick and deceive",
-      "attack": "Toothy Arms",
+      "name": "Доппельхунд",
+      "description": "<p>Злобная магическая шестиногая адская гончая со светящимися красными глазами и двумя длинными зубастыми руками-щупальцами. Они сбивают врагов с толку, создавая иллюзорную копию себя.</p>",
+      "motivesAndTactics": "Устраивать засады на добычу, убивать ради спорта, играть с едой, обманывать и вводить в заблуждение",
+      "attack": "Зубастые Руки",
       "experiences": {
         "VYDikoyQad0VpQdg": {
-          "name": "Shadows"
+          "name": "Тени"
         }
       },
       "items": {
         "79VzF5ZCmSb8kkII": {
-          "name": "Blink Beast - Passive",
-          "description": "<p>Blink Beast - Passive: When combat begins, place a duplicate within Close range of the Doppelhünd. </p><p></p><p>The duplicate can move when the Doppelhünd is spotlighted, and the Doppelhünd can target enemies with attacks as if they’re in the same place as their duplicate. </p><p></p><p>The Doppelhünd occupies both places until attacked, at which point you roll a [[/r 1d6]] to determine whether the attack is targeting the Doppelhünd (the result is an even number) or their duplicate (the result is an odd number). </p><p></p><p>Attacks against the duplicate automatically fail. A successful attack against the Doppelhünd dispels the duplicate until you spend a Fear to conjure it again.</p>",
+          "name": "Мерцающий Зверь - Пассивно",
+          "description": "<p>Мерцающий Зверь - Пассивно: Когда начинается бой, поместите копию в пределах Средней дистанции от Доппельхунда. </p><p></p><p>Копия может двигаться, когда Доппельхунд становится активным, и Доппельхунд может атаковать врагов так, как будто он находится в том же месте, что и его копия. </p><p></p><p>Доппельхунд занимает оба места, пока его не атакуют. В этот момент бросьте [[/r 1d6]], чтобы определить, направлена ли атака на настоящего Доппельхунда (четное число) или на его копию (нечетное число). </p><p></p><p>Атаки против копии автоматически проваливаются. Успешная атака против Доппельхунда развеивает копию, пока вы не потратите Страх, чтобы создать её снова.</p>",
           "actions": {
             "PwCnewhEOsfhHT1Q": {
-              "name": "Spend Fear"
+              "name": "Потратить Страх"
             }
           }
         },
         "rfHjv5kjd25E35uq": {
-          "name": "Double Lash - Reaction",
-          "description": "<p>Double Lash - Reaction: When the Doppelhünd makes a standard attack, you can mark a Stress to make an additional standard attack, If both attacks target the same creature, combine the damage.</p>",
+          "name": "Двойной Удар - Реакция",
+          "description": "<p>Двойной Удар - Реакция: Когда Доппельхунд совершает стандартную атаку, вы можете отметить Стресс, чтобы совершить дополнительную стандартную атаку. Если обе атаки направлены на одно и то же существо, объедините урон.</p>",
           "actions": {
             "lmAJr4vTF5HovOBc": {
-              "name": "Mark Stress"
+              "name": "Отметить Стресс"
             }
           }
         }
       }
     },
     "Dragon Knight": {
-      "name": "Dragon Knight",
-      "description": "<p>A knight clad in dragonplate armor and a helmet in the shape of a dragon’s head.</p>",
-      "motivesAndTactics": "Exploit an opening, get some distance, knock off, balance\u001f strike from above",
-      "attack": "Lance",
+      "name": "Драконий Рыцарь",
+      "description": "<p>Рыцарь, облаченный в драконьи латы и шлем в форме головы дракона.</p>",
+      "motivesAndTactics": "Использовать брешь в обороне, держать дистанцию, сбивать с ног, наносить удар сверху",
+      "attack": "Копье",
       "experiences": {
         "N7rcT7LRJyVocadB": {
-          "name": "Acrobatics"
+          "name": "Акробатика"
         }
       },
       "items": {
         "atw1SsRwX3YsIo39": {
-          "name": "High Ground - Passive",
-          "description": "<p>High Ground - Passive: The Knight gains a +2 bonus to attack rolls</p><p>when attacking a target from above.</p>",
+          "name": "Преимущество Высоты - Пассивно",
+          "description": "<p>Преимущество Высоты - Пассивно: Рыцарь получает бонус +2 к броскам атаки</p><p>при атаке цели сверху.</p>",
           "effects": {
             "rVU6nt9rT28UhvSm": {
-              "name": "High Ground - Passive"
+              "name": "Преимущество Высоты - Пассивно"
             }
           }
         },
         "EJzKUCllNTAfECeR": {
-          "name": "Enhanced Critical - Passive",
-          "description": "<p>Enhanced Critical - Passive: The Knight’s attack roll counts as a critical success if the result on the d20 is a 19 or a 20.</p>"
+          "name": "Улучшенный Крит - Пассивно",
+          "description": "<p>Улучшенный Крит - Пассивно: Бросок атаки Рыцаря считается критическим успехом, если результат на d20 равен 19 или 20.</p>"
         },
         "US1FDannV6Ftyo9b": {
-          "name": "Leaping Strike - Action",
-          "description": "<p>Leaping Strike - Action: Mark a Stress and choose a target within Far range.</p><p></p><p>The Knight moves into Melee range of the target and make a standard attack against them. </p><p></p><p>On a success, gain a +1d12 bonus to the damage roll and the target must mark an Armor Slot without receiving its benefits (they can still use armor to reduce the damage).</p>",
+          "name": "Атака в Прыжке - Действие",
+          "description": "<p>Атака в Прыжке - Действие: Отметьте Стресс и выберите цель в пределах Далекой дистанции.</p><p></p><p>Рыцарь перемещается на дистанцию Вплотную к цели и совершает против нее стандартную атаку. </p><p></p><p>При успехе получите бонус +1d12 к урону, и цель должна отметить Ячейку Брони, не получая от нее преимуществ (она все еще может использовать броню для снижения урона).</p>",
           "actions": {
             "JcWnJYRCG5faIYQ5": {
-              "name": "Attack"
+              "name": "Атака"
             },
             "kyigB3fHA9r2WuLW": {
-              "name": "Remove Armor"
+              "name": "Снять Броню"
             }
           }
         }
       }
     },
     "Enraged Mountain Troll - Evolution": {
-      "name": "Enraged Mountain Troll - Evolution",
-      "description": "<p>A hideous, twisted giant born out of a rock, wearing purloined armor and a belt of severed heads\u001e</p>",
-      "motivesAndTactics": "Ambush from behind, attack from above, bellow, smash enemies against the rocks, throw large boulders",
-      "attack": "Claw Swipe",
+      "name": "Разъяренный Горный Тролль - Эволюция",
+      "description": "<p>Уродливый, искаженный гигант, рожденный из скалы, носящий украденную броню и пояс из отрубленных голов.</p>",
+      "motivesAndTactics": "Нападать из засады сзади, атаковать сверху, реветь, разбивать врагов о скалы, швырять огромные валуны",
+      "attack": "Удар Когтями",
       "experiences": {
         "JikruHaMoinjRtlz": {
-          "name": "Mountains"
+          "name": "Горы"
         }
       },
       "items": {
         "uXzufA2EgTfN8jUF": {
-          "name": "Relentless (3)",
-          "description": "<p>The Seraph can be spotlighted up to three times per GM turn. Spend Fear as usual to spotlight them.</p>"
+          "name": "Неумолимый (3)",
+          "description": "<p>Тролль может активироваться до трех раз за ход Мастера. Тратьте Страх как обычно, чтобы активировать его.</p>"
         },
         "hbZB7fyNX1GdOBbY": {
-          "name": "Stolen Armor - Passive",
-          "description": "<p>Stolen Armor - Passive: When combat begins, active a Countdown equal to the number of PCs. Whenever the Troll takes damage, tick down the countdown and reduce the HP the Troll marks by 1. </p><p></p><p>When it triggers, the Troll evolves into an Enraged Mountain Troll (see “Enraged Mountain Troll - Evolution”).</p>"
+          "name": "Украденная Броня - Пассивно",
+          "description": "<p>Украденная Броня - Пассивно: Когда начинается бой, активируйте Счетчик, равный количеству персонажей. Каждый раз, когда Тролль получает урон, уменьшайте счетчик и снижайте количество Ран, которое отмечает Тролль, на 1. </p><p></p><p>Когда он сработает, Тролль эволюционирует в Разъяренного Горного Тролля (см. “Разъяренный Горный Тролль - Эволюция”).</p>"
         },
         "wfCrT1wqurbyjQ9b": {
-          "name": "Flail Swipe - Action",
-          "description": "<p>Flail Swipe - Action: The Troll swings their skull flail in a wide arc. Mark a Stress to make an attack against all targets in front of the Troll within Very Close range. </p><p></p><p>On a success, the Troll deals 2d10+3 instead of its normal damage. The Troll cannot use this action while evolved.</p>",
+          "name": "Удар Цепом - Действие",
+          "description": "<p>Удар Цепом - Действие: Тролль размахивает цепом из черепов по широкой дуге. Отметьте Стресс, чтобы совершить атаку против всех целей перед Троллем в пределах Близкой дистанции. </p><p></p><p>При успехе Тролль наносит 2d10+3 вместо обычного урона. Тролль не может использовать это действие, пока эволюционировал.</p>",
           "actions": {
             "TVmV6q4oxaYvRyLv": {
-              "name": "Attack"
+              "name": "Атака"
             }
           }
         },
         "DeW2Hra5RSbXHWiv": {
-          "name": "Enraged Mountain Troll - Evolution",
-          "description": "<p>Enraged Mountain Troll - Evolution: The Troll gains a +1 bonus to their Difficulty and their standard attack changes to the following: </p><p>Claw Swipe: Very Close | 1d8+1 phy</p>"
+          "name": "Разъяренный Горный Тролль - Эволюция",
+          "description": "<p>Разъяренный Горный Тролль - Эволюция: Тролль получает бонус +1 к Сложности, и его стандартная атака меняется на следующую: </p><p>Удар Когтями: Близко | 1d8+1 физ</p>"
         },
         "DaD87HluEhxTkD1n": {
-          "name": "Double Swipe - Action",
-          "description": "<p>Double Swipe - Action: Spend a Fear to move the Troll up to Close range and immediately make two standard attacks against a single target within Melee range, If both attacks hit, combine the damage and the target also loses a Hope.</p>",
+          "name": "Двойной Размах - Действие",
+          "description": "<p>Двойной Размах - Действие: Потратьте Страх, чтобы переместить Тролля на Среднюю дистанцию и немедленно совершить две стандартные атаки против одной цели в пределах дистанции Вплотную. Если обе атаки попадают, объедините урон, и цель также теряет Надежду.</p>",
           "actions": {
             "36ZwThvz41hADXaP": {
-              "name": "Spend Fear"
+              "name": "Потратить Страх"
             },
             "kGc8egDTAaJl4wIZ": {
-              "name": "Attack"
+              "name": "Атака"
             },
             "vRHL5sN0qWQ0aL4x": {
-              "name": "Remove Hope"
+              "name": "Убрать Надежду"
             }
           }
         }
       }
     },
     "Fellmounted Shadow King": {
-      "name": "Fellmounted Shadow King",
-      "description": "<p>The shade of a forgotten ruler\u001f cursed to patrol the skies atop a winged eel in the service of an evil demiurge.</p>",
-      "motivesAndTactics": "Acquire magical items for master, inspire fear, patrol the skies",
-      "attack": "Cursed Lance",
+      "name": "Король Теней на Крылатом Змее",
+      "description": "<p>Тень забытого правителя, проклятого патрулировать небеса верхом на крылатом змее на службе у злого демиурга.</p>",
+      "motivesAndTactics": "Добывать магические предметы для господина, внушать страх, патрулировать небеса",
+      "attack": "Проклятое Копье",
       "experiences": {
         "sVfiG7TM1wAbeB7H": {
-          "name": "Seeker"
+          "name": "Искатель"
         }
       },
       "items": {
         "yW0SZe7wXwqOcNYG": {
-          "name": "Light and Shadow - Passive",
-          "description": "<p>Light and Shadow - Passive: The Shadow King gains a +1 bonus to attack and damage rolls while in shadow or darkness and a −1 penalty to attack and damage rolls while in bright light.</p>",
+          "name": "Свет и Тень - Пассивно",
+          "description": "<p>Свет и Тень - Пассивно: Король Теней получает бонус +1 к броскам атаки и урона, находясь в тени или темноте, и штраф −1 к броскам атаки и урона при ярком свете.</p>",
           "effects": {
             "jVBdXomOerfUEf6k": {
-              "name": "In Light"
+              "name": "На Свету"
             },
             "WQJMpYn0WSyeHnDc": {
-              "name": "In Shadow"
+              "name": "В Тени"
             }
           }
         },
         "gHXFNx9iXdLbIP5F": {
-          "name": "Cursed Lance - Magical",
+          "name": "Проклятое Копье - Магическое",
           "actions": {
             "VZ2R2vlL1rPopKu8": {
-              "name": "Attack"
+              "name": "Атака"
             }
           }
         },
         "Z0ot0Jii36hLp7Jo": {
-          "name": "Relic Hunter - Passive",
-          "description": "<p>Relic Hunter - Passive: The Shadow King has advantage on attacks</p><p>against PCs with magical weapons or armor equipped</p>"
+          "name": "Охотник за Реликвиями - Пассивно",
+          "description": "<p>Охотник за Реликвиями - Пассивно: Король Теней имеет преимущество на атаки</p><p>против персонажей, экипированных магическим оружием или броней.</p>"
         },
         "pAChrHMTTEo0QJ9k": {
-          "name": "Hellsong - Action",
-          "description": "<p>Hellsong - Action: Spend 2 Fear to have the Shadow King’s mount unleash a spine-chilling screech that echoes over the battlefield. </p><p></p><p>All PCs within Far range must make a Presence Reaction Roll (18). Targets who succeed must mark a Stress. Targets who fail must mark a Stress and lose a Hope. If the PC can’t lose a Hope, you gain 1 Fear.</p>",
+          "name": "Адская Песнь - Действие",
+          "description": "<p>Адская Песнь - Действие: Потратьте 2 Страха, чтобы скакун Короля Теней издал леденящий душу визг, эхом разносящийся по полю боя. </p><p></p><p>Все персонажи в пределах Далекой дистанции должны совершить Бросок Реакции Влияния (18). Цели, прошедшие проверку, должны отметить Стресс. Цели, провалившие проверку, должны отметить Стресс и потерять Надежду. Если персонаж не может потерять Надежду, вы получаете 1 Страх.</p>",
           "actions": {
             "c6y5UF3epgDtsxP6": {
-              "name": "Attack"
+              "name": "Атака"
             }
           }
         },
         "vJWWEDgw5kpheObr": {
-          "name": "Air Support - Reaction",
-          "description": "<p>Air Support - Reaction: Three times per scene, you can spend a Fear to have an adversary within Far range of the Shadow King reroll a missed attack with advantage.</p>",
+          "name": "Поддержка с Воздуха - Реакция",
+          "description": "<p>Поддержка с Воздуха - Реакция: Три раза за сцену вы можете потратить Страх, чтобы противник в пределах Далекой дистанции от Короля Теней перебросил проваленную атаку с преимуществом.</p>",
           "actions": {
             "js41nW14clROJls2": {
-              "name": "Spend Fear"
+              "name": "Потратить Страх"
             }
           }
         }
       }
     },
     "Gargoyle": {
-      "name": "Gargoyle",
-      "description": "<p>A magically animated statue in the form of a terrifying beast or devil</p>",
-      "motivesAndTactics": "Hide in plain sight, overwatch, swoop down",
-      "attack": "Stone Claws",
+      "name": "Горгулья",
+      "description": "<p>Магически оживленная статуя в форме ужасного зверя или дьявола.</p>",
+      "motivesAndTactics": "Прятаться на виду, наблюдать, пикировать вниз",
+      "attack": "Каменные Когти",
       "experiences": {
         "N3l4xUPVTSwvnuL0": {
-          "name": "Ruins"
+          "name": "Руины"
         }
       },
       "items": {
         "DOLXlUqNOwJSa6HQ": {
-          "name": "Stone Body - Passive",
-          "description": "<p>Stone Body - Passive: The Gargoyle is resistant to physical damage</p>"
+          "name": "Каменное Тело - Пассивно",
+          "description": "<p>Каменное Тело - Пассивно: Горгулья устойчива к физическому урону.</p>"
         },
         "K7G7JwEd1ulbjSJS": {
-          "name": "Just a Statue - Passive",
-          "description": "<p>Just a Statue - Passive: Before they make their first attack in a fight or after they become Hidden, the Gargoyle is indistinguishable from a normal statue until they next act or a PC succeeds on an Instinct Roll to identify them.</p>"
+          "name": "Просто Статуя - Пассивно",
+          "description": "<p>Просто Статуя - Пассивно: До совершения первой атаки в бою или после того, как она становится Скрытой, Горгулья неотличима от обычной статуи, пока не начнет действовать или пока персонаж не преуспеет в Броске Инстинкта, чтобы опознать её.</p>"
         },
         "6iz7YXvNolXgv0Ur": {
-          "name": "Swooping Strike - Action",
-          "description": "<p>Swooping Strike - Action: Choose a point within Far range. The Gargoyle moves to that point in a straight line and makes an attack against one target along its path.</p>"
+          "name": "Пикирующий Удар - Действие",
+          "description": "<p>Пикирующий Удар - Действие: Выберите точку в пределах Далекой дистанции. Горгулья перемещается в эту точку по прямой линии и совершает атаку против одной цели на своем пути.</p>"
         }
       }
     },
     "Gobstalker": {
-      "name": "Gobstalker",
-      "description": "<p>A fleshy, floating ball of teeth with ten jointed antennae rising from its crown, each bearing a different, colored eye</p>",
-      "motivesAndTactics": "Ambush, dispose of rivals, seek riches, use magic at long range",
-      "attack": "Bite",
+      "name": "Гобсталкер",
+      "description": "<p>Мясистый парящий шар из зубов с десятью суставчатыми антеннами, поднимающимися из макушки, каждая из которых несет разный цветной глаз.</p>",
+      "motivesAndTactics": "Засада, устранение соперников, поиск богатств, использование магии на большом расстоянии",
+      "attack": "Укус",
       "experiences": {
         "0POlBSPJNDRtKhj1": {
-          "name": "Magic"
+          "name": "Магия"
         }
       },
       "items": {
         "kYoSKfZe0zgp68U3": {
-          "name": "Relentless (3)",
-          "description": "<p>The Seraph can be spotlighted up to three times per GM turn. Spend Fear as usual to spotlight them.</p>"
+          "name": "Неумолимый (3)",
+          "description": "<p>Гобсталкер может активироваться до трех раз за ход Мастера. Тратьте Страх как обычно, чтобы активировать его.</p>"
         },
         "ydMny9lM6OOhiObG": {
-          "name": "Anti-mystica-halitosis - Passive",
-          "description": "<p>Anti-mystica-halitosis - Passive: A Gobstalker’s breath is so rancid it creates an invisible miasma that negates magical effects. </p><p></p><p>Any attack that deals magic damage or creates a magical effect in front of the Gobstalker within Close range automatically fails. </p><p></p><p>This feature does not affect the Gobstalker’s own features.</p>"
+          "name": "Анти-мистико-галитоз - Пассивно",
+          "description": "<p>Анти-мистико-галитоз - Пассивно: Дыхание Гобсталкера настолько зловонное, что создает невидимый миазм, который подавляет магические эффекты. </p><p></p><p>Любая атака, наносящая магический урон или создающая магический эффект перед Гобсталкером в пределах Средней дистанции, автоматически проваливается. </p><p></p><p>Это свойство не влияет на собственные способности Гобсталкера.</p>"
         },
         "BRUaW4GKgAosTgSu": {
-          "name": "Eyestalks - Action",
-          "description": "<p>Eyestalks - Action: Mark a Stress to attack a target within Far range. On a hit, spend a Fear to choose an effect or roll a [[/r 1d10]] for a random effect. The Gobstalker uses the corresponding magical beam:</p><p>1. Beguile. The target is Beguiled and sees the Gobstalker as a friend. A Beguiled creature cannot attack the Gobstalker. Additionally, a Beguiled PC must mark a Stress or make a standard attack against their nearest ally whenever someone rolls with Fear. This effect lasts until the targets succeeds on a Presence or Knowledge Roll (16).</p><p>2. Corrode. The target takes 2d8 magical damage and marks an Armor Slot without receiving its benefits (they can still use armor to reduce the damage). If all the target’s Armor Slots are already marked, double the damage.</p><p>3. Doom. The target immediately marks all cleared HP, but can reduce the number of HP marked this way by spending any number of Hope. For each Hope spent in this way, reduce the number of HP marked by 1.</p><p>4. Hypnosis. The target falls into a deep, sleeplike trance and can’t take any actions except for trying to wake up. The target wakes up when they are hit by an attack, mark 1 or more HP, or succeed on an Instinct Roll (16) to wake up.</p><p>5. Paralyze. The target freezes in place, becoming Vulnerable and Restrained until they mark 2 Stress.</p><p>6. Petrify. Place a Petrification Countdown (6) on the target. It ticks down when a PC rolls with Fear. When it triggers, the target turns to stone until the Gobstalker is defeated or they take a long rest. While stone, the target is immune to all damage and aware of their surroundings, but cannot take actions.</p><p>7. Push. The target is thrown up to Far range and takes 3d6 physical damage from whatever they hit.</p><p>8. Sear. The target takes 2d8 direct magical damage.</p><p>9. Slow. The target is Vulnerable and must mark a Stress to move. The target can spend 2 Hope at any time to end this effect.</p><p>10. Terrify. The target can’t act except to flee the battle or try to shake off their fear with a successful Insight Roll (16). Additionally, whenever you spend Fear, the target must mark a Stress. This effect lasts until the Gobstalker is defeated or the target takes a rest.</p><p></p>",
+          "name": "Глазные Стебли - Действие",
+          "description": "<p>Глазные Стебли - Действие: Отметьте Стресс, чтобы атаковать цель в пределах Далекой дистанции. При попадании потратьте Страх, чтобы выбрать эффект, или бросьте [[/r 1d10]] для случайного эффекта. Гобсталкер использует соответствующий магический луч:</p><p>1. Очарование. Цель Очарована и видит в Гобсталкере друга. Очарованное существо не может атаковать Гобсталкера. Кроме того, Очарованный персонаж должен отметить Стресс или совершить стандартную атаку против ближайшего союзника, когда кто-то делает бросок со Страхом. Этот эффект длится до тех пор, пока цель не преуспеет в Броске Влияния или Знания (16).</p><p>2. Коррозия. Цель получает 2d8 магического урона и отмечает Ячейку Брони, не получая от нее преимуществ (она все еще может использовать броню для снижения урона). Если все Ячейки Брони цели уже отмечены, удвойте урон.</p><p>3. Рок. Цель немедленно отмечает все пустые Ячейки Ран, но может уменьшить количество отмеченных таким образом Ран, потратив любое количество Надежды. За каждую потраченную Надежду уменьшите количество отмеченных Ран на 1.</p><p>4. Гипноз. Цель впадает в глубокий, похожий на сон транс и не может предпринимать никаких действий, кроме попыток проснуться. Цель просыпается, когда получает урон от атаки, отмечает 1 или более Ран или преуспевает в Броске Инстинкта (16), чтобы проснуться.</p><p>5. Паралич. Цель замирает на месте, становясь Уязвимой и Обездвиженной, пока не отметит 2 Стресса.</p><p>6. Окаменение. Поместите на цель Счетчик Окаменения (6). Он тикает вниз, когда персонаж делает бросок со Страхом. Когда он срабатывает, цель превращается в камень, пока Гобсталкер не будет побежден или цель не совершит продолжительный отдых. В каменном состоянии цель невосприимчива ко всему урону и осознает свое окружение, но не может предпринимать действий.</p><p>7. Толчок. Цель отбрасывается на Далекую дистанцию и получает 3d6 физического урона от удара о препятствие.</p><p>8. Ожог. Цель получает 2d8 прямого магического урона.</p><p>9. Замедление. Цель Уязвима и должна отметить Стресс, чтобы двигаться. Цель может потратить 2 Надежды в любое время, чтобы закончить этот эффект.</p><p>10. Ужас. Цель не может действовать, кроме как убегать из битвы или пытаться стряхнуть страх успешным Броском Проницательности (16). Кроме того, когда вы тратите Страх, цель должна отметить Стресс. Этот эффект длится до тех пор, пока Гобсталкер не будет побежден или цель не отдохнет.</p><p></p>",
           "actions": {
             "l9jlck6u0BU3dGA5": {
-              "name": "Spend Fear"
+              "name": "Потратить Страх"
             },
             "YlfGRXkCbLGV7RRL": {
-              "name": "Corrode"
+              "name": "Коррозия"
             },
             "bHfSIwXKTqWal1Oj": {
-              "name": "Push"
+              "name": "Толчок"
             },
             "Fhc7FlXPLaT7v9Jo": {
-              "name": "Sear"
+              "name": "Ожог"
             }
           }
         }
       }
     },
     "Grand Feast": {
-      "name": "Grand Feast",
-      "description": "<p>A community\u001dwide celebration featuring way too much drink, food, and fun.</p>",
-      "impulses": "Bring everyone together, celebrate a momentous occasion, encourage revelrous abandon",
+      "name": "Великий Пир",
+      "description": "<p>Общегородское празднование с чрезмерным количеством выпивки, еды и веселья.</p>",
+      "impulses": "Собрать всех вместе, отпраздновать важное событие, поощрять безудержное веселье",
       "potentialAdversaries": {
         "fQ95nRstJrGcyoF1": {
-          "label": "Potential Adversaries"
+          "label": "Потенциальные противники"
         }
       },
       "items": {
         "ErFsPAQ6RpbvFKto": {
-          "name": "Loose Lips and Fast Friends - Passive",
-          "description": "<p>Loose Lips and Fast Friends - Passive: Everyone is here to have a good time. </p><p></p><p>PCs have advantage on Presence rolls to socialize with other revelers. </p><p></p><p></p><p>What is everyone celebrating? Where’s the party? Who’s footing the bill?</p>"
+          "name": "Развязанные Языки и Быстрые Друзья - Пассивно",
+          "description": "<p>Развязанные Языки и Быстрые Друзья - Пассивно: Все здесь, чтобы хорошо провести время. </p><p></p><p>Персонажи имеют преимущество на броски Влияния для общения с другими гуляками. </p><p></p><p></p><p>Что все празднуют? Где проходит вечеринка? Кто оплачивает счет?</p>"
         },
         "YnWCxYRLPZvW6JI3": {
-          "name": "Are You Not Entertained? - Action",
-          "description": "<p>Are You Not Entertained? - Action: Spend the spotlight to have the host of the feast kick off the entertainment portion of the evening. </p><p></p><p>All PCs can make an action roll to initiate a performance, competition, or other lighthearted diversion. Each PC who succeeds becomes an Honored Guest. Until the grand feast ends, an Honored Guest can claim one boon from the host, then clear the condition. </p><p></p><p></p><p>What does the host want to see or hear more than anything else? What can they offer the PCs in return?</p>"
+          "name": "Разве вы не развлечены? - Действие",
+          "description": "<p>Разве вы не развлечены? - Действие: Потратьте активацию, чтобы хозяин пира начал развлекательную часть вечера. </p><p></p><p>Все персонажи могут совершить бросок действия, чтобы инициировать выступление, соревнование или другое беззаботное развлечение. Каждый персонаж, преуспевший в этом, становится Почетным Гостем. До конца великого пира Почетный Гость может потребовать один дар от хозяина, после чего теряет это состояние. </p><p></p><p></p><p>Что хозяин хочет увидеть или услышать больше всего на свете? Что он может предложить персонажам взамен?</p>"
         },
         "8IqOQ5zhQiuk1la5": {
-          "name": "There’s Always That One… - Action",
-          "description": "<p>There’s Always That One… - Action: Spend a Fear to Trap a PC in conversation with the most unpleasant person at the party until they succeed on an action roll to extricate themself from this social black hole. </p><p></p><p>A Trapped PC can’t make any other action rolls except to try and remove this condition. </p><p></p><p>When a Trapped PC fails an action roll, they must mark a Stress. </p><p></p><p></p><p>What makes this dud so unpleasant? What’s something the PC cares about that the dud constantly diminishes or dismisses? What boring or awful thing can the dud not shut up about?</p>",
+          "name": "Всегда найдется тот самый… - Действие",
+          "description": "<p>Всегда найдется тот самый… - Действие: Потратьте Страх, чтобы поймать персонажа в ловушку разговора с самым неприятным человеком на вечеринке, пока он не преуспеет в броске действия, чтобы выпутаться из этой социальной черной дыры. </p><p></p><p>Пойманный персонаж не может совершать никаких других бросков действий, кроме попыток снять это состояние. </p><p></p><p>Когда Пойманный персонаж проваливает бросок действия, он должен отметить Стресс. </p><p></p><p></p><p>Что делает этого зануду таким неприятным? Что постоянно принижает или отвергает зануда из того, что важно для персонажа? О какой скучной или ужасной вещи зануда не может заткнуться?</p>",
           "actions": {
             "TfawxgccGBshLOuA": {
-              "name": "Spend Fear"
+              "name": "Потратить Страх"
             }
           }
         },
         "Kbj7oWQVoSSR8coN": {
-          "name": "Last Call - Reaction",
-          "description": "<p>Last Call - Reaction: After a long night, the partygoers start filtering out. </p><p></p><p>When the feast concludes, all PCs who participated in the festivities clear all Stress and gain a Hope. </p><p></p><p>Additionally, each Honored Guest clears all HP and gains an additional Hope, then clears the condition\u0017 PCs who overindulged must succeed on a Strength Reaction Roll or become Hungover until their next rest. </p><p></p><p>Hungover PCs take a −1 penalty to all action rolls. </p><p></p><p></p><p>What crazy stories do the PCs share with one another as they leave the party? Who do the PCs see unexpectedly canoodling afterward? HEIST Tier \u001d Event The party must gain access to a hidden or well\u001dprotected location to acquire the information or items secured within\u001e Impulses: Make the party prepare\u001f split them up\u001f throw up obstacles\u001f trap them inside\u001f use up their resources Difficulty: \u001e\u001d Potential Adversaries: Head Guard\u001f Minotaur Wrecker\u001f Secret\u0016 Keeper\u001f Spectral Guardian FEATURES Prep Work \u001e Passive: Prior to the Heist\u001f each PC has the opportunity to gather a key piece of information\u001f surveil the location\u001f or acquire a helpful tool or resource\u0017 Give each player the opportunity to describe one obstacle they expect to encounter and how they set themselves up to overcome it\u001f then have them make an action roll\u0017 On a success\u001f they get the advantage or asset they sought\u0017 On a success with Fear\u001f it’s less useful than they expected (for example\u001f they discover the location of a hidden access point but learn that breaching it will likely be difficult and noisy)\u0017 How does the PC gain this advantage? Do they go it alone or ask for help? What unforeseen complications arise during the Heist itself? Infiltration \u001e Passive: Establish the goal of the Heist and start two dynamic countdowns: a Progress Countdown (\u001e\u0019) to represent the party’s work toward their goal and a Consequence Countdown (\u001e\u0018) to represent the rising risk of discovery and capture\u0017 Advance both according to the Dynamic Countdown Advancement table as the PCs make action rolls to complete the Heist\u0017 If the Progress Countdown triggers first\u001f spotlight this environment to use the “Exfi ltration” feature\u0017 If the Consequence Countdown triggers first\u001f gain \u001dd\u001a Fear\u001f splotlight this environment\u001f and use the “Sound the Alarm” feature\u0017 What is the party going after\u001e and where is it located? What unexpected obstacles will they encounter? What happens if the party gets caught? Saw This Coming \u001e Passive: Once per session\u001f a PC can spend a Hope to explain how they prepared for the current situation and reveal a key piece of information (such as the location of a hidden passage or the password to a restricted area) or produce a helpful item (such as a cultist’s uniform left unattended or a common consumable hidden in their boot)\u0017 What did the PC prepare in advance? How did they know they’d need it? What did it cost them to set up\u001e or whom do they owe a favor to? Exfiltration \u001e Reaction: When the Progress Countdown triggers\u001f the party acquires the object of the Heist and must succeed on a group action roll to escape without being caught\u0017 On a failure\u001f each PC marks a Stress and takes \u001ed\u001d\u001e direct damage\u0017 What makes getting out even more dangerous than getting in? What unforeseen developments stymie the party’s original escape plan? Sound the Alarm \u001e Reaction: When the Consequence Countdown triggers\u001f the party is discovered and the location enters High Alert\u0017 Immediately summon a number of Tier \u0019 adversaries equal to the number of PCs in the scene and spotlight one\u0017 While this environment is on High Alert\u001f all adversaries gain a +\u001e bonus to their Difficulty\u0017 What makes these adversaries uniquely suited to guard this location? What do they know about this place that gives them an edge?</p>",
+          "name": "Последний Звонок - Реакция",
+          "description": "<p>Последний Звонок - Реакция: После долгой ночи тусовщики начинают расходиться. </p><p></p><p>Когда пир завершается, все персонажи, участвовавшие в празднестве, очищают весь Стресс и получают Надежду. </p><p></p><p>Кроме того, каждый Почетный Гость очищает все Раны и получает дополнительную Надежду, затем теряет статус. Персонажи, которые злоупотребили, должны преуспеть в Броске Реакции Силы или будут страдать от Похмелья до следующего отдыха. </p><p></p><p>Персонажи с Похмельем получают штраф −1 ко всем броскам действий. </p><p></p><p></p><p>Какими безумными историями делятся персонажи друг с другом, покидая вечеринку? Кого персонажи неожиданно видят милующимся после неё?</p>",
           "actions": {
             "g7Mfod3SUFnbmFqo": {
-              "name": "Hungover"
+              "name": "Похмелье"
             }
           }
         }
       }
     },
     "Hallowed Choir": {
-      "name": "Hallowed Choir",
-      "description": "<p>A heavenly host of winged humanoids whose song calls forth tears of religious awe</p>",
-      "motivesAndTactics": "Drown out disbelief, raise voices",
-      "attack": "Choral Blast",
+      "name": "Священный Хор",
+      "description": "<p>Небесное воинство крылатых гуманоидов, чья песня вызывает слезы религиозного благоговения.</p>",
+      "motivesAndTactics": "Заглушать неверие, возвышать голоса",
+      "attack": "Хоровой Залп",
       "experiences": {
         "cQ7lpnVWwoTTWLw2": {
-          "name": "Music"
+          "name": "Музыка"
         }
       },
       "items": {
         "HJFfuB4AdYSr9RUi": {
-          "name": "Horde (2d8+3)",
-          "description": "<p>When the Raiders have marked half or more of their HP, their standard attack deals 2d8+3 physical damage instead.</p>"
+          "name": "Орда (2d8+3)",
+          "description": "<p>Когда Хор отмечает половину или более своих Ран, её стандартная атака наносит 2d8+3 физического урона вместо обычного.</p>"
         },
         "PnzeYzDBtHfzTKcB": {
-          "name": "Aural Assault - Action",
-          "description": "<p>Aural Assault - Action: Spend a Fear to have the Choir unleash divine energy. </p><p></p><p>Remove all tokens from this stat block (see “Celestia Coda”). For each token removed, deal [[/r 1d12]] direct magic damage to all enemies within Close range.</p>",
+          "name": "Ауральный Штурм - Действие",
+          "description": "<p>Ауральный Штурм - Действие: Потратьте Страх, чтобы Хор высвободил божественную энергию. </p><p></p><p>Уберите все жетоны с этого блока статистики (см. “Небесная Кода”). За каждый убранный жетон нанесите [[/r 1d12]] прямого магического урона всем врагам в пределах Средней дистанции.</p>",
           "actions": {
             "K6A8XYhbbQGMBz6U": {
-              "name": "Spend Fear"
+              "name": "Потратить Страх"
             },
             "4YA92F8dtpxGGwRP": {
-              "name": "Damage 1d12"
+              "name": "Урон 1d12"
             }
           }
         },
         "0xmWGp3PyWTGszQt": {
-          "name": "Celestial Coda - Reaction",
-          "description": "<p>Celestial Coda - Reaction: Countdown (Loop 3).</p><p></p><p>The Choir’s divine song builds on itself with each refrain. Activate the countdown when the Choir is first spotlighted, It ticks down on every action roll.</p><p></p><p>When it triggers, place a token on this stat block. The Choir gains a bonus to their Difficulty and standard attack damage equal to the number of tokens on this stat block.</p>",
+          "name": "Небесная Кода - Реакция",
+          "description": "<p>Небесная Кода - Реакция: Счетчик (Цикл 3).</p><p></p><p>Божественная песня Хора усиливается с каждым припевом. Активируйте счетчик, когда Хор впервые активируется. Он тикает вниз при каждом броске действия.</p><p></p><p>Когда он срабатывает, поместите жетон на этот статблок. Хор получает бонус к Сложности и урону от стандартной атаки, равный количеству жетонов на этом блоке статистики.</p>",
           "effects": {
             "PihfaUM1syv3eBrh": {
-              "name": "Celestial Coda +1"
+              "name": "Небесная Кода +1"
             },
             "q13suPVMK6MZHhcK": {
-              "name": "Celestial Coda +2"
+              "name": "Небесная Кода +2"
             },
             "WCOz4b9T1WvD9hd3": {
-              "name": "Celestial Coda +3"
+              "name": "Небесная Кода +3"
             }
           }
         }
       },
       "effects": {
         "cBbnNWCghQ9mCtsd": {
-          "name": "Horde"
+          "name": "Орда"
         }
       }
     },
     "Heist": {
-      "name": "Heist",
-      "description": "<p>The party must gain access to a hidden or well\u001dprotected location to acquire the information or items secured within</p>",
-      "impulses": "Make the party prepare, split them up, throw up obstacles, trap them inside, use up their resources",
+      "name": "Ограбление",
+      "description": "<p>Группа должна получить доступ к скрытому или хорошо охраняемому месту, чтобы добыть информацию или предметы, хранящиеся внутри.</p>",
+      "impulses": "Заставить группу готовиться, разделить их, создавать препятствия, запереть их внутри, истощить их ресурсы",
       "potentialAdversaries": {
         "WNrtmqVpFiR2DC0a": {
-          "label": "Potential Adversaries"
+          "label": "Потенциальные противники"
         }
       },
       "items": {
         "qztLxh5KUz18VMLR": {
-          "name": "Prep Work - Passive",
-          "description": "<p>Prep Work - Passive: Prior to the Heist, each PC has the opportunity to gather a key piece of information, surveil the location, or acquire a helpful tool or resource. </p><p></p><p>Give each player the opportunity to describe one obstacle they expect to encounter and how they set themselves up to overcome it, then have them make an action roll. </p><p></p><p>On a success, they get the advantage or asset they sought. On a success with Fear, it’s less useful than they expected (for example, they discover the location of a hidden access point but learn that breaching it will likely be difficult and noisy). </p><p></p><p></p><p>How does the PC gain this advantage? Do they go it alone or ask for help? What unforeseen complications arise during the Heist itself?</p>"
+          "name": "Подготовительная работа - Пассивно",
+          "description": "<p>Подготовительная работа - Пассивно: Перед Ограблением у каждого персонажа есть возможность собрать ключевую информацию, проследить за местом или приобрести полезный инструмент или ресурс. </p><p></p><p>Дайте каждому игроку возможность описать одно препятствие, с которым они ожидают столкнуться, и как они подготовились к его преодолению, затем попросите их сделать бросок действия. </p><p></p><p>При успехе они получают преимущество или актив, который искали. При успехе со Страхом это менее полезно, чем они ожидали (например, они обнаруживают расположение скрытого прохода, но узнают, что взломать его будет сложно и шумно). </p><p></p><p></p><p>Как персонаж получает это преимущество? Действует ли он в одиночку или просит помощи? Какие непредвиденные осложнения возникают во время самого Ограбления?</p>"
         },
         "uQXqfwmXr3VBVhdm": {
-          "name": "Infiltration - Passive",
-          "description": "<p>Infiltration - Passive: Establish the goal of the Heist and start two dynamic countdowns: a Progress Countdown (12) to represent the party’s work toward their goal and a Consequence Countdown (10) to represent the rising risk of discovery and capture. </p><p></p><p>Advance both according to the Dynamic Countdown Advancement table as the PCs make action rolls to complete the Heist. </p><p></p><p>If the Progress Countdown triggers first, spotlight this environment to use the “Exfiltration” feature. If the Consequence Countdown triggers first, gain [[/r 1d4]] Fear, spotlight this environment, and use the “Sound the Alarm” feature.</p><p></p><p></p><p>What is the party going after\u001e and where is it located? What unexpected obstacles will they encounter? What happens if the party gets caught?</p>"
+          "name": "Проникновение - Пассивно",
+          "description": "<p>Проникновение - Пассивно: Установите цель Ограбления и запустите два динамических счетчика: Счетчик Прогресса (12), представляющий работу группы над достижением цели, и Счетчик Последствий (10), представляющий растущий риск обнаружения и поимки. </p><p></p><p>Продвигайте оба счетчика в соответствии с таблицей Продвижения Динамических Счетчиков, по мере того как персонажи совершают броски действий для завершения Ограбления. </p><p></p><p>Если Счетчик Прогресса срабатывает первым, активируйте это окружение, чтобы использовать свойство “Эксфильтрация”. Если Счетчик Последствий срабатывает первым, получите [[/r 1d4]] Страха, активируйте это окружение и используйте свойство “Поднять Тревогу”.</p><p></p><p></p><p>За чем охотится группа и где это находится? С какими неожиданными препятствиями они столкнутся? Что произойдет, если группу поймают?</p>"
         },
         "RPDfzdSvdKrvp0rT": {
-          "name": "Saw This Coming - Passive",
-          "description": "<p>Saw This Coming - Passive: Once per session, a PC can spend a Hope to explain how they prepared for the current situation and reveal a key piece of information (such as the location of a hidden passage or the password to a restricted area) or produce a helpful item (such as a cultist’s uniform left unattended or a common consumable hidden in their boot). </p><p></p><p></p><p>What did the PC prepare in advance? How did they know they’d need it? What did it cost them to set up\u001e or whom do they owe a favor to?</p>"
+          "name": "Я это предвидел - Пассивно",
+          "description": "<p>Я это предвидел - Пассивно: Раз за сессию персонаж может потратить Надежду, чтобы объяснить, как он подготовился к текущей ситуации, и раскрыть ключевую информацию (например, расположение тайного прохода или пароль к закрытой зоне) или достать полезный предмет (например, униформу культиста, оставленную без присмотра, или обычный расходник, спрятанный в сапоге). </p><p></p><p></p><p>Что персонаж подготовил заранее? Как он узнал, что это понадобится? Чего это ему стоило или кому он теперь должен услугу?</p>"
         },
         "xGAPhfQE4n6HBo8e": {
-          "name": "Exfiltration - Reaction",
-          "description": "<p>Exfiltration - Reaction: When the Progress Countdown triggers, the party acquires the object of the Heist and must succeed on a group action roll to escape without being caught. </p><p></p><p>On a failure, each PC marks a Stress and takes 2d12 direct damage. </p><p></p><p></p><p>What makes getting out even more dangerous than getting in? What unforeseen developments stymie the party’s original escape plan?</p>",
+          "name": "Эксфильтрация - Реакция",
+          "description": "<p>Эксфильтрация - Реакция: Когда срабатывает Счетчик Прогресса, группа получает объект Ограбления и должна преуспеть в групповом броске действия, чтобы сбежать, не будучи пойманной. </p><p></p><p>При провале каждый персонаж отмечает Стресс и получает 2d12 прямого урона. </p><p></p><p></p><p>Почему выбраться еще опаснее, чем войти? Какие непредвиденные события мешают первоначальному плану побега группы?</p>",
           "actions": {
             "dUWfC4Pjfbtcm1Q0": {
-              "name": "Damage"
+              "name": "Урон"
             }
           }
         },
         "viizprNubERHkOFd": {
-          "name": "Sound the Alarm - Reaction",
-          "description": "<p>Sound the Alarm - Reaction: When the Consequence Countdown triggers, the party is discovered and the location enters High Alert. </p><p></p><p>Immediately summon a number of Tier 2 adversaries equal to the number of PCs in the scene and spotlight one. </p><p></p><p>While this environment is on High Alert, all adversaries gain a +1 bonus to their Difficulty. </p><p></p><p></p><p>What makes these adversaries uniquely suited to guard this location? What do they know about this place that gives them an edge?</p>"
+          "name": "Поднять Тревогу - Реакция",
+          "description": "<p>Поднять Тревогу - Реакция: Когда срабатывает Счетчик Последствий, группа обнаружена, и локация переходит в режим Высокой Готовности. </p><p></p><p>Немедленно призовите количество противников Ранга 2, равное количеству персонажей в сцене, и активируйте одного из них. </p><p></p><p>Пока это окружение находится в режиме Высокой Готовности, все противники получают бонус +1 к Сложности. </p><p></p><p></p><p>Почему эти противники уникально подходят для охраны этого места? Что они знают об этом месте такого, что дает им преимущество?</p>"
         }
       }
     },
     "Lamplight Beguiler": {
-      "name": "Lamplight Beguiler",
-      "description": "<p>A huge mer\u001dcreature who lures unwary prey into eating range with their dangling, shapeshifting head stalk</p>",
-      "motivesAndTactics": "Entice with secret knowledge, snap the trap shut, speak through their shapeshifted head stalk",
-      "attack": "Attack",
+      "name": "Фонарный Обманщик",
+      "description": "<p>Огромное морское существо, заманивающее неосторожную добычу в зону поражения своим свисающим стеблем на голове, меняющим форму.</p>",
+      "motivesAndTactics": "Искушать тайным знанием, захлопывать ловушку, говорить через стебель-перевертыш",
+      "attack": "Атака",
       "experiences": {
         "zsl2h8TkCTQJoxib": {
-          "name": "Secrets"
+          "name": "Тайны"
         },
         "VUpsEGDrJ0aro4py": {
-          "name": "Charm"
+          "name": "Очарование"
         }
       },
       "items": {
         "zDNkpPy47craBLhX": {
-          "name": "Doppel-Dangler - Action",
-          "description": "<p>Doppel-Dangler - Action: The membranous cluster at the end of the Beguiler’s head stalk can shapeshift into any humanoid form. Mark a Stress and choose a PC within Close range.</p><p></p><p>Their player must tell you what form their PC would find most trustworthy (such as a relative, mentor, or lover). The Beguiler’s head stalk transforms into that shape.</p>",
+          "name": "Доппель-Висюлька - Действие",
+          "description": "<p>Доппель-Висюлька - Действие: Мембранный сгусток на конце головного стебля Обманщика может принимать любую гуманоидную форму. Отметьте Стресс и выберите персонажа в пределах Средней дистанции.</p><p></p><p>Игрок должен сказать вам, какую форму его персонаж нашел бы наиболее заслуживающей доверия (например, родственника, наставника или возлюбленного). Стебель Обманщика превращается в эту форму.</p>",
           "actions": {
             "OVcBpE2Cs1AQN0FP": {
-              "name": "Mark Stress"
+              "name": "Отметить Стресс"
             }
           }
         },
         "eX3hwzV0qu8wKzk9": {
-          "name": "Entice - Action",
-          "description": "<p>Entice - Action: Spend a Fear to play an alluring overture to a PC within Close range. </p><p></p><p>The PC must succeed on a Presence Reaction Roll (18) or move into Melee range with the Beguiler, If the Beguiler’s head stalk is in a form the PC would find trustworthy, they have disadvantage on the reaction roll.</p>",
+          "name": "Искушение - Действие",
+          "description": "<p>Искушение - Действие: Потратьте Страх, чтобы сыграть манящую увертюру для персонажа в пределах Средней дистанции. </p><p></p><p>Персонаж должен преуспеть в Броске Реакции Влияния (18) или переместиться на дистанцию Вплотную к Обманщику. Если стебель Обманщика имеет форму, которую персонаж находит заслуживающей доверия, он имеет помеху на бросок реакции.</p>",
           "actions": {
             "sS2QvWVn0denpbw1": {
-              "name": "Attack"
+              "name": "Атака"
             }
           }
         },
         "ylA88egdYSbukkoF": {
-          "name": "Entangle - Reaction",
-          "description": "<p>Entangle - Reaction: When a PC moves within Melee range, you can spend a Fear to make an attack against them. </p><p></p><p>On a successful attack, the target is Swallowed, While Swallowed, a creature is Restrained and can only take actions to attack the Beguiler. </p><p></p><p>The Beguiler disgorges all Swallowed creatures when they take Major damage.</p>",
+          "name": "Опутывание - Реакция",
+          "description": "<p>Опутывание - Реакция: Когда персонаж перемещается на дистанцию Вплотную, вы можете потратить Страх, чтобы совершить атаку против него. </p><p></p><p>При успешной атаке цель Проглочена. Будучи Проглоченным, существо Обездвижено и может предпринимать действия только для атаки Обманщика. </p><p></p><p>Обманщик извергает всех Проглоченных существ, когда получает Ощутимый урон.</p>",
           "actions": {
             "rtr6iuIT9cWnfnES": {
-              "name": "Attack"
+              "name": "Атака"
             }
           }
         },
         "ocamUBktKkWR88Ga": {
-          "name": "Rest and Digest - Reaction",
-          "description": "<p>Rest and Digest - Reaction: When the Beguiler takes the spotlight with a Swallowed creature inside them, they move to Far range away from the PCs</p>"
+          "name": "Отдых и Переваривание - Реакция",
+          "description": "<p>Отдых и Переваривание - Реакция: Когда Обманщик становится активным с Проглоченным существом внутри, он перемещается на Далекую дистанцию от персонажей.</p>"
         }
       }
     },
     "Mountain Troll": {
-      "name": "Mountain Troll",
-      "description": "<p>A hideous, twisted giant born out of a rock, wearing purloined armor and a belt of severed heads\u001e</p>",
-      "motivesAndTactics": "Ambush from behind, attack from above, bellow, smash enemies against the rocks, throw large boulders",
-      "attack": "Skull Flail",
+      "name": "Горный Тролль",
+      "description": "<p>Уродливый, искаженный гигант, рожденный из скалы, носящий украденную броню и пояс из отрубленных голов.</p>",
+      "motivesAndTactics": "Нападать из засады сзади, атаковать сверху, реветь, разбивать врагов о скалы, швырять огромные валуны",
+      "attack": "Черепной Цеп",
       "experiences": {
         "JikruHaMoinjRtlz": {
-          "name": "Mountains"
+          "name": "Горы"
         }
       },
       "items": {
         "uXzufA2EgTfN8jUF": {
-          "name": "Relentless (3)",
-          "description": "<p>The Seraph can be spotlighted up to three times per GM turn. Spend Fear as usual to spotlight them.</p>"
+          "name": "Неумолимый (3)",
+          "description": "<p>Тролль может активироваться до трех раз за ход Мастера. Тратьте Страх как обычно, чтобы активировать его.</p>"
         },
         "hbZB7fyNX1GdOBbY": {
-          "name": "Stolen Armor - Passive",
-          "description": "<p>Stolen Armor - Passive: When combat begins, active a Countdown equal to the number of PCs. Whenever the Troll takes damage, tick down the countdown and reduce the HP the Troll marks by 1. </p><p></p><p>When it triggers, the Troll evolves into an Enraged Mountain Troll (see “Enraged Mountain Troll - Evolution”).</p>"
+          "name": "Украденная Броня - Пассивно",
+          "description": "<p>Украденная Броня - Пассивно: Когда начинается бой, активируйте Счетчик, равный количеству персонажей. Каждый раз, когда Тролль получает урон, уменьшайте счетчик и снижайте количество Ран, которое отмечает Тролль, на 1. </p><p></p><p>Когда он сработает, Тролль эволюционирует в Разъяренного Горного Тролля (см. “Разъяренный Горный Тролль - Эволюция”).</p>"
         },
         "wfCrT1wqurbyjQ9b": {
-          "name": "Flail Swipe - Action",
-          "description": "<p>Flail Swipe - Action: The Troll swings their skull flail in a wide arc. Mark a Stress to make an attack against all targets in front of the Troll within Very Close range. </p><p></p><p>On a success, the Troll deals 2d10+3 instead of its normal damage. The Troll cannot use this action while evolved.</p>",
+          "name": "Удар Цепом - Действие",
+          "description": "<p>Удар Цепом - Действие: Тролль размахивает цепом из черепов по широкой дуге. Отметьте Стресс, чтобы совершить атаку против всех целей перед Троллем в пределах Близкой дистанции. </p><p></p><p>При успехе Тролль наносит 2d10+3 вместо обычного урона.</p>",
           "actions": {
             "TVmV6q4oxaYvRyLv": {
-              "name": "Attack"
+              "name": "Атака"
             }
           }
         }
       }
     },
     "Owl Witch": {
-      "name": "Owl Witch",
-      "description": "<p>A giant, vengeful barn owl with a 15-oot wingspan and a human face</p>",
-      "motivesAndTactics": "Consume essence, curse, predict death",
-      "attack": "Razor Talons",
+      "name": "Совиная Ведьма",
+      "description": "<p>Гигантская мстительная сипуха с размахом крыльев в 5 метров и человеческим лицом.</p>",
+      "motivesAndTactics": "Потреблять сущность, проклинать, предсказывать смерть",
+      "attack": "Острые Когти",
       "experiences": {
         "QhHEF0ga90i0Ehnb": {
-          "name": "Magic"
+          "name": "Магия"
         },
         "W5DUlu9C03du6c20": {
-          "name": "Night Stalker"
+          "name": "Ночной Сталкер"
         }
       },
       "items": {
         "st1T9Or9pNqWlZ2J": {
-          "name": "Ill Omen - Passive",
-          "description": "<p>Ill Omen - Passive: When a PC within Close range makes an action roll, their Fear Die gains a bonus equal to the amount of Fear you currently have.</p>"
+          "name": "Дурное Знамение - Пассивно",
+          "description": "<p>Дурное Знамение - Пассивно: Когда персонаж в пределах Средней дистанции делает бросок действия, его Кость Страха получает бонус, равный количеству Страха, который у вас есть.</p>"
         },
         "98J576WbCTCdHkcI": {
-          "name": "Witch Barrier - Passive",
-          "description": "<p>Witch Barrier - Passive: The Owl Witch is resistant to magic damage.</p>"
+          "name": "Ведьмин Барьер - Пассивно",
+          "description": "<p>Ведьмин Барьер - Пассивно: Совиная Ведьма устойчива к магическому урону.</p>"
         },
         "Raer98GsWrNMF6cI": {
-          "name": "Alluring Voice - Action",
-          "description": "<p>Alluring Voice - Action: The Owl Witch can perfectly mimic the voice of a loved one or trusted figure. </p><p></p><p><strong>Spend a Fear</strong> to have the Owl Witch call out to a creature within earshot. The target must succeed on an Instinct Reaction Roll or move up to Far range toward the Owl Witch.</p>",
+          "name": "Чарующий Голос - Действие",
+          "description": "<p>Чарующий Голос - Действие: Совиная Ведьма может идеально имитировать голос любимого человека или доверенной фигуры. </p><p></p><p><strong>Потратьте Страх</strong>, чтобы Совиная Ведьма позвала существо в пределах слышимости. Цель должна преуспеть в Броске Реакции Инстинкта или переместиться на Далекую дистанцию по направлению к Совиной Ведьме.</p>",
           "actions": {
             "4crSC91u01mIviT6": {
-              "name": "Attack"
+              "name": "Атака"
             }
           }
         },
         "BSYxKiYbbfE38YfD": {
-          "name": "Nightmare Stare - Action",
-          "description": "<p>Nightmare Stare - Action: Spend a Fear to have the Owl Witch Afflict a target within Far range with waking nightmares. </p><p></p><p>Until a PC uses a downtime move to comfort the Afflicted creature and clear the condition, the Afflicted creature can’t clear Stress or HP by any means.</p>",
+          "name": "Кошмарный Взгляд - Действие",
+          "description": "<p>Кошмарный Взгляд - Действие: Потратьте Страх, чтобы Совиная Ведьма Наслала на цель в пределах Далекой дистанции кошмары наяву. </p><p></p><p>Пока персонаж не использует ход отдыха, чтобы утешить Жертву и снять состояние, Жертва не может очищать Стресс или Раны никакими средствами.</p>",
           "actions": {
             "W5V6eJrWIU1FLGnK": {
-              "name": "Spend Fear"
+              "name": "Потратить Страх"
             }
           }
         },
         "1WV4B0pt2FtPkpIh": {
-          "name": "Visions of a Violent End - Reaction",
-          "description": "<p>Visions of a Violent End - Reaction: When the Owl Witch is targeted by an attack, you can spend a Fear to force the attacker to make a Presence Reaction Roll. </p><p></p><p>On a failure, they mark [[/r 1d4]] Stress as their mind is flooded with visions of their own violent death.</p>",
+          "name": "Видения Насильственного Конца - Реакция",
+          "description": "<p>Видения Насильственного Конца - Реакция: Когда Совиная Ведьма становится целью атаки, вы можете потратить Страх, чтобы заставить атакующего совершить Бросок Реакции Влияния. </p><p></p><p>При провале он отмечает [[/r 1d4]] Стресса, так как его разум наполняется видениями его собственной насильственной смерти.</p>",
           "actions": {
             "1Psvei2dMAuDyplp": {
-              "name": "Attack"
+              "name": "Атака"
             }
           }
         }
       }
     },
     "Rabble Mawb": {
-      "name": "Rabble Mawb",
-      "description": "<p>These cat\u001dsized balls of hair, limbs, and teeth travel in a “mawb” of about a dozen.</p>",
-      "motivesAndTactics": "Chitter and chew, clump together, roll around",
-      "attack": "Chomp",
+      "name": "Зубастая Свора",
+      "description": "<p>Эти комки шерсти, конечностей и зубов размером с кошку путешествуют \"сворами\" примерно по дюжине.</p>",
+      "motivesAndTactics": "Верещать и грызть, сбиваться в кучу, кататься вокруг",
+      "attack": "Кусь",
       "experiences": {
         "IDbssHDTrhN7zHDV": {
-          "name": "Underground"
+          "name": "Подземелье"
         }
       },
       "items": {
         "XqvwUigkRSEt6LLS": {
-          "name": "Horde (1d4)",
-          "description": "<p>When the Raiders have marked half or more of their HP, their standard attack deals <strong>1d4</strong> physical damage instead.</p>"
+          "name": "Орда (1d4)",
+          "description": "<p>Когда Свора отмечает половину или более своих Ран, её стандартная атака наносит <strong>1d4</strong> физического урона вместо обычного.</p>"
         },
         "FHvD9aCUxSlVfiOu": {
-          "name": "Come Back Worse - Reaction",
-          "description": "<p>Come Back Worse - Reaction: When a Rabble Mawb is defeated, you can spend a Fear to bring this Rabble Mawb back to life. </p><p></p><p>This new Rabble Mawb gains a +X bonus to all rolls, where X is the number of times this feature has been used by this adversary.</p>",
+          "name": "Вернуться Хуже - Реакция",
+          "description": "<p>Вернуться Хуже - Реакция: Когда Зубастая Свора побеждена, вы можете потратить Страх, чтобы вернуть эту Свору к жизни. </p><p></p><p>Эта новая Свора получает бонус +X ко всем броскам, где X — количество раз, когда это свойство было использовано этим противником.</p>",
           "effects": {
             "SGb5dWGVJeSKvqeN": {
-              "name": "Come Back Worse +1"
+              "name": "Вернуться Хуже +1"
             },
             "S2Yz5tgGjIXnPPMU": {
-              "name": "Come Back Worse +2"
+              "name": "Вернуться Хуже +2"
             },
             "rddOoTXKeZ7tvWbd": {
-              "name": "Come Back Worse +3"
+              "name": "Вернуться Хуже +3"
             }
           }
         }
       },
       "effects": {
         "THPTKsr2k7DqERp8": {
-          "name": "Horde"
+          "name": "Орда"
         }
       }
     },
     "Redcap Butcher": {
-      "name": "Redcap Butcher",
-      "description": "<p>A halfling\u001d-sized fey creature who hacks their victims apart with a variety of cutting implements.</p>",
-      "motivesAndTactics": "Give them the runaround, grin disconcertingly, hack and slash, scramble",
-      "attack": "Meat Cleaver",
+      "name": "Красная Шапка Мясник",
+      "description": "<p>Фейское существо размером с полурослика, которое рубит своих жертв на куски различными режущими инструментами.</p>",
+      "motivesAndTactics": "Водить за нос, обескураживающе ухмыляться, рубить и кромсать, карабкаться",
+      "attack": "Тесак",
       "experiences": {
         "AVSzq3K1S5hRhATs": {
-          "name": "Scurry"
+          "name": "Суета"
         }
       },
       "items": {
         "svofR6tTZSTkkNXv": {
-          "name": "Chop Happy - Action",
-          "description": "<p>Chop Happy - Action: Mark a Stress to make a standard attack against up to three targets within range. For each target who marks a HP, you gain a Fear.</p>",
+          "name": "Радость Рубки - Действие",
+          "description": "<p>Радость Рубки - Действие: Отметьте Стресс, чтобы совершить стандартную атаку против до трех целей в пределах досягаемости. За каждую цель, отметившую Рану, вы получаете Страх.</p>",
           "actions": {
             "jDTkcjXFsS3pzSk3": {
-              "name": "Attack"
+              "name": "Атака"
             }
           }
         },
         "ir2ny0kyoqI2c0JL": {
-          "name": "Knife Thrower - Action",
-          "description": "<p>Knife Thrower - Action: Mark a Stress to make a standard attack against a target within Far range. If the Butcher makes this attack while Hidden, they have advantage on the attack roll.</p>",
+          "name": "Метатель Ножей - Действие",
+          "description": "<p>Метатель Ножей - Действие: Отметьте Стресс, чтобы совершить стандартную атаку против цели в пределах Далекой дистанции. Если Мясник совершает эту атаку, будучи Скрытым, он имеет преимущество на бросок атаки.</p>",
           "actions": {
             "yYGQrlg9penwYXrZ": {
-              "name": "Attack"
+              "name": "Атака"
             }
           }
         }
       }
     },
     "Redcap Candlemaker": {
-      "name": "Redcap Candlemaker",
-      "description": "<p>A pale, gaunt cult leader holding a seven-foot-tall rod with a candle made from a hanged man’s hand atop it.</p>",
-      "motivesAndTactics": "Cast long shadows, keep out of the fray, show them the light",
-      "attack": "Burning Candlestick",
+      "name": "Красная Шапка Свечник",
+      "description": "<p>Бледный, изможденный лидер культа, держащий двухметровый жезл со свечой, сделанной из руки повешенного, на вершине.</p>",
+      "motivesAndTactics": "Отбрасывать длинные тени, держаться вне схватки, показывать им свет",
+      "attack": "Горящий Подсвечник",
       "experiences": {
         "4yJ06lgcjbt8Tyxi": {
-          "name": "Vigilance"
+          "name": "Бдительность"
         }
       },
       "items": {
         "DpoTaBOb0jdxChhF": {
-          "name": "Hand of Glory - Passive",
-          "description": "<p>Hand of Glory - Passive: When the Candlemaker appears, put five tokens on this stat block. Remove one token whenever the Candlemaker marks a HP. </p><p></p><p>While this stat block has one or more tokens on it, the Candlemaker is Hidden.</p>"
+          "name": "Рука Славы - Пассивно",
+          "description": "<p>Рука Славы - Пассивно: Когда Свечник появляется, положите пять жетонов на этот статблок. Убирайте один жетон каждый раз, когда Свечник отмечает Рану. </p><p></p><p>Пока на этом блоке статистики есть один или несколько жетонов, Свечник Скрыт.</p>"
         },
         "4757xtppm7080RNz": {
-          "name": "Torchbearer - Passive",
-          "description": "<p>Torchbearer - Passive: The light of the Candlemaker’s hand of glory inspires bloodlust in their allies. While this stat block has one or more tokens on it, any Redcap within Close range gains a +1 bonus to their damage rolls.</p>"
+          "name": "Факелоносец - Пассивно",
+          "description": "<p>Факелоносец - Пассивно: Свет руки славы Свечника вдохновляет жажду крови у его союзников. Пока на этом блоке статистики есть один или несколько жетонов, любая Красная Шапка в пределах Средней дистанции получает бонус +1 к броскам урона.</p>"
         },
         "e0J1OrJW7yMSdo8e": {
-          "name": "Dance in the Flames - Action",
-          "description": "<p>Dance in the Flames - Action: Spend a token from this stat block. The Candlemaker conjures a ball of fire at a point within Far range. </p><p></p><p>All creatures within Very Close range of that point must make an Agility Reaction Roll. Targets who fail take 2d10 magic damage. Targets who succeed take half damage.</p>",
+          "name": "Танец в Огне - Действие",
+          "description": "<p>Танец в Огне - Действие: Потратьте жетон с этого блока статистики. Свечник вызывает огненный шар в точке в пределах Далекой дистанции. </p><p></p><p>Все существа в пределах Близкой дистанции от этой точки должны совершить Бросок Реакции Проворности. Цели, провалившие проверку, получают 2d10 магического урона. Цели, прошедшие проверку, получают половину урона.</p>",
           "actions": {
             "Ou9043KK5hrx5ro7": {
-              "name": "Attack"
+              "name": "Атака"
             }
           }
         }
       }
     },
     "Whisper Wraith": {
-      "name": "Whisper Wraith",
-      "description": "<p>The echoes of broken promises and dreams unfulfilled, these wraiths appear as floating, translucent shrouds of tattered black velvet in a vaguely humanoid shape.</p>",
-      "motivesAndTactics": "Bind limbs, drop from a great height, lift off the ground\u001f swirl through the air, wrap around heads",
-      "attack": "Shadow Touch",
+      "name": "Шепчущий Призрак",
+      "description": "<p>Эхо нарушенных обещаний и несбывшихся мечтаний, эти призраки появляются как парящие, полупрозрачные саваны из рваного черного бархата в смутно гуманоидной форме.</p>",
+      "motivesAndTactics": "Связывать конечности, сбрасывать с большой высоты, отрывать от земли, кружить в воздухе, обвиваться вокруг голов",
+      "attack": "Прикосновение Тени",
       "experiences": {
         "Dp6pppWNMTCbT5qK": {
-          "name": "Dreams"
+          "name": "Сны"
         }
       },
       "items": {
         "RFS4iUXcyg0tEJ5N": {
-          "name": "Spectral - Passive",
-          "description": "<p>Spectral - Passive: The Wraith is immune to physical damage and</p><p>weak against magic damage. Additionally, the Wraith can move</p><p>through solid objects.</p>"
+          "name": "Призрачный - Пассивно",
+          "description": "<p>Призрачный - Пассивно: Призрак невосприимчив к физическому урону и уязвим к магическому урону. Кроме того, Призрак может проходить сквозь твердые объекты.</p>"
         },
         "1mqSv5u4vdaE07PQ": {
-          "name": "Spooky - Passive",
-          "description": "<p>Spooky - Passive: When the Wraith makes a successful attack, all PCs within Close range must mark a Stress and you gain a Fear.</p>",
+          "name": "Жуткий - Пассивно",
+          "description": "<p>Жуткий - Пассивно: Когда Призрак совершает успешную атаку, все персонажи в пределах Средней дистанции должны отметить Стресс, а вы получаете Страх.</p>",
           "actions": {
             "G16REH65F3IYA6pS": {
-              "name": "Damage"
+              "name": "Урон"
             }
           }
         },
         "NGtwoaKkdIrUiwi3": {
-          "name": "Nightmare Shroud - Action",
-          "description": "<p>Nightmare Shroud - Action: Spend a Fear to have the Wraith wrap themself around a PC within Melee range, making them Shrouded until they or an ally succeed on a Strength or Attack Roll (20) to dislodge the Wraith. </p><p></p><p>If it’s an attack roll, the Shrouded PC takes the damage\u0017 While Shrouded, a PC has disadvantage on all attacks and marks a Stress when they roll with Fear.</p>",
+          "name": "Кошмарный Саван - Действие",
+          "description": "<p>Кошмарный Саван - Действие: Потратьте Страх, чтобы Призрак обвился вокруг персонажа в пределах дистанции Вплотную, делая его Окутанным, пока он или союзник не преуспеет в Броске Силы или Атаки (20), чтобы сбросить Призрака. </p><p></p><p>Если это бросок атаки, Окутанный персонаж получает урон. Пока персонаж Окутан, он имеет помеху на все атаки и отмечает Стресс, когда делает бросок со Страхом.</p>",
           "actions": {
             "XKjJASQKvCk3G0lS": {
-              "name": "Spend Fear"
+              "name": "Потратить Страх"
             },
             "q4TcqEhTX0gxRVgm": {
-              "name": "Strength Roll"
+              "name": "Бросок Силы"
             }
           }
         }
       }
     },
     "Xero, Castle Killer": {
-      "name": "Xero, Castle Killer",
-      "description": "<p>A castle\u001dsized\u001f bipedal reptile</p>",
-      "motivesAndTactics": "Leave a wake of destruction, level buildings, stomp through settlements",
-      "attack": "Tail Swipe",
+      "name": "Ксеро, Убийца Замков",
+      "description": "<p>Двуногая рептилия размером с замок.</p>",
+      "motivesAndTactics": "Оставлять за собой след разрушения, сравнивать здания с землей, топтать поселения",
+      "attack": "Удар Хвостом",
       "experiences": {
         "3krLg8a27tg3XA3A": {
-          "name": "Destruction"
+          "name": "Разрушение"
         }
       },
       "items": {
         "N70FPGCtw1e1qb89": {
-          "name": "Relentless (X) - Passive",
-          "description": "<p>Relentless (X) - Passive: Xero can be spotlighted up to X times per GM turn, where X is the number of PCs in the scene. Spend Fear as usual to spotlight them</p>"
+          "name": "Неумолимый (X) - Пассивно",
+          "description": "<p>Неумолимый (X) - Пассивно: Ксеро может активироваться до X раз за ход Мастера, где X — количество персонажей в сцене. Тратьте Страх как обычно, чтобы активировать его.</p>"
         },
         "pTOVTqv7lX4a9keg": {
-          "name": "Collateral Damage - Passive",
-          "description": "<p>Collateral Damage - Passive: Xero’s movement cannot be hindered, impeded, or affected by any external effect. </p><p></p><p>All destructible terrain or obstacles in Xero’s path are destroyed when Xero moves through them.</p>"
+          "name": "Сопутствующий Ущерб - Пассивно",
+          "description": "<p>Сопутствующий Ущерб - Пассивно: Движение Ксеро не может быть затруднено, замедлено или изменено каким-либо внешним эффектом. </p><p></p><p>Вся разрушаемая местность или препятствия на пути Ксеро уничтожаются, когда Ксеро проходит через них.</p>"
         },
         "w8gRUsbiNXMBevHi": {
-          "name": "Gigaton Stomp - Action",
-          "description": "<p>Gigaton Stomp - Action: Spend a Fear to have Xero bring their foot down hard, creating a localized earthquake. </p><p></p><p>All creatures within Melee range take 4d12 physical damage and are Restrained until they succeed on a Finesse Roll to slide out from underfoot. </p><p></p><p>All creatures outside of Melee range and within Close range must succeed on an Instinct Reaction Roll or be knocked back up to Far range. If a target is knocked back, they must mark an Armor Slot or take 4d12 physical damage as they land</p>",
+          "name": "Гигатонный Топот - Действие",
+          "description": "<p>Гигатонный Топот - Действие: Потратьте Страх, чтобы Ксеро с силой опустил ногу, вызывая локальное землетрясение. </p><p></p><p>Все существа в пределах дистанции Вплотную получают 4d12 физического урона и Обездвиживаются, пока не преуспеют в Броске Искусности, чтобы выскользнуть из-под ног. </p><p></p><p>Все существа за пределами дистанции Вплотную и в пределах Средней дистанции должны преуспеть в Броске Реакции Инстинкта или быть отброшенными на Далекую дистанцию. Если цель отброшена, она должна отметить Ячейку Брони или получить 4d12 физического урона при приземлении.</p>",
           "actions": {
             "JJY1LYxFRr4GgqAW": {
-              "name": "Spend Fear"
+              "name": "Потратить Страх"
             },
             "w3WIwIXLf9WKNyvs": {
-              "name": "Damage (Melee Range)"
+              "name": "Урон (Вплотную)"
             },
             "88hwy0wIg7RGoCAm": {
-              "name": "Attack (Close Range)"
+              "name": "Атака (Средне)"
             }
           }
         },
         "idHN9s1rWIjzuodv": {
-          "name": "Power Slide - Action",
-          "description": "<p>Power Slide - Action: Mark a Stress to move Xero up to Close range. </p><p></p><p>All creatures Xero moves through must make a Strength Reaction Roll. </p><p></p><p>Targets who fail must mark 2 Armor Slots or take Severe Damage.</p>",
+          "name": "Силовое Скольжение - Действие",
+          "description": "<p>Силовое Скольжение - Действие: Отметьте Стресс, чтобы переместить Ксеро на Среднюю дистанцию. </p><p></p><p>Все существа, через которых проходит Ксеро, должны совершить Бросок Реакции Силы. </p><p></p><p>Цели, провалившие проверку, должны отметить 2 Ячейки Брони или получить Тяжелый Урон.</p>",
           "actions": {
             "dxaJF56FbTSOknil": {
-              "name": "Attack"
+              "name": "Атака"
             }
           }
         },
         "szVOym25GPEjRuCN": {
-          "name": "Radioactive Breath - Action",
-          "description": "<p>Radioactive Breath - Action: Spend a Fear to have Xero charge up a nuclear beam and place a token on this stat block. </p><p></p><p>The next time Xero takes the spotlight\u001f you can spend this token and unleash the beam. </p><p></p><p>Draw a line with a Close range width from Xero to the edge of the battlefield. </p><p></p><p>All PCs within this path must make an Agility Reaction Roll. </p><p></p><p>Targets who faill take 4d12+12 direct magic damage. </p><p></p><p>Targets who succeed take half damage. </p><p></p><p>Xero can’t use this action again until they take Severe damage.</p>",
+          "name": "Радиоактивное Дыхание - Действие",
+          "description": "<p>Радиоактивное Дыхание - Действие: Потратьте Страх, чтобы Ксеро зарядил ядерный луч, и поместите жетон на этот статблок. </p><p></p><p>В следующий раз, когда Ксеро станет активным, вы можете потратить этот жетон и выпустить луч. </p><p></p><p>Проведите линию шириной Средней дистанции от Ксеро до края поля боя. </p><p></p><p>Все персонажи на этом пути должны совершить Бросок Реакции Проворности. </p><p></p><p>Цели, провалившие проверку, получают 4d12+12 прямого магического урона. </p><p></p><p>Цели, прошедшие проверку, получают половину урона. </p><p></p><p>Ксеро не может использовать это действие снова, пока не получит Тяжелый урон.</p>",
           "actions": {
             "wp2cZPO4h7YFdorv": {
-              "name": "Spend Fear"
+              "name": "Потратить Страх"
             },
             "1pjNK9zuiB2NrwLD": {
-              "name": "Attack"
+              "name": "Атака"
             }
           }
         },
         "sGqgbQ6nOYQYaMUD": {
-          "name": "Regeneration - Action",
-          "description": "<p>Regeneration - Action: Up to three times per scene, spend any number of Fear to clear an equal number of HP.</p>",
+          "name": "Регенерация - Действие",
+          "description": "<p>Регенерация - Действие: До трех раз за сцену потратьте любое количество Страха, чтобы очистить равное количество Ран.</p>",
           "actions": {
             "f1YYAPNSrUmqXFcR": {
-              "name": "Healing"
+              "name": "Лечение"
             }
           }
         }

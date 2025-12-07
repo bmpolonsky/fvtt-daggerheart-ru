@@ -1,12 +1,12 @@
 {
-  "label": "Transformations",
+  "label": "Трансформации",
   "folders": {
-    "Demigod": "Demigod",
-    "Ghost": "Ghost",
-    "Reanimated": "Reanimated",
-    "Shapeshifter": "Shapeshifter",
-    "Vampire": "Vampire",
-    "Werewolf": "Werewolf"
+    "Demigod": "Полубог",
+    "Ghost": "Призрак",
+    "Reanimated": "Оживший",
+    "Shapeshifter": "Перевертыш",
+    "Vampire": "Вампир",
+    "Werewolf": "Оборотень"
   },
   "mapping": {
     "description": "system.description",

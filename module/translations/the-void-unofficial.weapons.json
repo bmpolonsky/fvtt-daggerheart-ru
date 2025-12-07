@@ -1,5 +1,5 @@
 {
-  "label": "Weapons",
+  "label": "Оружие",
   "folders": {},
   "mapping": {
     "description": "system.description",
@@ -15,38 +15,38 @@
   },
   "entries": {
     "Fangs": {
-      "name": "Fangs",
-      "attack": "Attack"
+      "name": "Клыки",
+      "attack": "Атака"
     },
     "Unarmed Strikes (d8+d6)": {
-      "name": "Unarmed Strikes (d8+d6)",
-      "description": "<p>Your unarmed strikes are considered a Melee weapon, use the trait of your choice, and deal d8+d6 phy damage using your Proficiency.</p><p></p><h3>COMBO STRIKES</h3><p>After making a damage roll with a Melee weapon but before dealing that damage to the target, mark a Stress to start a combo strike. When you do, roll your Combo Die and note its value. Then, roll your Combo Die again. If the value of the second roll is equal to or greater than your fi rst roll, continue rolling until the latest Combo Die’s roll is less than the roll that preceeded it. Total all rolled values and add that amount to your weapon’s damage. These values cannot be adjusted by features that aff ect damage dice. </p><p></p><p>Your Combo Die starts as a d4. When you level up, once per tier you may use one of your advancement options to increase your Combo Die instead.</p>",
+      "name": "Безоружные Удары (d8+d6)",
+      "description": "<p>Ваши безоружные удары считаются оружием с дистанцией Вплотную, используют характеристику по вашему выбору и наносят <strong>d8+d6</strong> физического урона используя ваше Мастерство.</p><p></p><h3>КОМБО УДАРЫ</h3><p>После совершения броска урона оружием, имеющим дистанцию Вплотную, но до нанесения урона цели, <strong>отметьте Стресс</strong>, чтобы начать комбо удар. Когда вы это сделаете, бросьте <em>Кость Комбо</em> и запишите ее значение. Затем бросьте еще одну <em>Кость Комбо</em>. Если результат второй кости равен или больше результата вашей первой <em>Кости Комбо</em>, продолжайте бросать дополнительные кости, пока результат последней <em>Кости Комбо</em> не станет меньше результата предыдущей. Сложите все значения костей и добавьте этот результат к урону вашего оружия. Эти значения не могут быть изменены свойствами, которые влияют на кости урона.</p><p>Ваша <em>Кость Комбо</em> начинается с <strong>d4</strong>. Когда вы получаете новый уровень, один раз за ранг вы можете использовать одну из ваших опций продвижения, чтобы увеличить вашу <em>Кость Комбо</em> на одну ступень (d4 -> d6, d6 -> d8 и т.д.).</p>",
       "actions": {
         "LLByeuZebdMi6TRJ": {
-          "name": "Unarmed Strikes d8+d6"
+          "name": "Безоружные Удары d8+d6"
         },
         "pTBCNX6JBHKQAOKt": {
-          "name": "Only COMBO STRIKES"
+          "name": "Только КОМБО УДАРЫ"
         }
       },
-      "attack": "Attack"
+      "attack": "Атака"
     },
     "Unarmed Strikes Powerhouse (d10+d6)": {
-      "name": "Unarmed Strikes Powerhouse (d10+d6)",
-      "description": "<p>Your unarmed strikes are considered a Melee weapon, use the trait of your choice, and deal d8+d6 phy damage using your Proficiency.</p><p></p><h3>COMBO STRIKES</h3><p>After making a damage roll with a Melee weapon but before dealing that damage to the target, mark a Stress to start a combo strike. When you do, roll your Combo Die and note its value. Then, roll your Combo Die again. If the value of the second roll is equal to or greater than your fi rst roll, continue rolling until the latest Combo Die’s roll is less than the roll that preceeded it. Total all rolled values and add that amount to your weapon’s damage. These values cannot be adjusted by features that aff ect damage dice. </p><p></p><p>Your Combo Die starts as a d4. When you level up, once per tier you may use one of your advancement options to increase your Combo Die instead.</p>",
+      "name": "Безоружные Удары. Мощь во Плоти (d10+d6)",
+      "description": "<p>Ваши безоружные удары считаются оружием с дистанцией Вплотную, используют характеристику по вашему выбору и наносят <strong>d8+d6</strong> физического урона используя ваше Мастерство.</p><p></p><h3>КОМБО УДАРЫ</h3><p>После совершения броска урона оружием, имеющим дистанцию Вплотную, но до нанесения урона цели, <strong>отметьте Стресс</strong>, чтобы начать комбо удар. Когда вы это сделаете, бросьте <em>Кость Комбо</em> и запишите ее значение. Затем бросьте еще одну <em>Кость Комбо</em>. Если результат второй кости равен или больше результата вашей первой <em>Кости Комбо</em>, продолжайте бросать дополнительные кости, пока результат последней <em>Кости Комбо</em> не станет меньше результата предыдущей. Сложите все значения костей и добавьте этот результат к урону вашего оружия. Эти значения не могут быть изменены свойствами, которые влияют на кости урона.</p><p>Ваша <em>Кость Комбо</em> начинается с <strong>d4</strong>. Когда вы получаете новый уровень, один раз за ранг вы можете использовать одну из ваших опций продвижения, чтобы увеличить вашу <em>Кость Комбо</em> на одну ступень (d4 -> d6, d6 -> d8 и т.д.).</p>",
       "actions": {
         "LLByeuZebdMi6TRJ": {
-          "name": "Unarmed Strikes d10+d6"
+          "name": "Безоружные Удары d10+d6"
         },
         "pTBCNX6JBHKQAOKt": {
-          "name": "Only COMBO STRIKES"
+          "name": "Только КОМБО УДАРЫ"
         },
         "tuyFTzMpIbpIn0Q0": {
-          "name": "Mark Stress - Powerhouse -  Target Two Creatures",
-          "description": "<p>Increase the d8 damage dice for your unarmed attack to d10s. Additionally, you can mark a Stress to target two creatures within Melee range with a single attack roll.</p>"
+          "name": "Отметить Стресс - Мощь во Плоти - Две Цели",
+          "description": "<p>Увеличьте кость урона d8 для вашей безоружной атаки до d10. Кроме того, вы можете отметить Стресс, чтобы нацелиться на двух существ в пределах дистанции Вплотную одним броском атаки.</p>"
         }
       },
-      "attack": "Attack"
+      "attack": "Атака"
     }
   }
 }
