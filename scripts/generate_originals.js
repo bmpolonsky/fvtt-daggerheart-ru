@@ -25,7 +25,7 @@ const FILE_CONFIGS = [
   {
     file: "daggerheart.subclasses.json",
     label: "Subclasses",
-    build: () => buildFeatureCollection("subclasses")
+    build: buildSubclassEntries
   },
   {
     file: "daggerheart.ancestries.json",
@@ -251,7 +251,7 @@ function buildEntriesWithTemplate(templateEntries, englishEntries) {
     if (Object.prototype.hasOwnProperty.call(englishEntries, key)) {
       result[key] = englishEntries[key];
     } else {
-      result[key] = templateEntries[key];
+      generationWarnings.push(`Пропускаю шаблонную запись "${key}" — отсутствует в английских данных.`);
     }
     seen.add(key);
   }
@@ -400,7 +400,8 @@ async function collectFolderRecords(directory, bucket) {
 async function buildClassEntries() {
   const classEntries = await gatherEntries("classes", ["class"], simpleEntry);
   const featureEntries = await gatherEntries("classes", ["feature"], featureEntry);
-  return { ...classEntries, ...featureEntries };
+  const classItemEntries = await gatherEntries("classes", ["loot"], simpleEntry);
+  return { ...classEntries, ...featureEntries, ...classItemEntries };
 }
 
 async function buildDomainEntries() {
@@ -512,6 +513,12 @@ async function buildItemEntries(relativePath, acceptedType) {
 
 async function buildFeatureCollection(relativePath) {
   return gatherEntries(relativePath, ["feature"], featureEntry);
+}
+
+async function buildSubclassEntries() {
+  const subclassEntries = await gatherEntries("subclasses", ["subclass"], descriptionEntry);
+  const featureEntries = await gatherEntries("subclasses", ["feature"], featureEntry);
+  return { ...subclassEntries, ...featureEntries };
 }
 
 async function buildMixedCollection(relativePath, types) {

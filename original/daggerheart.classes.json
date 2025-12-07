@@ -428,69 +428,69 @@
       "description": "<p>You can perform harmless, subtle effects that involve nature—such as causing a flower to rapidly grow, summoning a slight gust of wind, or starting a campfire— at will.</p>"
     },
     "50ft of Rope": {
-      "name": "Верёвка (15 м)"
+      "name": "50ft of Rope"
     },
     "A Romance Novel": {
-      "name": "Любовный роман"
+      "name": "A Romance Novel"
     },
     "A Sharpening Stone": {
-      "name": "Точильный камень"
+      "name": "A Sharpening Stone"
     },
     "Basic Supplies": {
-      "name": "Базовые припасы"
+      "name": "Basic Supplies"
     },
     "Broken Compass": {
-      "name": "Кажущийся сломанным компас"
+      "name": "Broken Compass"
     },
     "Bundle of Offerings": {
-      "name": "Связка подношений"
+      "name": "Bundle of Offerings"
     },
     "Drawing Of A Lover": {
-      "name": "Рисунок возлюбленного"
+      "name": "Drawing Of A Lover"
     },
     "Family Heirloom": {
-      "name": "Семейная реликвия"
+      "name": "Family Heirloom"
     },
     "Grappling Hook": {
-      "name": "Крюк кошка"
+      "name": "Grappling Hook"
     },
     "Letter(Never Opened)": {
-      "name": "Письмо (никогда не вскрывалось)"
+      "name": "Letter(Never Opened)"
     },
     "Secret Key": {
-      "name": "Секретный ключ"
+      "name": "Secret Key"
     },
     "Set of Forgery Tools": {
-      "name": "Набор для фальсификации"
+      "name": "Set of Forgery Tools"
     },
     "Sigil of Your God": {
-      "name": "Символ вашего бога"
+      "name": "Sigil of Your God"
     },
     "Small Bag (Rocks & Bones)": {
-      "name": "Маленький мешочек с камнями и костями"
+      "name": "Small Bag (Rocks & Bones)"
     },
-    "Strange Dirty Penant": {
-      "name": "Странный кулон, найденный в грязи"
+    "Strange Dirty Pendant": {
+      "name": "Strange Dirty Pendant"
     },
     "Tiny Elemental Pet": {
-      "name": "Маленький питомец элементаль",
-      "description": "Маленький безобидный питомец элементаль"
+      "name": "Tiny Elemental Pet",
+      "description": "<p>A tiny elemental pet</p>"
     },
     "Torch": {
-      "name": "Факел"
+      "name": "Torch"
     },
     "Totem from Mentor": {
-      "name": "Тотем от вашего наставника"
+      "name": "Totem from Mentor"
     },
     "Trophy from your First Kill": {
-      "name": "Трофей вашего первого убийства"
+      "name": "Trophy from your First Kill"
     },
     "Untranslated Book": {
-      "name": "Непереведенная книга",
-      "description": "<p>Книга, которую вы пытаетесь перевести.</p>"
+      "name": "Untranslated Book",
+      "description": "<p>A book you’re trying to translate.</p>"
     },
     "Whispering Orb": {
-      "name": "Шепчущая сфера"
+      "name": "Whispering Orb"
     }
   }
 }

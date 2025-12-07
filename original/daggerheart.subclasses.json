@@ -826,76 +826,76 @@
       }
     },
     "Beastbound": {
-      "name": "Звериные Узы",
-      "description": "<p>Играйте за Звериные Узы, если хотите иметь глубокую связь с животным-союзником.</p>"
+      "name": "Beastbound",
+      "description": "<p>You wish to form a deep bond with an animal ally.</p>"
     },
     "Call Of The Brave": {
-      "name": "Зов Храбреца",
-      "description": "<p>Играйте за Зов Храбреца, если хотите использовать мощь своих врагов для увеличения собственной силы.</p>"
+      "name": "Call Of The Brave",
+      "description": "<p>Play the Call of the Brave if you want to use the might of your enemies to fuel your own power. </p>"
     },
     "Call Of The Slayer": {
-      "name": "Зов Истребителя",
-      "description": "<p>Играйте за Зов Истребителя, если хотите поражать врагов с невероятной мощью.</p>"
+      "name": "Call Of The Slayer",
+      "description": "<p>Play the Call of the Slayer if you want to strike down adversaries with immense force.</p>"
     },
     "Divine Wielder": {
-      "name": "Божественный Воитель",
-      "description": "<p>Играйте за Божественного Воитель, если хотите господствовать на поле боя с легендарным оружием.</p>"
+      "name": "Divine Wielder",
+      "description": "<p>Play the Divine Wielder if you want to dominate the battlefield with a legendary weapon.</p>"
     },
     "Elemental Origin": {
-      "name": "Стихийное Начало",
-      "description": "<p>Играйте за Стихийное Начало, если хотите использовать сырую магию, придав ей форму определенного элемента.</p>"
+      "name": "Elemental Origin",
+      "description": "<p>Play the Elemental Origin if you want to channel raw magic to</p><p>take the shape of a particular element</p>"
     },
     "Nightwalker": {
-      "name": "Тень",
-      "description": "<p>Играйте за Тень, если хотите управлять тенями, чтобы перемещаться по местности.</p>"
+      "name": "Nightwalker",
+      "description": "<p>You wish to manipulate shadows to maneuver through the environment.</p>"
     },
     "Primal Origin": {
-      "name": "Первозданное Начало",
-      "description": "<p>Играйте за Первозданное Начало, если хотите значительно расширить возможности ваших заклинаний.</p>"
+      "name": "Primal Origin",
+      "description": "<p>Play the Primal Origin if you want to extend the versatility of your spells in powerful ways.</p>"
     },
     "School Of Knowledge": {
-      "name": "Школа Знаний",
-      "description": "<p>Играйте за Школу Знаний, если хотите обладать глубокими познаниями об окружающем вас мире.</p>"
+      "name": "School Of Knowledge",
+      "description": "<p><em>Play the School of Knowledge if you want a keen understanding of the world around you.</em></p>"
     },
     "School Of War": {
-      "name": "Школа Войны",
-      "description": "<p>Играйте за Школу Войны, если хотите использовать отработанную магию в качестве средства насилия.</p>"
+      "name": "School Of War",
+      "description": "<p><em>Play the School of War if you want to utilize trained magic for violence.</em></p>"
     },
     "Stalwart": {
-      "name": "Заступник",
-      "description": "<p>Играйте за Заступника, если хотите выдерживать мощные удары и продолжать сражаться.</p>"
+      "name": "Stalwart",
+      "description": "<p>You wish to take heavy blows and keep fighting</p>"
     },
     "Syndicate": {
-      "name": "Синдикат",
-      "description": "<p>Играйте за Синдикат, если хотите иметь широкую сеть контактов, куда бы вы ни пошли.</p>"
+      "name": "Syndicate",
+      "description": "<p>You wish to have a web of contacts everywhere you go</p>"
     },
     "Troubadour": {
-      "name": "Трубадур",
-      "description": "<p>Играйте за Трубадура, если хотите поддержать своих союзников музыкой.</p>"
+      "name": "Troubadour",
+      "description": "<p>You wish to play music to bolster your allies.</p>"
     },
     "Vengeance": {
-      "name": "Мститель",
-      "description": "<p>Играйте за Мстителя, если хотите сразить неприятелей, причиняющих вред вам или вашим союзникам.</p>"
+      "name": "Vengeance",
+      "description": "<p>You wish to strike down enemies who harm you or your allies.</p>"
     },
     "Warden of Renewal": {
-      "name": "Хранитель Жизни",
-      "description": "<p>Играйте за Хранителя Жизни, если хотите использовать мощную магию для исцеления вашей команды.</p>"
+      "name": "Warden of Renewal",
+      "description": "<p>You wish to use powerful magic to heal your party.</p>"
     },
     "Warden of the Elements": {
-      "name": "Хранитель Стихий",
-      "description": "<p>Играйте за Хранителя Стихий, если хотите воплотить в себе естественные элементы дикой природы.</p>"
+      "name": "Warden of the Elements",
+      "description": "<p>You wish to embody the natural elements of the wild.</p>"
     },
     "Wayfinder": {
-      "name": "Путевод",
-      "description": "<p>Играйте за Путевода, если хотите хотите охотиться на свою жертву и поражать цели смертоносной силой.</p>"
+      "name": "Wayfinder",
+      "description": "<p>You wish to hunt your prey and strike with deadly force.</p>"
     },
     "Winged Sentinel": {
-      "name": "Крылатый Страж",
-      "description": "<p>Играйте за Крылатого Стража, если хотите взмыть в небеса и нанести сокрушительные удары с воздуха.</p>"
+      "name": "Winged Sentinel",
+      "description": "<p>Play the Winged Sentinel if you want to take flight and strike crushing blows from the sky.</p>"
     },
     "Wordsmith": {
-      "name": "Оратор",
-      "description": "<p>Играйте за Оратора, если хотите применять искусные игры слов и завораживать публику.</p>"
+      "name": "Wordsmith",
+      "description": "<p>You wish to use clever wordplay and captivate crowds.</p>"
     }
   }
 }
