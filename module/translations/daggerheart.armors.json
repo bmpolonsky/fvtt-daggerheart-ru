@@ -63,7 +63,7 @@
       }
     },
     "Bellamoi Fine Armor": {
-      "name": "Парадная броня Белламуа",
+      "name": "Парадный Доспех Белламуа",
       "effects": {
         "Hy0sNtFS1JAXxgwC": {
           "name": "Позолоченное",
@@ -173,7 +173,7 @@
       "description": "<p><strong>Гибкое</strong>: +1 к Уклонению</p>"
     },
     "Harrowbone Armor": {
-      "name": "Броня Измученных Костей",
+      "name": "Доспех Измученных Костей",
       "actions": {
         "IzM88FIxQ35P5VB2": {
           "name": "Устойчивое",
@@ -216,7 +216,7 @@
       "name": "Улучшенный Кожаный Доспех"
     },
     "Irontree Breastplate Armor": {
-      "name": "Нагрудник Железного Дерева",
+      "name": "Доспех Железного Дерева",
       "effects": {
         "P3aCN8PQgPXP4C9M": {
           "name": "Усиленное",
@@ -292,7 +292,7 @@
       "description": "<p><strong>Мучительное</strong>: Каждый раз, когда вы отмечаете Ячейку Брони, вы должны отметить Стресс.</p>"
     },
     "Runetan Floating Armor": {
-      "name": "Рунетанская Парящая Броня",
+      "name": "Рунетанский Парящий Доспех",
       "actions": {
         "Nn33zCIcWe6LQMDH": {
           "name": "Изменяющееся",
@@ -322,7 +322,7 @@
       "description": "<p><strong>Острое</strong>: При успешной атаке по цели Вплотную, добавьте d4 к броску урона.</p>"
     },
     "Tyris Soft Armor": {
-      "name": "Мягкая Броня Тайриса",
+      "name": "Мягкий Доспех Тайриса",
       "actions": {
         "Ch6IhuPewBeseGez": {
           "name": "Тихое",
