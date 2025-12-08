@@ -376,8 +376,7 @@
         "toLoadout": "Отправить в руку",
         "toVault": "Отправить в хранилище",
         "unequip": "Снять",
-        "useItem": "Использовать предмет",
-        "cancelBeastform": "Отменить звериную форму"
+        "useItem": "Использовать предмет"
       },
       "Countdown": {
         "addCountdown": "Добавить отсчёт",
@@ -399,9 +398,6 @@
                 },
                 "looping": {
                   "label": "Цикл"
-                },
-                "max": {
-                  "label": "Макс."
                 },
                 "start": {
                   "label": "Начало"
@@ -444,15 +440,11 @@
         "removeCountdownTitle": "Удалить отсчёт",
         "removeCountdownText": "Вы уверены, что хотите удалить отсчёт: {name}?",
         "current": "Текущее",
-        "max": "Макс.",
-        "currentCountdownValue": "Текущее: {value}",
-        "currentCountdownMax": "Макс.: {value}",
         "start": "Начальное",
         "startFormula": "Формула начального значения",
         "currentCountdownCurrent": "Текущее: {value}",
         "currentCountdownStart": "Начало: {value}",
         "category": "Категория",
-        "type": "Тип",
         "progressionType": "Тип прогрессии",
         "decreasing": "Убывающий",
         "looping": "Цикл",
@@ -460,7 +452,8 @@
         "hideNewCountdowns": "Скрывать новые"
       },
       "DaggerheartMenu": {
-        "title": "Инструменты Мастера"
+        "title": "Инструменты Мастера",
+        "refreshFeatures": "Восстановить способности"
       },
       "DeleteConfirmation": {
         "title": "Удалить {type} - {name}",
@@ -578,6 +571,7 @@
         },
         "navigateLevel": "К уровню {level}",
         "navigateToLevelup": "Вернуться к повышению уровня",
+        "finishLevelup": "Завершить повышение уровня",
         "navigateToSummary": "К сводке",
         "options": {
           "trait": "Получите бонус +1 к двум неотмеченным характеристикам и отметьте их.",
@@ -1830,7 +1824,7 @@
       "Advantage": {
         "full": "Преимущество",
         "plural": "Преимущества",
-        "short": "Прейм"
+        "short": "Преим"
       },
       "Adversary": {
         "singular": "Противник",
@@ -2183,6 +2177,7 @@
       },
       "hope": "Надежда",
       "hordeHp": "Раны орды",
+      "icon": "Иконка",
       "identify": "Личность",
       "imagePath": "Путь к изображению",
       "inactiveEffects": "Неактивные эффекты",
@@ -2219,6 +2214,7 @@
       "recovery": "Восстановление",
       "refresh": "Обновить",
       "reroll": "Перебросить",
+      "rerolled": "Переброшено",
       "rerollThing": "Перебросить {thing}",
       "resource": "Ресурс",
       "roll": "Бросок",
@@ -2233,7 +2229,7 @@
       "stress": "Стресс",
       "subclasses": "Подклассы",
       "success": "Успех",
-      "take": "Взять",
+      "take": "Получить",
       "Target": {
         "single": "Цель",
         "plural": "Цели"
@@ -2368,7 +2364,9 @@
         "evolvedDrag": "Перетащите форму сюда, чтобы развить её.",
         "hybridize": "Создать гибрид",
         "hybridizeFeatureTitle": "Гибридные свойства",
-        "hybridizeDrag": "Перетащите форму сюда для создания гибрида."
+        "hybridizeDrag": "Перетащите форму сюда для создания гибрида.",
+        "mainTrait": "Основная характеристика",
+        "traitBonus": "Бонус характеристики"
       },
       "Class": {
         "hopeFeatures": "Свойства надежды",
@@ -2584,7 +2582,6 @@
           }
         },
         "currency": {
-          "enabled": "Включить переопределения",
           "title": "Переопределения валюты",
           "currencyName": "Название валюты",
           "coinName": "Название монеты",
@@ -2627,10 +2624,8 @@
           "hint": "Настройка системной линейки для отображения дистанции в Daggerheart"
         },
         "appearance": {
-          "title": "Настройки внешнего вида",
           "label": "Настройки внешнего вида",
           "hint": "Изменение внешнего вида различных частей системы",
-          "name": "Настройки внешнего вида",
           "duality": "Броски дуальности",
           "diceSoNice": {
             "title": "Dice So Nice",
@@ -2743,7 +2738,8 @@
           "selectMember": "Выберите участника",
           "rerollTitle": "Перебросить групповой бросок",
           "rerollContent": "Вы уверены, что хотите перебросить вашу проверку {trait}?",
-          "rerollTooltip": "Перебросить"
+          "rerollTooltip": "Перебросить",
+          "wholePartySelected": "Выбрана вся группа"
         },
         "healingRoll": {
           "title": "Исцеление - {damage}",
@@ -2943,19 +2939,5 @@
         "immune": "Иммунитет"
       }
     }
-  },
-  "Damage": "Урон",
-  "Description": "Описание",
-  "Evasion": "Уклонение",
-  "Finish Levelup": "Завершить повышение уровня",
-  "Icon": "Иконка",
-  "Main Trait": "Основная характеристика",
-  "Refresh Features": "Восстановление способностей",
-  "Reroll": "Перебросить",
-  "Rerolled": "Переброшено",
-  "Tag Team Roll": "Командный бросок",
-  "Take": "Принять",
-  "The whole party is selected": "Выбрана вся группа",
-  "Trait Bonus": "Бонус характеристики",
-  "Use": "Использовать"
+  }
 }
