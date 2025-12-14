@@ -1867,6 +1867,7 @@
         "plural": "Costs"
       },
       "Damage": {
+        "massive": "Massive",
         "severe": "Severe",
         "major": "Major",
         "minor": "Minor",
@@ -2583,9 +2584,12 @@
         },
         "currency": {
           "title": "Currency Overrides",
+          "changeIcon": "Change Currency Icon",
           "currencyName": "Currency Name",
           "coinName": "Coin Name",
           "handfulName": "Handful Name",
+          "iconName": "Icon Name",
+          "iconNameHint": "Icons are from fontawesome",
           "bagName": "Bag Name",
           "chestName": "Chest Name"
         },
@@ -2647,6 +2651,11 @@
           "hint": "Apply variant rules from the Daggerheart system",
           "name": "Variant Rules",
           "actionTokens": "Action Tokens"
+        },
+        "SpotlightRequestQueue": {
+          "name": "Spotlight Request Queue",
+          "label": "Spotlight Request Queue",
+          "hint": "Adds more structure to spotlight requests by ordering them from oldest to newest"
         }
       },
       "Resources": {
@@ -2663,6 +2672,12 @@
             },
             "tokens": {
               "label": "Tokens"
+            }
+          },
+          "massiveDamage": {
+            "title": "Massive Damage",
+            "enabled": {
+              "label": "Enabled"
             }
           }
         }

@@ -3287,7 +3287,13 @@
       "items": {
         "Pb3qWLBJmpOmoKq0": {
           "name": "Won't See it Coming",
-          "description": "<p> The Assassin deals direct damage while they’re <em>Hidden</em>.</p>"
+          "description": "<p> The Assassin deals direct damage while they’re <em>Hidden</em>.</p>",
+          "actions": {
+            "xFBE0jLf96fbCY7K": {
+              "name": "Hidden attack",
+              "description": "<p>The Assassin deals direct damage while they’re <em>Hidden</em>.</p>"
+            }
+          }
         },
         "za6Qr0CjI9Kb4I0U": {
           "name": "Strike as One",
@@ -3701,6 +3707,10 @@
             "LUNsI29woLk4m2wo": {
               "name": "Curse",
               "description": "<p><strong>Spend a Fear</strong> to curse a target within Very Close range with a necrotic Deathlock until the end of the scene. Attacks made by the Hunter against a Deathlocked target deal direct damage. The Hunter can only maintain one Deathlock at a time.</p>"
+            },
+            "zLKfwa8a2YBRLKAF": {
+              "name": "Deathlocked attack",
+              "description": "<p> Attacks made by the Hunter against a Deathlocked target deal direct damage.</p>"
             }
           },
           "effects": {
