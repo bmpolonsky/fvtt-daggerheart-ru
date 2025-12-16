@@ -19,7 +19,7 @@ function createWorkspace() {
 }
 
 function runUpdater(moduleDir) {
-  execFileSync("node", ["../scripts/update_translations.js"], {
+  execFileSync("node", ["../scripts/update_translations_full.js"], {
     cwd: moduleDir,
     env: {
       ...process.env,
@@ -48,7 +48,9 @@ function getActionDescription(value) {
   return "";
 }
 
-function tmpDataPath(moduleDir, file) {
+function tmpDataPath(moduleDir, file, lang = "ru") {
+  const modern = path.join(moduleDir, "..", "tmp_data", "api", lang, file);
+  if (fs.existsSync(modern)) return modern;
   return path.join(moduleDir, "..", "tmp_data", "api", file);
 }
 

@@ -129,31 +129,30 @@ const TRANSFORMATION_ENTRY_ALIASES = {
   demigodichorofthegod: "demigodichorofthegods"
 };
 
-const UNSTOPPABLE_NOTE_HTML =
-  "<p>><strong>Примечание:</strong> если ваша кость Неудержимости d4 и на данный момент значение 4 находится сверху, вы убираете кость в следующий раз, когда значение пришлось бы увеличить. Но если ваша кость увеличилась до d6 и значение 4 находится сверху, вы переворачиваете кость на 5 в следующий раз, когда увеличиваете значение. В этом случае вы убираете кость, когда её значение нужно повысить до значения больше 6.</p>";
-
 const MANUAL_ENTRY_PATCHES = {
   classes: {
     Bard: {
       descriptionPrefix:
-        "<p>><strong>Примечание:</strong> Начиная с 5-го уровня, используйте способность «Сплочение (уровень 5)» вместо базовой. На данный момент система не производит замену автоматически.</p>"
+        "<p><strong>Примечание:</strong> Начиная с 5-го уровня, используйте способность «Сплочение (уровень 5)» вместо базовой. На данный момент система не производит замену автоматически.</p>"
     },
     Evolution: {
       descriptionSuffix:
-        "<p>><strong>Примечание:</strong> Не забудьте вручную увеличить выбранную Характеристику на +1 на вашем листе персонажа. Система пока не применяет этот бонус автоматически.</p>",
-      actionSuffix:
-        "<p>><strong>Примечание:</strong> Не забудьте вручную увеличить выбранную Характеристику на +1 на вашем листе персонажа. Система пока не применяет этот бонус автоматически.</p>"
-    },
-    Unstoppable: {
-      descriptionPrefix:
-        "<p>><strong>Примечание:</strong> Механика Кости Неудержимости на данный момент не автоматизирована в системе. Вам необходимо отслеживать её значение вручную.</p>",
+        "<p><strong>Примечание:</strong> включите один из эффектов «Эволюция: ...» на вкладке эффектов, например «Эволюция: Проворность», чтобы применить бонус.</p>"
+    }
+  },
+  communities: {
+    "Found Family": {
       descriptionReplacements: [
         {
-          pattern: /<p>><strong>Совет:[\s\S]*?<\/p>/i,
-          value: UNSTOPPABLE_NOTE_HTML
+          pattern:
+            /<p>В любой момент, когда вы найдете сообщество, частью которого вы когда-то были, или присоединитесь к новому сообществу, вы можете навсегда обменять эту карту сообщества на новую\.<\/p>/giu,
+          value: ""
         }
-      ],
-      descriptionSuffix: UNSTOPPABLE_NOTE_HTML
+      ]
+    },
+    Reborne: {
+      descriptionSuffix:
+        "<p>В любой момент, когда вы найдете сообщество, частью которого вы когда-то были, или присоединитесь к новому сообществу, вы можете навсегда обменять эту карту сообщества на новую.</p>"
     }
   }
 };
@@ -295,6 +294,7 @@ const BASE_DIR = path.resolve(__dirname, "..");
 const DATA_DIR = path.join(BASE_DIR, "tmp_data"); // Временная папка для скачанных данных
 const API_CACHE_DIR = path.join(DATA_DIR, "api"); // Отдельная папка для API-данных
 const TRANSLATIONS_DIR = path.join(BASE_DIR, "module", "translations"); // Папка с файлами переводов
+const ORIGINAL_DIR = path.join(BASE_DIR, "original");
 
 /**
  * Нормализует текст для использования в качестве ключа:
@@ -677,6 +677,30 @@ function fragmentHasQuestion(html) {
   return text.includes("?");
 }
 
+function extractVisibleText(html) {
+  if (!html) return "";
+  return stripLinks(html)
+    .replace(/<[^>]+>/g, " ")
+    .replace(/&nbsp;/gi, " ")
+    .replace(/\s+/g, " ")
+    .trim();
+}
+
+function extractSecretTexts(html) {
+  if (!html) return [];
+  const matches = Array.from(html.matchAll(SECRET_SECTION_RE));
+  if (!matches.length) return [];
+  const texts = [];
+  for (const match of matches) {
+    const block = match[0] || "";
+    const innerMatch = block.match(/^<section[^>]*>([\s\S]*?)<\/section>$/i);
+    const inner = innerMatch ? innerMatch[1].trim() : "";
+    const text = extractVisibleText(inner);
+    if (text) texts.push(text);
+  }
+  return texts;
+}
+
 function removePlainTextOutsideSecrets(html, plainText) {
   if (!html || !plainText) {
     return { html, removed: false };
@@ -710,7 +734,7 @@ function dedupeSecretContent(html) {
     const innerMatch = block.match(/^<section[^>]*>([\s\S]*?)<\/section>$/i);
     const inner = innerMatch ? innerMatch[1].trim() : "";
     if (!inner) continue;
-    const plainInner = stripLinks(inner).replace(/\s+/g, " ").trim();
+    const plainInner = extractVisibleText(inner);
     if (!plainInner) continue;
     const removal = removePlainTextOutsideSecrets(result, plainInner);
     result = removal.html;
@@ -764,9 +788,7 @@ function preserveSecretSectionsFromSource(newHtml, oldHtml) {
       if (idx !== -1) {
         result = `${result.slice(0, idx)}${result.slice(idx + inner.length)}`;
       } else {
-        const plainInner = stripLinks(inner)
-          .replace(/\s+/g, " ")
-          .trim();
+        const plainInner = extractVisibleText(inner);
         if (plainInner) {
           const removalResult = removePlainTextOutsideSecrets(result, plainInner);
           result = removalResult.html;
@@ -998,7 +1020,40 @@ function ensureHtmlFragment(html, fragment, { position }) {
   if (!fragment) return html || "";
   const base = html || "";
   if (base.includes(fragment)) return base;
+  const basePlain = extractPlainText(base);
+  const fragmentPlain = extractPlainText(fragment);
+  if (fragmentPlain && basePlain && basePlain.includes(fragmentPlain)) {
+    return base;
+  }
   return position === "prefix" ? `${fragment}${base}` : `${base}${fragment}`;
+}
+
+function applyManualDescriptionPatches(sectionKey, entryKey, html) {
+  if (html === null || html === undefined) return html;
+  const sectionConfig = MANUAL_ENTRY_PATCHES[sectionKey];
+  if (!sectionConfig) return html;
+  const patch = sectionConfig[entryKey];
+  if (!patch) return html;
+  let updated = html;
+  if (patch.descriptionReplacements && updated) {
+    for (const replacement of patch.descriptionReplacements) {
+      if (!replacement) continue;
+      const { pattern, value } = replacement;
+      if (value === undefined || value === null) continue;
+      if (pattern instanceof RegExp) {
+        updated = updated.replace(pattern, value);
+      } else if (pattern) {
+        updated = updated.replace(pattern, value);
+      }
+    }
+  }
+  if (patch.descriptionPrefix) {
+    updated = ensureHtmlFragment(updated, patch.descriptionPrefix, { position: "prefix" });
+  }
+  if (patch.descriptionSuffix) {
+    updated = ensureHtmlFragment(updated, patch.descriptionSuffix, { position: "suffix" });
+  }
+  return updated;
 }
 
 function applyManualEntryPatches(sectionKey, entryKey, entry) {
@@ -1007,24 +1062,7 @@ function applyManualEntryPatches(sectionKey, entryKey, entry) {
   if (!sectionConfig) return;
   const patch = sectionConfig[entryKey];
   if (!patch) return;
-  if (patch.descriptionReplacements && entry.description) {
-    for (const replacement of patch.descriptionReplacements) {
-      if (!replacement) continue;
-      const { pattern, value } = replacement;
-      if (value === undefined || value === null) continue;
-      if (pattern instanceof RegExp) {
-        entry.description = entry.description.replace(pattern, value);
-      } else if (pattern) {
-        entry.description = entry.description.replace(pattern, value);
-      }
-    }
-  }
-  if (patch.descriptionPrefix) {
-    entry.description = ensureHtmlFragment(entry.description, patch.descriptionPrefix, { position: "prefix" });
-  }
-  if (patch.descriptionSuffix) {
-    entry.description = ensureHtmlFragment(entry.description, patch.descriptionSuffix, { position: "suffix" });
-  }
+  entry.description = applyManualDescriptionPatches(sectionKey, entryKey, entry.description);
   if (entry.actions && (patch.actionPrefix || patch.actionSuffix)) {
     for (const actionId of Object.keys(entry.actions)) {
       let updated = getActionHtml(entry.actions, actionId);
@@ -1067,12 +1105,29 @@ function setHtmlField(target, key, html) {
     delete target[key];
     return;
   }
-  let merged = mergeFoundryTags(target[key], sanitized);
+  const existingRaw = typeof target[key] === "string" ? target[key] : "";
+  const existingSanitized = existingRaw ? sanitizeHtml(existingRaw) : "";
+  let merged = mergeFoundryTags(existingRaw, sanitized);
   merged = collapseAdjacentInlineTags(merged, "em");
   merged = collapseAdjacentInlineTags(merged, "strong");
   if (!hasVisibleText(merged)) {
     delete target[key];
     return;
+  }
+  const normalisePlain = (value) => extractPlainText(value);
+  if (existingRaw) {
+    const existingPlain = normalisePlain(existingSanitized || existingRaw);
+    const mergedPlain = normalisePlain(merged);
+    if (existingPlain && mergedPlain && existingPlain === mergedPlain) {
+      const hasLinks =
+        /<a[\s>]/i.test(existingRaw) || /\[[^\]]+\]\([^)]+\)/.test(existingRaw);
+      if (hasLinks && existingSanitized && existingSanitized !== existingRaw) {
+        target[key] = existingSanitized;
+      } else {
+        target[key] = existingRaw;
+      }
+      return;
+    }
   }
   target[key] = merged;
 }
@@ -1213,11 +1268,6 @@ function applyFeatureToItemEntry(itemEntry, feature) {
       : markdownToHtml(feature.main_body || "");
   if (body) {
     setHtmlField(itemEntry, "description", body);
-    if (itemEntry.actions) {
-      for (const actionId of Object.keys(itemEntry.actions)) {
-        setActionHtml(itemEntry.actions, actionId, body);
-      }
-    }
   } else {
     delete itemEntry.description;
   }
@@ -1303,11 +1353,6 @@ function _updateFeature(entry, featureInfo) {
   if (featureInfo.description !== null && featureInfo.description !== undefined) {
     if (featureInfo.description) {
       setHtmlField(entry, "description", featureInfo.description);
-      if (entry.actions) {
-        for (const actionId of Object.keys(entry.actions)) {
-          setActionHtml(entry.actions, actionId, featureInfo.description);
-        }
-      }
     } else {
       delete entry.description;
     }
@@ -1333,15 +1378,33 @@ function markdownToHtml(text) {
   const lines = html.split("\n");
   const out = [];
   let inList = false;
+  let inQuote = false;
 
   for (const rawLine of lines) {
-    const line = rawLine.trim();
+    let line = rawLine.trim();
+    const isQuote = line.startsWith(">");
+    if (isQuote) line = line.replace(/^>\s*/, "");
     if (!line) {
       if (inList) {
         out.push("</ul>");
         inList = false;
       }
+      if (inQuote) {
+        out.push("</blockquote>");
+        inQuote = false;
+      }
       continue;
+    }
+    if (isQuote && !inQuote) {
+      out.push("<blockquote>");
+      inQuote = true;
+    } else if (!isQuote && inQuote) {
+      if (inList) {
+        out.push("</ul>");
+        inList = false;
+      }
+      out.push("</blockquote>");
+      inQuote = false;
     }
     if (/^[-*]\s+/.test(line)) {
       if (!inList) {
@@ -1358,6 +1421,7 @@ function markdownToHtml(text) {
     }
   }
   if (inList) out.push("</ul>");
+  if (inQuote) out.push("</blockquote>");
   let resultHtml = out.join("");
   resultHtml = collapseAdjacentInlineTags(resultHtml, "em");
   return stripLinks(resultHtml);
@@ -1569,7 +1633,9 @@ function renderTransformationDescription(info) {
 
 function extractUuidParagraphs(html) {
   if (!html) return [];
-  const matches = html.match(/<p[^>]*>[\s\S]*?@UUID\[[^\]]+\][\s\S]*?<\/p>/gi);
+  const matches = html.match(
+    /<p[^>]*>(?:(?!<\/p>)[\s\S])*?@UUID\[[^\]]+\](?:(?!<\/p>)[\s\S])*?<\/p>/gi
+  );
   return matches ? matches : [];
 }
 
@@ -1735,6 +1801,26 @@ async function main() {
   ] = await Promise.all(ENDPOINTS.map((endpoint) => loadApi(endpoint)));
 
   const voidTranslationSpecs = await detectVoidTranslationFiles();
+
+  const originalAdversariesByKey = new Map();
+  try {
+    const originalPath = path.join(ORIGINAL_DIR, TRANSLATION_FILES.adversaries);
+    const raw = JSON.parse(await fs.readFile(originalPath, "utf-8"));
+    for (const [key, entry] of Object.entries((raw && raw.entries) || {})) {
+      const norm = normalize(key);
+      if (norm) {
+        originalAdversariesByKey.set(norm, entry);
+      }
+    }
+  } catch (err) {
+    // Optional: original snapshots may be missing in some setups.
+  }
+
+  const adversaryEnBySlug = new Map();
+  for (const entry of adversaryData.en || []) {
+    const slug = entry && entry.slug ? entry.slug : null;
+    if (slug) adversaryEnBySlug.set(slug, entry);
+  }
 
   const translationFileInfos = [
     ...Object.entries(TRANSLATION_FILES).map(([key, file]) => ({
@@ -2048,7 +2134,20 @@ async function main() {
         entry.name = sanitizeName(classInfo.name);
         if (classInfo.description !== null && classInfo.description !== undefined) {
           if (classInfo.description) {
-            setHtmlField(entry, "description", classInfo.description);
+            const existing = entry.description;
+            const incoming = classInfo.description;
+            let merged = incoming;
+            if (existing && /<h\d\b/i.test(existing) && !/<h\d\b/i.test(incoming)) {
+              let index = existing.search(/<p>\s*<\/p>\s*<h\d\b/i);
+              if (index === -1) {
+                index = existing.search(/<h\d\b/i);
+              }
+              if (index > 0) {
+                merged = `${incoming}${existing.slice(index)}`;
+              }
+            }
+            merged = applyManualDescriptionPatches("classes", key, merged);
+            setHtmlField(entry, "description", merged);
           } else {
             delete entry.description;
           }
@@ -2063,12 +2162,8 @@ async function main() {
         if (featureInfo.name) entry.name = sanitizeName(featureInfo.name);
         if (featureInfo.description !== null && featureInfo.description !== undefined) {
           if (featureInfo.description) {
-            setHtmlField(entry, "description", featureInfo.description);
-            if (entry.actions) {
-              for (const actionId of Object.keys(entry.actions)) {
-                setActionHtml(entry.actions, actionId, featureInfo.description);
-              }
-            }
+            const patched = applyManualDescriptionPatches("classes", key, featureInfo.description);
+            setHtmlField(entry, "description", patched);
           } else {
             delete entry.description;
           }
@@ -2080,12 +2175,8 @@ async function main() {
         const info = featureMap[normalize("Rally")];
         entry.name = `${sanitizeName(info.name)} (уровень 5)`;
         if (info.description) {
-          setHtmlField(entry, "description", info.description);
-          if (entry.actions) {
-            for (const actionId of Object.keys(entry.actions)) {
-              setActionHtml(entry.actions, actionId, info.description);
-            }
-          }
+          const patched = applyManualDescriptionPatches("classes", key, info.description);
+          setHtmlField(entry, "description", patched);
         } else {
           delete entry.description;
         }
@@ -2101,7 +2192,6 @@ async function main() {
       // }
       if (itemOverride) {
         entry.name = itemOverride;
-        delete entry.description;
         delete entry.actions;
         handled = true;
       }
@@ -2115,12 +2205,11 @@ async function main() {
         }
         if (override.description !== undefined) {
           if (override.description) {
-            setHtmlField(entry, "description", override.description);
+            const patched = applyManualDescriptionPatches("classes", key, override.description);
+            setHtmlField(entry, "description", patched);
           } else {
             delete entry.description;
           }
-        } else {
-          delete entry.description;
         }
         delete entry.actions;
         handled = true;
@@ -2131,7 +2220,8 @@ async function main() {
         entry.name = sanitizeName(ruleInfo.name);
         if (ruleInfo.description !== null && ruleInfo.description !== undefined) {
           if (ruleInfo.description) {
-            setHtmlField(entry, "description", ruleInfo.description);
+            const patched = applyManualDescriptionPatches("classes", key, ruleInfo.description);
+            setHtmlField(entry, "description", patched);
           } else {
             delete entry.description;
           }
@@ -2173,11 +2263,6 @@ async function main() {
         if (featureInfo.description !== null && featureInfo.description !== undefined) {
           if (featureInfo.description) {
             setHtmlField(entry, "description", featureInfo.description);
-            if (entry.actions) {
-              for (const actionId of Object.keys(entry.actions)) {
-                setActionHtml(entry.actions, actionId, featureInfo.description);
-              }
-            }
           } else {
             delete entry.description;
           }
@@ -2197,7 +2282,15 @@ async function main() {
   }
 
   async function updateCommunitiesFile(path, { communityTop, featureMap }, stats) {
-    return updateEntries(path, updateTopWithFeatures(communityTop, featureMap), { stats });
+    return updateEntries(
+      path,
+      (norm, entry, key) => {
+        const handled = updateTopWithFeatures(communityTop, featureMap)(norm, entry, key);
+        applyManualEntryPatches("communities", key, entry);
+        return handled;
+      },
+      { stats }
+    );
   }
 
   function normaliseHtmlForComparison(html) {
@@ -2316,6 +2409,8 @@ async function main() {
         entry.name = sanitizeName(domainInfo.name);
         const raw = domainInfo.raw;
         const features = raw.features || [];
+        const normalisePlain = (value) => extractPlainText(value);
+        const previousDescPlain = normalisePlain(entry.description || "");
 
         // ШАГ 1: Собираем полное описание (без изменений)
         let fullDescSource = raw.main_body || "";
@@ -2326,6 +2421,17 @@ async function main() {
           }).join('\n\n');
         }
         const fullDescHtml = markdownToHtml(fullDescSource);
+        // needsActionsRefresh должен учитывать Foundry-теги (@Template/@UUID/[[/r]]) которые
+        // сохраняются через mergeFoundryTags внутри setHtmlField. Иначе будем считать, что
+        // описание "изменилось" на каждом запуске только из-за отсутствия этих тегов в API.
+        const existingDescRaw = typeof entry.description === "string" ? entry.description : "";
+        const incomingSanitized = fullDescHtml ? sanitizeHtml(fullDescHtml) : "";
+        let mergedForCompare = incomingSanitized ? mergeFoundryTags(existingDescRaw, incomingSanitized) : "";
+        mergedForCompare = collapseAdjacentInlineTags(mergedForCompare, "em");
+        mergedForCompare = collapseAdjacentInlineTags(mergedForCompare, "strong");
+        const apiDescPlain = normalisePlain(mergedForCompare || fullDescHtml || "");
+        const needsActionsRefresh =
+          Boolean(apiDescPlain) && previousDescPlain !== apiDescPlain;
         if (fullDescHtml) {
           setHtmlField(entry, "description", fullDescHtml);
         } else {
@@ -2340,73 +2446,85 @@ async function main() {
         }
 
         // ШАГ 2: Обрабатываем 'actions' с новой "гибкой" логикой
-        if (entry.actions) {
+        const splitterConfig = DOMAIN_ACTION_SPLITTERS[norm];
+        if (entry.actions && needsActionsRefresh) {
           const oldActionIds = Object.keys(entry.actions);
-          const numActions = oldActionIds.length;
-          if (numActions) {
+          if (oldActionIds.length) {
             const previous = oldDomainActions[key] || {};
-            const splitterConfig = DOMAIN_ACTION_SPLITTERS[norm];
-            const forceUnique = splitterConfig?.forceUnique;
-            const orderInfo = forceUnique
-              ? { uniqueIds: oldActionIds.slice(), duplicateMap: {} }
-              : deriveActionOrder(entry.actions, previous);
-            const { uniqueIds, duplicateMap } = orderInfo;
-            const desiredUniqueCount = uniqueIds.length;
-            let segments = [];
+            const describedIds = oldActionIds.filter((actionId) => {
+              const prevDesc = extractActionDescription(previous[actionId]);
+              const currentDesc = extractActionDescription(entry.actions[actionId]);
+              return Boolean((prevDesc && prevDesc.trim()) || (currentDesc && currentDesc.trim()));
+            });
 
-            if (splitterConfig?.split) {
-              const customSegments = splitterConfig.split({
-                markdown: fullDescSource,
-                html: fullDescHtml,
-                desiredCount: desiredUniqueCount,
-                features,
-                raw
-              });
-              segments = renderMarkdownSegments(customSegments, desiredUniqueCount);
-            }
+            if (describedIds.length) {
+              const forceUnique = splitterConfig?.forceUnique;
+              const orderInfo = forceUnique
+                ? { uniqueIds: describedIds.slice(), duplicateMap: {} }
+                : (() => {
+                  const uniqueIds = [];
+                  const duplicateMap = {};
+                  const seen = new Map();
+                  for (const actionId of describedIds) {
+                    const source =
+                      previous && Object.prototype.hasOwnProperty.call(previous, actionId)
+                        ? extractActionDescription(previous[actionId])
+                        : getActionHtml(entry.actions, actionId);
+                    const key = normaliseHtmlForComparison(source) || actionId;
+                    if (seen.has(key)) {
+                      duplicateMap[actionId] = seen.get(key);
+                    } else {
+                      seen.set(key, actionId);
+                      uniqueIds.push(actionId);
+                    }
+                  }
+                  return { uniqueIds, duplicateMap };
+                })();
 
-            if (!segments.length) {
-              if (desiredUniqueCount <= 1) {
-                if (fullDescHtml && desiredUniqueCount === 1) {
-                  segments = [fullDescHtml];
-                }
-              } else {
-                segments = buildSegmentsForActions(features, fullDescSource, desiredUniqueCount);
+              const { uniqueIds, duplicateMap } = orderInfo;
+              const desiredUniqueCount = uniqueIds.length;
+              let segments = [];
+
+              if (splitterConfig?.split) {
+                const customSegments = splitterConfig.split({
+                  markdown: fullDescSource,
+                  html: fullDescHtml,
+                  desiredCount: desiredUniqueCount,
+                  features,
+                  raw
+                });
+                segments = renderMarkdownSegments(customSegments, desiredUniqueCount);
               }
-            }
 
-            if (!segments.length && fullDescHtml && desiredUniqueCount) {
-              segments = Array(desiredUniqueCount).fill(fullDescHtml);
-            }
-
-            if (segments.length) {
-              for (let i = 0; i < uniqueIds.length; i += 1) {
-                const actionId = uniqueIds[i];
-                const html = segments[i] || fullDescHtml;
-                if (html) {
-                  setActionHtml(entry.actions, actionId, html);
-                } else if (fullDescHtml) {
-                  setActionHtml(entry.actions, actionId, fullDescHtml);
+              if (!segments.length) {
+                if (desiredUniqueCount <= 1) {
+                  if (fullDescHtml && desiredUniqueCount === 1) {
+                    segments = [fullDescHtml];
+                  }
                 } else {
-                  delete entry.actions[actionId];
+                  segments = buildSegmentsForActions(features, fullDescSource, desiredUniqueCount);
                 }
               }
 
-              for (const [dupId, originalId] of Object.entries(duplicateMap)) {
-                const cloned = getActionHtml(entry.actions, originalId) || fullDescHtml;
-                if (cloned) {
-                  setActionHtml(entry.actions, dupId, cloned);
-                } else {
-                  delete entry.actions[dupId];
+              if (!segments.length && fullDescHtml && desiredUniqueCount) {
+                segments = Array(desiredUniqueCount).fill(fullDescHtml);
+              }
+
+              if (segments.length) {
+                for (let i = 0; i < uniqueIds.length; i += 1) {
+                  const actionId = uniqueIds[i];
+                  const html = segments[i] || fullDescHtml;
+                  if (html) {
+                    setActionHtml(entry.actions, actionId, html);
+                  }
                 }
-              }
-            } else if (entry.description) {
-              for (const actionId of oldActionIds) {
-                setActionHtml(entry.actions, actionId, entry.description);
-              }
-            } else {
-              for (const actionId of oldActionIds) {
-                delete entry.actions[actionId];
+
+                for (const [dupId, originalId] of Object.entries(duplicateMap)) {
+                  const cloned = getActionHtml(entry.actions, originalId) || fullDescHtml;
+                  if (cloned) {
+                    setActionHtml(entry.actions, dupId, cloned);
+                  }
+                }
               }
             }
           }
@@ -2472,11 +2590,6 @@ async function main() {
               const body = markdownToHtml(feature.main_body || "");
               if (body) {
                 setHtmlField(itemEntry, "description", body);
-                if (itemEntry.actions) {
-                  for (const actionId of Object.keys(itemEntry.actions)) {
-                    setActionHtml(itemEntry.actions, actionId, body);
-                  }
-                }
               } else {
                 delete itemEntry.description;
               }
@@ -2485,15 +2598,15 @@ async function main() {
         }
 
         // 3. Обновляем список действий с преимуществом
-        const ruAdvantages = parseAdvantagesList(raw.advantages);
-        if (ruAdvantages.length) {
-          entry.advantageOn = ruAdvantages.map((value) => capitalizeFirstLetter(value));
-        } else {
-          delete entry.advantageOn;
+        if (Object.prototype.hasOwnProperty.call(entry, "advantageOn")) {
+          const ruAdvantages = parseAdvantagesList(raw.advantages);
+          if (ruAdvantages.length) {
+            entry.advantageOn = ruAdvantages.map((value) => capitalizeFirstLetter(value));
+          }
         }
 
         // 4. Добавляем "Примеры"
-        if (raw && raw.examples) {
+        if (Object.prototype.hasOwnProperty.call(entry, "examples") && raw && raw.examples) {
           const examples = sanitizeHtml(stripLinks(raw.examples));
           if (examples) {
             entry.examples = examples;
@@ -2542,7 +2655,13 @@ async function main() {
     }, { stats });
   }
 
-  function translateAdversaryEntry(norm, entry, adversaryTop, featureMap) {
+  function translateAdversaryEntry(
+    norm,
+    entry,
+    adversaryTop,
+    featureMap,
+    { enBySlug, originalByKey } = {}
+  ) {
     if (!norm) return false;
     const info = adversaryTop[norm];
     if (info) {
@@ -2572,11 +2691,57 @@ async function main() {
       if (raw.slug === "battle-box") {
         applyBattleBoxOverrides(entry, raw);
       } else {
-        const featureList = ruFeatures.slice();
-        for (const itemEntry of Object.values(items)) {
-          const nextFeature = featureList.shift();
-          if (!nextFeature) break;
-          applyFeatureToItemEntry(itemEntry, nextFeature);
+        const enEntry = raw && raw.slug && enBySlug ? enBySlug.get(raw.slug) : null;
+        const originalEntry = originalByKey ? originalByKey.get(norm) : null;
+
+        if (
+          enEntry &&
+          originalEntry &&
+          originalEntry.items &&
+          ruFeatures.length &&
+          Array.isArray(enEntry.features) &&
+          enEntry.features.length
+        ) {
+          const ruById = new Map();
+          for (const feature of ruFeatures) {
+            if (!feature || feature.id === undefined || feature.id === null) continue;
+            ruById.set(feature.id, feature);
+          }
+
+          const enNameToRuFeature = new Map();
+          for (const enFeature of enEntry.features) {
+            if (!enFeature || enFeature.id === undefined || enFeature.id === null) continue;
+            const ruFeature = ruById.get(enFeature.id);
+            if (!ruFeature) continue;
+            const key = normalize(cleanAdversaryItemName(enFeature.name || ""));
+            if (key && !enNameToRuFeature.has(key)) {
+              enNameToRuFeature.set(key, ruFeature);
+            }
+          }
+
+          const remaining = ruFeatures.slice();
+          for (const [itemId, itemEntry] of Object.entries(items)) {
+            if (!itemEntry) continue;
+            const originalItem = originalEntry.items[itemId];
+            const originalName = originalItem && originalItem.name ? originalItem.name : "";
+            const key = normalize(cleanAdversaryItemName(originalName));
+            let nextFeature = key ? enNameToRuFeature.get(key) : null;
+            if (!nextFeature) {
+              nextFeature = remaining.shift() || null;
+            } else {
+              const idx = remaining.indexOf(nextFeature);
+              if (idx >= 0) remaining.splice(idx, 1);
+            }
+            if (!nextFeature) break;
+            applyFeatureToItemEntry(itemEntry, nextFeature);
+          }
+        } else {
+          const featureList = ruFeatures.slice();
+          for (const itemEntry of Object.values(items)) {
+            const nextFeature = featureList.shift();
+            if (!nextFeature) break;
+            applyFeatureToItemEntry(itemEntry, nextFeature);
+          }
         }
       }
       applyActionOverrides(entry);
@@ -2615,12 +2780,22 @@ async function main() {
           let body = markdownToHtml(markdownSource);
           const previousDescription = itemEntry.description;
           if (previousDescription) {
-            const prevPlain = extractPlainText(previousDescription);
-            const nextPlain = extractPlainText(body);
-            if (prevPlain && nextPlain && prevPlain === nextPlain) {
+            const nextVisible = extractVisibleText(body);
+            const previousSecrets = extractSecretTexts(previousDescription);
+            if (
+              nextVisible &&
+              previousSecrets.length &&
+              previousSecrets.some((secretText) => secretText && nextVisible.includes(secretText))
+            ) {
               body = previousDescription;
             } else {
-              body = preserveSecretSectionsFromSource(body, previousDescription);
+              const prevPlain = extractPlainText(previousDescription);
+              const nextPlain = extractPlainText(body);
+              if (prevPlain && nextPlain && prevPlain === nextPlain) {
+                body = previousDescription;
+              } else {
+                body = preserveSecretSectionsFromSource(body, previousDescription);
+              }
             }
           }
           itemEntry.name = sanitizeName(cleanAdversaryItemName(feature.name || ""));
@@ -2665,8 +2840,13 @@ async function main() {
     return false;
   }
 
-  async function updateAdversariesFile(path, { adversaryTop, featureMap }, stats) {
-    return updateEntries(path, (norm, entry) => translateAdversaryEntry(norm, entry, adversaryTop, featureMap), { stats });
+  async function updateAdversariesFile(path, { adversaryTop, featureMap, enBySlug, originalByKey }, stats) {
+    return updateEntries(
+      path,
+      (norm, entry) =>
+        translateAdversaryEntry(norm, entry, adversaryTop, featureMap, { enBySlug, originalByKey }),
+      { stats }
+    );
   }
 
   async function updateEnvironmentsFile(path, { environmentTop, featureMap, potentialLabels }, stats) {
@@ -2809,7 +2989,8 @@ async function main() {
         updateAdversariesFile(filePaths.adversaries, {
           adversaryTop,
           featureMap: scopedFeatureMaps.adversary,
-          oldEntries: oldTranslations[TRANSLATION_FILES.adversaries]
+          originalByKey: originalAdversariesByKey,
+          enBySlug: adversaryEnBySlug
         }, statsByFile.adversaries)
     },
     {

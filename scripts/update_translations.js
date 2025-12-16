@@ -90,24 +90,26 @@ const MANUAL_ENTRY_PATCHES = {
   classes: {
     Bard: {
       descriptionPrefix:
-        "<p>><strong>Примечание:</strong> Начиная с 5-го уровня, используйте способность «Сплочение (уровень 5)» вместо базовой. На данный момент система не производит замену автоматически.</p>"
+        "<p><strong>Примечание:</strong> Начиная с 5-го уровня, используйте способность «Сплочение (уровень 5)» вместо базовой. На данный момент система не производит замену автоматически.</p>"
     },
     Evolution: {
       descriptionSuffix:
-        "<p>><strong>Примечание:</strong> Не забудьте вручную увеличить выбранную Характеристику на +1 на вашем листе персонажа. Система пока не применяет этот бонус автоматически.</p>"
-    },
-    Unstoppable: {
-      descriptionPrefix:
-        "<p>><strong>Примечание:</strong> Механика Кости Неудержимости на данный момент не автоматизирована в системе. Вам необходимо отслеживать её значение вручную.</p>",
+        "<p><strong>Примечание:</strong> включите один из эффектов «Эволюция: ...» на вкладке эффектов, например «Эволюция: Проворность», чтобы применить бонус.</p>"
+    }
+  },
+  communities: {
+    "Found Family": {
       descriptionReplacements: [
         {
-          pattern: /<p>><strong>Совет:[\s\S]*?<\/p>/i,
-          value:
-            "<p>><strong>Примечание:</strong> если ваша кость Неудержимости d4 и на данный момент значение 4 находится сверху, вы убираете кость в следующий раз, когда значение пришлось бы увеличить. Но если ваша кость увеличилась до d6 и значение 4 находится сверху, вы переворачиваете кость на 5 в следующий раз, когда увеличиваете значение. В этом случае вы убираете кость, когда её значение нужно повысить до значения больше 6.</p>"
+          pattern:
+            /<p>В любой момент, когда вы найдете сообщество, частью которого вы когда-то были, или присоединитесь к новому сообществу, вы можете навсегда обменять эту карту сообщества на новую\.<\/p>/giu,
+          value: ""
         }
-      ],
+      ]
+    },
+    Reborne: {
       descriptionSuffix:
-        "<p>><strong>Примечание:</strong> если ваша кость Неудержимости d4 и на данный момент значение 4 находится сверху, вы убираете кость в следующий раз, когда значение пришлось бы увеличить. Но если ваша кость увеличилась до d6 и значение 4 находится сверху, вы переворачиваете кость на 5 в следующий раз, когда увеличиваете значение. В этом случае вы убираете кость, когда её значение нужно повысить до значения больше 6.</p>"
+        "<p>В любой момент, когда вы найдете сообщество, частью которого вы когда-то были, или присоединитесь к новому сообществу, вы можете навсегда обменять эту карту сообщества на новую.</p>"
     }
   }
 };
@@ -606,10 +608,27 @@ function setHtmlField(target, key, html) {
   if (html === null || html === undefined) return;
   const sanitized = sanitizeHtml(html);
   if (!sanitized) return;
-  let merged = mergeFoundryTags(target[key], sanitized);
+  const existingRaw = typeof target[key] === "string" ? target[key] : "";
+  const existingSanitized = existingRaw ? sanitizeHtml(existingRaw) : "";
+  let merged = mergeFoundryTags(existingRaw, sanitized);
   merged = collapseAdjacentInlineTags(merged, "em");
   merged = collapseAdjacentInlineTags(merged, "strong");
   if (!hasVisibleText(merged)) return;
+  const normalisePlain = (value) => extractPlainText(value);
+  if (existingRaw) {
+    const existingPlain = normalisePlain(existingSanitized || existingRaw);
+    const mergedPlain = normalisePlain(merged);
+    if (existingPlain && mergedPlain && existingPlain === mergedPlain) {
+      const hasLinks =
+        /<a[\s>]/i.test(existingRaw) || /\[[^\]]+\]\([^)]+\)/.test(existingRaw);
+      if (hasLinks && existingSanitized && existingSanitized !== existingRaw) {
+        target[key] = existingSanitized;
+      } else {
+        target[key] = existingRaw;
+      }
+      return;
+    }
+  }
   target[key] = merged;
 }
 
@@ -669,15 +688,33 @@ function markdownToHtml(text) {
   const lines = html.split("\n");
   const out = [];
   let inList = false;
+  let inQuote = false;
 
   for (const rawLine of lines) {
-    const line = rawLine.trim();
+    let line = rawLine.trim();
+    const isQuote = line.startsWith(">");
+    if (isQuote) line = line.replace(/^>\s*/, "");
     if (!line) {
       if (inList) {
         out.push("</ul>");
         inList = false;
       }
+      if (inQuote) {
+        out.push("</blockquote>");
+        inQuote = false;
+      }
       continue;
+    }
+    if (isQuote && !inQuote) {
+      out.push("<blockquote>");
+      inQuote = true;
+    } else if (!isQuote && inQuote) {
+      if (inList) {
+        out.push("</ul>");
+        inList = false;
+      }
+      out.push("</blockquote>");
+      inQuote = false;
     }
     if (/^[-*]\s+/.test(line)) {
       if (!inList) {
@@ -694,6 +731,7 @@ function markdownToHtml(text) {
     }
   }
   if (inList) out.push("</ul>");
+  if (inQuote) out.push("</blockquote>");
   let resultHtml = out.join("");
   resultHtml = collapseAdjacentInlineTags(resultHtml, "em");
   return stripLinks(resultHtml);
@@ -910,7 +948,9 @@ function renderTransformationDescription(info) {
 
 function extractUuidParagraphs(html) {
   if (!html) return [];
-  const matches = html.match(/<p[^>]*>[\s\S]*?@UUID\[[^\]]+\][\s\S]*?<\/p>/gi);
+  const matches = html.match(
+    /<p[^>]*>(?:(?!<\/p>)[\s\S])*?@UUID\[[^\]]+\](?:(?!<\/p>)[\s\S])*?<\/p>/gi
+  );
   return matches ? matches : [];
 }
 
@@ -1080,31 +1120,47 @@ function applyManualEntryPatches(sectionKey, entryKey, entry) {
   if (!sectionConfig) return;
   const patch = sectionConfig[entryKey];
   if (!patch) return;
-  if (patch.descriptionReplacements && entry.description) {
-    for (const replacement of patch.descriptionReplacements) {
-      if (!replacement) continue;
-      const { pattern, value } = replacement;
-      if (value === undefined || value === null) continue;
-      if (pattern instanceof RegExp) {
-        entry.description = entry.description.replace(pattern, value);
-      } else if (pattern) {
-        entry.description = entry.description.replace(pattern, value);
-      }
-    }
-  }
-  if (patch.descriptionPrefix) {
-    entry.description = ensureHtmlFragment(entry.description, patch.descriptionPrefix, { position: "prefix" });
-  }
-  if (patch.descriptionSuffix) {
-    entry.description = ensureHtmlFragment(entry.description, patch.descriptionSuffix, { position: "suffix" });
-  }
+  entry.description = applyManualDescriptionPatches(sectionKey, entryKey, entry.description);
 }
 
 function ensureHtmlFragment(html, fragment, { position }) {
   if (!fragment) return html || "";
   const base = html || "";
   if (base.includes(fragment)) return base;
+  const basePlain = extractPlainText(base);
+  const fragmentPlain = extractPlainText(fragment);
+  if (fragmentPlain && basePlain && basePlain.includes(fragmentPlain)) {
+    return base;
+  }
   return position === "prefix" ? `${fragment}${base}` : `${base}${fragment}`;
+}
+
+function applyManualDescriptionPatches(sectionKey, entryKey, html) {
+  if (html === null || html === undefined) return html;
+  const sectionConfig = MANUAL_ENTRY_PATCHES[sectionKey];
+  if (!sectionConfig) return html;
+  const patch = sectionConfig[entryKey];
+  if (!patch) return html;
+  let updated = html;
+  if (patch.descriptionReplacements && updated) {
+    for (const replacement of patch.descriptionReplacements) {
+      if (!replacement) continue;
+      const { pattern, value } = replacement;
+      if (value === undefined || value === null) continue;
+      if (pattern instanceof RegExp) {
+        updated = updated.replace(pattern, value);
+      } else if (pattern) {
+        updated = updated.replace(pattern, value);
+      }
+    }
+  }
+  if (patch.descriptionPrefix) {
+    updated = ensureHtmlFragment(updated, patch.descriptionPrefix, { position: "prefix" });
+  }
+  if (patch.descriptionSuffix) {
+    updated = ensureHtmlFragment(updated, patch.descriptionSuffix, { position: "suffix" });
+  }
+  return updated;
 }
 
 function defaultEquipmentDescription(ruEntry, enEntry) {
@@ -1196,7 +1252,8 @@ async function updateClassesFile(path, { classTop, featureMap, classItemsMap, ru
       if (classInfo) {
         entry.name = sanitizeName(classInfo.name);
         if (classInfo.description) {
-          setHtmlField(entry, "description", classInfo.description);
+          const patched = applyManualDescriptionPatches("classes", key, classInfo.description);
+          setHtmlField(entry, "description", patched);
         }
         applyClassQuestionLists(entry, classInfo.raw);
         handled = true;
@@ -1206,7 +1263,8 @@ async function updateClassesFile(path, { classTop, featureMap, classItemsMap, ru
       if (featureInfo) {
         if (featureInfo.name) entry.name = sanitizeName(featureInfo.name);
         if (featureInfo.description) {
-          setHtmlField(entry, "description", featureInfo.description);
+          const patched = applyManualDescriptionPatches("classes", key, featureInfo.description);
+          setHtmlField(entry, "description", patched);
         }
         handled = true;
       }
@@ -1215,7 +1273,8 @@ async function updateClassesFile(path, { classTop, featureMap, classItemsMap, ru
         const info = featureMap[normalize("Rally")];
         entry.name = `${sanitizeName(info.name)} (уровень 5)`;
         if (info.description) {
-          setHtmlField(entry, "description", info.description);
+          const patched = applyManualDescriptionPatches("classes", key, info.description);
+          setHtmlField(entry, "description", patched);
         }
         handled = true;
       }
@@ -1234,7 +1293,8 @@ async function updateClassesFile(path, { classTop, featureMap, classItemsMap, ru
           entry.name = override.name;
         }
         if (override.description) {
-          setHtmlField(entry, "description", override.description);
+          const patched = applyManualDescriptionPatches("classes", key, override.description);
+          setHtmlField(entry, "description", patched);
         }
         handled = true;
       }
@@ -1243,7 +1303,8 @@ async function updateClassesFile(path, { classTop, featureMap, classItemsMap, ru
       if (ruleInfo && (!handled || !entry.description)) {
         entry.name = sanitizeName(ruleInfo.name);
         if (ruleInfo.description) {
-          setHtmlField(entry, "description", ruleInfo.description);
+          const patched = applyManualDescriptionPatches("classes", key, ruleInfo.description);
+          setHtmlField(entry, "description", patched);
         }
         handled = true;
       }
@@ -1316,7 +1377,7 @@ async function updateAncestriesFile(path, { ancestryTop, featureMap }, stats) {
 async function updateCommunitiesFile(path, { communityTop, featureMap }, stats) {
   return updateEntries(
     path,
-    (norm, entry) => {
+    (norm, entry, key) => {
       if (!norm) return false;
       let handled = false;
       const topInfo = communityTop[norm];
@@ -1335,6 +1396,7 @@ async function updateCommunitiesFile(path, { communityTop, featureMap }, stats) 
         }
         handled = true;
       }
+      applyManualEntryPatches("communities", key, entry);
       return handled;
     },
     { stats }
