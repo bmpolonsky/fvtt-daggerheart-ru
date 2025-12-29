@@ -35,6 +35,7 @@
     }
   },
   "DAGGERHEART": {
+    "CharacterSheet": "Лист персонажа",
     "ACTIONS": {
       "TYPES": {
         "attack": {
@@ -651,6 +652,7 @@
       },
       "OwnershipSelection": {
         "title": "Выбор владельца - {name}",
+        "noPlayers": "Нет игроков для назначения владельца",
         "default": "Владение по умолчанию"
       },
       "ReactionRoll": {
@@ -677,6 +679,9 @@
         "insufficientHope": "У инициирующего персонажа недостаточно Надежды",
         "createTagTeam": "Создать командный бросок",
         "chatMessageRollTitle": "Бросок"
+      },
+      "TokenConfig": {
+        "actorSizeUsed": "Размер персонажа задан, он определяет габариты."
       }
     },
     "CLASS": {
@@ -686,11 +691,6 @@
       }
     },
     "CONFIG": {
-      "ActionType": {
-        "passive": "Пассивное",
-        "action": "Действие",
-        "reaction": "Реакция"
-      },
       "AdversaryTrait": {
         "relentless": {
           "name": "Неумолимый",
@@ -1099,6 +1099,12 @@
           "description": ""
         }
       },
+      "FeatureForm": {
+        "label": "Тип свойства",
+        "passive": "Пассивное",
+        "action": "Действие",
+        "reaction": "Реакция"
+      },
       "Gold": {
         "title": "Золото",
         "coins": "Монеты",
@@ -1211,6 +1217,14 @@
         "inFront": "Перед собой",
         "rect": "Прямоугольник",
         "ray": "Луч"
+      },
+      "TokenSize": {
+        "tiny": "Крошечный",
+        "small": "Маленький",
+        "medium": "Средний",
+        "large": "Большой",
+        "huge": "Огромный",
+        "gargantuan": "Гигантский"
       },
       "Traits": {
         "agility": {
@@ -2164,6 +2178,7 @@
       "fear": "Страх",
       "features": "Свойства",
       "formula": "Формула",
+      "general": "Общее",
       "gm": "Мастер",
       "healing": "Исцеление",
       "healingRoll": "Бросок исцеления",
@@ -2236,10 +2251,12 @@
         "plural": "Цели"
       },
       "title": "Название",
+      "tokenSize": "Размер токена",
       "total": "Итог",
       "traitModifier": "Модификатор Характеристики",
       "true": "Истина",
       "type": "Тип",
+      "typeSheet": "Системный лист {type}",
       "unarmed": "Безоружный",
       "unarmedAttack": "Безоружная атака",
       "unarmored": "Без брони",
@@ -2328,6 +2345,7 @@
           },
           "tokenSize": {
             "placeholder": "Используются размеры персонажа",
+            "disabledPlaceholder": "Задается размером персонажа",
             "height": {
               "label": "Высота"
             },
@@ -2367,7 +2385,9 @@
         "hybridizeFeatureTitle": "Гибридные свойства",
         "hybridizeDrag": "Перетащите форму сюда для создания гибрида.",
         "mainTrait": "Основная характеристика",
-        "traitBonus": "Бонус характеристики"
+        "traitBonus": "Бонус характеристики",
+        "evolvedTokenHint": "Токен развитой звериной формы основан на токене формы, в которую она эволюционирует",
+        "evolvedImagePlaceholder": "Будет использовано изображение формы, выбранной для эволюции"
       },
       "Class": {
         "hopeFeatures": "Свойства надежды",
@@ -2951,7 +2971,9 @@
         "companionPartnerLevelBlock": "Компаньону нужен назначенный напарник для повышения уровня.",
         "configureAttribution": "Настроить источники",
         "deleteItem": "Удалить предмет",
-        "immune": "Иммунитет"
+        "immune": "Иммунитет",
+        "middleClick": "[СКМ] Закрепить подсказку",
+        "tokenSize": "Размер токена на сцене"
       }
     }
   }
