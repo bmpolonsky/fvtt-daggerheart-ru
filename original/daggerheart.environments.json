@@ -570,7 +570,7 @@
         },
         "uqV1mTkJmXJwMYue": {
           "name": "Divine Guidance",
-          "description": "<p>A PC who prays to a deity while in the Hallowed Temple can make an Instinct Roll to receive answers. If the god they beseech isn’t welcome in this temple, the roll is made with disadvantage.</p><ul><li><p><strong>Critical Success:</strong> The PC gains clear information. Additionally, they gain [[/r 1d4]] Hope, which can be distributed between the party if they share the vision and guidance they received. </p></li><li><p><strong>Success with Hope:</strong> The PC receives clear information. </p></li><li><p><strong>Success with Fear:</strong> The PC receives brief flashes of insight and an emotional impression conveying an answer. </p></li><li><p><strong>Any Failure:</strong> The PC receives only vague flashes. They can mark a Stress to receive one clear image without context.</p></li></ul><pre><code>What does it feel like as you are touched by this vision? What feeling lingers after the images have passed?</code></pre>"
+          "description": "<p>A PC who prays to a deity while in the Hallowed Temple can make an Instinct Roll to receive answers. If the god they beseech isn’t welcome in this temple, the roll is made with disadvantage.</p><ul><li><p><strong>Critical Success:</strong> The PC gains clear information. Additionally, they gain [[/r 1d4]] Hope, which can be distributed between the party if they share the vision and guidance they received.</p></li><li><p><strong>Success with Hope:</strong> The PC receives clear information.</p></li><li><p><strong>Success with Fear:</strong> The PC receives brief flashes of insight and an emotional impression conveying an answer.</p></li><li><p><strong>Any Failure:</strong> The PC receives only vague flashes. They can mark a Stress to receive one clear image without context.</p></li></ul><section class=\"secret\" id=\"secret-EYCrn403Zbz0NQKo\"><p><em>What does it feel like as you are touched by this vision? What feeling lingers after the images have passed?</em></p></section>"
         },
         "vICfHK2urDQ2Jm8s": {
           "name": "Relentless Hope",
@@ -723,7 +723,7 @@
         },
         "QPezCAC18vIc5xRC": {
           "name": "Someone Comes to Town",
-          "description": "<p>Introduce a signifi cant NPC who wants to hire the party for something or who relates to a PC’s background. </p><section id=\"secret-DB6Th0yGCjAsAZp6\" class=\"secret\"><p><em>Did they know the PCs were here? What do they want in this town?</em></p></section>"
+          "description": "<p>Introduce a significant NPC who wants to hire the party for something or who relates to a PC’s background.</p><section class=\"secret\" id=\"secret-DB6Th0yGCjAsAZp6\"><p><em>Did they know the PCs were here? What do they want in this town?</em></p></section>"
         },
         "H3LNvVrUbsAkgjni": {
           "name": "Bar Fight",
