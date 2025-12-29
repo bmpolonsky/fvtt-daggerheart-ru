@@ -250,7 +250,7 @@ test(
 );
 
 test(
-  "equipment alias mapping (Elundrian Chain Mail) refreshes description",
+  "equipment mapping (Elundrian Chain Armor) refreshes description",
   withWorkspace(async ({ moduleDir }) => {
     const equipmentPath = tmpDataPath(moduleDir, "equipment.json");
     const equipmentData = readJson(equipmentPath);
@@ -270,7 +270,7 @@ test(
 
     const armors = readJson(path.join(moduleDir, "translations", "daggerheart.armors.json"));
     assert.ok(
-      armors.entries["Elundrian Chain Mail"].description.includes(marker),
+      armors.entries["Elundrian Chain Armor"].description.includes(marker),
       "armor description must use updated feature text"
     );
   })

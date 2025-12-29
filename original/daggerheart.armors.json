@@ -113,15 +113,6 @@
         }
       }
     },
-    "Elundrian Chain Mail": {
-      "name": "Elundrian Chain Mail",
-      "effects": {
-        "xGxqTCO8MjNq5Cw6": {
-          "name": "Warded",
-          "description": "You reduce incoming magic damage by your Armor Score before applying it to your damage thresholds."
-        }
-      }
-    },
     "Emberwoven Armor": {
       "name": "Emberwoven Armor",
       "actions": {
@@ -308,6 +299,15 @@
         "sY3W5JYspN5Du5ag": {
           "name": "Truthseeking",
           "description": "This armor glows when another creature within Close range tells a lie."
+        }
+      }
+    },
+    "Elundrian Chain Armor": {
+      "name": "Elundrian Chain Armor",
+      "effects": {
+        "xGxqTCO8MjNq5Cw6": {
+          "name": "Warded",
+          "description": "You reduce incoming magic damage by your Armor Score before applying it to your damage thresholds."
         }
       }
     }

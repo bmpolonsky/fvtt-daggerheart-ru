@@ -113,9 +113,7 @@ const SUBCLASS_NAME_ALIASES = {
 };
 
 // Алиасы для названий снаряжения.
-const EQUIPMENT_NAME_ALIASES = {
-  elundrianchainmail: "elundrianchainarmor"
-};
+const EQUIPMENT_NAME_ALIASES = {};
 
 // Алиасы для названий способностей.
 const FEATURE_NAME_ALIASES = {
