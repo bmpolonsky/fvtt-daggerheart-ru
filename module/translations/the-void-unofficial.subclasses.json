@@ -221,11 +221,11 @@
     },
     "Martial Artist": {
       "name": "Мастер Боевых Искусств",
-      "description": "<p>Вы изучили и освоили особые боевые стили, позволяя вашим движениям плавно перетекать друг в друга в бою.</p>"
+      "description": "<p>Вы изучили и освоили особые боевые стили, позволяя вашим движениям плавно перетекать друг в друга в бою.</p><p></p><p>Вы можете перетащить эти свойства на лист персонажа.</p><p></p><h2>Ранг 1</h2><p>@UUID[Compendium.the-void-unofficial.subclasses.Item.MHKcMoI1FOlEbi7M]{Стойка - Жестокая}</p><p>@UUID[Compendium.the-void-unofficial.subclasses.Item.ancvKGl3z9tFzTnC]{Стойка - Оборонительная}</p><p>@UUID[Compendium.the-void-unofficial.subclasses.Item.pj9E3iEGM6CSrGXW]{Стойка - Захватывающая}</p><p>@UUID[Compendium.the-void-unofficial.subclasses.Item.gAB29yCHpBCmvcoY]{Стойка - Точная}</p><p>@UUID[Compendium.the-void-unofficial.subclasses.Item.M1CBMs4kVOxMnUIT]{Стойка - Быстрая}</p><p>@UUID[Compendium.the-void-unofficial.subclasses.Item.BpeJi5xFnTxmi1Ru]{Стойка - Устойчивая}</p><p></p><h2>Ранг 2</h2><p>@UUID[Compendium.the-void-unofficial.subclasses.Item.8wGHiaqfE9vTL4b4]{Стойка - Смертоносная}</p><p>@UUID[Compendium.the-void-unofficial.subclasses.Item.PlOmkkaDCr2cr7Kz]{Стойка - Мешающая}</p><p>@UUID[Compendium.the-void-unofficial.subclasses.Item.BnGRJDnIO6CqDY6W]{Стойка - Неподвижная}</p><p>@UUID[Compendium.the-void-unofficial.subclasses.Item.iQAXTA6y0KhzKUcU]{Стойка - Бодрящая}</p><p>@UUID[Compendium.the-void-unofficial.subclasses.Item.6jexZv6ufhinEvNp]{Стойка - Ловкая}</p><p>@UUID[Compendium.the-void-unofficial.subclasses.Item.cpQEaPhWDTtzJaM0]{Стойка - Потусторонняя}</p><p>@UUID[Compendium.the-void-unofficial.subclasses.Item.oW8fm6mYYiQh4mV5]{Стойка - Пугающая}</p><p></p><h2>Ранг 3</h2><p>@UUID[Compendium.the-void-unofficial.subclasses.Item.0J4jLxLWzoDye1ew]{Стойка - Нарастающая}</p><p>@UUID[Compendium.the-void-unofficial.subclasses.Item.CIl8Pe4wzhEGuzp9]{Стойка - Отражающая}</p><p>@UUID[Compendium.the-void-unofficial.subclasses.Item.84XJzmb6ZORSDA5Q]{Стойка - Разрушительная}</p><p>@UUID[Compendium.the-void-unofficial.subclasses.Item.WzzhboGOu8DVPo6i]{Стойка - Дуэльная}</p><p>@UUID[Compendium.the-void-unofficial.subclasses.Item.XOYTovtyz7MwsRlP]{Стойка - Избранная}</p><p>@UUID[Compendium.the-void-unofficial.subclasses.Item.IRDj7cX6vLINhusw]{Стойка - Неумолимая}</p><p>@UUID[Compendium.the-void-unofficial.subclasses.Item.hVQW2ZDnvUKZ8iaA]{Стойка - Укрывающая}</p><p></p><h2>Ранг 4</h2><p>@UUID[Compendium.the-void-unofficial.subclasses.Item.ihGjGgVizC2rS40H]{Стойка - Сокрушительная}</p><p>@UUID[Compendium.the-void-unofficial.subclasses.Item.C0ZrpyxqH34H3HUd]{Стойка - Проницательная}</p><p>@UUID[Compendium.the-void-unofficial.subclasses.Item.T0X88UuKtmf5Adlb]{Стойка - Разъяряющая}</p><p>@UUID[Compendium.the-void-unofficial.subclasses.Item.wTKUd4DxHykGwODz]{Стойка - Размашистая}</p><p></p><p></p><p></p><p></p><p></p>"
     },
     "Martial Form": {
       "name": "Боевая Форма",
-      "description": "<p>Возьмите лист Боевых Форм. Вы начинаете с двух боевых стоек 1 Ранга. Когда вы достигаете нового ранга, вы можете взять две дополнительные стойки своего ранга или ниже.</p>"
+      "description": "<p>Вы начинаете с двух боевых стоек 1 Ранга. Когда вы достигаете нового ранга, вы можете взять две дополнительные стойки своего ранга или ниже.</p><p></p><p>Вы можете перетащить эти свойства на лист персонажа.</p><p></p><h2>Ранг 1</h2><p>@UUID[Compendium.the-void-unofficial.subclasses.Item.MHKcMoI1FOlEbi7M]{Стойка - Жестокая}</p><p>@UUID[Compendium.the-void-unofficial.subclasses.Item.ancvKGl3z9tFzTnC]{Стойка - Оборонительная}</p><p>@UUID[Compendium.the-void-unofficial.subclasses.Item.pj9E3iEGM6CSrGXW]{Стойка - Захватывающая}</p><p>@UUID[Compendium.the-void-unofficial.subclasses.Item.gAB29yCHpBCmvcoY]{Стойка - Точная}</p><p>@UUID[Compendium.the-void-unofficial.subclasses.Item.M1CBMs4kVOxMnUIT]{Стойка - Быстрая}</p><p>@UUID[Compendium.the-void-unofficial.subclasses.Item.BpeJi5xFnTxmi1Ru]{Стойка - Устойчивая}</p><p></p><h2>Ранг 2</h2><p>@UUID[Compendium.the-void-unofficial.subclasses.Item.8wGHiaqfE9vTL4b4]{Стойка - Смертоносная}</p><p>@UUID[Compendium.the-void-unofficial.subclasses.Item.PlOmkkaDCr2cr7Kz]{Стойка - Мешающая}</p><p>@UUID[Compendium.the-void-unofficial.subclasses.Item.BnGRJDnIO6CqDY6W]{Стойка - Неподвижная}</p><p>@UUID[Compendium.the-void-unofficial.subclasses.Item.iQAXTA6y0KhzKUcU]{Стойка - Бодрящая}</p><p>@UUID[Compendium.the-void-unofficial.subclasses.Item.6jexZv6ufhinEvNp]{Стойка - Ловкая}</p><p>@UUID[Compendium.the-void-unofficial.subclasses.Item.cpQEaPhWDTtzJaM0]{Стойка - Потусторонняя}</p><p>@UUID[Compendium.the-void-unofficial.subclasses.Item.oW8fm6mYYiQh4mV5]{Стойка - Пугающая}</p><p></p><h2>Ранг 3</h2><p>@UUID[Compendium.the-void-unofficial.subclasses.Item.0J4jLxLWzoDye1ew]{Стойка - Нарастающая}</p><p>@UUID[Compendium.the-void-unofficial.subclasses.Item.CIl8Pe4wzhEGuzp9]{Стойка - Отражающая}</p><p>@UUID[Compendium.the-void-unofficial.subclasses.Item.84XJzmb6ZORSDA5Q]{Стойка - Разрушительная}</p><p>@UUID[Compendium.the-void-unofficial.subclasses.Item.WzzhboGOu8DVPo6i]{Стойка - Дуэльная}</p><p>@UUID[Compendium.the-void-unofficial.subclasses.Item.XOYTovtyz7MwsRlP]{Стойка - Избранная}</p><p>@UUID[Compendium.the-void-unofficial.subclasses.Item.IRDj7cX6vLINhusw]{Стойка - Неумолимая}</p><p>@UUID[Compendium.the-void-unofficial.subclasses.Item.hVQW2ZDnvUKZ8iaA]{Стойка - Укрывающая}</p><p></p><h2>Ранг 4</h2><p>@UUID[Compendium.the-void-unofficial.subclasses.Item.ihGjGgVizC2rS40H]{Стойка - Сокрушительная}</p><p>@UUID[Compendium.the-void-unofficial.subclasses.Item.C0ZrpyxqH34H3HUd]{Стойка - Проницательная}</p><p>@UUID[Compendium.the-void-unofficial.subclasses.Item.T0X88UuKtmf5Adlb]{Стойка - Разъяряющая}</p><p>@UUID[Compendium.the-void-unofficial.subclasses.Item.wTKUd4DxHykGwODz]{Стойка - Размашистая}</p><p></p><p></p><p></p><p></p><p></p>"
     },
     "Master the Beast": {
       "name": "Власть над Зверем",
@@ -410,7 +410,12 @@
     },
     "Stance - Brutal": {
       "name": "Стойка - Жестокая",
-      "description": "<p>Жестокая: Когда вы выбрасываете максимальное значение на кости урона, бросьте дополнительную кость урона.</p>"
+      "description": "<p>Жестокая: Когда вы выбрасываете максимальное значение на кости урона, бросьте дополнительную кость урона.</p>",
+      "actions": {
+        "AmjLwfMnO7InhNJj": {
+          "name": "Стойка - Жестокая"
+        }
+      }
     },
     "Stance - Compounding": {
       "name": "Стойка - Нарастающая",
@@ -426,7 +431,12 @@
     },
     "Stance - Defensive": {
       "name": "Стойка - Оборонительная",
-      "description": "<p>Оборонительная: Броски атаки против вас имеют помеху, если противник не отметит Стресс.</p>"
+      "description": "<p>Оборонительная: Броски атаки против вас имеют помеху, если противник не отметит Стресс.</p>",
+      "actions": {
+        "0op993OEkbKsW1as": {
+          "name": "Стойка - Оборонительная"
+        }
+      }
     },
     "Stance - Deflecting": {
       "name": "Стойка - Отражающая",
@@ -450,15 +460,35 @@
     },
     "Stance - Grappling": {
       "name": "Стойка - Захватывающая",
-      "description": "<p>Захватывающая: При успешной атаке вы можете потратить Концентрацию, чтобы сделать цель временно Обездвиженной.</p>"
+      "description": "<p>Захватывающая: При успешной атаке вы можете потратить Концентрацию, чтобы сделать цель временно Обездвиженной.</p>",
+      "effects": {
+        "TKV02VQESRwaZ3Bw": {
+          "name": "Стойка - Захватывающая"
+        }
+      }
     },
     "Stance - Hindering": {
       "name": "Стойка - Мешающая",
-      "description": "<p>Мешающая: При успешной атаке вы можете потратить Концентрацию, чтобы сделать цель временно Затрудненной. Будучи Затрудненной, её броски атаки имеют штраф -2.</p>"
+      "description": "<p>Мешающая: При успешной атаке вы можете потратить Концентрацию, чтобы сделать цель временно Затрудненной. Будучи Затрудненной, её броски атаки имеют штраф -2.</p>",
+      "actions": {
+        "ZPGBfUjkngCEpmsj": {
+          "name": "Стойка - Мешающая"
+        }
+      },
+      "effects": {
+        "1SfHkitHu8Gr3ggu": {
+          "name": "Стойка - Мешающая"
+        }
+      }
     },
     "Stance - Immovable": {
       "name": "Стойка - Неподвижная",
-      "description": "<p>Неподвижная: Получите бонус +2 к вашим порогам урона, и вас нельзя переместить против воли.</p>"
+      "description": "<p>Неподвижная: Получите бонус +2 к вашим порогам урона, и вас нельзя переместить против воли.</p>",
+      "effects": {
+        "Zmy2QFYQeqCt98SW": {
+          "name": "Стойка - Неподвижная"
+        }
+      }
     },
     "Stance - Inexorable": {
       "name": "Стойка - Неумолимая",
@@ -482,7 +512,12 @@
     },
     "Stance - Precise": {
       "name": "Стойка - Точная",
-      "description": "<p>Точная: Получите бонус +1 к вашим броскам атаки.</p>"
+      "description": "<p>Точная: Получите бонус +1 к вашим броскам атаки.</p>",
+      "effects": {
+        "sMnygnFsd3q7BDIj": {
+          "name": "Стойка - Точная"
+        }
+      }
     },
     "Stance - Quick": {
       "name": "Стойка - Быстрая",
@@ -498,7 +533,12 @@
     },
     "Stance - Steady": {
       "name": "Стойка - Устойчивая",
-      "description": "<p>Устойчивая: Получите штраф -1 к Уклонению. Когда вы наносите урон при успешной атаке, бросьте дополнительную кость урона и отбросьте наименьшую.</p>"
+      "description": "<p>Устойчивая: Получите штраф -1 к Уклонению. Когда вы наносите урон при успешной атаке, бросьте дополнительную кость урона и отбросьте наименьшую.</p>",
+      "effects": {
+        "g3Hb1cKR3xKFgbp8": {
+          "name": "Стойка - Устойчивая"
+        }
+      }
     },
     "Stance - Sweeping": {
       "name": "Стойка - Размашистая",

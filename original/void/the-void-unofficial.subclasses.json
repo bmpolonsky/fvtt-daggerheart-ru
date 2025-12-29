@@ -221,11 +221,11 @@
     },
     "Martial Artist": {
       "name": "Martial Artist",
-      "description": "<p>You have studied and mastered specific fighting styles, letting your moves flow seamelessly in battle.</p>"
+      "description": "<p>You have studied and mastered specific fighting styles, letting your moves flow seamelessly in battle.</p><p></p><p>You can drag these features to your actor sheet.</p><p></p><h2>Tier 1</h2><p>@UUID[Compendium.the-void-unofficial.subclasses.Item.MHKcMoI1FOlEbi7M]{Stance - Brutal}</p><p>@UUID[Compendium.the-void-unofficial.subclasses.Item.ancvKGl3z9tFzTnC]{Stance - Defensive}</p><p>@UUID[Compendium.the-void-unofficial.subclasses.Item.pj9E3iEGM6CSrGXW]{Stance - Grappling}</p><p>@UUID[Compendium.the-void-unofficial.subclasses.Item.gAB29yCHpBCmvcoY]{Stance - Precise}</p><p>@UUID[Compendium.the-void-unofficial.subclasses.Item.M1CBMs4kVOxMnUIT]{Stance - Quick}</p><p>@UUID[Compendium.the-void-unofficial.subclasses.Item.BpeJi5xFnTxmi1Ru]{Stance - Steady}</p><p></p><h2>Tier 2</h2><p>@UUID[Compendium.the-void-unofficial.subclasses.Item.8wGHiaqfE9vTL4b4]{Stance - Deadly}</p><p>@UUID[Compendium.the-void-unofficial.subclasses.Item.PlOmkkaDCr2cr7Kz]{Stance - Hindering}</p><p>@UUID[Compendium.the-void-unofficial.subclasses.Item.BnGRJDnIO6CqDY6W]{Stance - Immovable}</p><p>@UUID[Compendium.the-void-unofficial.subclasses.Item.iQAXTA6y0KhzKUcU]{Stance - Invigorating}</p><p>@UUID[Compendium.the-void-unofficial.subclasses.Item.6jexZv6ufhinEvNp]{Stance - Nimble}</p><p>@UUID[Compendium.the-void-unofficial.subclasses.Item.cpQEaPhWDTtzJaM0]{Stance - Otherworldly}</p><p>@UUID[Compendium.the-void-unofficial.subclasses.Item.oW8fm6mYYiQh4mV5]{Stance - Scary}</p><p></p><h2>Tier 3</h2><p>@UUID[Compendium.the-void-unofficial.subclasses.Item.0J4jLxLWzoDye1ew]{Stance - Compounding}</p><p>@UUID[Compendium.the-void-unofficial.subclasses.Item.CIl8Pe4wzhEGuzp9]{Stance - Deflecting}</p><p>@UUID[Compendium.the-void-unofficial.subclasses.Item.84XJzmb6ZORSDA5Q]{Stance - Devastating}</p><p>@UUID[Compendium.the-void-unofficial.subclasses.Item.WzzhboGOu8DVPo6i]{Stance - Dueling}</p><p>@UUID[Compendium.the-void-unofficial.subclasses.Item.XOYTovtyz7MwsRlP]{Stance - Favored}</p><p>@UUID[Compendium.the-void-unofficial.subclasses.Item.IRDj7cX6vLINhusw]{Stance - Inexorable}</p><p>@UUID[Compendium.the-void-unofficial.subclasses.Item.hVQW2ZDnvUKZ8iaA]{Stance - Sheltering}</p><p></p><h2>Tier 4</h2><p>@UUID[Compendium.the-void-unofficial.subclasses.Item.ihGjGgVizC2rS40H]{Stance - Crushing}</p><p>@UUID[Compendium.the-void-unofficial.subclasses.Item.C0ZrpyxqH34H3HUd]{Stance - Discerning}</p><p>@UUID[Compendium.the-void-unofficial.subclasses.Item.T0X88UuKtmf5Adlb]{Stance - Infuriating}</p><p>@UUID[Compendium.the-void-unofficial.subclasses.Item.wTKUd4DxHykGwODz]{Stance - Sweeping}</p><p></p><p></p><p></p><p></p><p></p>"
     },
     "Martial Form": {
       "name": "Martial Form",
-      "description": "<p>You start with two martial stances from Tier 1. When you reach a new tier, take two additional stances at your tier or lower.</p>"
+      "description": "<p>You start with two martial stances from Tier 1. When you reach a new tier, take two additional stances at your tier or lower.</p><p></p><p>You can drag these features to your actor sheet.</p><p></p><h2>Tier 1</h2><p>@UUID[Compendium.the-void-unofficial.subclasses.Item.MHKcMoI1FOlEbi7M]{Stance - Brutal}</p><p>@UUID[Compendium.the-void-unofficial.subclasses.Item.ancvKGl3z9tFzTnC]{Stance - Defensive}</p><p>@UUID[Compendium.the-void-unofficial.subclasses.Item.pj9E3iEGM6CSrGXW]{Stance - Grappling}</p><p>@UUID[Compendium.the-void-unofficial.subclasses.Item.gAB29yCHpBCmvcoY]{Stance - Precise}</p><p>@UUID[Compendium.the-void-unofficial.subclasses.Item.M1CBMs4kVOxMnUIT]{Stance - Quick}</p><p>@UUID[Compendium.the-void-unofficial.subclasses.Item.BpeJi5xFnTxmi1Ru]{Stance - Steady}</p><p></p><h2>Tier 2</h2><p>@UUID[Compendium.the-void-unofficial.subclasses.Item.8wGHiaqfE9vTL4b4]{Stance - Deadly}</p><p>@UUID[Compendium.the-void-unofficial.subclasses.Item.PlOmkkaDCr2cr7Kz]{Stance - Hindering}</p><p>@UUID[Compendium.the-void-unofficial.subclasses.Item.BnGRJDnIO6CqDY6W]{Stance - Immovable}</p><p>@UUID[Compendium.the-void-unofficial.subclasses.Item.iQAXTA6y0KhzKUcU]{Stance - Invigorating}</p><p>@UUID[Compendium.the-void-unofficial.subclasses.Item.6jexZv6ufhinEvNp]{Stance - Nimble}</p><p>@UUID[Compendium.the-void-unofficial.subclasses.Item.cpQEaPhWDTtzJaM0]{Stance - Otherworldly}</p><p>@UUID[Compendium.the-void-unofficial.subclasses.Item.oW8fm6mYYiQh4mV5]{Stance - Scary}</p><p></p><h2>Tier 3</h2><p>@UUID[Compendium.the-void-unofficial.subclasses.Item.0J4jLxLWzoDye1ew]{Stance - Compounding}</p><p>@UUID[Compendium.the-void-unofficial.subclasses.Item.CIl8Pe4wzhEGuzp9]{Stance - Deflecting}</p><p>@UUID[Compendium.the-void-unofficial.subclasses.Item.84XJzmb6ZORSDA5Q]{Stance - Devastating}</p><p>@UUID[Compendium.the-void-unofficial.subclasses.Item.WzzhboGOu8DVPo6i]{Stance - Dueling}</p><p>@UUID[Compendium.the-void-unofficial.subclasses.Item.XOYTovtyz7MwsRlP]{Stance - Favored}</p><p>@UUID[Compendium.the-void-unofficial.subclasses.Item.IRDj7cX6vLINhusw]{Stance - Inexorable}</p><p>@UUID[Compendium.the-void-unofficial.subclasses.Item.hVQW2ZDnvUKZ8iaA]{Stance - Sheltering}</p><p></p><h2>Tier 4</h2><p>@UUID[Compendium.the-void-unofficial.subclasses.Item.ihGjGgVizC2rS40H]{Stance - Crushing}</p><p>@UUID[Compendium.the-void-unofficial.subclasses.Item.C0ZrpyxqH34H3HUd]{Stance - Discerning}</p><p>@UUID[Compendium.the-void-unofficial.subclasses.Item.T0X88UuKtmf5Adlb]{Stance - Infuriating}</p><p>@UUID[Compendium.the-void-unofficial.subclasses.Item.wTKUd4DxHykGwODz]{Stance - Sweeping}</p><p></p><p></p><p></p><p></p><p></p>"
     },
     "Master the Beast": {
       "name": "Master the Beast",
@@ -410,7 +410,12 @@
     },
     "Stance - Brutal": {
       "name": "Stance - Brutal",
-      "description": "<p>Brutal: When you roll the maximum value on a damage die, roll an</p><p>additional damage die.</p>"
+      "description": "<p>Brutal: When you roll the maximum value on a damage die, roll an additional damage die.</p>",
+      "actions": {
+        "AmjLwfMnO7InhNJj": {
+          "name": "Stance - Brutal"
+        }
+      }
     },
     "Stance - Compounding": {
       "name": "Stance - Compounding",
@@ -426,7 +431,12 @@
     },
     "Stance - Defensive": {
       "name": "Stance - Defensive",
-      "description": "<p>Defensive: Attack rolls against you have disadvantage unless the</p><p>adversary marks a Stress.</p>"
+      "description": "<p>Defensive: Attack rolls against you have disadvantage unless the adversary marks a Stress.</p>",
+      "actions": {
+        "0op993OEkbKsW1as": {
+          "name": "Stance - Defensive"
+        }
+      }
     },
     "Stance - Deflecting": {
       "name": "Stance - Deflecting",
@@ -450,15 +460,35 @@
     },
     "Stance - Grappling": {
       "name": "Stance - Grappling",
-      "description": "<p>Grappling: On a successful attack, you can spend a Focus to make the target temporarily Restrained.</p>"
+      "description": "<p>Grappling: On a successful attack, you can spend a Focus to make the target temporarily Restrained.</p>",
+      "effects": {
+        "TKV02VQESRwaZ3Bw": {
+          "name": "Stance - Grappling"
+        }
+      }
     },
     "Stance - Hindering": {
       "name": "Stance - Hindering",
-      "description": "<p>Hindering: On a successful attack, you can spend a Focus to make the target temporarily Hindered. While Hindered, their attack rolls have a -2 penalty.</p>"
+      "description": "<p>Hindering: On a successful attack, you can spend a Focus to make the target temporarily Hindered. While Hindered, their attack rolls have a -2 penalty.</p>",
+      "actions": {
+        "ZPGBfUjkngCEpmsj": {
+          "name": "Stance - Hindering"
+        }
+      },
+      "effects": {
+        "1SfHkitHu8Gr3ggu": {
+          "name": "Stance - Hindering"
+        }
+      }
     },
     "Stance - Immovable": {
       "name": "Stance - Immovable",
-      "description": "<p>Immovable: Gain a +2 bonus to your damage thresholds and you cannot be moved unwillingly.</p>"
+      "description": "<p>Immovable: Gain a +2 bonus to your damage thresholds and you cannot be moved unwillingly.</p>",
+      "effects": {
+        "Zmy2QFYQeqCt98SW": {
+          "name": "Stance - Immovable"
+        }
+      }
     },
     "Stance - Inexorable": {
       "name": "Stance - Inexorable",
@@ -470,11 +500,11 @@
     },
     "Stance - Invigorating": {
       "name": "Stance - Invigorating",
-      "description": "<p>Invigorating: When you make a successful attack, roll a d4. On a 4, gain a Focus.</p>"
+      "description": "<p>Invigorating: When you make a successful attack, roll a [[/r 1d4]]. On a 4, gain a Focus.</p>"
     },
     "Stance - Nimble": {
       "name": "Stance - Nimble",
-      "description": "<p>Nimble: When an adversary makes a successful attack roll against you, you can spend a number of Focus up to your Tier. Roll a number of d6s equal to 1 + the Focus spent. If any of the dice values match, you take no damage from the attack.</p>"
+      "description": "<p>Nimble: When an adversary makes a successful attack roll against you, you can spend a number of Focus up to your Tier. Roll a number of d6s equal to 1 + the Focus spent. If any of the dice values match, you take no damage from the attack.</p><p></p><p>1 Focus: [[/r 2d6]]</p><p>2 Focus: [[/r 3d6]]</p><p>3 Focus: [[/r 4d6]]</p><p>4 Focus: [[/r 5d6]]</p>"
     },
     "Stance - Otherworldly": {
       "name": "Stance - Otherworldly",
@@ -482,7 +512,12 @@
     },
     "Stance - Precise": {
       "name": "Stance - Precise",
-      "description": "<p>Precise: Gain a +1 bonus to your attack rolls.</p>"
+      "description": "<p>Precise: Gain a +1 bonus to your attack rolls.</p>",
+      "effects": {
+        "sMnygnFsd3q7BDIj": {
+          "name": "Stance - Precise"
+        }
+      }
     },
     "Stance - Quick": {
       "name": "Stance - Quick",
@@ -498,7 +533,12 @@
     },
     "Stance - Steady": {
       "name": "Stance - Steady",
-      "description": "<p>Steady: Gain a -1 penalty to your Evasion. When you deal damage on a</p><p>successful attack, roll an additional damage die and drop the lowest.</p>"
+      "description": "<p>Steady: Gain a -1 penalty to your Evasion. When you deal damage on a successful attack, roll an additional damage die and drop the lowest.</p>",
+      "effects": {
+        "g3Hb1cKR3xKFgbp8": {
+          "name": "Stance - Steady"
+        }
+      }
     },
     "Stance - Sweeping": {
       "name": "Stance - Sweeping",
