@@ -127,6 +127,9 @@ const TRANSFORMATION_ENTRY_ALIASES = {
   demigodichorofthegod: "demigodichorofthegods"
 };
 
+const MARTIAL_STANCE_LIST_SNIPPET =
+  "<p></p><p>Вы можете перетащить эти свойства на лист персонажа.</p><p></p><h2>Ранг 1</h2><p>@UUID[Compendium.the-void-unofficial.subclasses.Item.MHKcMoI1FOlEbi7M]{Стойка - Жестокая}</p><p>@UUID[Compendium.the-void-unofficial.subclasses.Item.ancvKGl3z9tFzTnC]{Стойка - Оборонительная}</p><p>@UUID[Compendium.the-void-unofficial.subclasses.Item.pj9E3iEGM6CSrGXW]{Стойка - Захватывающая}</p><p>@UUID[Compendium.the-void-unofficial.subclasses.Item.gAB29yCHpBCmvcoY]{Стойка - Точная}</p><p>@UUID[Compendium.the-void-unofficial.subclasses.Item.M1CBMs4kVOxMnUIT]{Стойка - Быстрая}</p><p>@UUID[Compendium.the-void-unofficial.subclasses.Item.BpeJi5xFnTxmi1Ru]{Стойка - Устойчивая}</p><p></p><h2>Ранг 2</h2><p>@UUID[Compendium.the-void-unofficial.subclasses.Item.8wGHiaqfE9vTL4b4]{Стойка - Смертоносная}</p><p>@UUID[Compendium.the-void-unofficial.subclasses.Item.PlOmkkaDCr2cr7Kz]{Стойка - Мешающая}</p><p>@UUID[Compendium.the-void-unofficial.subclasses.Item.BnGRJDnIO6CqDY6W]{Стойка - Неподвижная}</p><p>@UUID[Compendium.the-void-unofficial.subclasses.Item.iQAXTA6y0KhzKUcU]{Стойка - Бодрящая}</p><p>@UUID[Compendium.the-void-unofficial.subclasses.Item.6jexZv6ufhinEvNp]{Стойка - Ловкая}</p><p>@UUID[Compendium.the-void-unofficial.subclasses.Item.cpQEaPhWDTtzJaM0]{Стойка - Потусторонняя}</p><p>@UUID[Compendium.the-void-unofficial.subclasses.Item.oW8fm6mYYiQh4mV5]{Стойка - Пугающая}</p><p></p><h2>Ранг 3</h2><p>@UUID[Compendium.the-void-unofficial.subclasses.Item.0J4jLxLWzoDye1ew]{Стойка - Нарастающая}</p><p>@UUID[Compendium.the-void-unofficial.subclasses.Item.CIl8Pe4wzhEGuzp9]{Стойка - Отражающая}</p><p>@UUID[Compendium.the-void-unofficial.subclasses.Item.84XJzmb6ZORSDA5Q]{Стойка - Разрушительная}</p><p>@UUID[Compendium.the-void-unofficial.subclasses.Item.WzzhboGOu8DVPo6i]{Стойка - Дуэльная}</p><p>@UUID[Compendium.the-void-unofficial.subclasses.Item.XOYTovtyz7MwsRlP]{Стойка - Избранная}</p><p>@UUID[Compendium.the-void-unofficial.subclasses.Item.IRDj7cX6vLINhusw]{Стойка - Неумолимая}</p><p>@UUID[Compendium.the-void-unofficial.subclasses.Item.hVQW2ZDnvUKZ8iaA]{Стойка - Укрывающая}</p><p></p><h2>Ранг 4</h2><p>@UUID[Compendium.the-void-unofficial.subclasses.Item.ihGjGgVizC2rS40H]{Стойка - Сокрушительная}</p><p>@UUID[Compendium.the-void-unofficial.subclasses.Item.C0ZrpyxqH34H3HUd]{Стойка - Проницательная}</p><p>@UUID[Compendium.the-void-unofficial.subclasses.Item.T0X88UuKtmf5Adlb]{Стойка - Разъяряющая}</p><p>@UUID[Compendium.the-void-unofficial.subclasses.Item.wTKUd4DxHykGwODz]{Стойка - Размашистая}</p><p></p><p></p><p></p><p></p><p></p>";
+
 const MANUAL_ENTRY_PATCHES = {
   classes: {
     Bard: {
@@ -151,6 +154,20 @@ const MANUAL_ENTRY_PATCHES = {
     Reborne: {
       descriptionSuffix:
         "<p>В любой момент, когда вы найдете сообщество, частью которого вы когда-то были, или присоединитесь к новому сообществу, вы можете навсегда обменять эту карту сообщества на новую.</p>"
+    }
+  },
+  subclasses: {
+    "Martial Artist": {
+      descriptionSuffix: MARTIAL_STANCE_LIST_SNIPPET
+    },
+    "Martial Form": {
+      descriptionReplacements: [
+        {
+          pattern: /<p>Возьмите лист Боевых Форм\.\s*/giu,
+          value: "<p>"
+        }
+      ],
+      descriptionSuffix: MARTIAL_STANCE_LIST_SNIPPET
     }
   }
 };
@@ -1304,7 +1321,7 @@ function applyBattleBoxOverrides(entry, raw) {
     setHtmlField(target, "description", html);
     if (target.actions) {
       for (const actionId of Object.keys(target.actions)) {
-        setActionHtml(target.actions, actionId, html);
+        delete target.actions[actionId].description;
       }
     }
   }
@@ -2238,7 +2255,7 @@ async function main() {
   }
 
   async function updateSubclassesFile(path, { subclassTop, featureMap }, stats) {
-    const result = await updateEntries(path, (norm, entry) => {
+    const result = await updateEntries(path, (norm, entry, key) => {
       if (!norm) return false;
       const lookup = resolveAlias(norm, SUBCLASS_NAME_ALIASES);
       let handled = false;
@@ -2269,6 +2286,7 @@ async function main() {
       }
 
       if (featureInfo) applyFeatureGeneratedActions(entry, featureInfo);
+      applyManualEntryPatches("subclasses", key, entry);
       applyActionOverrides(entry);
       return handled;
     }, { stats });
