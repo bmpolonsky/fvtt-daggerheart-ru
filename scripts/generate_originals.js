@@ -83,6 +83,11 @@ const FILE_CONFIGS = [
     build: buildJournalEntries
   },
   {
+    file: "daggerheart.rolltables.json",
+    label: "Rolltables",
+    build: buildRolltableEntries
+  },
+  {
     file: "lang/en.json",
     label: "System",
     translationPath: path.join(MODULE_DIR, "i18n", "systems", "daggerheart.json"),
@@ -548,6 +553,39 @@ async function buildJournalEntries() {
       }
     }
     result[entry.name] = { pages };
+  }
+  return result;
+}
+
+async function buildRolltableEntries() {
+  const entries = await loadEntries("rolltables");
+  const result = {};
+  for (const entry of entries) {
+    if (!entry || !entry.name) continue;
+    const table = { name: entry.name };
+    const description = sanitizeRichText(entry.description ?? "").trim();
+    if (description) {
+      table.description = description;
+    }
+    const results = {};
+    if (Array.isArray(entry.results)) {
+      for (const row of entry.results) {
+        if (!row || !Array.isArray(row.range) || row.range.length !== 2) continue;
+        const key = `${row.range[0]}-${row.range[1]}`;
+        let value = "";
+        if (row.type === "text") {
+          value = sanitizeRichText(row.description ?? "").trim();
+        } else if (typeof row.name === "string") {
+          value = row.name.trim();
+        }
+        if (!value) continue;
+        results[key] = value;
+      }
+    }
+    if (Object.keys(results).length) {
+      table.results = results;
+    }
+    result[entry.name] = table;
   }
   return result;
 }
