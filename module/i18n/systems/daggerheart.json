@@ -263,6 +263,7 @@
           "confirmText": "Хотите ли вы сейчас повысить уровень вашего компаньона {name} на {levelChange}? (Вы можете сделать это вручную позже)"
         },
         "viewLevelups": "Просмотр повышений уровня",
+        "viewParty": "Просмотр группы",
         "InvalidOldCharacterImportTitle": "Импорт старого персонажа",
         "InvalidOldCharacterImportText": "Данные персонажа, экспортированные до версии системы 1.1, не позволят создать полноценного персонажа. Желаете продолжить?",
         "cancelBeastform": "Отменить звериную форму"
@@ -2931,7 +2932,9 @@
         "gmRequired": "Для этого действия требуется Мастер в сети.",
         "gmOnly": "Доступно только Мастеру.",
         "noActorOwnership": "У вас нет прав на этого персонажа",
-        "documentIsMissing": "{documentType} отсутствует в мире."
+        "documentIsMissing": "{documentType} отсутствует в мире.",
+        "tokenActorMissing": "У {name} отсутствует актёр",
+        "tokenActorsMissing": "У [{names}] отсутствуют актёры"
       },
       "Sidebar": {
         "actorDirectory": {
