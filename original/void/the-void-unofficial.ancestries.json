@@ -27,9 +27,6 @@
       "name": "Divine Countenance",
       "description": "<p>You have advantage on rolls to command or persuade.</p>"
     },
-    "Drow": {
-      "name": "Drow"
-    },
     "Earthkin": {
       "name": "Earthkin"
     },
@@ -85,15 +82,6 @@
       "actions": {
         "jSfUr06O577wK8Pl": {
           "name": "Mark 2 Stress"
-        }
-      }
-    },
-    "Low-Light Living": {
-      "name": "Low-Light Living",
-      "description": "<p>When you’re in an area with low light or heavy shadow, you have advantage on rolls to hide, investigate, or perceive details within that area.</p>",
-      "effects": {
-        "LqQvZJJLNMnFkt1D": {
-          "name": "Celestial Trance"
         }
       }
     },

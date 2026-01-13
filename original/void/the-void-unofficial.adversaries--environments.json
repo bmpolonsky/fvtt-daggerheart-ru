@@ -36,7 +36,7 @@
       },
       "items": {
         "Us0w5JVEDijLPiR1": {
-          "name": "Psychic Blast - Action",
+          "name": "Psychic Blast",
           "description": "<p>Psychic Blast - Action: <strong>Spend a Fear</strong> and choose up to three targets within Close range to make a Knowledge or Instinct Reaction Roll (20). </p><p></p><p>Targets who succeed take 2d10+5 direct magical damage. </p><p></p><p>Targets who fail take 4d10+10 direct magical damage and are Vulnerable until spotlighted.</p>",
           "actions": {
             "XfcYIwquSpnwqy9U": {
@@ -51,7 +51,7 @@
           }
         },
         "Wwykcb6R9UB9ky2w": {
-          "name": "Cerebral Suction - Action",
+          "name": "Cerebral Suction",
           "description": "<p>Cerebral Suction - Action: Spend a Fear to choose a Vulnerable target within Melee range. </p><p></p><p>The Priest grabs the target and tries to insert their face tentacles into the target’s ears, nose, and mouth. </p><p></p><p>The target must succeed on a Strength Reaction Roll or mark \u001d[[/r 1d6]] Stress. </p><p></p><p>The Priest clears a number of Stress equal to the number of Stress the target marked.</p>",
           "actions": {
             "Uj15XIfkRxMmUDk6": {
@@ -60,8 +60,8 @@
           }
         },
         "ZrvHSB3ROgVLI87a": {
-          "name": "Telekinetic Grasp - Reaction",
-          "description": "<p>Telekinetic Grasp - Reaction: When the Priest succeeds on a standard attack, you can mark a Stress to Restrain the target until they spend a Hope to clear this condition.</p>",
+          "name": "Telekinetic Grasp",
+          "description": "<p>Telekinetic Grasp - Reaction: When the Priest succeeds on a standard attack, you can mark a Stress to Restrain the target until they spend a Hope to clear this condition. </p>",
           "actions": {
             "w2NnXCrJTnQCofgO": {
               "name": "Mark Stress"
@@ -82,11 +82,11 @@
       },
       "items": {
         "TGMst7sdw28kXlpT": {
-          "name": "Rending Jaws - Passive",
+          "name": "Rending Jaws",
           "description": "<p>Rending Jaws - Passive: When the Chimera makes a successful attack, the target must mark 2 Armor Slots instead of 1 to reduce the damage by one threshold.</p>"
         },
         "5niAdKEb8bu1CBe3": {
-          "name": "Breath of Fire - Action",
+          "name": "Breath of Fire",
           "description": "<p>Breath of Fire - Action: Spend a Fear to target up to three PCs in front of the Chimera within Close range.</p><p></p><p>All targets must make an Agility Reaction Roll (20).</p><p></p><p>Targets who fail take 3d12 magic damage. Targets who succeed must to either mark an Armor Slot or mark a Stress.</p>",
           "actions": {
             "CAKAeVBSCoP7wZlS": {
@@ -95,7 +95,7 @@
           }
         },
         "Tcs8htm0m5fjoHxm": {
-          "name": "Serpent Strike - Reaction",
+          "name": "Serpent Strike",
           "description": "<p>Serpent Strike - Reaction: When the Chimera is attacked by a PC within Very Close range, you can mark a Stress to make an attack against them. </p><p></p><p>On a success, deal 4d4+10 physical damage and Poison them until their next rest or they succeed on a Knowledge Roll (20). </p><p></p><p>While Poisoned, the target must roll a d6 before they make an action roll. On a result of 3 or lower, they must mark a Stress.</p>",
           "actions": {
             "AfjH9ALO0cup9t6i": {
@@ -104,7 +104,7 @@
           }
         },
         "R4xIqFflUXNhWsgD": {
-          "name": "Double Claw - Reaction",
+          "name": "Double Claw",
           "description": "<p>Double Claw - Reaction: After the Chimera makes a standard attack, you can mark a Stress to make an additional standard attack, If both attacks target the same creature, combine the damage.</p>",
           "actions": {
             "i9iz4JOa8kAi9DVj": {
@@ -195,7 +195,7 @@
       },
       "items": {
         "79VzF5ZCmSb8kkII": {
-          "name": "Blink Beast - Passive",
+          "name": "Blink Beast",
           "description": "<p>Blink Beast - Passive: When combat begins, place a duplicate within Close range of the Doppelhünd. </p><p></p><p>The duplicate can move when the Doppelhünd is spotlighted, and the Doppelhünd can target enemies with attacks as if they’re in the same place as their duplicate. </p><p></p><p>The Doppelhünd occupies both places until attacked, at which point you roll a [[/r 1d6]] to determine whether the attack is targeting the Doppelhünd (the result is an even number) or their duplicate (the result is an odd number). </p><p></p><p>Attacks against the duplicate automatically fail. A successful attack against the Doppelhünd dispels the duplicate until you spend a Fear to conjure it again.</p>",
           "actions": {
             "PwCnewhEOsfhHT1Q": {
@@ -204,7 +204,7 @@
           }
         },
         "rfHjv5kjd25E35uq": {
-          "name": "Double Lash - Reaction",
+          "name": "Double Lash",
           "description": "<p>Double Lash - Reaction: When the Doppelhünd makes a standard attack, you can mark a Stress to make an additional standard attack, If both attacks target the same creature, combine the damage.</p>",
           "actions": {
             "lmAJr4vTF5HovOBc": {
@@ -226,7 +226,7 @@
       },
       "items": {
         "atw1SsRwX3YsIo39": {
-          "name": "High Ground - Passive",
+          "name": "High Ground",
           "description": "<p>High Ground - Passive: The Knight gains a +2 bonus to attack rolls</p><p>when attacking a target from above.</p>",
           "effects": {
             "rVU6nt9rT28UhvSm": {
@@ -235,11 +235,11 @@
           }
         },
         "EJzKUCllNTAfECeR": {
-          "name": "Enhanced Critical - Passive",
+          "name": "Enhanced Critical",
           "description": "<p>Enhanced Critical - Passive: The Knight’s attack roll counts as a critical success if the result on the d20 is a 19 or a 20.</p>"
         },
         "US1FDannV6Ftyo9b": {
-          "name": "Leaping Strike - Action",
+          "name": "Leaping Strike",
           "description": "<p>Leaping Strike - Action: Mark a Stress and choose a target within Far range.</p><p></p><p>The Knight moves into Melee range of the target and make a standard attack against them. </p><p></p><p>On a success, gain a +1d12 bonus to the damage roll and the target must mark an Armor Slot without receiving its benefits (they can still use armor to reduce the damage).</p>",
           "actions": {
             "JcWnJYRCG5faIYQ5": {
@@ -268,11 +268,11 @@
           "description": "<p>The Seraph can be spotlighted up to three times per GM turn. Spend Fear as usual to spotlight them.</p>"
         },
         "hbZB7fyNX1GdOBbY": {
-          "name": "Stolen Armor - Passive",
+          "name": "Stolen Armor",
           "description": "<p>Stolen Armor - Passive: When combat begins, active a Countdown equal to the number of PCs. Whenever the Troll takes damage, tick down the countdown and reduce the HP the Troll marks by 1. </p><p></p><p>When it triggers, the Troll evolves into an Enraged Mountain Troll (see “Enraged Mountain Troll - Evolution”).</p>"
         },
         "wfCrT1wqurbyjQ9b": {
-          "name": "Flail Swipe - Action",
+          "name": "Flail Swipe",
           "description": "<p>Flail Swipe - Action: The Troll swings their skull flail in a wide arc. Mark a Stress to make an attack against all targets in front of the Troll within Very Close range. </p><p></p><p>On a success, the Troll deals 2d10+3 instead of its normal damage. The Troll cannot use this action while evolved.</p>",
           "actions": {
             "TVmV6q4oxaYvRyLv": {
@@ -285,7 +285,7 @@
           "description": "<p>Enraged Mountain Troll - Evolution: The Troll gains a +1 bonus to their Difficulty and their standard attack changes to the following: </p><p>Claw Swipe: Very Close | 1d8+1 phy</p>"
         },
         "DaD87HluEhxTkD1n": {
-          "name": "Double Swipe - Action",
+          "name": "Double Swipe",
           "description": "<p>Double Swipe - Action: Spend a Fear to move the Troll up to Close range and immediately make two standard attacks against a single target within Melee range, If both attacks hit, combine the damage and the target also loses a Hope.</p>",
           "actions": {
             "36ZwThvz41hADXaP": {
@@ -313,7 +313,7 @@
       },
       "items": {
         "yW0SZe7wXwqOcNYG": {
-          "name": "Light and Shadow - Passive",
+          "name": "Light and Shadow",
           "description": "<p>Light and Shadow - Passive: The Shadow King gains a +1 bonus to attack and damage rolls while in shadow or darkness and a −1 penalty to attack and damage rolls while in bright light.</p>",
           "effects": {
             "jVBdXomOerfUEf6k": {
@@ -333,11 +333,11 @@
           }
         },
         "Z0ot0Jii36hLp7Jo": {
-          "name": "Relic Hunter - Passive",
+          "name": "Relic Hunter",
           "description": "<p>Relic Hunter - Passive: The Shadow King has advantage on attacks</p><p>against PCs with magical weapons or armor equipped</p>"
         },
         "pAChrHMTTEo0QJ9k": {
-          "name": "Hellsong - Action",
+          "name": "Hellsong",
           "description": "<p>Hellsong - Action: Spend 2 Fear to have the Shadow King’s mount unleash a spine-chilling screech that echoes over the battlefield. </p><p></p><p>All PCs within Far range must make a Presence Reaction Roll (18). Targets who succeed must mark a Stress. Targets who fail must mark a Stress and lose a Hope. If the PC can’t lose a Hope, you gain 1 Fear.</p>",
           "actions": {
             "c6y5UF3epgDtsxP6": {
@@ -346,7 +346,7 @@
           }
         },
         "vJWWEDgw5kpheObr": {
-          "name": "Air Support - Reaction",
+          "name": "Air Support",
           "description": "<p>Air Support - Reaction: Three times per scene, you can spend a Fear to have an adversary within Far range of the Shadow King reroll a missed attack with advantage.</p>",
           "actions": {
             "js41nW14clROJls2": {
@@ -368,15 +368,15 @@
       },
       "items": {
         "DOLXlUqNOwJSa6HQ": {
-          "name": "Stone Body - Passive",
+          "name": "Stone Body",
           "description": "<p>Stone Body - Passive: The Gargoyle is resistant to physical damage</p>"
         },
         "K7G7JwEd1ulbjSJS": {
-          "name": "Just a Statue - Passive",
+          "name": "Just a Statue",
           "description": "<p>Just a Statue - Passive: Before they make their first attack in a fight or after they become Hidden, the Gargoyle is indistinguishable from a normal statue until they next act or a PC succeeds on an Instinct Roll to identify them.</p>"
         },
         "6iz7YXvNolXgv0Ur": {
-          "name": "Swooping Strike - Action",
+          "name": "Swooping Strike",
           "description": "<p>Swooping Strike - Action: Choose a point within Far range. The Gargoyle moves to that point in a straight line and makes an attack against one target along its path.</p>"
         }
       }
@@ -397,11 +397,11 @@
           "description": "<p>The Seraph can be spotlighted up to three times per GM turn. Spend Fear as usual to spotlight them.</p>"
         },
         "ydMny9lM6OOhiObG": {
-          "name": "Anti-mystica-halitosis - Passive",
+          "name": "Anti-mystica-halitosis",
           "description": "<p>Anti-mystica-halitosis - Passive: A Gobstalker’s breath is so rancid it creates an invisible miasma that negates magical effects. </p><p></p><p>Any attack that deals magic damage or creates a magical effect in front of the Gobstalker within Close range automatically fails. </p><p></p><p>This feature does not affect the Gobstalker’s own features.</p>"
         },
         "BRUaW4GKgAosTgSu": {
-          "name": "Eyestalks - Action",
+          "name": "Eyestalks",
           "description": "<p>Eyestalks - Action: Mark a Stress to attack a target within Far range. On a hit, spend a Fear to choose an effect or roll a [[/r 1d10]] for a random effect. The Gobstalker uses the corresponding magical beam:</p><p>1. Beguile. The target is Beguiled and sees the Gobstalker as a friend. A Beguiled creature cannot attack the Gobstalker. Additionally, a Beguiled PC must mark a Stress or make a standard attack against their nearest ally whenever someone rolls with Fear. This effect lasts until the targets succeeds on a Presence or Knowledge Roll (16).</p><p>2. Corrode. The target takes 2d8 magical damage and marks an Armor Slot without receiving its benefits (they can still use armor to reduce the damage). If all the target’s Armor Slots are already marked, double the damage.</p><p>3. Doom. The target immediately marks all cleared HP, but can reduce the number of HP marked this way by spending any number of Hope. For each Hope spent in this way, reduce the number of HP marked by 1.</p><p>4. Hypnosis. The target falls into a deep, sleeplike trance and can’t take any actions except for trying to wake up. The target wakes up when they are hit by an attack, mark 1 or more HP, or succeed on an Instinct Roll (16) to wake up.</p><p>5. Paralyze. The target freezes in place, becoming Vulnerable and Restrained until they mark 2 Stress.</p><p>6. Petrify. Place a Petrification Countdown (6) on the target. It ticks down when a PC rolls with Fear. When it triggers, the target turns to stone until the Gobstalker is defeated or they take a long rest. While stone, the target is immune to all damage and aware of their surroundings, but cannot take actions.</p><p>7. Push. The target is thrown up to Far range and takes 3d6 physical damage from whatever they hit.</p><p>8. Sear. The target takes 2d8 direct magical damage.</p><p>9. Slow. The target is Vulnerable and must mark a Stress to move. The target can spend 2 Hope at any time to end this effect.</p><p>10. Terrify. The target can’t act except to flee the battle or try to shake off their fear with a successful Insight Roll (16). Additionally, whenever you spend Fear, the target must mark a Stress. This effect lasts until the Gobstalker is defeated or the target takes a rest.</p><p></p>",
           "actions": {
             "l9jlck6u0BU3dGA5": {
@@ -474,7 +474,7 @@
           "description": "<p>When the Raiders have marked half or more of their HP, their standard attack deals 2d8+3 physical damage instead.</p>"
         },
         "PnzeYzDBtHfzTKcB": {
-          "name": "Aural Assault - Action",
+          "name": "Aural Assault",
           "description": "<p>Aural Assault - Action: Spend a Fear to have the Choir unleash divine energy. </p><p></p><p>Remove all tokens from this stat block (see “Celestia Coda”). For each token removed, deal [[/r 1d12]] direct magic damage to all enemies within Close range.</p>",
           "actions": {
             "K6A8XYhbbQGMBz6U": {
@@ -486,7 +486,7 @@
           }
         },
         "0xmWGp3PyWTGszQt": {
-          "name": "Celestial Coda - Reaction",
+          "name": "Celestial Coda",
           "description": "<p>Celestial Coda - Reaction: Countdown (Loop 3).</p><p></p><p>The Choir’s divine song builds on itself with each refrain. Activate the countdown when the Choir is first spotlighted, It ticks down on every action roll.</p><p></p><p>When it triggers, place a token on this stat block. The Choir gains a bonus to their Difficulty and standard attack damage equal to the number of tokens on this stat block.</p>",
           "effects": {
             "PihfaUM1syv3eBrh": {
@@ -559,7 +559,7 @@
       },
       "items": {
         "zDNkpPy47craBLhX": {
-          "name": "Doppel-Dangler - Action",
+          "name": "Doppel-Dangler",
           "description": "<p>Doppel-Dangler - Action: The membranous cluster at the end of the Beguiler’s head stalk can shapeshift into any humanoid form. Mark a Stress and choose a PC within Close range.</p><p></p><p>Their player must tell you what form their PC would find most trustworthy (such as a relative, mentor, or lover). The Beguiler’s head stalk transforms into that shape.</p>",
           "actions": {
             "OVcBpE2Cs1AQN0FP": {
@@ -568,7 +568,7 @@
           }
         },
         "eX3hwzV0qu8wKzk9": {
-          "name": "Entice - Action",
+          "name": "Entice",
           "description": "<p>Entice - Action: Spend a Fear to play an alluring overture to a PC within Close range. </p><p></p><p>The PC must succeed on a Presence Reaction Roll (18) or move into Melee range with the Beguiler, If the Beguiler’s head stalk is in a form the PC would find trustworthy, they have disadvantage on the reaction roll.</p>",
           "actions": {
             "sS2QvWVn0denpbw1": {
@@ -577,7 +577,7 @@
           }
         },
         "ylA88egdYSbukkoF": {
-          "name": "Entangle - Reaction",
+          "name": "Entangle",
           "description": "<p>Entangle - Reaction: When a PC moves within Melee range, you can spend a Fear to make an attack against them. </p><p></p><p>On a successful attack, the target is Swallowed, While Swallowed, a creature is Restrained and can only take actions to attack the Beguiler. </p><p></p><p>The Beguiler disgorges all Swallowed creatures when they take Major damage.</p>",
           "actions": {
             "rtr6iuIT9cWnfnES": {
@@ -586,7 +586,7 @@
           }
         },
         "ocamUBktKkWR88Ga": {
-          "name": "Rest and Digest - Reaction",
+          "name": "Rest and Digest",
           "description": "<p>Rest and Digest - Reaction: When the Beguiler takes the spotlight with a Swallowed creature inside them, they move to Far range away from the PCs</p>"
         }
       }
@@ -607,11 +607,11 @@
           "description": "<p>The Seraph can be spotlighted up to three times per GM turn. Spend Fear as usual to spotlight them.</p>"
         },
         "hbZB7fyNX1GdOBbY": {
-          "name": "Stolen Armor - Passive",
+          "name": "Stolen Armor",
           "description": "<p>Stolen Armor - Passive: When combat begins, active a Countdown equal to the number of PCs. Whenever the Troll takes damage, tick down the countdown and reduce the HP the Troll marks by 1. </p><p></p><p>When it triggers, the Troll evolves into an Enraged Mountain Troll (see “Enraged Mountain Troll - Evolution”).</p>"
         },
         "wfCrT1wqurbyjQ9b": {
-          "name": "Flail Swipe - Action",
+          "name": "Flail Swipe",
           "description": "<p>Flail Swipe - Action: The Troll swings their skull flail in a wide arc. Mark a Stress to make an attack against all targets in front of the Troll within Very Close range. </p><p></p><p>On a success, the Troll deals 2d10+3 instead of its normal damage. The Troll cannot use this action while evolved.</p>",
           "actions": {
             "TVmV6q4oxaYvRyLv": {
@@ -636,15 +636,15 @@
       },
       "items": {
         "st1T9Or9pNqWlZ2J": {
-          "name": "Ill Omen - Passive",
+          "name": "Ill Omen",
           "description": "<p>Ill Omen - Passive: When a PC within Close range makes an action roll, their Fear Die gains a bonus equal to the amount of Fear you currently have.</p>"
         },
         "98J576WbCTCdHkcI": {
-          "name": "Witch Barrier - Passive",
+          "name": "Witch Barrier",
           "description": "<p>Witch Barrier - Passive: The Owl Witch is resistant to magic damage.</p>"
         },
         "Raer98GsWrNMF6cI": {
-          "name": "Alluring Voice - Action",
+          "name": "Alluring Voice",
           "description": "<p>Alluring Voice - Action: The Owl Witch can perfectly mimic the voice of a loved one or trusted figure. </p><p></p><p><strong>Spend a Fear</strong> to have the Owl Witch call out to a creature within earshot. The target must succeed on an Instinct Reaction Roll or move up to Far range toward the Owl Witch.</p>",
           "actions": {
             "4crSC91u01mIviT6": {
@@ -653,7 +653,7 @@
           }
         },
         "BSYxKiYbbfE38YfD": {
-          "name": "Nightmare Stare - Action",
+          "name": "Nightmare Stare",
           "description": "<p>Nightmare Stare - Action: Spend a Fear to have the Owl Witch Afflict a target within Far range with waking nightmares. </p><p></p><p>Until a PC uses a downtime move to comfort the Afflicted creature and clear the condition, the Afflicted creature can’t clear Stress or HP by any means.</p>",
           "actions": {
             "W5V6eJrWIU1FLGnK": {
@@ -662,7 +662,7 @@
           }
         },
         "1WV4B0pt2FtPkpIh": {
-          "name": "Visions of a Violent End - Reaction",
+          "name": "Visions of a Violent End",
           "description": "<p>Visions of a Violent End - Reaction: When the Owl Witch is targeted by an attack, you can spend a Fear to force the attacker to make a Presence Reaction Roll. </p><p></p><p>On a failure, they mark [[/r 1d4]] Stress as their mind is flooded with visions of their own violent death.</p>",
           "actions": {
             "1Psvei2dMAuDyplp": {
@@ -688,7 +688,7 @@
           "description": "<p>When the Raiders have marked half or more of their HP, their standard attack deals <strong>1d4</strong> physical damage instead.</p>"
         },
         "FHvD9aCUxSlVfiOu": {
-          "name": "Come Back Worse - Reaction",
+          "name": "Come Back Worse",
           "description": "<p>Come Back Worse - Reaction: When a Rabble Mawb is defeated, you can spend a Fear to bring this Rabble Mawb back to life. </p><p></p><p>This new Rabble Mawb gains a +X bonus to all rolls, where X is the number of times this feature has been used by this adversary.</p>",
           "effects": {
             "SGb5dWGVJeSKvqeN": {
@@ -721,7 +721,7 @@
       },
       "items": {
         "svofR6tTZSTkkNXv": {
-          "name": "Chop Happy - Action",
+          "name": "Chop Happy",
           "description": "<p>Chop Happy - Action: Mark a Stress to make a standard attack against up to three targets within range. For each target who marks a HP, you gain a Fear.</p>",
           "actions": {
             "jDTkcjXFsS3pzSk3": {
@@ -730,7 +730,7 @@
           }
         },
         "ir2ny0kyoqI2c0JL": {
-          "name": "Knife Thrower - Action",
+          "name": "Knife Thrower",
           "description": "<p>Knife Thrower - Action: Mark a Stress to make a standard attack against a target within Far range. If the Butcher makes this attack while Hidden, they have advantage on the attack roll.</p>",
           "actions": {
             "yYGQrlg9penwYXrZ": {
@@ -752,15 +752,15 @@
       },
       "items": {
         "DpoTaBOb0jdxChhF": {
-          "name": "Hand of Glory - Passive",
+          "name": "Hand of Glory",
           "description": "<p>Hand of Glory - Passive: When the Candlemaker appears, put five tokens on this stat block. Remove one token whenever the Candlemaker marks a HP. </p><p></p><p>While this stat block has one or more tokens on it, the Candlemaker is Hidden.</p>"
         },
         "4757xtppm7080RNz": {
-          "name": "Torchbearer - Passive",
+          "name": "Torchbearer",
           "description": "<p>Torchbearer - Passive: The light of the Candlemaker’s hand of glory inspires bloodlust in their allies. While this stat block has one or more tokens on it, any Redcap within Close range gains a +1 bonus to their damage rolls.</p>"
         },
         "e0J1OrJW7yMSdo8e": {
-          "name": "Dance in the Flames - Action",
+          "name": "Dance in the Flames",
           "description": "<p>Dance in the Flames - Action: Spend a token from this stat block. The Candlemaker conjures a ball of fire at a point within Far range. </p><p></p><p>All creatures within Very Close range of that point must make an Agility Reaction Roll. Targets who fail take 2d10 magic damage. Targets who succeed take half damage.</p>",
           "actions": {
             "Ou9043KK5hrx5ro7": {
@@ -782,11 +782,11 @@
       },
       "items": {
         "RFS4iUXcyg0tEJ5N": {
-          "name": "Spectral - Passive",
+          "name": "Spectral",
           "description": "<p>Spectral - Passive: The Wraith is immune to physical damage and</p><p>weak against magic damage. Additionally, the Wraith can move</p><p>through solid objects.</p>"
         },
         "1mqSv5u4vdaE07PQ": {
-          "name": "Spooky - Passive",
+          "name": "Spooky",
           "description": "<p>Spooky - Passive: When the Wraith makes a successful attack, all PCs within Close range must mark a Stress and you gain a Fear.</p>",
           "actions": {
             "G16REH65F3IYA6pS": {
@@ -795,7 +795,7 @@
           }
         },
         "NGtwoaKkdIrUiwi3": {
-          "name": "Nightmare Shroud - Action",
+          "name": "Nightmare Shroud",
           "description": "<p>Nightmare Shroud - Action: Spend a Fear to have the Wraith wrap themself around a PC within Melee range, making them Shrouded until they or an ally succeed on a Strength or Attack Roll (20) to dislodge the Wraith. </p><p></p><p>If it’s an attack roll, the Shrouded PC takes the damage\u0017 While Shrouded, a PC has disadvantage on all attacks and marks a Stress when they roll with Fear.</p>",
           "actions": {
             "XKjJASQKvCk3G0lS": {
@@ -820,15 +820,15 @@
       },
       "items": {
         "N70FPGCtw1e1qb89": {
-          "name": "Relentless (X) - Passive",
+          "name": "Relentless (X)",
           "description": "<p>Relentless (X) - Passive: Xero can be spotlighted up to X times per GM turn, where X is the number of PCs in the scene. Spend Fear as usual to spotlight them</p>"
         },
         "pTOVTqv7lX4a9keg": {
-          "name": "Collateral Damage - Passive",
+          "name": "Collateral Damage",
           "description": "<p>Collateral Damage - Passive: Xero’s movement cannot be hindered, impeded, or affected by any external effect. </p><p></p><p>All destructible terrain or obstacles in Xero’s path are destroyed when Xero moves through them.</p>"
         },
         "w8gRUsbiNXMBevHi": {
-          "name": "Gigaton Stomp - Action",
+          "name": "Gigaton Stomp",
           "description": "<p>Gigaton Stomp - Action: Spend a Fear to have Xero bring their foot down hard, creating a localized earthquake. </p><p></p><p>All creatures within Melee range take 4d12 physical damage and are Restrained until they succeed on a Finesse Roll to slide out from underfoot. </p><p></p><p>All creatures outside of Melee range and within Close range must succeed on an Instinct Reaction Roll or be knocked back up to Far range. If a target is knocked back, they must mark an Armor Slot or take 4d12 physical damage as they land</p>",
           "actions": {
             "JJY1LYxFRr4GgqAW": {
@@ -843,7 +843,7 @@
           }
         },
         "idHN9s1rWIjzuodv": {
-          "name": "Power Slide - Action",
+          "name": "Power Slide",
           "description": "<p>Power Slide - Action: Mark a Stress to move Xero up to Close range. </p><p></p><p>All creatures Xero moves through must make a Strength Reaction Roll. </p><p></p><p>Targets who fail must mark 2 Armor Slots or take Severe Damage.</p>",
           "actions": {
             "dxaJF56FbTSOknil": {
@@ -852,7 +852,7 @@
           }
         },
         "szVOym25GPEjRuCN": {
-          "name": "Radioactive Breath - Action",
+          "name": "Radioactive Breath",
           "description": "<p>Radioactive Breath - Action: Spend a Fear to have Xero charge up a nuclear beam and place a token on this stat block. </p><p></p><p>The next time Xero takes the spotlight\u001f you can spend this token and unleash the beam. </p><p></p><p>Draw a line with a Close range width from Xero to the edge of the battlefield. </p><p></p><p>All PCs within this path must make an Agility Reaction Roll. </p><p></p><p>Targets who faill take 4d12+12 direct magic damage. </p><p></p><p>Targets who succeed take half damage. </p><p></p><p>Xero can’t use this action again until they take Severe damage.</p>",
           "actions": {
             "wp2cZPO4h7YFdorv": {
@@ -864,7 +864,7 @@
           }
         },
         "sGqgbQ6nOYQYaMUD": {
-          "name": "Regeneration - Action",
+          "name": "Regeneration",
           "description": "<p>Regeneration - Action: Up to three times per scene, spend any number of Fear to clear an equal number of HP.</p>",
           "actions": {
             "f1YYAPNSrUmqXFcR": {

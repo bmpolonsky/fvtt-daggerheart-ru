@@ -660,7 +660,7 @@
     },
     "Stardrop": {
       "name": "Stardrop",
-      "description": "<p>You can use this stardrop to summon a hailstorm of comets that deals 8d20 physical damage to all targets within Very Far range.</p><p>@Template[type:emanation|range:vf]</p>",
+      "description": "<p>You can use this stardrop to summon a hailstorm of comets that deals 8d20 physical damage to all targets within Very Far range.</p>",
       "actions": {
         "pt5U6hlyx4T7MUOa": {
           "name": "Use",

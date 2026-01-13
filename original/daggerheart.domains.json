@@ -175,7 +175,7 @@
       "effects": {
         "8uOMyEczlY2OrKau": {
           "name": "Body Basher",
-          "description": "<p><span>On a successful attack using a weapon with a </span><span class=\"tooltip-convert\">Melee</span><span> range, gain a bonus to your damage roll equal to your </span><span class=\"tooltip-convert\">Strength</span><span>.</p>"
+          "description": "<p><span>On a successful attack using a weapon with a </span><span class=\"tooltip-convert\">Melee</span><span> range, gain a bonus to your damage roll equal to your </span><span class=\"tooltip-convert\">Strength</span><span>.</span></p>"
         }
       }
     },
@@ -2012,7 +2012,7 @@
       "effects": {
         "ulQpnnRFwW4BwMlE": {
           "name": "Rise Up",
-          "description": "<p><span>Gain a bonus to your </span><span class=\"tooltip-convert\">Severe </span><span>threshold equal to your </span><span class=\"tooltip-convert\">Proficiency</span><span>.</p>"
+          "description": "<p><span>Gain a bonus to your </span><span class=\"tooltip-convert\">Severe </span><span>threshold equal to your </span><span class=\"tooltip-convert\">Proficiency</span><span>.</span></p>"
         }
       }
     },
@@ -2811,7 +2811,7 @@
     },
     "Zone of Protection": {
       "name": "Zone of Protection",
-      "description": "<p class=\"Body-Foundation\">Make a <strong>Spellcast Roll (16)</strong>. Once per long rest on a success, choose a point within Far range and create a visible zone of protection there for all allies within Very Close range of that point. When you do, place a <strong>d6</strong> on this card with the 1 value facing up. When an ally in this zone takes damage, they reduce it by the die’s value. You then increase the die’s value by one. When the die’s value would exceed 6, this effect ends.</p><p><span>@Template[type:emanation|range:vc]</p>",
+      "description": "<p class=\"Body-Foundation\">Make a <strong>Spellcast Roll (16)</strong>. Once per long rest on a success, choose a point within Far range and create a visible zone of protection there for all allies within Very Close range of that point. When you do, place a <strong>d6</strong> on this card with the 1 value facing up. When an ally in this zone takes damage, they reduce it by the die’s value. You then increase the die’s value by one. When the die’s value would exceed 6, this effect ends.</p><p>@Template[type:emanation|range:vc]</p>",
       "actions": {
         "U4faKrfbdN797zJm": {
           "name": "Cast",
