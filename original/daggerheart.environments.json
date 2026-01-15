@@ -152,7 +152,7 @@
         },
         "JKFkDvwUOP35Tsr1": {
           "name": "Charcoal Constructs",
-          "description": "<p>Warped animals wreathed in indigo f l ame trample through a point of your choice. All targets within Close range of that point must make an Agility Reaction Roll. Targets who fail take <strong>3d12+3</strong> physical damage. Targets who succeed take half damage instead.</p><p>@Template[type:emanation|range:c]</p><section class=\"secret\" id=\"secret-696PMvOPzHmkdtYc\"><p><em>Are these real animals consumed by the fl ame or merely constructs of the corrupting magic?</em></p></section>",
+          "description": "<p>Warped animals wreathed in indigo flame trample through a point of your choice. All targets within Close range of that point must make an Agility Reaction Roll. Targets who fail take <strong>3d12+3</strong> physical damage. Targets who succeed take half damage instead.</p><p>@Template[type:emanation|range:c]</p><section class=\"secret\" id=\"secret-696PMvOPzHmkdtYc\"><p><em>Are these real animals consumed by the fl ame or merely constructs of the corrupting magic?</em></p></section>",
           "actions": {
             "gbXIaKr8em134IZC": {
               "name": "Roll Save",
@@ -331,9 +331,8 @@
           "name": "Outer Realms Predators",
           "description": "<p><strong>Spend a Fear</strong> to summon an @UUID[Compendium.daggerheart.adversaries.Actor.A0SeeDzwjvqOsyof]{Outer Realms Abomination}, an@UUID[Compendium.daggerheart.adversaries.Actor.ms6nuOl3NFkhPj1k]{Outer Realms Corrupter}, and [[/r 2d6]] @UUID[Compendium.daggerheart.adversaries.Actor.moJhHgKqTKPS2WYS]{Outer Realms Thrall}, who appear at Close range of a chosen PC in defiance of logic and causality. Immediately spotlight one of these adversaries, and you can spend an additional Fear to automatically succeed on that adversary’s standard attack.</p><section class=\"secret\" id=\"secret-psXRRXLoibTKFpaW\"><p><em>What halfconsumed remnants of the shattered world do these monstrosities cast aside in pursuit of living flesh? What jagged refl ections of former personhood do you catch between moments of unquestioning malice?</em></p></section>",
           "actions": {
-            "5a8ESNroEQHAm7rO": {
-              "name": "Spend Fear",
-              "description": "<p><strong>Spend a Fear</strong> to summon an @UUID[Compendium.daggerheart.adversaries.Actor.A0SeeDzwjvqOsyof]{Outer Realms Abomination}, an@UUID[Compendium.daggerheart.adversaries.Actor.ms6nuOl3NFkhPj1k]{Outer Realms Corrupter}, and [[/r 2d6]] @UUID[Compendium.daggerheart.adversaries.Actor.moJhHgKqTKPS2WYS]{Outer Realms Thrall}, who appear at Close range of a chosen PC in defiance of logic and causality. Immediately spotlight one of these adversaries, and you can spend an additional Fear to automatically succeed on that adversary’s standard attack.</p><section class=\"secret\" id=\"secret-ADMZbUwBRqcZNks5\"><p><em>What halfconsumed remnants of the shattered world do these monstrosities cast aside in pursuit of living flesh? What jagged refl ections of former personhood do you catch between moments of unquestioning malice?</em></p></section>"
+            "KCzdCu2KhAx9KyhT": {
+              "name": "Spend Fear"
             }
           }
         },
@@ -415,7 +414,18 @@
       "items": {
         "iiHjguQG2aBn9g8i": {
           "name": "Desecrated Ground",
-          "description": "<p>Cultists dedicated this place to the Fallen Gods, and their foul influence seeps into it. Reduce the PCs’ Hope Die to a d10 while in this environment. The desecration can be removed with a Progress Countdown (6).</p><section class=\"secret\" id=\"secret-iPgKjrXJYw4cy0EX\"><p><em>How do the PCs fist notice that something is wrong about this place? What fears resurface while hope is kept at bay?</em></p></section>"
+          "description": "<p>Cultists dedicated this place to the Fallen Gods, and their foul influence seeps into it. Reduce the PCs’ Hope Die to a d10 while in this environment. The desecration can be removed with a Progress Countdown (6).</p><section class=\"secret\" id=\"secret-iPgKjrXJYw4cy0EX\"><p><em>How do the PCs fist notice that something is wrong about this place? What fears resurface while hope is kept at bay?</em></p></section>",
+          "actions": {
+            "7W3sWRLzjG3dKcgq": {
+              "name": "Influence"
+            }
+          },
+          "effects": {
+            "8yNIw8Y7rfMdOqWC": {
+              "name": "Desecrated Ground",
+              "description": "<p>Your Hope Die is reduced to a d10 while in the Desecrated Grounds.</p>"
+            }
+          }
         },
         "0Rgqw1kUPeJ11ldd": {
           "name": "Blashemous Might",
@@ -447,9 +457,8 @@
                 "The Summoning": "The Summoning"
               }
             },
-            "suFEnfpOfeVRvnJF": {
-              "name": "Summon Demon",
-              "description": "<p>Summon a @UUID[Compendium.daggerheart.adversaries.Actor.3tqCjDwJAQ7JKqMb]{Minor Demon} within Very Close range of the ritual’s leader.</p>"
+            "HG7tbEdlYl3yLQnR": {
+              "name": "Summon Demon"
             }
           }
         },
@@ -494,9 +503,8 @@
           "name": "Difilers Abound",
           "description": "<p><strong>Spend 2 Fear</strong> to summon [[/r 1d4+2]] @UUID[Compendium.daggerheart.adversaries.Actor.OsLG2BjaEdTZUJU9]{Fallen Shock Troop} that appear within Close range of the Usurper to assist their divine siege. Immediately spotlight the Shock Troops to use a “Group Attack” action.</p><section class=\"secret\" id=\"secret-QJHdwGNSuTgS59gn\"><p><em>Which High Fallen do these troops serve? Which god’s fl esh do they wish to feast upon?</em></p></section>",
           "actions": {
-            "qIQTEO5t72xFtKYI": {
-              "name": "Spend Fear",
-              "description": "<p><strong>Spend 2 Fear</strong> to summon [[/r 1d4+2]] @UUID[Compendium.daggerheart.adversaries.Actor.OsLG2BjaEdTZUJU9]{Fallen Shock Troop} that appear within Close range of the Usurper to assist their divine siege. Immediately spotlight the Shock Troops to use a “Group Attack” action.</p><section class=\"secret\" id=\"secret-fNfGy8lT8b7elPcE\"><p><em>Which High Fallen do these troops serve? Which god’s fl esh do they wish to feast upon?</em></p></section>"
+            "okcqGrI4rdghugUi": {
+              "name": "Spend Fear"
             }
           }
         },
@@ -765,7 +773,12 @@
         },
         "hkZVEduCWJFR0h2S": {
           "name": "Raptor Nest",
-          "description": "<p>When the PCs enter the raptors’ hunting grounds, two @UUID[Compendium.daggerheart.adversaries.Actor.OMQ0v6PE8s1mSU0K]{Giant Eagles} appear at Very Far range of a chosen PC, identifying the PCs as likely prey. </p><section id=\"secret-aU19zKlmhVBdS2oF\" class=\"secret\"><p><em>How long has it been since the eagles last found prey? Do they have eggs in their nest or unfl edged young?</em></p></section>"
+          "description": "<p>When the PCs enter the raptors’ hunting grounds, two @UUID[Compendium.daggerheart.adversaries.Actor.OMQ0v6PE8s1mSU0K]{Giant Eagles} appear at Very Far range of a chosen PC, identifying the PCs as likely prey. </p><section id=\"secret-aU19zKlmhVBdS2oF\" class=\"secret\"><p><em>How long has it been since the eagles last found prey? Do they have eggs in their nest or unfl edged young?</em></p></section>",
+          "actions": {
+            "88MyOC3IRcct6VLk": {
+              "name": "Summon"
+            }
+          }
         },
         "K8ld4m5yTA6WZwUs": {
           "name": "Icy Winds",
@@ -966,9 +979,8 @@
           "name": "Patient Hunter",
           "description": "<p><strong>Spend a Fear</strong> to summon a @UUID[Compendium.daggerheart.adversaries.Actor.8KWVLWXFhlY2kYx0]{Glass Snake} within Close range of a chosen PC. The Snake appears in or near the river and immediately takes the spotlight to use their “Spinning Serpent” action.</p><section class=\"secret\" id=\"secret-F8zsJQg3xWOPpH5v\"><p><em>What treasures does the beast have in their burrow? What travelers have already fallen victim to this predator?</em></p></section>",
           "actions": {
-            "Mnp0Yzc7EPVXm8So": {
-              "name": "Spend Fear",
-              "description": "<p><strong>Spend a Fear</strong> to summon a @UUID[Compendium.daggerheart.adversaries.Actor.8KWVLWXFhlY2kYx0]{Glass Snake} within Close range of a chosen PC. The Snake appears in or near the river and immediately takes the spotlight to use their “Spinning Serpent” action.</p><section class=\"secret\" id=\"secret-YIc1Y8jgJKanim7f\"><p><em>What treasures does the beast have in their burrow? What travelers have already fallen victim to this predator?</em></p></section>"
+            "uY9HMKE4Q5g7bRKg": {
+              "name": "Spend Fear"
             }
           }
         }

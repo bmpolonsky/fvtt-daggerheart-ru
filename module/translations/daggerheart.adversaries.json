@@ -294,6 +294,9 @@
           "actions": {
             "gZg3AkzCYUTExjE6": {
               "name": "Потратить Страх"
+            },
+            "qSuWxC8xQOhnbBx9": {
+              "name": "Потратить Страх"
             }
           }
         },
@@ -1248,6 +1251,15 @@
           "actions": {
             "V142qYppCGJn8OiN": {
               "name": "Потратить Страх"
+            },
+            "jKvzbQT0vp66DDOH": {
+              "name": "Потратить Страх"
+            }
+          },
+          "effects": {
+            "gFeHLGgeRoDdd3VG": {
+              "name": "Жажда битвы",
+              "description": "<p>Вы используете d20 в качестве кости Страха до конца сцены.</p>"
             }
           }
         },
@@ -1274,6 +1286,9 @@
             "7G6uWlFEeOLsJIWY": {
               "name": "Призыв",
               "description": "<p>Вызовите [[/r 1d4]]@UUID[Compendium.daggerheart.adversaries.Actor.3tqCjDwJAQ7JKqMb]{Малых Демонов}, которые появляются на Средней дистанции.</p>"
+            },
+            "FlE6i0tbKEguF9wz": {
+              "name": "Призыв"
             }
           }
         }
@@ -1385,6 +1400,9 @@
           "description": "<p><strong>Потратьте Страх</strong>, чтобы призвать трех @UUID[Compendium.daggerheart.adversaries.Actor.o63nS0k3wHu6EgKP]{Трэнтов Саженцев}, которые появляются на Средней дистанции и сразу же активируются.</p>",
           "actions": {
             "84Q2b0zIY9c7Yhho": {
+              "name": "Потратить Страх"
+            },
+            "R84DdS0OIx2cUt1w": {
               "name": "Потратить Страх"
             }
           }
@@ -2318,6 +2336,9 @@
           "actions": {
             "s5mLw6DRGd76MLcC": {
               "name": "Потратить Страх"
+            },
+            "J8U7dw3cDSsEirr5": {
+              "name": "Потратить Страх"
             }
           }
         }
@@ -2490,6 +2511,9 @@
           "actions": {
             "5Q6RMUTiauKw0tDj": {
               "name": "Призвать вампиров"
+            },
+            "jGFOnU6PNdWU6iF4": {
+              "name": "Потратить Страх"
             }
           }
         },
@@ -2612,6 +2636,9 @@
           "description": "<p>Когда у Слизи 4 или более Ран, вы можете <strong>потратить Страх</strong>, чтобы разделить ее на две @UUID[Compendium.daggerheart.adversaries.Actor.SHXedd9zZPVfUgUa]{Зеленые Слизи} (без отмеченных Ран или Стресса). Немедленно активируйте обе.</p>",
           "actions": {
             "iQsYAqpUFvJslRDr": {
+              "name": "Потратить Страх"
+            },
+            "aeRdkiRsDNagTKhp": {
               "name": "Потратить Страх"
             }
           }
@@ -2812,7 +2839,12 @@
         },
         "Mo91w4ccffcmBPt5": {
           "name": "Ещё Появятся",
-          "description": "<p>Призовите трех Шестёрок «Зазубренного Ножа», которые появляются на Далекой дистанции.</p>"
+          "description": "<p>Призовите трех Шестёрок «Зазубренного Ножа», которые появляются на Далекой дистанции.</p>",
+          "actions": {
+            "MCTBsw9lusUdubj0": {
+              "name": "Призыв"
+            }
+          }
         },
         "qe94UdLZb0p3Gvxj": {
           "name": "Удар Милосердия",
@@ -3871,6 +3903,9 @@
             "cUKwhq1imsTVru8D": {
               "name": "Призвать стражу",
               "description": "<p>Один раз за сцену, <strong>отметьте Стресс</strong>, чтобы вызвать <strong>1d4</strong> @UUID[Compendium.daggerheart.adversaries.Actor.B4LZcGuBAHzyVdzy]{Стражей Мечников}, которые появляются на Далекой дистанции, чтобы исполнить волю Аристократа.</p>"
+            },
+            "tioTtYfIGFIXRITN": {
+              "name": "Призвать стражу"
             }
           }
         },
@@ -3910,9 +3945,12 @@
         },
         "WGEGO0DSOs5cF0EL": {
           "name": "Подкрепление",
-          "description": "<p>Один раз за сцену <strong>отметьте Стресс</strong>, чтобы вызвать орду Пиратов Налётчиков, которая появляется на Далекой дистанции.</p>",
+          "description": "<p>Один раз за сцену <strong>отметьте Стресс</strong>, чтобы вызвать @UUID[Compendium.daggerheart.adversaries.Actor.5YgEajn0wa4i85kC]{Орду Пиратов Налётчиков}, которая появляется на Далекой дистанции.</p>",
           "actions": {
             "NlgIp0KrmZoS27Xy": {
+              "name": "Отметить Стресс"
+            },
+            "nuYk5WeLLpIKa69q": {
               "name": "Отметить Стресс"
             }
           }
@@ -4039,6 +4077,9 @@
           "actions": {
             "dw6Juw8mriH7sg0e": {
               "name": "Потратить Страх"
+            },
+            "BMEr77hDxaQyYBna": {
+              "name": "Потратить Страх"
             }
           }
         }
@@ -4154,6 +4195,9 @@
               "countdown": {
                 "Summoning Ritual": "Ритуал призыва"
               }
+            },
+            "YReYG6DrWp4QGSij": {
+              "name": "Призыв"
             }
           }
         },
@@ -4162,6 +4206,9 @@
           "description": "<p>Один раз за сцену, когда Хранитель Тайн имеет 2 или более отмеченных Ран, вы можете <strong>отметить Стресс</strong>, чтобы вызвать @UUID[Compendium.daggerheart.adversaries.Actor.NoRZ1PqB8N5wcIw0]{Стаю Адских Псов}, которая появляется на Средней дистанции и сразу активируется.</p>",
           "actions": {
             "JBuQUJhif2A7IlJd": {
+              "name": "Отметить Стресс"
+            },
+            "tfmY6HYkkY27NBaF": {
               "name": "Отметить Стресс"
             }
           }
@@ -4828,7 +4875,12 @@
         },
         "KBMf7oBfFSHoafKN": {
           "name": "Кровавое Сплетение",
-          "description": "<p>Когда атака Тёрна наносит цели урон, и в пределах Средней дистанции от цели находятся три или более Тёрнов, вы можете объединить приспешников в @UUID[Compendium.daggerheart.adversaries.Actor.PKSXFuaIHUCoH63A]{Рой Тёрнов}. Количество ячеек Ран орды равна сумме ячеек Ран объединенных приспешников.</p>"
+          "description": "<p>Когда атака Тёрна наносит цели урон, и в пределах Средней дистанции от цели находятся три или более Тёрнов, вы можете объединить приспешников в @UUID[Compendium.daggerheart.adversaries.Actor.PKSXFuaIHUCoH63A]{Рой Тёрнов}. Количество ячеек Ран орды равна сумме ячеек Ран объединенных приспешников.</p>",
+          "actions": {
+            "g1OQ5xlMHFWsoktd": {
+              "name": "Призыв"
+            }
+          }
         }
       }
     },

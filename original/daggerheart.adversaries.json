@@ -292,7 +292,7 @@
           "name": "Open the Gates of Death",
           "description": "<p><strong>Spend a Fear</strong> to summon a @UUID[Compendium.daggerheart.adversaries.Actor.YhJrP7rTBiRdX5Fp]{Zombie Legion}, which appears at Close range and immediately takes the spotlight.</p>",
           "actions": {
-            "gZg3AkzCYUTExjE6": {
+            "qSuWxC8xQOhnbBx9": {
               "name": "Spend Fear"
             }
           }
@@ -1106,7 +1106,7 @@
           "effects": {
             "6WSx03mFbpbPWnOI": {
               "name": "Your Struggle is Pointless",
-              "description": "<p>All targets aff ected replace their Hope Die with a <strong>d8</strong> until they roll a success with Hope or their next rest.</p>"
+              "description": "<p>All targets affected replace their Hope Die with a <strong>d8</strong> until they roll a success with Hope or their next rest.</p>"
             }
           }
         },
@@ -1246,8 +1246,14 @@
           "name": "Battle Lust",
           "description": "<p><strong>Spend a Fear</strong> to boil the blood of all PCs within Far range. They use a d20 as their Fear Die until the end of the scene.</p><p>@Template[type:emanation|range:f]</p>",
           "actions": {
-            "V142qYppCGJn8OiN": {
+            "jKvzbQT0vp66DDOH": {
               "name": "Spend Fear"
+            }
+          },
+          "effects": {
+            "gFeHLGgeRoDdd3VG": {
+              "name": "Battle Lust",
+              "description": "<p>You use a d20 as your Fear Die until the end of the scene.</p>"
             }
           }
         },
@@ -1271,9 +1277,8 @@
                 "Blood and Souls": "Blood and Souls"
               }
             },
-            "7G6uWlFEeOLsJIWY": {
-              "name": "Summon",
-              "description": "<p>Summon [[/r 1d4]]@UUID[Compendium.daggerheart.adversaries.Actor.3tqCjDwJAQ7JKqMb]{Minor Demons}, who appear at Close range.</p>"
+            "FlE6i0tbKEguF9wz": {
+              "name": "Summon"
             }
           }
         }
@@ -1384,7 +1389,7 @@
           "name": "Grow Saplings",
           "description": "<p><strong>Spend a Fear</strong> to grow three @UUID[Compendium.daggerheart.adversaries.Actor.o63nS0k3wHu6EgKP]{Treant Sapling Minions}, who appear at Close range and immediately take the spotlight.</p>",
           "actions": {
-            "84Q2b0zIY9c7Yhho": {
+            "R84DdS0OIx2cUt1w": {
               "name": "Spend Fear"
             }
           }
@@ -2316,7 +2321,7 @@
           "name": "Split",
           "description": "<p>When the @Lookup[@name] has 3 or more HP marked, you can <strong>spend a Fear</strong> to split them into two @UUID[Compendium.daggerheart.adversaries.Actor.aLkLFuVoKz2NLoBK]{Tiny Green Oozes} (with no marked HP or Stress). Immediately spotlight both of them.</p>",
           "actions": {
-            "s5mLw6DRGd76MLcC": {
+            "J8U7dw3cDSsEirr5": {
               "name": "Spend Fear"
             }
           }
@@ -2488,8 +2493,8 @@
           "name": "The Hunt Is On",
           "description": "<p><strong>Spend 2 Fear</strong> to summon [[/r 1d4]] @UUID[Compendium.daggerheart.adversaries.Actor.WWyUp6Mxl1S3KYUG]{Vampires}, who appear at Far range and immediately take the spotlight.</p>",
           "actions": {
-            "5Q6RMUTiauKw0tDj": {
-              "name": "Summon Vampires"
+            "jGFOnU6PNdWU6iF4": {
+              "name": "Spend Fear"
             }
           }
         },
@@ -2611,7 +2616,7 @@
           "name": "Split",
           "description": "<p>When the @Lookup[@name] has 4 or more HP marked, you can <strong>spend a Fear</strong> to split them into two @UUID[Compendium.daggerheart.adversaries.Actor.SHXedd9zZPVfUgUa]{Green Oozes}(with no marked HP or Stress). Immediately spotlight both of them.</p>",
           "actions": {
-            "iQsYAqpUFvJslRDr": {
+            "aeRdkiRsDNagTKhp": {
               "name": "Spend Fear"
             }
           }
@@ -2812,7 +2817,12 @@
         },
         "Mo91w4ccffcmBPt5": {
           "name": "More Where That Came From",
-          "description": "<p>Summon three @Compendium[daggerheart.adversaries.Actor.C0OMQqV7pN6t7ouR], who appear at Far range.</p>"
+          "description": "<p>Summon three @Compendium[daggerheart.adversaries.Actor.C0OMQqV7pN6t7ouR], who appear at Far range.</p>",
+          "actions": {
+            "MCTBsw9lusUdubj0": {
+              "name": "Summon"
+            }
+          }
         },
         "qe94UdLZb0p3Gvxj": {
           "name": "Coup de Grace",
@@ -3868,9 +3878,8 @@
           "name": "Guards, Seize Them!",
           "description": "<p>Once per scene, <strong>mark a Stress</strong> to summon <strong>1d4</strong> @UUID[Compendium.daggerheart.adversaries.Actor.B4LZcGuBAHzyVdzy]{Bladed Guards}, who appear at Far range to enforce the @Lookup[@name]’s will.</p>",
           "actions": {
-            "cUKwhq1imsTVru8D": {
-              "name": "Summon Guards",
-              "description": "<p>Once per scene, <strong>mark a Stress</strong> to summon <strong>1d4</strong> @UUID[Compendium.daggerheart.adversaries.Actor.B4LZcGuBAHzyVdzy]{Bladed Guards}, who appear at Far range to enforce the Noble’s will.</p>"
+            "tioTtYfIGFIXRITN": {
+              "name": "Summon Guards"
             }
           }
         },
@@ -3910,9 +3919,9 @@
         },
         "WGEGO0DSOs5cF0EL": {
           "name": "Reinforcements",
-          "description": "<p>Once per scene, <strong>mark a Stress</strong> to summon a Pirate Raiders Horde, which appears at Far range.</p>",
+          "description": "<p>Once per scene, <strong>mark a Stress</strong> to summon a @UUID[Compendium.daggerheart.adversaries.Actor.5YgEajn0wa4i85kC]{Pirate Raider Horde}, which appears at Far range.</p>",
           "actions": {
-            "NlgIp0KrmZoS27Xy": {
+            "nuYk5WeLLpIKa69q": {
               "name": "Mark Stress"
             }
           }
@@ -4037,7 +4046,7 @@
           "name": "Split",
           "description": "<p>When the @Lookup[@name] has 3 or more HP marked, you can <strong>spend a Fear</strong> to split them into two @UUID[Compendium.daggerheart.adversaries.Actor.1fkLQXVtmILqfJ44]{Tiny Red Oozes} (with no marked HP or Stress). Immediately spotlight both of them.</p>",
           "actions": {
-            "dw6Juw8mriH7sg0e": {
+            "BMEr77hDxaQyYBna": {
               "name": "Spend Fear"
             }
           }
@@ -4144,16 +4153,15 @@
           "name": "Summoning Ritual",
           "description": "<p><em>Countdown (6)</em>. When the @Lookup[@name] is in the spotlight for the first time, activate the countdown. When they mark HP, tick down this countdown by the number of HP marked. When it triggers, summon a @UUID[Compendium.daggerheart.adversaries.Actor.3tqCjDwJAQ7JKqMb]{Minor Demon} who appears at Close range.</p>",
           "actions": {
-            "0rixG6jLRynAYNqA": {
-              "name": "Summon",
-              "description": "<p>Summon a @UUID[Compendium.daggerheart.adversaries.Actor.3tqCjDwJAQ7JKqMb]{Minor Demon} who appears at Close range.</p>"
-            },
             "ZVXHY2fpomoKV7jG": {
               "name": "Start Countdown",
               "description": "<p><em>Countdown (6)</em>. When the @Lookup[@name] is in the spotlight for the first time, activate the countdown.</p>",
               "countdown": {
                 "Summoning Ritual": "Summoning Ritual"
               }
+            },
+            "YReYG6DrWp4QGSij": {
+              "name": "Summon"
             }
           }
         },
@@ -4161,7 +4169,7 @@
           "name": "Fallen Hounds",
           "description": "<p>Once per scene, when the @Lookup[@name] marks 2 or more HP, you can <strong>mark a Stress</strong> to summon a @UUID[Compendium.daggerheart.adversaries.Actor.NoRZ1PqB8N5wcIw0]{Demonic Hound Pack}, which appears at Close range and is immediately spotlighted.</p>",
           "actions": {
-            "JBuQUJhif2A7IlJd": {
+            "tfmY6HYkkY27NBaF": {
               "name": "Mark Stress"
             }
           }
@@ -4828,7 +4836,12 @@
         },
         "KBMf7oBfFSHoafKN": {
           "name": "Drain and Multiply",
-          "description": "<p>When an attack from the @Lookup[@name] causes a target to mark HP and there are three or more @Lookup[@name] Minions within Close range, you can combine the Minions into a @UUID[Compendium.daggerheart.adversaries.Actor.PKSXFuaIHUCoH63A]{Tangle Bramble Swarm Horde}. The Horde’s HP is equal to the number of Minions combined.</p>"
+          "description": "<p>When an attack from the @Lookup[@name] causes a target to mark HP and there are three or more @Lookup[@name] Minions within Close range, you can combine the Minions into a @UUID[Compendium.daggerheart.adversaries.Actor.PKSXFuaIHUCoH63A]{Tangle Bramble Swarm Horde}. The Horde’s HP is equal to the number of Minions combined.</p>",
+          "actions": {
+            "g1OQ5xlMHFWsoktd": {
+              "name": "Summon"
+            }
+          }
         }
       }
     },

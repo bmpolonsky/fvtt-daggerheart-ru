@@ -68,7 +68,9 @@
         },
         "summon": {
           "name": "Призыв",
-          "tooltip": "Создать токены в сцене."
+          "tooltip": "Создать токены в сцене.",
+          "error": "У вас нет прав на призыв токенов или отсутствует активная сцена.",
+          "invalidDrop": "Для призыва можно перетаскивать только актёров."
         }
       },
       "Config": {
@@ -89,7 +91,9 @@
           "customFormula": "Пользовательская формула",
           "formula": "Формула"
         },
-        "displayInChat": "Отображать в чате"
+        "displayInChat": "Отображать в чате",
+        "deleteTriggerTitle": "Удалить триггер",
+        "deleteTriggerContent": "Вы уверены, что хотите удалить триггер {trigger}?"
       },
       "RollField": {
         "diceRolling": {
@@ -121,6 +125,9 @@
         },
         "cost": {
           "stepTooltip": "+{step} за шаг"
+        },
+        "summon": {
+          "dropSummonsHere": "Перетащите призываемых существ сюда"
         }
       }
     },
@@ -231,6 +238,8 @@
           "unequip": "Снять",
           "useItem": "Использовать предмет"
         },
+        "defaultHopeDice": "Кость Надежды по умолчанию",
+        "defaultFearDice": "Кость Страха по умолчанию",
         "disadvantageSources": {
           "label": "Источники помехи",
           "hint": "Добавляйте отдельные слова или короткий текст в качестве напоминаний и подсказок о том, в чём у персонажа есть помеха."
@@ -1210,7 +1219,8 @@
         "any": "Любая",
         "friendly": "Дружественная",
         "hostile": "Враждебная",
-        "self": "На себя"
+        "self": "На себя",
+        "other": "Другое"
       },
       "TemplateTypes": {
         "circle": "Круг",
@@ -1283,6 +1293,29 @@
             "comprehend": "Постигать"
           }
         }
+      },
+      "Triggers": {
+        "postDamageReduction": {
+          "label": "После снижения урона"
+        },
+        "preDamageReduction": {
+          "label": "До снижения урона"
+        },
+        "dualityRoll": {
+          "label": "Бросок Дуальности"
+        },
+        "fearRoll": {
+          "label": "Бросок Страха"
+        },
+        "triggerTexts": {
+          "strangePatternsContentTitle": "Совпало {nr} раз(а).",
+          "strangePatternsContentSubTitle": "Получите Надежду или снимите Стресс суммарно {nr} раз(а).",
+          "ferocityContent": "Потратить 2 Надежды, чтобы получить бонус {bonus} к Уклонению до следующей атаки по вам?",
+          "ferocityEffectDescription": "Ваше Уклонение увеличено на {bonus}. Этот бонус действует до следующей атаки, совершенной против вас."
+        },
+        "triggerType": "Тип триггера",
+        "triggeringActorType": "Тип триггерящего актёра",
+        "triggerError": "Триггер {trigger} не сработал для {actor}. Вероятно, он настроен неправильно."
       },
       "WeaponFeature": {
         "barrier": {
@@ -2128,7 +2161,8 @@
         "itemFeatures": "Свойства предмета",
         "questions": "Вопросы",
         "configuration": "Конфигурация",
-        "base": "Базовое"
+        "base": "Базовое",
+        "triggers": "Триггеры"
       },
       "Tiers": {
         "1": "Ранг 1",
@@ -2249,6 +2283,10 @@
       "stress": "Стресс",
       "subclasses": "Подклассы",
       "success": "Успех",
+      "summon": {
+        "single": "Призыв",
+        "plural": "Призывы"
+      },
       "take": "Получить",
       "Target": {
         "single": "Цель",
@@ -2355,6 +2393,9 @@
             },
             "width": {
               "label": "Ширина"
+            },
+            "scale": {
+              "label": "Масштаб токена"
             }
           },
           "evolved": {
@@ -2414,6 +2455,9 @@
       "DomainCard": {
         "type": "Тип",
         "recallCost": "Стоимость Призыва",
+        "vaultActive": "Активно в хранилище",
+        "loadoutIgnore": "Игнорирует лимит руки",
+        "domainTouched": "Затронутый доменом",
         "foundationTitle": "Основа",
         "specializationTitle": "Специализация",
         "masteryTitle": "Мастерство"
@@ -2568,6 +2612,12 @@
               "hint": "Автоматически применять эффекты. Цели должны быть выбраны до совершения действия, а автоматизация Броска Реакции должна быть включена. Обходит права доступа игроков."
             }
           },
+          "triggers": {
+            "enabled": {
+              "label": "Включено",
+              "hint": "Продвинутая автоматизация, например, всплывающее окно для свойства \"Странные закономерности\" у волшебника"
+            }
+          },
           "summaryMessages": {
             "label": "Итоговые сообщения"
           }
@@ -2577,6 +2627,9 @@
         },
         "roll": {
           "title": "Действия"
+        },
+        "trigger": {
+          "title": "Триггеры"
         }
       },
       "Homebrew": {
@@ -2719,7 +2772,9 @@
           }
         },
         "disabledText": "Измерения дистанции Daggerheart отключены в системных настройках - Вариативные правила",
-        "rangeMeasurement": "Измерение дистанции"
+        "rangeMeasurement": "Измерение дистанции",
+        "sceneEnvironments": "Окружения сцены",
+        "dragEnvironmentHere": "Перетащите окружения сюда"
       }
     },
     "UI": {
@@ -2934,7 +2989,8 @@
         "noActorOwnership": "У вас нет прав на этого персонажа",
         "documentIsMissing": "{documentType} отсутствует в мире.",
         "tokenActorMissing": "У {name} отсутствует актёр",
-        "tokenActorsMissing": "У [{names}] отсутствуют актёры"
+        "tokenActorsMissing": "У [{names}] отсутствуют актёры",
+        "domainTouchRequirement": "Для использования этой карты домена требуется иметь в руке {nr} карт(ы) домена {domain}"
       },
       "Sidebar": {
         "actorDirectory": {
@@ -2979,7 +3035,8 @@
         "deleteItem": "Удалить предмет",
         "immune": "Иммунитет",
         "middleClick": "[СКМ] Закрепить подсказку",
-        "tokenSize": "Размер токена на сцене"
+        "tokenSize": "Размер токена на сцене",
+        "previewTokenHelp": "ЛКМ для размещения, ПКМ для отмены"
       }
     }
   }

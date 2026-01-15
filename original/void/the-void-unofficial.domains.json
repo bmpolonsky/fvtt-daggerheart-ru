@@ -28,6 +28,12 @@
       "actions": {
         "h0M9skrk3ZHoJN3y": {
           "name": "Mark a Stress"
+        },
+        "KI52UpNyblzqnJF8": {
+          "name": "Spend a Hope"
+        },
+        "SMz2xg2m7V7UFUPI": {
+          "name": "Gain a Hope"
         }
       }
     },
@@ -313,7 +319,12 @@
     },
     "Umbra Veil": {
       "name": "Umbra Veil",
-      "description": "<p>Once per rest, when you roll with Fear, you can <strong data-start=\"850\" data-end=\"878\">spend any number of Hope</strong> to place an equal number of tokens on this card, encasing yourself in a shadowy energy. After an attack roll is made against you, you can spend any number of tokens to give the attack roll a –1 penalty per token. On your next rest, remove all tokens from this card.</p>"
+      "description": "<p>Once per rest, when you roll with Fear, you can <strong data-start=\"850\" data-end=\"878\">spend any number of Hope</strong> to place an equal number of tokens on this card, encasing yourself in a shadowy energy. After an attack roll is made against you, you can spend any number of tokens to give the attack roll a –1 penalty per token. On your next rest, remove all tokens from this card.</p>",
+      "actions": {
+        "SXvGj5eX1W6Telmw": {
+          "name": "Spend Token"
+        }
+      }
     },
     "Vampiric Strike": {
       "name": "Vampiric Strike",
