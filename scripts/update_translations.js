@@ -1859,22 +1859,13 @@ async function main() {
   const lootOld = oldTranslations[TRANSLATION_FILES.loot] || {};
 
   const armorMap = createEquipmentMap(equipmentData, new Set(["armor"]), {
-    buildDescription: (ruEntry) => {
-      const fromFeatures = buildFeatureDescription(ruEntry.features || []);
-      return fromFeatures || null;
-    }
+    buildDescription: () => null
   });
   const weaponMap = createEquipmentMap(
     equipmentData,
     new Set(["primary-weapon", "secondary-weapon", "combat-wheelchair"]),
     {
-      buildDescription: (ruEntry, enEntry) => {
-        const featureDesc = buildFeatureDescription(ruEntry.features || []);
-        if (enEntry.type_slug === "combat-wheelchair") {
-          return featureDesc || defaultEquipmentDescription(ruEntry, enEntry);
-        }
-        return featureDesc || null;
-      }
+      buildDescription: () => null
     }
   );
   const consumableMap = createEquipmentMap(equipmentData, new Set(["consumable"]));
