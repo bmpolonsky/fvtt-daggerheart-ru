@@ -331,10 +331,6 @@
           "name": "Хищники из других миров",
           "description": "<p><strong>Потратьте Страх</strong>, чтобы вызвать @UUID[Compendium.daggerheart.adversaries.Actor.A0SeeDzwjvqOsyof]{Мерзости из Внешних Миров}, @UUID[Compendium.daggerheart.adversaries.Actor.ms6nuOl3NFkhPj1k]{Искусителя из Внешних Миров} и <strong>[[/r 2d6]]</strong> @UUID[Compendium.daggerheart.adversaries.Actor.moJhHgKqTKPS2WYS]{Прислужников из Внешних Миров}, которые появятся на Средней дистанции от выбранного персонажа, вопреки логике и причинно-следственной связи. Немедленно активируйте одного из этих противников, и вы можете <strong>потратить дополнительный Страх</strong>, чтобы автоматически преуспеть в стандартной атаке этого противника.</p><section class='secret' id='secret-psXRRXLoibTKFpaW'><p><em>Какие полусъеденные остатки разрушенного мира отбрасывают эти чудовища в погоне за живым мясом? Какие обрывочные отражения прежней личности вы улавливаете между моментами беспрекословной злобы?</em></p></section>",
           "actions": {
-            "5a8ESNroEQHAm7rO": {
-              "name": "Потратить Страх",
-              "description": "<p><strong>Потратьте Страх</strong>, чтобы вызвать @UUID[Compendium.daggerheart.adversaries.Actor.A0SeeDzwjvqOsyof]{Мерзости из Внешних Миров}, @UUID[Compendium.daggerheart.adversaries.Actor.ms6nuOl3NFkhPj1k]{Искусителя из Внешних Миров} и <strong>[[/r 2d6]]</strong> @UUID[Compendium.daggerheart.adversaries.Actor.moJhHgKqTKPS2WYS]{Прислужников из Внешних Миров}, которые появятся на Средней дистанции от выбранного персонажа, вопреки логике и причинно-следственной связи. Немедленно активируйте одного из этих противников, и вы можете <strong>потратить дополнительный Страх</strong>, чтобы автоматически преуспеть в стандартной атаке этого противника.</p><section class='secret' id='secret-psXRRXLoibTKFpaW'><p><em>Какие полусъеденные остатки разрушенного мира отбрасывают эти чудовища в погоне за живым мясом? Какие обрывочные отражения прежней личности вы улавливаете между моментами беспрекословной злобы?</em></p></section>"
-            },
             "KCzdCu2KhAx9KyhT": {
               "name": "Потратить Страх"
             }
@@ -461,10 +457,6 @@
                 "The Summoning": "Призыв"
               }
             },
-            "suFEnfpOfeVRvnJF": {
-              "name": "Призвать демона",
-              "description": "<p>Вызовите @UUID[Compendium.daggerheart.adversaries.Actor.3tqCjDwJAQ7JKqMb]{Малого Демона} в пределах Близкой дистанции от лидера ритуала.</p>"
-            },
             "HG7tbEdlYl3yLQnR": {
               "name": "Призвать Демона"
             }
@@ -511,10 +503,6 @@
           "name": "Осквернители повсюду",
           "description": "<p><strong>Потратьте 2 Страха</strong>, чтобы вызвать <strong>[[/r 1d4+2]]</strong> @UUID[Compendium.daggerheart.adversaries.Actor.OsLG2BjaEdTZUJU9]{штурмовых отрядов Падшего}, которые появляются в пределах Средней дистанции от Узурпатора, чтобы помочь ему в божественной осаде. Немедленно активируйте Штурмовиков, чтобы использовать действие «Групповая атака».</p><section class='secret' id='secret-QJHdwGNSuTgS59gn'><p><em>Кому служат эти войска? Плоть какого бога они хотят полакомиться?</em></p></section>",
           "actions": {
-            "qIQTEO5t72xFtKYI": {
-              "name": "Потратить Страх",
-              "description": "<p><strong>Потратьте 2 Страха</strong>, чтобы вызвать <strong>[[/r 1d4+2]]</strong> @UUID[Compendium.daggerheart.adversaries.Actor.OsLG2BjaEdTZUJU9]{штурмовых отрядов Падшего}, которые появляются в пределах Средней дистанции от Узурпатора, чтобы помочь ему в божественной осаде. Немедленно активируйте Штурмовиков, чтобы использовать действие «Групповая атака».</p><section class='secret' id='secret-QJHdwGNSuTgS59gn'><p><em>Кому служат эти войска? Плоть какого бога они хотят полакомиться?</em></p></section>"
-            },
             "okcqGrI4rdghugUi": {
               "name": "Потратить Страх"
             }
@@ -991,10 +979,6 @@
           "name": "Терпеливый Охотник",
           "description": "<p><strong>Потратьте Страх</strong>, чтобы вызвать @UUID[Compendium.daggerheart.adversaries.Actor.8KWVLWXFhlY2kYx0]{Стеклянную змею} в пределах Средней дистанции от выбранного персонажа. Змея появляется в реке или рядом с целью и сразу же активирует действие «Вихрь Змеи».</p><section class='secret' id='secret-F8zsJQg3xWOPpH5v'><p><em>Какие сокровища хранит зверь в своей норе? Какие путешественники уже стали жертвами этого хищника?</em></p></section>",
           "actions": {
-            "Mnp0Yzc7EPVXm8So": {
-              "name": "Потратить Страх",
-              "description": "<p><strong>Потратьте Страх</strong>, чтобы вызвать @UUID[Compendium.daggerheart.adversaries.Actor.8KWVLWXFhlY2kYx0]{Стеклянную змею} в пределах Средней дистанции от выбранного персонажа. Змея появляется в реке или рядом с целью и сразу же активирует действие «Вихрь Змеи».</p><section class='secret' id='secret-F8zsJQg3xWOPpH5v'><p><em>Какие сокровища хранит зверь в своей норе? Какие путешественники уже стали жертвами этого хищника?</em></p></section>"
-            },
             "uY9HMKE4Q5g7bRKg": {
               "name": "Потратить Страх"
             }
