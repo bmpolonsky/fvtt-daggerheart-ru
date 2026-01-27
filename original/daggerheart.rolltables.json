@@ -1,28 +1,8 @@
 {
   "label": "Rolltables",
-  "folders": {},
   "entries": {
-    "Table of Random Objectives": {
-      "name": "Table of Random Objectives",
-      "description": "<p>Layering Goals Other than Attrition into Combat</p>",
-      "results": {
-        "1-1": "<p>Acquire (obtain or steal) an important item or items.</p>",
-        "2-2": "<p>Capture one or more of the opponents.</p>",
-        "3-3": "<p>Activate a magical device.</p>",
-        "4-4": "<p>Frame a character or tarnish their reputation.</p>",
-        "5-5": "<p>Drive the opponent into a corner or ambush point.</p>",
-        "6-6": "<p>Stop a magical ritual, legal ceremony, or time-sensitive spell.</p>",
-        "7-7": "<p>Hold the line—keep the enemy from reaching a specific area or group.</p>",
-        "8-8": "<p>Plant evidence or a tracking device on a target.</p>",
-        "9-9": "<p>Secure a specific location ahead of another group’s arrival.</p>",
-        "10-10": "<p>Harass the opponent to deplete their resources or keep them occupied.</p>",
-        "11-11": "<p>Destroy a piece of architecture, a statue, a shrine, or a weapon.</p>",
-        "12-12": "<p>Investigate a situation to confirm or deny existing information.</p>"
-      }
-    },
     "Loot": {
       "name": "Loot",
-      "description": "<p>To generate a random item, choose a rarity, roll the designated dice, and match the total to the item in the table: </p><ul><li><p> Common: 1d12 or 2d12 </p></li><li><p>Uncommon: 2d12 or 3d12 </p></li><li><p>Rare: 3d12 or 4d12 </p></li><li><p>Legendary: 4d12 or 5d12</p></li></ul>",
       "results": {
         "1-1": "Premium Bedroll",
         "2-2": "Piper Whistle",
@@ -88,7 +68,6 @@
     },
     "Consumables": {
       "name": "Consumables",
-      "description": "<p>To generate a random consumable, choose a rarity, roll the designated dice, and match the total to the item in the table:</p><ul><li><p>Common: 1d12 or 2d12</p></li><li><p>Uncommon: 2d12 or 3d12</p></li><li><p>Rare: 3d12 or 4d12</p></li><li><p>Legendary: 4d12 or 5d12</p></li></ul>",
       "results": {
         "1-1": "Stride Potion",
         "2-2": "Bolster Potion",
@@ -150,6 +129,23 @@
         "58-58": "Death Tea",
         "59-59": "Mirror of Marigold",
         "60-60": "Stardrop"
+      }
+    },
+    "Random Objectives": {
+      "name": "Random Objectives",
+      "results": {
+        "1-1": "<p>Acquire (obtain or steal) an important item or items.</p>",
+        "2-2": "<p>Capture one or more of the opponents.</p>",
+        "3-3": "<p>Activate a magical device.</p>",
+        "4-4": "<p>Frame a character or tarnish their reputation.</p>",
+        "5-5": "<p>Drive the opponent into a corner or ambush point.</p>",
+        "6-6": "<p>Stop a magical ritual, legal ceremony, or time-sensitive spell.</p>",
+        "7-7": "<p>Hold the line—keep the enemy from reaching a specific area or group.</p>",
+        "8-8": "<p>Plant evidence or a tracking device on a target.</p>",
+        "9-9": "<p>Secure a specific location ahead of another group’s arrival.</p>",
+        "10-10": "<p>Harass the opponent to deplete their resources or keep them occupied.</p>",
+        "11-11": "<p>Destroy a piece of architecture, a statue, a shrine, or a weapon.</p>",
+        "12-12": "<p>Investigate a situation to confirm or deny existing information.</p>"
       }
     }
   }

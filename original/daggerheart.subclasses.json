@@ -68,7 +68,13 @@
     },
     "Advanced Training": {
       "name": "Advanced Training",
-      "description": "<p>Choose two additional level-up options for your companion.</p>"
+      "description": "<p>Choose two additional level-up options for your companion.</p>",
+      "effects": {
+        "bKOuMxhB2Jth3j2T": {
+          "name": "Advanced Training",
+          "description": "<p><span>Choose two additional level-up options for your companion.</span></p>"
+        }
+      }
     },
     "Apex Predator": {
       "name": "Apex Predator",
@@ -409,7 +415,13 @@
     },
     "Expert Training": {
       "name": "Expert Training",
-      "description": "<p>Choose an additional level-up option for your companion.</p>"
+      "description": "<p>Choose an additional level-up option for your companion.</p>",
+      "effects": {
+        "rknTONvaUDZ2Yz1W": {
+          "name": "Expert Training",
+          "description": "<p><span>Choose an additional level-up option for your companion.</span></p>"
+        }
+      }
     },
     "Face Your Fear": {
       "name": "Face Your Fear",

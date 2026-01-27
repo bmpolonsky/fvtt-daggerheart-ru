@@ -1093,7 +1093,13 @@
       "items": {
         "2ESeh4tPhr6DI5ty": {
           "name": "Depths of Despair",
-          "description": "<p>The @Lookup[@name] deals double damage to PCs with 0 Hope.</p>"
+          "description": "<p>The @Lookup[@name] deals double damage to PCs with 0 Hope.</p>",
+          "effects": {
+            "nofxm1vGZ2TmceA2": {
+              "name": "Depths Of Despair",
+              "description": "<p><span>The </span><span>Demon of Despair</span><span> deals double damage to PCs with 0 Hope.</span></p>"
+            }
+          }
         },
         "FC8PIf4BVkhmoJX8": {
           "name": "Your Struggle is Pointless",
@@ -1501,7 +1507,13 @@
         },
         "1fE6xo8yIOmZkGNE": {
           "name": "Overwhelm",
-          "description": "<p>When a target the @Lookup[@name] attacks has other adversaries within Very Close range, the @Lookup[@name] deals double damage.</p>"
+          "description": "<p>When a target the @Lookup[@name] attacks has other adversaries within Very Close range, the @Lookup[@name] deals double damage.</p>",
+          "effects": {
+            "eGB9G0ljYCcdGbOx": {
+              "name": "Overwhelm",
+              "description": "<p><span>When a target the </span><span>Failed Experiment</span><span> attacks has other adversaries within Very Close range, the </span><span>Failed Experiment</span><span> deals double damage.</span></p>"
+            }
+          }
         },
         "g0h3Zo6xqgfSlyxi": {
           "name": "Lurching Lunge",
@@ -2336,7 +2348,13 @@
       "items": {
         "FGJTAeL38zTVd4fA": {
           "name": "Punish the Guilty",
-          "description": "<p>The @Lookup[@name] deals double damage to targets marked Guilty by a High Seraph.</p>"
+          "description": "<p>The @Lookup[@name] deals double damage to targets marked Guilty by a High Seraph.</p>",
+          "effects": {
+            "ID85zoIa5GfhNMti": {
+              "name": "Punish the Guilty",
+              "description": "<p><span>The </span><span>Hallowed Archer</span><span> deals double damage to targets marked Guilty by a High Seraph.</span></p>"
+            }
+          }
         },
         "Ye35DuZroQfeFoNw": {
           "name": "Divine Volley",
@@ -4298,7 +4316,13 @@
       "items": {
         "6mL2FQ9pQdfoDNzG": {
           "name": "Opportunist",
-          "description": "<p>When two or more adversaries are within Very Close range of a creature, all damage the @Lookup[@name] deals to that creature is doubled.</p>"
+          "description": "<p>When two or more adversaries are within Very Close range of a creature, all damage the @Lookup[@name] deals to that creature is doubled.</p>",
+          "effects": {
+            "O03vYbyNLO3YPZGo": {
+              "name": "Opportunist",
+              "description": "<p><span>When two or more adversaries are within Very Close range of a creature, all damage the </span><span>Skeleton Archer</span><span> deals to that creature is doubled.</span></p>"
+            }
+          }
         },
         "4w20xpEo6L1fgro3": {
           "name": "Deadly Shot",
