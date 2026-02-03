@@ -7,3 +7,7 @@
   font-size: 10px;
 }
 
+/* Из-за длинного слова "Надежда" селект с костями слишком ужимается и не видно что выбрано
+.daggerheart.dialog .dice-select select {
+  width: fit-content;
+}
