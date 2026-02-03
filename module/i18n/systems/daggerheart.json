@@ -452,7 +452,7 @@
         "toggleSimple": "Переключить упрощённый вид",
         "types": {
           "narrative": "Повествование",
-          "encounter": "Боевой"
+          "encounter": "Столкновение"
         }
       },
       "CountdownEdit": {
@@ -2187,7 +2187,8 @@
         "questions": "Вопросы",
         "configuration": "Конфигурация",
         "base": "Базовое",
-        "triggers": "Триггеры"
+        "triggers": "Триггеры",
+        "deathMoves": "Предсмертные ходы"
       },
       "Tiers": {
         "1": "Ранг 1",
@@ -2211,6 +2212,7 @@
       "armorSlots": "Броня",
       "artistAttribution": "Художник: {artist}",
       "attack": "Атака",
+      "automation": "Автоматизация",
       "basics": "Основы",
       "bonus": "Бонус",
       "burden": "Хватка",
@@ -2524,6 +2526,14 @@
           },
           "hideAttribution": {
             "label": "Скрыть источники"
+          },
+          "showTokenDistance": {
+            "label": "Показывать дистанцию до токена при наведении",
+            "choices": {
+              "always": "Всегда",
+              "encounters": "Столкновения",
+              "never": "Никогда"
+            }
           },
           "expandedTitle": "Автоматически разворачивать описания",
           "extendCharacterDescriptions": {

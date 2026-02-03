@@ -2189,7 +2189,8 @@
         "questions": "Questions",
         "configuration": "Configuration",
         "base": "Base",
-        "triggers": "Triggers"
+        "triggers": "Triggers",
+        "deathMoves": "Deathmoves"
       },
       "Tiers": {
         "1": "Tier 1",
@@ -2213,6 +2214,7 @@
       "armorSlots": "Armor Slots",
       "artistAttribution": "Artwork By: {artist}",
       "attack": "Attack",
+      "automation": "Automation",
       "basics": "Basics",
       "bonus": "Bonus",
       "burden": "Burden",
@@ -2526,6 +2528,14 @@
           },
           "hideAttribution": {
             "label": "Hide Attribution"
+          },
+          "showTokenDistance": {
+            "label": "Show Token Distance on Hover",
+            "choices": {
+              "always": "Always",
+              "encounters": "Encounters",
+              "never": "Never"
+            }
           },
           "expandedTitle": "Auto-expand Descriptions",
           "extendCharacterDescriptions": {
