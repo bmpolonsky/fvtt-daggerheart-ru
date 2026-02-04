@@ -3937,7 +3937,7 @@
         },
         "WGEGO0DSOs5cF0EL": {
           "name": "Подкрепление",
-          "description": "<p>Один раз за сцену <strong>отметьте Стресс</strong>, чтобы вызвать @UUID[Compendium.daggerheart.adversaries.Actor.5YgEajn0wa4i85kC]{Орду Пиратов Налётчиков}, которая появляется на Далекой дистанции.</p>",
+          "description": "<p>Один раз за сцену <strong>отметьте Стресс</strong>, чтобы вызвать орду @UUID[Compendium.daggerheart.adversaries.Actor.5YgEajn0wa4i85kC]{Пиратов Налётчиков}, которая появляется на Далекой дистанции.</p>",
           "actions": {
             "nuYk5WeLLpIKa69q": {
               "name": "Отметить Стресс"
