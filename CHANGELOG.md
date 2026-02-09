@@ -1,5 +1,21 @@
 # Changelog
 
+## v2026.02.09
+
+### Added
+- Переведены новые тексты UI из Foundryborne [1.7.0](https://github.com/Foundryborne/daggerheart/releases/tag/1.7.0) ([`96ee5c4`](https://github.com/bmpolonsky/fvtt-daggerheart-ru/commit/96ee5c4)).
+- Добавлен файл истории изменений `CHANGELOG.md` ([`34a42ab`](https://github.com/bmpolonsky/fvtt-daggerheart-ru/commit/34a42ab)).
+
+### Changed
+- Обновлены `original`-снапшоты и системный `lang/en.json` после обновления апстрима ([`7f100f4`](https://github.com/bmpolonsky/fvtt-daggerheart-ru/commit/7f100f4)).
+- Синхронизированы и уточнены переводы по данным daggerheart.su (в т.ч. SRD и The Void) ([`2934903`](https://github.com/bmpolonsky/fvtt-daggerheart-ru/commit/2934903), [`f158d31`](https://github.com/bmpolonsky/fvtt-daggerheart-ru/commit/f158d31)).
+
+### Fixed
+- Исправлена локализация терминов, связанных с загрузкой экипировки и доменными картами (`loadout`/`vault`) ([`8d3c5c5`](https://github.com/bmpolonsky/fvtt-daggerheart-ru/commit/8d3c5c5)).
+- Исправлено сжатие селекта костей в диалоге броска из-за длины русского текста ([`83da683`](https://github.com/bmpolonsky/fvtt-daggerheart-ru/commit/83da683)).
+
+![GitHub Downloads](https://img.shields.io/github/downloads/bmpolonsky/fvtt-daggerheart-ru/v2026.02.09/total?color=green)
+
 ## v2026.02.03
 
 ### Added
