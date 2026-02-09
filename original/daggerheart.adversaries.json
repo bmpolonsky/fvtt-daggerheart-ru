@@ -366,7 +366,7 @@
         },
         "lAmiK8wVxjyHwKlp": {
           "name": "Fumigation",
-          "description": "<p>Drop a smoke bomb that fi lls the air within Close range with smoke, Dizzying all targets in this area. Dizzied targets have disadvantage on their next action roll, then clear the condition.</p><p>@Template[type:emanation|range:c]</p>",
+          "description": "<p>Drop a smoke bomb that fills the air within Close range with smoke, Dizzying all targets in this area. Dizzied targets have disadvantage on their next action roll, then clear the condition.</p><p>@Template[type:emanation|range:c]</p>",
           "actions": {
             "sp7RfJRQJsEUm09m": {
               "name": "Drop Bomb"
