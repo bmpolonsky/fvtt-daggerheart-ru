@@ -1130,10 +1130,21 @@ function setHtmlField(target, key, html) {
     return;
   }
   const normalisePlain = (value) => extractPlainText(value);
+  const normalisePlainWithCase = (value) =>
+    String(value || "")
+      .replace(/<[^>]+>/g, " ")
+      .replace(/\s+/g, "");
   if (existingRaw) {
     const existingPlain = normalisePlain(existingSanitized || existingRaw);
     const mergedPlain = normalisePlain(merged);
-    if (existingPlain && mergedPlain && existingPlain === mergedPlain) {
+    const existingPlainWithCase = normalisePlainWithCase(existingSanitized || existingRaw);
+    const mergedPlainWithCase = normalisePlainWithCase(merged);
+    if (
+      existingPlain &&
+      mergedPlain &&
+      existingPlain === mergedPlain &&
+      existingPlainWithCase === mergedPlainWithCase
+    ) {
       const hasLinks =
         /<a[\s>]/i.test(existingRaw) || /\[[^\]]+\]\([^)]+\)/.test(existingRaw);
       if (hasLinks && existingSanitized && existingSanitized !== existingRaw) {
@@ -2426,7 +2437,12 @@ async function main() {
         const raw = domainInfo.raw;
         const features = raw.features || [];
         const normalisePlain = (value) => extractPlainText(value);
+        const normalisePlainWithCase = (value) =>
+          String(value || "")
+            .replace(/<[^>]+>/g, " ")
+            .replace(/\s+/g, "");
         const previousDescPlain = normalisePlain(entry.description || "");
+        const previousDescPlainWithCase = normalisePlainWithCase(entry.description || "");
 
         // ШАГ 1: Собираем полное описание (без изменений)
         let fullDescSource = raw.main_body || "";
@@ -2446,8 +2462,11 @@ async function main() {
         mergedForCompare = collapseAdjacentInlineTags(mergedForCompare, "em");
         mergedForCompare = collapseAdjacentInlineTags(mergedForCompare, "strong");
         const apiDescPlain = normalisePlain(mergedForCompare || fullDescHtml || "");
+        const apiDescPlainWithCase = normalisePlainWithCase(mergedForCompare || fullDescHtml || "");
         const needsActionsRefresh =
-          Boolean(apiDescPlain) && previousDescPlain !== apiDescPlain;
+          Boolean(apiDescPlain) &&
+          (previousDescPlain !== apiDescPlain ||
+            previousDescPlainWithCase !== apiDescPlainWithCase);
         if (fullDescHtml) {
           setHtmlField(entry, "description", fullDescHtml);
         } else {
