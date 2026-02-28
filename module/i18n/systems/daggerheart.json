@@ -405,7 +405,8 @@
       "CompendiumBrowserSettings": {
         "title": "Включить компендиумы",
         "enableSource": "Включить источник",
-        "disableSource": "Отключить источник"
+        "disableSource": "Отключить источник",
+        "worldCompendiums": "Компендиумы мира"
       },
       "ContextMenu": {
         "disableEffect": "Отключить эффект",
@@ -2180,7 +2181,7 @@
           "thresholdImmunities": {
             "minor": {
               "label": "Иммунитет к порогу: Лёгкий",
-              "hint": "Автоматически игнорирует лёгкий урон"
+              "hint": "Автоматически игнорирует лёгкий урон, если установлено значение 1"
             }
           }
         },
@@ -2395,6 +2396,7 @@
         "single": "Цель",
         "plural": "Цели"
       },
+      "thingsAndThing": "{things} и {thing}",
       "title": "Название",
       "tokenSize": "Размер токена",
       "total": "Итог",
@@ -2455,7 +2457,8 @@
       },
       "Ancestry": {
         "primaryFeature": "Основное свойство",
-        "secondaryFeature": "Второстепенное свойство"
+        "secondaryFeature": "Второстепенное свойство",
+        "featuresLabel": "Свойства родословной"
       },
       "Armor": {
         "baseScore": "Базовый показатель",
@@ -2538,7 +2541,12 @@
         "evolvedImagePlaceholder": "Будет использовано изображение формы, выбранной для эволюции"
       },
       "Class": {
+        "startingEvasionScore": "Начальное уклонение",
+        "startingHitPoints": "Начальные раны",
+        "classItems": "Классовые предметы",
+        "hopeFeatureLabel": "Свойство надежды класса {class}",
         "hopeFeatures": "Свойства надежды",
+        "classFeature": "Классовое свойство",
         "classFeatures": "Классовые свойства",
         "guide": {
           "suggestedEquipment": "Рекомендуемое снаряжение",
@@ -2550,6 +2558,9 @@
             "andEither": "И одно из"
           }
         }
+      },
+      "Community": {
+        "featuresLabel": "Свойство сообщества"
       },
       "Consumable": {
         "consumeOnUse": "Расходуется при использовании",
@@ -2566,7 +2577,11 @@
         "masteryTitle": "Мастерство"
       },
       "Subclass": {
-        "spellcastingTrait": "Характеристика заклинателя"
+        "spellcastingTrait": "Характеристика заклинателя",
+        "spellcastTrait": "Характеристика заклинателя",
+        "foundationFeatures": "Свойства основы",
+        "specializationFeature": "Свойство специализации",
+        "masteryFeature": "Свойство мастерства"
       },
       "Weapon": {
         "weaponType": "Тип оружия",
@@ -3146,7 +3161,9 @@
           "tier": "Ранг {tier} {type}",
           "character": "Уровень {level} Персонаж",
           "companion": "Уровень {level} - {partner}",
-          "companionNoPartner": "Нет напарника"
+          "companionNoPartner": "Нет напарника",
+          "duplicateToNewTier": "Дублировать в новый ранг",
+          "pickTierTitle": "Выберите новый ранг для этого противника"
         },
         "daggerheartMenu": {
           "title": "Меню Daggerheart",

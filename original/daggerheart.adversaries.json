@@ -172,7 +172,7 @@
         },
         "4wT7CmM1DJEPcraF": {
           "name": "Group Attack",
-          "description": "<p><strong>Spend a Fear</strong> to choose a target and spotlight all @Lookup[@name]s within Close range of them. Those Minions move into Melee range of the target and make one shared attack roll. On a success, they deal 4 physical damage each. Combine this damage.</p>",
+          "description": "<p><strong>Spend a Fear</strong> to choose a target and spotlight all @Lookup[@name]s within Close range of them. Those Minions move into Melee range of the target and make one shared attack roll. On a success, they deal @Lookup[@system.attack.damageFormula] physical damage each. Combine this damage.</p>",
           "actions": {
             "vgguNWz8vG8aoLXR": {
               "name": "Spend Fear"
@@ -219,8 +219,8 @@
       "attack": "Longbow",
       "items": {
         "uPwtE9d63PHtQitG": {
-          "name": "Horde (1d6+3)",
-          "description": "<p>When the @Lookup[@name] has marked half or more of their HP, their standard attack deals <strong>1d6+3</strong> physical damage instead.</p>"
+          "name": "Horde",
+          "description": "<p>When the @Lookup[@name] has marked half or more of their HP, their standard attack deals <strong>@Lookup[@system.attack.altDamageFormula]</strong> physical damage instead.</p>"
         },
         "Wuf5y9tJ88BwzLv2": {
           "name": "Focused Volley",
@@ -726,7 +726,7 @@
         },
         "MWfKUGzT1YBmLvpn": {
           "name": "Group Attack",
-          "description": "<p><strong>Spend a Fear</strong> to choose a target and spotlight all @Lookup[@name]s within Close range of them. Those Minions move into Melee range of the target and make one shared attack roll. On a success, they deal 6 physical damage each. Combine this damage.</p>",
+          "description": "<p><strong>Spend a Fear</strong> to choose a target and spotlight all @Lookup[@name]s within Close range of them. Those Minions move into Melee range of the target and make one shared attack roll. On a success, they deal @Lookup[@system.attack.damageFormula] physical damage each. Combine this damage.</p>",
           "actions": {
             "cbAvPSIhwBMBTI3D": {
               "name": "Spend Fear"
@@ -963,7 +963,7 @@
         },
         "WP6xQtYzouPEFr82": {
           "name": "Group Attack",
-          "description": "<p><strong>Spend a Fear</strong> to choose a target and spotlight all Cult @Lookup[@name]s within Close range of them. Those Minions move into Melee range of the target and make one shared attack roll. On a success, they deal 5 physical damage each. Combine this damage.</p>",
+          "description": "<p><strong>Spend a Fear</strong> to choose a target and spotlight all Cult @Lookup[@name]s within Close range of them. Those Minions move into Melee range of the target and make one shared attack roll. On a success, they deal @Lookup[@system.attack.damageFormula] physical damage each. Combine this damage.</p>",
           "actions": {
             "EH1preaTWBD4rOvx": {
               "name": "Spend Fear"
@@ -1021,8 +1021,8 @@
       },
       "items": {
         "NXzJLDoJBJqCXlOm": {
-          "name": "Horde (2d4+1)",
-          "description": "<p>When the @Lookup[@name] has marked half or more of their HP, their standard attack deals <strong>2d4+1</strong> physical damage instead.</p>"
+          "name": "Horde",
+          "description": "<p>When the @Lookup[@name] has marked half or more of their HP, their standard attack deals <strong>@Lookup[@system.attack.altDamageFormula]</strong> physical damage instead.</p>"
         },
         "WEbHwamS5ZBphiKq": {
           "name": "Dreadhowl",
@@ -1418,8 +1418,8 @@
       "attack": "Shocking Bite",
       "items": {
         "1mNlXMyCQNg4P3n3": {
-          "name": "Horde (2d4+1)",
-          "description": "<p>When the @Lookup[@name] have marked half or more of their HP, their standard attack deals <strong>2d4+1</strong> physical damage instead.</p>"
+          "name": "Horde",
+          "description": "<p>When the @Lookup[@name] have marked half or more of their HP, their standard attack deals <strong>@Lookup[@system.attack.altDamageFormula]</strong> physical damage instead.</p>"
         },
         "u5NL1eUJeAkIEpgt": {
           "name": "Paralyzing Shock",
@@ -1449,7 +1449,7 @@
         },
         "13OraSLq2YjpZqbm": {
           "name": "Group Attack",
-          "description": "<p><strong>Spend a Fear</strong> to choose a target and spotlight all @Lookup[@name]s within Close range of them. Those Minions move into Melee range of the target and make one shared attack roll. On a success, they deal 5 physical damage each. Combine this damage.</p>",
+          "description": "<p><strong>Spend a Fear</strong> to choose a target and spotlight all @Lookup[@name]s within Close range of them. Those Minions move into Melee range of the target and make one shared attack roll. On a success, they deal @Lookup[@system.attack.damageFormula] physical damage each. Combine this damage.</p>",
           "actions": {
             "vXHZVb0Y7Hqu3uso": {
               "name": "Spend Fear"
@@ -1547,7 +1547,7 @@
         },
         "gC4whvt2r9Tfso9Y": {
           "name": "Group Attack",
-          "description": "<p><strong>Spend a Fear</strong> to choose a target and spotlight all @Lookup[@name]s within Close range of them. Those Minions move into Melee range of the target and make one shared attack roll. On a success, they deal 12 physical damage each. Combine this damage.</p>",
+          "description": "<p><strong>Spend a Fear</strong> to choose a target and spotlight all @Lookup[@name]s within Close range of them. Those Minions move into Melee range of the target and make one shared attack roll. On a success, they deal @Lookup[@system.attack.damageFormula] physical damage each. Combine this damage.</p>",
           "actions": {
             "QHNRSEQmqOcaoXq4": {
               "name": "Spend Fear"
@@ -1942,7 +1942,7 @@
       "items": {
         "9RduwBLYcBaiouYk": {
           "name": "Horde",
-          "description": "<p>When the @Lookup[@name] have marked half or more of their HP, their standard attack deals <strong>1d4+1</strong> physical damage instead.</p>"
+          "description": "<p>When the @Lookup[@name] have marked half or more of their HP, their standard attack deals <strong>@Lookup[@system.attack.altDamageFormula]</strong> physical damage instead.</p>"
         },
         "gxYV6iTMM1S9Vv5v": {
           "name": "Flying",
@@ -1987,7 +1987,7 @@
         },
         "fsaBlCjTdq1jM23G": {
           "name": "Group Attack",
-          "description": "<p><strong>Spend a Fear</strong> to choose a target and spotlight all @Lookup[@name]s within Close range of them. Those Minions move into Melee range of the target and make one shared attack roll. On a success, they deal 1 physical damage each. Combine this damage.</p>",
+          "description": "<p><strong>Spend a Fear</strong> to choose a target and spotlight all @Lookup[@name]s within Close range of them. Those Minions move into Melee range of the target and make one shared attack roll. On a success, they deal @Lookup[@system.attack.damageFormula] physical damage each. Combine this damage.</p>",
           "actions": {
             "q8chow47nQLR9qeF": {
               "name": "Attack"
@@ -2008,7 +2008,7 @@
         },
         "FMgB28X1LammRInU": {
           "name": "Group Attack",
-          "description": "<p><strong>Spend a Fear</strong> to choose a target and spotlight all @Lookup[@name]s within Close range of them. Those Minions move into Melee range of the target and make one shared attack roll. On a success, they deal 5 physical damage each. Combine this damage.</p>",
+          "description": "<p><strong>Spend a Fear</strong> to choose a target and spotlight all @Lookup[@name]s within Close range of them. Those Minions move into Melee range of the target and make one shared attack roll. On a success, they deal @Lookup[@system.attack.damageFormula] physical damage each. Combine this damage.</p>",
           "actions": {
             "DjbPQowW1OdBD9Zn": {
               "name": "Spend Fear"
@@ -2388,7 +2388,7 @@
         },
         "ZpypjDbaurs1YSFb": {
           "name": "Group Attack",
-          "description": "<p><strong>Spend a Fear</strong> to choose a target and spotlight all @Lookup[@name]s within Close range of them. Those Minions move into Melee range of the target and make one shared attack roll. On a success, they deal 10 physical damage each. Combine this damage.</p>",
+          "description": "<p><strong>Spend a Fear</strong> to choose a target and spotlight all @Lookup[@name]s within Close range of them. Those Minions move into Melee range of the target and make one shared attack roll. On a success, they deal @Lookup[@system.attack.damageFormula] physical damage each. Combine this damage.</p>",
           "actions": {
             "eo7J0v1B5zPHul1M": {
               "name": "Spend Fear"
@@ -2804,7 +2804,7 @@
         },
         "1k5TmQIAunM7Bv32": {
           "name": "Group Attack",
-          "description": "<p><strong>Spend a Fear</strong> to choose a target and spotlight all @Lookup[@name] within Close range of them. Those Minions move into Melee range of the target and make one shared attack roll. On a success, they deal 2 physical damage each. Combine this damage.</p>",
+          "description": "<p><strong>Spend a Fear</strong> to choose a target and spotlight all @Lookup[@name] within Close range of them. Those Minions move into Melee range of the target and make one shared attack roll. On a success, they deal @Lookup[@system.attack.damageFormula] physical damage each. Combine this damage.</p>",
           "actions": {
             "aoQDb2m32NDxE6ZP": {
               "name": "Spend Fear"
@@ -3423,7 +3423,7 @@
         },
         "K08WlZwGqzEo4idT": {
           "name": "Group Attack",
-          "description": "<p><strong>Spend a Fear</strong> to choose a target and spotlight all @Lookup[@name]s within Close range of them. Those Minions move into Melee range of the target and make one shared attack roll. On a success, they deal 4 physical damage each. Combine this damage.</p>",
+          "description": "<p><strong>Spend a Fear</strong> to choose a target and spotlight all @Lookup[@name]s within Close range of them. Those Minions move into Melee range of the target and make one shared attack roll. On a success, they deal @Lookup[@system.attack.damageFormula] physical damage each. Combine this damage.</p>",
           "actions": {
             "xTMNAHcoErKuR6TZ": {
               "name": "Spend Fear"
@@ -3589,7 +3589,7 @@
       "name": "Oak Treant",
       "description": "<p>A sturdy animate old-growth tree.</p>",
       "motivesAndTactics": "Hide in plain sight, preserve the forest, root down, swing branches",
-      "attack": "Attack",
+      "attack": "Branch",
       "items": {
         "ERco8urSuHgrtnzL": {
           "name": "Just a Tree",
@@ -3776,7 +3776,7 @@
         },
         "7DWNmxZvp1Fm3aq3": {
           "name": "Group Attack",
-          "description": "<p><strong>Spend a Fear</strong> to choose a target and spotlight all @Lookup[@name]s within Close range of them. Those Minions move into Melee range of the target and make one shared attack roll. On a success, they deal 11 physical damage each. Combine this damage.</p>",
+          "description": "<p><strong>Spend a Fear</strong> to choose a target and spotlight all @Lookup[@name]s within Close range of them. Those Minions move into Melee range of the target and make one shared attack roll. On a success, they deal @Lookup[@system.attack.damageFormula] physical damage each. Combine this damage.</p>",
           "actions": {
             "tvQetauskZoHDR5y": {
               "name": "Spend Fear"
@@ -3977,7 +3977,7 @@
       "items": {
         "Q7DRbWjHl64CNwag": {
           "name": "Horde",
-          "description": "<p>When the @Lookup[@name] have marked half or more of their HP, their standard attack deals <strong>1d4+1</strong> physical damage instead.</p>"
+          "description": "<p>When the @Lookup[@name] have marked half or more of their HP, their standard attack deals <strong>@Lookup[@system.attack.altDamageFormula]</strong> physical damage instead.</p>"
         },
         "N401rF937fLXMuMA": {
           "name": "Swashbuckler",
@@ -4083,7 +4083,7 @@
         },
         "R9vrwFNl5BD1YXJo": {
           "name": "Group Attack",
-          "description": "<p><strong>Spend a Fear</strong> to choose a target and spotlight all @Lookup[@name]s within Close range of them. Those Minions move into Melee range of the target and make one shared attack roll. On a success, they deal 2 physical damage each. Combine this damage.</p>",
+          "description": "<p><strong>Spend a Fear</strong> to choose a target and spotlight all @Lookup[@name]s within Close range of them. Those Minions move into Melee range of the target and make one shared attack roll. On a success, they deal @Lookup[@system.attack.damageFormula] physical damage each. Combine this damage.</p>",
           "actions": {
             "DJBNtd3hWjwsjPwq": {
               "name": "Spend Fear"
@@ -4206,7 +4206,7 @@
         },
         "CQZQiEiRH70Br5Ge": {
           "name": "Group Attack",
-          "description": "<p><strong>Spend a Fear</strong> to choose a target and spotlight all @Lookup[@name]s within Close range of them. Those Minions move into Melee range of the target and make one shared attack roll. On a success, they deal 3 physical damage each. Combine this damage.</p>",
+          "description": "<p><strong>Spend a Fear</strong> to choose a target and spotlight all @Lookup[@name]s within Close range of them. Those Minions move into Melee range of the target and make one shared attack roll. On a success, they deal @Lookup[@system.attack.damageFormula] physical damage each. Combine this damage.</p>",
           "actions": {
             "ghgFZskDiizJDjcn": {
               "name": "Spend Fear"
@@ -4347,7 +4347,7 @@
         },
         "wl9KKEpVWDBu62hU": {
           "name": "Group Attack",
-          "description": "<p><strong>Spend a Fear</strong> to choose a target and spotlight all @Lookup[@name]s within Close range of them. Those Minions move into Melee range of the target and make one shared attack roll. On a success, they deal 1 physical damage each. Combine this damage.</p>",
+          "description": "<p><strong>Spend a Fear</strong> to choose a target and spotlight all @Lookup[@name]s within Close range of them. Those Minions move into Melee range of the target and make one shared attack roll. On a success, they deal @Lookup[@system.attack.damageFormula] physical damage each. Combine this damage.</p>",
           "actions": {
             "Sz55uB8xkoNytLwJ": {
               "name": "Spend Fear"
@@ -4734,7 +4734,7 @@
       "items": {
         "9Zuu892SO5NmtI4w": {
           "name": "Horde (1d4+1)",
-          "description": "<p>When the @Lookup[@name] has marked half or more of their HP, their standard attack deals <strong>1d4+1</strong> physical damage instead.</p>"
+          "description": "<p>When the @Lookup[@name] has marked half or more of their HP, their standard attack deals <strong>@Lookup[@system.attack.altDamageFormula]</strong> physical damage instead.</p>"
         },
         "0O6ckwZE34RBnjpB": {
           "name": "In Your Face",
@@ -4805,8 +4805,8 @@
       },
       "items": {
         "4dSzqtYvH385r9Ng": {
-          "name": "Horde (1d4+2)",
-          "description": "<p>When the @Lookup[@name] has marked half or more of their HP, their standard attack deals <strong>1d4+2</strong> physical damage instead.</p>"
+          "name": "Horde",
+          "description": "<p>When the @Lookup[@name] has marked half or more of their HP, their standard attack deals <strong>@Lookup[@system.attack.altDamageFormula]</strong> physical damage instead.</p>"
         },
         "2HlelvCZA00izcQa": {
           "name": "Crush",
@@ -4851,7 +4851,7 @@
         },
         "WiobzuyvJ46zfsOv": {
           "name": "Group Attack",
-          "description": "<p><strong>Spend a Fear</strong> to choose a target and spotlight all @Lookup[@name]s within Close range of them. Those Minions move into Melee range of the target and make one shared attack roll. On a success, they deal 2 physical damage each. Combine this damage.</p>",
+          "description": "<p><strong>Spend a Fear</strong> to choose a target and spotlight all @Lookup[@name]s within Close range of them. Those Minions move into Melee range of the target and make one shared attack roll. On a success, they deal @Lookup[@system.attack.damageFormula] physical damage each. Combine this damage.</p>",
           "actions": {
             "ZC5pKIb9N82vgMWu": {
               "name": "Spend Fear"
@@ -4916,7 +4916,7 @@
         },
         "fh8ehANkVOnxEKVa": {
           "name": "Group Attack",
-          "description": "<p><strong>Spend a Fear</strong> to choose a target and spotlight all @Lookup[@name]s within Close range of them. Those Minions move into Melee range of the target and make one shared attack roll. On a success, they deal 8 physical damage each. Combine this damage.</p>",
+          "description": "<p><strong>Spend a Fear</strong> to choose a target and spotlight all @Lookup[@name]s within Close range of them. Those Minions move into Melee range of the target and make one shared attack roll. On a success, they deal @Lookup[@system.attack.damageFormula] physical damage each. Combine this damage.</p>",
           "actions": {
             "euP8VA4wvfsCpwN1": {
               "name": "Spend Fear"
@@ -5559,11 +5559,11 @@
       "name": "Zombie Legion",
       "description": "<p>A large pack of undead, still powerful despite their rotting flesh.</p>",
       "motivesAndTactics": "Consume brain, shred fl esh, surround",
-      "attack": "Tentacles",
+      "attack": "Undead Hands",
       "items": {
         "FYwMzXwULePzFyYJ": {
-          "name": "Horde (2d6+5)",
-          "description": "<p>When the @Lookup[@name] has marked half or more of their HP, their standard attack deals <strong>2d6+5</strong> physical damage instead.</p>"
+          "name": "Horde",
+          "description": "<p>When the @Lookup[@name] has marked half or more of their HP, their standard attack deals <strong>@Lookup[@system.attack.altDamageFormula]</strong> physical damage instead.</p>"
         },
         "o1qQhASA882Fn9HN": {
           "name": "Unyielding",
@@ -5607,8 +5607,8 @@
       "attack": "Bite",
       "items": {
         "nNJGAhWu0IuS2ybn": {
-          "name": "Horde (1d4+2)",
-          "description": "<p>When the @Lookup[@name] have marked half or more of their HP, their standard attack deals <strong>1d4+2</strong> physical damage instead.</p>"
+          "name": "Horde",
+          "description": "<p>When the @Lookup[@name] have marked half or more of their HP, their standard attack deals <strong>@Lookup[@system.attack.altDamageFormula]</strong> physical damage instead.</p>"
         },
         "jQmltra0ovHE33Nx": {
           "name": "Overwhelm",

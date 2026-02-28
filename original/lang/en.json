@@ -407,7 +407,8 @@
       "CompendiumBrowserSettings": {
         "title": "Enable Compendiums",
         "enableSource": "Enable Source",
-        "disableSource": "Disable Source"
+        "disableSource": "Disable Source",
+        "worldCompendiums": "World Compendiums"
       },
       "ContextMenu": {
         "disableEffect": "Disable Effect",
@@ -2182,7 +2183,7 @@
           "thresholdImmunities": {
             "minor": {
               "label": "Threshold Immunities: Minor",
-              "hint": "Automatically ignores minor damage"
+              "hint": "Automatically ignores minor damage when set to 1"
             }
           }
         },
@@ -2397,6 +2398,7 @@
         "single": "Target",
         "plural": "Targets"
       },
+      "thingsAndThing": "{things} and {thing}",
       "title": "Title",
       "tokenSize": "Token Size",
       "total": "Total",
@@ -2457,7 +2459,8 @@
       },
       "Ancestry": {
         "primaryFeature": "Primary Feature",
-        "secondaryFeature": "Secondary Feature"
+        "secondaryFeature": "Secondary Feature",
+        "featuresLabel": "Ancestry Features"
       },
       "Armor": {
         "baseScore": "Base Score",
@@ -2540,7 +2543,12 @@
         "evolvedImagePlaceholder": "The image for the form selected for evolution will be used"
       },
       "Class": {
+        "startingEvasionScore": "Starting Evasion Score",
+        "startingHitPoints": "Starting Hit Points",
+        "classItems": "Class Items",
+        "hopeFeatureLabel": "{class}'s Hope Feature",
         "hopeFeatures": "Hope Features",
+        "classFeature": "Class Feature",
         "classFeatures": "Class Features",
         "guide": {
           "suggestedEquipment": "Suggested Equipments",
@@ -2552,6 +2560,9 @@
             "andEither": "And Either"
           }
         }
+      },
+      "Community": {
+        "featuresLabel": "Community Feature"
       },
       "Consumable": {
         "consumeOnUse": "Consume On Use",
@@ -2568,7 +2579,11 @@
         "masteryTitle": "Mastery"
       },
       "Subclass": {
-        "spellcastingTrait": "Spellcasting Trait"
+        "spellcastingTrait": "Spellcasting Trait",
+        "spellcastTrait": "Spellcast Trait",
+        "foundationFeatures": "Foundation Features",
+        "specializationFeature": "Specialization Feature",
+        "masteryFeature": "Mastery Feature"
       },
       "Weapon": {
         "weaponType": "Weapon Type",
@@ -3148,7 +3163,9 @@
           "tier": "Tier {tier} {type}",
           "character": "Level {level} Character",
           "companion": "Level {level} - {partner}",
-          "companionNoPartner": "No Partner"
+          "companionNoPartner": "No Partner",
+          "duplicateToNewTier": "Duplicate to New Tier",
+          "pickTierTitle": "Pick a new tier for this adversary"
         },
         "daggerheartMenu": {
           "title": "Daggerheart Menu",
