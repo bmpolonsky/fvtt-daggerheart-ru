@@ -1,5 +1,19 @@
 # Changelog
 
+## v2026.02.28
+
+### Added
+- Переведены новые UI-тексты Foundryborne (в т.ч. ключи для компендиумов мира, родословных/сообществ/классов и выбора ранга противника) ([`4c9b4ec`](https://github.com/bmpolonsky/fvtt-daggerheart-ru/commit/4c9b4ec), [`53d888e`](https://github.com/bmpolonsky/fvtt-daggerheart-ru/commit/53d888e)).
+
+### Changed
+- Обновлены и уточнены переводы из daggerheart.su для SRD и The Void (родословные, сообщества, домены, подклассы, трансформации и др.) ([`a578e9f`](https://github.com/bmpolonsky/fvtt-daggerheart-ru/commit/a578e9f)).
+- Обновлены переводы в компендиумах `adversaries` и `classes`: актуализированы формулировки, атаки и связанные описания (`Group Attack`/`Horde`, Oak Treant, Zombie Legion и др.) ([`53d888e`](https://github.com/bmpolonsky/fvtt-daggerheart-ru/commit/53d888e)).
+
+### Fixed
+- Исправлена ошибка в CSS ([`7040f5d`](https://github.com/bmpolonsky/fvtt-daggerheart-ru/commit/7040f5d)).
+
+![GitHub Downloads](https://img.shields.io/github/downloads/bmpolonsky/fvtt-daggerheart-ru/v2026.02.28/total?color=green)
+
 ## v2026.02.09
 
 ### Added
