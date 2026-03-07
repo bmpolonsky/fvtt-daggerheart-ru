@@ -2804,7 +2804,7 @@
       "description": "<p class=\"Body-Foundation\">Make an Agility Roll against all targets within Close range.<strong> Spend a Hope</strong> to move targets you succeed against, and any willing allies within Close range, to another point within Close range.</p><p>@Template[type:emanation|range:c]</p>",
       "actions": {
         "XKY0LJYmvuILmNNU": {
-          "name": "Agility Check",
+          "name": "Agility Roll",
           "description": "<p class=\"Body-Foundation\">Make an Agility Roll against all targets within Close range.<strong> Spend a Hope</strong> to move targets you succeed against, and any willing allies within Close range, to another point within Close range.</p><p>@Template[type:emanation|range:c]</p>"
         }
       }
