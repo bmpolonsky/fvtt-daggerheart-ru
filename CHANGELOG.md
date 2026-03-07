@@ -1,5 +1,15 @@
 # Changelog
 
+## v2026.03.07
+
+### Added
+- Переведены новые строки интерфейса из обновления Foundryborne [1.8.0](https://github.com/Foundryborne/daggerheart/releases/tag/1.8.0): подпись авто-применения уязвимости от максимального стресса, настройка автоматизации уязвимости, подсказка для Strange Patterns, сообщение об ошибке прав при передаче предметов ([`d856e78`](https://github.com/bmpolonsky/fvtt-daggerheart-ru/commit/d856e78)).
+
+### Changed
+- Синхронизированы переводы и структура под текущую версию системы: в UI обновлена терминология `check -> roll`, в компендиуме классов удалена устаревшая запись `Сплочение (уровень 5)` ([`d856e78`](https://github.com/bmpolonsky/fvtt-daggerheart-ru/commit/d856e78)).
+
+![GitHub Downloads](https://img.shields.io/github/downloads/bmpolonsky/fvtt-daggerheart-ru/v2026.03.07/total?color=green)
+
 ## v2026.02.28
 
 ### Added
