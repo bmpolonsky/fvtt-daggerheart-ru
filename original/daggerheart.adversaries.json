@@ -5241,7 +5241,12 @@
         },
         "qYFoyDSdZ5X2h245": {
           "name": "Ashen Vengeance",
-          "description": "<p>When the @Lookup[@name] marks their last HP, replace them with the @UUID[Compendium.daggerheart.adversaries.Actor.pMuXGCSOQaxpi5tb]{Ashen Tyrant} and immediately spotlight them.</p>"
+          "description": "<p>When the @Lookup[@name] marks their last HP, replace them with the @UUID[Compendium.daggerheart.adversaries.Actor.pMuXGCSOQaxpi5tb]{Ashen Tyrant} and immediately spotlight them.</p>",
+          "actions": {
+            "cFqFjemAfAjB0OB0": {
+              "name": "Transform"
+            }
+          }
         }
       }
     },
@@ -5311,7 +5316,12 @@
         },
         "5llfnRwO7mfzDFgT": {
           "name": "Erupting Rage",
-          "description": "<p>When the @Lookup[@name] marks their last HP, replace them with the @UUID[Compendium.daggerheart.adversaries.Actor.eArAPuB38CNR0ZIM]{Molten Scourge} and immediately spotlight them.</p>"
+          "description": "<p>When the @Lookup[@name] marks their last HP, replace them with the @UUID[Compendium.daggerheart.adversaries.Actor.eArAPuB38CNR0ZIM]{Molten Scourge} and immediately spotlight them.</p>",
+          "actions": {
+            "OxGkCGgIl4vGFufD": {
+              "name": "Transform"
+            }
+          }
         }
       }
     },

@@ -5241,7 +5241,12 @@
         },
         "qYFoyDSdZ5X2h245": {
           "name": "Пепельная месть (изменение фазы)",
-          "description": "<p>Когда Расплавленная Кара отмечает последнюю Рану, замените его на @UUID[Compendium.daggerheart.adversaries.Actor.pMuXGCSOQaxpi5tb]{Пепельного Тирана} и немедленно активируйте его.</p>"
+          "description": "<p>Когда Расплавленная Кара отмечает последнюю Рану, замените его на @UUID[Compendium.daggerheart.adversaries.Actor.pMuXGCSOQaxpi5tb]{Пепельного Тирана} и немедленно активируйте его.</p>",
+          "actions": {
+            "cFqFjemAfAjB0OB0": {
+              "name": "Трансформироваться"
+            }
+          }
         }
       }
     },
@@ -5311,7 +5316,12 @@
         },
         "5llfnRwO7mfzDFgT": {
           "name": "Вспышка ярости (изменение фазы)",
-          "description": "<p>Когда Обсидиановый Хищник отмечает свою последнюю Рану, замените его на @UUID[Compendium.daggerheart.adversaries.Actor.eArAPuB38CNR0ZIM]{Расплавленная Кара} и немедленно активируйте его.</p>"
+          "description": "<p>Когда Обсидиановый Хищник отмечает свою последнюю Рану, замените его на @UUID[Compendium.daggerheart.adversaries.Actor.eArAPuB38CNR0ZIM]{Расплавленная Кара} и немедленно активируйте его.</p>",
+          "actions": {
+            "OxGkCGgIl4vGFufD": {
+              "name": "Трансформироваться"
+            }
+          }
         }
       }
     },
