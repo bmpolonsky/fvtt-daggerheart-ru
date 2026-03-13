@@ -1125,6 +1125,14 @@
         "fear": "Страх",
         "spotlight": "Активация"
       },
+      "DaggerheartDiceAnimationEvents": {
+        "critical": {
+          "name": "Критический успех"
+        },
+        "higher": {
+          "name": "Наивысший бросок"
+        }
+      },
       "DamageType": {
         "physical": {
           "name": "Физический",
@@ -2382,6 +2390,7 @@
         "plurial": "Игроки"
       },
       "portrait": "Портрет",
+      "preview": "Предпросмотр",
       "proficiency": "Мастерство",
       "quantity": "Количество",
       "range": "Дистанция",
@@ -2924,7 +2933,12 @@
             "colorset": "Тема",
             "material": "Материал",
             "system": "Набор костей",
-            "font": "Шрифт"
+            "font": "Шрифт",
+            "critical": "Анимация критического успеха дуальности",
+            "diceAppearance": "Внешний вид костей",
+            "animations": "Анимации",
+            "defaultAnimations": "Установить анимации по умолчанию для игроков",
+            "previewAnimation": "Предпросмотр анимации"
           }
         },
         "variantRules": {

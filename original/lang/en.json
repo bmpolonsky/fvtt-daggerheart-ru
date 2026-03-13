@@ -1127,6 +1127,14 @@
         "fear": "Fear",
         "spotlight": "Spotlight"
       },
+      "DaggerheartDiceAnimationEvents": {
+        "critical": {
+          "name": "Critical"
+        },
+        "higher": {
+          "name": "Highest Roll"
+        }
+      },
       "DamageType": {
         "physical": {
           "name": "Physical",
@@ -2384,6 +2392,7 @@
         "plurial": "Players"
       },
       "portrait": "Portrait",
+      "preview": "Preview",
       "proficiency": "Proficiency",
       "quantity": "Quantity",
       "range": "Range",
@@ -2926,7 +2935,12 @@
             "colorset": "Theme",
             "material": "Material",
             "system": "Dice Preset",
-            "font": "Font"
+            "font": "Font",
+            "critical": "Duality Critical Animation",
+            "diceAppearance": "Dice Appearance",
+            "animations": "Animations",
+            "defaultAnimations": "Set Animations As Player Defaults",
+            "previewAnimation": "Preview Animation"
           }
         },
         "variantRules": {
