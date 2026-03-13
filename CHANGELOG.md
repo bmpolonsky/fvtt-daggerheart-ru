@@ -1,5 +1,13 @@
 # Changelog
 
+## v2026.03.13
+
+### Added
+- Переведены новые UI-тексты из обновления Foundryborne [1.9.1](https://github.com/Foundryborne/daggerheart/releases/tag/1.9.1): настройки трансформации токенов, настройки метагейминга, homebrew-ресурсы, а также настройки и предпросмотр анимаций костей ([`e10e3a8`](https://github.com/bmpolonsky/fvtt-daggerheart-ru/commit/e10e3a8), [`eb1e4ee`](https://github.com/bmpolonsky/fvtt-daggerheart-ru/commit/eb1e4ee)).
+
+### Changed
+- Обновлён перевод карты `Отскок` с сайта-источника ([`5c51487`](https://github.com/bmpolonsky/fvtt-daggerheart-ru/commit/5c51487)).
+
 ## v2026.03.07
 
 ### Added
