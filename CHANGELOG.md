@@ -8,6 +8,8 @@
 ### Changed
 - Обновлён перевод карты `Отскок` с сайта-источника ([`5c51487`](https://github.com/bmpolonsky/fvtt-daggerheart-ru/commit/5c51487)).
 
+![GitHub Downloads](https://img.shields.io/github/downloads/bmpolonsky/fvtt-daggerheart-ru/v2026.03.13/total?color=green)
+
 ## v2026.03.07
 
 ### Added
