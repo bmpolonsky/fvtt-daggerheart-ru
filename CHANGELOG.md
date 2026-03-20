@@ -1,5 +1,12 @@
 # Changelog
 
+## v2026.03.20
+
+### Changed
+- Обновлен регистр в названиях доменных карт, теперь каждое слово не пишется с большой буквы ([`c05a7f3`](https://github.com/bmpolonsky/fvtt-daggerheart-ru/commit/c05a7f3)).
+
+![GitHub Downloads](https://img.shields.io/github/downloads/bmpolonsky/fvtt-daggerheart-ru/v2026.03.20/total?color=green)
+
 ## v2026.03.13
 
 ### Added
