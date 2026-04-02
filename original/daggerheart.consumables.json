@@ -59,7 +59,7 @@
       "effects": {
         "nryJhrF26hyFQUxH": {
           "name": "Blinding Orb",
-          "description": "<p><span>You are Vulnerable until you mark a Hit Point.</p>"
+          "description": "<p><span>You are Vulnerable until you mark a Hit Point.</span></p>"
         }
       }
     },
@@ -536,7 +536,7 @@
       "effects": {
         "rMno0zO5Cbwlu4zn": {
           "name": "Morphing Clay",
-          "description": "<p><span>Your face is unrecognizable until your next rest.</p>"
+          "description": "<p><span>Your face is unrecognizable until your next rest.</span></p>"
         }
       }
     },
@@ -568,7 +568,7 @@
       "effects": {
         "n73d0J4oMCBIPWHN": {
           "name": "Ogre Musk",
-          "description": "<p><span>You cannot be tracked by mundane or magical means until your next rest.</p>"
+          "description": "<p><span>You cannot be tracked by mundane or magical means until your next rest.</span></p>"
         }
       }
     },
@@ -749,7 +749,7 @@
       "effects": {
         "548KAUPcSbQLsivh": {
           "name": "Vial of Moondrip",
-          "description": "<p><span>You can see in total darkness until your next rest.</p>"
+          "description": "<p><span>You can see in total darkness until your next rest.</span></p>"
         }
       }
     },

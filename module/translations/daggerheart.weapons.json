@@ -209,7 +209,7 @@
     "Advanced Round Shield": {
       "name": "Продвинутый Круглый Щит",
       "effects": {
-        "i5HfkF5aKQuUCTEG": {
+        "7285CRGdZfHCEtT2": {
           "name": "Защитное",
           "description": "+3 к Показателю Брони"
         }
@@ -261,6 +261,10 @@
       "name": "Продвинутый Башенный Щит",
       "effects": {
         "87gedjJZGdFY81Mt": {
+          "name": "Барьер",
+          "description": "+4 к Показателю Брони; −1 к Уклонению"
+        },
+        "J0f7zqqOr61ADpdy": {
           "name": "Барьер",
           "description": "+4 к Показателю Брони; −1 к Уклонению"
         }
@@ -874,7 +878,7 @@
     "Improved Round Shield": {
       "name": "Улучшенный Круглый Щит",
       "effects": {
-        "cXWSV50apzaNQkdA": {
+        "pZCrWd7zLTarvEQK": {
           "name": "Защитное",
           "description": "+2 к Показателю Брони"
         }
@@ -926,6 +930,10 @@
       "name": "Улучшенный Башенный Щит",
       "effects": {
         "tkNEA1PO3jEFhKCa": {
+          "name": "Барьер",
+          "description": "+3 к Показателю Брони; −1 к Уклонению"
+        },
+        "XugJeHJdnC6IymSa": {
           "name": "Барьер",
           "description": "+3 к Показателю Брони; −1 к Уклонению"
         }
@@ -989,7 +997,7 @@
     "Labrys Axe": {
       "name": "Топор Лабрис",
       "effects": {
-        "qTxADRsQnKiYfOiQ": {
+        "vnR4Zhnb0rOqwrFw": {
           "name": "Защитное",
           "description": "+1 к Показателю Брони"
         }
@@ -1161,7 +1169,7 @@
     "Legendary Round Shield": {
       "name": "Легендарный Круглый Щит",
       "effects": {
-        "Z2p00q5h6x6seXys": {
+        "EixxJrRHyc6kj3Wg": {
           "name": "Защитное",
           "description": "+4 к Показателю Брони."
         }
@@ -1213,6 +1221,10 @@
       "name": "Легендарный Башенный Щит",
       "effects": {
         "lBJMzxdGO2nJdTQS": {
+          "name": "Барьер",
+          "description": "+5 к Показателю Брони; −1 к Уклонению"
+        },
+        "1fgUIaXl6VQrhP7j": {
           "name": "Барьер",
           "description": "+5 к Показателю Брони; −1 к Уклонению"
         }
@@ -1410,7 +1422,7 @@
     "Round Shield": {
       "name": "Круглый Щит",
       "effects": {
-        "M70a81e0Mg66jHRL": {
+        "eV4lFIpQMiKERj4U": {
           "name": "Защитное",
           "description": "+1 к Показателю Брони"
         }
@@ -1519,6 +1531,10 @@
         "d3TJtlpoHBCztbom": {
           "name": "Двойная Служба",
           "description": "+1 к Показателю Брони; +1 к урону основного оружия по целям Вплотную к вам"
+        },
+        "mvUY9LGfwICak7cE": {
+          "name": "Двойная Служба",
+          "description": "+1 к Показателю Брони; +1 к урону основного оружия по целям Вплотную к вам"
         }
       },
       "attack": "Атака"
@@ -1577,6 +1593,10 @@
       "name": "Башенный Щит",
       "effects": {
         "8r0TcKWXboFV0eqS": {
+          "name": "Барьер",
+          "description": "+2 к Показателю Брони; −1 к Уклонению"
+        },
+        "tLRc4UAnGuIq7er3": {
           "name": "Барьер",
           "description": "+2 к Показателю Брони; −1 к Уклонению"
         }

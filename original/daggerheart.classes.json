@@ -30,7 +30,7 @@
   "entries": {
     "Bard": {
       "name": "Bard",
-      "description": "<p><strong>Note: At level 5 use Rally (Level 5) instead of Rally under class feature. (Automation will be implemented in a later release)</strong></p><p><br />Bards are the most charismatic people in all the realms. Members of this class are masters of captivation and specialize in a variety of performance types, including singing, playing musical instruments, weaving tales, or telling jokes. Whether performing for an audience or speaking to an individual, bards thrive in social situations. Members of this profession bond and train at schools or guilds, but a current of egotism runs through those of the bardic persuasion. While they may be the most likely class to bring people together, a bard of ill temper can just as easily tear a party apart.</p>",
+      "description": "<p>Bards are the most charismatic people in all the realms. Members of this class are masters of captivation and specialize in a variety of performance types, including singing, playing musical instruments, weaving tales, or telling jokes. Whether performing for an audience or speaking to an individual, bards thrive in social situations. Members of this profession bond and train at schools or guilds, but a current of egotism runs through those of the bardic persuasion. While they may be the most likely class to bring people together, a bard of ill temper can just as easily tear a party apart.</p>",
       "backgroundQuestions": [
         "Who from your community taught you to have such confidence in yourself?",
         "You were in love once. Who did you adore, and how did they hurt you?",
@@ -197,37 +197,11 @@
     },
     "Evolution": {
       "name": "Evolution",
-      "description": "<p><strong>Spend 3 Hope</strong> to transform into a Beastform without marking a Stress. When you do, choose one trait to raise by +1 until you drop out of that Beastform.<br /><br /><strong>Note: Toggle one of the Evolution Traits in the effects tab to raise a trait by 1, e.g. Evolution: Agility</strong></p>",
+      "description": "<p><strong>Spend 3 Hope</strong> to transform into a Beastform without marking a Stress. When you do, choose one trait to raise by +1 until you drop out of that Beastform.</p>",
       "actions": {
         "bj4m9E8ObFT0xDQ4": {
           "name": "Beastform",
           "description": "<p>Spend 3 Hope to transform into a Beastform without marking a Stress. When you do, choose one trait to raise by +1 until you drop out of that Beastform. </p>"
-        }
-      },
-      "effects": {
-        "vQOqLZAxOltAzsVv": {
-          "name": "Evolution: Agility",
-          "description": "<p>Toggle this for +1 to Agility when using Evolution. Turn it off when you leave Beastform.</p>"
-        },
-        "cwEsO1NZpkQHuoTT": {
-          "name": "Evolution: Strength",
-          "description": "<p>Toggle this for +1 to Strength when using Evolution. Turn it off when you leave Beastform.</p>"
-        },
-        "8P0nwRHNsVnHVPjq": {
-          "name": "Evolution: Finesse",
-          "description": "<p>Toggle this for +1 to Finesse when using Evolution. Turn it off when you leave Beastform.</p>"
-        },
-        "i2GhNGo5TnGtLuA0": {
-          "name": "Evolution: Instinct",
-          "description": "<p>Toggle this for +1 to Instinct when using Evolution. Turn it off when you leave Beastform.</p>"
-        },
-        "APQF1in1LXjBZh9n": {
-          "name": "Evolution: Presence",
-          "description": "<p>Toggle this for +1 to Presence when using Evolution. Turn it off when you leave Beastform.</p>"
-        },
-        "WwOvGJYJb4d37cOy": {
-          "name": "Evolution: Knowledge",
-          "description": "<p>Toggle this for +1 to Knowledge when using Evolution. Turn it off when you leave Beastform.</p>"
         }
       }
     },
@@ -271,7 +245,8 @@
       },
       "effects": {
         "8G9zDv1gac6dEHmS": {
-          "name": "Make a Scene"
+          "name": "Make a Scene",
+          "description": "<p>Giving them a -2 penalty to their Difficulty.</p>"
         }
       }
     },

@@ -209,7 +209,7 @@
     "Advanced Round Shield": {
       "name": "Advanced Round Shield",
       "effects": {
-        "i5HfkF5aKQuUCTEG": {
+        "7285CRGdZfHCEtT2": {
           "name": "Protective",
           "description": "<p>Add the item's Tier to your Armor Score</p>"
         }
@@ -261,6 +261,10 @@
       "name": "Advanced Tower Shield",
       "effects": {
         "87gedjJZGdFY81Mt": {
+          "name": "Barrier",
+          "description": "Gain Weapon Tier + 1 to Armor Score; -1 to Evasion"
+        },
+        "J0f7zqqOr61ADpdy": {
           "name": "Barrier",
           "description": "Gain Weapon Tier + 1 to Armor Score; -1 to Evasion"
         }
@@ -874,7 +878,7 @@
     "Improved Round Shield": {
       "name": "Improved Round Shield",
       "effects": {
-        "cXWSV50apzaNQkdA": {
+        "pZCrWd7zLTarvEQK": {
           "name": "Protective",
           "description": "<p>Add the item's Tier to your Armor Score</p>"
         }
@@ -926,6 +930,10 @@
       "name": "Improved Tower Shield",
       "effects": {
         "tkNEA1PO3jEFhKCa": {
+          "name": "Barrier",
+          "description": "Gain Weapon Tier + 1 to Armor Score; -1 to Evasion"
+        },
+        "XugJeHJdnC6IymSa": {
           "name": "Barrier",
           "description": "Gain Weapon Tier + 1 to Armor Score; -1 to Evasion"
         }
@@ -989,7 +997,7 @@
     "Labrys Axe": {
       "name": "Labrys Axe",
       "effects": {
-        "qTxADRsQnKiYfOiQ": {
+        "vnR4Zhnb0rOqwrFw": {
           "name": "Protective",
           "description": "Add your character's Tier to your Armor Score"
         }
@@ -1161,7 +1169,7 @@
     "Legendary Round Shield": {
       "name": "Legendary Round Shield",
       "effects": {
-        "Z2p00q5h6x6seXys": {
+        "EixxJrRHyc6kj3Wg": {
           "name": "Protective",
           "description": "<p>Add the item's Tier to your Armor Score</p>"
         }
@@ -1213,6 +1221,10 @@
       "name": "Legendary Tower Shield",
       "effects": {
         "lBJMzxdGO2nJdTQS": {
+          "name": "Barrier",
+          "description": "Gain Weapon Tier + 1 to Armor Score; -1 to Evasion"
+        },
+        "1fgUIaXl6VQrhP7j": {
           "name": "Barrier",
           "description": "Gain Weapon Tier + 1 to Armor Score; -1 to Evasion"
         }
@@ -1410,7 +1422,7 @@
     "Round Shield": {
       "name": "Round Shield",
       "effects": {
-        "M70a81e0Mg66jHRL": {
+        "eV4lFIpQMiKERj4U": {
           "name": "Protective",
           "description": "<p>Add the item's Tier to your Armor Score</p>"
         }
@@ -1519,6 +1531,10 @@
         "d3TJtlpoHBCztbom": {
           "name": "Double Duty",
           "description": "+1 to Armor Score; +1 to primary weapon damage within Melee range"
+        },
+        "mvUY9LGfwICak7cE": {
+          "name": "Double Duty",
+          "description": "+1 to Armor Score; +1 to primary weapon damage within Melee range"
         }
       },
       "attack": "Attack"
@@ -1577,6 +1593,10 @@
       "name": "Tower Shield",
       "effects": {
         "8r0TcKWXboFV0eqS": {
+          "name": "Barrier",
+          "description": "Gain Weapon Tier + 1 to Armor Score; -1 to Evasion"
+        },
+        "tLRc4UAnGuIq7er3": {
           "name": "Barrier",
           "description": "Gain Weapon Tier + 1 to Armor Score; -1 to Evasion"
         }

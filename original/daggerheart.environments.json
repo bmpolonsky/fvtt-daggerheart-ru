@@ -146,7 +146,7 @@
           "effects": {
             "gCkqvBUljsOsYacB": {
               "name": "Grasping Vines",
-              "description": "<p><em>Restrained</em> and <em>Vulnerable</em> until you break free, clearing both conditions, with a successful Finesse or Strength Roll or by dealing 10 damage to the vines. When the target makes a roll to escape, they take <strong>1d8+4</strong> physical damage and lose a Hope.</p><section class=\"secret\" id=\"secret-Eui1zx8GKoUhEXq6\"><p><em>What painful memories do the vines bring to the surface as they pierce flesh?</em></p></section>"
+              "description": "<p><em>Restrained</em> and <em>Vulnerable</em> until you break free, clearing both conditions, with a successful Finesse or Strength Roll or by dealing 10 damage to the vines. When the target makes a roll to escape, they take <strong>1d8+4</strong> physical damage and lose a Hope.</p><section id=\"secret-Eui1zx8GKoUhEXq6\" class=\"secret\"><p><em>What painful memories do the vines bring to the surface as they pierce flesh?</em></p></section>"
             }
           }
         },
@@ -194,7 +194,7 @@
       "items": {
         "w8YmhoWPGc66Wrx3": {
           "name": "Tip the Scales",
-          "description": "<p>PCs can gain advantage on a Presence Roll by off ering a handful of gold as part of the interaction. </p><section id=\"secret-SkvXxhBWKBtYdJaq\" class=\"secret\"><p><em>Will any coin be accepted or only local currency? How overt are the PCs in offering this bribe?</em></p></section>"
+          "description": "<p>PCs can gain advantage on a Presence Roll by offering a handful of gold as part of the interaction.</p><section id=\"secret-SkvXxhBWKBtYdJaq\" class=\"secret\"><p><em>Will any coin be accepted or only local currency? How overt are the PCs in offering this bribe?</em></p></section>"
         },
         "60uDqt9omFifZ7xd": {
           "name": "Unexpected Find",

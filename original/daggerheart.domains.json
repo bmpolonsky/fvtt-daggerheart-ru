@@ -75,9 +75,9 @@
         }
       },
       "effects": {
-        "cED730OjuMW5haJR": {
+        "tJw2JIPcT9hEMRXg": {
           "name": "Armorer",
-          "description": "<p><span>While you’re wearing armor, gain a +1 bonus to your </span><span class=\"tooltip-convert\">Armor Score</span><span>.</p>"
+          "description": "<p><span>While you’re wearing armor, gain a +1 bonus to your </span><span class=\"tooltip-convert\">Armor Score</span><span>.</span></p>"
         }
       }
     },
@@ -113,7 +113,13 @@
     },
     "Bare Bones": {
       "name": "Bare Bones",
-      "description": "<p class=\"Body-Foundation\">When you choose not to equip armor, you have a base Armor Score of 3 + your Strength and use the following as your base damage thresholds:</p><ul><li class=\"vertical-card-list-found\"><em><strong>Tier 1:</strong></em> 9/19</li><li class=\"vertical-card-list-found\"><em><strong>Tier 2:</strong></em> 11/24</li><li class=\"vertical-card-list-found\"><em><strong>Tier 3:</strong></em> 13/31</li><li class=\"vertical-card-list-found\"><em><strong>Tier 4:</strong></em> 15/38</li></ul><p>Equip the below armor to use Bare Bones.</p><p>@UUID[Compendium.daggerheart.armors.Item.ITAjcigTcUw5pMCN]{Bare Bones}</p>"
+      "description": "<p class=\"Body-Foundation\">When you choose not to equip armor, you have a base Armor Score of 3 + your Strength and use the following as your base damage thresholds:</p><ul><li class=\"vertical-card-list-found\"><em><strong>Tier 1:</strong></em> 9/19</li><li class=\"vertical-card-list-found\"><em><strong>Tier 2:</strong></em> 11/24</li><li class=\"vertical-card-list-found\"><em><strong>Tier 3:</strong></em> 13/31</li><li class=\"vertical-card-list-found\"><em><strong>Tier 4:</strong></em> 15/38</li></ul><p>Equip the below armor to use Bare Bones.</p><p>@UUID[Compendium.daggerheart.armors.Item.ITAjcigTcUw5pMCN]{Bare Bones}</p>",
+      "effects": {
+        "FCsgz7Tdsw6QUzBs": {
+          "name": "Bare Bones",
+          "description": "<p><span>You have a base Armor Score of 3 + your Strength.</span></p>"
+        }
+      }
     },
     "Battle Cry": {
       "name": "Battle Cry",
@@ -211,7 +217,7 @@
       "effects": {
         "veZpnhnF8NRRhKG4": {
           "name": "Vulnerable",
-          "description": "<p><span>Temporarily </span><span>Vulnerable</span><span> and glows brightly until this condition is cleared.</p>"
+          "description": "<p><span>Temporarily </span><span>Vulnerable</span><span> and glows brightly until this condition is cleared.</span></p>"
         }
       }
     },
@@ -253,7 +259,7 @@
         }
       },
       "effects": {
-        "LdcT1nrkd5ORCU4n": {
+        "ptYT10JZ2WJHvFMd": {
           "name": "Tava's Armor",
           "description": "<p>+1 bonus to your Armor Score until your next rest, or the caster cast's Tava’s Armor again.</p>"
         }
@@ -721,8 +727,8 @@
       },
       "effects": {
         "zB95bjSSdVlApQnR": {
-          "name": "Corroded (1 stack)",
-          "description": "<p><span>While a target is </span><span>Corroded</span><span>, they gain a −1 penalty to their </span><span class=\"tooltip-convert\">Difficulty</span><span> for every 2 Stress you spent. This </span><span class=\"tooltip-convert\">condition</span><span> can stack.</p>"
+          "name": "Corroded",
+          "description": "<p><span>While a target is </span><span>Corroded</span><span>, they gain a −1 penalty to their </span><span class=\"tooltip-convert\">Difficulty</span><span> for every 2 Stress you spent. This </span><span class=\"tooltip-convert\">condition</span><span> can stack.</span></p>"
         }
       }
     },
@@ -891,7 +897,7 @@
       "effects": {
         "Z31XqmGUKWYcZdMY": {
           "name": "Vulnerable",
-          "description": "<p><span>Temporarily </span><span>Vulnerable</span><span>.</p>"
+          "description": "<p>Temporarily Vulnerable.</p>"
         }
       }
     },
@@ -1140,7 +1146,7 @@
       "effects": {
         "H5q5iYImr69TfZcp": {
           "name": "Full Surge",
-          "description": "<p><span>Gain a +2 bonus to all of your </span><span class=\"tooltip-convert\">character traits</span><span> until your next rest.</p>"
+          "description": "<p>Gain a +2 bonus to all of your character traits until your next rest.</p>"
         }
       }
     },
@@ -1190,13 +1196,9 @@
         }
       },
       "effects": {
-        "st8Ji9ZNexvw64xM": {
+        "9avDhppIdTqAR56f": {
           "name": "Glyph of Nightfall",
-          "description": "<p><span>Conjure a dark glyph upon their body that exposes their weak points, temporarily reducing the target’s </span><span class=\"tooltip-convert\">Difficulty</span><span> by a value equal to your </span><span class=\"tooltip-convert\">Knowledge</span><span> (minimum 1).</p>"
-        },
-        "X2w3kRHaETs8YWLO": {
-          "name": "Glyph of Nightfall",
-          "description": "<p><span>Conjure a dark glyph upon their body that exposes their weak points, temporarily reducing the target’s </span><span class=\"tooltip-convert\">Difficulty</span><span> by a value equal to your </span><span class=\"tooltip-convert\">Knowledge</span><span> (minimum 1).</p>"
+          "description": "<p><span>Conjure a dark glyph upon their body that exposes their weak points, temporarily reducing the target’s </span><span class=\"tooltip-convert\">Difficulty</span><span> by a value equal to your </span><span class=\"tooltip-convert\">Knowledge</span><span> (minimum 1).</span></p>"
         }
       }
     },
@@ -1351,13 +1353,9 @@
         }
       },
       "effects": {
-        "5hzzPTFccUSSNHgp": {
-          "name": "Silenced",
-          "description": "<p><span>Auppressive magic around the target that encompasses everything within Very Close range of them and follows them as they move. </span><span class=\"Body-Foundation\">The target and anything within the area is <em>Silenced </em>until the GM spends a Fear on their turn to clear this condition, you cast Hush again, or you take Major damage. While <em>Silenced</em>, they can’t make noise and can’t cast spells.</p>"
-        },
         "pZ5YpjKidaj48IYF": {
           "name": "Silenced",
-          "description": "<p><span>Suppressive magic around the target that encompasses everything within Very Close range of them and follows them as they move. </span><span class=\"Body-Foundation\">The target and anything within the area is <em>Silenced </em>until the GM spends a Fear on their turn to clear this condition, you cast Hush again, or you take Major damage. While <em>Silenced</em>, they can’t make noise and can’t cast spells.</p>"
+          "description": "<p>Suppressive magic around the target that encompasses everything within Very Close range of them and follows them as they move. The target and anything within the area is Silenced until the GM spends a Fear on their turn to clear this condition, you cast Hush again, or you take Major damage. While Silenced, they can’t make noise and can’t cast spells.</p>"
         }
       }
     },
@@ -1373,7 +1371,7 @@
       "effects": {
         "xAG75UWUz3aDZH3m": {
           "name": "Stunned",
-          "description": "<p><span>An illusion of flashing colors and lights that temporarily </span><span>Stuns</span><span> targets. While </span><span>Stunned</span><span>, they can’t use reactions and can’t take any other actions until they clear this </span><span class=\"tooltip-convert\">condition</span><span>.</p>"
+          "description": "<p><span>An illusion of flashing colors and lights that temporarily </span><span>Stuns</span><span> targets. While </span><span>Stunned</span><span>, they can’t use reactions and can’t take any other actions until they clear this </span><span class=\"tooltip-convert\">condition</span><span>.</span></p>"
         }
       }
     },
@@ -1562,7 +1560,7 @@
       "effects": {
         "QNbnelRylVB0yCm0": {
           "name": "Enraptured",
-          "description": "<p><span>While </span><span>Enraptured</span><span>, a target’s attention is fixed on you, narrowing their field of view and drowning out any sound but your voice.</p>"
+          "description": "<p><span>While </span><span>Enraptured</span><span>, a target’s attention is fixed on you, narrowing their field of view and drowning out any sound but your voice.</span></p>"
         }
       }
     },
@@ -1723,7 +1721,7 @@
       "effects": {
         "32j3ZeNMMCk1QLlM": {
           "name": "Horrified",
-          "description": "<p><span>While </span><span>Horrified</span><span>, they’re </span><span>Vulnerable</span><span>.</p>"
+          "description": "<p>While Horrified, they’re Vulnerable.</p>"
         }
       }
     },
@@ -1841,17 +1839,14 @@
       "description": "<p class=\"Body-Foundation\">Before you make an attack, you can <strong>mark a Stress</strong> to gain a bonus to your damage roll equal to twice your Strength.</p><p class=\"Body-Foundation\">You can Rage Up twice per attack.</p>",
       "actions": {
         "LmjwPg03xLnoGTHm": {
-          "name": "Mark 1 Stress",
-          "description": "<p>You can <strong>mark a Stress</strong> to gain a bonus to your damage roll equal to twice your Strength.</p>"
-        },
-        "fKY9NcYBwCFwMsgV": {
-          "name": "Mark 2 Stress",
+          "name": "Mark Stress",
           "description": "<p>You can <strong>mark a Stress</strong> to gain a bonus to your damage roll equal to twice your Strength.</p>"
         }
       },
       "effects": {
         "bq1MhcmoP6Wo5CXF": {
-          "name": "Rage Up (1)"
+          "name": "Rage Up",
+          "description": "<p>For your next attack you have a bonus to your damage roll equal to twice your Strength.</p>"
         },
         "t6SIjQxB6UBUJ98f": {
           "name": "Rage Up (2)"
@@ -2334,7 +2329,7 @@
       "effects": {
         "kSLuGSI6FLhOJaGp": {
           "name": "Stunning Sunlight",
-          "description": "<p>Temporarily Stunned. <span>While </span><span>Stunned</span><span>, they can’t use reactions and can’t take any other actions until they clear this </span><span class=\"tooltip-convert\">condition</span><span>.</p>"
+          "description": "<p>Temporarily Stunned. While Stunned, they can’t use reactions and can’t take any other actions until they clear this condition.</p>"
         }
       }
     },
@@ -2488,7 +2483,7 @@
       "effects": {
         "TCOHV7tWpunCZDxn": {
           "name": "Seeing, Hearing",
-          "description": "<p><span>Can see through their eyes and hear through their ears.</p>"
+          "description": "<p><span>Can see through their eyes and hear through their ears.</span></p>"
         }
       }
     },
@@ -2623,7 +2618,7 @@
         }
       },
       "effects": {
-        "H9lgIqqp1imSNOv9": {
+        "Ma8Zp005QYKPWIEN": {
           "name": "Valor-Touched",
           "description": "<ul><li class=\"vertical-card-list-found\"><p>+1 bonus to your Armor Score</p></li><li class=\"vertical-card-list-found\"><p>When you mark 1 or more Hit Points without marking an Armor Slot, clear an Armor Slot.</p></li></ul>"
         }
