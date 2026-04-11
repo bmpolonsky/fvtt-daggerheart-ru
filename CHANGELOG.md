@@ -1,5 +1,12 @@
 # Changelog
 
+## v2026.04.12
+
+### Fixed
+- Исправлен перевод встроенных эффектов у доменных карт и эффектов противников, а также уточнены короткие UI-подписи отдыха и стоимости командного броска ([`ed54b65`](https://github.com/bmpolonsky/fvtt-daggerheart-ru/commit/ed54b65)).
+
+![GitHub Downloads](https://img.shields.io/github/downloads/bmpolonsky/fvtt-daggerheart-ru/v2026.04.12/total?color=green)
+
 ## v2026.04.11
 
 ### Breaking Changes
