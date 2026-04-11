@@ -113,7 +113,7 @@
     },
     "Bare Bones": {
       "name": "Ничего лишнего",
-      "description": "<p>Пока на вас не экипирована броня, ваш базовый Показатель Брони равен 3 + ваша Сила, а также вы используете следующие значения как ваши базовые пороги урона:</p><ul><li><strong><em>Ранг 1:</em></strong> 9/19</li></ul><ul><li><strong><em>Ранг 2</em></strong>: 11/24</li></ul><ul><li><strong><em>Ранг 3:</em></strong> 13/31</li></ul><ul><li><strong><em>Ранг 4:</em></strong> 15/38</li></ul><p>Наденьте указанные ниже доспехи, чтобы использовать эту способность.</p><p>@UUID[Compendium.daggerheart.armors.Item.ITAjcigTcUw5pMCN]{Без доспехов}</p>",
+      "description": "<p>Пока на вас не экипирована броня, ваш базовый Показатель Брони равен 3 + ваша Сила, а также вы используете следующие значения как ваши базовые пороги урона:</p><ul><li><strong><em>Ранг 1:</em></strong> 9/19</li></ul><ul><li><strong><em>Ранг 2</em></strong>: 11/24</li></ul><ul><li><strong><em>Ранг 3:</em></strong> 13/31</li></ul><ul><li><strong><em>Ранг 4:</em></strong> 15/38</li></ul>",
       "effects": {
         "FCsgz7Tdsw6QUzBs": {
           "name": "Ничего лишнего",

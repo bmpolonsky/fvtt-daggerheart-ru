@@ -163,9 +163,6 @@ const MANUAL_ENTRY_PATCHES = {
   }
 };
 
-const BARE_BONES_DOMAIN_SNIPPET =
-  "<p>Наденьте указанные ниже доспехи, чтобы использовать эту способность.</p><p>@UUID[Compendium.daggerheart.armors.Item.ITAjcigTcUw5pMCN]{Без доспехов}</p>";
-
 // Ручные переопределения для брони.
 const ARMOR_OVERRIDES = {
   "Bare Bones": {
@@ -2462,13 +2459,6 @@ async function main() {
           setHtmlField(entry, "description", fullDescHtml);
         } else {
           delete entry.description;
-        }
-
-        if (key === "Bare Bones" && entry.description) {
-          if (!entry.description.includes("Compendium.daggerheart.armors.Item.ITAjcigTcUw5pMCN")) {
-            const appended = `${entry.description.replace(/\s*$/, "")}${BARE_BONES_DOMAIN_SNIPPET}`;
-            setHtmlField(entry, "description", appended);
-          }
         }
 
         // ШАГ 2: Обрабатываем 'actions' с новой "гибкой" логикой

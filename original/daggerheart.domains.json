@@ -113,7 +113,7 @@
     },
     "Bare Bones": {
       "name": "Bare Bones",
-      "description": "<p class=\"Body-Foundation\">When you choose not to equip armor, you have a base Armor Score of 3 + your Strength and use the following as your base damage thresholds:</p><ul><li class=\"vertical-card-list-found\"><em><strong>Tier 1:</strong></em> 9/19</li><li class=\"vertical-card-list-found\"><em><strong>Tier 2:</strong></em> 11/24</li><li class=\"vertical-card-list-found\"><em><strong>Tier 3:</strong></em> 13/31</li><li class=\"vertical-card-list-found\"><em><strong>Tier 4:</strong></em> 15/38</li></ul><p>Equip the below armor to use Bare Bones.</p><p>@UUID[Compendium.daggerheart.armors.Item.ITAjcigTcUw5pMCN]{Bare Bones}</p>",
+      "description": "<p class=\"Body-Foundation\">When you choose not to equip armor, you have a base Armor Score of 3 + your Strength and use the following as your base damage thresholds:</p><ul><li class=\"vertical-card-list-found\"><p><em><strong>Tier 1:</strong></em> 9/19</p></li><li class=\"vertical-card-list-found\"><p><em><strong>Tier 2:</strong></em> 11/24</p></li><li class=\"vertical-card-list-found\"><p><em><strong>Tier 3:</strong></em> 13/31</p></li><li class=\"vertical-card-list-found\"><p><em><strong>Tier 4:</strong></em> 15/38</p></li></ul>",
       "effects": {
         "FCsgz7Tdsw6QUzBs": {
           "name": "Bare Bones",
