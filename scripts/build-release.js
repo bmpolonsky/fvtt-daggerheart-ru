@@ -48,6 +48,7 @@ const VERSION = toCalVer(process.argv[2] || new Date().toISOString().slice(0, 10
 const MODULE_PATH = path.resolve(BASE_DIR, MODULE_FOLDER);
 const MANIFEST_PATH = path.join(MODULE_PATH, "module.json");
 const PACKAGE_JSON_PATH = path.join(BASE_DIR, "package.json");
+const PACKAGE_LOCK_PATH = path.join(BASE_DIR, "package-lock.json");
 
 // --- Утилиты ---
 const fail = (msg) => {
@@ -111,6 +112,18 @@ function updatePackageJsonVersion() {
   console.log("📝 package.json обновлён (version)");
 }
 
+function updatePackageLockVersion() {
+  if (!fs.existsSync(PACKAGE_LOCK_PATH)) return;
+  const raw = fs.readFileSync(PACKAGE_LOCK_PATH, "utf8");
+  const lock = JSON.parse(raw);
+  lock.version = VERSION;
+  if (lock.packages && lock.packages[""]) {
+    lock.packages[""].version = VERSION;
+  }
+  fs.writeFileSync(PACKAGE_LOCK_PATH, JSON.stringify(lock, null, 2) + "\n");
+  console.log("📝 package-lock.json обновлён (version)");
+}
+
 function stageReleaseContent() {
   // Пересобираем release/ с нуля
   fs.rmSync(RELEASE_ROOT, { recursive: true, force: true });
@@ -154,6 +167,7 @@ function main() {
   // Обновляем manifest (version + download)
   const manifest = updateManifest(initial, ZIP_NAME);
   updatePackageJsonVersion();
+  updatePackageLockVersion();
 
   // Стадия релиза и упаковка
   stageReleaseContent();

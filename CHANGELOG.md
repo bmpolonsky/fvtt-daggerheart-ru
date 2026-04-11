@@ -1,5 +1,16 @@
 # Changelog
 
+## v2026.04.11
+
+### Breaking Changes
+- Модуль обновлён под Foundryborne (Daggerheart) 2.x и Foundry VTT v14; поддержка Foundry VTT v13 больше не заявляется ([`d0e8323`](https://github.com/bmpolonsky/fvtt-daggerheart-ru/commit/d0e8323), [`bafb710`](https://github.com/bmpolonsky/fvtt-daggerheart-ru/commit/bafb710)).
+
+### Changed
+- Синхронизированы и переведены новые тексты интерфейса и компендиумов из обновлений Foundryborne [2.0.0](https://github.com/Foundryborne/daggerheart/releases/tag/2.0.0), [2.1.0](https://github.com/Foundryborne/daggerheart/releases/tag/2.1.0) и [2.1.1](https://github.com/Foundryborne/daggerheart/releases/tag/2.1.1) ([`d0e8323`](https://github.com/bmpolonsky/fvtt-daggerheart-ru/commit/d0e8323), [`bafb710`](https://github.com/bmpolonsky/fvtt-daggerheart-ru/commit/bafb710), [`cd90a41`](https://github.com/bmpolonsky/fvtt-daggerheart-ru/commit/cd90a41)).
+- Обновлены требования совместимости в manifest и README: Foundry VTT 14.359+, Daggerheart 2.0.0+ (проверено на 2.1.1), Babele 2.7.5+.
+
+![GitHub Downloads](https://img.shields.io/github/downloads/bmpolonsky/fvtt-daggerheart-ru/v2026.04.11/total?color=green)
+
 ## v2026.03.20
 
 ### Changed

@@ -58,6 +58,17 @@ cases that are already established in the project.
 - Void/beta content may be incomplete and should be treated separately from normal
   SRD localization work.
 
+## Automation Notes
+
+- `update_translations.js` is the conservative updater: it is intended to refresh
+  ordinary translated names/descriptions while avoiding broad rewrites of
+  Foundry-specific `actions`, `effects`, and embedded item structures.
+- `update_translations_full.js` is the aggressive updater: it contains split-action
+  logic and manual overrides for cases where API text must be redistributed across
+  Foundry-specific fields.
+- Do not infer that either script should be run from a translation request alone.
+  Use these scripts only when the user explicitly asks for a sync/update pass.
+
 ## Collaboration
 
 When the user asks for a specific scoped change, stay within that scope. Do not run
