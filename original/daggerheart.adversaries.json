@@ -174,7 +174,7 @@
           "name": "Group Attack",
           "description": "<p><strong>Spend a Fear</strong> to choose a target and spotlight all @Lookup[@name]s within Close range of them. Those Minions move into Melee range of the target and make one shared attack roll. On a success, they deal @Lookup[@system.attack.damageFormula] physical damage each. Combine this damage.</p>",
           "actions": {
-            "vgguNWz8vG8aoLXR": {
+            "SrNyZgPvCXMpbCLG": {
               "name": "Spend Fear"
             }
           }
@@ -728,7 +728,7 @@
           "name": "Group Attack",
           "description": "<p><strong>Spend a Fear</strong> to choose a target and spotlight all @Lookup[@name]s within Close range of them. Those Minions move into Melee range of the target and make one shared attack roll. On a success, they deal @Lookup[@system.attack.damageFormula] physical damage each. Combine this damage.</p>",
           "actions": {
-            "cbAvPSIhwBMBTI3D": {
+            "FCeTuf71gCzRiO5N": {
               "name": "Spend Fear"
             }
           }
@@ -965,7 +965,7 @@
           "name": "Group Attack",
           "description": "<p><strong>Spend a Fear</strong> to choose a target and spotlight all Cult @Lookup[@name]s within Close range of them. Those Minions move into Melee range of the target and make one shared attack roll. On a success, they deal @Lookup[@system.attack.damageFormula] physical damage each. Combine this damage.</p>",
           "actions": {
-            "EH1preaTWBD4rOvx": {
+            "4M2MvVzEgIQEQHBS": {
               "name": "Spend Fear"
             }
           }
@@ -1451,7 +1451,7 @@
           "name": "Group Attack",
           "description": "<p><strong>Spend a Fear</strong> to choose a target and spotlight all @Lookup[@name]s within Close range of them. Those Minions move into Melee range of the target and make one shared attack roll. On a success, they deal @Lookup[@system.attack.damageFormula] physical damage each. Combine this damage.</p>",
           "actions": {
-            "vXHZVb0Y7Hqu3uso": {
+            "S3dYxRclyhYINRi8": {
               "name": "Spend Fear"
             }
           }
@@ -1549,7 +1549,7 @@
           "name": "Group Attack",
           "description": "<p><strong>Spend a Fear</strong> to choose a target and spotlight all @Lookup[@name]s within Close range of them. Those Minions move into Melee range of the target and make one shared attack roll. On a success, they deal @Lookup[@system.attack.damageFormula] physical damage each. Combine this damage.</p>",
           "actions": {
-            "QHNRSEQmqOcaoXq4": {
+            "G0DVft7h55pBnwJA": {
               "name": "Spend Fear"
             }
           }
@@ -1990,7 +1990,7 @@
           "description": "<p><strong>Spend a Fear</strong> to choose a target and spotlight all @Lookup[@name]s within Close range of them. Those Minions move into Melee range of the target and make one shared attack roll. On a success, they deal @Lookup[@system.attack.damageFormula] physical damage each. Combine this damage.</p>",
           "actions": {
             "q8chow47nQLR9qeF": {
-              "name": "Attack"
+              "name": "Spend Fear"
             }
           }
         }
@@ -2010,7 +2010,7 @@
           "name": "Group Attack",
           "description": "<p><strong>Spend a Fear</strong> to choose a target and spotlight all @Lookup[@name]s within Close range of them. Those Minions move into Melee range of the target and make one shared attack roll. On a success, they deal @Lookup[@system.attack.damageFormula] physical damage each. Combine this damage.</p>",
           "actions": {
-            "DjbPQowW1OdBD9Zn": {
+            "wez1xgy9vScux9wi": {
               "name": "Spend Fear"
             }
           }
@@ -2390,7 +2390,7 @@
           "name": "Group Attack",
           "description": "<p><strong>Spend a Fear</strong> to choose a target and spotlight all @Lookup[@name]s within Close range of them. Those Minions move into Melee range of the target and make one shared attack roll. On a success, they deal @Lookup[@system.attack.damageFormula] physical damage each. Combine this damage.</p>",
           "actions": {
-            "eo7J0v1B5zPHul1M": {
+            "irZGPKPpGLA6sP2y": {
               "name": "Spend Fear"
             }
           }
@@ -2806,7 +2806,7 @@
           "name": "Group Attack",
           "description": "<p><strong>Spend a Fear</strong> to choose a target and spotlight all @Lookup[@name] within Close range of them. Those Minions move into Melee range of the target and make one shared attack roll. On a success, they deal @Lookup[@system.attack.damageFormula] physical damage each. Combine this damage.</p>",
           "actions": {
-            "aoQDb2m32NDxE6ZP": {
+            "ferZO3BuiP9zU46m": {
               "name": "Spend Fear"
             }
           }
@@ -3425,7 +3425,7 @@
           "name": "Group Attack",
           "description": "<p><strong>Spend a Fear</strong> to choose a target and spotlight all @Lookup[@name]s within Close range of them. Those Minions move into Melee range of the target and make one shared attack roll. On a success, they deal @Lookup[@system.attack.damageFormula] physical damage each. Combine this damage.</p>",
           "actions": {
-            "xTMNAHcoErKuR6TZ": {
+            "xFlhxnQWmVvDqQ55": {
               "name": "Spend Fear"
             }
           }
@@ -3778,7 +3778,7 @@
           "name": "Group Attack",
           "description": "<p><strong>Spend a Fear</strong> to choose a target and spotlight all @Lookup[@name]s within Close range of them. Those Minions move into Melee range of the target and make one shared attack roll. On a success, they deal @Lookup[@system.attack.damageFormula] physical damage each. Combine this damage.</p>",
           "actions": {
-            "tvQetauskZoHDR5y": {
+            "6VKv71tPUIGGIfkZ": {
               "name": "Spend Fear"
             }
           }
@@ -4085,7 +4085,7 @@
           "name": "Group Attack",
           "description": "<p><strong>Spend a Fear</strong> to choose a target and spotlight all @Lookup[@name]s within Close range of them. Those Minions move into Melee range of the target and make one shared attack roll. On a success, they deal @Lookup[@system.attack.damageFormula] physical damage each. Combine this damage.</p>",
           "actions": {
-            "DJBNtd3hWjwsjPwq": {
+            "8wRrAWHU0xHW4zuE": {
               "name": "Spend Fear"
             }
           }
@@ -4208,7 +4208,7 @@
           "name": "Group Attack",
           "description": "<p><strong>Spend a Fear</strong> to choose a target and spotlight all @Lookup[@name]s within Close range of them. Those Minions move into Melee range of the target and make one shared attack roll. On a success, they deal @Lookup[@system.attack.damageFormula] physical damage each. Combine this damage.</p>",
           "actions": {
-            "ghgFZskDiizJDjcn": {
+            "K3pF2DBnR9zJ90W8": {
               "name": "Spend Fear"
             }
           }
@@ -4349,7 +4349,7 @@
           "name": "Group Attack",
           "description": "<p><strong>Spend a Fear</strong> to choose a target and spotlight all @Lookup[@name]s within Close range of them. Those Minions move into Melee range of the target and make one shared attack roll. On a success, they deal @Lookup[@system.attack.damageFormula] physical damage each. Combine this damage.</p>",
           "actions": {
-            "Sz55uB8xkoNytLwJ": {
+            "6rdwJKwsSCO4R0Ty": {
               "name": "Spend Fear"
             }
           }
@@ -4853,7 +4853,7 @@
           "name": "Group Attack",
           "description": "<p><strong>Spend a Fear</strong> to choose a target and spotlight all @Lookup[@name]s within Close range of them. Those Minions move into Melee range of the target and make one shared attack roll. On a success, they deal @Lookup[@system.attack.damageFormula] physical damage each. Combine this damage.</p>",
           "actions": {
-            "ZC5pKIb9N82vgMWu": {
+            "V58Ry90tvIjvfDTZ": {
               "name": "Spend Fear"
             }
           }
@@ -4918,7 +4918,7 @@
           "name": "Group Attack",
           "description": "<p><strong>Spend a Fear</strong> to choose a target and spotlight all @Lookup[@name]s within Close range of them. Those Minions move into Melee range of the target and make one shared attack roll. On a success, they deal @Lookup[@system.attack.damageFormula] physical damage each. Combine this damage.</p>",
           "actions": {
-            "euP8VA4wvfsCpwN1": {
+            "Itubbr63irPJcbXG": {
               "name": "Spend Fear"
             }
           }

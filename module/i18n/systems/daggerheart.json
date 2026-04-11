@@ -116,7 +116,9 @@
         },
         "displayInChat": "Отображать в чате",
         "deleteTriggerTitle": "Удалить триггер",
-        "deleteTriggerContent": "Вы уверены, что хотите удалить триггер {trigger}?"
+        "deleteTriggerContent": "Вы уверены, что хотите удалить триггер {trigger}?",
+        "advantageState": "Состояние преимущества",
+        "damageOnSave": "Урон при броске реакции"
       },
       "RollField": {
         "diceRolling": {
@@ -128,11 +130,14 @@
         }
       },
       "Settings": {
-        "attackBonus": "Бонус к атаке",
+        "attackModifier": "Модификатор атаки",
         "attackName": "Название атаки",
         "criticalThreshold": "Порог критического успеха",
         "includeBase": {
           "label": "Включая урон предмета"
+        },
+        "groupAttack": {
+          "label": "Групповая атака"
         },
         "multiplier": "Множитель",
         "saveHint": "Укажите характеристику по умолчанию, чтобы включить бросок реакции. Её можно будет изменить позже в диалоговом окне броска реакции.",
@@ -374,6 +379,21 @@
           }
         },
         "newAdversary": "Новый противник"
+      },
+      "Party": {
+        "Subtitle": {
+          "character": "{community} {ancestry} | {subclass} {class}",
+          "companion": "Компаньон {partner}"
+        },
+        "RemoveConfirmation": {
+          "title": "Удалить участника {name}",
+          "text": "Вы уверены, что хотите удалить {name} из группы?"
+        },
+        "Thresholds": {
+          "minor": "ЛЁГ",
+          "major": "ОЩУ",
+          "severe": "ТЯЖ"
+        }
       }
     },
     "APPLICATIONS": {
@@ -793,6 +813,17 @@
           "completeRolls": "Настройте и завершите броски персонажей",
           "selectRoll": "Выберите, какое значение броска использовать для командного броска"
         }
+      },
+      "GroupRollSelect": {
+        "title": "Групповой бросок",
+        "leader": "Лидер",
+        "leaderRoll": "Бросок лидера",
+        "openDialogForAll": "Открыть окно для всех",
+        "startGroupRoll": "Начать групповой бросок",
+        "cancelGroupRoll": "Отменить",
+        "finishGroupRoll": "Завершить групповой бросок",
+        "cancelConfirmTitle": "Отменить групповой бросок",
+        "cancelConfirmText": "Вы уверены, что хотите отменить групповой бросок? Это также закроет его для всех остальных игроков."
       },
       "TokenConfig": {
         "actorSizeUsed": "Размер персонажа задан, он определяет габариты."
@@ -3055,6 +3086,7 @@
             "system": "Набор костей",
             "font": "Шрифт",
             "critical": "Анимация критического успеха дуальности",
+            "muted": "Без звука",
             "diceAppearance": "Внешний вид костей",
             "animations": "Анимации",
             "defaultAnimations": "Установить анимации по умолчанию для игроков",
@@ -3171,18 +3203,6 @@
           "immunityTo": "Иммунитет: {immunities}"
         },
         "featureTitle": "Свойство класса",
-        "groupRoll": {
-          "title": "Групповой бросок",
-          "leader": "Лидер",
-          "partyTeam": "Команда группы",
-          "team": "Команда",
-          "selectLeader": "Выберите лидера",
-          "selectMember": "Выберите участника",
-          "rerollTitle": "Перебросить групповой бросок",
-          "rerollContent": "Вы уверены, что хотите перебросить ваш бросок {trait}?",
-          "rerollTooltip": "Перебросить",
-          "wholePartySelected": "Выбрана вся группа"
-        },
         "healingRoll": {
           "title": "Исцеление - {damage}",
           "heal": "Исцелить",
@@ -3348,7 +3368,8 @@
         "tokenActorsMissing": "У [{names}] отсутствуют актёры",
         "domainTouchRequirement": "Для использования этой карты домена требуется иметь в руке {nr} карт(ы) домена {domain}",
         "knowTheTide": "«Знание Приливов» получило жетон",
-        "lackingItemTransferPermission": "У пользователя {user} нет прав владельца, необходимых для передачи предметов к {target}"
+        "lackingItemTransferPermission": "У пользователя {user} нет прав владельца, необходимых для передачи предметов к {target}",
+        "noTokenTargeted": "Не выбран целевой токен"
       },
       "Progress": {
         "migrationLabel": "Выполняется миграция системы. Пожалуйста, подождите и не закрывайте Foundry."

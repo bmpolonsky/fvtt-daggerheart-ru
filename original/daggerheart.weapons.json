@@ -996,10 +996,11 @@
     },
     "Labrys Axe": {
       "name": "Labrys Axe",
+      "description": "<strong>Protective:</strong> +1 to Armor Score",
       "effects": {
         "vnR4Zhnb0rOqwrFw": {
           "name": "Protective",
-          "description": "Add your character's Tier to your Armor Score"
+          "description": "+1 to Armor Score"
         }
       },
       "attack": "Attack"

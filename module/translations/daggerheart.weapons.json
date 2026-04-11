@@ -996,6 +996,7 @@
     },
     "Labrys Axe": {
       "name": "Топор Лабрис",
+      "description": "<p><strong>Защитное:</strong> +1 к Показателю Брони</p>",
       "effects": {
         "vnR4Zhnb0rOqwrFw": {
           "name": "Защитное",
