@@ -17,6 +17,10 @@
       "path": "items",
       "converter": "toItemsWithActions"
     },
+    "effects": {
+      "path": "effects",
+      "converter": "toEffects"
+    },
     "impulses": "system.impulses",
     "potentialAdversaries": {
       "path": "system.potentialAdversaries",

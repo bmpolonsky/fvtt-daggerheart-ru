@@ -255,7 +255,10 @@
           }
         },
         "hordeDamage": "Урон орды",
-        "horderHp": "Существ на 1 Рану"
+        "horderHp": "Существ на 1 Рану",
+        "adversaryReactionRoll": {
+          "headerTitle": "Бросок реакции противника"
+        }
       },
       "Character": {
         "advantageSources": {
@@ -393,7 +396,8 @@
           "minor": "ЛЁГ",
           "major": "ОЩУ",
           "severe": "ТЯЖ"
-        }
+        },
+        "triggerRestContent": "Это откроет игрокам диалог для выполнения ходов отдыха. Продолжить?"
       }
     },
     "APPLICATIONS": {
@@ -543,6 +547,10 @@
         "looping": "Цикл",
         "defaultOwnershipTooltip": "Владение отсчётами для игроков по умолчанию",
         "hideNewCountdowns": "Скрывать новые"
+      },
+      "CreateItemDialog": {
+        "createItem": "Создать предмет",
+        "browseCompendium": "Открыть компендиум"
       },
       "DaggerheartMenu": {
         "title": "Инструменты Мастера",
@@ -758,6 +766,12 @@
         "noPlayers": "Нет игроков для назначения владельца",
         "default": "Владение по умолчанию"
       },
+      "PendingReactionsDialog": {
+        "title": "Найдены незавершённые броски реакции",
+        "unfinishedRolls": "Некоторые токены всё ещё должны выполнить свой бросок реакции.",
+        "confirmation": "Вы уверены, что хотите продолжить?",
+        "warning": "Невыполненные броски реакции будут считаться проваленными"
+      },
       "ReactionRoll": {
         "title": "Бросок Реакции: {trait}"
       },
@@ -816,11 +830,11 @@
       },
       "GroupRollSelect": {
         "title": "Групповой бросок",
+        "aidingCharacters": "Помогающие персонажи",
         "leader": "Лидер",
         "leaderRoll": "Бросок лидера",
         "openDialogForAll": "Открыть окно для всех",
         "startGroupRoll": "Начать групповой бросок",
-        "cancelGroupRoll": "Отменить",
         "finishGroupRoll": "Завершить групповой бросок",
         "cancelConfirmTitle": "Отменить групповой бросок",
         "cancelConfirmText": "Вы уверены, что хотите отменить групповой бросок? Это также закроет его для всех остальных игроков."
@@ -844,6 +858,11 @@
         "longRest": "До следующего долгого отдыха",
         "session": "До следующей сессии",
         "custom": "Пользовательская"
+      },
+      "ActionAutomationChoices": {
+        "never": "Никогда",
+        "showDialog": "Только показать диалог",
+        "always": "Всегда"
       },
       "AdversaryTrait": {
         "relentless": {
@@ -1395,6 +1414,11 @@
         "offWithToggle": "Выкл с переключателем",
         "on": "Вкл",
         "onWithToggle": "Вкл с переключателем"
+      },
+      "SceneRangeMeasurementTypes": {
+        "disable": "Отключить измерение дистанции Daggerheart",
+        "default": "По умолчанию",
+        "custom": "Пользовательское"
       },
       "SelectAction": {
         "selectType": "Выберите тип действия",
@@ -2513,6 +2537,7 @@
       "multiclass": "Мультикласс",
       "newCategory": "Новая категория",
       "newThing": "Новый {thing}",
+      "next": "Далее",
       "none": "Нет",
       "noTarget": "Нет текущей цели",
       "partner": "Напарник",
@@ -2544,6 +2569,7 @@
       "scalable": "Масштабируемый",
       "scars": "Шрамы",
       "situationalBonus": "Ситуативный бонус",
+      "searchPlaceholder": "Поиск...",
       "spent": "Тратит",
       "step": "Шаг",
       "stress": "Стресс",
@@ -3220,6 +3246,9 @@
         "resourceRoll": {
           "playerMessage": "{user} перебросил(а) свой {name}"
         },
+        "saveRoll": {
+          "reactionRollAllTargets": "Бросок реакции всех целей"
+        },
         "tagTeam": {
           "title": "Командный бросок",
           "membersTitle": "Участники"
@@ -3250,7 +3279,6 @@
         "title": "Обозреватель компендиума Daggerheart",
         "hint": "Выберите папку в боковой панели, чтобы начать просмотр компендиума",
         "browserSettings": "Настройки обозревателя",
-        "searchPlaceholder": "Поиск...",
         "columnName": "Название",
         "tooltipFilters": "Фильтры",
         "tooltipErase": "Стереть",
@@ -3381,6 +3409,7 @@
           "companion": "Уровень {level} - {partner}",
           "companionNoPartner": "Нет напарника",
           "duplicateToNewTier": "Дублировать в новый ранг",
+          "createAdversary": "Создать противника",
           "pickTierTitle": "Выберите новый ранг для этого противника"
         },
         "daggerheartMenu": {
