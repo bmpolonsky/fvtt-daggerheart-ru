@@ -41,8 +41,7 @@
           "description": "<p>Pick a point within the grove. All targets within Very Close range of that point must succeed on an Agility Reaction Roll or take <strong>1d8+3</strong> physical damage and become Restrained by barbed vines. Restrained lasts until they’re freed with a successful Finesse or Strength roll or by dealing at least 6 damage to the vines.</p><section id=\"secret-WVGl1YkqOicSEwlf\" class=\"secret\"><p><em>How many vines are there? Where do they grab you? Do they pull you down or lift you off the ground?</em></p></section>",
           "actions": {
             "47fcdhe1FDdm9rQU": {
-              "name": "Roll Save",
-              "description": "<p>Pick a point within the grove. All targets within Very Close range of that point must succeed on an Agility Reaction Roll or take 1d8+3 physical damage and become Restrained by barbed vines. Restrained lasts until they’re freed with a successful Finesse or Strength roll or by dealing at least 6 damage to the vines.</p><p>@Template[type:rect|range:vc]</p>"
+              "name": "Roll Save"
             }
           },
           "effects": {
@@ -152,11 +151,10 @@
         },
         "JKFkDvwUOP35Tsr1": {
           "name": "Charcoal Constructs",
-          "description": "<p>Warped animals wreathed in indigo flame trample through a point of your choice. All targets within Close range of that point must make an Agility Reaction Roll. Targets who fail take <strong>3d12+3</strong> physical damage. Targets who succeed take half damage instead.</p><p>@Template[type:emanation|range:c]</p><section class=\"secret\" id=\"secret-696PMvOPzHmkdtYc\"><p><em>Are these real animals consumed by the fl ame or merely constructs of the corrupting magic?</em></p></section>",
+          "description": "<p>Warped animals wreathed in indigo flame trample through a point of your choice. All targets within Close range of that point must make an Agility Reaction Roll. Targets who fail take <strong>3d12+3</strong> physical damage. Targets who succeed take half damage instead.</p><section id=\"secret-696PMvOPzHmkdtYc\" class=\"secret\"><p><em>Are these real animals consumed by the fl ame or merely constructs of the corrupting magic?</em></p></section>",
           "actions": {
             "gbXIaKr8em134IZC": {
-              "name": "Roll Save",
-              "description": "<p>Warped animals wreathed in indigo f l ame trample through a point of your choice. All targets within Close range of that point must make an Agility Reaction Roll. Targets who fail take <strong>3d12+3</strong> physical damage. Targets who succeed take half damage instead.</p><p>@Template[type:emanation|range:c]</p><section class=\"secret\" id=\"secret-O068IjvyIOaaS29o\"><p><em>Are these real animals consumed by the fl ame or merely constructs of the corrupting magic?</em></p></section>"
+              "name": "Roll Save"
             }
           }
         },
@@ -263,11 +261,11 @@
         },
         "bemKmwjBtbEFVWXM": {
           "name": "Collateral Damage",
-          "description": "<p>When an adversary is defeated, you can <strong>spend a Fear</strong> to have a stray attack from a siege weapon hit a point on the battlefield. All targets within Very Close range of that point must make an Agility Reaction Roll. </p><p>@Template[type:circle|range:vc]</p><ul><li><p>Targets who fail take <strong>3d8+3</strong> physical or magic damage and must mark a Stress. </p></li><li><p>Targets who succeed must mark a Stress.</p></li></ul><section id=\"secret-JdhetLsgL626ouo7\" class=\"secret\"><p><em>What debris is scattered by the attack? What is broken by the strike that can’t be easily mended?</em></p></section>",
+          "description": "<p>When an adversary is defeated, you can <strong>spend a Fear</strong> to have a stray attack from a siege weapon hit a point on the battlefield. All targets within Very Close range of that point must make an Agility Reaction Roll.</p><ul><li><p>Targets who fail take <strong>3d8+3</strong> physical or magic damage and must mark a Stress.</p></li><li><p>Targets who succeed must mark a Stress.</p></li></ul><section id=\"secret-JdhetLsgL626ouo7\" class=\"secret\"><p><em>What debris is scattered by the attack? What is broken by the strike that can’t be easily mended?</em></p></section>",
           "actions": {
             "r5JN5oFYL5DC6Qqw": {
               "name": "Roll Save",
-              "description": "<p>When an adversary is defeated, you can <strong>spend a Fear</strong> to have a stray attack from a siege weapon hit a point on the battlefield. All targets within Very Close range of that point must make an Agility Reaction Roll. </p><p>@Template[type:circle|range:vc]</p><ul><li><p>Targets who fail take <strong>3d8+3</strong> physical or magic damage and must mark a Stress. </p></li><li><p>Targets who succeed must mark a Stress.</p></li></ul><section class=\"secret\" id=\"secret-qe1DM7HUSefRAplk\"><p><em>What debris is scattered by the attack? What is broken by the strike that can’t be easily mended?</em></p></section>"
+              "description": "<p>When an adversary is defeated, you can <strong>spend a Fear</strong> to have a stray attack from a siege weapon hit a point on the battlefield. All targets within Very Close range of that point must make an Agility Reaction Roll.</p><ul><li><p>Targets who fail take <strong>3d8+3</strong> physical or magic damage and must mark a Stress.</p></li><li><p>Targets who succeed must mark a Stress.</p></li></ul><section id=\"secret-qe1DM7HUSefRAplk\" class=\"secret\"><p><em>What debris is scattered by the attack? What is broken by the strike that can’t be easily mended?</em></p></section>"
             }
           }
         }
@@ -825,11 +823,11 @@
         },
         "asSGMUdf4gG4PO8F": {
           "name": "Skeletal Burst",
-          "description": "<p>All targets within Close range of a point you choose in this environment must succeed on an Agility Reaction Roll or take <strong>4d8+8</strong> physical damage from skeletal shrapnel as part of the ossuary detonates around them. </p><p>@Template[type:circle|range:c]</p><section id=\"secret-b6zF5gClmMcrmeVT\" class=\"secret\"><p><em>What ancient skeletal architecture is destroyed? What bones stick in your armor?</em></p></section>",
+          "description": "<p>All targets within Close range of a point you choose in this environment must succeed on an Agility Reaction Roll or take <strong>4d8+8</strong> physical damage from skeletal shrapnel as part of the ossuary detonates around them.</p><section id=\"secret-b6zF5gClmMcrmeVT\" class=\"secret\"><p><em>What ancient skeletal architecture is destroyed? What bones stick in your armor?</em></p></section>",
           "actions": {
             "M1mOwi4Limw2hRwL": {
               "name": "Roll Save",
-              "description": "<p>All targets within Close range of a point you choose in this environment must succeed on an Agility Reaction Roll or take <strong>4d8+8</strong> physical damage from skeletal shrapnel as part of the ossuary detonates around them. </p><p>@Template[type:circle|range:c]</p><section class=\"secret\" id=\"secret-xjKFOtdFFWAgx2Cv\"><p><em>What ancient skeletal architecture is destroyed? What bones stick in your armor?</em></p></section>"
+              "description": "<p>All targets within Close range of a point you choose in this environment must succeed on an Agility Reaction Roll or take <strong>4d8+8</strong> physical damage from skeletal shrapnel as part of the ossuary detonates around them.</p><section id=\"secret-xjKFOtdFFWAgx2Cv\" class=\"secret\"><p><em>What ancient skeletal architecture is destroyed? What bones stick in your armor?</em></p></section>"
             }
           }
         },
@@ -919,11 +917,11 @@
         },
         "r9kkodHghWm01mje": {
           "name": "War Magic",
-          "description": "<p><strong>Spend a Fear</strong> as a mage from one side uses large-scale destructive magic. Pick a point on the battlefield within Very Far range of the mage. All targets within Close range of that point must make an Agility Reaction Roll. Targets who fail take <strong>3d12+8</strong> magic damage and must mark a Stress. </p><p>@Template[type:circle|range:c]</p><section id=\"secret-PpyF0dXMEudYnFqh\" class=\"secret\"><p><em>What form does the attack take—fireball raining acid a storm of blades? What tactical objective is this attack meant to accomplish and what comes next?</em></p></section>",
+          "description": "<p><strong>Spend a Fear</strong> as a mage from one side uses large-scale destructive magic. Pick a point on the battlefield within Very Far range of the mage. All targets within Close range of that point must make an Agility Reaction Roll. Targets who fail take <strong>3d12+8</strong> magic damage and must mark a Stress.</p><section id=\"secret-PpyF0dXMEudYnFqh\" class=\"secret\"><p><em>What form does the attack take—fireball raining acid a storm of blades? What tactical objective is this attack meant to accomplish and what comes next?</em></p></section>",
           "actions": {
             "1giAFbu3tGqXwi8g": {
               "name": "Roll Save",
-              "description": "<p><strong>Spend a Fear</strong> as a mage from one side uses large-scale destructive magic. Pick a point on the battlefield within Very Far range of the mage. All targets within Close range of that point must make an Agility Reaction Roll. Targets who fail take <strong>3d12+8</strong> magic damage and must mark a Stress. </p><p>@Template[type:circle|range:c]</p><section class=\"secret\" id=\"secret-jbI9lwrzP59CTRUt\"><p><em>What form does the attack take—fireball raining acid a storm of blades? What tactical objective is this attack meant to accomplish and what comes next?</em></p></section>"
+              "description": "<p><strong>Spend a Fear</strong> as a mage from one side uses large-scale destructive magic. Pick a point on the battlefield within Very Far range of the mage. All targets within Close range of that point must make an Agility Reaction Roll. Targets who fail take <strong>3d12+8</strong> magic damage and must mark a Stress.</p><section id=\"secret-jbI9lwrzP59CTRUt\" class=\"secret\"><p><em>What form does the attack take—fireball raining acid a storm of blades? What tactical objective is this attack meant to accomplish and what comes next?</em></p></section>"
             }
           }
         },

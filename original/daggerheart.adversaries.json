@@ -43,7 +43,7 @@
         },
         "ctXYwil2D1zfsekT": {
           "name": "Earth Eruption",
-          "description": "<p><strong>Mark a Stress</strong> to have the @Lookup[@name] burst out of the ground. All creatures within Very Close range must succeed on an Agility Reaction Roll or be knocked over, making them Vulnerable until they next act.</p><p>@Template[type:emanation|range:vc]</p>",
+          "description": "<p><strong>Mark a Stress</strong> to have the @Lookup[@name] burst out of the ground. All creatures within Very Close range must succeed on an Agility Reaction Roll or be knocked over, making them Vulnerable until they next act.</p>",
           "actions": {
             "4ppSeiTdbqnMzWAs": {
               "name": "Roll Save"
@@ -66,7 +66,7 @@
         },
         "aNIVT5LKhwLyjKpI": {
           "name": "Acid Bath",
-          "description": "<p>When the @Lookup[@name] takes Severe damage, all creatures within Close range are bathed in their acidic blood, taking <strong>1d10</strong> physical damage. This splash covers the ground within Very Close range with blood, and all creatures other than the @Lookup[@name] who move through it take <strong>1d6</strong> physical damage.</p><p>@Template[type:emanation|range:c]</p>",
+          "description": "<p>When the @Lookup[@name] takes Severe damage, all creatures within Close range are bathed in their acidic blood, taking <strong>1d10</strong> physical damage. This splash covers the ground within Very Close range with blood, and all creatures other than the @Lookup[@name] who move through it take <strong>1d6</strong> physical damage.</p>",
           "actions": {
             "XbtTzOBvlTaxOKTy": {
               "name": "Splash"
@@ -111,7 +111,7 @@
         },
         "BuL6ndgaiJtjaM2T": {
           "name": "Whirlwind",
-          "description": "<p><strong>Spend a Fear</strong> to whirl, making an attack against all targets within Very Close range. Targets the @Lookup[@name] succeeds against take <strong>3d8</strong> direct physical damage.</p><p>@Template[type:emanation|range:vc]</p>",
+          "description": "<p><strong>Spend a Fear</strong> to whirl, making an attack against all targets within Very Close range. Targets the @Lookup[@name] succeeds against take <strong>3d8</strong> direct physical damage.</p>",
           "actions": {
             "RV1wKufKrMPN6MOo": {
               "name": "Attack"
@@ -120,7 +120,7 @@
         },
         "bOTsfXr9yNIGkIzK": {
           "name": "Mind Dance",
-          "description": "<p><strong>Mark a Stress</strong> to create a magically dazzling display that grapples the minds of nearby foes. All targets within Close range must make an Instinct Reaction Roll. For each target who failed, you gain a Fear and the @Lookup[@name] learns one of the target’s fears.</p><p>@Template[type:emanation|range:c]</p>",
+          "description": "<p><strong>Mark a Stress</strong> to create a magically dazzling display that grapples the minds of nearby foes. All targets within Close range must make an Instinct Reaction Roll. For each target who failed, you gain a Fear and the @Lookup[@name] learns one of the target’s fears.</p>",
           "actions": {
             "GNwsDlCabx3fiG4g": {
               "name": "Roll Save"
@@ -129,11 +129,10 @@
         },
         "49cIxZRFiAM6jDva": {
           "name": "Hallucinatory Breath",
-          "description": "<p><em>Countdown (Loop 1d6)</em>. When the @Lookup[@name] takes damage for the first time, activate the countdown. When it triggers, the @Lookup[@name] breathes hallucinatory gas on all targets in front of them up to Far range. Targets must make an Instinct Reaction Roll or be tormented by fearful hallucinations. Targets whose fears are known to the @Lookup[@name] have disadvantage on this roll. Targets who fail lose 2 Hope and take <strong>3d8+3</strong> direct magic damage.</p><p>@Template[type:inFront|range:f]</p>",
+          "description": "<p><em>Countdown (Loop 1d6)</em>. When the @Lookup[@name] takes damage for the first time, activate the countdown. When it triggers, the @Lookup[@name] breathes hallucinatory gas on all targets in front of them up to Far range. Targets must make an Instinct Reaction Roll or be tormented by fearful hallucinations. Targets whose fears are known to the @Lookup[@name] have disadvantage on this roll. Targets who fail lose 2 Hope and take <strong>3d8+3</strong> direct magic damage.</p>",
           "actions": {
             "YOyKyKGTUEWkMmJe": {
-              "name": "Roll Save",
-              "description": "<p>The @Lookup[@name] breathes hallucinatory gas on all targets in front of them up to Far range. Targets must make an Instinct Reaction Roll or be tormented by fearful hallucinations. Targets whose fears are known to the @Lookup[@name] have disadvantage on this roll. Targets who fail lose 2 Hope and take <strong>3d8+3</strong> direct magic damage.</p><p>@Template[type:inFront|range:f]</p>"
+              "name": "Roll Save"
             },
             "lBhmLc33pcXzJHT3": {
               "name": "Start Countdown",
@@ -228,7 +227,7 @@
         },
         "Wuf5y9tJ88BwzLv2": {
           "name": "Focused Volley",
-          "description": "<p><strong>Spend a Fear</strong> to target a point within Far range. Make an attack with advantage against all targets within Close range of that point. Targets the @Lookup[@name] succeeds against take <strong>1d10+4</strong> physical damage.</p><p>@Template[type:circle|range:c]</p>",
+          "description": "<p><strong>Spend a Fear</strong> to target a point within Far range. Make an attack with advantage against all targets within Close range of that point. Targets the @Lookup[@name] succeeds against take <strong>1d10+4</strong> physical damage.</p>",
           "actions": {
             "uG7Hl2DqaT69aNs1": {
               "name": "Attack"
@@ -237,7 +236,7 @@
         },
         "ayGHTtyjSuIR4BrV": {
           "name": "Supressing Fire",
-          "description": "<p><strong>Mark a Stress</strong> to target a point within Far range. Until the next roll with Fear, a creature who moves within Close range of that point must make an Agility Reaction Roll. On a failure, they take <strong>2d6+3</strong> physical damage. On a success, they take half damage.</p><p>@Template[type:circle|range:c]</p>",
+          "description": "<p><strong>Mark a Stress</strong> to target a point within Far range. Until the next roll with Fear, a creature who moves within Close range of that point must make an Agility Reaction Roll. On a failure, they take <strong>2d6+3</strong> physical damage. On a success, they take half damage.</p>",
           "actions": {
             "mH6mmJIMM1fwzePt": {
               "name": "Agility Roll"
@@ -276,7 +275,7 @@
         },
         "4EECsXzHFG0RoIg0": {
           "name": "Beam Of Decay",
-          "description": "<p><strong>Mark 2 Stress</strong> to cause all targets within Far range to make a Strength Reaction Roll. Targets who fail take <strong>2d20+12</strong> magic damage and you gain a Fear. Targets who succeed take half damage. A target who marks 2 or more HP must also <strong>mark 2 Stress</strong> and becomes <em>Vulnerable</em> until they roll with Hope.</p><p>@Template[type:emanation|range:f]</p>",
+          "description": "<p><strong>Mark 2 Stress</strong> to cause all targets within Far range to make a Strength Reaction Roll. Targets who fail take <strong>2d20+12</strong> magic damage and you gain a Fear. Targets who succeed take half damage. A target who marks 2 or more HP must also <strong>mark 2 Stress</strong> and becomes <em>Vulnerable</em> until they roll with Hope.</p>",
           "actions": {
             "vaXLESD4sRkQ3Ahn": {
               "name": "Roll Save"
@@ -370,7 +369,7 @@
         },
         "lAmiK8wVxjyHwKlp": {
           "name": "Fumigation",
-          "description": "<p>Drop a smoke bomb that fills the air within Close range with smoke, Dizzying all targets in this area. Dizzied targets have disadvantage on their next action roll, then clear the condition.</p><p>@Template[type:emanation|range:c]</p>",
+          "description": "<p>Drop a smoke bomb that fills the air within Close range with smoke, Dizzying all targets in this area. Dizzied targets have disadvantage on their next action roll, then clear the condition.</p>",
           "actions": {
             "sp7RfJRQJsEUm09m": {
               "name": "Drop Bomb"
@@ -425,7 +424,7 @@
         },
         "IHQoqt39T772FVMs": {
           "name": "Fire Jets",
-          "description": "<p>The @Lookup[@name] shoots into the air, spinning and releasing jets of flame. Make an attack against all targets within Close range. Targets the @Lookup[@name] succeeds against take <strong>2d8</strong> physical damage.</p><p>@Template[type:emanation|range:c]</p>",
+          "description": "<p>The @Lookup[@name] shoots into the air, spinning and releasing jets of flame. Make an attack against all targets within Close range. Targets the @Lookup[@name] succeeds against take <strong>2d8</strong> physical damage.</p>",
           "actions": {
             "hRAKaOdzQXLYBNVV": {
               "name": "Attack"
@@ -434,7 +433,7 @@
         },
         "XtnByqUr9AuYU9Ip": {
           "name": "Trample",
-          "description": "<p>The @Lookup[@name] rockets around erratically. Make an attack against all PCs within Close range. Targets the @Lookup[@name] succeeds against take <strong>1d6+5</strong> physical damage and are Vulnerable until their next roll with Hope.</p><p>@Template[type:emanation|range:c]</p>",
+          "description": "<p>The @Lookup[@name] rockets around erratically. Make an attack against all PCs within Close range. Targets the @Lookup[@name] succeeds against take <strong>1d6+5</strong> physical damage and are Vulnerable until their next roll with Hope.</p>",
           "actions": {
             "IOgPMu12Xnn33TfG": {
               "name": "Attack"
@@ -449,7 +448,7 @@
         },
         "3bPURmuwQs06fThQ": {
           "name": "Shocking Gas",
-          "description": "<p>The @Lookup[@name] sprays out a silver gas sparking with lightning. All targets within Close range must succeed on a Finesse Reaction Roll or mark 3 Stress.</p><p>@Template[type:emanation|range:c]</p>",
+          "description": "<p>The @Lookup[@name] sprays out a silver gas sparking with lightning. All targets within Close range must succeed on a Finesse Reaction Roll or mark 3 Stress.</p>",
           "actions": {
             "ky4OMl558J5wCbDp": {
               "name": "Roll Save"
@@ -458,7 +457,7 @@
         },
         "ijIaKjroxq3xZd9Z": {
           "name": "Stunning Clap",
-          "description": "<p>The @Lookup[@name] leaps and their sides clap, creating a small sonic boom. All targets within Very Close range must succeed on a Strength Reaction Roll or become <em>Vulnerable</em> until the cube is defeated.</p><p>@Template[type:emanation|range:vc]</p>",
+          "description": "<p>The @Lookup[@name] leaps and their sides clap, creating a small sonic boom. All targets within Very Close range must succeed on a Strength Reaction Roll or become <em>Vulnerable</em> until the cube is defeated.</p>",
           "actions": {
             "LQtopkrtSlCQ5MAr": {
               "name": "Roll Save"
@@ -473,7 +472,7 @@
         },
         "JCue4ko61bjhedXv": {
           "name": "Psionic Whine",
-          "description": "<p>The @Lookup[@name] releases a cluster of mechanical bees whose buzz rattles mortal minds. All targets within Close range must succeed on a Presence Reaction Roll or take <strong>2d4+9</strong> direct magic damage.</p><p>@Template[type:emanation|range:c]</p>",
+          "description": "<p>The @Lookup[@name] releases a cluster of mechanical bees whose buzz rattles mortal minds. All targets within Close range must succeed on a Presence Reaction Roll or take <strong>2d4+9</strong> direct magic damage.</p>",
           "actions": {
             "3R3pGOUj4rHaUzPK": {
               "name": "Bees!"
@@ -491,7 +490,7 @@
         },
         "YvfzPyJbbv2ia6Yp": {
           "name": "Death Quake",
-          "description": "<p>When the @Lookup[@name] marks their last HP, the magic powering them ruptures in an explosion of force. All targets within Close range must succeed on an Instinct Reaction Roll or take <strong>2d8+1</strong> magic damage</p><p>@Template[type:emanation|range:c]</p>",
+          "description": "<p>When the @Lookup[@name] marks their last HP, the magic powering them ruptures in an explosion of force. All targets within Close range must succeed on an Instinct Reaction Roll or take <strong>2d8+1</strong> magic damage</p>",
           "actions": {
             "oCpv4zi9jtEpo0K1": {
               "name": "Roll Save"
@@ -651,7 +650,7 @@
         },
         "zGvaBYJPOOnQVQEn": {
           "name": "Hail of Boulders",
-          "description": "<p><strong>Mark a Stress</strong> to pick up heavy objects and throw them at all targets in front of the @Lookup[@name] within Far range. Make an attack against these targets. Targets the @Lookup[@name] succeeds against take <strong>1d10+2</strong> physical damage. If they succeed against more than one target, you gain a Fear.</p><p>@Template[type:inFront|range:f]</p>",
+          "description": "<p><strong>Mark a Stress</strong> to pick up heavy objects and throw them at all targets in front of the @Lookup[@name] within Far range. Make an attack against these targets. Targets the @Lookup[@name] succeeds against take <strong>1d10+2</strong> physical damage. If they succeed against more than one target, you gain a Fear.</p>",
           "actions": {
             "3p1qfHy5uHe4H2hB": {
               "name": "Throw"
@@ -700,7 +699,7 @@
         },
         "Zn25zBr96y1hrmnr": {
           "name": "Magic Burst",
-          "description": "<p><strong>Mark a Stress</strong> to make an attack against all targets within Close range. Targets the @Lookup[@name] succeeds against take <strong>2d6+4</strong> magic damage.</p><p>@Template[type:emanation|range:c]</p>",
+          "description": "<p><strong>Mark a Stress</strong> to make an attack against all targets within Close range. Targets the @Lookup[@name] succeeds against take <strong>2d6+4</strong> magic damage.</p>",
           "actions": {
             "iF0PD1t3yovKMTfy": {
               "name": "Attack"
@@ -900,7 +899,7 @@
         },
         "JpSrduK3vjd9h098": {
           "name": "Shadow Shackles",
-          "description": "<p><strong>Spend a Fear</strong> and choose a point within Far range. All targets within Close range of that point are <em>Restrained</em> in smoky chains until they break free with a successful Strength or Instinct Roll. A target Restrained by this feature must spend a Hope to make an action roll.</p><p>@Template[type:circle|range:c]</p>",
+          "description": "<p><strong>Spend a Fear</strong> and choose a point within Far range. All targets within Close range of that point are <em>Restrained</em> in smoky chains until they break free with a successful Strength or Instinct Roll. A target Restrained by this feature must spend a Hope to make an action roll.</p>",
           "actions": {
             "g4RDHrY0AEYXjH52": {
               "name": "Spend Fear"
@@ -989,7 +988,7 @@
       "items": {
         "0DSCzAFXy0hV4afJ": {
           "name": "Ground Slam",
-          "description": "<p>Slam the ground, knocking all targets within Very Close range back to Far range. Each target knocked back this way must mark a Stress.</p><p>@Template[type:emanation|range:vc]</p>",
+          "description": "<p>Slam the ground, knocking all targets within Very Close range back to Far range. Each target knocked back this way must mark a Stress.</p>",
           "actions": {
             "55hCZsJQhJNcZ0lX": {
               "name": "Stress Damage"
@@ -1030,7 +1029,7 @@
         },
         "WEbHwamS5ZBphiKq": {
           "name": "Dreadhowl",
-          "description": "<p><strong>Mark a Stress</strong> to make all targets within Very Close range lose a Hope. If a target is not able to lose a Hope, they must instead mark 2 Stress.</p><p>@Template[type:emanation|range:vc]</p>",
+          "description": "<p><strong>Mark a Stress</strong> to make all targets within Very Close range lose a Hope. If a target is not able to lose a Hope, they must instead mark 2 Stress.</p>",
           "actions": {
             "XyLlX9RWSxciZ7oV": {
               "name": "Lose Hope"
@@ -1107,7 +1106,7 @@
         },
         "FC8PIf4BVkhmoJX8": {
           "name": "Your Struggle is Pointless",
-          "description": "<p><strong>Spend a Fear</strong> to weigh down the spirits of all PCs within Far range. All targets affected replace their Hope Die with a <strong>d8</strong> until they roll a success with Hope or their next rest.</p><p>@Template[type:emanation|range:f]</p>",
+          "description": "<p><strong>Spend a Fear</strong> to weigh down the spirits of all PCs within Far range. All targets affected replace their Hope Die with a <strong>d8</strong> until they roll a success with Hope or their next rest.</p>",
           "actions": {
             "n0RYO05pROFU6ov3": {
               "name": "Spend Fear"
@@ -1122,7 +1121,7 @@
         },
         "dlMdfUjy2GaqgeOJ": {
           "name": "Your Friends Will Fail You",
-          "description": "<p>When a PC fails with Fear, you can <strong>mark a Stress</strong> to cause all other PCs within Close range to lose a Hope.</p><p>@Template[type:emanation|range:c]</p>",
+          "description": "<p>When a PC fails with Fear, you can <strong>mark a Stress</strong> to cause all other PCs within Close range to lose a Hope.</p>",
           "actions": {
             "urrp8SCFgqbmSTvm": {
               "name": "Lose Hope"
@@ -1153,7 +1152,7 @@
       "items": {
         "kgPZs8Vx1FpQi2g1": {
           "name": "Terrifying",
-          "description": "<p>When the @Lookup[@name] makes a successful attack, all PCs within Far range must lose a Hope and you gain a Fear.</p><p>@Template[type:emanation|range:f]</p>",
+          "description": "<p>When the @Lookup[@name] makes a successful attack, all PCs within Far range must lose a Hope and you gain a Fear.</p>",
           "actions": {
             "v3XbljQeHEyfuSXz": {
               "name": "Lose Hope"
@@ -1189,7 +1188,7 @@
         },
         "FLp1dPSJz1ezY0gD": {
           "name": "You Pale in Comparison",
-          "description": "<p>When a PC fails a roll within Close range of the @Lookup[@name], they must mark a Stress.</p><p>@Template[type:emanation|range:c]</p>",
+          "description": "<p>When a PC fails a roll within Close range of the @Lookup[@name], they must mark a Stress.</p>",
           "actions": {
             "kuCPWb9cu3pZdAhh": {
               "name": "Mark Stress"
@@ -1219,7 +1218,7 @@
         },
         "pSAupMWw1eYqm84z": {
           "name": "Rivalry",
-          "description": "<p>When a creature within Close range takes damage from a different adversary, you can <strong>mark a Stress</strong> to add a <strong>d4</strong> to the damage roll.</p><p>@Template[type:emanation|range:c]</p>",
+          "description": "<p>When a creature within Close range takes damage from a different adversary, you can <strong>mark a Stress</strong> to add a <strong>d4</strong> to the damage roll.</p>",
           "actions": {
             "UU3H5aPQejOSoFZw": {
               "name": "Mark Stress"
@@ -1228,7 +1227,7 @@
         },
         "589tCxFc8KZ3rdzP": {
           "name": "What's Yours Is Mine",
-          "description": "<p>When a PC takes Severe damage within Very Close range of the @Lookup[@name], you can <strong>spend a Fear</strong> to cause the target to make a Finesse Reaction Roll. On a failure, the @Lookup[@name] seizes one item or consumable of their choice from the target’s inventory.</p><p>@Template[type:emanation|range:vc]</p>",
+          "description": "<p>When a PC takes Severe damage within Very Close range of the @Lookup[@name], you can <strong>spend a Fear</strong> to cause the target to make a Finesse Reaction Roll. On a failure, the @Lookup[@name] seizes one item or consumable of their choice from the target’s inventory.</p>",
           "actions": {
             "3cGZ2CofM9HUlELH": {
               "name": "Roll Save"
@@ -1254,7 +1253,7 @@
         },
         "a33PW8UkziliowlR": {
           "name": "Battle Lust",
-          "description": "<p><strong>Spend a Fear</strong> to boil the blood of all PCs within Far range. They use a d20 as their Fear Die until the end of the scene.</p><p>@Template[type:emanation|range:f]</p>",
+          "description": "<p><strong>Spend a Fear</strong> to boil the blood of all PCs within Far range. They use a d20 as their Fear Die until the end of the scene.</p>",
           "actions": {
             "jKvzbQT0vp66DDOH": {
               "name": "Spend Fear"
@@ -1269,7 +1268,7 @@
         },
         "DjGydqLXT4rDa7Av": {
           "name": "Retalliation",
-          "description": "<p>When the @Lookup[@name] takes damage from an attack within Close range, you can <strong>mark a Stress</strong> to make a standard attack against the attacker.</p><p>@Template[type:emanation|range:c]</p>",
+          "description": "<p>When the @Lookup[@name] takes damage from an attack within Close range, you can <strong>mark a Stress</strong> to make a standard attack against the attacker.</p>",
           "actions": {
             "hxrdtBm4dYN7KGZm": {
               "name": "Attack"
@@ -1317,7 +1316,7 @@
         },
         "o69lipskvBwGVhe4": {
           "name": "Screech",
-          "description": "<p><strong>Mark a Stress</strong> to send a high-pitch screech out toward all targets in front of the @Lookup[@name] within Far range. Those targets must mark <strong>1d4</strong> Stress.</p><p>@Template[type:inFront|range:f]</p>",
+          "description": "<p><strong>Mark a Stress</strong> to send a high-pitch screech out toward all targets in front of the @Lookup[@name] within Far range. Those targets must mark <strong>1d4</strong> Stress.</p>",
           "actions": {
             "2ILfoiBoMyBCtBsL": {
               "name": "Mark Stress"
@@ -1384,7 +1383,7 @@
       "items": {
         "i9HbArl09dX2BvzY": {
           "name": "Bramble Patch",
-          "description": "<p><strong>Mark a Stress</strong> to target a point within Far range. Create a patch of thorns that covers an area within Close range of that point. All targets within that area take <strong>2d6+2</strong> physical damage when they act. A target must succeed on a Finesse Roll or deal more than 20 damage to the @Lookup[@name] with an attack to leave the area.</p><p>@Template[type:circle|range:c]</p>",
+          "description": "<p><strong>Mark a Stress</strong> to target a point within Far range. Create a patch of thorns that covers an area within Close range of that point. All targets within that area take <strong>2d6+2</strong> physical damage when they act. A target must succeed on a Finesse Roll or deal more than 20 damage to the @Lookup[@name] with an attack to leave the area.</p>",
           "actions": {
             "iCJdIs57hfh5Cb0u": {
               "name": "Mark Stress"
@@ -1406,7 +1405,7 @@
         },
         "z4JbqiHuxrWy6Cpu": {
           "name": "We Are All One",
-          "description": "<p>When an ally dies within Close range, you can spend a Fear to clear 2 HP and 2 Stress as the fallen ally’s life force is returned to the forest.</p><p>@Template[type:emanation|range:c]</p>",
+          "description": "<p>When an ally dies within Close range, you can spend a Fear to clear 2 HP and 2 Stress as the fallen ally’s life force is returned to the forest.</p>",
           "actions": {
             "SrhuW3mfOuqg1ys6": {
               "name": "Spend Fear"
@@ -1573,7 +1572,7 @@
       "items": {
         "s15sNyb3JYMzBLIU": {
           "name": "Conflagration",
-          "description": "<p><strong>Spend a Fear</strong> to unleash an all-consuming firestorm and make an attack against all targets within Close range. Targets the @Lookup[@name] succeeds against take <strong>2d10+6</strong> direct magic damage.</p><p>@Template[type:emanation|range:c]</p>",
+          "description": "<p><strong>Spend a Fear</strong> to unleash an all-consuming firestorm and make an attack against all targets within Close range. Targets the @Lookup[@name] succeeds against take <strong>2d10+6</strong> direct magic damage.</p>",
           "actions": {
             "v7zZo52Dnj1e1i2G": {
               "name": "Attack"
@@ -1601,11 +1600,11 @@
         },
         "gwSgBhkcekCGvXxz": {
           "name": "Shackles of Guilt",
-          "description": "<p><em>Countdown (Loop 2d6)</em>. When the @Lookup[@name] is in the spotlight for the first time, activate the countdown. When it triggers, all targets within Far range become Vulnerable and must mark a Stress as they relive their greatest regrets. A target can break free from their regret with a successful Presence or Strength Roll. When a PC fails to break free, they lose a Hope.</p><p>@Template[type:emanation|range:f]</p>",
+          "description": "<p><em>Countdown (Loop 2d6)</em>. When the @Lookup[@name] is in the spotlight for the first time, activate the countdown. When it triggers, all targets within Far range become Vulnerable and must mark a Stress as they relive their greatest regrets. A target can break free from their regret with a successful Presence or Strength Roll. When a PC fails to break free, they lose a Hope.</p>",
           "actions": {
             "7b0FkpAnWz9a5EWx": {
               "name": "Mark Stress",
-              "description": "<p>When the countdown triggers, all targets within Far range become Vulnerable and must mark a Stress as they relive their greatest regrets. A target can break free from their regret with a successful Presence or Strength Roll. When a PC fails to break free, they lose a Hope.</p><p>@Template[type:emanation|range:f]</p>"
+              "description": "<p>When it triggers, all targets within Far range become Vulnerable and must mark a Stress as they relive their greatest regrets. A target can break free from their regret with a successful Presence or Strength Roll. When a PC fails to break free, they lose a Hope.</p>"
             },
             "11PtfoxbgOXxNlkG": {
               "name": "Start Countdown",
@@ -1661,7 +1660,7 @@
         },
         "PVLjJaQLH3LK3svk": {
           "name": "Tormenting Lash",
-          "description": "<p><strong>Mark a Stress</strong> to make a standard attack against all targets within Very Close range. When a target uses armor to reduce damage from this attack, they must mark 2 Armor Slots.</p><p>@Template[type:emanation|range:vc]</p>",
+          "description": "<p><strong>Mark a Stress</strong> to make a standard attack against all targets within Very Close range. When a target uses armor to reduce damage from this attack, they must mark 2 Armor Slots.</p>",
           "actions": {
             "zMVhUekP8pcyQGFR": {
               "name": "Attack"
@@ -1670,11 +1669,11 @@
         },
         "48tIwFQr64IQ5LaY": {
           "name": "All-Consuming Rage",
-          "description": "<p><em>Countdown (Decreasing 8)</em>. When the @Lookup[@name] is in the spotlight for the first time, activate the countdown. When it triggers, create a torrent of incarnate rage that rends flesh from bone. All targets within Far range must make a Presence Reaction Roll. Targets who fail take <strong>2d6+10</strong> direct magic damage. Targets who succeed take half damage. For each HP marked from this damage, summon a @UUID[Compendium.daggerheart.adversaries.Actor.OsLG2BjaEdTZUJU9]{Fallen Shock Troop} within Very Close range of the target who marked that HP. If the countdown ever decreases its maximum value to 0, the @Lookup[@name] marks their remaining HP and all targets within Far range must mark all remaining HP and make a death move.</p><p>@Template[type:emanation|range:f]</p>",
+          "description": "<p><em>Countdown (Decreasing 8)</em>. When the @Lookup[@name] is in the spotlight for the first time, activate the countdown. When it triggers, create a torrent of incarnate rage that rends flesh from bone. All targets within Far range must make a Presence Reaction Roll. Targets who fail take <strong>2d6+10</strong> direct magic damage. Targets who succeed take half damage. For each HP marked from this damage, summon a @UUID[Compendium.daggerheart.adversaries.Actor.OsLG2BjaEdTZUJU9]{Fallen Shock Troop} within Very Close range of the target who marked that HP. If the countdown ever decreases its maximum value to 0, the @Lookup[@name] marks their remaining HP and all targets within Far range must mark all remaining HP and make a death move.</p>",
           "actions": {
             "rgy5wXyXJWh6uWxC": {
               "name": "Roll Save",
-              "description": "<p>When it triggers, create a torrent of incarnate rage that rends flesh from bone. All targets within Far range must make a Presence Reaction Roll. Targets who fail take <strong>2d6+10</strong> direct magic damage. Targets who succeed take half damage. For each HP marked from this damage, summon a @UUID[Compendium.daggerheart.adversaries.Actor.OsLG2BjaEdTZUJU9]{Fallen Shock Troop} within Very Close range of the target who marked that HP. If the countdown ever decreases its maximum value to 0, the @Lookup[@name] marks their remaining HP and all targets within Far range must mark all remaining HP and make a death move.</p><p>@Template[type:emanation|range:f]</p>"
+              "description": "<p>When it triggers, create a torrent of incarnate rage that rends flesh from bone. All targets within Far range must make a Presence Reaction Roll. Targets who fail take <strong>2d6+10</strong> direct magic damage. Targets who succeed take half damage. For each HP marked from this damage, summon a @UUID[Compendium.daggerheart.adversaries.Actor.OsLG2BjaEdTZUJU9]{Fallen Shock Troop} within Very Close range of the target who marked that HP. If the countdown ever decreases its maximum value to 0, the @Lookup[@name] marks their remaining HP and all targets within Far range must mark all remaining HP and make a death move.</p>"
             },
             "8e3BHmOFLvRwPbTW": {
               "name": "Start Countdown",
@@ -1687,7 +1686,7 @@
         },
         "v74W0MUqVi9vPUEw": {
           "name": "Doombringer",
-          "description": "<p>When a target marks HP from an attack by the @Lookup[@name], all PCs within Far range of the target must lose a Hope.</p><p>@Template[type:emanation|range:f]</p>",
+          "description": "<p>When a target marks HP from an attack by the @Lookup[@name], all PCs within Far range of the target must lose a Hope.</p>",
           "actions": {
             "WEBPJCbXfBeyHFJ4": {
               "name": "Lose Hope"
@@ -1737,7 +1736,7 @@
         },
         "t8yOkGWmPgQ6EbIr": {
           "name": "Shattering Strike",
-          "description": "<p><strong>Mark a Stress</strong> to make a standard attack against all targets within Very Close range. PCs the @Lookup[@name] succeeds against lose a number of Hope equal to the HP they marked from this attack.</p><p>@Template[type:emanation|range:vc]</p>",
+          "description": "<p><strong>Mark a Stress</strong> to make a standard attack against all targets within Very Close range. PCs the @Lookup[@name] succeeds against lose a number of Hope equal to the HP they marked from this attack.</p>",
           "actions": {
             "t1GhGnEhNYyJ7p2U": {
               "name": "Attack"
@@ -1748,7 +1747,7 @@
           "name": "Endless Legions",
           "description": "<p><strong>Spend a Fear</strong> to summon a number of @UUID[Compendium.daggerheart.adversaries.Actor.OsLG2BjaEdTZUJU9]{Fallen Shock Troops} equal to twice the number of PCs. The Shock Troops appear at Far range.</p>",
           "actions": {
-            "hGMzqw00JTlYfHYy": {
+            "SrU7qbh8LcOgfozT": {
               "name": "Spend Fear"
             }
           }
@@ -1770,9 +1769,9 @@
             }
           },
           "effects": {
-            "eZp1PSCHZzdb47oM": {
-              "name": "Circle of Defilement",
-              "description": "<p><em>Vulnerable</em> until you leave the circle. The circle can be removed by dealing Severe damage to the Undefeated Champion.</p>"
+            "KlTKlZXjdXQ9v6qB": {
+              "name": "Circle Of Defilement",
+              "description": "<p>You are <em>Vulnerable</em> until you leave the circle.</p>"
             }
           }
         },
@@ -1787,7 +1786,7 @@
         },
         "tQRotPLi3eokgUdM": {
           "name": "Doombringer",
-          "description": "<p>When a target marks HP from an attack by the @Lookup[@name], all PCs within Far range of the target lose a Hope.</p><p>@Template[type:emanation|range:f]</p>",
+          "description": "<p>When a target marks HP from an attack by the @Lookup[@name], all PCs within Far range of the target lose a Hope.</p>",
           "actions": {
             "liwKSCTmQqZasAf6": {
               "name": "Lose Hope"
@@ -1850,7 +1849,7 @@
       "items": {
         "ro8AtBdgklyyuydK": {
           "name": "Battering Ram",
-          "description": "<p><strong>Mark a Stress</strong> to have the @Lookup[@name] charge at an inanimate object within Close range they could feasibly smash (such as a wall, cart, or market stand) and destroy it. All targets within Very Close range of the object must succeed on an Agility Reaction Roll or take <strong>2d4+3</strong> physical damage from the shrapnel.</p><p>@Template[type:circle|range:vc]</p>",
+          "description": "<p><strong>Mark a Stress</strong> to have the @Lookup[@name] charge at an inanimate object within Close range they could feasibly smash (such as a wall, cart, or market stand) and destroy it. All targets within Very Close range of the object must succeed on an Agility Reaction Roll or take <strong>2d4+3</strong> physical damage from the shrapnel.</p>",
           "actions": {
             "zns57MqnZ6M1d4r0": {
               "name": "Roll Save"
@@ -2094,7 +2093,7 @@
         },
         "LR5XHauNtWcl18CY": {
           "name": "Spitter",
-          "description": "<p><strong>Spend a Fear</strong> to introduce a <strong>d6</strong> Spitter Die. When the @Lookup[@name] is in the spotlight, roll this die. On a result of 5 or higher, all targets in front of the @Lookup[@name] within Far range must succeed on an Agility Reaction Roll or take <strong>1d4</strong> physical damage. The @Lookup[@name] can take the spotlight a second time this GM turn.</p><p>@Template[type:inFront|range:f]</p>",
+          "description": "<p><strong>Spend a Fear</strong> to introduce a <strong>d6</strong> Spitter Die. When the @Lookup[@name] is in the spotlight, roll this die. On a result of 5 or higher, all targets in front of the @Lookup[@name] within Far range must succeed on an Agility Reaction Roll or take <strong>1d4</strong> physical damage. The @Lookup[@name] can take the spotlight a second time this GM turn.</p>",
           "actions": {
             "yx5fjMLLwSnvSbqs": {
               "name": "Spend Fear",
@@ -2102,7 +2101,7 @@
             },
             "Ds6KlQKZCOhh5OMT": {
               "name": "Spit Attack",
-              "description": "<p>All targets in front of the @Lookup[@name] within Far range must succeed on an Agility Reaction Roll or take <strong>1d4</strong> physical damage.</p><p>@Template[type:inFront|range:f]</p>"
+              "description": "<p>All targets in front of the @Lookup[@name] within Far range must succeed on an Agility Reaction Roll or take <strong>1d4</strong> physical damage.</p>"
             },
             "xccwknU2xHUwQSdn": {
               "name": "Roll d6",
@@ -2220,7 +2219,7 @@
         },
         "q45DiEFlXqcXZ5hv": {
           "name": "Rockslide",
-          "description": "<p><strong>Mark a Stress</strong> to create a rockslide that buries the land in front of @Lookup[@name] within Close range with rockfall. All targets in this area must make an Agility Reaction Roll (19). Targets who fail take <strong>2d12+5</strong> physical damage and become Vulnerable until their next roll with Hope. Targets who succeed take half damage.</p><p>@Template[type:inFront|range:c]</p>",
+          "description": "<p><strong>Mark a Stress</strong> to create a rockslide that buries the land in front of @Lookup[@name] within Close range with rockfall. All targets in this area must make an Agility Reaction Roll (19). Targets who fail take <strong>2d12+5</strong> physical damage and become Vulnerable until their next roll with Hope. Targets who succeed take half damage.</p>",
           "actions": {
             "eLGIC3kVjLo8FEvy": {
               "name": "Roll Save"
@@ -2270,7 +2269,7 @@
         },
         "bcwFQeuU6ZfIGjau": {
           "name": "Drowning Embrace",
-          "description": "<p><strong>Spend a Fear</strong> to make an attack against all targets within Very Close range. Targets the @Lookup[@name] succeeds against become <em>Restrained</em> and <em>Vulnerable</em> as they begin drowning. A target can break free, ending both conditions, with a successful Strength or Instinct Roll.</p><p>@Template[type:emanation|range:vc]</p>",
+          "description": "<p><strong>Spend a Fear</strong> to make an attack against all targets within Very Close range. Targets the @Lookup[@name] succeeds against become <em>Restrained</em> and <em>Vulnerable</em> as they begin drowning. A target can break free, ending both conditions, with a successful Strength or Instinct Roll.</p>",
           "actions": {
             "ooYbiLrYjoWXIfe9": {
               "name": "Attack"
@@ -2443,7 +2442,7 @@
       "items": {
         "SsgN2qSYpQLR43Cz": {
           "name": "Rally Guards",
-          "description": "<p><strong>Spend 2 Fear</strong> to spotlight the @Lookup[@name] and up to <strong>2d4</strong> allies within Far range.</p><p>@Template[type:emanation|range:f]</p>",
+          "description": "<p><strong>Spend 2 Fear</strong> to spotlight the @Lookup[@name] and up to <strong>2d4</strong> allies within Far range.</p>",
           "actions": {
             "lI0lnRb3xrUjqIYX": {
               "name": "Rally"
@@ -2452,7 +2451,7 @@
         },
         "YeJ7eJVCKsRxG8mk": {
           "name": "On My Signal",
-          "description": "<p><em>Countdown (5)</em>. When the @Lookup[@name] is in the spotlight for the first time, activate the countdown. It ticks down when a PC makes an attack roll. When it triggers, all Archer Guards within Far range make a standard attack with advantage against the nearest target within their range. If any attacks succeed on the same target, combine their damage.</p><p>@Template[type:emanation|range:f]</p>",
+          "description": "<p><em>Countdown (5)</em>. When the @Lookup[@name] is in the spotlight for the first time, activate the countdown. It ticks down when a PC makes an attack roll. When it triggers, all Archer Guards within Far range make a standard attack with advantage against the nearest target within their range. If any attacks succeed on the same target, combine their damage.</p>",
           "actions": {
             "xyhaCmPGiVMsTViH": {
               "name": "Start Countdown",
@@ -2486,7 +2485,7 @@
       "items": {
         "c30Cc5mofs2arb9j": {
           "name": "Terrifying",
-          "description": "<p>When the @Lookup[@name] makes a successful attack, all PCs within Far range lose a Hope and you gain a Fear.</p><p>@Template[type:emanation|range:f]</p>",
+          "description": "<p>When the @Lookup[@name] makes a successful attack, all PCs within Far range lose a Hope and you gain a Fear.</p>",
           "actions": {
             "Rf2ZL3EjCzudonRb": {
               "name": "Lose Hope"
@@ -2522,7 +2521,7 @@
         },
         "6FsQf339qGHnz3ZF": {
           "name": "Lifesuck",
-          "description": "<p>When the @Lookup[@name] is spotlighted, roll a <strong>d8</strong>. On a result of 6 or higher, all targets within Very Close range must mark a HP.</p><p>@Template[type:emanation|range:vc]</p>",
+          "description": "<p>When the @Lookup[@name] is spotlighted, roll a <strong>d8</strong>. On a result of 6 or higher, all targets within Very Close range must mark a HP.</p>",
           "actions": {
             "DA8qT2omBcG4oryX": {
               "name": "Roll d8"
@@ -2670,7 +2669,7 @@
         },
         "bCeCu8M25izOAsuY": {
           "name": "Terrifying Chorus",
-          "description": "<p>All PCs within Far range lose 2 Hope.</p><p>@Template[type:emanation|range:f]</p>",
+          "description": "<p>All PCs within Far range lose 2 Hope.</p>",
           "actions": {
             "nJxpFR4Ul0e2RrL4": {
               "name": "Lose Hope"
@@ -2960,7 +2959,7 @@
         },
         "Bt7MqMkPpPpzWksK": {
           "name": "Mind Dance",
-          "description": "<p><strong>Mark a Stress</strong> to create a magically dazzling display that grapples the minds of nearby foes. All targets within Close range must make an Instinct Reaction Roll. For each target who failed, you gain a Fear and the @Lookup[@name] learns one of the target’s fears.</p><p>@Template[type:emanation|range:c]</p>",
+          "description": "<p><strong>Mark a Stress</strong> to create a magically dazzling display that grapples the minds of nearby foes. All targets within Close range must make an Instinct Reaction Roll. For each target who failed, you gain a Fear and the @Lookup[@name] learns one of the target’s fears.</p>",
           "actions": {
             "0wL3ieMrXEb2gcxe": {
               "name": "Roll Save"
@@ -2969,7 +2968,7 @@
         },
         "EjfM83eVCdcVGC3c": {
           "name": "Hallucinatory Breath",
-          "description": "<p>Countdown (Loop 1d6). When the @Lookup[@name] takes damage for the first time, activate the countdown. When it triggers, the @Lookup[@name] breathes hallucinatory gas on all targets in front of them up to Far range. Targets must succeed on an Instinct Reaction Roll or be tormented by fearful hallucinations. Targets whose fears are known to the @Lookup[@name] have disadvantage on this roll. Targets who fail must mark a Stress and lose a Hope.</p><p>@Template[type:inFront|range:f]</p>",
+          "description": "<p>Countdown (Loop 1d6). When the @Lookup[@name] takes damage for the first time, activate the countdown. When it triggers, the @Lookup[@name] breathes hallucinatory gas on all targets in front of them up to Far range. Targets must succeed on an Instinct Reaction Roll or be tormented by fearful hallucinations. Targets whose fears are known to the @Lookup[@name] have disadvantage on this roll. Targets who fail must mark a Stress and lose a Hope.</p>",
           "actions": {
             "USEkCakSzYcZbBwY": {
               "name": "Roll Save"
@@ -3083,7 +3082,7 @@
         },
         "eksa3E2ecBgdib6h": {
           "name": "Boiling Blast",
-          "description": "<p><strong>Spend a Fear</strong> to spew a line of boiling water at any number of targets in a line up to Far range. All targets must succeed on an Agility Reaction Roll or take <strong>4d6+9</strong> physical damage. If a target marks an Armor Slot to reduce the damage, they must also mark a Stress.</p><p>@Template[type:ray|range:f]</p>",
+          "description": "<p><strong>Spend a Fear</strong> to spew a line of boiling water at any number of targets in a line up to Far range. All targets must succeed on an Agility Reaction Roll or take <strong>4d6+9</strong> physical damage. If a target marks an Armor Slot to reduce the damage, they must also mark a Stress.</p>",
           "actions": {
             "pHZUiZRSj4FuG0uK": {
               "name": "Attack"
@@ -3123,7 +3122,7 @@
         },
         "tP2DD751nOLxFVps": {
           "name": "Escape Plan",
-          "description": "<p><strong>Mark a Stress</strong> to reveal a snare trap set anywhere on the battlefield by the @Lookup[@name]. All targets within Very Close range of the trap must succeed on an Agility Reaction Roll (13) or be pulled off their feet and suspended upside down. A target is Restrained and Vulnerable until they break free, ending both conditions, with a successful Finesse or Strength Roll (13).</p><p>@Template[type:rect|range:c]</p>",
+          "description": "<p><strong>Mark a Stress</strong> to reveal a snare trap set anywhere on the battlefield by the @Lookup[@name]. All targets within Very Close range of the trap must succeed on an Agility Reaction Roll (13) or be pulled off their feet and suspended upside down. A target is Restrained and Vulnerable until they break free, ending both conditions, with a successful Finesse or Strength Roll (13).</p>",
           "actions": {
             "sq0q1l2Go4GduR3B": {
               "name": "Roll Save"
@@ -3268,7 +3267,7 @@
         },
         "oAxhAawgcK7DAdpa": {
           "name": "Sickening Flux",
-          "description": "<p><strong>Mark a HP</strong> to force all targets within Close range to mark a Stress and become <em>Vulnerable</em> until their next rest or they clear a HP.</p><p>@Template[type:emanation|range:c]</p>",
+          "description": "<p><strong>Mark a HP</strong> to force all targets within Close range to mark a Stress and become <em>Vulnerable</em> until their next rest or they clear a HP.</p>",
           "actions": {
             "g4CVwjDeJgTJ2oCw": {
               "name": "Mark HP"
@@ -3283,7 +3282,7 @@
         },
         "updQuIK8sybf4YmW": {
           "name": "Remake Reality",
-          "description": "<p><strong>Spend a Fear</strong> to transform the area within Very Close range into a different biome. All targets within this area take <strong>2d6+3</strong> direct magic damage.</p><p>@Template[type:emanation|range:vc]</p>",
+          "description": "<p><strong>Spend a Fear</strong> to transform the area within Very Close range into a different biome. All targets within this area take <strong>2d6+3</strong> direct magic damage.</p>",
           "actions": {
             "QzuQIAtSrgz9Zd5V": {
               "name": "Spend Fear"
@@ -3322,7 +3321,7 @@
         },
         "kD9kO92V7t3IqZu8": {
           "name": "All Must fall",
-          "description": "<p>When a PC rolls a failure with Fear while within Close range of the @Lookup[@name], they lose a Hope.</p><p>@Template[type:emanation|range:c]</p>",
+          "description": "<p>When a PC rolls a failure with Fear while within Close range of the @Lookup[@name], they lose a Hope.</p>",
           "actions": {
             "XQ7QebA0iGvMti4A": {
               "name": "Hope Damage"
@@ -3331,7 +3330,7 @@
         },
         "lA7vcvS7oGT9NTSy": {
           "name": "Hellfire",
-          "description": "<p><strong>Spend a Fear</strong> to rain down hellfire within Far range. All targets within the area must make an Agility Reaction Roll. Targets who fail take <strong>1d20+3</strong> magic damage. Targets who succeed take half damage.</p><p>@Template[type:emanation|range:f]</p>",
+          "description": "<p><strong>Spend a Fear</strong> to rain down hellfire within Far range. All targets within the area must make an Agility Reaction Roll. Targets who fail take <strong>1d20+3</strong> magic damage. Targets who succeed take half damage.</p>",
           "actions": {
             "nOzLQ0NJzeB3vKiV": {
               "name": "Spend Fear"
@@ -3375,7 +3374,7 @@
         },
         "7AXE86WNd68OySkD": {
           "name": "Scorched Earth",
-          "description": "<p><strong>Mark a Stress</strong> to choose a point within Far range. The ground within Very Close range of that point immediately bursts into flames. All creatures within this area must make an Agility Reaction Roll. Targets who fail take <strong>2d8</strong> magic damage from the flames. Targets who succeed take half damage.</p><p>@Template[type:circle|range:vc]</p>",
+          "description": "<p><strong>Mark a Stress</strong> to choose a point within Far range. The ground within Very Close range of that point immediately bursts into flames. All creatures within this area must make an Agility Reaction Roll. Targets who fail take <strong>2d8</strong> magic damage from the flames. Targets who succeed take half damage.</p>",
           "actions": {
             "x1VCkfcSYiPyg8fk": {
               "name": "Attack"
@@ -3384,11 +3383,10 @@
         },
         "ESnu3I89BmUdBZEk": {
           "name": "Explosion",
-          "description": "<p><strong>Spend a Fear</strong> to erupt in a fi ery explosion. Make an attack against all targets within Close range. Targets the Elemental succeeds against take <strong>1d8</strong> magic damage and are knocked back to Far range.</p><p>@Template[type:emanation|range:c]</p>",
+          "description": "<p><strong>Spend a Fear</strong> to erupt in a fi ery explosion. Make an attack against all targets within Close range. Targets the Elemental succeeds against take <strong>1d8</strong> magic damage and are knocked back to Far range.</p>",
           "actions": {
             "JQgqyW8H7fugR7F0": {
-              "name": "Attack",
-              "description": "<p><strong>Spend a Fear</strong> to erupt in a fi ery explosion. Make an attack against all targets within Close range. Targets the Elemental succeeds against take <strong>1d8</strong> magic damage and are knocked back to Far range.</p><p>@Template[type:emanation|range:c]</p>"
+              "name": "Attack"
             }
           }
         },
@@ -3535,7 +3533,7 @@
       "items": {
         "cID8rYBYealYs7mO": {
           "name": "Terrifying",
-          "description": "<p>When the @Lookup[@name] makes a successful attack, all PCs within Far range lose a Hope and you gain a Fear.</p><p>@Template[type:emanation|range:f]</p>",
+          "description": "<p>When the @Lookup[@name] makes a successful attack, all PCs within Far range lose a Hope and you gain a Fear.</p>",
           "actions": {
             "9T1g3FH38cnCRG8k": {
               "name": "Lose Hope"
@@ -3572,7 +3570,7 @@
         },
         "IOCG3J20wUHvyvvh": {
           "name": "Rampage",
-          "description": "<p><em>Countdown (Loop 1d6)</em>. When the @Lookup[@name] is in the spotlight for the first time, activate the countdown. When it triggers, move the @Lookup[@name] in a straight line to a point within Far range and make an attack against all targets in their path. Targets the @Lookup[@name] succeeds against take <strong>2d8+2</strong> physical damage.</p><p>@Template[type:ray|range:f]</p>",
+          "description": "<p><em>Countdown (Loop 1d6)</em>. When the @Lookup[@name] is in the spotlight for the first time, activate the countdown. When it triggers, move the @Lookup[@name] in a straight line to a point within Far range and make an attack against all targets in their path. Targets the @Lookup[@name] succeeds against take <strong>2d8+2</strong> physical damage.</p>",
           "actions": {
             "VjiFxuzfAaq5N1jy": {
               "name": "Attack",
@@ -3639,7 +3637,7 @@
       "items": {
         "mKSk2GBYLoATQlVT": {
           "name": "Terrifying",
-          "description": "<p>When the @Lookup[@name] makes a successful attack, all PCs within Far range lose a Hope and you gain a Fear.</p><p>@Template[type:emanation|range:f]</p>",
+          "description": "<p>When the @Lookup[@name] makes a successful attack, all PCs within Far range lose a Hope and you gain a Fear.</p>",
           "actions": {
             "VjdSO1lAdTIAlofM": {
               "name": "Lose Hope"
@@ -3718,7 +3716,7 @@
         },
         "K3MQO1I42nmfM2F2": {
           "name": "Reality Quake",
-          "description": "<p><strong>Spend a Fear</strong> to rattle the edges of reality within Far range of the @Lookup[@name]. All targets within that area must succeed on a Knowledge Reaction Roll or become Unstuck from reality until the end of the scene. When an Unstuck target spends Hope or marks Armor Slots, HP, or Stress, they must double the amount spent or marked.</p><p>@Template[type:emanation|range:f]</p>",
+          "description": "<p><strong>Spend a Fear</strong> to rattle the edges of reality within Far range of the @Lookup[@name]. All targets within that area must succeed on a Knowledge Reaction Roll or become Unstuck from reality until the end of the scene. When an Unstuck target spends Hope or marks Armor Slots, HP, or Stress, they must double the amount spent or marked.</p>",
           "actions": {
             "7apNSLz8m7sxyLhU": {
               "name": "Roll Save"
@@ -3759,7 +3757,7 @@
         },
         "gBLVvHbyekmIUITD": {
           "name": "Disgorge Realiy Flotsam",
-          "description": "<p><strong>Mark a Stress</strong> to spew partially digested portions of consumed realities at all targets within Close range. Targets must succeed on a Knowledge Reaction Roll or mark 2 Stress.</p><p>@Template[type:emanation|range:c]</p>",
+          "description": "<p><strong>Mark a Stress</strong> to spew partially digested portions of consumed realities at all targets within Close range. Targets must succeed on a Knowledge Reaction Roll or mark 2 Stress.</p>",
           "actions": {
             "6vX6VHpXX7OiGSWH": {
               "name": "Roll Save"
@@ -3814,7 +3812,7 @@
         },
         "0fn7rVLwBnyCyvTA": {
           "name": "Flailing Limbs",
-          "description": "<p>When the @Lookup[@name] makes a standard attack, they can attack all targets within Very Close range.</p><p>@Template[type:emanation|range:vc]</p>"
+          "description": "<p>When the @Lookup[@name] makes a standard attack, they can attack all targets within Very Close range.</p>"
         },
         "gw1Z2VazlRXYCiCK": {
           "name": "Another for the Pile",
@@ -3827,7 +3825,7 @@
         },
         "uTtQwNg46NAjgzuD": {
           "name": "Tormented Screams",
-          "description": "<p><strong>Mark a Stress</strong> to cause all PCs within Far range to make a Presence Reaction Roll (13). Targets who fail lose a Hope and you gain a Fear for each. Targets who succeed must mark a Stress.</p><p>@Template[type:emanation|range:f]</p>",
+          "description": "<p><strong>Mark a Stress</strong> to cause all PCs within Far range to make a Presence Reaction Roll (13). Targets who fail lose a Hope and you gain a Fear for each. Targets who succeed must mark a Stress.</p>",
           "actions": {
             "2NYC0D7wkBNrUAKl": {
               "name": "Mark Stress"
@@ -3844,7 +3842,7 @@
       "items": {
         "xyz5d7QISdB5X5ey": {
           "name": "Terrifying",
-          "description": "<p>When the @Lookup[@name] makes a successful attack, all PCs within Far range lose a Hope and you gain a Fear.</p><p>@Template[type:emanation|range:f]</p>",
+          "description": "<p>When the @Lookup[@name] makes a successful attack, all PCs within Far range lose a Hope and you gain a Fear.</p>",
           "actions": {
             "dquYnt5qiHZfnyD9": {
               "name": "Lose Hope"
@@ -3857,7 +3855,7 @@
         },
         "CKy2r6FguyTSO9Fm": {
           "name": "Perfect Strike",
-          "description": "<p><strong>Mark a Stress </strong>to make a standard attack against all targets within Very Close range. Targets the @Lookup[@name] succeeds against are <em>Vulnerable</em> until their next rest.</p><p>@Template[type:emanation|range:vc]</p>",
+          "description": "<p><strong>Mark a Stress </strong>to make a standard attack against all targets within Very Close range. Targets the @Lookup[@name] succeeds against are <em>Vulnerable</em> until their next rest.</p>",
           "actions": {
             "un9btM1mN53JHIgV": {
               "name": "Attack"
@@ -4248,7 +4246,7 @@
       "items": {
         "w46d3D2gXUIJh2GH": {
           "name": "Terrifying",
-          "description": "<p>When the @Lookup[@name] makes a successful attack, all PCs within Far range lose a Hope and you gain a Fear.</p><p>@Template[type:emanation|range:f]</p>",
+          "description": "<p>When the @Lookup[@name] makes a successful attack, all PCs within Far range lose a Hope and you gain a Fear.</p>",
           "actions": {
             "NoEb6qR3ktIu9kRJ": {
               "name": "Lose Hope"
@@ -4297,7 +4295,7 @@
         },
         "Ks3HpB4W1l5FqR7p": {
           "name": "Enchanting Song",
-          "description": "<p><strong>Spend a Fear</strong> to sing a song that affects all targets within Close range. Targets must succeed on an Instinct Reaction Roll or become Entranced until they mark 2 Stress. Other @Lookup[@name]s within Close range of the target can <strong>mark a Stress</strong> to each add a +1 bonus to the Difficulty of the reaction roll. While Entranced, a target can’t act and is <em>Vulnerable</em>.</p><p>@Template[type:emanation|range:c]</p>",
+          "description": "<p><strong>Spend a Fear</strong> to sing a song that affects all targets within Close range. Targets must succeed on an Instinct Reaction Roll or become Entranced until they mark 2 Stress. Other @Lookup[@name]s within Close range of the target can <strong>mark a Stress</strong> to each add a +1 bonus to the Difficulty of the reaction roll. While Entranced, a target can’t act and is <em>Vulnerable</em>.</p>",
           "actions": {
             "FY8K8Nsg0TKAWok8": {
               "name": "Roll Save"
@@ -4377,7 +4375,7 @@
         },
         "WdVLwy9RNkVlZnCL": {
           "name": "Cut to the Bone",
-          "description": "<p><strong>Mark a Stress</strong> to make an attack against all targets within Very Close range. Targets the @Lookup[@name] succeeds against take <strong>1d8+2</strong> physical damage and must mark a Stress.</p><p>@Template[type:emanation|range:vc]</p>",
+          "description": "<p><strong>Mark a Stress</strong> to make an attack against all targets within Very Close range. Targets the @Lookup[@name] succeeds against take <strong>1d8+2</strong> physical damage and must mark a Stress.</p>",
           "actions": {
             "vMv4monku9LOSxUZ": {
               "name": "Attack"
@@ -4572,7 +4570,7 @@
         },
         "a76dNCrcoZOH1RRT": {
           "name": "Supressing Blast",
-          "description": "<p><strong>Mark a Stress</strong> and target a group within Far range. All targets must succeed on an Agility Reaction Roll or take <strong>1d8+2</strong> magic damage. You gain a Fear for each target who marked HP from this attack.</p><p>@Template[type:emanation|range:f]</p>",
+          "description": "<p><strong>Mark a Stress</strong> and target a group within Far range. All targets must succeed on an Agility Reaction Roll or take <strong>1d8+2</strong> magic damage. You gain a Fear for each target who marked HP from this attack.</p>",
           "actions": {
             "K4VnxigKTiu7hhZx": {
               "name": "Attack"
@@ -4656,7 +4654,7 @@
         },
         "CYaSykD9BUxpiOxg": {
           "name": "Blade of the Forest",
-          "description": "<p><strong>Spend a Fear</strong> to make an attack against all targets within Very Close range. Targets the @Lookup[@name] succeeds against take physical damage equal to <strong>[[/r 3d4]]</strong> + the target’s Major threshold.</p><p>@Template[type:emanation|range:vc]</p>",
+          "description": "<p><strong>Spend a Fear</strong> to make an attack against all targets within Very Close range. Targets the @Lookup[@name] succeeds against take physical damage equal to <strong>[[/r 3d4]]</strong> + the target’s Major threshold.</p>",
           "actions": {
             "xPSVwVVOC5gc2KTi": {
               "name": "Attack"
@@ -4705,7 +4703,7 @@
         },
         "9Z0i0uURfBMVIapJ": {
           "name": "Avalanche Roar",
-          "description": "<p><strong>Spend a Fear</strong> to roar while within a cave and cause a cave-in. All targets within Close range must succeed on an Agility Reaction Roll (14) or take <strong>2d10</strong> physical damage. The rubble can be cleared with a Progress Countdown (8).</p><p>@Template[type:emanation|range:c]</p>",
+          "description": "<p><strong>Spend a Fear</strong> to roar while within a cave and cause a cave-in. All targets within Close range must succeed on an Agility Reaction Roll (14) or take <strong>2d10</strong> physical damage. The rubble can be cleared with a Progress Countdown (8).</p>",
           "actions": {
             "4UGEEuK9XY8leCBV": {
               "name": "Roll Save"
@@ -5017,7 +5015,7 @@
         },
         "LVFZ4AfVhS6Q9hRy": {
           "name": "Mana Bolt",
-          "description": "<p><strong>Spend a Fear</strong> to lob explosive magic at a point within Far range. All targets within Very Close range of that point must make an Agility Reaction Roll. Targets who fail take <strong>2d8+20</strong> magic damage and are knocked back to Close range. Targets who succeed take half damage and aren’t knocked back.</p><p>@Template[type:circle|range:vc]</p>",
+          "description": "<p><strong>Spend a Fear</strong> to lob explosive magic at a point within Far range. All targets within Very Close range of that point must make an Agility Reaction Roll. Targets who fail take <strong>2d8+20</strong> magic damage and are knocked back to Close range. Targets who succeed take half damage and aren’t knocked back.</p>",
           "actions": {
             "mI9i9iwrM48NjzeE": {
               "name": "Roll Save"
@@ -5071,7 +5069,7 @@
         },
         "ALDtQci3ktq9cajU": {
           "name": "Detonation",
-          "description": "<p>When the @Lookup[@name] is destroyed, they explode. All targets within Close range must make an Agility Reaction Roll. Targets who fail take <strong>3d20</strong> physical damage. Targets who succeed take half damage.</p><p>@Template[type:emanation|range:c]</p>",
+          "description": "<p>When the @Lookup[@name] is destroyed, they explode. All targets within Close range must make an Agility Reaction Roll. Targets who fail take <strong>3d20</strong> physical damage. Targets who succeed take half damage.</p>",
           "actions": {
             "i1PZ9ddYdOOs2xSb": {
               "name": "Roll Save"
@@ -5131,7 +5129,7 @@
         },
         "AXhSVGL33i0j6DAw": {
           "name": "Desperate Rampage",
-          "description": "<p><strong>Mark a Stress</strong> to make an attack against all targets within Close range. Targets the @Lookup[@name] succeeds against take <strong>2d20+2</strong> physical damage, are knocked back to Close range of where they were, and must mark a Stress.</p><p>@Template[type:emanation|range:c]</p>",
+          "description": "<p><strong>Mark a Stress</strong> to make an attack against all targets within Close range. Targets the @Lookup[@name] succeeds against take <strong>2d20+2</strong> physical damage, are knocked back to Close range of where they were, and must mark a Stress.</p>",
           "actions": {
             "3glUQAcsLBcCumnS": {
               "name": "Attack"
@@ -5140,7 +5138,7 @@
         },
         "ggCol5LQ2ZpeQjly": {
           "name": "Ashen Cloud",
-          "description": "<p><strong>Spend a Fear</strong> to smash the ground and kick up ash within Far range. While within the ash cloud, a target has disadvantage on action rolls. The ash cloud clears the next time an adversary is spotlighted.</p><p>@Template[type:emanation|range:f]</p>",
+          "description": "<p><strong>Spend a Fear</strong> to smash the ground and kick up ash within Far range. While within the ash cloud, a target has disadvantage on action rolls. The ash cloud clears the next time an adversary is spotlighted.</p>",
           "actions": {
             "UrD4A68IBJgyfvvt": {
               "name": "Spend Fear"
@@ -5149,11 +5147,11 @@
         },
         "uWiyaJPXcoW06pOM": {
           "name": "Apocalyptic Thrasing",
-          "description": "<p><em>Countdown (1d12)</em>. <strong>Spend a Fear</strong> to activate. It ticks down when a PC rolls with Fear. When it triggers, the @Lookup[@name] thrashes about, causing environmental damage (such as an earthquake, avalanche, or collapsing walls). All targets within Far range must make a Strength Reaction Roll. Targets who fail take 2d10+10 physical damage and are Restrained by the rubble until they break free with a successful Strength Roll. Targets who succeed take half damage. If the @Lookup[@name] is defeated while this countdown is active, trigger the countdown immediately as the destruction caused by their death throes.</p><p>@Template[type:emanation|range:f]</p>",
+          "description": "<p><em>Countdown (1d12)</em>. <strong>Spend a Fear</strong> to activate. It ticks down when a PC rolls with Fear. When it triggers, the @Lookup[@name] thrashes about, causing environmental damage (such as an earthquake, avalanche, or collapsing walls). All targets within Far range must make a Strength Reaction Roll. Targets who fail take 2d10+10 physical damage and are Restrained by the rubble until they break free with a successful Strength Roll. Targets who succeed take half damage. If the @Lookup[@name] is defeated while this countdown is active, trigger the countdown immediately as the destruction caused by their death throes.</p>",
           "actions": {
             "OznXxmwiPwzuFPQZ": {
               "name": "Roll Save",
-              "description": "<p>When the countdown triggers, the @Lookup[@name] thrashes about, causing environmental damage (such as an earthquake, avalanche, or collapsing walls). All targets within Far range must make a Strength Reaction Roll. Targets who fail take 2d10+10 physical damage and are Restrained by the rubble until they break free with a successful Strength Roll. Targets who succeed take half damage. If the @Lookup[@name] is defeated while this countdown is active, trigger the countdown immediately as the destruction caused by their death throes.</p><p>@Template[type:emanation|range:f]</p>"
+              "description": "<p>When the countdown triggers, the @Lookup[@name] thrashes about, causing environmental damage (such as an earthquake, avalanche, or collapsing walls). All targets within Far range must make a Strength Reaction Roll. Targets who fail take 2d10+10 physical damage and are Restrained by the rubble until they break free with a successful Strength Roll. Targets who succeed take half damage. If the @Lookup[@name] is defeated while this countdown is active, trigger the countdown immediately as the destruction caused by their death throes.</p>"
             },
             "rZ7IwBnDzw7VmBT6": {
               "name": "Start Countdown",
@@ -5207,7 +5205,7 @@
         },
         "NuksKUrbf4yj4vR2": {
           "name": "Eruption",
-          "description": "<p><strong>Spend a Fear</strong> to erupt lava from beneath the @Lookup[@name]’s scales, filling the area within Very Close range with molten lava. All targets in that area must succeed on an Agility Reaction Roll or take <strong>4d6+6</strong> physical damage and be knocked back to Close range. This area remains lava. When a creature other than the @Lookup[@name] enters that area or acts while inside of it, they must mark 6 HP.</p><p>@Template[type:emanation|range:vc]</p>",
+          "description": "<p><strong>Spend a Fear</strong> to erupt lava from beneath the @Lookup[@name]’s scales, filling the area within Very Close range with molten lava. All targets in that area must succeed on an Agility Reaction Roll or take <strong>4d6+6</strong> physical damage and be knocked back to Close range. This area remains lava. When a creature other than the @Lookup[@name] enters that area or acts while inside of it, they must mark 6 HP.</p>",
           "actions": {
             "OpwKa8tQQoaEIZiS": {
               "name": "Roll Save"
@@ -5216,7 +5214,7 @@
         },
         "2mK8kxfp2WBUeBri": {
           "name": "Volcanic Breath",
-          "description": "<p>When the @Lookup[@name] takes Major damage, roll a <strong>d10</strong>. On a result of 8 or higher, the @Lookup[@name] breathes a flow of lava in front of them within Far range. All targets in that area must make an Agility Reaction Roll. Targets who fail take <strong>2d10+4</strong> physical damage, mark <strong>1d4</strong> Stress, and are Vulnerable until they clear a Stress. Targets who succeed take half damage and must mark a Stress.</p><p>@Template[type:inFront|range:f]</p>",
+          "description": "<p>When the @Lookup[@name] takes Major damage, roll a <strong>d10</strong>. On a result of 8 or higher, the @Lookup[@name] breathes a flow of lava in front of them within Far range. All targets in that area must make an Agility Reaction Roll. Targets who fail take <strong>2d10+4</strong> physical damage, mark <strong>1d4</strong> Stress, and are Vulnerable until they clear a Stress. Targets who succeed take half damage and must mark a Stress.</p>",
           "actions": {
             "OhrssSQhmciZt1Rm": {
               "name": "Roll d10",
@@ -5224,7 +5222,7 @@
             },
             "LBNvfABGWcrygpQM": {
               "name": "Roll Save",
-              "description": "<p>The @Lookup[@name] breathes a flow of lava in front of them within Far range. All targets in that area must make an Agility Reaction Roll. Targets who fail take <strong>2d10+4</strong> physical damage, mark <strong>1d4</strong> Stress, and are Vulnerable until they clear a Stress. Targets who succeed take half damage and must mark a Stress.</p><p>@Template[type:inFront|range:f]</p>"
+              "description": "<p><span>The </span><span>@Lookup[@name] </span><span>breathes a flow of lava in front of them within Far range. All targets in that area must make an Agility Reaction Roll. Targets who fail take </span><span>2d10+4</span><span> physical damage, mark </span><span>1d4</span><span> Stress, and are Vulnerable until they clear a Stress. Targets who succeed take half damage and must mark a Stress.</span></p>"
             }
           },
           "effects": {
@@ -5296,7 +5294,7 @@
         },
         "8bMOItTuL7PfAYcJ": {
           "name": "Avalanche Tail",
-          "description": "<p><strong>Mark a Stress</strong> to make an attack against all targets within Close range. Targets the @Lookup[@name] succeeds against take <strong>4d6+4</strong> physical damage and are knocked.</p><p>@Template[type:emanation|range:c]</p>",
+          "description": "<p><strong>Mark a Stress</strong> to make an attack against all targets within Close range. Targets the @Lookup[@name] succeeds against take <strong>4d6+4</strong> physical damage and are knocked.</p>",
           "actions": {
             "23y0BoufIgNq62j9": {
               "name": "Attack"
@@ -5311,7 +5309,7 @@
         },
         "5wLxyaWJuUhkx1EX": {
           "name": "Dive-Bomb",
-          "description": "<p>If the @Lookup[@name] is flying, mark a <strong>Stress</strong> to choose a point within Far range. Move to that point and make an attack against all targets within Very Close range. Targets the @Lookup[@name] succeeds against take <strong>2d10+6</strong> physical damage and must mark a Stress and lose a Hope.</p><p>@Template[type:emanation|range:vc]</p>",
+          "description": "<p>If the @Lookup[@name] is flying, mark a <strong>Stress</strong> to choose a point within Far range. Move to that point and make an attack against all targets within Very Close range. Targets the @Lookup[@name] succeeds against take <strong>2d10+6</strong> physical damage and must mark a Stress and lose a Hope.</p>",
           "actions": {
             "OpAT9nxlbgvnhdBg": {
               "name": "Attack"
@@ -5363,7 +5361,7 @@
         },
         "PnQ0m0FLnpht7oE4": {
           "name": "Eruption",
-          "description": "<p><strong>Spend a Fear</strong> and choose a point within Far range. A Very Close area around that point erupts into impassable terrain. All targets within that area must make an Agility Reaction Roll (14). Targets who fail take <strong>2d10</strong> physical damage and are thrown out of the area. Targets who succeed take half damage and aren’t moved.</p><p>@Template[type:circle|range:vc]</p>",
+          "description": "<p><strong>Spend a Fear</strong> and choose a point within Far range. A Very Close area around that point erupts into impassable terrain. All targets within that area must make an Agility Reaction Roll (14). Targets who fail take <strong>2d10</strong> physical damage and are thrown out of the area. Targets who succeed take half damage and aren’t moved.</p>",
           "actions": {
             "vnMq4NuQO6GYxWhM": {
               "name": "Roll Save"
@@ -5512,7 +5510,7 @@
         },
         "QV2ytK4b1VWF71OS": {
           "name": "Blizzard Breath",
-          "description": "<p><strong>Spend 2 Fear</strong> to release an icy whorl in front of the @Lookup[@name] within Close range. All targets in this area must make an Agility Reaction Roll. Targets who fail take <strong>4d6+5</strong> magic damage and are Restrained by ice until they break free with a successful Strength Roll. Targets who succeed must mark 2 Stress or take half damage.</p><p>@Template[type:inFront|range:c]</p>",
+          "description": "<p><strong>Spend 2 Fear</strong> to release an icy whorl in front of the @Lookup[@name] within Close range. All targets in this area must make an Agility Reaction Roll. Targets who fail take <strong>4d6+5</strong> magic damage and are Restrained by ice until they break free with a successful Strength Roll. Targets who succeed must mark 2 Stress or take half damage.</p>",
           "actions": {
             "CBecTlgyUBFxgoi5": {
               "name": "Roll Save"
@@ -5527,7 +5525,7 @@
         },
         "CcRTxCDCJskiu3fI": {
           "name": "Avalanche",
-          "description": "<p><strong>Spend a Fear</strong> to have the @Lookup[@name] unleash a huge downfall of snow and ice, covering all other creatures within Far range. All targets within this area must succeed on an Instinct Reaction Roll or be buried in snow and rocks, becoming <em>Vulnerable</em> until they dig themselves out from the debris. For each PC that fails the reaction roll, you gain a Fear.</p><p>@Template[type:emanation|range:f]</p>",
+          "description": "<p><strong>Spend a Fear</strong> to have the @Lookup[@name] unleash a huge downfall of snow and ice, covering all other creatures within Far range. All targets within this area must succeed on an Instinct Reaction Roll or be buried in snow and rocks, becoming <em>Vulnerable</em> until they dig themselves out from the debris. For each PC that fails the reaction roll, you gain a Fear.</p>",
           "actions": {
             "G9LjoXShkCcgx8EC": {
               "name": "Attack"

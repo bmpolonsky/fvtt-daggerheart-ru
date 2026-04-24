@@ -17,7 +17,7 @@ const ORIGINAL_TRANSLATIONS_DIR = path.join(BASE_DIR, "original");
 const ORIGINAL_VOID_DIR = path.join(ORIGINAL_TRANSLATIONS_DIR, "void");
 const TARGET_TRANSLATIONS_DIR = path.join(BASE_DIR, "module", "translations");
 
-const TOP_LEVEL_ENTRY_OPTIONAL_KEYS = new Set(["description"]);
+const TOP_LEVEL_ENTRY_OPTIONAL_KEYS = new Set(["description", "backgroundQuestions", "connections"]);
 const ADD_ONLY_MODE = process.argv.includes("--add-only");
 
 async function main() {

@@ -567,17 +567,31 @@ async function buildRolltableEntries() {
     if (description) {
       table.description = description;
     }
+    const formulaName = entry.flags?.daggerheart?.formulaName;
+    if (typeof formulaName === "string" && formulaName.trim()) {
+      table.formulaName = formulaName.trim();
+    }
+    const altFormula = {};
+    const sourceAltFormula = entry.flags?.daggerheart?.altFormula;
+    if (sourceAltFormula && typeof sourceAltFormula === "object") {
+      for (const [formulaId, formula] of Object.entries(sourceAltFormula)) {
+        const name = typeof formula?.name === "string" ? formula.name.trim() : "";
+        if (name) {
+          altFormula[formulaId] = { name };
+        }
+      }
+    }
+    if (Object.keys(altFormula).length) {
+      table.altFormula = altFormula;
+    }
     const results = {};
     if (Array.isArray(entry.results)) {
       for (const row of entry.results) {
         if (!row || !Array.isArray(row.range) || row.range.length !== 2) continue;
+        if (row.type !== "text") continue;
         const key = `${row.range[0]}-${row.range[1]}`;
         let value = "";
-        if (row.type === "text") {
-          value = sanitizeRichText(row.description ?? "").trim();
-        } else if (typeof row.name === "string") {
-          value = row.name.trim();
-        }
+        value = sanitizeRichText(row.description ?? "").trim();
         if (!value) continue;
         results[key] = value;
       }

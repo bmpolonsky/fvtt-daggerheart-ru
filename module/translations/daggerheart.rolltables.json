@@ -1,14 +1,46 @@
 {
   "label": "Случайные таблицы",
+  "mapping": {
+    "formulaName": "flags.daggerheart.formulaName",
+    "altFormula": {
+      "path": "flags.daggerheart.altFormula",
+      "converter": "toRolltableAltFormula"
+    }
+  },
   "entries": {
     "Loot": {
-      "name": "Добыча"
+      "name": "Добыча",
+      "formulaName": "Обычные",
+      "altFormula": {
+        "hJJtajaMk14bYM4X": {
+          "name": "Необычные"
+        },
+        "yDVeXdKpG7LzjHWa": {
+          "name": "Редкие"
+        },
+        "qPHNIuUgWAHauI6V": {
+          "name": "Легендарные"
+        }
+      }
     },
     "Consumables": {
-      "name": "Расходники"
+      "name": "Расходники",
+      "formulaName": "Обычные",
+      "altFormula": {
+        "uoUn5fRTUkyg6U2G": {
+          "name": "Необычные"
+        },
+        "FGxM2yoxUUUd9Eov": {
+          "name": "Редкие"
+        },
+        "HZ2hRBxu0k8IW0jC": {
+          "name": "Легендарные"
+        }
+      }
     },
     "Random Objectives": {
       "name": "Случайные цели",
+      "formulaName": "Формула броска",
       "results": {
         "1-1": "<p>Приобрести (получить или украсть) важный предмет или предметы.</p>",
         "2-2": "<p>Захватить одного или нескольких противников.</p>",

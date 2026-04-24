@@ -84,9 +84,7 @@
       "effects": {
         "pCp32u7UwqxCI4WW": {
           "name": "Low-Light Living",
-          "advantageSources": {
-            "In an area with low light or heavy shadow: hide, investigate, or perceive": "In an area with low light or heavy shadow: hide, investigate, or perceive"
-          }
+          "description": "<p>When you’re in an area with low light or heavy shadow, you have advantage on rolls to hide, investigate, or perceive details within that area.</p>"
         }
       }
     },

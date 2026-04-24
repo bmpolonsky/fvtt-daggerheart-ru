@@ -349,10 +349,7 @@
       "effects": {
         "3V4FPoyjJUnFP9WS": {
           "name": "Retract",
-          "description": "<p>While in your shell, you have resistance to physical damage, you have disadvantage on action rolls, and you can’t move.</p>",
-          "disadvantageSources": {
-            "Retract": "Retract"
-          }
+          "description": "<p>While in your shell, you have resistance to physical damage, you have disadvantage on action rolls, and you can’t move.</p>"
         }
       }
     },

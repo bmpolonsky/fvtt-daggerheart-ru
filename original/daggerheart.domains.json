@@ -136,7 +136,8 @@
       },
       "effects": {
         "s7ma4TNgAvt0ZgEW": {
-          "name": "Battle Cry"
+          "name": "Battle Cry",
+          "description": "<p>You gain advantage on attack rolls until you or an ally rolls a failure with Fear.</p>"
         }
       }
     },
@@ -301,7 +302,7 @@
         },
         "K26kfjmTEH9zPMMO": {
           "name": "Wall Of Flame",
-          "description": "<p class=\"Card-Feature\">Make a <strong>Spellcast Roll (15)</strong>. On a success, create a temporary wall of magical flame between two points within Far range. All creatures in its path must choose a side to be on, and anything that subsequently passes through the wall takes <strong>4d10+3</strong> magic damage.</p><p>@Template[type:ray|range:f]</p>"
+          "description": "<p class=\"Card-Feature\">Make a <strong>Spellcast Roll (15)</strong>. On a success, create a temporary wall of magical flame between two points within Far range. All creatures in its path must choose a side to be on, and anything that subsequently passes through the wall takes <strong>4d10+3</strong> magic damage.</p>"
         }
       }
     },
@@ -361,7 +362,7 @@
         },
         "fb2HYD9J759nHKhV": {
           "name": "Rune Circle",
-          "description": "<p class=\"Card-Feature\"><strong>Mark a Stress</strong> to create a temporary magical circle on the ground where you stand. All adversaries within Melee range, or who enter Melee range, take <strong>2d12+4</strong> magic damage and are knocked back to Very Close range.</p><p>@Template[type:emanation|range:m]</p>"
+          "description": "<p class=\"Card-Feature\"><strong>Mark a Stress</strong> to create a temporary magical circle on the ground where you stand. All adversaries within Melee range, or who enter Melee range, take <strong>2d12+4</strong> magic damage and are knocked back to Very Close range.</p>"
         }
       }
     },
@@ -374,8 +375,12 @@
           "description": "<p class=\"Card-Feature\">Make a <strong>Spellcast Roll</strong> against a target within Far range. On a success, they’re temporarily <em>Restrained</em> and must mark a Stress. If you target a flying creature, this spell grounds and temporarily <em>Restrains</em> them.</p>"
         },
         "GI2VkIcGDOjFRxpT": {
-          "name": "Fireball",
-          "description": "<p class=\"Card-Feature\">Make a <strong>Spellcast Roll</strong> against a target within Very Far range. On a success, hurl a sphere of fire toward them that explodes on impact. The target and all creatures within Very Close range of them must make a Reaction Roll (13). Targets who fail take<strong> d20+5</strong> magic damage using your Proficiency. Targets who succeed take half damage.</p><p>@Template[type:emanation|range:vc]</p>"
+          "name": "Fireball - Cast",
+          "description": "<p class=\"Card-Feature\">Make a <strong>Spellcast Roll</strong> against a target within Very Far range. On a success, hurl a sphere of fire toward them that explodes on impact.</p>"
+        },
+        "HJ749c2a8WTjkSHY": {
+          "name": "Fireball - Explosion",
+          "description": "<p>The target and all creatures within Very Close range of them must make a Reaction Roll (13). Targets who fail take<strong> d20+5</strong> magic damage using your Proficiency. Targets who succeed take half damage.</p>"
         }
       },
       "effects": {
@@ -498,7 +503,7 @@
       "actions": {
         "IxoglRervMx9YdVn": {
           "name": "Timejammer",
-          "description": "<p class=\"Card-Feature\">Make a <strong>Spellcast Roll (18)</strong>. On a success, time temporarily slows to a halt for everyone within Far range except for you. It resumes the next time you make an action roll that targets another creature.</p><p>@Template[type:emanation|range:f]</p>"
+          "description": "<p class=\"Card-Feature\">Make a <strong>Spellcast Roll (18)</strong>. On a success, time temporarily slows to a halt for everyone within Far range except for you. It resumes the next time you make an action roll that targets another creature.</p>"
         },
         "ZcQfbtGet0KQWjWS": {
           "name": "Magic Immunity",
@@ -920,10 +925,7 @@
       "effects": {
         "ARMcw2FtKfaYr902": {
           "name": "In the Eclipse",
-          "description": "<p><span class=\"tooltip-convert\">Attack rolls</span><span> have </span><span class=\"tooltip-convert\">disadvantage</span><span> when targeting you or an ally within this shadow.</p>",
-          "disadvantageSources": {
-            "Attacking you or an ally within this eclipse's shadow": "Attacking you or an ally within this eclipse's shadow"
-          }
+          "description": "<p><span class=\"tooltip-convert\">Attack rolls</span><span> have </span><span class=\"tooltip-convert\">disadvantage</span><span> when targeting you or an ally within this shadow.</p>"
         }
       }
     },
@@ -968,11 +970,10 @@
     },
     "Falling Sky": {
       "name": "Falling Sky",
-      "description": "<p class=\"Body-Foundation\">Make a <strong>Spellcast Roll</strong> against all adversaries within Far range. <strong>Mark any number of Stress</strong> to make shards of arcana rain down from above. Targets you succeed against take <strong>1d20+2</strong> magic damage for each Stress marked.</p><p>@Template[type:emanation|range:f]</p>",
+      "description": "<p class=\"Body-Foundation\">Make a <strong>Spellcast Roll</strong> against all adversaries within Far range. <strong>Mark any number of Stress</strong> to make shards of arcana rain down from above. Targets you succeed against take <strong>1d20+2</strong> magic damage for each Stress marked.</p>",
       "actions": {
         "xJfXJDVsBayGaqkr": {
-          "name": "Attack",
-          "description": "<p class=\"Body-Foundation\">Make a <strong>Spellcast Roll</strong> against all adversaries within Far range. <strong>Mark any number of Stress</strong> to make shards of arcana rain down from above. Targets you succeed against take <strong>1d20+2</strong> magic damage for each Stress marked.</p><p>@Template[type:emanation|range:f]</p>"
+          "name": "Attack"
         }
       }
     },
@@ -1259,11 +1260,10 @@
     },
     "Ground Pound": {
       "name": "Ground Pound",
-      "description": "<p class=\"Body-Foundation\"><strong>Spend 2 Hope</strong> to strike the ground where you stand and make a <strong>Strength Roll</strong> against all targets within Very Close range. Targets you succeed against are thrown back to Far range and must make a Reaction Roll (17). Targets who fail take <strong>4d10+8</strong> damage. Targets who succeed take half damage.</p><p>@Template[type:emanation|range:vc]</p>",
+      "description": "<p class=\"Body-Foundation\"><strong>Spend 2 Hope</strong> to strike the ground where you stand and make a <strong>Strength Roll</strong> against all targets within Very Close range. Targets you succeed against are thrown back to Far range and must make a Reaction Roll (17). Targets who fail take <strong>4d10+8</strong> damage. Targets who succeed take half damage.</p>",
       "actions": {
         "FOrohOCnzfdBl4sM": {
-          "name": "Strike Ground",
-          "description": "<p class=\"Body-Foundation\"><strong>Spend 2 Hope</strong> to strike the ground where you stand and make a <strong>Strength Roll</strong> against all targets within Very Close range. Targets you succeed against are thrown back to Far range and must make a Reaction Roll (17). Targets who fail take <strong>4d10+8</strong> damage. Targets who succeed take half damage.</p><p>@Template[type:emanation|range:vc]</p>"
+          "name": "Strike Ground"
         }
       }
     },
@@ -1369,7 +1369,7 @@
       "actions": {
         "kLMAuyZktmohOSXa": {
           "name": "Cast",
-          "description": "<p>Make a <strong>Spellcast Roll</strong> against all adversaries in front of you within Close range. Once per rest on a success, create an illusion of flashing colors and lights that temporarily <em>Stuns</em> targets you succeed against and forces them to mark a Stress. While <em>Stunned</em>, they can’t use reactions and can’t take any other actions until they clear this condition.</p><p>@Template[type:infront|range:c]</p>"
+          "description": "<p>Make a <strong>Spellcast Roll</strong> against all adversaries in front of you within Close range. Once per rest on a success, create an illusion of flashing colors and lights that temporarily <em>Stuns</em> targets you succeed against and forces them to mark a Stress. While <em>Stunned</em>, they can’t use reactions and can’t take any other actions until they clear this condition.</p>"
         }
       },
       "effects": {
@@ -1514,11 +1514,10 @@
     },
     "Manifest Wall": {
       "name": "Manifest Wall",
-      "description": "<p class=\"Body-Foundation\">Make a <strong>Spellcast Roll (15)</strong>. Once per rest on a success, <strong>spend a Hope</strong> to create a temporary magical wall between two points within Far range. It can be up to 50 feet high and form at any angle. Creatures or objects in its path are shunted to a side of your choice. The wall stays up until your next rest or you cast Manifest Wall again.</p><p>@Template[type:ray|range:f]</p>",
+      "description": "<p class=\"Body-Foundation\">Make a <strong>Spellcast Roll (15)</strong>. Once per rest on a success, <strong>spend a Hope</strong> to create a temporary magical wall between two points within Far range. It can be up to 50 feet high and form at any angle. Creatures or objects in its path are shunted to a side of your choice. The wall stays up until your next rest or you cast Manifest Wall again.</p>",
       "actions": {
         "nFzMCrW7wuXCCmJW": {
-          "name": "Spend Hope",
-          "description": "<p class=\"Body-Foundation\">Make a <strong>Spellcast Roll (15)</strong>. Once per rest on a success, <strong>spend a Hope</strong> to create a temporary magical wall between two points within Far range. It can be up to 50 feet high and form at any angle. Creatures or objects in its path are shunted to a side of your choice. The wall stays up until your next rest or you cast Manifest Wall again.</p><p>@Template[type:ray|range:f]</p>"
+          "name": "Spend Hope"
         }
       }
     },
@@ -1550,11 +1549,10 @@
     },
     "Mass Enrapture": {
       "name": "Mass Enrapture",
-      "description": "<p class=\"Body-Foundation\">Make a <strong>Spellcast Roll</strong> against all targets within Far range. Targets you succeed against become temporarily <em>Enraptured</em>. While <em>Enraptured</em>, a target’s attention is fixed on you, narrowing their field of view and drowning out any sound but your voice. <strong>Mark a Stress</strong> to force all <em>Enraptured</em> targets to mark a Stress, ending this spell.</p><p>@Template[type:emanation|range:f]</p>",
+      "description": "<p class=\"Body-Foundation\">Make a <strong>Spellcast Roll</strong> against all targets within Far range. Targets you succeed against become temporarily <em>Enraptured</em>. While <em>Enraptured</em>, a target’s attention is fixed on you, narrowing their field of view and drowning out any sound but your voice. <strong>Mark a Stress</strong> to force all <em>Enraptured</em> targets to mark a Stress, ending this spell.</p>",
       "actions": {
         "r5eA3tAH7EplOQCP": {
-          "name": "Enrapture",
-          "description": "<p class=\"Body-Foundation\">Make a <strong>Spellcast Roll</strong> against all targets within Far range. Targets you succeed against become temporarily <em>Enraptured</em>. While <em>Enraptured</em>, a target’s attention is fixed on you, narrowing their field of view and drowning out any sound but your voice. <strong>Mark a Stress</strong> to force all <em>Enraptured</em> targets to mark a Stress, ending this spell.</p><p>@Template[type:emanation|range:f]</p>"
+          "name": "Enrapture"
         },
         "QhBaM0LU9tmSI3IO": {
           "name": "Mark Stress",
@@ -1711,11 +1709,10 @@
     },
     "Night Terror": {
       "name": "Night Terror",
-      "description": "<p class=\"Body-Foundation\">Once per long rest, choose any targets within Very Close range to perceive you as a nightmarish horror. The targets must succeed on a Reaction Roll (16) or become temporarily <em>Horrified</em>. While <em>Horrified</em>, they’re <em>Vulnerable</em>. Steal a number of Fear from the GM equal to the number of targets that are <em>Horrified</em> (up to the number of Fear in the GM’s pool). Roll a number of <strong>d6s</strong> equal to the number of stolen Fear and deal the total damage to each <em>Horrified</em> target. Discard the stolen Fear.</p><p>@Template[type:emanation|range:vc]</p>",
+      "description": "<p class=\"Body-Foundation\">Once per long rest, choose any targets within Very Close range to perceive you as a nightmarish horror. The targets must succeed on a Reaction Roll (16) or become temporarily <em>Horrified</em>. While <em>Horrified</em>, they’re <em>Vulnerable</em>. Steal a number of Fear from the GM equal to the number of targets that are <em>Horrified</em> (up to the number of Fear in the GM’s pool). Roll a number of <strong>d6s</strong> equal to the number of stolen Fear and deal the total damage to each <em>Horrified</em> target. Discard the stolen Fear.</p>",
       "actions": {
         "e4A6GQERsn08IBby": {
-          "name": "Horrify",
-          "description": "<p class=\"Body-Foundation\">Once per long rest, choose any targets within Very Close range to perceive you as a nightmarish horror. The targets must succeed on a Reaction Roll (16) or become temporarily <em>Horrified</em>. While <em>Horrified</em>, they’re <em>Vulnerable</em>. Steal a number of Fear from the GM equal to the number of targets that are <em>Horrified</em> (up to the number of Fear in the GM’s pool). Roll a number of <strong>d6s</strong> equal to the number of stolen Fear and deal the total damage to each <em>Horrified</em> target. Discard the stolen Fear.</p><p>@Template[type:emanation|range:vc]</p>"
+          "name": "Horrify"
         },
         "ELzQvftGxZigPkBH": {
           "name": "Steal Fear",
@@ -1863,7 +1860,7 @@
       "actions": {
         "WTnjKQs2uI1TuF9r": {
           "name": "Cast",
-          "description": "<p><span>Spend a </span><span class=\"tooltip-convert\"><strong>Hope</strong></span> to make a </span><span class=\"tooltip-convert\"><strong>Spellcast Roll</strong></span> and conjure throwing blades that strike out at all targets within </span><span class=\"tooltip-convert\">Very Close</span> range. Targets you succeed against take </span><span>d8+2</span> magic damage using your </span><span class=\"tooltip-convert\">Proficiency</span>.</p><p>@Template[type:emanation|range:vc]</p>"
+          "description": "<p><strong>Spend a Hope</strong> to make a <strong>Spellcast Roll</strong> and conjure throwing blades that strike out at all targets within Very Close range. Targets you succeed against take <strong>d8+2</strong> magic damage using your Proficiency.</p>"
         }
       }
     },
@@ -1939,11 +1936,10 @@
     },
     "Rejuvenation Barrier": {
       "name": "Rejuvenation Barrier",
-      "description": "<p class=\"Body-Foundation\">Make a <strong>Spellcast Roll (15)</strong>. Once per rest on a success, create a temporary barrier of protective energy around you at Very Close range. You and all allies within the barrier when this spell is cast clear <strong>1d4</strong> Hit Points. While the barrier is up, you and all allies within have resistance to physical damage from outside the barrier.</p><p class=\"Body-Foundation\">When you move, the barrier follows you.</p><p>@Template[type:emanation|range:vc]</p>",
+      "description": "<p class=\"Body-Foundation\">Make a <strong>Spellcast Roll (15)</strong>. Once per rest on a success, create a temporary barrier of protective energy around you at Very Close range. You and all allies within the barrier when this spell is cast clear <strong>1d4</strong> Hit Points. While the barrier is up, you and all allies within have resistance to physical damage from outside the barrier.</p><p class=\"Body-Foundation\">When you move, the barrier follows you.</p>",
       "actions": {
         "XdAwXl2uWNinInFe": {
-          "name": "Cast",
-          "description": "<p class=\"Body-Foundation\">Make a <strong>Spellcast Roll (15)</strong>. Once per rest on a success, create a temporary barrier of protective energy around you at Very Close range. You and all allies within the barrier when this spell is cast clear <strong>1d4</strong> Hit Points. While the barrier is up, you and all allies within have resistance to physical damage from outside the barrier.</p><p class=\"Body-Foundation\">When you move, the barrier follows you.</p><p>@Template[type:emanation|range:vc]</p>"
+          "name": "Cast"
         }
       },
       "effects": {
@@ -2079,8 +2075,7 @@
       "description": "<p class=\"Body-Foundation\">Make a <strong>Spellcast Roll (16)</strong>. On a success, <strong>mark any number of Stress</strong> to target a line of allies within Far range. You can clear Hit Points on the targets equal to the number of Stress marked, divided among them however you’d like.</p>",
       "actions": {
         "dmnB4ZMSk8lsB8Lg": {
-          "name": "Cast",
-          "description": "<p>Make a <strong>Spellcast Roll (16)</strong>. On a success, <strong>mark any number of Stress</strong> to target a line of allies within Far range. You can clear Hit Points on the targets equal to the number of Stress marked, divided among them however you’d like.</p><p>@Template[type:ray|range:f]</p>"
+          "name": "Cast"
         }
       }
     },
@@ -2119,11 +2114,10 @@
     },
     "Shadowbind": {
       "name": "Shadowbind",
-      "description": "<p class=\"Body-Foundation\">Make a <strong>Spellcast Roll</strong> against all adversaries within Very Close range. Targets you succeed against are temporarily <em>Restrained</em> as their shadow binds them in place.</p><p>@Template[type:emanation|range:vc]</p>",
+      "description": "<p class=\"Body-Foundation\">Make a <strong>Spellcast Roll</strong> against all adversaries within Very Close range. Targets you succeed against are temporarily <em>Restrained</em> as their shadow binds them in place.</p>",
       "actions": {
         "Llr9uIDUCrfsiZNn": {
-          "name": "Cast",
-          "description": "<p class=\"Body-Foundation\">Make a <strong>Spellcast Roll</strong> against all adversaries within Very Close range. Targets you succeed against are temporarily <em>Restrained</em> as their shadow binds them in place.</p><p>@Template[type:emanation|range:vc]</p>"
+          "name": "Cast"
         }
       },
       "effects": {
@@ -2651,10 +2645,7 @@
       },
       "effects": {
         "eSfBBZ7IP8qirLu7": {
-          "name": "Veiled",
-          "advantageSources": {
-            "Attack rolls you make through the darkness": "Attack rolls you make through the darkness"
-          }
+          "name": "Veiled"
         }
       }
     },
@@ -2750,11 +2741,10 @@
     },
     "Whirlwind": {
       "name": "Whirlwind",
-      "description": "<p class=\"Body-Foundation\">When you make a successful attack against a target within Very Close range, you can <strong>spend a Hope</strong> to use the attack against all other targets within Very Close range. All additional adversaries you succeed against with this ability take half damage.</p><p>@Template[type:emanation|range:vc]</p>",
+      "description": "<p class=\"Body-Foundation\">When you make a successful attack against a target within Very Close range, you can <strong>spend a Hope</strong> to use the attack against all other targets within Very Close range. All additional adversaries you succeed against with this ability take half damage.</p>",
       "actions": {
         "g9X0wRuCtAYzF576": {
-          "name": "Spend a Hope",
-          "description": "<p class=\"Body-Foundation\">When you make a successful attack against a target within Very Close range, you can <strong>spend a Hope</strong> to use the attack against all other targets within Very Close range. All additional adversaries you succeed against with this ability take half damage.</p><p>@Template[type:emanation|range:vc]</p>"
+          "name": "Spend a Hope"
         }
       }
     },
@@ -2796,7 +2786,7 @@
     },
     "Wrangle": {
       "name": "Wrangle",
-      "description": "<p class=\"Body-Foundation\">Make an Agility Roll against all targets within Close range.<strong> Spend a Hope</strong> to move targets you succeed against, and any willing allies within Close range, to another point within Close range.</p><p>@Template[type:emanation|range:c]</p>",
+      "description": "<p class=\"Body-Foundation\">Make an Agility Roll against all targets within Close range.<strong> Spend a Hope</strong> to move targets you succeed against, and any willing allies within Close range, to another point within Close range.</p>",
       "actions": {
         "XKY0LJYmvuILmNNU": {
           "name": "Agility Roll",
@@ -2806,7 +2796,7 @@
     },
     "Zone of Protection": {
       "name": "Zone of Protection",
-      "description": "<p class=\"Body-Foundation\">Make a <strong>Spellcast Roll (16)</strong>. Once per long rest on a success, choose a point within Far range and create a visible zone of protection there for all allies within Very Close range of that point. When you do, place a <strong>d6</strong> on this card with the 1 value facing up. When an ally in this zone takes damage, they reduce it by the die’s value. You then increase the die’s value by one. When the die’s value would exceed 6, this effect ends.</p><p>@Template[type:emanation|range:vc]</p>",
+      "description": "<p class=\"Body-Foundation\">Make a <strong>Spellcast Roll (16)</strong>. Once per long rest on a success, choose a point within Far range and create a visible zone of protection there for all allies within Very Close range of that point. When you do, place a <strong>d6</strong> on this card with the 1 value facing up. When an ally in this zone takes damage, they reduce it by the die’s value. You then increase the die’s value by one. When the die’s value would exceed 6, this effect ends.</p>",
       "actions": {
         "U4faKrfbdN797zJm": {
           "name": "Cast",

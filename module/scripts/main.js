@@ -200,6 +200,26 @@ Hooks.once('babele.init', (babele) => {
         }
       }
       return origGroups;
+    },
+
+    /**
+     * У таблиц добычи дополнительные формулы хранятся объектом в flags.daggerheart.altFormula.
+     * Babele не умеет сопоставлять такие вложенные узлы сам, поэтому обновляем подписи по ID.
+     */
+    "toRolltableAltFormula": (origFormula, translatedFormula) => {
+      if (!origFormula || typeof origFormula !== "object" || !translatedFormula || typeof translatedFormula !== "object") {
+        return origFormula;
+      }
+      for (const [formulaId, formula] of Object.entries(origFormula)) {
+        if (!formula || typeof formula !== "object") continue;
+        const translation = translatedFormula[formulaId];
+        if (!translation || typeof translation.name !== "string") continue;
+        const trimmed = translation.name.trim();
+        if (trimmed) {
+          formula.name = trimmed;
+        }
+      }
+      return origFormula;
     }
   });
 });

@@ -114,11 +114,17 @@
           "customFormula": "Пользовательская формула",
           "formula": "Формула"
         },
+        "area": {
+          "sectionTitle": "Области",
+          "shape": "Форма",
+          "size": "Размер"
+        },
         "displayInChat": "Отображать в чате",
         "deleteTriggerTitle": "Удалить триггер",
         "deleteTriggerContent": "Вы уверены, что хотите удалить триггер {trigger}?",
         "advantageState": "Состояние преимущества",
-        "damageOnSave": "Урон при броске реакции"
+        "damageOnSave": "Урон при броске реакции",
+        "useDefaultItemValues": "Использовать значения предмета по умолчанию"
       },
       "RollField": {
         "diceRolling": {
@@ -172,7 +178,8 @@
         },
         "stacking": {
           "title": "Стаки"
-        }
+        },
+        "targetDispositions": "Затрагиваемые токены"
       },
       "RangeDependance": {
         "hint": "Настройки для опциональной дистанции, на которой этот эффект должен активироваться",
@@ -260,6 +267,9 @@
           "headerTitle": "Бросок реакции противника"
         }
       },
+      "Base": {
+        "CannotAddType": "Нельзя добавить предметы типа {itemType} к актёрам типа {actorType}."
+      },
       "Character": {
         "advantageSources": {
           "label": "Источники преимущества",
@@ -286,6 +296,8 @@
         },
         "defaultHopeDice": "Кость Надежды по умолчанию",
         "defaultFearDice": "Кость Страха по умолчанию",
+        "defaultAdvantageDice": "Кость преимущества по умолчанию",
+        "defaultDisadvantageDice": "Кость помехи по умолчанию",
         "disadvantageSources": {
           "label": "Источники помехи",
           "hint": "Добавляйте отдельные слова или короткий текст в качестве напоминаний и подсказок о том, в чём у персонажа есть помеха."
@@ -2119,6 +2131,10 @@
           "hint": "Умножает любой получаемый урон на это число"
         }
       },
+      "Battlepoints": {
+        "full": "Боевые очки",
+        "short": "БО"
+      },
       "Bonuses": {
         "rest": {
           "downtimeAction": "Ход отдыха",
@@ -2535,11 +2551,13 @@
       "maxWithThing": "Макс. {thing}",
       "missingDragDropThing": "Перетащите {thing} сюда",
       "multiclass": "Мультикласс",
+      "name": "Название",
       "newCategory": "Новая категория",
       "newThing": "Новый {thing}",
       "next": "Далее",
       "none": "Нет",
       "noTarget": "Нет текущей цели",
+      "optionalThing": "Опционально: {thing}",
       "partner": "Напарник",
       "player": {
         "single": "Игрок",
@@ -2566,6 +2584,7 @@
       "rollDamage": "Бросок Урона",
       "rollWith": "Бросок {roll}",
       "save": "Бросок Реакции",
+      "saveSettings": "Сохранить настройки",
       "scalable": "Масштабируемый",
       "scars": "Шрамы",
       "situationalBonus": "Ситуативный бонус",
@@ -2772,8 +2791,14 @@
       },
       "Weapon": {
         "weaponType": "Тип оружия",
-        "primaryWeapon": "Основное оружие",
-        "secondaryWeapon": "Вспомогательное оружие"
+        "primaryWeapon": {
+          "full": "Основное оружие",
+          "short": "Основное"
+        },
+        "secondaryWeapon": {
+          "full": "Вспомогательное оружие",
+          "short": "Вспомогательное"
+        }
       }
     },
     "MACROS": {
@@ -3068,6 +3093,10 @@
         }
       },
       "Keybindings": {
+        "partySheet": {
+          "name": "Переключить лист группы",
+          "hint": "Открыть или закрыть лист активной группы"
+        },
         "spotlight": {
           "name": "Активировать участника боя",
           "hint": "Перемещает активацию на токен, над которым находится курсор или который выбран и присутствует в активном столкновении"
@@ -3277,6 +3306,7 @@
       },
       "ItemBrowser": {
         "title": "Обозреватель компендиума Daggerheart",
+        "windowTitle": "Обозреватель компендиума",
         "hint": "Выберите папку в боковой панели, чтобы начать просмотр компендиума",
         "browserSettings": "Настройки",
         "columnName": "Название",
@@ -3409,6 +3439,8 @@
           "companion": "Уровень {level} - {partner}",
           "companionNoPartner": "Нет напарника",
           "duplicateToNewTier": "Дублировать в новый ранг",
+          "activateParty": "Сделать активной группой",
+          "partyIsActive": "Активная",
           "createAdversary": "Создать противника",
           "pickTierTitle": "Выберите новый ранг для этого противника"
         },
@@ -3421,6 +3453,7 @@
       "Tooltip": {
         "disableEffect": "Отключить эффект",
         "enableEffect": "Включить эффект",
+        "edit": "Редактировать",
         "openItemWorld": "Открыть мир предметов",
         "openActorWorld": "Открыть мир персонажей",
         "sendToChat": "Отправить в чат",

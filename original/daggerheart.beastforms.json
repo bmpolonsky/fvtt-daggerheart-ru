@@ -416,7 +416,7 @@
     },
     "Demolish": {
       "name": "Demolish",
-      "description": "<p><strong>Spend a Hope</strong> to move up to Far range in a straight line and make an attack against all targets within Melee range of the line. Targets you succeed against take <strong>d8+10</strong> physical damage using your Proficiency and are temporarily <em>Vulnerable</em>.</p><p>@Template[type:ray|range:f]</p>",
+      "description": "<p><strong>Spend a Hope</strong> to move up to Far range in a straight line and make an attack against all targets within Melee range of the line. Targets you succeed against take <strong>d8+10</strong> physical damage using your Proficiency and are temporarily <em>Vulnerable</em>.</p>",
       "actions": {
         "5SXMT39vrZoK7GBM": {
           "name": "Attack",
@@ -580,7 +580,7 @@
     },
     "Trample": {
       "name": "Trample",
-      "description": "<p><strong>Mark a Stress</strong> to move up to Close range in a straight line and make an attack against all targets within Melee range of the line. Targets you succeed against take <strong>d8+1</strong> physical damage using your Proficiency and are temporarily <em>Vulnerable</em>.</p><p>@Template[type:ray|range:close]</p>",
+      "description": "<p><strong>Mark a Stress</strong> to move up to Close range in a straight line and make an attack against all targets within Melee range of the line. Targets you succeed against take <strong>d8+1</strong> physical damage using your Proficiency and are temporarily <em>Vulnerable</em>.</p>",
       "actions": {
         "YCOTIv9IVEKpumbJ": {
           "name": "Attack",
