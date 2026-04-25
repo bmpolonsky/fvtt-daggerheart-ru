@@ -5,6 +5,10 @@
     "altFormula": {
       "path": "flags.daggerheart.altFormula",
       "converter": "toRolltableAltFormula"
+    },
+    "results": {
+      "path": "results",
+      "converter": "toRolltableResults"
     }
   },
   "entries": {

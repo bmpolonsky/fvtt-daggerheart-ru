@@ -206,20 +206,50 @@ Hooks.once('babele.init', (babele) => {
      * У таблиц добычи дополнительные формулы хранятся объектом в flags.daggerheart.altFormula.
      * Babele не умеет сопоставлять такие вложенные узлы сам, поэтому обновляем подписи по ID.
      */
-    "toRolltableAltFormula": (origFormula, translatedFormula) => {
-      if (!origFormula || typeof origFormula !== "object" || !translatedFormula || typeof translatedFormula !== "object") {
-        return origFormula;
-      }
-      for (const [formulaId, formula] of Object.entries(origFormula)) {
-        if (!formula || typeof formula !== "object") continue;
-        const translation = translatedFormula[formulaId];
-        if (!translation || typeof translation.name !== "string") continue;
-        const trimmed = translation.name.trim();
-        if (trimmed) {
-          formula.name = trimmed;
+    "toRolltableAltFormula": (formulas, translations = {}) => {
+      for (const [id, formula] of Object.entries(formulas ?? {})) {
+        const name = translations[id]?.name?.trim();
+        if (name) {
+          formula.name = name;
         }
       }
-      return origFormula;
+      return formulas;
+    },
+
+    /**
+     * Babele 2.8 перевёл TableResult на общий document-конвертер и потерял старый fallback:
+     * document-result больше не подтягивает name из связанного Item-пака по documentUuid.
+     */
+    "toRolltableResults": (results, translations = {}) => {
+      for (const result of results ?? []) {
+        const key = Array.isArray(result.range) ? `${result.range[0]}-${result.range[1]}` : result._id;
+        const translation = translations?.[key] ?? translations?.[result._id];
+
+        const description = typeof translation === "string" ? translation : translation?.description;
+        let name = translation?.name;
+        if (!name && result.type === "document" && result.documentUuid) {
+          const parsed = foundry.utils.parseUuid(result.documentUuid);
+          const collection = typeof parsed?.collection === "string" ? parsed.collection : parsed?.collection?.collection;
+          name = collection ? game.babele?.translateField?.("name", collection, { name: result.name }) : null;
+        }
+
+        const update = {};
+        if (name) {
+          update.name = name;
+        }
+        if (description) {
+          update.description = description;
+        }
+        if (!Object.keys(update).length) {
+          continue;
+        }
+        if (typeof result.updateSource === "function") {
+          result.updateSource(update);
+        } else {
+          Object.assign(result, update);
+        }
+      }
+      return results;
     }
   });
 });
