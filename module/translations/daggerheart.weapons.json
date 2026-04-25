@@ -212,6 +212,10 @@
         "7285CRGdZfHCEtT2": {
           "name": "Защитное",
           "description": "+3 к Показателю Брони"
+        },
+        "i5HfkF5aKQuUCTEG": {
+          "name": "Защитное",
+          "description": "+3 к Показателю Брони"
         }
       },
       "attack": "Атака"
@@ -881,6 +885,10 @@
         "pZCrWd7zLTarvEQK": {
           "name": "Защитное",
           "description": "+2 к Показателю Брони"
+        },
+        "cXWSV50apzaNQkdA": {
+          "name": "Защитное",
+          "description": "+2 к Показателю Брони"
         }
       },
       "attack": "Атака"
@@ -999,6 +1007,10 @@
       "description": "<p><strong>Защитное:</strong> +1 к Показателю Брони</p>",
       "effects": {
         "vnR4Zhnb0rOqwrFw": {
+          "name": "Защитное",
+          "description": "+1 к Показателю Брони"
+        },
+        "qTxADRsQnKiYfOiQ": {
           "name": "Защитное",
           "description": "+1 к Показателю Брони"
         }
@@ -1171,6 +1183,10 @@
       "name": "Легендарный Круглый Щит",
       "effects": {
         "EixxJrRHyc6kj3Wg": {
+          "name": "Защитное",
+          "description": "+4 к Показателю Брони."
+        },
+        "Z2p00q5h6x6seXys": {
           "name": "Защитное",
           "description": "+4 к Показателю Брони."
         }
@@ -1424,6 +1440,10 @@
       "name": "Круглый Щит",
       "effects": {
         "eV4lFIpQMiKERj4U": {
+          "name": "Защитное",
+          "description": "+1 к Показателю Брони"
+        },
+        "M70a81e0Mg66jHRL": {
           "name": "Защитное",
           "description": "+1 к Показателю Брони"
         }

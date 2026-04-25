@@ -137,6 +137,7 @@
       },
       "Settings": {
         "attackModifier": "Модификатор атаки",
+        "attackBonus": "Бонус атаки",
         "attackName": "Название атаки",
         "criticalThreshold": "Порог критического успеха",
         "includeBase": {
@@ -575,6 +576,7 @@
       },
       "DamageReduction": {
         "maxUseableArmor": "Доступные ячейки брони",
+        "armorMarks": "Отметки брони",
         "armorWithStress": "Потратьте 1 стресс, чтобы использовать дополнительную отметку",
         "thresholdImmunities": "Иммунитеты к порогам",
         "stress": "Стресс",
@@ -1454,7 +1456,9 @@
         "emanation": "Испускание",
         "inFront": "Перед собой",
         "rectangle": "Прямоугольник",
-        "line": "Линия"
+        "line": "Линия",
+        "rect": "Прямоугольник",
+        "ray": "Луч"
       },
       "TokenSize": {
         "tiny": "Крошечный",
@@ -2804,7 +2808,9 @@
     "MACROS": {
       "Spotlight": {
         "errors": {
-          "noTokenSelected": "Чтобы перевести активацию на токен, его нужно либо выбрать, либо навести на него курсор"
+          "noTokenSelected": "Чтобы перевести активацию на токен, его нужно либо выбрать, либо навести на него курсор",
+          "noActiveCombat": "Нет активного боя",
+          "noCombatantSelected": "Чтобы перевести активацию на участника боя, его токен нужно либо выбрать, либо навести на него курсор"
         }
       }
     },
@@ -3258,6 +3264,18 @@
           "immunityTo": "Иммунитет: {immunities}"
         },
         "featureTitle": "Свойство класса",
+        "groupRoll": {
+          "title": "Групповой бросок",
+          "leader": "Ведущий",
+          "partyTeam": "Группа",
+          "team": "Команда",
+          "selectLeader": "Выберите ведущего",
+          "selectMember": "Выберите участника",
+          "rerollTitle": "Переброс группового броска",
+          "rerollContent": "Вы уверены, что хотите перебросить {trait}?",
+          "rerollTooltip": "Перебросить",
+          "wholePartySelected": "Выбрана вся группа"
+        },
         "healingRoll": {
           "title": "Исцеление - {damage}",
           "heal": "Исцелить",
