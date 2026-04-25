@@ -1,5 +1,17 @@
 # Changelog
 
+## v2026.04.25
+
+### Changed
+- Синхронизированы и переведены тексты интерфейса и компендиумов из обновления Foundryborne [2.2.0](https://github.com/Foundryborne/daggerheart/releases/tag/2.2.0) ([`58f66b8`](https://github.com/bmpolonsky/fvtt-daggerheart-ru/commit/58f66b8)).
+- Обновлены переводы таблиц случайного лута под новую схему формул редкости; названия результатов лута больше не дублируются в rolltables.
+- Обновлены требования совместимости в manifest и README: Daggerheart 2.0.0+ (проверено на 2.2.0).
+
+### Fixed
+- Синхронизированы описания beastform-способностей и разделённого действия `Fireball` после upstream-изменений Foundryborne 2.2.0.
+
+![GitHub Downloads](https://img.shields.io/github/downloads/bmpolonsky/fvtt-daggerheart-ru/v2026.04.25/total?color=green)
+
 ## v2026.04.12
 
 ### Fixed
