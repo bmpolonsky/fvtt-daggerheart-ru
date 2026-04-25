@@ -1,5 +1,15 @@
 # Changelog
 
+## v2026.04.25-v13
+
+### Added
+- Выпущена отдельная ветка совместимости с Foundry VTT v13 и Foundryborne Daggerheart 1.9.10: восстановлены v13-only ключи интерфейса и переводы старых embedded actions/effects, не влияющие на v14-документы.
+
+### Changed
+- Manifest v13-линейки указывает на ветку `v13-compat`, а архив загрузки — на релиз `v2026.04.25-v13`.
+
+![GitHub Downloads](https://img.shields.io/github/downloads/bmpolonsky/fvtt-daggerheart-ru/v2026.04.25-v13/total?color=green)
+
 ## v2026.04.25
 
 ### Changed
