@@ -36,8 +36,8 @@ function toCalVer(input) {
   // допускаем YYYY-MM-DD или YYYY.MM.DD
   let v = String(input).trim();
   if (/^\d{4}-\d{2}-\d{2}$/.test(v)) v = v.replace(/-/g, ".");
-  if (!/^\d{4}\.\d{2}\.\d{2}(?:\.\d{1,2})?$/.test(v)) {
-    throw new Error(`Неверный формат версии "${v}". Ожидаю YYYY.MM.DD[.NN]`);
+  if (!/^\d{4}\.\d{2}\.\d{2}(?:\.\d{1,2})?(?:-[A-Za-z0-9._-]+)?$/.test(v)) {
+    throw new Error(`Неверный формат версии "${v}". Ожидаю YYYY.MM.DD[.NN][-suffix]`);
   }
   return v;
 }
@@ -91,6 +91,10 @@ function updateManifest(manifest, zipName) {
   // Owner/Repo не шьём в коде — оставляем существующее значение, если оно кастомное.
   // Если download отсутствовал или вёл на latest — сформируем URL-шаблон для GitHub Releases текущего репо.
   const repoEnv = (process.env.GITHUB_REPOSITORY || "").trim(); // owner/repo (если запускаете в GitHub Actions)
+  const manifestBranch =
+    (process.env.RELEASE_MANIFEST_BRANCH || execSync("git branch --show-current", { encoding: "utf8" }).trim() || "main").trim();
+  const repoName = repoEnv || "bmpolonsky/fvtt-daggerheart-ru";
+  manifest.manifest = `https://raw.githubusercontent.com/${repoName}/${manifestBranch}/module/module.json`;
   if (repoEnv) {
     manifest.download = `https://github.com/${repoEnv}/releases/download/v${VERSION}/${zipName}`;
   } else {
@@ -99,7 +103,7 @@ function updateManifest(manifest, zipName) {
   }
 
   fs.writeFileSync(MANIFEST_PATH, JSON.stringify(manifest, null, 2) + "\n");
-  console.log("📝 module.json обновлён (version, download)");
+  console.log("📝 module.json обновлён (version, manifest, download)");
   return manifest;
 }
 
@@ -171,6 +175,7 @@ function main() {
 
   // Стадия релиза и упаковка
   stageReleaseContent();
+  fs.copyFileSync(MANIFEST_PATH, path.join(RELEASE_ROOT, "module.json"));
   const zipPath = zipReleaseFolder(ZIP_NAME);
 
   // Итоговая памятка
@@ -179,8 +184,9 @@ function main() {
 К следующему шагу:
   1) Создайте тег:           v${VERSION}
   2) Откройте релиз:         https://github.com/${repoEnv}/releases/new?tag=v${VERSION}
-  3) Прикрепите архив:       ${ZIP_NAME}
-  4) Проверка manifest URL:  ${manifest.manifest || "(заполните поле manifest в module.json)"}
+  3) Прикрепите manifest:    module.json
+  4) Прикрепите архив:       ${ZIP_NAME}
+  5) Проверка manifest URL:  ${manifest.manifest || "(заполните поле manifest в module.json)"}
 
 Папка релиза:
   ${RELEASE_MODULE_PATH}
