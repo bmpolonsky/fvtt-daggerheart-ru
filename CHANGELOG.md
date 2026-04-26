@@ -1,5 +1,15 @@
 # Changelog
 
+## v2026.04.26
+
+### Changed
+- Обновлены переводы из источника после релиза 2026.04.25 ([`5568e0d`](https://github.com/bmpolonsky/fvtt-daggerheart-ru/commit/5568e0d)).
+
+### Fixed
+- Восстановлено подтягивание переводов названий предметов в результатах rolltables для Babele 2.8+ ([`01deb36`](https://github.com/bmpolonsky/fvtt-daggerheart-ru/commit/01deb36)).
+
+![GitHub Downloads](https://img.shields.io/github/downloads/bmpolonsky/fvtt-daggerheart-ru/v2026.04.26/total?color=green)
+
 ## v2026.04.25-v13
 
 ### Added
