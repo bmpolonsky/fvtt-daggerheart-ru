@@ -841,15 +841,20 @@
         }
       },
       "GroupRollSelect": {
-        "title": "Group Roll",
-        "aidingCharacters": "Aiding Characters",
+        "cancelConfirmText": "Are you sure you want to cancel the Group Roll? This will close it for all other players too.",
+        "cancelConfirmTitle": "Cancel Group Roll",
+        "initializationTitle": "Character Selection",
+        "finishGroupRoll": "Finish Group Roll",
         "leader": "Leader",
         "leaderRoll": "Leader Roll",
+        "members": "Members",
         "openDialogForAll": "Open Dialog For All",
+        "removeRoll": "Remove Roll",
+        "resultsHint": "Results will appear when characters roll",
+        "selectLeaderHint": "Select one Character to be the leader",
+        "selectParticipantsHint": "Select one Character to be the leader",
         "startGroupRoll": "Start Group Roll",
-        "finishGroupRoll": "Finish Group Roll",
-        "cancelConfirmTitle": "Cancel Group Roll",
-        "cancelConfirmText": "Are you sure you want to cancel the Group Roll? This will close it for all other players too."
+        "title": "Group Roll"
       },
       "TokenConfig": {
         "actorSizeUsed": "Actor size is set, determining the dimensions"
@@ -3427,7 +3432,8 @@
         "domainTouchRequirement": "This domain card requires {nr} {domain} cards in the loadout to be used",
         "knowTheTide": "Know The Tide gained a token",
         "lackingItemTransferPermission": "User {user} lacks owner permission needed to transfer items to {target}",
-        "noTokenTargeted": "No token is targeted"
+        "noTokenTargeted": "No token is targeted",
+        "behaviorRegionRequiresGM": "Creating a Region with an attached Behavior requires an online GM"
       },
       "Progress": {
         "migrationLabel": "Performing system migration. Please wait and do not close Foundry."
