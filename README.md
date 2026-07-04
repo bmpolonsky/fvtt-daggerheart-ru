@@ -64,6 +64,131 @@ https://raw.githubusercontent.com/bmpolonsky/fvtt-daggerheart-ru/main/module/mod
 
 ---
 
+## Workflow поддержки
+
+В проекте есть две линии поддержки:
+
+* `main` — актуальная ветка для Foundry VTT v14 и Foundryborne Daggerheart 2.x.
+* `v13-compat` — отдельная ветка совместимости для Foundry VTT v13 и Foundryborne Daggerheart 1.9.10.
+
+Перед любой синхронизацией сначала проверьте состояние репозитория:
+
+```bash
+git status --short --branch
+git -C tmp_data/original-daggerheart status --short --branch
+git -C tmp_data/the-void-unofficial status --short --branch
+```
+
+Не перетирайте чужие локальные изменения. Если рабочее дерево не чистое, сначала разберитесь, какие правки уже есть. Это касается и временных репозиториев в `tmp_data`: особенно легко не заметить грязные LevelDB-файлы The Void.
+
+### Обычная актуальная ветка (`main`)
+
+Обычный поток обновления:
+
+```bash
+git switch main
+npm run update:sources
+npm run generate:originals
+npm run sync:i18n
+```
+
+Если обновление The Void мешает SRD-обновлению из-за локально изменённых pack-файлов, можно временно пропустить его:
+
+```bash
+SKIP_VOID_UPDATE=1 npm run update:sources
+```
+
+После этого вручную проверьте diff в `module/`, переведите новые строки и поправьте места, где автоматическая синхронизация не справилась.
+
+Для релиза:
+
+```bash
+npm run build:release -- YYYY.MM.DD
+git add CHANGELOG.md module/module.json package.json package-lock.json
+git commit -m "chore: new release YYYY.MM.DD"
+git tag vYYYY.MM.DD
+```
+
+Скрипт сборки должен оставить manifest на `main`:
+
+```text
+https://raw.githubusercontent.com/bmpolonsky/fvtt-daggerheart-ru/main/module/module.json
+```
+
+### Ветка совместимости (`v13-compat`)
+
+Сначала подтяните обычные изменения из `main`:
+
+```bash
+git switch v13-compat
+git merge main
+```
+
+В конфликтах release metadata сохраняйте v13-линию:
+
+* `module/module.json` version вида `YYYY.MM.DD-v13`;
+* Foundry compatibility `13.346` / `13.351` / `maximum: 13`;
+* Daggerheart system compatibility `1.9.10`;
+* manifest на ветку `v13-compat`;
+* download на конкретный v13 release tag.
+
+Если нужно подтянуть свежую структуру из upstream-ветки Foundryborne `V13`, используйте add-only поток:
+
+```bash
+git -C tmp_data/original-daggerheart switch V13
+git -C tmp_data/original-daggerheart pull --ff-only
+npm run generate:originals
+npm run sync:i18n:add-only
+git restore --source=HEAD -- original
+git -C tmp_data/original-daggerheart switch main
+```
+
+Важно: `original/` в ветке `v13-compat` должен оставаться актуальным v14-снимком из `main`. V13 `original` используется только временно как источник для add-only синхронизации.
+
+При ручной проверке v13 diff:
+
+* оставляйте v13-only entries/actions/effects с другими ID;
+* не возвращайте удалённые в v14 поля на тех же ID (`description`, `advantageSources`, `disadvantageSources` и т.п.), потому что Babele применит их и к v14-документам;
+* старые переводы берите из истории до перехода на Foundryborne 2.x, если там уже была устоявшаяся формулировка;
+* проверяйте, что `module/translations` не содержит случайно добавленных английских строк, кроме исходных ключей match-map.
+
+Быстрая проверка опасных same-ID добавлений после v13 add-only sync:
+
+```bash
+git diff -- module/translations | rg '^\+\s+"(description|advantageSources|disadvantageSources)"'
+```
+
+Если команда что-то нашла, это не всегда ошибка, но такие места нужно проверить вручную: для существующих в v14 ID эти поля обычно надо удалить из перевода.
+
+Для v13-релиза:
+
+```bash
+npm run build:release -- YYYY.MM.DD-v13
+git add CHANGELOG.md module/module.json package.json package-lock.json
+git commit -m "chore: new release YYYY.MM.DD-v13"
+git tag vYYYY.MM.DD-v13
+```
+
+Скрипт сборки должен оставить manifest на `v13-compat`:
+
+```text
+https://raw.githubusercontent.com/bmpolonsky/fvtt-daggerheart-ru/v13-compat/module/module.json
+```
+
+А `download` должен указывать на конкретный архив релиза:
+
+```text
+https://github.com/bmpolonsky/fvtt-daggerheart-ru/releases/download/vYYYY.MM.DD-v13/fvtt-daggerheart-ru-vYYYY.MM.DD-v13.zip
+```
+
+После сборки проверьте manifest внутри архива:
+
+```bash
+unzip -p release/fvtt-daggerheart-ru-vYYYY.MM.DD-v13.zip module/module.json
+```
+
+---
+
 ## Благодарности
 
 * Авторам исходного фанатского перевода Daggerheart на сайте [https://daggerheart.su/](https://daggerheart.su/).

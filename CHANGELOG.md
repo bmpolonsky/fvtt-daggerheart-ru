@@ -1,5 +1,16 @@
 # Changelog
 
+## v2026.07.04
+
+### Changed
+- Синхронизированы и переведены тексты интерфейса и компендиумов из обновления Foundryborne [2.5.0](https://github.com/Foundryborne/daggerheart/releases/tag/2.5.0) ([`01fde34`](https://github.com/bmpolonsky/fvtt-daggerheart-ru/commit/01fde34)).
+- Обновлены требования совместимости в manifest: Daggerheart 2.5.0+ (проверено на 2.5.0).
+
+### Fixed
+- Сохранены `@Lookup`-ссылки в описаниях противников и убраны формулы из локализованных названий действий орды.
+
+![GitHub Downloads](https://img.shields.io/github/downloads/bmpolonsky/fvtt-daggerheart-ru/v2026.07.04/total?color=green)
+
 ## v2026.04.26
 
 ### Changed
