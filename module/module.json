@@ -4,8 +4,8 @@
   "description": "Русская локализация Daggerheart для Foundry VTT",
   "version": "2026.07.04",
   "compatibility": {
-    "minimum": "14.359",
-    "verified": "14.360"
+    "minimum": "14.364",
+    "verified": "14.364"
   },
   "relationships": {
     "requires": [
