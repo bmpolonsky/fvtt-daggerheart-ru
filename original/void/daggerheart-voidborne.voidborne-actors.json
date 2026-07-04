@@ -1,0 +1,970 @@
+{
+  "label": "Voidborne: Adversaries & Environments",
+  "folders": {
+    "Adversaries": "Adversaries",
+    "Environments": "Environments",
+    "Tier 1": "Tier 1",
+    "Tier 2": "Tier 2",
+    "Tier 3": "Tier 3",
+    "Tier 4": "Tier 4"
+  },
+  "mapping": {
+    "description": "system.description",
+    "experiences": "system.experiences",
+    "motivesAndTactics": "system.motivesAndTactics",
+    "impulses": "system.impulses",
+    "potentialAdversaries": {
+      "path": "system.potentialAdversaries",
+      "converter": "toPotentialAdversaries"
+    },
+    "attack": "system.attack.name",
+    "items": {
+      "path": "items",
+      "converter": "toItemsWithActions"
+    },
+    "effects": {
+      "path": "effects",
+      "converter": "toEffects"
+    }
+  },
+  "entries": {
+    "Cephilith Priest": {
+      "name": "Cephilith Priest",
+      "description": "<p>A robe-wearing, squid-headed humanoid from the Outer Realms.</p>",
+      "motivesAndTactics": "Attack the weak-minded, avoid melee, lord over, oppress",
+      "attack": "Psychic Strike",
+      "experiences": {
+        "nOGDcnZ4Q6TK4NuU": {
+          "name": "Outer Realms"
+        }
+      },
+      "items": {
+        "7v01IuOXMeapCymv": {
+          "name": "Psychic Blast",
+          "description": "<p>Spend a Fear and choose up to three targets within Close range to make a Knowledge or Instinct Reaction Roll (20). Targets who succeed take 2d10+5 direct magical damage. Targets who fail take 4d10+10 direct magical damage and are Vulnerable until spotlighted.</p>",
+          "actions": {
+            "auKYuyswzDaQFKIS": {
+              "name": "Spend a Fear"
+            }
+          }
+        },
+        "yJpuKBJUkzudGAEV": {
+          "name": "Cerebral Suction",
+          "description": "<p>Spend a Fear to choose a Vulnerable target within Melee range. The Priest grabs the target and tries to insert their face tentacles into the target’s ears, nose, and mouth. The target must succeed on a Strength Reaction Roll or mark 1d6 Stress. The Priest clears a number of Stress equal to the number of Stress the target marked.</p>",
+          "actions": {
+            "RdodqR3aqKFlkm6G": {
+              "name": "Spend a Fear"
+            }
+          }
+        },
+        "gajHdiWc7EQC9NSc": {
+          "name": "Telekinetic Grasp",
+          "description": "<p>When the Priest succeeds on a standard attack, you can mark a Stress to Restrain the target until they spend a Hope to clear this condition.</p>",
+          "actions": {
+            "qCoTGUpG8U7PJST5": {
+              "name": "Mark a Stress"
+            }
+          },
+          "effects": {
+            "CpUFmWfkwghRkzbC": {
+              "name": "Telekinetic Grasp"
+            }
+          }
+        }
+      }
+    },
+    "Chimera": {
+      "name": "Chimera",
+      "description": "<p>A giant, ﬁre-breathing monster with a lion’s head, a goat’s body, and a serpent’s tail.</p>",
+      "motivesAndTactics": "Play with their food, prowl their territory, reveal their bestial nature, slay cattle",
+      "attack": "Claws",
+      "experiences": {
+        "RU3piZDph23fsRZX": {
+          "name": "Predator"
+        }
+      },
+      "items": {
+        "N4TCEv3B2Pvm2Mdi": {
+          "name": "Rending Jaws",
+          "description": "<p>When the @Lookup[@name] makes a successful attack, the target must mark 2 Armor Slots instead of 1 to reduce the damage by one threshold.</p>"
+        },
+        "iWFSjcgirlhxU26C": {
+          "name": "Breath of Fire",
+          "description": "<p>Spend a Fear to target up to three PCs in front of the Chimera within Close range. All targets must make an Agility Reaction Roll (20). Targets who fail take 3d12 magic damage. Targets who succeed must to either mark an Armor Slot or mark a Stress.</p>",
+          "actions": {
+            "fQRrSphnkvTtyXd1": {
+              "name": "Breath of Fire"
+            }
+          }
+        },
+        "vm1MdNk29SiXDbaH": {
+          "name": "Serpent Strike",
+          "description": "<p>When the Chimera is attacked by a PC within Very Close range, you can mark a Stress to make an attack against them. On a success, deal 4d4+10 physical damage and Poison them until their next rest or they succeed on a Knowledge Roll (20). While Poisoned, the target must roll a d6 before they make an action roll. On a result of 3 or lower, they must mark a Stress.</p>",
+          "effects": {
+            "TLVW6h2G73Xgwh3l": {
+              "name": "Poisoned",
+              "description": "<p>While Poisoned, the target must roll a d6 before they make an action roll. On a result of 3 or lower, they must mark a Stress.</p>"
+            }
+          }
+        },
+        "eKZb08cEGmT5y3ic": {
+          "name": "Double Claw",
+          "description": "<p>After the Chimera makes a standard attack, you can mark a Stress to make an additional standard attack. If both attacks target the same creature, combine the damage.</p>"
+        }
+      }
+    },
+    "Convergence, The City of Portals": {
+      "name": "Convergence, The City of Portals",
+      "description": "<p>A sprawling metropolis at the nexus of creation, where inﬂuential ﬁgures from across the realms gather.</p>",
+      "impulses": "Confront tthem with alien customs, dazzle them with inﬁnite variety, tempt them with the impossible",
+      "potentialAdversaries": {
+        "T1DYdiPL90Oqex3f": {
+          "label": "Power Players"
+        },
+        "DXZOUbHQ3IqnxTWB": {
+          "label": ""
+        }
+      },
+      "items": {
+        "uTIJgFc4YpiGS5hv": {
+          "name": "Impossibilities Abound",
+          "description": "<p>Convergence is a nexus of gods, monsters, aliens, and all manner of dimension-hoppers. Because mortal life is generally beneath these beings’ concern, PCs have disadvantage on action rolls to inﬂuence them unless they have leverage against them or know what the NPC cares about.</p><p><em>What manner of being currently holds sway in the city? What strange customs do they practice? Which PC is most confused or oﬀ ended by them, and which PC adopts these customs as their own?</em></p>"
+        },
+        "GMI6ZZN8ajcZ6ksF": {
+          "name": "Into the Multiverse",
+          "description": "<p>The city of Convergence has a portal or door to every plane of existence.</p><p><em>Where (or when) does the party want to go? Where is that portal located, and who controls that area?</em></p>"
+        },
+        "mRDYDxrsH8d1MqEN": {
+          "name": "Everything Everywhere All at Once",
+          "description": "<p>This city has the solution to any problem, if you can ﬁnd it. A PC seeking a particular item with wondrous properties can make an Instinct or Presence Roll to ﬁnd it in the city’s pandimensional marketplace.</p><ul><li><p><strong>Critical Success:</strong> The PC ﬁnds the perfect item, and the merchant who has it only wants something the PC considers inconsequential in exchange.</p></li><li><p><strong>Success with Hope:</strong> The PC ﬁnds the perfect item, and can exchange something of equal value for it.</p></li><li><p><strong>Success with Fear:</strong> The PC ﬁnds the perfect item, but the merchant who has it will only exchange it for something the party can’t give them... yet.</p></li><li><p><strong>Any Failure:</strong> The PC must mark a Stress as they go on a wild goose chase but come up empty-handed. The PC can mark an additional Stress to change this result into a success with Fear.</p></li></ul><p><em>Who has the item the party needs? What do they want in return?</em></p>"
+        },
+        "J4M8lwzaPK1P1445": {
+          "name": "Don’t Make Waves",
+          "description": "<p>Because anything is possible in Convergence, the city maintains a labyrinthine bureaucracy that issues and enforces ordinances regarding all exchanges and interactions between the Realms. When the party arrives in Convergence, start a Countdown (6) that ticks down whenever a PC does something that upsets the city’s delicate political equilibrium. When it triggers, the PCs become Wanted until they clear their names with the authorities. When a Wanted PC rolls with Fear, you can summon 1d4 Temporal Enforcers who appear within Very Close range, immediately take the spotlight, and try to apprehend the party.</p><p><em>What has the party done (or what do they plan to do) that draws the attention and ire of the Consortium? How can they ﬁx the problem they caused?</em></p>",
+          "actions": {
+            "VRmtrHp8QXgxg6nR": {
+              "name": "Start Countdown",
+              "countdown": {
+                "Don’t Make Waves": "Don’t Make Waves"
+              }
+            }
+          }
+        },
+        "8bouH2F4H4AdBMO4": {
+          "name": "An Oﬀer You Can’t Refuse",
+          "description": "<p>Convergence is home to a tenuous network of rival factions. Spend a Fear to have one of them present the party with an easy solution to a diﬃcult problem in exchange for their allegiance. If the party refuses, each PC must mark a Stress and they can’t return to that faction for help in the future.</p><p><em>Which faction oﬀers the party their support? Who do they want the party to act against?</em></p>",
+          "actions": {
+            "75KypxjYbZnBXuK3": {
+              "name": "Spend a Fear"
+            }
+          }
+        }
+      }
+    },
+    "Crystal Wasteland": {
+      "name": "Crystal Wasteland",
+      "description": "<p>A harsh and alien landscape that shines with towers of glittering crystal.</p>",
+      "impulses": "Cut them to their core, fracture their psyches, show their true reﬂection",
+      "items": {
+        "1rjEKbNof78qpc1j": {
+          "name": "Harmonic Resonance",
+          "description": "<p>The crystals here reverberate with magical energy. A PC can make a downtime move to try and Attune to the environment with a successful Spellcast Roll. Spellcast Rolls made by an Attuned PC inside the Crystal Wasteland have advantage. A PC clears the condition when they leave the wasteland.</p><p><em>How does attunement to this place alter your sensory experience of it? What sound or song from your childhood does this place conjure?</em></p>"
+        },
+        "RCjUBWeUCYgsWDcq": {
+          "name": "Gravitational Anomalies",
+          "description": "<p>Strange, localized phenomena dot the landscape, warping distance and direction. Spend a Fear to alter the gravity at a point of your choice. All targets within Close range of that point must make a Knowledge Reaction Roll to calculate their new trajectories. Targets who fail take 3d8+4 physical damage as they are thrown up and away. Targets who succeed must mark a Stress or take half damage.</p><p><em>What does it feel like as your body and mind ﬁght to re-establish equilibrium? Is there any way to use this to your advantage?</em></p>",
+          "actions": {
+            "8IXAs1oCdaIEktyp": {
+              "name": "Alter Gravity"
+            }
+          }
+        },
+        "UGvHomD6DPjwgfNl": {
+          "name": "Arcane Reﬂection",
+          "description": "<p>Spend a Fear to have any number of PCs glimpse a reﬂection in the crystal of who they once were or might become. Each target makes a Fate Roll. Targets who succeed see a vision of their better self and can replace one Experience. Targets see a vision of their dark past–or an even darker future–and must mark a Stress, and you gain a fear.</p><p><em>Who do the PCs see on the other side of the crystal? How does it make them feel?</em></p>",
+          "actions": {
+            "eLOkTwTAO4LmxXCM": {
+              "name": "Spend a Fear"
+            }
+          }
+        },
+        "6LO949wHs785XT1N": {
+          "name": "Razor-Sharp Terrain",
+          "description": "<p>When a PC fails a roll to navigate the wasteland, they make a Finesse Reaction Roll. On a failure, they cut themselves on the sharp edges of the terrain. Shards of magic crystal become embedded in their wound and slowly grow, Crystallizing them. Activate a Crystal Countdown (1) for that PC. Until they remove the condition with a successful Knowledge Roll, a Crystallizing PC ticks up their Crystal Countdown at the start of each rest and has a penalty to their Evasion equal to its value. The countdown ends with the condition is cleared.</p><p><em>What does the crystal look like as it grows? What does it feel like?</em></p>"
+        },
+        "A1UXQHkEVbULW5Hu": {
+          "name": "Psychic Shuﬄe",
+          "description": "<p>When the PCs take a long rest, you can spend a Fear to swap their psyches. Collect all the players’ character sheets, then shuﬄe and randomly redistribute them. Each character sheet comes with that PC’s Domain cards and player aids. A PC can regain their psyche with a successful Knowledge Roll, at which point they trade sheets with the player who has their original character sheet.</p><p><em>How does it feel being in someone else’s skin? If you could choose to stay like them in one way, what would it be?</em></p>"
+        }
+      }
+    },
+    "Doppelhünd": {
+      "name": "Doppelhünd",
+      "description": "<p>A vicious magical six-legged hellhound with glowing red eyes and two long, toothy squid arms. They confuse enemies by conjuring an illusory duplicate of themself.</p>",
+      "motivesAndTactics": "Ambush prey, kill for sport, play with food, trick and deceive",
+      "attack": "Toothy Arms",
+      "experiences": {
+        "Ha2qXPfWxBq4HtZn": {
+          "name": "Shadows"
+        }
+      },
+      "items": {
+        "quSh04ErQ8WZDa7Z": {
+          "name": "Blink Beast",
+          "description": "<p>When combat begins, place a duplicate within Close range of the @Lookup[@name]. The duplicate can move when the @Lookup[@name] is spotlighted, and the @Lookup[@name] can target enemies with attacks as if they’re in the same place as their duplicate. The @Lookup[@name] occupies both places until attacked, at which point you roll a d6 to determine whether the attack is targeting the @Lookup[@name] (the result is an even number) or their duplicate (the result is an odd number). Attacks against the duplicate automatically fail. A successful attack against the @Lookup[@name] dispels the duplicate until you spend a Fear to conjure it again.</p>",
+          "actions": {
+            "HcEAFXjx2WPFbVf6": {
+              "name": "Place Duplicate"
+            },
+            "WFScuKMIwhrNZA4o": {
+              "name": "Roll a d6"
+            }
+          }
+        },
+        "KDZdtKuTqjcyF97Z": {
+          "name": "Double Lash",
+          "description": "<p>When the @Lookup[@name] makes a standard attack, you can <strong>mark a Stress</strong> to make an additional standard attack. If both attacks target the same creature, combine the damage.</p>"
+        }
+      }
+    },
+    "Dragon Knight": {
+      "name": "Dragon Knight",
+      "description": "<p>A knight clad in dragonplate armor and a helmet in the shape of a dragon’s head.</p>",
+      "motivesAndTactics": "Exploit an opening, get some distance, knock oﬀ-balance, strike from above",
+      "attack": "Lance",
+      "experiences": {
+        "YCkhcZrOHPG4eol4": {
+          "name": "Acrobatics"
+        }
+      },
+      "items": {
+        "ShfDh0FCyLnld836": {
+          "name": "Leaping Strike",
+          "description": "<p><strong>Mark a Stress</strong> and choose a target within Far range. The @Lookup[@name] moves into Melee range of the target and make a standard attack against them. On a success, gain a +1d12 bonus to the damage roll and the target must mark an Armor Slot without receiving its beneﬁts (they can still use armor to reduce the damage).</p>",
+          "actions": {
+            "l65hc8Jcfln0VoZk": {
+              "name": "Leaping Strike"
+            }
+          }
+        },
+        "Q9T98k2CDDJ25UVT": {
+          "name": "High Ground",
+          "description": "<p>The @Lookup[@name] gains a +2 bonus to attack rolls when attacking a target from above.</p>",
+          "effects": {
+            "cqGrSyJUhkZP8Nib": {
+              "name": "High Ground"
+            }
+          }
+        },
+        "tBMxDmIWT4dDrK06": {
+          "name": "Enhanced Critical",
+          "description": "<p>The @Lookup[@name]’s attack roll counts as a critical success if the result on the d20 is a 19 or a 20.</p>",
+          "effects": {
+            "82yvwjOK2OypcQCI": {
+              "name": "Enhanced Critical"
+            }
+          }
+        }
+      }
+    },
+    "Enraged Mountain Troll": {
+      "name": "Enraged Mountain Troll",
+      "description": "<p>A hideous, twisted giant born out of a rock, wearing purloined armor and a belt of severed heads.</p>",
+      "motivesAndTactics": "Ambush from behind, attack from above, bellow, smash enemies against the rocks, throw large boulders",
+      "attack": "Claw Swipe",
+      "experiences": {
+        "n6FpnTpo6j0fOk31": {
+          "name": "Mountains"
+        }
+      },
+      "items": {
+        "nFUMJd3W2Q9nB0VA": {
+          "name": "Relentless (3)",
+          "description": "<p>The @Lookup[@name] can be spotlighted up to three times per GM turn. Spend Fear as usual to spotlight them.</p>"
+        },
+        "k6o9d6zlO4V9sGuX": {
+          "name": "Stolen Armor",
+          "description": "<p>When combat begins, active a Countdown equal to the number of PCs. Whenever the @Lookup[@name] takes damage, tick down the countdown and reduce the HP the Troll marks by 1. When it triggers, the @Lookup[@name] evolves into an @UUID[Compendium.daggerheart-voidborne.voidborne-actors.Actor.tZEqHbC6pep7oRK2]{Enraged Mountain Troll}.</p>"
+        },
+        "CEHnCvblh3OXluWq": {
+          "name": "Double Swipe",
+          "description": "<p><strong>Spend a Fear</strong> to move the Troll up to Close range and immediately make two standard attacks against a single target within Melee range. If both attacks hit, combine the damage and the target also loses a Hope.</p><p></p><p>Roll for Damage on Second Swipe if both Attacks hit. Roll for Damage on the First Swipe if only one Hits.</p>",
+          "actions": {
+            "lYlhfiqllayDzDfg": {
+              "name": "First Swipe"
+            },
+            "vefGRf1W43sDz1Iy": {
+              "name": "Second Swipe"
+            }
+          }
+        }
+      }
+    },
+    "Fellmounted Shadow King": {
+      "name": "Fellmounted Shadow King",
+      "description": "<p>The shade of a forgotten ruler, cursed to patrol the skies atop a winged eel in the service of an evil demiurge.</p>",
+      "motivesAndTactics": "Acquire magical items for master, inspire fear, patrol the skies",
+      "attack": "Cursed Lance",
+      "experiences": {
+        "iMFcDdUyq6xKGRi6": {
+          "name": "Seeker"
+        }
+      },
+      "items": {
+        "BXYskHtRSKQ21O23": {
+          "name": "Light and Shadow",
+          "description": "<p>The Shadow King gains a +1 bonus to attack and damage rolls while in shadow or darkness and a −1 penalty to attack and damage rolls while in bright light.</p>"
+        },
+        "Ydjxr6Uonz3b8wDC": {
+          "name": "Relic Hunter",
+          "description": "<p>The Shadow King has advantage on attacks against PCs with magical weapons or armor equipped.</p>"
+        },
+        "DfYBOnIBsGrtNsO0": {
+          "name": "Hellsong",
+          "description": "<p>Spend 2 Fear to have the Shadow King’s mount unleash a spine-chilling screech that echoes over the battleﬁeld. All PCs within Far range must make a Presence Reaction Roll (18). Targets who succeed must mark a Stress. Targets who fail must mark a Stress and lose a Hope. If the PC can’t lose a Hope, you gain 2 Fear.</p>",
+          "actions": {
+            "5paAMSdeZUKP9iQ5": {
+              "name": "Spend 2 Fear"
+            }
+          }
+        },
+        "14ykQVQdyaL5UMCB": {
+          "name": "Air Support",
+          "description": "<p>Three times per scene, you can spend a Fear to have an adversary within Far range of the Shadow King reroll a missed attack with advantage.</p>",
+          "actions": {
+            "bKXH3MIzOJvP0Xju": {
+              "name": "Spend a Fear"
+            }
+          }
+        }
+      }
+    },
+    "Gargoyle": {
+      "name": "Gargoyle",
+      "description": "<p>A magically animated statue in the form of a terrifying beast or devil.</p>",
+      "motivesAndTactics": "Hide in plain sight, overwatch, swoop down",
+      "attack": "Stone Claws",
+      "experiences": {
+        "LdIbZsz0bizXLbqY": {
+          "name": "Ruins"
+        }
+      },
+      "items": {
+        "HUDNK6vcUAtKgowt": {
+          "name": "Stone Body",
+          "description": "<p>The @Lookup[@name] is resistant to physical damage.</p>",
+          "effects": {
+            "vuKbbrhjeJKIh21k": {
+              "name": "Stone Body"
+            }
+          }
+        },
+        "FXZwy5AYEhiy6fnM": {
+          "name": "Just a Statue",
+          "description": "<p>Before they make their ﬁrst attack in a ﬁght or after they become Hidden, the @Lookup[@name] is indistinguishable from a normal statue until they next act or a PC succeeds on an Instinct Roll to identify them.</p>"
+        },
+        "Z3LEyyYXuqZnnznh": {
+          "name": "Swooping Strike",
+          "description": "<p>Choose a point within Far range. The Gargoyle moves to that point in a straight line and makes an attack against one target along its path.</p>",
+          "actions": {
+            "UDDTIO87i2LSxLPI": {
+              "name": "Swooping Strike"
+            }
+          }
+        }
+      }
+    },
+    "Gobstalker": {
+      "name": "Gobstalker",
+      "description": "<p>A ﬂeshy, ﬂoating ball of teeth with ten jointed antennae rising from its crown, each bearing a diﬀerent-colored eye.</p>",
+      "motivesAndTactics": "Ambush, dispose of rivals, seek riches, use magic at long range",
+      "attack": "Bite",
+      "experiences": {
+        "dMULehovFUyAfqa6": {
+          "name": "Magic"
+        }
+      },
+      "items": {
+        "lAhFefjTiqty1jhR": {
+          "name": "Relentless (3)",
+          "description": "<p>The @Lookup[@name] can be spotlighted up to three times per GM turn. Spend Fear as usual to spotlight them.</p>"
+        },
+        "6CjaSnE3WezWX97f": {
+          "name": "Anti-mystica-halitosis",
+          "description": "<p>A @Lookup[@name]'s breath is so rancid it creates an invisible miasma that negates magical eﬀects. Any attack that deals magic damage or creates a magical eﬀect in front of the @Lookup[@name] within Close range automatically fails. This feature does not aﬀect the @Lookup[@name]’s own features.</p>"
+        },
+        "OgFF6GNLF69ZWMMt": {
+          "name": "Eyestalks",
+          "description": "<p>Mark a Stress to attack a target within Far range. On a hit, spend a Fear to choose an eﬀect or roll a d10 for a random eﬀect. The Gobstalker uses the corresponding magical beam.</p>",
+          "actions": {
+            "D0KowB1i6TTaotr0": {
+              "name": "Eyestalks"
+            }
+          }
+        },
+        "XdSp6mCNVzyHY4sv": {
+          "name": "1. Beguile",
+          "description": "<p>The target is Beguiled and sees the @Lookup[@name] as a friend. A Beguiled creature cannot attack the @Lookup[@name]. Additionally, a Beguiled PC must mark a Stress or make a standard attack against their nearest ally whenever someone rolls with Fear. This eﬀect lasts until the targets succeeds on a Presence or Knowledge Roll (16).</p>",
+          "actions": {
+            "g7TQmKLBZnIGC00X": {
+              "name": "Beguile"
+            }
+          },
+          "effects": {
+            "ZeXbV02l3hbCTi0D": {
+              "name": "Beguile"
+            }
+          }
+        },
+        "uXkKmxTJN9FR5HST": {
+          "name": "2. Corrode",
+          "description": "<p>The target takes 2d8 magical damage and marks an Armor Slot without receiving its beneﬁts (they can still use armor to reduce the damage). If all the target’s Armor Slots are already marked, double the damage.</p>",
+          "actions": {
+            "lbgiJ0bNKNiQJeG8": {
+              "name": "Corrode"
+            }
+          }
+        },
+        "Xe5QveQccBB4Uyw9": {
+          "name": "3. Doom",
+          "description": "<p>The target immediately marks all cleared HP, but can reduce the number of HP marked this way by spending any number of Hope. For each Hope spent in this way, reduce the number of HP marked by 1.</p>"
+        },
+        "H5I8VfJThDW49T6N": {
+          "name": "4. Hypnosis",
+          "description": "<p>The target falls into a deep, sleeplike trance and can’t take any actions except for trying to wake up. The target wakes up when they are hit by an attack, mark 1 or more HP, or succeed on an Instinct Roll (16) to wake up.</p>",
+          "actions": {
+            "L4kIspa4j1wsOQb4": {
+              "name": "Hypnosis"
+            }
+          },
+          "effects": {
+            "WWWEXDlknAGTos3h": {
+              "name": "Hypnosis",
+              "description": "<p>The target falls into a deep, sleeplike trance and can’t take any actions except for trying to wake up. The target wakes up when they are hit by an attack, mark 1 or more HP, or succeed on an Instinct Roll (16) to wake up.</p>"
+            }
+          }
+        },
+        "EmrS9UXaf4OV9vHF": {
+          "name": "5. Paralyze",
+          "description": "<p>The target freezes in place, becoming Vulnerable and Restrained until they mark 2 Stress.</p>",
+          "actions": {
+            "qonamLQbJ6ZIWvqO": {
+              "name": "Paralyze"
+            }
+          },
+          "effects": {
+            "BVqc9GBKEclGfhfW": {
+              "name": "Paralyze"
+            }
+          }
+        },
+        "Z09bdwa60t94m0bw": {
+          "name": "6. Petrify",
+          "description": "<p>Place a Petriﬁcation Countdown (6) on the target. It ticks down when a PC rolls with Fear. When it triggers, the target turns to stone until the Gobstalker is defeated or they take a long rest. While stone, the target is immune to all damage and aware of their surroundings, but cannot take actions.</p>",
+          "actions": {
+            "0MWivvSYkk4modpN": {
+              "name": "Start Countdown",
+              "countdown": {
+                "Petrify": "Petrify"
+              }
+            }
+          }
+        },
+        "NJE0fCAgZjFfGhtB": {
+          "name": "7. Push",
+          "description": "<p>The target is thrown up to Far range and takes 3d6 physical damage from whatever they hit.</p>"
+        },
+        "GmRKSPZ43mCFxOPm": {
+          "name": "8. Sear",
+          "description": "<p>The target takes 2d8 direct magical damage.</p>"
+        },
+        "rLE28vugVhkSi5NS": {
+          "name": "9. Slow",
+          "description": "<p>The target is Vulnerable and must mark a Stress to move. The target can spend 2 Hope at any time to end this eﬀect.</p>",
+          "actions": {
+            "FhIaHPUlfOH5O9tX": {
+              "name": "Slow"
+            }
+          },
+          "effects": {
+            "wPKPcUE5POl0dHAa": {
+              "name": "Slow"
+            }
+          }
+        },
+        "2fLEfzx6L5DzIhK1": {
+          "name": "10. Terrify",
+          "description": "<p>The target can’t act except to ﬂee the battle or try to shake oﬀ their fear with a successful Insight Roll (16). Additionally, whenever you spend Fear, the target must mark a Stress. This eﬀect lasts until the Gobstalker is defeated or the target takes a rest.</p>",
+          "actions": {
+            "8vDREmp78YOEuMcw": {
+              "name": "Terrify"
+            }
+          },
+          "effects": {
+            "ZItJyYiXXzdFsf2a": {
+              "name": "Terrify"
+            }
+          }
+        }
+      }
+    },
+    "Grand Feast": {
+      "name": "Grand Feast",
+      "description": "<p>A community-wide celebration featuring way too much drink, food, and fun.</p>",
+      "impulses": "Bring everyone together, celebrate a momentous occasion, encourage revelrous abandon",
+      "potentialAdversaries": {
+        "oXpLAbSOkFW4ERXF": {
+          "label": "Potential Adversaries"
+        }
+      },
+      "items": {
+        "xNRzH1FW43nOFaXJ": {
+          "name": "Loose Lips and Fast Friends",
+          "description": "<p>Everyone is here to have a good time. PCs have advantage on Presence rolls to socialize with other revelers.</p><p><em>What is everyone celebrating? Where’s the party? Who’s footing the</em></p><p><em>bill?</em></p>"
+        },
+        "ReEa0ndurRnX4sbu": {
+          "name": "Are You Not Entertained?",
+          "description": "<p>Spend the spotlight to have the host of the feast kick oﬀ the entertainment portion of the evening. All PCs can make an action roll to initiate a performance, competition, or other lighthearted diversion. Each PC who succeeds becomes an Honored Guest. Until the grand feast ends, an Honored Guest can claim one boon from the host, then clear the condition.</p><p><em>What does the host want to see or hear more than anything else? What can they oﬀer the PCs in return?</em></p>"
+        },
+        "8NtsJ5lkGBNMarwB": {
+          "name": "There’s Always That One...",
+          "description": "<p><strong>Spend a Fear</strong> to Trap a PC in conversation with the most unpleasant person at the party until they succeed on an action roll to extricate themself from this social black hole. A Trapped PC can’t make any other action rolls except to try and remove this condition. When a Trapped PC fails an action roll, they must mark a Stress.</p><p><em>What makes this dud so unpleasant? What’s something the PC cares about that the dud constantly diminishes or dismisses? What boring or awful thing can the dud not shut up about?</em></p>",
+          "actions": {
+            "AGFz2LQ9nNjmI0ba": {
+              "name": "Spend a Fear"
+            }
+          }
+        },
+        "Wq3Cnlw55AmLYb4O": {
+          "name": "Last Call",
+          "description": "<p>After a long night, the partygoers start ﬁltering out. When the feast concludes, all PCs who participated in the festivities clear all Stress and gain a Hope. Additionally, each Honored Guest clears all HP and gains an additional Hope, then clears the condition. PCs who overindulged must succeed on a Strength Reaction Roll or become Hungover until their next rest. Hungover PCs take a −1 penalty to all action rolls.</p><p><em>What crazy stories do the PCs share with one another as they leave the party? Who do the PCs see unexpectedly canoodling afterward?</em></p>"
+        }
+      }
+    },
+    "Hallowed Choir": {
+      "name": "Hallowed Choir",
+      "description": "<p>A heavenly host of winged humanoids whose song calls forth tears of religious awe.</p>",
+      "motivesAndTactics": "Drown out disbelief, raise voices",
+      "attack": "Choral Blast",
+      "experiences": {
+        "BUeth2RyJVuxyuQF": {
+          "name": "Music"
+        }
+      },
+      "items": {
+        "FLJrVLtJYxm0Us1n": {
+          "name": "Horde (2d8+3)",
+          "description": "<p>When the Choir has marked half or more of their HP, their standard attack deals 2d8+3 magic damage instead.</p>"
+        },
+        "RlqVSJRHoFByguJ2": {
+          "name": "Aural Assault",
+          "description": "<p>Spend a Fear to have the Choir unleash divine energy. Remove all tokens from this stat block (see “Celestia Coda”). For each token removed, deal 1d12 direct magic damage to all enemies within Close range.</p>",
+          "actions": {
+            "K28UYoIRspoTWG4k": {
+              "name": "Aural Assault"
+            }
+          },
+          "effects": {
+            "pVWKY4NdV2xxzUjP": {
+              "name": "Celestial Coda"
+            }
+          }
+        },
+        "ZQAGDYnGBn6dc6he": {
+          "name": "Celestial Coda",
+          "description": "<p>The Choir’s divine song builds on itself with each refrain. Activate the countdown when the Choir is ﬁrst spotlighted. It ticks down on every action roll. When it triggers, place a token on this stat block. The Choir gains a bonus to their diﬃculty and standard attack damage equal to the number of tokens on this stat block.</p>",
+          "actions": {
+            "FdpdgIjc9CUqDwB8": {
+              "name": "Start Countdown",
+              "countdown": {
+                "Celestial Coda": "Celestial Coda"
+              }
+            }
+          }
+        }
+      },
+      "effects": {
+        "zC6VHKR2EgolmnGS": {
+          "name": "Horde"
+        }
+      }
+    },
+    "Heist": {
+      "name": "Heist",
+      "description": "<p>The party must gain access to a hidden or well-protected location to acquire the information or items secured within.</p>",
+      "impulses": "Make the party prepare, split them up, throw up obstacles, trap them inside, use up their resources",
+      "potentialAdversaries": {
+        "ydN8j8i0YowUJpsn": {
+          "label": "Potential Adversary"
+        }
+      },
+      "items": {
+        "VL2xrddGeeUhjYPo": {
+          "name": "Prep Work",
+          "description": "<p>Prior to the Heist, each PC has the opportunity to gather a key piece of information, surveil the location, or acquire a helpful tool or resource. Give each player the opportunity to describe one obstacle they expect to encounter and how they set themselves up to overcome it, then have them make an action roll. On a success, they get the advantage or asset they sought. On a success with Fear, it’s less useful than they expected (for example, they discover the location of a hidden access point but learn that breaching it will likely be diﬃcult and noisy).</p><p><em>How does the PC gain this advantage? Do they go it alone or ask for help? What unforeseen complications arise during the Heist itself?</em></p>"
+        },
+        "kwHGLlmYI3h7w7c0": {
+          "name": "Infiltration",
+          "description": "<p>Establish the goal of the Heist and start two dynamic countdowns: a Progress Countdown (12) to represent the party’s work toward their goal and a Consequence Countdown (10) to represent the rising risk of discovery and capture. Advance both according to the Dynamic Countdown Advancement table as the PCs make action rolls to complete the Heist. If the Progress Countdown triggers ﬁrst, spotlight this environment to use the “Exﬁltration” feature. If the Consequence Countdown triggers ﬁrst, gain 1d4 Fear, splotlight this environment, and use the “Sound the Alarm” feature. </p><p>What is the party going after, and where is it located? What unexpected obstacles will they encounter? What happens if the party gets caught?</p>",
+          "actions": {
+            "8aWVQkjk6Tij0SDI": {
+              "name": "Progress Countdown",
+              "countdown": {
+                "Heis: Progress": "Heis: Progress"
+              }
+            },
+            "Ha3jPnlZ7turf3Zm": {
+              "name": "Consequences Countdown",
+              "countdown": {
+                "Heist: Consequences": "Heist: Consequences"
+              }
+            }
+          }
+        },
+        "uGWZ1GQE1yC5INTN": {
+          "name": "Saw This Coming",
+          "description": "<p>Once per session, a PC can spend a Hope to explain how they prepared for the current situation and reveal a key piece of information (such as the location of a hidden passage or the password to a restricted area) or produce a helpful item (such as a cultist’s uniform left unattended or a common consumable hidden in their boot).</p><p><em>What did the PC prepare in advance? How did they know they’d need it? What did it cost them to set up, or whom do they owe a favor to?</em></p>"
+        },
+        "Xo9l4w6FfAD72DCD": {
+          "name": "Exﬁltration",
+          "description": "<p>When the Progress Countdown triggers, the party acquires the object of the Heist and must succeed on a group action roll to escape without being caught. On a failure, each PC marks a Stress and takes 2d12 direct damage. </p><p><em>What makes getting out even more dangerous than getting in? What unforeseen developments stymie the party’s original escape plan?</em></p>",
+          "actions": {
+            "oWHd4biaeV4B9Gts": {
+              "name": "Failure"
+            }
+          }
+        },
+        "VMHxtBKP7HgZjxyq": {
+          "name": "Sound the Alarm",
+          "description": "<p>When the Consequence Countdown triggers, the party is discovered and the location enters High Alert. Immediately summon a number of Tier 2 adversaries equal to the number of PCs in the scene and spotlight one. While this environment is on High Alert, all adversaries gain a +1 bonus to their Diﬃculty.</p><p><em>What makes these adversaries uniquely suited to guard this location? What do they know about this place that gives them an edge?</em></p>"
+        }
+      }
+    },
+    "Lamplight Beguiler": {
+      "name": "Lamplight Beguiler",
+      "description": "<p>A huge mer-creature who lures unwary prey into eating range with their dangling, shapeshifting head stalk.</p>",
+      "motivesAndTactics": "Entice with secret knowledge, snap the trap shut, speak through their shapeshifted head stalk",
+      "attack": "Jaws",
+      "experiences": {
+        "81sns3Kwht5IYE6F": {
+          "name": "Secrets"
+        },
+        "gOiK7V2EcQbXHpQa": {
+          "name": "Charm"
+        }
+      },
+      "items": {
+        "NvbnT1Xu7UuhgOnq": {
+          "name": "Doppel-Dangler",
+          "description": "<p>The membranous cluster at the end of the Beguiler’s head stalk can shapeshift into any humanoid form. Mark a Stress and choose a PC within Close range. Their player must tell you what form their PC would ﬁnd most trustworthy (such as a relative, mentor, or lover). The Beguiler’s head stalk transforms into that shape.</p>",
+          "actions": {
+            "PFtt6uZQety10FUQ": {
+              "name": "Mark a Stress"
+            }
+          }
+        },
+        "Bn3Ror7iwcBKOqBB": {
+          "name": "Entice",
+          "description": "<p>Spend a Fear to play an alluring overture to a PC within Close range. The PC must succeed on a Presence Reaction Roll (18) or move into Melee range with the Beguiler. If the Beguiler’s head stalk is in a form the PC would ﬁnd trustworthy, they have disadvantage on the reaction roll.</p>",
+          "actions": {
+            "dzhIPFSnEsIAnL1z": {
+              "name": "Entice"
+            }
+          }
+        },
+        "R1YWbnW53XcajLOo": {
+          "name": "Entangle",
+          "description": "<p>When a PC moves within Melee range, you can spend a Fear to make an attack against them. On a successful attack, the target is Swallowed. While Swallowed, a creature is Restrained and can only take actions to attack the Beguiler. The Beguiler disgorges all Swallowed creatures when they take Major damage.</p>",
+          "actions": {
+            "Asrh5cTGzQYeKaXh": {
+              "name": "Entangle"
+            }
+          },
+          "effects": {
+            "XcJY5ZBLBZCkjG90": {
+              "name": "Swallowed"
+            }
+          }
+        },
+        "bceaGwOPq3CZN6P5": {
+          "name": "Rest and Digest",
+          "description": "<p>When the Beguiler takes the spotlight with a Swallowed creature inside them, they move to Far range away from the PCs.</p>"
+        }
+      }
+    },
+    "Mountain Troll": {
+      "name": "Mountain Troll",
+      "description": "<p>A hideous, twisted giant born out of a rock, wearing purloined armor and a belt of severed heads.</p>",
+      "motivesAndTactics": "Ambush from behind, attack from above, bellow, smash enemies against the rocks, throw large boulders",
+      "attack": "Skull Flail",
+      "experiences": {
+        "KAYsIDfQyiSK9Q5I": {
+          "name": "Mountains"
+        }
+      },
+      "items": {
+        "lAhFefjTiqty1jhR": {
+          "name": "Relentless (3)",
+          "description": "<p>The @Lookup[@name] can be spotlighted up to three times per GM turn. Spend Fear as usual to spotlight them.</p>"
+        },
+        "XyAZwDKyTBCkLTxy": {
+          "name": "Flail Swipe",
+          "description": "<p>The @Lookup[@name] swings their skull ﬂail in a wide arc.</p><p><strong>Mark a Stress</strong> to make an attack against all targets in front of the @Lookup[@name] within Very Close range. On a success, the @Lookup[@name] deals 2d10+3 instead of its normal damage. The @Lookup[@name] cannot use this action while evolved.</p>",
+          "actions": {
+            "81DeTUtZUSnCJRt2": {
+              "name": "Flail Swipe"
+            }
+          }
+        },
+        "eYf7mrDFSLhwJd9g": {
+          "name": "Stolen Armor",
+          "description": "<p>When combat begins, active a Countdown equal to the number of PCs. Whenever the @Lookup[@name] takes damage, tick down the countdown and reduce the HP the Troll marks by 1. When it triggers, the @Lookup[@name] evolves into an @UUID[Compendium.daggerheart-voidborne.voidborne-actors.Actor.tZEqHbC6pep7oRK2]{Enraged Mountain Troll}.</p>"
+        }
+      }
+    },
+    "Owl Witch": {
+      "name": "Owl Witch",
+      "description": "<p>A giant, vengeful barn owl with a 15-foot wingspan and a human face.</p>",
+      "motivesAndTactics": "Consume essence, curse, predict death",
+      "attack": "Razor Talons",
+      "experiences": {
+        "tKzjBorsTO4mcuKK": {
+          "name": "Magic"
+        },
+        "xFxcu1DAkbJhGkGN": {
+          "name": "Night Stalker"
+        }
+      },
+      "items": {
+        "RbuB0HPvdTWHDZ7u": {
+          "name": "Ill Omen",
+          "description": "<p>When a PC within Close range makes an action roll, their Fear Die gains a bonus equal to the amount of Fear you currently have.</p>"
+        },
+        "D62tGRHny3i4e18x": {
+          "name": "Witch Barrier",
+          "description": "<p>The Owl Witch is resistant to magic damage.</p>",
+          "effects": {
+            "n7yKm9jvanJDULyh": {
+              "name": "Witch Barrier"
+            }
+          }
+        },
+        "3i0tILYwid8i8Gk8": {
+          "name": "Alluring Voice",
+          "description": "<p>The Owl Witch can perfectly mimic the voice of a loved one or trusted ﬁgure. Spend a Fear to have the Owl Witch call out to a creature within earshot. The target must succeed on an Instinct Reaction Roll or move up to Far range toward the Owl Witch.</p>",
+          "actions": {
+            "OoZdNGf6ElEDYWaQ": {
+              "name": "Spend a Fear"
+            }
+          }
+        },
+        "kYd8f27cX82Zl7wv": {
+          "name": "Nightmare Stare",
+          "description": "<p>Spend a Fear to have the Owl Witch Aﬄict a target within Far range with waking nightmares. Until a PC uses a downtime move to comfort the Aﬄicted creature and clear the condition, the Aﬄicted creature can’t clear Stress or HP by any means.</p>",
+          "actions": {
+            "obEoy6zKCh8ue253": {
+              "name": "Spend a Fear"
+            }
+          },
+          "effects": {
+            "qmrQJKd7uGQAyg64": {
+              "name": "Waking Nightmares",
+              "description": "<p>Until a PC uses a downtime move to comfort the Aﬄicted creature and clear the condition, the Aﬄicted creature can’t clear Stress or HP by any means.</p>"
+            }
+          }
+        },
+        "1cA3ZmVIzYH0h3jm": {
+          "name": "Visions of a Violent End",
+          "description": "<p>When the Owl Witch is targeted by an attack, you can spend a Fear to force the attacker to make a Presence Reaction Roll. On a failure, they mark 1d4 Stress as their mind is ﬂooded with visions of their own violent death.</p>",
+          "actions": {
+            "odBQMak3crW5twx7": {
+              "name": "Spend a Fear"
+            }
+          }
+        }
+      }
+    },
+    "Rabble Mawb": {
+      "name": "Rabble Mawb",
+      "description": "<p>These cat-sized balls of hair, limbs, and teeth travel in a “mawb” of about a dozen.</p>",
+      "motivesAndTactics": "Chitter and chew, clump together, roll around",
+      "attack": "Chomp",
+      "experiences": {
+        "xdUNvMTxvnQPZAM3": {
+          "name": "Underground"
+        }
+      },
+      "items": {
+        "AwsOUvEJ17W788sa": {
+          "name": "Horde (1d4)",
+          "description": "<p>When the Rabble Mawb has marked half or more of their HP, their standard attack deals 1d4 physical damage instead.</p>"
+        },
+        "lV2BwXbpguTuV5Xk": {
+          "name": "Come Back Worse",
+          "description": "<p>When a @Lookup[@name] is defeated, you can spend a Fear to bring this @Lookup[@name] back to life. This new @Lookup[@name] gains a +X bonus to all rolls, where X is the number of times this feature has been used by this adversary.</p>"
+        }
+      },
+      "effects": {
+        "Ea9rA4Wln7zCbfAk": {
+          "name": "Horde"
+        }
+      }
+    },
+    "Redcap Butcher": {
+      "name": "Redcap Butcher",
+      "description": "<p>A halﬂing-sized fey creature who hacks their victims apart with a variety of cutting implements.</p>",
+      "motivesAndTactics": "Give them the runaround, grin disconcertingly, hack and slash, scramble",
+      "attack": "Meat Cleaver",
+      "experiences": {
+        "SjpZxIfrRdhJytGg": {
+          "name": "Scurry"
+        }
+      },
+      "items": {
+        "9381vuDOtZihe5wa": {
+          "name": "Chop Happy",
+          "description": "<p><strong>Mark a Stress</strong> to make a standard attack against up to three targets within range. For each target who marks a HP, you gain a Fear.</p>"
+        },
+        "PLp3HosQ4asXoVMJ": {
+          "name": "Knife Thrower",
+          "description": "<p><strong>Mark a Stress</strong> to make a standard attack against a target within Far range. If the @Lookup[@name] makes this attack while Hidden, they have advantage on the attack roll.</p>",
+          "actions": {
+            "aRaWzMGVwLWoFs3G": {
+              "name": "Knife Thrower"
+            }
+          }
+        }
+      }
+    },
+    "Redcap Candlemaker": {
+      "name": "Redcap Candlemaker",
+      "description": "<p>A pale, gaunt cult leader holding a seven-foot-tall rod with a candle made from a hanged man’s hand atop it.</p>",
+      "motivesAndTactics": "Cast long shadows, keep out of the fray, show them the light",
+      "attack": "Burning Candlestick",
+      "experiences": {
+        "iJfVHYBE0XbR43lO": {
+          "name": "Vigilance"
+        }
+      },
+      "items": {
+        "0FTZNZYDBE2REZRj": {
+          "name": "Hand of Glory",
+          "description": "<p>When the @Lookup[@name] appears, put ﬁve tokens on this stat block. Remove one token whenever the @Lookup[@name] marks a HP. While this stat block has one or more tokens on it, the @Lookup[@name] is Hidden.</p>",
+          "effects": {
+            "sj0wYqkaXT4IGhgN": {
+              "name": "Hidden"
+            }
+          }
+        },
+        "8yoNHmYKlNdpTZDM": {
+          "name": "Torchbearer",
+          "description": "<p>The light of the @Lookup[@name]’s hand of glory inspires bloodlust in their allies. While this stat block has one or more tokens on it, any Redcap within Close range gains a +1 bonus to their damage rolls.</p>"
+        },
+        "xRZ01iaQGJt8dJrZ": {
+          "name": "Dance in the Flames",
+          "description": "<p>Spend a token from this stat block. The @Lookup[@name] conjures a ball of ﬁre at a point within Far range. All creatures within Very Close range of that point must make an Agility Reaction Roll. Targets who fail take 2d10 magic damage. Targets who succeed take half damage.</p>",
+          "actions": {
+            "2LKP5c9GcQ6ZjQa2": {
+              "name": "Dance in the Flames"
+            }
+          }
+        }
+      }
+    },
+    "Whisper Wraith": {
+      "name": "Whisper Wraith",
+      "description": "<p>The echoes of broken promises and dreams unfulﬁlled, these wraiths appear as ﬂoating, translucent shrouds of tattered black velvet in a vaguely humanoid shape.</p>",
+      "motivesAndTactics": "Bind limbs, drop from a great height, lift oﬀ the ground, swirl through the air, wrap around heads",
+      "attack": "Shadow Touch",
+      "experiences": {
+        "oOi98Q4YMU22VJHH": {
+          "name": "Dreams"
+        }
+      },
+      "items": {
+        "zQgAwGqG30iGTwUz": {
+          "name": "Spectral",
+          "description": "<p>The Wraith is immune to physical damage and weak against magic damage. Additionally, the Wraith can move through solid objects.</p>",
+          "effects": {
+            "v6rwroHG9nfwPZYv": {
+              "name": "Spectral"
+            }
+          }
+        },
+        "9Hsym1Q02i4eEqov": {
+          "name": "Spooky",
+          "description": "<p>When the Wraith makes a successful attack, all PCs within Close range must mark a Stress and you gain a Fear.</p>"
+        },
+        "BnmlGm3LY8ncFodV": {
+          "name": "NIghtmare Shroud",
+          "description": "<p>Spend a Fear to have the Wraith wrap themself around a PC within Melee range, making them Shrouded until they or an ally succeed on a Strength or Attack Roll (20) to dislodge the Wraith. If it’s an attack roll, the Shrouded PC takes the damage. While Shrouded, a PC has disadvantage on all attacks and marks a Stress when they roll with Fear.</p>",
+          "actions": {
+            "nQu8I8bBzWveD0Gt": {
+              "name": "Spend a Fear"
+            }
+          }
+        }
+      }
+    },
+    "Xero, Castle Killer": {
+      "name": "Xero, Castle Killer",
+      "description": "<p>A castle-sized, bipedal reptile.</p>",
+      "motivesAndTactics": "Leave a wake of destruction, level buildings, stomp through settlements",
+      "attack": "Tail Swipe",
+      "experiences": {
+        "4FkNXn8wx6bwsae5": {
+          "name": "Destruction"
+        }
+      },
+      "items": {
+        "9CCSfu5VWFHfquTO": {
+          "name": "Relentless (X)",
+          "description": "<p>Xero can be spotlighted up to X times per GM turn, where X is the number of PCs in the scene. Spend Fear as usual to spotlight them.</p>"
+        },
+        "gCAcyapNAE3LRvIg": {
+          "name": "Collateral Damage",
+          "description": "<p>Xero’s movement cannot be hindered, impeded, or aﬀected by any external eﬀect. All destructible terrain or obstacles in Xero’s path are destroyed when Xero moves through them.</p>"
+        },
+        "aB2eFPZPOx30MCnl": {
+          "name": "Gigaton Stomp",
+          "description": "<p>Spend a Fear to have Xero bring their foot down hard, creating a localized earthquake. All creatures within Melee range take 4d12 physical damage and are Restrained until they succeed on a Finesse Roll to slide out from underfoot. All creatures outside of Melee range and within Close range must succeed on an Instinct Reaction Roll or be knocked back up to Far range. If a target is knocked back, they must mark an Armor Slot or take 4d12 physical damage as they land.</p>",
+          "actions": {
+            "PTjZ77KG7Em05InY": {
+              "name": "Spend a Fear"
+            },
+            "lrj6qYiOucMJOXIH": {
+              "name": "Close Range"
+            }
+          },
+          "effects": {
+            "KRG4Ql4HVWqVRgRy": {
+              "name": "Restrained"
+            }
+          }
+        },
+        "W1ytLfPHst33zVwF": {
+          "name": "Power Slide",
+          "description": "<p>Mark a Stress to move Xero up to Close range. All creatures Xero moves through must make a Strength Reaction Roll. Targets who fail must mark 2 Armor Slots or take Severe Damage.</p>",
+          "actions": {
+            "ZLIGQNrvC9xctabt": {
+              "name": "Mark a Stress"
+            }
+          }
+        },
+        "xKC9M1PgmRViGKl6": {
+          "name": "Radioactive Breath",
+          "description": "<p>Spend a Fear to have Xero charge up a nuclear beam and place a token on this stat block. The next time Xero takes the spotlight, you can spend this token and unleash the beam. Draw a line with a Close range width from Xero to the edge of the battleﬁeld. All PCs within this path must make an Agility Reaction Roll. Targets who faill take 4d12+12 direct magic damage. Targets who succeed take half damage. Xero can’t use this action again until they take Severe damage.</p>",
+          "actions": {
+            "KmzMinr0BobaFLT9": {
+              "name": "Spend a Fear"
+            }
+          }
+        },
+        "FTxzcwsmFjP8BDjN": {
+          "name": "Regeneration",
+          "description": "<p>Up to three times per scene, spend any number of Fear to clear an equal number of HP.</p>"
+        }
+      }
+    }
+  }
+}

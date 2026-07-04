@@ -1,16 +1,5 @@
 {
   "label": "Subclasses",
-  "mapping": {
-    "description": "system.description",
-    "actions": {
-      "path": "system.actions",
-      "converter": "toActions"
-    },
-    "effects": {
-      "path": "effects",
-      "converter": "toEffects"
-    }
-  },
   "folders": {
     "Assassin": "Assassin",
     "Blood Hunter": "Blood Hunter",
@@ -26,6 +15,17 @@
     "Subclass Features": "Subclass Features",
     "Specialization Features": "Specialization Features",
     "Mastery Features": "Mastery Features"
+  },
+  "mapping": {
+    "description": "system.description",
+    "actions": {
+      "path": "system.actions",
+      "converter": "toActions"
+    },
+    "effects": {
+      "path": "effects",
+      "converter": "toEffects"
+    }
   },
   "entries": {
     "Adder's Blessing": {

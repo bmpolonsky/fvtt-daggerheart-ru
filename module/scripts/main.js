@@ -11,6 +11,20 @@ Hooks.once('babele.init', (babele) => {
   // вложенных Item'ов. Вспомогательные функции ниже помогают проставлять переводы в те части,
   // куда Babele сам не лезет (embedded items, action-узлы, advantage-листы).
 
+  // Ищет перевод сначала по стабильному _id, затем по имени для файлов, экспортированных из Foundry.
+  const getTranslationByIdOrName = (translations, id, name) => {
+    if (!translations || typeof translations !== "object") {
+      return null;
+    }
+    if (id && translations[id]) {
+      return translations[id];
+    }
+    if (name && translations[name]) {
+      return translations[name];
+    }
+    return null;
+  };
+
   // Обновляет одно действие (name/description) исходя из перевода.
   const updateActionNode = (action, translated) => {
     if (!action || !translated || typeof translated !== "object") {
@@ -48,7 +62,7 @@ Hooks.once('babele.init', (babele) => {
       return;
     }
     for (const [actionId, action] of Object.entries(actions)) {
-      updateActionNode(action, translatedActions[actionId]);
+      updateActionNode(action, getTranslationByIdOrName(translatedActions, actionId, action?.name));
     }
   };
 
@@ -60,8 +74,8 @@ Hooks.once('babele.init', (babele) => {
     for (const effect of effects) {
       if (!effect) continue;
       const effectId = typeof effect._id === "string" ? effect._id : null;
-      if (!effectId) continue;
-      updateEffectNode(effect, translatedEffects[effectId]);
+      const translation = getTranslationByIdOrName(translatedEffects, effectId, effect.name);
+      updateEffectNode(effect, translation);
     }
   };
 
@@ -123,7 +137,7 @@ Hooks.once('babele.init', (babele) => {
         if (!item) {
           continue;
         }
-        const translation = transItems[item._id];
+        const translation = getTranslationByIdOrName(transItems, item._id, item.name);
         if (!translation) {
           continue;
         }
@@ -192,7 +206,7 @@ Hooks.once('babele.init', (babele) => {
       }
       for (const [groupId, group] of Object.entries(origGroups)) {
         if (!group || typeof group !== "object") continue;
-        const translation = translatedGroups[groupId];
+        const translation = getTranslationByIdOrName(translatedGroups, groupId, group.label);
         if (!translation || typeof translation.label !== "string") continue;
         const trimmed = translation.label.trim();
         if (trimmed) {

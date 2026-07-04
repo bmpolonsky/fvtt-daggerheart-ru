@@ -27,6 +27,12 @@ const VOID_PACK_NAMES = [
   "macros",
   "adversaries--environments"
 ];
+const VOIDBORNE_REPO_DIR = path.join(TMP_DATA_DIR, "daggerheart-voidborne");
+const VOIDBORNE_REPO_URL = "https://git.geeks.gay/cosmo/daggerheart-voidborne";
+const VOIDBORNE_PACKS_DIR = path.join(VOIDBORNE_REPO_DIR, "packs");
+const VOIDBORNE_UNPACKED_DIR = path.join(TMP_DATA_DIR, "daggerheart-voidborne-json");
+const VOIDBORNE_MODULE_ID = "daggerheart-voidborne";
+const VOIDBORNE_PACK_NAMES = ["voidborne-items", "voidborne-actors", "voidborne-macros"];
 
 const API_ENDPOINTS = [
   "class",
@@ -46,12 +52,16 @@ const SKIP_REMOTE_UPDATE = process.env.SKIP_REMOTE_UPDATE === "1";
 const SKIP_API_REFRESH = process.env.SKIP_API_REFRESH === "1";
 const SKIP_VOID_UPDATE = process.env.SKIP_VOID_UPDATE === "1";
 const SKIP_VOID_UNPACK = process.env.SKIP_VOID_UNPACK === "1";
+const SKIP_VOIDBORNE_UPDATE = process.env.SKIP_VOIDBORNE_UPDATE === "1";
+const SKIP_VOIDBORNE_UNPACK = process.env.SKIP_VOIDBORNE_UNPACK === "1";
 
 async function main() {
   await fs.mkdir(TMP_DATA_DIR, { recursive: true });
   await ensureDaggerheartRepo();
   await ensureVoidRepo();
   await unpackVoidPacks();
+  await ensureVoidborneRepo();
+  await unpackVoidbornePacks();
   await refreshApiData();
   console.log("Исходники обновлены.");
 }
@@ -99,6 +109,50 @@ async function unpackVoidPack(packName) {
   const outputDir = path.join(VOID_UNPACKED_DIR, packName);
   await fs.mkdir(outputDir, { recursive: true });
   console.log(`Unpacking The Void pack ${packName}...`);
+  await unpackModulePack({
+    packName,
+    moduleId: VOID_MODULE_ID,
+    packsDir: VOID_PACKS_DIR,
+    outputDir,
+    label: "The Void"
+  });
+}
+
+async function ensureVoidborneRepo() {
+  if (!existsSync(VOIDBORNE_REPO_DIR)) {
+    console.log("Cloning Voidborne source...");
+    runGitCommand(["clone", VOIDBORNE_REPO_URL, path.basename(VOIDBORNE_REPO_DIR)], TMP_DATA_DIR);
+    return;
+  }
+  if (SKIP_VOIDBORNE_UPDATE) {
+    console.log("Skipping Voidborne source update (cached repo).");
+    return;
+  }
+  console.log("Updating Voidborne source...");
+  runGitCommand(["-C", VOIDBORNE_REPO_DIR, "pull", "--ff-only"]);
+}
+
+async function unpackVoidbornePacks() {
+  await fs.mkdir(VOIDBORNE_UNPACKED_DIR, { recursive: true });
+  if (SKIP_VOIDBORNE_UNPACK) {
+    console.log("Skipping Voidborne pack unpacking (cached data).");
+    return;
+  }
+  for (const packName of VOIDBORNE_PACK_NAMES) {
+    const outputDir = path.join(VOIDBORNE_UNPACKED_DIR, packName);
+    await fs.mkdir(outputDir, { recursive: true });
+    console.log(`Unpacking Voidborne pack ${packName}...`);
+    await unpackModulePack({
+      packName,
+      moduleId: VOIDBORNE_MODULE_ID,
+      packsDir: VOIDBORNE_PACKS_DIR,
+      outputDir,
+      label: "Voidborne"
+    });
+  }
+}
+
+async function unpackModulePack({ packName, moduleId, packsDir, outputDir, label }) {
   const args = [
     "--yes",
     "@foundryvtt/foundryvtt-cli",
@@ -108,9 +162,9 @@ async function unpackVoidPack(packName) {
     "--type",
     "Module",
     "--id",
-    VOID_MODULE_ID,
+    moduleId,
     "--inputDirectory",
-    VOID_PACKS_DIR,
+    packsDir,
     "--outputDirectory",
     outputDir,
     "--folders",
@@ -118,7 +172,7 @@ async function unpackVoidPack(packName) {
   ];
   const result = spawnSync("npx", args, { cwd: BASE_DIR, stdio: "inherit" });
   if (result.status !== 0) {
-    throw new Error(`Failed to unpack ${packName} pack from The Void module.`);
+    throw new Error(`Failed to unpack ${packName} pack from ${label} module.`);
   }
 }
 

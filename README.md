@@ -46,8 +46,8 @@ https://raw.githubusercontent.com/bmpolonsky/fvtt-daggerheart-ru/main/module/mod
 
 ## Требования и совместимость
 
-* **Foundry VTT:** v14.359+ (проверено на v14.360)
-* **Система Daggerheart для Foundry (Foundryborne):** 2.0.0+ (проверено на 2.2.0)
+* **Foundry VTT:** v14.364+ (проверено на v14.364)
+* **Система Daggerheart для Foundry (Foundryborne):** 2.5.0+ (проверено на 2.5.0)
 * **Модуль:** [Babele](https://foundryvtt.com/packages/babele) 2.7.5+
 
 > Модуль — это **локализация**, он ставится **поверх** установленной системы Daggerheart (Foundryborne). Саму систему Daggerheart необходимо установить отдельно.
@@ -58,7 +58,7 @@ https://raw.githubusercontent.com/bmpolonsky/fvtt-daggerheart-ru/main/module/mod
 
 * Перевод интерфейса системы Daggerheart (UI-надписи, диалоги, подсказки).
 * Локализованные **компедиумы SRD**: классы, родословные, подклассы, домены, окружения, противники, оружие и др.
-* Частично переведённый контент из беты **The Void**.
+* Частично переведённый контент из беты **The Void**: модули **The Void (Unofficial)** и **Daggerheart: Voidborne**.
 * Сохранение Foundry-тегов и `@UUID`-ссылок в текстах для корректной работы карточек, макросов и бросков.
 * Структура перевода, совместимая с модулем **Babele** (перевод «поверх» оригинальных компедиумов, без перепаковки чужого контента).
 
@@ -77,9 +77,10 @@ https://raw.githubusercontent.com/bmpolonsky/fvtt-daggerheart-ru/main/module/mod
 git status --short --branch
 git -C tmp_data/original-daggerheart status --short --branch
 git -C tmp_data/the-void-unofficial status --short --branch
+git -C tmp_data/daggerheart-voidborne status --short --branch
 ```
 
-Не перетирайте чужие локальные изменения. Если рабочее дерево не чистое, сначала разберитесь, какие правки уже есть. Это касается и временных репозиториев в `tmp_data`: особенно легко не заметить грязные LevelDB-файлы The Void.
+Не перетирайте чужие локальные изменения. Если рабочее дерево не чистое, сначала разберитесь, какие правки уже есть. Это касается и временных репозиториев в `tmp_data`: особенно легко не заметить грязные LevelDB-файлы The Void (Unofficial) или Voidborne.
 
 ### Обычная актуальная ветка (`main`)
 
@@ -92,10 +93,11 @@ npm run generate:originals
 npm run sync:i18n
 ```
 
-Если обновление The Void мешает SRD-обновлению из-за локально изменённых pack-файлов, можно временно пропустить его:
+Если обновление The Void (Unofficial) или Voidborne мешает SRD-обновлению из-за локально изменённых pack-файлов, можно временно пропустить его:
 
 ```bash
 SKIP_VOID_UPDATE=1 npm run update:sources
+SKIP_VOIDBORNE_UPDATE=1 npm run update:sources
 ```
 
 После этого вручную проверьте diff в `module/`, переведите новые строки и поправьте места, где автоматическая синхронизация не справилась.

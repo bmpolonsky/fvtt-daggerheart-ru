@@ -1,0 +1,2100 @@
+{
+  "label": "Voidborne: Classes & Class Options",
+  "folders": {
+    "Ancestries": "Ancestries",
+    "Assassin": "Assassin",
+    "Blood": "Blood",
+    "Blood Hunter": "Blood Hunter",
+    "Brawler": "Brawler",
+    "Classes": "Classes",
+    "Communities": "Communities",
+    "Demigod": "Demigod",
+    "Domain Cards": "Domain Cards",
+    "Dread": "Dread",
+    "Environments": "Environments",
+    "Features": "Features",
+    "Ghost": "Ghost",
+    "Level 1": "Level 1",
+    "Level 10": "Level 10",
+    "Level 2": "Level 2",
+    "Level 3": "Level 3",
+    "Level 4": "Level 4",
+    "Level 5": "Level 5",
+    "Level 6": "Level 6",
+    "Level 7": "Level 7",
+    "Level 8": "Level 8",
+    "Level 9": "Level 9",
+    "Reanimated": "Reanimated",
+    "Shapeshifter": "Shapeshifter",
+    "Stances": "Stances",
+    "Tier 1": "Tier 1",
+    "Tier 2": "Tier 2",
+    "Tier 3": "Tier 3",
+    "Tier 4": "Tier 4",
+    "Transformations": "Transformations",
+    "Vampire": "Vampire",
+    "Warlock": "Warlock",
+    "Werewolf": "Werewolf",
+    "Witch": "Witch",
+    "Adversaries": "Adversaries",
+    "Class Items": "Class Items",
+    "Subclasses": "Subclasses"
+  },
+  "mapping": {
+    "description": "system.description",
+    "backgroundQuestions": "system.backgroundQuestions",
+    "connections": "system.connections",
+    "actions": {
+      "path": "system.actions",
+      "converter": "toActions"
+    },
+    "effects": {
+      "path": "effects",
+      "converter": "toEffects"
+    },
+    "attack": "system.attack.name"
+  },
+  "entries": {
+    "1. Beguile": {
+      "name": "1. Beguile",
+      "description": "<p>The target is Beguiled and sees the @Lookup[@name] as a friend. A Beguiled creature cannot attack the @Lookup[@name]. Additionally, a Beguiled PC must mark a Stress or make a standard attack against their nearest ally whenever someone rolls with Fear. This eﬀect lasts until the targets succeeds on a Presence or Knowledge Roll (16).</p>",
+      "actions": {
+        "g7TQmKLBZnIGC00X": {
+          "name": "Beguile"
+        }
+      },
+      "effects": {
+        "ZeXbV02l3hbCTi0D": {
+          "name": "Beguile"
+        }
+      }
+    },
+    "10. Terrify": {
+      "name": "10. Terrify",
+      "description": "<p>The target can’t act except to ﬂee the battle or try to shake oﬀ their fear with a successful Insight Roll (16). Additionally, whenever you spend Fear, the target must mark a Stress. This eﬀect lasts until the Gobstalker is defeated or the target takes a rest.</p>",
+      "actions": {
+        "8vDREmp78YOEuMcw": {
+          "name": "Terrify"
+        }
+      },
+      "effects": {
+        "ZItJyYiXXzdFsf2a": {
+          "name": "Terrify"
+        }
+      }
+    },
+    "2. Corrode": {
+      "name": "2. Corrode",
+      "description": "<p>The target takes 2d8 magical damage and marks an Armor Slot without receiving its beneﬁts (they can still use armor to reduce the damage). If all the target’s Armor Slots are already marked, double the damage.</p>",
+      "actions": {
+        "lbgiJ0bNKNiQJeG8": {
+          "name": "Corrode"
+        }
+      }
+    },
+    "3. Doom": {
+      "name": "3. Doom",
+      "description": "<p>The target immediately marks all cleared HP, but can reduce the number of HP marked this way by spending any number of Hope. For each Hope spent in this way, reduce the number of HP marked by 1.</p>"
+    },
+    "4. Hypnosis": {
+      "name": "4. Hypnosis",
+      "description": "<p>The target falls into a deep, sleeplike trance and can’t take any actions except for trying to wake up. The target wakes up when they are hit by an attack, mark 1 or more HP, or succeed on an Instinct Roll (16) to wake up.</p>",
+      "actions": {
+        "L4kIspa4j1wsOQb4": {
+          "name": "Hypnosis"
+        }
+      },
+      "effects": {
+        "WWWEXDlknAGTos3h": {
+          "name": "Hypnosis",
+          "description": "<p>The target falls into a deep, sleeplike trance and can’t take any actions except for trying to wake up. The target wakes up when they are hit by an attack, mark 1 or more HP, or succeed on an Instinct Roll (16) to wake up.</p>"
+        }
+      }
+    },
+    "5. Paralyze": {
+      "name": "5. Paralyze",
+      "description": "<p>The target freezes in place, becoming Vulnerable and Restrained until they mark 2 Stress.</p>",
+      "actions": {
+        "qonamLQbJ6ZIWvqO": {
+          "name": "Paralyze"
+        }
+      },
+      "effects": {
+        "BVqc9GBKEclGfhfW": {
+          "name": "Paralyze"
+        }
+      }
+    },
+    "6. Petrify": {
+      "name": "6. Petrify",
+      "description": "<p>Place a Petriﬁcation Countdown (6) on the target. It ticks down when a PC rolls with Fear. When it triggers, the target turns to stone until the Gobstalker is defeated or they take a long rest. While stone, the target is immune to all damage and aware of their surroundings, but cannot take actions.</p>",
+      "actions": {
+        "0MWivvSYkk4modpN": {
+          "name": "Start Countdown",
+          "countdown": {
+            "Petrify": "Petrify"
+          }
+        }
+      }
+    },
+    "7. Push": {
+      "name": "7. Push",
+      "description": "<p>The target is thrown up to Far range and takes 3d6 physical damage from whatever they hit.</p>"
+    },
+    "8. Sear": {
+      "name": "8. Sear",
+      "description": "<p>The target takes 2d8 direct magical damage.</p>"
+    },
+    "9. Slow": {
+      "name": "9. Slow",
+      "description": "<p>The target is Vulnerable and must mark a Stress to move. The target can spend 2 Hope at any time to end this eﬀect.</p>",
+      "actions": {
+        "FhIaHPUlfOH5O9tX": {
+          "name": "Slow"
+        }
+      },
+      "effects": {
+        "wPKPcUE5POl0dHAa": {
+          "name": "Slow"
+        }
+      }
+    },
+    "Adder's Blessing": {
+      "name": "Adder's Blessing",
+      "description": "<p>You are immune to poison and other toxins.</p>"
+    },
+    "Aetheris": {
+      "name": "Aetheris",
+      "description": "<p>Aetheris are humanoids who possess radiant auras and glowing eyes. They are the descendants of celestials from the Hallows Above.</p>"
+    },
+    "Air Support": {
+      "name": "Air Support",
+      "description": "<p>Three times per scene, you can spend a Fear to have an adversary within Far range of the Shadow King reroll a missed attack with advantage.</p>",
+      "actions": {
+        "bKXH3MIzOJvP0Xju": {
+          "name": "Spend a Fear"
+        }
+      }
+    },
+    "Alluring Voice": {
+      "name": "Alluring Voice",
+      "description": "<p>The Owl Witch can perfectly mimic the voice of a loved one or trusted ﬁgure. Spend a Fear to have the Owl Witch call out to a creature within earshot. The target must succeed on an Instinct Reaction Roll or move up to Far range toward the Owl Witch.</p>",
+      "actions": {
+        "OoZdNGf6ElEDYWaQ": {
+          "name": "Spend a Fear"
+        }
+      }
+    },
+    "Ambush": {
+      "name": "Ambush",
+      "description": "<p>Your \"Marked for Death\" feature uses d6s instead of d4s.</p>"
+    },
+    "Amphibious": {
+      "name": "Amphibious",
+      "description": "<p>You can breathe and move naturally underwater.</p>"
+    },
+    "An Oﬀer You Can’t Refuse": {
+      "name": "An Oﬀer You Can’t Refuse",
+      "description": "<p>Convergence is home to a tenuous network of rival factions. Spend a Fear to have one of them present the party with an easy solution to a diﬃcult problem in exchange for their allegiance. If the party refuses, each PC must mark a Stress and they can’t return to that faction for help in the future.</p><p><em>Which faction oﬀers the party their support? Who do they want the party to act against?</em></p>",
+      "actions": {
+        "75KypxjYbZnBXuK3": {
+          "name": "Spend a Fear"
+        }
+      }
+    },
+    "Anti-mystica-halitosis": {
+      "name": "Anti-mystica-halitosis",
+      "description": "<p>A @Lookup[@name]'s breath is so rancid it creates an invisible miasma that negates magical eﬀects. Any attack that deals magic damage or creates a magical eﬀect in front of the @Lookup[@name] within Close range automatically fails. This feature does not aﬀect the @Lookup[@name]’s own features.</p>"
+    },
+    "Arcane Reﬂection": {
+      "name": "Arcane Reﬂection",
+      "description": "<p>Spend a Fear to have any number of PCs glimpse a reﬂection in the crystal of who they once were or might become. Each target makes a Fate Roll. Targets who succeed see a vision of their better self and can replace one Experience. Targets see a vision of their dark past–or an even darker future–and must mark a Stress, and you gain a fear.</p><p><em>Who do the PCs see on the other side of the crystal? How does it make them feel?</em></p>",
+      "actions": {
+        "eLOkTwTAO4LmxXCM": {
+          "name": "Spend a Fear"
+        }
+      }
+    },
+    "Are You Not Entertained?": {
+      "name": "Are You Not Entertained?",
+      "description": "<p>Spend the spotlight to have the host of the feast kick oﬀ the entertainment portion of the evening. All PCs can make an action roll to initiate a performance, competition, or other lighthearted diversion. Each PC who succeeds becomes an Honored Guest. Until the grand feast ends, an Honored Guest can claim one boon from the host, then clear the condition.</p><p><em>What does the host want to see or hear more than anything else? What can they oﬀer the PCs in return?</em></p>"
+    },
+    "Assassin": {
+      "name": "Assassin",
+      "backgroundQuestions": [
+        "What organization trained you in the art of killing, and how did you gain membership into it?",
+        "Throughout your entire career, one target has eluded you. Who are they, and how have they managed to slip through your ﬁngers?",
+        "You always do what you must to take down your target, but there's one line that you will never cross. What is it?"
+      ],
+      "connections": [
+        "What about me frightens you?",
+        "You once asked me to do something that keeps you up at night.\nWhat was it?",
+        "What secret about myself did I tell you, and how did it change your view of me?"
+      ]
+    },
+    "Aural Assault": {
+      "name": "Aural Assault",
+      "description": "<p>Spend a Fear to have the Choir unleash divine energy. Remove all tokens from this stat block (see “Celestia Coda”). For each token removed, deal 1d12 direct magic damage to all enemies within Close range.</p>",
+      "actions": {
+        "K28UYoIRspoTWG4k": {
+          "name": "Aural Assault"
+        }
+      },
+      "effects": {
+        "pVWKY4NdV2xxzUjP": {
+          "name": "Celestial Coda"
+        }
+      }
+    },
+    "Avatar of Terror": {
+      "name": "Avatar of Terror",
+      "description": "<p>Mark a Stress to transform into a creature fueled by fear. While in this form, your damage rolls gain a +1d6 bonus for each Fear the GM has. Additionally, gain a Hope when the GM uses a Fear feature on an adversary within Close range.</p><p>You must spend a Hope to make an action roll while in this form. Otherwise, you drop out of this form.</p>",
+      "actions": {
+        "cVJFHanJt3Ghr3ut": {
+          "name": "Mark a Stress"
+        }
+      },
+      "effects": {
+        "0qo2ngoRMcjUNsOF": {
+          "name": "Avatar of Terror"
+        }
+      }
+    },
+    "Backstab": {
+      "name": "Backstab",
+      "description": "<p>Your \"Marked for Death\" feature uses d8s instead of d6s.</p>"
+    },
+    "Blighting Strike": {
+      "name": "Blighting Strike",
+      "description": "<p>Make a Spellcast Roll against a target within Far range. On a success, the target takes d6+1 magic damage using your Proficiency and the next time the target deals damage to an ally, it is reduced by half. If you succeed with Fear, the target instead takes d10+1 magic damage using your Proficiency.</p>",
+      "actions": {
+        "CVZp5jAHS0niVcIJ": {
+          "name": "Spellcast Roll"
+        }
+      }
+    },
+    "Blink Beast": {
+      "name": "Blink Beast",
+      "description": "<p>When combat begins, place a duplicate within Close range of the @Lookup[@name]. The duplicate can move when the @Lookup[@name] is spotlighted, and the @Lookup[@name] can target enemies with attacks as if they’re in the same place as their duplicate. The @Lookup[@name] occupies both places until attacked, at which point you roll a d6 to determine whether the attack is targeting the @Lookup[@name] (the result is an even number) or their duplicate (the result is an odd number). Attacks against the duplicate automatically fail. A successful attack against the @Lookup[@name] dispels the duplicate until you spend a Fear to conjure it again.</p>",
+      "actions": {
+        "HcEAFXjx2WPFbVf6": {
+          "name": "Place Duplicate"
+        },
+        "WFScuKMIwhrNZA4o": {
+          "name": "Roll a d6"
+        }
+      }
+    },
+    "Blood Bind": {
+      "name": "Blood Bind",
+      "description": "<p>Make a Spellcast Roll against a target within Far range. On a success, mark a Stress as you slow the target’s vitality. The target is temporarily Restrained and temporarily Vulnerable. Each time the target is spotlighted while either of these conditions persists on them, the target takes d10 magic damage using your Proﬁciency. The spell ends early on the target if you use it again.</p>"
+    },
+    "Blood Hunter": {
+      "name": "Blood Hunter",
+      "backgroundQuestions": [
+        "Are you descended from blood hunters, or are you the ﬁrst in your bloodline to practice hemocraft?",
+        "Which blood relative taught you an important lesson, and how has that lesson kept you alive?",
+        "Who or what was your ﬁrst kill?"
+      ],
+      "connections": [
+        "What have you heard about blood magic that makes you afraid of me or concerned for my well-being?",
+        "What act of bloodshed brought us together?",
+        "How does my determination to rid the Mortal Realms of evildoers align with your beliefs?"
+      ]
+    },
+    "Blood Maledict": {
+      "name": "Blood Maledict",
+      "description": "<p>Spend 3 Hope to target a creature within Far range or in a vision from your Grim Psychometry. Until you ﬁnish a rest, take Severe damage, or use this feature again, you have advantage on all action rolls against the target.</p>",
+      "actions": {
+        "Xbw7T94cXHNdSFLC": {
+          "name": "Spend 3 Hope"
+        }
+      },
+      "effects": {
+        "81MNLvDJJNZkdBCt": {
+          "name": "Blood Maledict",
+          "description": "<p>Until you ﬁnish a rest, take Severe damage, or use this feature again, you have advantage on all action rolls against the target.</p>"
+        }
+      }
+    },
+    "Blood Puppet": {
+      "name": "Blood Puppet",
+      "description": "<p>Make a Spellcast Roll against a creature (living or dead) within Far range. On a success, spend a Hope to control the target by causing them to move, attack, or both. If you do both, you choose the order. If you cause the creature to move, they move to a location you choose that’s within Close range of them. If you cause the creature to attack, make a Spellcast Roll against a target within Melee range of them. On a success, deal d10 physical damage using your Proﬁciency.</p>"
+    },
+    "Blood Spike": {
+      "name": "Blood Spike",
+      "description": "<p>Make a Spellcast Roll against a target within Far range. On a success, mark a Stress to deal d10 magic damage to the target using your Proﬁciency. On a success with Hope, the target also marks a Stress. On a roll with Fear, mark a Stress.</p>"
+    },
+    "Blood-Touched": {
+      "name": "Blood-Touched",
+      "description": "<p>While 4 or more of the domain cards in your loadout are from the Blood domain, gain the following beneﬁts:</p><ul><li><p>When you take enough damage to mark 2 or more Hit Points, gain a Hope.</p></li><li><p>For every 3 Hit Points you have marked, gain a +1 bonus to your Evasion.</p></li></ul>"
+    },
+    "Bloodbath": {
+      "name": "Bloodbath",
+      "description": "<p>Once per rest, spend a Hope to unleash waves of blood around yourself. Make a single Spellcast Roll against each adversary within Close range. On a success, a target marks a Hit Point and a Stress. On a failure, a target marks a Stress.</p><p>Each ally within Close range marks a Stress but clears a Hit Point.</p>"
+    },
+    "Book about Hobby": {
+      "name": "Book about Hobby",
+      "description": "<p>A book about your secret hobby.</p>"
+    },
+    "Brand of Castigation": {
+      "name": "Brand of Castigation",
+      "description": "<p>When you deal damage to a creature, mark a Stress to sear a red, magical mark on them. Until this mark disappears, you always know the direction of the marked creature relative to you, and that creature marks a Stress each time it deals damage to you or an ally of yours within Very Close range of you. The mark disappears when you use this spell again.</p>"
+    },
+    "Brave Face": {
+      "name": "Brave Face",
+      "description": "<p>Once per session, when an attack would cause you to mark a Stress, you can spend a Hope instead.</p>"
+    },
+    "Brawler": {
+      "name": "Brawler",
+      "backgroundQuestions": [
+        "Where did you spend time during your formative years that taught you, directly or indirectly, how to ﬁght in the style you use?",
+        "What group or organization has always had your back, and how did you get in their good graces?",
+        "Who did you lose a ﬁght to long ago that you are desperate for a rematch against?"
+      ],
+      "connections": [
+        "What is one thing we’re both afraid of?",
+        "I rely on your for something important during our travels together.\nWhat is it and how do you feel about it?",
+        "I still haven't forgiven you for something you said to me.\nWhat was it and why did you say it?"
+      ]
+    },
+    "Breath of Fire": {
+      "name": "Breath of Fire",
+      "description": "<p>Spend a Fear to target up to three PCs in front of the Chimera within Close range. All targets must make an Agility Reaction Roll (20). Targets who fail take 3d12 magic damage. Targets who succeed must to either mark an Armor Slot or mark a Stress.</p>",
+      "actions": {
+        "fQRrSphnkvTtyXd1": {
+          "name": "Breath of Fire"
+        }
+      }
+    },
+    "Brutal": {
+      "name": "Brutal",
+      "description": "<p>When you roll the maximum value on a damage die, roll an additional damage die.</p>",
+      "effects": {
+        "oYNlBIe4ASuLGbcR": {
+          "name": "Brutal Stance",
+          "description": "<p>When you roll the maximum value on a damage die, roll an additional damage die.</p>"
+        }
+      }
+    },
+    "Burning Blood": {
+      "name": "Burning Blood",
+      "description": "<p>Make a Spellcast Roll (12). On a success, mark a Hit Point as you conjure a bead of blood, which you lob at a point within Far range. A wave of heat ﬁ lls the area within Very Close range of that point, igniting the internal vitals of those caught within. Each target within the area marks 1 Hit Point. On a success with Hope, each target within the area instead marks 2 Hit Points.</p>"
+    },
+    "Carving": {
+      "name": "Carving",
+      "description": "<p>A carving that symbolizes your patron.</p>"
+    },
+    "Celestial Coda": {
+      "name": "Celestial Coda",
+      "description": "<p>The Choir’s divine song builds on itself with each refrain. Activate the countdown when the Choir is ﬁrst spotlighted. It ticks down on every action roll. When it triggers, place a token on this stat block. The Choir gains a bonus to their diﬃculty and standard attack damage equal to the number of tokens on this stat block.</p>",
+      "actions": {
+        "FdpdgIjc9CUqDwB8": {
+          "name": "Start Countdown",
+          "countdown": {
+            "Celestial Coda": "Celestial Coda"
+          }
+        }
+      }
+    },
+    "Cerebral Suction": {
+      "name": "Cerebral Suction",
+      "description": "<p>Spend a Fear to choose a Vulnerable target within Melee range. The Priest grabs the target and tries to insert their face tentacles into the target’s ears, nose, and mouth. The target must succeed on a Strength Reaction Roll or mark 1d6 Stress. The Priest clears a number of Stress equal to the number of Stress the target marked.</p>",
+      "actions": {
+        "RdodqR3aqKFlkm6G": {
+          "name": "Spend a Fear"
+        }
+      }
+    },
+    "Chains of Affliction": {
+      "name": "Chains of Affliction",
+      "description": "<p>Mark 2 Stress to temporarily Chain a target within Close range. When a Chained creature deals damage, the target of their attack reduces the number of Hit Points they mark by one. You can;t have more than one creature Chained at a time.</p>",
+      "actions": {
+        "6xkUULKWPVzpT30D": {
+          "name": "Mark Stress"
+        }
+      },
+      "effects": {
+        "wzLNPfvCLJ39Ci5E": {
+          "name": "Chained"
+        }
+      }
+    },
+    "Change Shape": {
+      "name": "Change Shape",
+      "description": "<p>During a long rest, you can spend a downtime move to swap your current ancestry with another. When you do, describe how your appearance changes.</p>"
+    },
+    "Chasing Death": {
+      "name": "Chasing Death",
+      "description": "<p>While you have 1–3 unmarked Hit Points, you can use your Crimson Rite feature without paying the Hit Point cost. If you have only 1 unmarked Hit Point, you roll d8s instead of d6s for the extra damage of your Crimson Rite.</p>"
+    },
+    "Chop Happy": {
+      "name": "Chop Happy",
+      "description": "<p><strong>Mark a Stress</strong> to make a standard attack against up to three targets within range. For each target who marks a HP, you gain a Fear.</p>"
+    },
+    "Circle of Power": {
+      "name": "Circle of Power",
+      "description": "<p>Once per rest, mark a circle on the ground around you up to Very Close range and place a number of tokens equal to you Spellcast Trait on this card. Each time you or any ally within the circle makes an action roll or is hit with an attack, remove a token. This spell lasts until the last token is removed or you step out of the circle.</p><p>While within this circle you and any allies:</p><ul><li><p>Gain a +4 bonus to your damage thresholds.</p></li><li><p>Gain a +2 bonus to your attack rolls.</p></li><li><p>Gain a +1 bonus to your Evasion.</p></li></ul>",
+      "effects": {
+        "WDEHAIM4CCbk0coa": {
+          "name": "Circle of Power"
+        }
+      }
+    },
+    "Close-Knit": {
+      "name": "Close-Knit",
+      "description": "<p>Once per long rest, you can spend any number of Hope to give an ally the same number of Hope.</p>",
+      "actions": {
+        "XVxBj2rIyvPu7qaK": {
+          "name": "Close-Knit"
+        }
+      }
+    },
+    "Collateral Damage": {
+      "name": "Collateral Damage",
+      "description": "<p>Xero’s movement cannot be hindered, impeded, or aﬀected by any external eﬀect. All destructible terrain or obstacles in Xero’s path are destroyed when Xero moves through them.</p>"
+    },
+    "Combo Strikes": {
+      "name": "Combo Strikes",
+      "description": "<p>After making a damage roll with a Melee weapon but before dealing that damage to the target, mark a Stress to start a combo stroke. When you o, roll your Combo Die and note its value. Then, roll your Combo Die again. If the value of the second roll is equal to or greater than your first roll, continue rolling until the latest Combo Die's roll is less than the roll that preceeded it. Total all rolled values and add that amount to your weapon's damage. These values cannot be adjusted by features that affect damage dice.</p><p>Your Combo Die start as a d4. When you level up, once per tier you may use one of your advancement options to increase your Combo Die instead.</p>",
+      "actions": {
+        "GMheNXfk0jslzCGT": {
+          "name": "Combo Strike (d4)"
+        },
+        "YUmYWc1SBF5HSITW": {
+          "name": "Combo Strikes (d6)"
+        },
+        "3ZJIF7dCF8cG43bK": {
+          "name": "Combo Strikes (d8)"
+        },
+        "vlHFTiOnBHdDOfep": {
+          "name": "Combo Strike (d10)"
+        }
+      }
+    },
+    "Come Back Worse": {
+      "name": "Come Back Worse",
+      "description": "<p>When a @Lookup[@name] is defeated, you can spend a Fear to bring this @Lookup[@name] back to life. This new @Lookup[@name] gains a +X bonus to all rolls, where X is the number of times this feature has been used by this adversary.</p>"
+    },
+    "Commune": {
+      "name": "Commune",
+      "description": "<p>Once per long rest, during a moment of calm, you can commune with an ancestor, deity, nature spirit, or otherworldly being. Ask them a question, then roll a number of d6s equal to your Spellcast trait. Choose one value from the rolled results and reference the chart below for the effect:</p><p><strong>1-3</strong>: You taste a ﬂavor, smell a scent, or feel a sensation relevant to the answer.</p><p><strong>4-5</strong>: You hear sounds or see a vision relevant to the answer.</p><p><strong>6</strong>: You psychically experience a scene relevant to the answer as if you were there.</p>",
+      "actions": {
+        "VGUYmO3mDHL03ehu": {
+          "name": "Commune"
+        }
+      }
+    },
+    "Compounding": {
+      "name": "Compounding",
+      "description": "<p>When you roll the maximum value on a Combo Die, increase the size of the subsequent Combo Dice you roll for the attack (at a maximum of d12s).</p>",
+      "effects": {
+        "otOGip7LqmLPSU0H": {
+          "name": "Compounding Stance",
+          "description": "<p>When you roll the maximum value on a Combo Die, increase the size of the subsequent Combo Dice you roll for the attack (at a maximum of d12s).</p>"
+        }
+      }
+    },
+    "Control the Beast": {
+      "name": "Control the Beast",
+      "description": "<p>While in your Wolf Form, you can apply that form’s bonus die to your Agility and Strength Action Rolls.</p>"
+    },
+    "Corpse": {
+      "name": "Corpse",
+      "description": "<p>When you Risk It All on a death move, if you fail, you can permanently mark a Hit Point to succeed instead. When you do, you still use the Hope Die's value to clear Hit Points and Stress.</p>"
+    },
+    "Crimson Adamance": {
+      "name": "Crimson Adamance",
+      "description": "<p>When you would mark your last Hit Point, spend a Hope to mark a Stress instead.</p>"
+    },
+    "Crimson Rite": {
+      "name": "Crimson Rite",
+      "description": "<p>You can enchant your strikes with bloodthirsty power at the cost of your vitality. Mark a Hit Point to enchant one of your active weapons. Until you ﬁnish your next rest, that weapon deals physical or magic damage (choose when you use this feature) and an extra 1d6 damage when you hit with it. This extra damage increases to 2d6 at level 5 and 3d6 at level 8.</p>"
+    },
+    "Crushing": {
+      "name": "Crushing",
+      "description": "<p>When you roll a 1 on a damage die, it can be treated as the highest value on the die instead.</p>",
+      "effects": {
+        "qXzzBEWKscruuyqQ": {
+          "name": "Crushing Stance",
+          "description": "<p>When you roll a 1 on a damage die, it can be treated as the highest value on the die instead.</p>"
+        }
+      }
+    },
+    "Damnation": {
+      "name": "Damnation",
+      "description": "<p>Make a Spellcast Roll against a target within Far range. On a success, mark any number of Stress to roll an equal number of d20s, dealing magic damage equal to the total result. If the target is defeated as a result of this attack, all adversaries within Far range of the target mark a Stress.</p>",
+      "actions": {
+        "Pw7xtTAye9QI7JO7": {
+          "name": "Spellcast Roll"
+        }
+      }
+    },
+    "Dance in the Flames": {
+      "name": "Dance in the Flames",
+      "description": "<p>Spend a token from this stat block. The @Lookup[@name] conjures a ball of ﬁre at a point within Far range. All creatures within Very Close range of that point must make an Agility Reaction Roll. Targets who fail take 2d10 magic damage. Targets who succeed take half damage.</p>",
+      "actions": {
+        "2LKP5c9GcQ6ZjQa2": {
+          "name": "Dance in the Flames"
+        }
+      }
+    },
+    "Dark Aegis": {
+      "name": "Dark Aegis",
+      "description": "<p>Once per long rest, when you would mark any number of Hit Points, you can spend a Favor instead.</p>"
+    },
+    "Dark Army": {
+      "name": "Dark Army",
+      "description": "<p>Make a Spellcast Roll (14). Once per long rest, on a success you can summon a group of fiends that surround and move with you. Place 8 tokens on this card. When you deal damage to a target within Very Close range, you can spend a token to increase it by +1d8. Additionally, when you take damage, you can spend a token to reduce it by 1d8. Each time you spend a token, a fiend acts on your behalf, then disappears.</p><p>Remove all tokens from this card on your next rest.</p>",
+      "actions": {
+        "1qXMoR46djXXZK7L": {
+          "name": "Spellcast Roll"
+        }
+      }
+    },
+    "Darkfire": {
+      "name": "Darkfire",
+      "description": "<p>Make a Spellcast Roll against all adversaries within Close range. You can spend a Hope for any you succeed against, and they must make a Reaction Roll (14). On a failure, they take d8+6 magic damage using your Proficiency as they are engulfed in dark fire. On a success they take half damage.</p>",
+      "actions": {
+        "jpFEXVE7SzBic5gB": {
+          "name": "Spellcast Roll"
+        }
+      }
+    },
+    "Deadly": {
+      "name": "Deadly",
+      "description": "<p>When you deal Severe damage, the target marks an additional HP.</p>",
+      "effects": {
+        "M5iXd7mPpNKZc1We": {
+          "name": "Deadly Stance",
+          "description": "<p>When you deal Severe damage, the target marks an additional HP.</p>"
+        }
+      }
+    },
+    "Deadly Devotion": {
+      "name": "Deadly Devotion",
+      "description": "<p>On a successful attack, you can spend a Favor to gain a +1 bonus to your Evasion until you mark a Hit Point or take a rest.</p>"
+    },
+    "Death Strike": {
+      "name": "Death Strike",
+      "description": "<p>When you deal Severe damage to a creature, you can mark a Stress to make them mark an additional Hit Point.</p>",
+      "actions": {
+        "ND55UanTu6BnCFO6": {
+          "name": "Mark a Stress"
+        }
+      }
+    },
+    "Defensive": {
+      "name": "Defensive",
+      "description": "<p>Attack rolls against you have disadvantage unless the adversary marks a Stress.</p>",
+      "effects": {
+        "L2eFV8w2kim4j8Lq": {
+          "name": "Defensive Stance",
+          "description": "<p>Attack rolls against you have disadvantage unless the adversary marks a Stress.</p>"
+        }
+      }
+    },
+    "Deflecting": {
+      "name": "Deflecting",
+      "description": "<p>When you are targeted by an attack, you can spend 2 Focus to gain a bonus to your Evasion equal to your Armor Score against the attack.</p>",
+      "effects": {
+        "LB7sVB64N8X2ZLTV": {
+          "name": "Deflecting Stance",
+          "description": "<p>When you are targeted by an attack, you can spend 2 Focus to gain a bonus to your Evasion equal to your Armor Score against the attack.</p>"
+        }
+      }
+    },
+    "Devastating": {
+      "name": "Devastating",
+      "description": "<p>Spend a Focus before your attack roll to use d20s as your damage dice instead.</p>",
+      "effects": {
+        "ET3B0BVwmCEsA0eQ": {
+          "name": "Devastating Stance",
+          "description": "<p>Spend a Focus before your attack roll to use d20s as your damage dice instead.</p>"
+        }
+      }
+    },
+    "Dire Strike": {
+      "name": "Dire Strike",
+      "description": "<p>After making a successsful attack, you can spend 2 Hope to leach power from the target. For each Hit Point your target marked from this attack, the GM loses a Fear.</p>",
+      "actions": {
+        "a1qyKDRbfisYQ5yo": {
+          "name": "Spend 2 Hope"
+        }
+      }
+    },
+    "Discerning": {
+      "name": "Discerning",
+      "description": "<p>You may choose the target of your attack after making your attack roll. The GM will tell you who the attack would succeed against.</p>",
+      "effects": {
+        "XeOjMk8UTCWbo0H4": {
+          "name": "Discerning Attack",
+          "description": "<p>You may choose the target of your attack after making your attack roll. The GM will tell you who the attack would succeed against.</p>"
+        }
+      }
+    },
+    "Divine Countenance": {
+      "name": "Divine Countenance",
+      "description": "<p>You have advantage on rolls to command or persuade.</p>",
+      "effects": {
+        "NB3wuBfYklQJXrXD": {
+          "name": "Divine Countenance"
+        }
+      }
+    },
+    "Divine Ire": {
+      "name": "Divine Ire",
+      "description": "<p>Once per rest, when you take damage, you can spend any number of Favor to target that many adversaries within Close range. Each target must mark a Hit Point.</p>"
+    },
+    "Dminish My Foes": {
+      "name": "Dminish My Foes",
+      "description": "<p>When you succeed with Hope on an action roll against a target, you can spend a Hope to make your target mark a Stress.</p>"
+    },
+    "Don’t Make Waves": {
+      "name": "Don’t Make Waves",
+      "description": "<p>Because anything is possible in Convergence, the city maintains a labyrinthine bureaucracy that issues and enforces ordinances regarding all exchanges and interactions between the Realms. When the party arrives in Convergence, start a Countdown (6) that ticks down whenever a PC does something that upsets the city’s delicate political equilibrium. When it triggers, the PCs become Wanted until they clear their names with the authorities. When a Wanted PC rolls with Fear, you can summon 1d4 Temporal Enforcers who appear within Very Close range, immediately take the spotlight, and try to apprehend the party.</p><p><em>What has the party done (or what do they plan to do) that draws the attention and ire of the Consortium? How can they ﬁx the problem they caused?</em></p>",
+      "actions": {
+        "VRmtrHp8QXgxg6nR": {
+          "name": "Start Countdown",
+          "countdown": {
+            "Don’t Make Waves": "Don’t Make Waves"
+          }
+        }
+      }
+    },
+    "Doppel-Dangler": {
+      "name": "Doppel-Dangler",
+      "description": "<p>The membranous cluster at the end of the Beguiler’s head stalk can shapeshift into any humanoid form. Mark a Stress and choose a PC within Close range. Their player must tell you what form their PC would ﬁnd most trustworthy (such as a relative, mentor, or lover). The Beguiler’s head stalk transforms into that shape.</p>",
+      "actions": {
+        "PFtt6uZQety10FUQ": {
+          "name": "Mark a Stress"
+        }
+      }
+    },
+    "Double Claw": {
+      "name": "Double Claw",
+      "description": "<p>After the Chimera makes a standard attack, you can mark a Stress to make an additional standard attack. If both attacks target the same creature, combine the damage.</p>"
+    },
+    "Double Lash": {
+      "name": "Double Lash",
+      "description": "<p>When the @Lookup[@name] makes a standard attack, you can <strong>mark a Stress</strong> to make an additional standard attack. If both attacks target the same creature, combine the damage.</p>"
+    },
+    "Double Swipe": {
+      "name": "Double Swipe",
+      "description": "<p><strong>Spend a Fear</strong> to move the Troll up to Close range and immediately make two standard attacks against a single target within Melee range. If both attacks hit, combine the damage and the target also loses a Hope.</p><p></p><p>Roll for Damage on Second Swipe if both Attacks hit. Roll for Damage on the First Swipe if only one Hits.</p>",
+      "actions": {
+        "lYlhfiqllayDzDfg": {
+          "name": "First Swipe"
+        },
+        "vefGRf1W43sDz1Iy": {
+          "name": "Second Swipe"
+        }
+      }
+    },
+    "Draining Bane": {
+      "name": "Draining Bane",
+      "description": "<p>When an adversary attacks you or an ally within Very Close range, you can spend 2 Favor to temporarily Drain them. When you do, they must mark a Stress and you can clear a Stress. A Drained creature uses a d12 instead of a d20 for attack rolls.</p>"
+    },
+    "Draining Invocation": {
+      "name": "Draining Invocation",
+      "description": "<p>When an adversary attacks you or an ally within Very Close range, you can spend a Favor to make them use a d12 instead of a d20 for the attack roll. Additionally, the adversary must mark a Stress, and you can clear a Stress.</p>"
+    },
+    "Dread Touched": {
+      "name": "Dread Touched",
+      "description": "<p>When 4 or more of the domain cards in your loadout are from the Dread domain, gain the following benefits:</p><p></p><ul><li><p>When you succeed with Fear, you can mark 2 Stress to prevent the GM from gaining a Fear.</p></li><li><p>Once per rest, when making an action roll, you can add a +1 bonus to the roll for each Fear token the GM has stored.</p></li></ul>",
+      "actions": {
+        "p7B7XbA82L0kmEX4": {
+          "name": "Mark 2 Stress"
+        }
+      }
+    },
+    "Dueling": {
+      "name": "Dueling",
+      "description": "<p>Gain advantage on attack rolls when there are no other adversaries or allies in Very Close range of you or your target.</p>",
+      "effects": {
+        "Re6ff7c7p8DsjVad": {
+          "name": "Dueling Stance",
+          "description": "<p>Gain advantage on attack rolls when there are no other adversaries or allies in Very Close range of you or your target.</p>"
+        }
+      }
+    },
+    "Duneborne": {
+      "name": "Duneborne",
+      "description": "<p>Being part of a duneborne community means you've made a home among the shifting sands and arid climate of the desert.</p>"
+    },
+    "Earthkin": {
+      "name": "Earthkin",
+      "description": "<p>Earthkin are descended from earth elementals. They are humanoids whose bodies are a combination of flesh and earth.</p>"
+    },
+    "Eldritch Flesh": {
+      "name": "Eldritch Flesh",
+      "description": "<p>You embody the darkness you have dallied with.</p><p>When this card is in your loadout:</p><ul><li><p>Gain a +1 bonus to your damage thresholds for each Stress you have marked.</p></li><li><p>When you roll with Fear, you can spend 2 Hope to clear an Armor Slot.</p></li></ul>",
+      "actions": {
+        "FnqeIDObXbtWa68z": {
+          "name": "Spend 2 Hope"
+        }
+      },
+      "effects": {
+        "RsjxViHHzEYT35eb": {
+          "name": "Edlritch Flesh"
+        }
+      }
+    },
+    "Emberkin": {
+      "name": "Emberkin",
+      "description": "<p>Emberkin are descended from fire elementals. They are humanoids whose bodies are a combination of flesh and fire.</p>"
+    },
+    "Enhanced Critical": {
+      "name": "Enhanced Critical",
+      "description": "<p>The @Lookup[@name]’s attack roll counts as a critical success if the result on the d20 is a 19 or a 20.</p>",
+      "effects": {
+        "82yvwjOK2OypcQCI": {
+          "name": "Enhanced Critical"
+        }
+      }
+    },
+    "Enhanced Hex": {
+      "name": "Enhanced Hex",
+      "description": "<p>Attacks you make against Hexed creatures gain a damage bonus equal to your Proficiency.</p>"
+    },
+    "Entangle": {
+      "name": "Entangle",
+      "description": "<p>When a PC moves within Melee range, you can spend a Fear to make an attack against them. On a successful attack, the target is Swallowed. While Swallowed, a creature is Restrained and can only take actions to attack the Beguiler. The Beguiler disgorges all Swallowed creatures when they take Major damage.</p>",
+      "actions": {
+        "Asrh5cTGzQYeKaXh": {
+          "name": "Entangle"
+        }
+      },
+      "effects": {
+        "XcJY5ZBLBZCkjG90": {
+          "name": "Swallowed"
+        }
+      }
+    },
+    "Entice": {
+      "name": "Entice",
+      "description": "<p>Spend a Fear to play an alluring overture to a PC within Close range. The PC must succeed on a Presence Reaction Roll (18) or move into Melee range with the Beguiler. If the Beguiler’s head stalk is in a form the PC would ﬁnd trustworthy, they have disadvantage on the reaction roll.</p>",
+      "actions": {
+        "dzhIPFSnEsIAnL1z": {
+          "name": "Entice"
+        }
+      }
+    },
+    "Ephemeral": {
+      "name": "Ephemeral",
+      "description": "<p>Cross out a Hit Point slot when you take this card and when you increase your tier. When you mark your last Hit Point, you must choose Blaze of Glory as your death move.</p>"
+    },
+    "Everything Everywhere All at Once": {
+      "name": "Everything Everywhere All at Once",
+      "description": "<p>This city has the solution to any problem, if you can ﬁnd it. A PC seeking a particular item with wondrous properties can make an Instinct or Presence Roll to ﬁnd it in the city’s pandimensional marketplace.</p><ul><li><p><strong>Critical Success:</strong> The PC ﬁnds the perfect item, and the merchant who has it only wants something the PC considers inconsequential in exchange.</p></li><li><p><strong>Success with Hope:</strong> The PC ﬁnds the perfect item, and can exchange something of equal value for it.</p></li><li><p><strong>Success with Fear:</strong> The PC ﬁnds the perfect item, but the merchant who has it will only exchange it for something the party can’t give them... yet.</p></li><li><p><strong>Any Failure:</strong> The PC must mark a Stress as they go on a wild goose chase but come up empty-handed. The PC can mark an additional Stress to change this result into a success with Fear.</p></li></ul><p><em>Who has the item the party needs? What do they want in return?</em></p>"
+    },
+    "Executioners Guild": {
+      "name": "Executioners Guild"
+    },
+    "Exﬁltration": {
+      "name": "Exﬁltration",
+      "description": "<p>When the Progress Countdown triggers, the party acquires the object of the Heist and must succeed on a group action roll to escape without being caught. On a failure, each PC marks a Stress and takes 2d12 direct damage. </p><p><em>What makes getting out even more dangerous than getting in? What unforeseen developments stymie the party’s original escape plan?</em></p>",
+      "actions": {
+        "oWHd4biaeV4B9Gts": {
+          "name": "Failure"
+        }
+      }
+    },
+    "Eye for an Eye": {
+      "name": "Eye for an Eye",
+      "description": "<p>When you mark more than one Hit Point from an attack in Melee range, the attacker must make a Reaction Roll (13). On a failure, once per rest, they immediately mark the same number of Hit Points in return.</p>"
+    },
+    "Eye of the Storm": {
+      "name": "Eye of the Storm",
+      "description": "<p>Spend 2 Hope to grant a +1 bonus to either your or an ally's Evasion until you next take Severe damage or you use the Eye of the Storm again.</p>",
+      "actions": {
+        "DwOUA370UG5ohmBI": {
+          "name": "Eye of the Storm"
+        }
+      },
+      "effects": {
+        "u7reuLlF8UWFrlYE": {
+          "name": "Eye of the Storm"
+        }
+      }
+    },
+    "Eyestalks": {
+      "name": "Eyestalks",
+      "description": "<p>Mark a Stress to attack a target within Far range. On a hit, spend a Fear to choose an eﬀect or roll a d10 for a random eﬀect. The Gobstalker uses the corresponding magical beam.</p>",
+      "actions": {
+        "D0KowB1i6TTaotr0": {
+          "name": "Eyestalks"
+        }
+      }
+    },
+    "Fangs": {
+      "name": "Fangs",
+      "description": "<p>Make a Strength Roll to bite a target within Melee range, dealing d8 physical damage using your Proficiency.</p>",
+      "actions": {
+        "s5mALumuh96gDlLb": {
+          "name": "Fangs"
+        }
+      }
+    },
+    "Favor": {
+      "name": "Favor",
+      "description": "<p>Start with 3 Favor. During a rest, spend one of your downtime moves to tithe to your patron. When you do, gain Favor equal to your Presence. If you choose to forgo this offering, the GM instead gains a Fear.</p>"
+    },
+    "Favored": {
+      "name": "Favored",
+      "description": "<p>Add the trait of your choice to your damage roll.</p>",
+      "effects": {
+        "v3psi76ywARK9Omc": {
+          "name": "Favored Stance",
+          "description": "<p>Add the trait of your choice to your damage roll.</p>"
+        }
+      }
+    },
+    "Favored Weapon": {
+      "name": "Favored Weapon",
+      "description": "<p>Mark a Stress to Imbue you weapon with you Patron's fury until you deal Severe damage. On a successful Imbued weapon attack, you can spend any number of Favor to gain a +1d6 damage bonus for each Favor spent.</p>"
+    },
+    "Fearsome Attack": {
+      "name": "Fearsome Attack",
+      "description": "<p>You can always spend a Favor to reroll any number of your damage dice. You can continue spending Favor to reroll the same dice as many times as you'd like.</p>"
+    },
+    "Feed": {
+      "name": "Feed",
+      "description": "<p>On a successful Fangs attack against a living creature, you can mark a Stress to Feed. Place a number of tokens on this card equal to the number of Hit Points your target marks. You can hold up to 5 tokens at a time. Spend a token before an action roll to make your Fear Die a d20 instead. When you take a Long Rest, remove a token. If there are no tokens on this card, all your action and reaction rolls are made with disadvantage.</p>",
+      "actions": {
+        "egfD56rf2lvpad3J": {
+          "name": "Feed"
+        }
+      },
+      "effects": {
+        "KdcC3I8ooF9BB655": {
+          "name": "Feed"
+        }
+      }
+    },
+    "Feral Hide": {
+      "name": "Feral Hide",
+      "description": "<p>While in your Wolf Form, you can apply that form’s bonus die to your Agility and Strength Action Rolls.</p>"
+    },
+    "Fireproof": {
+      "name": "Fireproof",
+      "description": "<p>You are immune to damage from magical or mundane flame.</p>"
+    },
+    "First Strike": {
+      "name": "First Strike",
+      "description": "<p>The first time in a scene you succeed on an attack roll, double the damage of the attack.</p>"
+    },
+    "Flail Swipe": {
+      "name": "Flail Swipe",
+      "description": "<p>The @Lookup[@name] swings their skull ﬂail in a wide arc.</p><p><strong>Mark a Stress</strong> to make an attack against all targets in front of the @Lookup[@name] within Very Close range. On a success, the @Lookup[@name] deals 2d10+3 instead of its normal damage. The @Lookup[@name] cannot use this action while evolved.</p>",
+      "actions": {
+        "81DeTUtZUSnCJRt2": {
+          "name": "Flail Swipe"
+        }
+      }
+    },
+    "Focus": {
+      "name": "Focus",
+      "description": "<p>During a rest, roll a number of d6s equal to your Instinct and place a number of Focus tokens equal to the highest value rolled on this card. Spend a Focus to shift into a stance until you take Severe damage, the scene ends, you mark your last Hit Point, or you shift into another stance.</p>"
+    },
+    "Found Family": {
+      "name": "Found Family",
+      "description": "<p>Once per Session, you can spend a Hope to use an ally's community ability. When you do, your ally gains a Hope.</p><p>At any point, when you've discovered the community you were once a part of, or have joined a new community, you can permanently trade this community card for that one instead.</p>",
+      "actions": {
+        "TzCKQsghVSISJoJX": {
+          "name": "Found Family"
+        }
+      }
+    },
+    "Freeborne": {
+      "name": "Freeborne",
+      "description": "<p>Being part of a freeborne community means you're from a collective that lived under tyrannical rule and is now liberated.</p>"
+    },
+    "Frenzy": {
+      "name": "Frenzy",
+      "description": "<p>When you mark your last Stress while in Wolf Form, you go into a Frenzy. Roll a number of d20s equal to your tier and automatically deal that much physical damage to all creatures within Very Close range. Then drop out of Wolf Form.</p>",
+      "actions": {
+        "wAZfI0kGrDGOvmRN": {
+          "name": "Frenzy"
+        }
+      }
+    },
+    "Frostborne": {
+      "name": "Frostborne",
+      "description": "<p>Being part of a frostborne community means you come from a place of snow and ice.</p>"
+    },
+    "Gale Force": {
+      "name": "Gale Force",
+      "description": "<p>Mark a Stress to conjure a gust of wind that carries you or an ally up to Very Far range. Additionally, you can always control the speed at which you fall.</p>",
+      "actions": {
+        "bHbtU4PVaTQYFx1j": {
+          "name": "Gale Force"
+        }
+      }
+    },
+    "Get In & Get Out": {
+      "name": "Get In & Get Out",
+      "description": "<p>Spend a Hope to ask the GM for either a quick or inconspicuous way into or out of a building or structure you can see. The next roll you make that capitalizes on this information has advantage.</p>"
+    },
+    "Gigaton Stomp": {
+      "name": "Gigaton Stomp",
+      "description": "<p>Spend a Fear to have Xero bring their foot down hard, creating a localized earthquake. All creatures within Melee range take 4d12 physical damage and are Restrained until they succeed on a Finesse Roll to slide out from underfoot. All creatures outside of Melee range and within Close range must succeed on an Instinct Reaction Roll or be knocked back up to Far range. If a target is knocked back, they must mark an Armor Slot or take 4d12 physical damage as they land.</p>",
+      "actions": {
+        "PTjZ77KG7Em05InY": {
+          "name": "Spend a Fear"
+        },
+        "lrj6qYiOucMJOXIH": {
+          "name": "Close Range"
+        }
+      },
+      "effects": {
+        "KRG4Ql4HVWqVRgRy": {
+          "name": "Restrained"
+        }
+      }
+    },
+    "Glyph of Hermorrhaging": {
+      "name": "Glyph of Hermorrhaging",
+      "description": "<p>Make a Spellcast Roll against a creature within Far range. On a success, mark a Hit Point to sear the target with a magical glyph that lasts until the GM spends 2 Fear to remove it or you take Severe damage. Whenever the target marks any Hit Points while the glyph remains, you can mark a Stress to make them mark an additional Hit Point.</p>"
+    },
+    "Gnome": {
+      "name": "Gnome",
+      "description": "<p>Gnomes are small humanoids most easily recognized by their dense musculature, long arms, and large facial features.</p>"
+    },
+    "Grappling": {
+      "name": "Grappling",
+      "description": "<p>On a successful attack, you can spend a Focus to make the target temporarily Restrained.</p>",
+      "effects": {
+        "0UkMaOwIXNzgXkHA": {
+          "name": "Grappling Stance",
+          "description": "<p>On a successful attack, you can spend a Focus to make the target temporarily Restrained.</p>"
+        }
+      }
+    },
+    "Gravitational Anomalies": {
+      "name": "Gravitational Anomalies",
+      "description": "<p>Strange, localized phenomena dot the landscape, warping distance and direction. Spend a Fear to alter the gravity at a point of your choice. All targets within Close range of that point must make a Knowledge Reaction Roll to calculate their new trajectories. Targets who fail take 3d8+4 physical damage as they are thrown up and away. Targets who succeed must mark a Stress or take half damage.</p><p><em>What does it feel like as your body and mind ﬁght to re-establish equilibrium? Is there any way to use this to your advantage?</em></p>",
+      "actions": {
+        "8IXAs1oCdaIEktyp": {
+          "name": "Alter Gravity"
+        }
+      }
+    },
+    "Grim Psychometry": {
+      "name": "Grim Psychometry",
+      "description": "<p>While inspecting a creature, a location, or an object within Very Close range, make a Spellcast Roll (12). On a success, mark a Stress to have a vision of the most recent violence involving the target, and until you ﬁnish a rest, you have advantage on any action roll to recall lore about things in the vision.</p>"
+    },
+    "Grim Resolve": {
+      "name": "Grim Resolve",
+      "description": "<p>Spend 3 Hope to clear 2 Stress.</p>",
+      "actions": {
+        "4lE1Xjg2x6rGtNsP": {
+          "name": "Spend 3 Hope"
+        }
+      }
+    },
+    "Grisly Harpoon": {
+      "name": "Grisly Harpoon",
+      "description": "<p>You launch a harpoon of blood at a location or creature within Far range. If the target is a location, make a Spellcast Roll (13). On a success, mark a Stress to pull yourself to a position within Melee range of it.</p><p>If the target is a creature, make a Spellcast Roll against it. On a success, mark a Stress to deal 3d8 magic damage to the target. You then pull the target straight toward yourself or pull yourself straight toward the target, ending within Melee range of each other.</p>"
+    },
+    "Hallowed Aura": {
+      "name": "Hallowed Aura",
+      "description": "<p>Once per rest, when an ally within Close range rolls with Fear, you can make it a roll with Hope instead.</p>"
+    },
+    "Hand of Glory": {
+      "name": "Hand of Glory",
+      "description": "<p>When the @Lookup[@name] appears, put ﬁve tokens on this stat block. Remove one token whenever the @Lookup[@name] marks a HP. While this stat block has one or more tokens on it, the @Lookup[@name] is Hidden.</p>",
+      "effects": {
+        "sj0wYqkaXT4IGhgN": {
+          "name": "Hidden"
+        }
+      }
+    },
+    "Hand Wraps": {
+      "name": "Hand Wraps",
+      "description": "<p>Hand wraps from a mentor.</p>"
+    },
+    "Hardy": {
+      "name": "Hardy",
+      "description": "<p>Once per rest, you can Help an Ally traverse difficult terrain without spending a Hope.</p>"
+    },
+    "Harmonic Resonance": {
+      "name": "Harmonic Resonance",
+      "description": "<p>The crystals here reverberate with magical energy. A PC can make a downtime move to try and Attune to the environment with a successful Spellcast Roll. Spellcast Rolls made by an Attuned PC inside the Crystal Wasteland have advantage. A PC clears the condition when they leave the wasteland.</p><p><em>How does attunement to this place alter your sensory experience of it? What sound or song from your childhood does this place conjure?</em></p>"
+    },
+    "Hearthborne": {
+      "name": "Hearthborne",
+      "description": "<p>Coming from a hearthborne community means you come from humble origins, having lived in a small village or the countryside.</p>"
+    },
+    "Hedge": {
+      "name": "Hedge"
+    },
+    "Hellsong": {
+      "name": "Hellsong",
+      "description": "<p>Spend 2 Fear to have the Shadow King’s mount unleash a spine-chilling screech that echoes over the battleﬁeld. All PCs within Far range must make a Presence Reaction Roll (18). Targets who succeed must mark a Stress. Targets who fail must mark a Stress and lose a Hope. If the PC can’t lose a Hope, you gain 2 Fear.</p>",
+      "actions": {
+        "5paAMSdeZUKP9iQ5": {
+          "name": "Spend 2 Fear"
+        }
+      }
+    },
+    "Herald of Death": {
+      "name": "Herald of Death",
+      "description": "<p>When you fail an attack roll, you can spend a Favor to reroll it. If it fails again, mark a Stress and take the new result.</p>"
+    },
+    "Herbal Remedies": {
+      "name": "Herbal Remedies",
+      "description": "<p>When you or an ally clear one or more Hit Points or Stress as the result of using a consumable, increase the number cleared by one.</p>"
+    },
+    "Hex": {
+      "name": "Hex",
+      "description": "<p>When a creature causes you or an ally within Close range to mark any number of Hit Points, you can mark a Stress to Hex them. Action and damage rolls against a Hexed creature gain a bonus equal to your tier.</p>",
+      "actions": {
+        "qaoKeW8oxsxsBP4W": {
+          "name": "Mark a Stress"
+        }
+      },
+      "effects": {
+        "34TwipD3QGQzpHQZ": {
+          "name": "Hex"
+        }
+      }
+    },
+    "Hideous Retribution": {
+      "name": "Hideous Retribution",
+      "description": "<p>When an ally within Close range takes damage from a target you can see, you can make a Spellcast Reaction Roll against the target. On a success, mark a Stress to deal them d6 magic damage using your Proficiency.</p>",
+      "actions": {
+        "eUE9n8qqBTkYgrkm": {
+          "name": "Mark a Stress"
+        }
+      }
+    },
+    "High Ground": {
+      "name": "High Ground",
+      "description": "<p>The @Lookup[@name] gains a +2 bonus to attack rolls when attacking a target from above.</p>",
+      "effects": {
+        "cqGrSyJUhkZP8Nib": {
+          "name": "High Ground"
+        }
+      }
+    },
+    "Hindering": {
+      "name": "Hindering",
+      "description": "<p>On a successful attack, you can spend a Focus to make the target temporarily Hindered. While Hindered, their attack rolls have a -2 penalty.</p>",
+      "effects": {
+        "Q0szTmC60CvtGJSq": {
+          "name": "Hindering Stance",
+          "description": "<p>On a successful attack, you can spend a Focus to make the target temporarily Hindered. While Hindered, their attack rolls have a -2 penalty.</p>"
+        }
+      }
+    },
+    "Horde (1d4)": {
+      "name": "Horde (1d4)",
+      "description": "<p>When the Rabble Mawb has marked half or more of their HP, their standard attack deals 1d4 physical damage instead.</p>"
+    },
+    "Horde (2d8+3)": {
+      "name": "Horde (2d8+3)",
+      "description": "<p>When the Choir has marked half or more of their HP, their standard attack deals 2d8+3 magic damage instead.</p>"
+    },
+    "I Am the Weapon": {
+      "name": "I Am the Weapon",
+      "description": "<p>While you don't have any equipped weapons:</p><ul><li><p>You gain a +1 bonus to Evasion.</p></li><li><p>Your unarmed strikes are considered a Melee weapon, use the trait of your choice, and deal d8+d6 phy damage using your Proficiency.</p></li></ul>",
+      "effects": {
+        "geSa8YTN4Fwt3uIH": {
+          "name": "I am the Weapon"
+        }
+      }
+    },
+    "Ichor of the Gods": {
+      "name": "Ichor of the Gods",
+      "description": "<p>Your advantage die is always a d10 instead of a d6.</p>",
+      "effects": {
+        "qOUvHEFag8a4NhVQ": {
+          "name": "Ichor of the Gods"
+        }
+      }
+    },
+    "Ignition": {
+      "name": "Ignition",
+      "description": "<p>Mark a Stress to wreathe your primary weapon in flame until the end of the scene. While ablaze, it gives off a bright light and grants 1d6 bonus to damage rolls against targets within Melee range.</p>",
+      "actions": {
+        "x0HflKmTl9WaDe0R": {
+          "name": "Ignition"
+        }
+      },
+      "effects": {
+        "2lQh7FoxB6on5wV4": {
+          "name": "Ignition"
+        }
+      }
+    },
+    "Ill Omen": {
+      "name": "Ill Omen",
+      "description": "<p>When a PC within Close range makes an action roll, their Fear Die gains a bonus equal to the amount of Fear you currently have.</p>"
+    },
+    "Impossibilities Abound": {
+      "name": "Impossibilities Abound",
+      "description": "<p>Convergence is a nexus of gods, monsters, aliens, and all manner of dimension-hoppers. Because mortal life is generally beneath these beings’ concern, PCs have disadvantage on action rolls to inﬂuence them unless they have leverage against them or know what the NPC cares about.</p><p><em>What manner of being currently holds sway in the city? What strange customs do they practice? Which PC is most confused or oﬀ ended by them, and which PC adopts these customs as their own?</em></p>"
+    },
+    "Improved Mutagens": {
+      "name": "Improved Mutagens",
+      "description": "<p>When you choose a mutagen beneﬁt, your options also include the following:</p><ul><li><p>Nerves of Steel. Whenever you must mark aStress, you can spend 2 Hope instead.</p></li><li><p>Rapidity. Your Evasion increases by 1.</p></li><li><p>Ironskin. Your Severe damage threshold increases by a number equal to your Proﬁciency.</p></li></ul>"
+    },
+    "Inexorable": {
+      "name": "Inexorable",
+      "description": "<p>Attacks against you have disadvantage if you have more than two adversaries within Melee of you.</p>",
+      "effects": {
+        "EUpLi6cnSzthdN7B": {
+          "name": "Inexorable Stance",
+          "description": "<section class=\"window-content\"><section data-tab=\"description\" data-group=\"primary\" data-application-part=\"description\" class=\"tab active description\"><div class=\"editor-content\"><p>Attacks against you have disadvantage if you have more than two adversaries within Melee of you.</p></div></section></section>"
+        }
+      }
+    },
+    "Infiltration": {
+      "name": "Infiltration",
+      "description": "<p>Establish the goal of the Heist and start two dynamic countdowns: a Progress Countdown (12) to represent the party’s work toward their goal and a Consequence Countdown (10) to represent the rising risk of discovery and capture. Advance both according to the Dynamic Countdown Advancement table as the PCs make action rolls to complete the Heist. If the Progress Countdown triggers ﬁrst, spotlight this environment to use the “Exﬁltration” feature. If the Consequence Countdown triggers ﬁrst, gain 1d4 Fear, splotlight this environment, and use the “Sound the Alarm” feature. </p><p>What is the party going after, and where is it located? What unexpected obstacles will they encounter? What happens if the party gets caught?</p>",
+      "actions": {
+        "8aWVQkjk6Tij0SDI": {
+          "name": "Progress Countdown",
+          "countdown": {
+            "Heis: Progress": "Heis: Progress"
+          }
+        },
+        "Ha3jPnlZ7turf3Zm": {
+          "name": "Consequences Countdown",
+          "countdown": {
+            "Heist: Consequences": "Heist: Consequences"
+          }
+        }
+      }
+    },
+    "Infuriating": {
+      "name": "Infuriating",
+      "description": "<p>On a successful attack, the target becomes Furious. While Furious, they are Vulnerable and have a -2 penalty to their attack rolls. They can only clear Furious by succeeding on an attack against you.</p>",
+      "effects": {
+        "3QtinV4MbkuKs9zX": {
+          "name": "Infuriating Stance",
+          "description": "<p>On a successful attack, the target becomes Furious. While Furious, they are Vulnerable and have a -2 penalty to their attack rolls. They can only clear Furious by succeeding on an attack against you.</p>"
+        }
+      }
+    },
+    "Into the Multiverse": {
+      "name": "Into the Multiverse",
+      "description": "<p>The city of Convergence has a portal or door to every plane of existence.</p><p><em>Where (or when) does the party want to go? Where is that portal located, and who controls that area?</em></p>"
+    },
+    "Invigorating": {
+      "name": "Invigorating",
+      "description": "<p>When you make a successful attack, roll a [[/r d4]]. On a 4, gain a Focus.</p>",
+      "effects": {
+        "syMM0UkUvTBM1Ds6": {
+          "name": "Invigorating Stance",
+          "description": "<p>When you make a successful attack, roll a d4. On a 4, gain a Focus.</p>"
+        }
+      }
+    },
+    "Invoke Torment": {
+      "name": "Invoke Torment",
+      "description": "<p>Targets with all of their Stress marked take double damage from your attacks.</p><p>Additionally, when you defeat a creature with all of its Stress marked, you clear a Stress.</p>",
+      "actions": {
+        "5isajxn2cUM1O0N5": {
+          "name": "Clear a Stress"
+        }
+      }
+    },
+    "Juggernaut": {
+      "name": "Juggernaut"
+    },
+    "Jump Scare": {
+      "name": "Jump Scare",
+      "description": "<p>When you deal magic damage to a target, you can mark a Stress to immediately teleport into Melee range of them. When you do, they become Vulnerable until they mark one or more Hit Points.</p>",
+      "actions": {
+        "XEQST8bNSRhQHisT": {
+          "name": "Mark a Stress"
+        }
+      },
+      "effects": {
+        "6R5f1nvAoIw2xGOE": {
+          "name": "Jump Scare"
+        }
+      }
+    },
+    "Just a Statue": {
+      "name": "Just a Statue",
+      "description": "<p>Before they make their ﬁrst attack in a ﬁght or after they become Hidden, the @Lookup[@name] is indistinguishable from a normal statue until they next act or a PC succeeds on an Instinct Roll to identify them.</p>"
+    },
+    "Keen Defenses": {
+      "name": "Keen Defenses",
+      "description": "<p>When you are targeted by an attack, you can spend a Focus to give the attack roll disadvantage.</p>"
+    },
+    "Knife Thrower": {
+      "name": "Knife Thrower",
+      "description": "<p><strong>Mark a Stress</strong> to make a standard attack against a target within Far range. If the @Lookup[@name] makes this attack while Hidden, they have advantage on the attack roll.</p>",
+      "actions": {
+        "aRaWzMGVwLWoFs3G": {
+          "name": "Knife Thrower"
+        }
+      }
+    },
+    "Last Call": {
+      "name": "Last Call",
+      "description": "<p>After a long night, the partygoers start ﬁltering out. When the feast concludes, all PCs who participated in the festivities clear all Stress and gain a Hope. Additionally, each Honored Guest clears all HP and gains an additional Hope, then clears the condition. PCs who overindulged must succeed on a Strength Reaction Roll or become Hungover until their next rest. Hungover PCs take a −1 penalty to all action rolls.</p><p><em>What crazy stories do the PCs share with one another as they leave the party? Who do the PCs see unexpectedly canoodling afterward?</em></p>"
+    },
+    "Leaping Strike": {
+      "name": "Leaping Strike",
+      "description": "<p><strong>Mark a Stress</strong> and choose a target within Far range. The @Lookup[@name] moves into Melee range of the target and make a standard attack against them. On a success, gain a +1d12 bonus to the damage roll and the target must mark an Armor Slot without receiving its beneﬁts (they can still use armor to reduce the damage).</p>",
+      "actions": {
+        "l65hc8Jcfln0VoZk": {
+          "name": "Leaping Strike"
+        }
+      }
+    },
+    "Life Leash": {
+      "name": "Life Leash",
+      "description": "<p>Spend a Hope to allow yourself and a willing ally within Far range to redistribute marked Hit Points between the two of you. You then can’t target that ally again with Life Leash until you ﬁnish a rest.</p>"
+    },
+    "Lifeblood Talisman": {
+      "name": "Lifeblood Talisman",
+      "description": "<p>Mark a Hit Point to conjure a talisman infused with your life essence. The talisman appears in your hand, and whoever carries the talisman gains its beneﬁt: Whenever the talisman’s bearer marks 2 or more Hit Points, they can spend a Hope to reduce the number of Hit Points marked by 1. The talisman disappears if you have no Hit Points marked or you use this spell again.</p>"
+    },
+    "Lifespring": {
+      "name": "Lifespring",
+      "description": "<p>Once per rest, when you have access to a small amount of water, you can mark 2 Stress to heal a Hit Point on yourself or an ally.</p>",
+      "actions": {
+        "6bXpnjkYBu8FIR0c": {
+          "name": "Lifespring"
+        }
+      }
+    },
+    "Light and Shadow": {
+      "name": "Light and Shadow",
+      "description": "<p>The Shadow King gains a +1 bonus to attack and damage rolls while in shadow or darkness and a −1 penalty to attack and damage rolls while in bright light.</p>"
+    },
+    "Limit Breaker": {
+      "name": "Limit Breaker",
+      "description": "<p>Once per rest, you can perform an unbelievable feat such as running across water, leaping between distant rooftops, or scaling the side of a building without needing to roll. When you do, gain a Hope and clear a Stress.</p>",
+      "actions": {
+        "JouLAa2y6CH35gWe": {
+          "name": "Limit Breaker"
+        }
+      }
+    },
+    "List of Names": {
+      "name": "List of Names",
+      "description": "<p>A list of names with several marked off.</p>"
+    },
+    "Loose Lips and Fast Friends": {
+      "name": "Loose Lips and Fast Friends",
+      "description": "<p>Everyone is here to have a good time. PCs have advantage on Presence rolls to socialize with other revelers.</p><p><em>What is everyone celebrating? Where’s the party? Who’s footing the</em></p><p><em>bill?</em></p>"
+    },
+    "lse8MZWU5XKIZkpq": {
+      "name": "Immovable",
+      "description": "<p>Gain a +2 bonus to your damage thresholds and you cannot be moved unwillingly.</p>",
+      "effects": {
+        "TmKuMrIeg0yX25Ql": {
+          "name": "Immovable Stance",
+          "description": "<p>Gain a +2 bonus to your damage thresholds and you cannot be moved unwillingly.</p>"
+        }
+      }
+    },
+    "Lycan Regeneration": {
+      "name": "Lycan Regeneration",
+      "description": "<p>While in your Wolf Form with all your Hit Points marked, you can mark a Stress to clear a Hit Point. You can do this while unconscious.</p>"
+    },
+    "Marked for Death": {
+      "name": "Marked for Death",
+      "description": "<p>On a successful weapon attack, you can mark a Stress to make the target Marked for Death. Attacks you make against a target that's Marked for Death gain a bonus to damage equal to +1d4 per tier.</p><p>You can only have one adversary Marked for Death at a time, and can't transfer or remove the condition except by defeating the target. The GM can spend a number of Fear equal to your Proficiency to remove the Marked for Death condition. Otherwise, it ends automatically when you take a rest.</p>",
+      "actions": {
+        "J4AmgWosxmq8AdWU": {
+          "name": "Mark a Stress"
+        }
+      },
+      "effects": {
+        "3aw2RbT33OKO98a5": {
+          "name": "Marked for Death"
+        }
+      }
+    },
+    "Martial Artist": {
+      "name": "Martial Artist"
+    },
+    "Martial Form": {
+      "name": "Martial Form",
+      "description": "<p>Take the Martial Form sheet. You start with two martial stances from Tier 1. When you reach a new tier, take two additional stances at your tier or lower.</p><p>(Stances are in the Classes &gt; Stances section of the Classes &amp; Class Options compendium for Voidborne. You need to manually drag them on a character sheet and toggle their effects in the effects tab of the sheet manually.)</p>"
+    },
+    "Master the Beast": {
+      "name": "Master the Beast",
+      "description": "<p>When you are in your Wolf Form and would mark your last Stress, you can instead put one of your Domain cards from your Loadout into your Vault; you can’t Recall that Domain card until you ﬁnish a long rest.</p><p>When you Frenzy from marking your last Stress while in Wolf Form, you gain 2 Hope.</p>"
+    },
+    "Mastered Mutagens": {
+      "name": "Mastered Mutagens",
+      "description": "<p>The trait bonus and penalty you get from your Mutagens feature changes to +2 and −2, respectively. When you choose a mutagen beneﬁt, your options also include the following:</p><ul><li><p>Aetherblood. Within your line of sight, you can see creatures and objects that are invisible, and visual illusions appear transparent to you. If a creature or an object within your line of sight has been transformed by magic, you can see its true form.</p></li><li><p>Fury. When you make an attack roll, you can mark a Stress to gain a bonus to the roll equal to your Proﬁciency.</p></li><li><p>Steelﬂesh. Your Major damage threshold increases by a number equal to your Proﬁciency</p></li></ul>"
+    },
+    "Menacing Reach": {
+      "name": "Menacing Reach",
+      "description": "<p>When you Imbue your weapon with your Patron's fury, you can mark an additional Stress to increase its range by one step (Melee to Very Close, Very Close to Close, etc.).</p>"
+    },
+    "Moon": {
+      "name": "Moon"
+    },
+    "Mortar & Pestle": {
+      "name": "Mortar & Pestle",
+      "description": "<p>A mortar and pestle inscribed with a mysterious insignia.</p>"
+    },
+    "Mutagens": {
+      "name": "Mutagens",
+      "description": "<p>You employ mutagenic toxins created to enhance your abilities. When you ﬁnish a rest, you can drink one such toxin to gain its effects, which last until you ﬁnish your next rest. These effects include a +1 bonus to one trait of your choice, a −1 penalty to a different trait of your choice, and your choice of one of the following beneﬁts:</p><ul><li><p>Celerity. If you are Restrained or Vulnerable, you can mark a Stress to end the condition on yourself.</p></li><li><p>Durable. Your Armor Score increases by 2.</p></li><li><p>Hunter’s Senses. You have advantage on any action roll you make to track a creature, and you can see in complete darkness.</p></li></ul>"
+    },
+    "Mutual Suffering": {
+      "name": "Mutual Suffering",
+      "description": "<p>When an attack from a creature causes you to mark one or more Hit Points, you can make a Reaction Roll using your Spellcast trait against the creature. On a success, the creature marks the same number of Hit Points as you did, and you can’t use this spell again until you ﬁnish a rest.</p>"
+    },
+    "NIghtmare Shroud": {
+      "name": "NIghtmare Shroud",
+      "description": "<p>Spend a Fear to have the Wraith wrap themself around a PC within Melee range, making them Shrouded until they or an ally succeed on a Strength or Attack Roll (20) to dislodge the Wraith. If it’s an attack roll, the Shrouded PC takes the damage. While Shrouded, a PC has disadvantage on all attacks and marks a Stress when they roll with Fear.</p>",
+      "actions": {
+        "nQu8I8bBzWveD0Gt": {
+          "name": "Spend a Fear"
+        }
+      }
+    },
+    "Nightmare Stare": {
+      "name": "Nightmare Stare",
+      "description": "<p>Spend a Fear to have the Owl Witch Aﬄict a target within Far range with waking nightmares. Until a PC uses a downtime move to comfort the Aﬄicted creature and clear the condition, the Aﬄicted creature can’t clear Stress or HP by any means.</p>",
+      "actions": {
+        "obEoy6zKCh8ue253": {
+          "name": "Spend a Fear"
+        }
+      },
+      "effects": {
+        "qmrQJKd7uGQAyg64": {
+          "name": "Waking Nightmares",
+          "description": "<p>Until a PC uses a downtime move to comfort the Aﬄicted creature and clear the condition, the Aﬄicted creature can’t clear Stress or HP by any means.</p>"
+        }
+      }
+    },
+    "Nimble": {
+      "name": "Nimble",
+      "description": "<p>When an adversary makes a successful attack roll against you, you can spend a number of Focus up to your Tier. Roll a number of d6s equal to 1 + the Focus spent. If any of the dice values match, you take no damage from the attack.</p>",
+      "effects": {
+        "wt5haOJZiPz96s5k": {
+          "name": "Nimble Stance",
+          "description": "<p>When an adversary makes a successful attack roll against you, you can spend a number of Focus up to your Tier. Roll a number of d6s equal to 1 + the Focus spent. If any of the dice values match, you take no damage from the attack.</p>"
+        }
+      }
+    },
+    "Nimble Fingers": {
+      "name": "Nimble Fingers",
+      "description": "<p>When you make a Finesse Roll, you can spend 2 Hope to reroll your Hope Die.</p>",
+      "actions": {
+        "Rcz81D9CyaYk2AVL": {
+          "name": "Spend 2 Hope"
+        }
+      }
+    },
+    "Not Done Yet": {
+      "name": "Not Done Yet",
+      "description": "<p>When you mark more than one HP from an attack, you can gain a Hope or clear a Stress.</p>",
+      "actions": {
+        "jRfjAcJvdfmbEVzO": {
+          "name": "Gain a Hope"
+        },
+        "vN9dqmG7ABjVsscI": {
+          "name": "Clear a Stress"
+        }
+      }
+    },
+    "Oasis": {
+      "name": "Oasis",
+      "description": "<p>During a short rest, you or an ally can reroll a die used for a downtime action.</p>"
+    },
+    "Only Skin Deep": {
+      "name": "Only Skin Deep",
+      "description": "<p>When you Chane Shape, you only gain the benefit of one of the ancestry's feature, which you select when you choose the ancestry. You can spend a downtime move to switch which of your ancestry's features you gain the benefit of.</p>"
+    },
+    "Order of the Ghost Slayer": {
+      "name": "Order of the Ghost Slayer"
+    },
+    "Order of the Lycan": {
+      "name": "Order of the Lycan"
+    },
+    "Order of the Mutant": {
+      "name": "Order of the Mutant"
+    },
+    "Otherworldly": {
+      "name": "Otherworldly",
+      "description": "<p>You can choose whether to do Physical or Magic damage.</p>",
+      "effects": {
+        "sjgTQx1AAdhRzTd1": {
+          "name": "Otherworldly Stance",
+          "description": "<p>You can choose whether to do Physical or Magic damage.</p>"
+        }
+      }
+    },
+    "Overwhelm": {
+      "name": "Overwhelm",
+      "description": "<p>On a successful attack, you can spend a Hope to force the target to mark a Stress or to throw them within Close range.</p>",
+      "actions": {
+        "lPsie6Tddyturap8": {
+          "name": "Deal Stress"
+        },
+        "hEKiinPoDmm2sD7q": {
+          "name": "Throw"
+        }
+      }
+    },
+    "Pact of the Endless": {
+      "name": "Pact of the Endless"
+    },
+    "Pact of the Wrathful": {
+      "name": "Pact of the Wrathful"
+    },
+    "Parasite of the Will": {
+      "name": "Parasite of the Will",
+      "description": "<p>Very Far range. On a success, mark a Hit Point to conjure a tiny magical bloodworm that burrows into the target. On a success with Hope, the target isn’t aware of the worm within.</p><p>You have advantage on any Presence roll against the target, and whenever they make a roll, you can spend a Hope to give the roll disadvantage. You can destroy the bloodworm to cause the target to mark a Hit Point.</p>"
+    },
+    "Patron's Boon": {
+      "name": "Patron's Boon",
+      "description": "<p>Spend 3 Hope to call out to your patron for help, gaining [[/r 1d4]] Favor.</p>",
+      "actions": {
+        "WHqwDZkSiT8gaTyD": {
+          "name": "Spend 3 Hope"
+        }
+      }
+    },
+    "Patron's Mantle": {
+      "name": "Patron's Mantle",
+      "description": "<p>Mark a Stress to cloak yourself in a terrifying aspect of your Patron that lasts until you take Severe damage or the scene ends:</p><ul><li><p>When you would mark an Armor Slot, you can spend 2 Favor instead.</p></li><li><p>You gain a bonus equal to your tier on action rolls to intimidate the target.</p></li></ul>",
+      "actions": {
+        "tbSXqhmQWVgCh2Io": {
+          "name": "Mark a Stress"
+        }
+      },
+      "effects": {
+        "kvZsUrUls0PL7vmd": {
+          "name": "New Effect"
+        }
+      }
+    },
+    "Poisoners Guild": {
+      "name": "Poisoners Guild"
+    },
+    "Posion Compendium": {
+      "name": "Posion Compendium",
+      "description": "<p>You also know these poisons:</p><ul><li><p>Midnight's Veil</p></li><li><p>Ghost Petal</p></li></ul>"
+    },
+    "Power Slide": {
+      "name": "Power Slide",
+      "description": "<p>Mark a Stress to move Xero up to Close range. All creatures Xero moves through must make a Strength Reaction Roll. Targets who fail must mark 2 Armor Slots or take Severe Damage.</p>",
+      "actions": {
+        "ZLIGQNrvC9xctabt": {
+          "name": "Mark a Stress"
+        }
+      }
+    },
+    "Power Through Pain": {
+      "name": "Power Through Pain",
+      "description": "<p>If you have at least one Hit Point marked, you gain a bonus to your damage rolls. The bonus equals twice your number of marked Hit Points.</p>"
+    },
+    "Powerhosue": {
+      "name": "Powerhosue",
+      "description": "<p>Increase the d8 damage dice for your unarmed attack to d10s. Additionally you can mark a Stress to target two creatures within Melee range with a single attack roll.</p><p></p><p>(Equip the <em>Unarmed Strike</em> \"Weapon\" from the Classes &gt; Class Items &gt; Brawler section of the Classes &amp; Class Options Voidborne Compendium)</p>",
+      "actions": {
+        "vf51sCmwPdOsrJeC": {
+          "name": "Mark a Stress"
+        }
+      }
+    },
+    "Precise": {
+      "name": "Precise",
+      "description": "<p>Gain a +1 bonus to your attack rolls.</p>",
+      "effects": {
+        "HfofsgqPzw8D5uGy": {
+          "name": "Precise Stance",
+          "description": "<p>Gain a +1 bonus to your attack rolls.</p>"
+        }
+      }
+    },
+    "Prep Work": {
+      "name": "Prep Work",
+      "description": "<p>Prior to the Heist, each PC has the opportunity to gather a key piece of information, surveil the location, or acquire a helpful tool or resource. Give each player the opportunity to describe one obstacle they expect to encounter and how they set themselves up to overcome it, then have them make an action roll. On a success, they get the advantage or asset they sought. On a success with Fear, it’s less useful than they expected (for example, they discover the location of a hidden access point but learn that breaching it will likely be diﬃcult and noisy).</p><p><em>How does the PC gain this advantage? Do they go it alone or ask for help? What unforeseen complications arise during the Heist itself?</em></p>"
+    },
+    "Psychic Blast": {
+      "name": "Psychic Blast",
+      "description": "<p>Spend a Fear and choose up to three targets within Close range to make a Knowledge or Instinct Reaction Roll (20). Targets who succeed take 2d10+5 direct magical damage. Targets who fail take 4d10+10 direct magical damage and are Vulnerable until spotlighted.</p>",
+      "actions": {
+        "auKYuyswzDaQFKIS": {
+          "name": "Spend a Fear"
+        }
+      }
+    },
+    "Psychic Shuﬄe": {
+      "name": "Psychic Shuﬄe",
+      "description": "<p>When the PCs take a long rest, you can spend a Fear to swap their psyches. Collect all the players’ character sheets, then shuﬄe and randomly redistribute them. Each character sheet comes with that PC’s Domain cards and player aids. A PC can regain their psyche with a successful Knowledge Roll, at which point they trade sheets with the player who has their original character sheet.</p><p><em>How does it feel being in someone else’s skin? If you could choose to stay like them in one way, what would it be?</em></p>"
+    },
+    "Pummeljoy": {
+      "name": "Pummeljoy",
+      "description": "<p>When you critically succeed on a weapon attack in Melee range, you gain an additional Hope, clear an additional Stress, and gain a +1 bonus to your Proficiency for the attack.</p>"
+    },
+    "Quick": {
+      "name": "Quick",
+      "description": "<p>When making an attack roll, spend a Focus to include an additional target within range.</p>",
+      "effects": {
+        "44omJDzfvqtYizEr": {
+          "name": "Quick Stance",
+          "description": "<p>When making an attack roll, spend a Focus to include an additional target within range.</p>"
+        }
+      }
+    },
+    "Radioactive Breath": {
+      "name": "Radioactive Breath",
+      "description": "<p>Spend a Fear to have Xero charge up a nuclear beam and place a token on this stat block. The next time Xero takes the spotlight, you can spend this token and unleash the beam. Draw a line with a Close range width from Xero to the edge of the battleﬁeld. All PCs within this path must make an Agility Reaction Roll. Targets who faill take 4d12+12 direct magic damage. Targets who succeed take half damage. Xero can’t use this action again until they take Severe damage.</p>",
+      "actions": {
+        "KmzMinr0BobaFLT9": {
+          "name": "Spend a Fear"
+        }
+      }
+    },
+    "Razor-Sharp Terrain": {
+      "name": "Razor-Sharp Terrain",
+      "description": "<p>When a PC fails a roll to navigate the wasteland, they make a Finesse Reaction Roll. On a failure, they cut themselves on the sharp edges of the terrain. Shards of magic crystal become embedded in their wound and slowly grow, Crystallizing them. Activate a Crystal Countdown (1) for that PC. Until they remove the condition with a successful Knowledge Roll, a Crystallizing PC ticks up their Crystal Countdown at the start of each rest and has a penalty to their Evasion equal to its value. The countdown ends with the condition is cleared.</p><p><em>What does the crystal look like as it grows? What does it feel like?</em></p>"
+    },
+    "Reborne": {
+      "name": "Reborne",
+      "description": "<p>You were once a member of another community, but you can no longer remember it.</p>"
+    },
+    "Regeneration": {
+      "name": "Regeneration",
+      "description": "<p>Up to three times per scene, spend any number of Fear to clear an equal number of HP.</p>"
+    },
+    "Relentless (3)": {
+      "name": "Relentless (3)",
+      "description": "<p>The @Lookup[@name] can be spotlighted up to three times per GM turn. Spend Fear as usual to spotlight them.</p>"
+    },
+    "Relentless (X)": {
+      "name": "Relentless (X)",
+      "description": "<p>Xero can be spotlighted up to X times per GM turn, where X is the number of PCs in the scene. Spend Fear as usual to spotlight them.</p>"
+    },
+    "Relic Hunter": {
+      "name": "Relic Hunter",
+      "description": "<p>The Shadow King has advantage on attacks against PCs with magical weapons or armor equipped.</p>"
+    },
+    "Rending Jaws": {
+      "name": "Rending Jaws",
+      "description": "<p>When the @Lookup[@name] makes a successful attack, the target must mark 2 Armor Slots instead of 1 to reduce the damage by one threshold.</p>"
+    },
+    "Rest and Digest": {
+      "name": "Rest and Digest",
+      "description": "<p>When the Beguiler takes the spotlight with a Swallowed creature inside them, they move to Far range away from the PCs.</p>"
+    },
+    "RHeeeCiVldpRgvD7": {
+      "name": "Immovable",
+      "description": "<p>While your feet are touching the ground, you cannot be lifted or moved against your will.</p>"
+    },
+    "Ring": {
+      "name": "Ring",
+      "description": "<p>A ring you can't remove.</p>"
+    },
+    "Rugged": {
+      "name": "Rugged",
+      "description": "<p>Gain a permanent +3 bonus to your Severe damage threshold. Additionally, your \"Powerhouse\" feature can target up to three creatures instead of two.</p>",
+      "effects": {
+        "3nMrTcC5S0Vonod5": {
+          "name": "Juggernaut"
+        }
+      }
+    },
+    "Runic Adrenaline": {
+      "name": "Runic Adrenaline",
+      "description": "<p>Your practice of blood magic has seeped into your bloodstream, enhancing your vitals in moments of urgency. When you roll with advantage, use a d8 instead of a d6 as your advantage die if you have 1 or more Hit Points marked.</p><p>After you make a Strength, an Agility, or a Finesse roll, you can mark a Hit Point to roll 1d8 and add it to the result.</p>"
+    },
+    "Sanguine Feast": {
+      "name": "Sanguine Feast",
+      "description": "<p>Make a Spellcast Roll against an adversary within Close range. On a success, spend 2 Hope to mark 1–3 Hit Points, and the target marks twice the number of the Hit Points you marked. If this causes the target to mark their last Hit Point, you can clear the Hit Points you marked to cast this spell.</p>"
+    },
+    "Savor the Anguish": {
+      "name": "Savor the Anguish",
+      "description": "<p>When an adversary within Close range marks Stress or takes Severe damage, you can spend a Hope to clear a Stress or force the GM to lose a Fear.</p>",
+      "actions": {
+        "gf3Elzqizw8WKKcR": {
+          "name": "Spend a Hope"
+        },
+        "RBAcMyUmQWAJTrti": {
+          "name": "Clear a Stress"
+        }
+      }
+    },
+    "Saw This Coming": {
+      "name": "Saw This Coming",
+      "description": "<p>Once per session, a PC can spend a Hope to explain how they prepared for the current situation and reveal a key piece of information (such as the location of a hidden passage or the password to a restricted area) or produce a helpful item (such as a cultist’s uniform left unattended or a common consumable hidden in their boot).</p><p><em>What did the PC prepare in advance? How did they know they’d need it? What did it cost them to set up, or whom do they owe a favor to?</em></p>"
+    },
+    "Scary": {
+      "name": "Scary",
+      "description": "<p>Successful attacks also force the target to mark a Stress.</p>",
+      "effects": {
+        "WI5muxZ4bDXyYbYv": {
+          "name": "Scary Stance",
+          "description": "<p>Successful attacks also force the target to mark a Stress.</p>"
+        }
+      }
+    },
+    "Scorpion's Poise": {
+      "name": "Scorpion's Poise",
+      "description": "<p>You gain a +2 bonus to your Evasion against any attacks made by a creature Marked for Death.</p>"
+    },
+    "Serpent Strike": {
+      "name": "Serpent Strike",
+      "description": "<p>When the Chimera is attacked by a PC within Very Close range, you can mark a Stress to make an attack against them. On a success, deal 4d4+10 physical damage and Poison them until their next rest or they succeed on a Knowledge Roll (20). While Poisoned, the target must roll a d6 before they make an action roll. On a result of 3 or lower, they must mark a Stress.</p>",
+      "effects": {
+        "TLVW6h2G73Xgwh3l": {
+          "name": "Poisoned",
+          "description": "<p>While Poisoned, the target must roll a d6 before they make an action roll. On a result of 3 or lower, they must mark a Stress.</p>"
+        }
+      }
+    },
+    "Shadowed Grit": {
+      "name": "Shadowed Grit",
+      "description": "<p>When the GM gains a Fear from a Duality Dice roll, you can mark a Stress to gain a Hope.</p>"
+    },
+    "Shared Trauma": {
+      "name": "Shared Trauma",
+      "description": "<p>You can transfer suffering from one creature to another. Once per rest, mark any number of Hit Points on another willing creature within Melee range. You can choose yourself in place of either creature.</p>"
+    },
+    "Sheltering": {
+      "name": "Sheltering",
+      "description": "<p>When you mark an Armor Slot, it reduces damage for you and all allies within Melee range of you who took the same damage.</p>",
+      "effects": {
+        "XSGyaNKCAdW0MTT2": {
+          "name": "Sheltering Stance",
+          "description": "<p>When you mark an Armor Slot, it reduces damage for you and all allies within Melee range of you who took the same damage.</p>"
+        }
+      }
+    },
+    "Siphon Essence": {
+      "name": "Siphon Essence",
+      "description": "<p>Make a Spellcast Roll against a target within Very Close range. On a success, once per long rest, the target takes d20 magic damage using your Proficiency. You clear a number of Hit Points equal t0 the number of Hit Points the target marked from this attack. On a success with Fear, you gain a +1 bonus to your Proficiency for this attack.</p>",
+      "actions": {
+        "xiqX5BYH9F0JqmtN": {
+          "name": "Spellcast Roll"
+        }
+      }
+    },
+    "Skykin": {
+      "name": "Skykin",
+      "description": "<p>Skykin are descended from air elementals. They are humanoids whose bodies are a combination of flesh and air.</p>"
+    },
+    "small, harmless pet": {
+      "name": "small, harmless pet"
+    },
+    "Sound the Alarm": {
+      "name": "Sound the Alarm",
+      "description": "<p>When the Consequence Countdown triggers, the party is discovered and the location enters High Alert. Immediately summon a number of Tier 2 adversaries equal to the number of PCs in the scene and spotlight one. While this environment is on High Alert, all adversaries gain a +1 bonus to their Diﬃculty.</p><p><em>What makes these adversaries uniquely suited to guard this location? What do they know about this place that gives them an edge?</em></p>"
+    },
+    "Spectral": {
+      "name": "Spectral",
+      "description": "<p>The Wraith is immune to physical damage and weak against magic damage. Additionally, the Wraith can move through solid objects.</p>",
+      "effects": {
+        "v6rwroHG9nfwPZYv": {
+          "name": "Spectral"
+        }
+      }
+    },
+    "Spectral Form": {
+      "name": "Spectral Form",
+      "description": "<p>You have another death move option: Spectral Form. When you choose this option, you clear a Hit Point, your body becomes spectral, you have resistance to physical damage, and you can pass through objects. This form ends if you clear any more Hit Points. It also ends if you mark your last Hit Point, which forces you to take a different death move. You’re shunted to the nearest open space if you’re inside an object when the form ends.</p>"
+    },
+    "Spectral Mist": {
+      "name": "Spectral Mist",
+      "description": "<p>Mark a Stress to summon an eerie mist that turns you and and targets within Close range momentarily incorporeal. While a create is incorporeal, they can move through solid objects and are immune to physical damage. A creature becomes corporeal again after they pass through a solid object, or make an action roll. Otherwise, this effect drops at the end of the scene.</p>"
+    },
+    "Spheres of Influence": {
+      "name": "Spheres of Influence",
+      "description": "<p>You can either edit this feature to mark down your Spheres of Influence, or add additional Experiences.</p>"
+    },
+    "Spirit Blast": {
+      "name": "Spirit Blast",
+      "description": "<p>Spend a Focus to make an Instinct Roll against an adversary within Close range. On a success, deal d20+3 magic damage using your Proficiency, and you can spend an additional Focus to make them temporarily Vulnerable.</p>",
+      "actions": {
+        "0FZWItiDdJe9qBJN": {
+          "name": "Instinct Roll"
+        }
+      }
+    },
+    "Spirit Form": {
+      "name": "Spirit Form",
+      "description": "<p>Your physical form can shift between corporeal and incorporeal. Mark a Stress to transition into and out of your Spirit Form. While in Spirit Form, you can move through solid objects, are immune to physical damage, and take double magic damage. You can spend 2 Hope to attack or physically interact with the material world.</p>",
+      "actions": {
+        "1lfIUmNhCIO2TV9b": {
+          "name": "Mark a Stress"
+        },
+        "9HXD5ba12SFHWwak": {
+          "name": "Spend 2 Hope"
+        }
+      },
+      "effects": {
+        "xLbbgNThAki0dMf0": {
+          "name": "Spirit Form"
+        }
+      }
+    },
+    "Spooky": {
+      "name": "Spooky",
+      "description": "<p>When the Wraith makes a successful attack, all PCs within Close range must mark a Stress and you gain a Fear.</p>"
+    },
+    "Staggering Strike": {
+      "name": "Staggering Strike",
+      "description": "<p>Spend 3 Hope when you succeed on an attack to temporarily Stagger your target and force them to mark a Stress. While staggered, they have disatvantage on attack rolls.</p>",
+      "actions": {
+        "tXdBCfekq1IRQQpi": {
+          "name": "Spend 3 Hope"
+        }
+      },
+      "effects": {
+        "pmPw1GzucUzAR6a7": {
+          "name": "Staggered"
+        }
+      }
+    },
+    "Steady": {
+      "name": "Steady",
+      "description": "<p>Gain a -1 penalty to your Evasion. When you deal damage on a successful attack, roll an additional damage die and drop the lowest.</p>",
+      "effects": {
+        "DgTxPC2tuoewBBIF": {
+          "name": "Steady Stance",
+          "description": "<p>Gain a -1 penalty to your Evasion. When you deal damage on a successful attack, roll an additional damage die and drop the lowest.</p>"
+        }
+      }
+    },
+    "Steel Needle": {
+      "name": "Steel Needle"
+    },
+    "Stitch Up": {
+      "name": "Stitch Up",
+      "description": "<p>During a rest, you can only clear Hit Points if you have access to remains from a recently deceased creature. Describe how using this material affects your appearance. You cannot clear Hit Points by any means except a downtime move the or Risk It All death move.</p>"
+    },
+    "Stolen Armor": {
+      "name": "Stolen Armor",
+      "description": "<p>When combat begins, active a Countdown equal to the number of PCs. Whenever the @Lookup[@name] takes damage, tick down the countdown and reduce the HP the Troll marks by 1. When it triggers, the @Lookup[@name] evolves into an @UUID[Compendium.daggerheart-voidborne.voidborne-actors.Actor.tZEqHbC6pep7oRK2]{Enraged Mountain Troll}.</p>"
+    },
+    "Stone Body": {
+      "name": "Stone Body",
+      "description": "<p>The @Lookup[@name] is resistant to physical damage.</p>",
+      "effects": {
+        "vuKbbrhjeJKIh21k": {
+          "name": "Stone Body"
+        }
+      }
+    },
+    "Stoneskin": {
+      "name": "Stoneskin",
+      "description": "<p>Gain a +1 bonus to your Armor Score and Damage Thresholds.</p>",
+      "effects": {
+        "lSQudwRgX3S6pO3n": {
+          "name": "Stoneskin"
+        }
+      }
+    },
+    "Summon Horror": {
+      "name": "Summon Horror",
+      "description": "<p>Make a Spellcast Roll against a target within Far range. On a success, spend a Hope to call forth an otherworldly creature to attack them and deal d10 magic damage using your Proficiency. The target must succeed on a Reaction Roll (12) to steel themselves from the horror or mark 1d4 Stress.<br></p><p>After making the attack, the creature dissipates.</p>",
+      "actions": {
+        "FpMySgPmxJnkNRTW": {
+          "name": "Summon Horrror"
+        },
+        "ucdQD7jtft66pXLh": {
+          "name": "deal 1d4 Stress"
+        }
+      }
+    },
+    "Sweeping": {
+      "name": "Sweeping",
+      "description": "<p>Your attack targets all adversaries within Very Close range.</p><p>Deal half damage to all targets you succeed against.</p>",
+      "effects": {
+        "gQpPzq77f6JfGbPD": {
+          "name": "Sweeping Stance",
+          "description": "<section class=\"window-content\"><section data-tab=\"description\" data-group=\"primary\" data-application-part=\"description\" class=\"tab active description\"><div class=\"editor-content\"><p>Your attack targets all adversaries within Very Close range.</p><p>Deal half damage to all targets you succeed against.</p></div></section></section>"
+        }
+      }
+    },
+    "Swooping Strike": {
+      "name": "Swooping Strike",
+      "description": "<p>Choose a point within Far range. The Gargoyle moves to that point in a straight line and makes an attack against one target along its path.</p>",
+      "actions": {
+        "UDDTIO87i2LSxLPI": {
+          "name": "Swooping Strike"
+        }
+      }
+    },
+    "talking skull": {
+      "name": "talking skull"
+    },
+    "Teathered Talisman": {
+      "name": "Teathered Talisman",
+      "description": "<p>Once per rest, you can imbue a small item with your protective essence When the person holding the talisman takes damage, you can expend its magic to reduce the number of Hit Points they mark by one. You can't create a new talisman until the old on has been used.</p>"
+    },
+    "Telekinetic Grasp": {
+      "name": "Telekinetic Grasp",
+      "description": "<p>When the Priest succeeds on a standard attack, you can mark a Stress to Restrain the target until they spend a Hope to clear this condition.</p>",
+      "actions": {
+        "qCoTGUpG8U7PJST5": {
+          "name": "Mark a Stress"
+        }
+      },
+      "effects": {
+        "CpUFmWfkwghRkzbC": {
+          "name": "Telekinetic Grasp"
+        }
+      }
+    },
+    "Terrify": {
+      "name": "Terrify",
+      "description": "<p>Make a Spellcast Roll against a target within Far range. On a success, the target marks 1d4 Stress and you can choose to make the target run one range away from you (Close to Far, Far to Very Far, etc.). On a success with Fear, the target becomes temporarily Vulnerable.</p>",
+      "actions": {
+        "3TVjd2dpey9iRZuR": {
+          "name": "Spellcast Roll"
+        }
+      }
+    },
+    "There’s Always That One...": {
+      "name": "There’s Always That One...",
+      "description": "<p><strong>Spend a Fear</strong> to Trap a PC in conversation with the most unpleasant person at the party until they succeed on an action roll to extricate themself from this social black hole. A Trapped PC can’t make any other action rolls except to try and remove this condition. When a Trapped PC fails an action roll, they must mark a Stress.</p><p><em>What makes this dud so unpleasant? What’s something the PC cares about that the dud constantly diminishes or dismisses? What boring or awful thing can the dud not shut up about?</em></p>",
+      "actions": {
+        "AGFz2LQ9nNjmI0ba": {
+          "name": "Spend a Fear"
+        }
+      }
+    },
+    "Tidekin": {
+      "name": "Tidekin",
+      "description": "<p>Tidekin are descended from water elementals. They are humanoids whose bodies are a combination of flesh and water.</p>"
+    },
+    "Torchbearer": {
+      "name": "Torchbearer",
+      "description": "<p>The light of the @Lookup[@name]’s hand of glory inspires bloodlust in their allies. While this stat block has one or more tokens on it, any Redcap within Close range gains a +1 bonus to their damage rolls.</p>"
+    },
+    "Toxic Concoctions": {
+      "name": "Toxic Concoctions",
+      "description": "<p>Mark a Stress to add [[/r 1d4+1]] tokens to this card. On your next long rest, clear this card. You know these poisons:</p><ul><li><p><strong>Gorgon Root:</strong> The target gains a permanent -1 penalty to their Difficulty. This can only affect them once.</p></li><li><p><strong>Grave Spore:</strong> The target must also mark a Stress.</p></li><li><p><strong>Leech Weed:</strong> Gain a +1d6 damage bonus on this attack.</p></li></ul><p>When you make a successful weapon attack, you can spend a token from this card to afflict the target with a known poison's effect.</p>",
+      "actions": {
+        "kNb5GNamwPP1uuTW": {
+          "name": "Gorgon Root",
+          "description": "<p>The target gains a permanent -1 penalty to their Difficulty. This can only affect them once.</p>"
+        },
+        "YH61SwPaWb6WOjWw": {
+          "name": "Grave Spore",
+          "description": "<p> The target must also mark a Stress.</p>"
+        },
+        "XtoKmNGv1jJjobDY": {
+          "name": "Leech Weed",
+          "description": "<p>Gain a +1d6 damage bonus on this attack.</p>"
+        },
+        "d0FQifsgcLEhNZ0U": {
+          "name": "Midnight's Veil",
+          "description": "<p>The target gains a permanent -2 penalty to attack rolls. This can only affect them once.</p>"
+        },
+        "5rnTP0wCAsodfaU9": {
+          "name": "Ghost Petal",
+          "description": "<p>Permanently decrease the damage dice of the target's standard attack by  one step (d10 to d8, d8 to d6, etc.). This can only affect them once.</p>"
+        },
+        "w6WPTZfGFck8gvvi": {
+          "name": "Blight Seed",
+          "description": "<p>The target gains a permanent -3 penalty to their damage thresholds. This can only affect them once.</p>"
+        },
+        "3replzJO0YGcrfXT": {
+          "name": "Fear Leaf",
+          "description": "<p>This attack gains a damage bonus equal to the result of your Fear Dice.</p>"
+        }
+      },
+      "effects": {
+        "6BugWP8wJTvKSywA": {
+          "name": "Gorgon Root"
+        },
+        "Axg2XS4kdfoZcUSZ": {
+          "name": "Midnight's Veil"
+        },
+        "pc7efpPjD3xQqLA8": {
+          "name": "Ghost Petal"
+        },
+        "y2C1ZvTWjjb11JBc": {
+          "name": "Blight Seed"
+        }
+      }
+    },
+    "True Sight": {
+      "name": "True Sight",
+      "description": "<p>You have advantage on rolls to see through illusions.</p>",
+      "effects": {
+        "yn2e5CTOmCibjLN6": {
+          "name": "True Sight"
+        }
+      }
+    },
+    "True Strike": {
+      "name": "True Strike",
+      "description": "<p>Once per long rest, when you fail an attack roll, you can spend a Hope to make it a success instead.</p>",
+      "actions": {
+        "vqBY6Rlu3aXjSuyy": {
+          "name": "Spend a Hope"
+        }
+      }
+    },
+    "Twin Fang": {
+      "name": "Twin Fang",
+      "description": "<p>When you afflict a target with a known poison's effect, you can spend an additional token to inflict the effect of a second known poison.</p>"
+    },
+    "Umbral Veil": {
+      "name": "Umbral Veil",
+      "description": "<p>Once per rest, when you roll with Fear, you can spend any number of Hope to place an equal number of tokens on this card, encasing yourself in a shadowy energy. After an attack roll is made against you, you can spend any number of tokens to give the attack roll a -1 penalty per token. On your next rest, remove all tokens from this card.</p>"
+    },
+    "Unarmed Strike": {
+      "name": "Unarmed Strike",
+      "description": "<p> Your unarmed strikes are considered a Melee weapon, use the trait of your choice, and deal d8+d6 phy damage using your Proﬁciency.</p>",
+      "attack": "Attack"
+    },
+    "Unbound": {
+      "name": "Unbound",
+      "description": "<p>Once per session, when you make an action roll with Fear, you can change it to a roll with Hope instead.</p>"
+    },
+    "Vampiric Strike": {
+      "name": "Vampiric Strike",
+      "description": "<p>When you make a successful attack roll against an adversary and cause them to mark 2 or more Hit Points, you can spend a Hope to clear a Hit Point or Stress.</p>"
+    },
+    "Veilwalker": {
+      "name": "Veilwalker",
+      "description": "<p>You can brieﬂy slip into the realm between the living and the dead. Spend 2 Hope to disappear and then reappear next to a creature or a corpse within Far range. You then have advantage on the next attack roll you make in this scene.</p>"
+    },
+    "Venomancer": {
+      "name": "Venomancer",
+      "description": "<p>You also know these poisons:</p><ul><li><p>Blight Seed</p></li><li><p>Fear Leaf</p></li></ul>"
+    },
+    "Vial of Blood": {
+      "name": "Vial of Blood",
+      "description": "<p>A vial holding a foe’s blood.</p>"
+    },
+    "Visions of a Violent End": {
+      "name": "Visions of a Violent End",
+      "description": "<p>When the Owl Witch is targeted by an attack, you can spend a Fear to force the attacker to make a Presence Reaction Roll. On a failure, they mark 1d4 Stress as their mind is ﬂooded with visions of their own violent death.</p>",
+      "actions": {
+        "odBQMak3crW5twx7": {
+          "name": "Spend a Fear"
+        }
+      }
+    },
+    "Vital Ward": {
+      "name": "Vital Ward",
+      "description": "<p>Mark a Hit Point to trace a circle of blood around yourself at Very Close range. While in the circle, you have resistance to your choice of physical or magic damage (choose when you cast the spell).</p><p>Allies also gain this beneﬁt while in the circle. The circle disappears if you move out of it, mark 2 or more Hit Point, or cast this spell again.</p>"
+    },
+    "Vitality Manipulation": {
+      "name": "Vitality Manipulation",
+      "description": "<p>Make a Spellcast Roll against a target within Very Close range. If you cast this on an ally, make the roll with advantage. On a success, mark a Stress, and choose one of the following effects:</p><ul><li><p>The target grows calmer and clears a Stress. On a success with Hope, they clear 2 Stress.</p></li><li><p>The target grows more anxious and marks a Stress. On a success with Hope, they mark 2 Stress.</p></li></ul>"
+    },
+    "Voice of Dread": {
+      "name": "Voice of Dread",
+      "description": "<p>You can magically speak directly into the ears of a creature you can see. To torment them with your words, make a Spellcast Roll against them. On a success, they must mark a Stress and become temporarily Vulnerable.</p>",
+      "actions": {
+        "Tzkza0VyFsR1Toy8": {
+          "name": "Spellcast Roll"
+        }
+      },
+      "effects": {
+        "ltUI8h3V43hoNCfC": {
+          "name": "Voice of Dread"
+        }
+      }
+    },
+    "Volatile Toxins": {
+      "name": "Volatile Toxins",
+      "description": "<p>You can choose two mutagen beneﬁts instead of one. If you do, mark a Hit Point that can’t be cleared until you ﬁnish your next rest.</p>"
+    },
+    "Walk Between World": {
+      "name": "Walk Between World",
+      "description": "<p>Make a Spellcast Roll (13) to step beyond the veil of death and converse with any nearby spirits. Place a number of tokens equal to your Spellcast trait on this card and remove one each time a spirit answers a question. You return to the mortal realm when the last token is removed.</p>",
+      "actions": {
+        "QCXqP8Hf282HWLCz": {
+          "name": "Make a Spellcast Roll"
+        }
+      }
+    },
+    "Wall of Hunger": {
+      "name": "Wall of Hunger",
+      "description": "<p>Succeed on a Spellcast Roll (13) to create a visible wall of writhing, necrotic energy in a line between two points within Far range that lasts until you mark a Hit Point or cast this spell again. Any creatures inside the wall when it appears or who try to pass through the wall must mark 2 Stress, then make a Reaction Roll (16). On a failure, they are temporarily Restrained by the wall.</p>",
+      "actions": {
+        "3qKibU6GL2ZWAz9c": {
+          "name": "Spellcast Roll (13)"
+        }
+      }
+    },
+    "Warborne": {
+      "name": "Warborne",
+      "description": "<p>Being part of a warborne community means you come from a place that is, or was, ravaged by a war.</p>"
+    },
+    "Warlock": {
+      "name": "Warlock",
+      "backgroundQuestions": [
+        "What desperate situation led you to pledge your life to your patron?",
+        "Your patron has given you one task you must accomplish above all else. What is it, and why does it worry you?",
+        "You and your patron are similar in a very speciﬁc way.\nWhat characteristic do you share, and how do you feel about it?"
+      ],
+      "connections": [
+        "I conﬁde in you about what my patron says and does. Why?",
+        "You once saw me tithe to my patron and it’s changed how you interact with me. What did you see and how has it affected you?",
+        "I once did something very foolish, and you have never let me live it down. What was it?"
+      ]
+    },
+    "Warlock Patron": {
+      "name": "Warlock Patron",
+      "description": "<p>You have committed yourself to a patron (god, demon, fae, or other supernatural entity) in exchange for power. Write their name above.</p><p>Then choose their spheres of inﬂuence, at GM discretion (Nature &amp; Mischief, Love &amp; War, Knowledge &amp; Shadow, etc.), record them below, and set their values to +2. Anytime you increase your tier, these spheres of inﬂuence gain a permanent +1 bonus. Before making an action roll that relates to one of your patron’s spheres of inﬂuence, you can spend a Favor to call on them and add its value to the roll.</p>"
+    },
+    "Weave the Flesh": {
+      "name": "Weave the Flesh",
+      "description": "<p>Once per rest, mark a Hit Point to allow each ally within Close range to clear a Hit Point or a Stress. You can mark a Stress to allow those allies to clear one of each.</p>"
+    },
+    "Weight of Divinity": {
+      "name": "Weight of Divinity",
+      "description": "<p>When you roll a failure with Fear, you must mark a Stress or give the GM an additional Fear.</p>"
+    },
+    "Werewolf": {
+      "name": "Werewolf",
+      "description": "<p>You gain the Werewolf Transformation card. Your rolls to perceive via hearing and scent have advantage.</p>"
+    },
+    "Witch": {
+      "name": "Witch",
+      "backgroundQuestions": [
+        "How did you ﬁ rst discover your afﬁnity for magical craft?",
+        "You once used your power to help someone in a dire situation.\nWho were they and why did they come to you?",
+        "Your magic once opened a door best left closed. Who or\nwhat was on the other side?"
+      ],
+      "connections": [
+        "What about my magical practice makes you most ill at\nease?",
+        "I once appeared to you in a dream and shared a vision of the\nfuture. What did I tell you?",
+        "Why do you come to me for advice?"
+      ]
+    },
+    "Witch Barrier": {
+      "name": "Witch Barrier",
+      "description": "<p>The Owl Witch is resistant to magic damage.</p>",
+      "effects": {
+        "n7yKm9jvanJDULyh": {
+          "name": "Witch Barrier"
+        }
+      }
+    },
+    "Witch’s Charm": {
+      "name": "Witch’s Charm",
+      "description": "<p>When you or an ally within Far range rolls a failure on an action roll, you can spend 3 Hope to change it into a success with Fear instead.</p>",
+      "actions": {
+        "iF63n02trsMxi1lb": {
+          "name": "Spend 3 Hope"
+        }
+      }
+    },
+    "Wolf Form": {
+      "name": "Wolf Form",
+      "description": "<p>When you mark one or more Hit Points, you can also mark a Stress to enter your Wolf Form. While in this form, gain a d10 Wolf Die that you add to all attack and damage rolls. When you would gain a Hope while in Wolf Form, you mark a Stress instead.</p>",
+      "effects": {
+        "7owxZi5kXRw1ArdN": {
+          "name": "Wolf Form"
+        }
+      }
+    }
+  }
+}
