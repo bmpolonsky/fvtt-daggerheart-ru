@@ -1,5 +1,16 @@
 # Changelog
 
+## v2026.07.04-v13
+
+### Changed
+- Синхронизирована ветка совместимости с Foundryborne Daggerheart [1.9.14](https://github.com/Foundryborne/daggerheart/releases/tag/1.9.14): сохранены актуальные переводы из `main` и восстановлены v13-only ключи интерфейса, actions и effects.
+- Обновлены требования совместимости в manifest: Daggerheart 1.9.10+ (проверено на 1.9.14), Foundry VTT v13.
+
+### Fixed
+- Переведены добавленные через add-only v13-поля, чтобы в совместимой ветке не оставались английские описания действий и источники преимущества/помехи.
+
+![GitHub Downloads](https://img.shields.io/github/downloads/bmpolonsky/fvtt-daggerheart-ru/v2026.07.04-v13/total?color=green)
+
 ## v2026.07.04
 
 ### Changed

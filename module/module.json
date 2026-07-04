@@ -24,7 +24,7 @@
         "type": "system",
         "compatibility": {
           "minimum": "1.9.10",
-          "verified": "1.9.10"
+          "verified": "1.9.14"
         }
       }
     ]

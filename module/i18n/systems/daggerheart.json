@@ -568,6 +568,7 @@
         "startFormula": "Формула начального значения",
         "currentCountdownCurrent": "Текущее: {value}",
         "currentCountdownStart": "Начало: {value}",
+        "category": "Категория",
         "progressionType": "Тип прогрессии",
         "decreasing": "Убывающий",
         "looping": "Цикл",
@@ -796,11 +797,17 @@
       "PendingReactionsDialog": {
         "title": "Найдены незавершённые броски реакции",
         "unfinishedRolls": "Некоторые токены всё ещё должны выполнить свой бросок реакции.",
-        "warning": "Невыполненные броски реакции будут считаться проваленными",
-        "confirmation": "Вы уверены, что хотите продолжить?"
+        "confirmation": "Вы уверены, что хотите продолжить?",
+        "warning": "Невыполненные броски реакции будут считаться проваленными"
       },
       "ReactionRoll": {
         "title": "Бросок Реакции: {trait}"
+      },
+      "RerollDialog": {
+        "title": "Переброс",
+        "damageTitle": "Переброс урона",
+        "deselectDiceNotification": "Сначала снимите выбор с одной из выбранных костей",
+        "acceptCurrentRolls": "Принять текущие броски"
       },
       "ResourceDice": {
         "title": "Ресурс {name}",
@@ -1280,7 +1287,13 @@
         "narrative": {
           "label": "Долгосрочный",
           "shortLabel": "Долг."
-        }
+        },
+        "actionRoll": "Бросок действия",
+        "characterAttack": "Атака персонажа",
+        "characterSpotlight": "Активация персонажа",
+        "custom": "Пользовательский",
+        "fear": "Страх",
+        "spotlight": "Активация"
       },
       "DaggerheartDiceAnimationEvents": {
         "critical": {
@@ -3487,6 +3500,7 @@
         "subclassesAlreadyPresent": "У вас уже есть подкласс класса и мультикласса",
         "noDiceSystem": "В выбранной вами системе костей {system} нет кости с {faces} гранями",
         "gmMenuRefresh": "Вы обновили все действия и ресурсы: {types}",
+        "subclassAlreadyLinked": "{name} уже привязан как подкласс к классу {class}. Удалите его оттуда, если хотите сделать его подклассом этого класса.",
         "gmRequired": "Для этого действия требуется Мастер в сети.",
         "gmOnly": "Доступно только Мастеру.",
         "noActorOwnership": "У вас нет прав на этого персонажа",
