@@ -132,7 +132,12 @@
     },
     "Favor": {
       "name": "Favor",
-      "description": "<p>Start with 3 Favor. During a rest, take one of your <strong>downtime</strong> actions to commune with your patron. When you do, gain Favor equal to your Presence. If you choose to forgo this offering, the GM instead gains a <strong>Fear</strong>.</p>"
+      "description": "<p>Start with 3 Favor. During a rest, take one of your <strong>downtime</strong> actions to commune with your patron. When you do, gain Favor equal to your Presence. If you choose to forgo this offering, the GM instead gains a <strong>Fear</strong>.</p>",
+      "actions": {
+        "kwRzF5W2H2CR2IAl": {
+          "name": "Commune with Your Patron"
+        }
+      }
     },
     "Get In & Get Out": {
       "name": "Get In & Get Out",

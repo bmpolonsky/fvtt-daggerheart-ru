@@ -255,7 +255,7 @@
         },
         "xDBLH5TWidvrYF7z": {
           "name": "Earth",
-          "description": "<p>When an adversary marks 1 or more Hit Points, they must also mark a Stress.</p>"
+          "description": "<p>Your allies gain a +1 bonus to Strength.</p>"
         },
         "S4t5HlgxWlHwaBDw": {
           "name": "Water",
@@ -267,17 +267,19 @@
         }
       },
       "effects": {
-        "WRuijfHxmUscAa69": {
-          "name": "Elemental Aura (Earth)"
-        },
         "H7W52ps5d3UGmaFr": {
           "name": "Elemental Aura (Water)"
         },
         "WX5AMEpmUAutB9Hm": {
           "name": "Elemental Aura (Fire)"
         },
-        "mJBA2QTyM9SM5NVS": {
-          "name": "Elemental Aura (Air)"
+        "yvpWNCNobg0LLjey": {
+          "name": "Elemental Aura: Earth",
+          "description": "<p>Your allies gain a +1 bonus to Strength.</p>"
+        },
+        "vnKV5hsO4DVjURAl": {
+          "name": "Elemental Aura: Air",
+          "description": "<p><span>When you or an ally takes damage from an attack beyond Melee range, reduce the damage by 1d8.</span></p>"
         }
       }
     },

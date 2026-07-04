@@ -250,7 +250,7 @@ test(
 );
 
 test(
-  "equipment mapping (Elundrian Chain Armor) refreshes description",
+  "equipment mapping (Elundrian Chain Armor) keeps armor descriptions omitted",
   withWorkspace(async ({ moduleDir }) => {
     const equipmentPath = tmpDataPath(moduleDir, "equipment.json");
     const equipmentData = readJson(equipmentPath);
@@ -269,15 +269,16 @@ test(
     runUpdater(moduleDir);
 
     const armors = readJson(path.join(moduleDir, "translations", "daggerheart.armors.json"));
-    assert.ok(
-      armors.entries["Elundrian Chain Armor"].description.includes(marker),
-      "armor description must use updated feature text"
+    assert.equal(
+      armors.entries["Elundrian Chain Armor"].description,
+      undefined,
+      "armor description must stay omitted because armor effects carry feature text"
     );
   })
 );
 
 test(
-  "Bare Bones domain always appends manual snippet",
+  "Bare Bones domain does not append legacy armor snippet",
   withWorkspace(async ({ moduleDir }) => {
     const domainPath = tmpDataPath(moduleDir, "domain-card.json");
     const domainData = readJson(domainPath);
@@ -290,9 +291,11 @@ test(
 
     const domains = readJson(path.join(moduleDir, "translations", "daggerheart.domains.json"));
     const desc = domains.entries["Bare Bones"].description;
-    assert.ok(
+    assert.ok(desc.includes("Тестовое описание Bare Bones без ссылки."), "Bare Bones description must refresh");
+    assert.equal(
       desc.includes("Compendium.daggerheart.armors.Item.ITAjcigTcUw5pMCN"),
-      "Bare Bones description must contain manual armor snippet"
+      false,
+      "Bare Bones description must not contain legacy armor snippet"
     );
   })
 );

@@ -23,6 +23,7 @@
       "companion": "Компаньон",
       "adversary": "Противник",
       "environment": "Окружение",
+      "npc": "Неигровой персонаж",
       "party": "Группа"
     }
   },
@@ -82,6 +83,7 @@
           "transformActorMissing": "Назначенный для трансформации актёр не существует. Вероятно, он был удалён или перемещён в компендиум или из него",
           "canvasError": "Нет активной сцены.",
           "prototypeError": "Действие трансформации можно использовать только с токена",
+          "linkedSelectedError": "Чтобы трансформировать привязанного актёра, на сцене должен быть только один его токен или должен быть выбран левым кликом только один из таких токенов.",
           "actorLinkError": "Нельзя трансформировать токен, если у него включена привязка к актёру"
         }
       },
@@ -117,7 +119,8 @@
         "area": {
           "sectionTitle": "Области",
           "shape": "Форма",
-          "size": "Размер"
+          "size": "Размер",
+          "hasHole": "Отверстие в области"
         },
         "displayInChat": "Отображать в чате",
         "deleteTriggerTitle": "Удалить триггер",
@@ -395,6 +398,13 @@
         },
         "newAdversary": "Новый противник"
       },
+      "NPC": {
+        "FIELDS": {
+          "motives": {
+            "label": "Мотивы"
+          }
+        }
+      },
       "Party": {
         "Subtitle": {
           "character": "{community} {ancestry} | {subclass} {class}",
@@ -468,7 +478,11 @@
         "giveSpotlight": "Активировать",
         "requestingSpotlight": "Запрашивает активацию",
         "requestSpotlight": "Запросить активацию",
-        "openCountdowns": "Отсчёты"
+        "openCountdowns": "Отсчёты",
+        "adversaryCategories": {
+          "friendly": "Союзники",
+          "adversaries": "Противники"
+        }
       },
       "CompendiumBrowserSettings": {
         "title": "Включить компендиумы",
@@ -553,7 +567,6 @@
         "startFormula": "Формула начального значения",
         "currentCountdownCurrent": "Текущее: {value}",
         "currentCountdownStart": "Начало: {value}",
-        "category": "Категория",
         "progressionType": "Тип прогрессии",
         "decreasing": "Убывающий",
         "looping": "Цикл",
@@ -781,17 +794,11 @@
       "PendingReactionsDialog": {
         "title": "Найдены незавершённые броски реакции",
         "unfinishedRolls": "Некоторые токены всё ещё должны выполнить свой бросок реакции.",
-        "confirmation": "Вы уверены, что хотите продолжить?",
-        "warning": "Невыполненные броски реакции будут считаться проваленными"
+        "warning": "Невыполненные броски реакции будут считаться проваленными",
+        "confirmation": "Вы уверены, что хотите продолжить?"
       },
       "ReactionRoll": {
         "title": "Бросок Реакции: {trait}"
-      },
-      "RerollDialog": {
-        "title": "Переброс",
-        "damageTitle": "Переброс урона",
-        "deselectDiceNotification": "Сначала отмените выбор одной из выбранных костей",
-        "acceptCurrentRolls": "Принять текущие броски"
       },
       "ResourceDice": {
         "title": "Ресурс {name}",
@@ -854,11 +861,12 @@
         "selectLeaderHint": "Выберите одного персонажа лидером",
         "selectParticipantsHint": "Выберите персонажей-участников",
         "startGroupRoll": "Начать групповой бросок",
-        "title": "Групповой бросок",
-        "aidingCharacters": "Помогающие персонажи"
+        "title": "Групповой бросок"
       },
       "TokenConfig": {
-        "actorSizeUsed": "Размер персонажа задан, он определяет габариты."
+        "actorSizeUsed": "Размер персонажа задан, он определяет габариты.",
+        "tokenSize": "Размер токена",
+        "sizeCategory": "Категория размера"
       }
     },
     "CLASS": {
@@ -948,6 +956,14 @@
         "leader": "за каждого Лидера.",
         "bruiser": "за каждого Громилу.",
         "solo": "за каждого Одиночку."
+      },
+      "AreaTypes": {
+        "attached": {
+          "label": "Привязана к токену"
+        },
+        "placed": {
+          "label": "Размещена на сцене"
+        }
       },
       "ArmorInteraction": {
         "none": {
@@ -1246,13 +1262,23 @@
           "autoAppliedByLabel": "Макс. стресс"
         }
       },
-      "CountdownType": {
+      "CountdownProgressType": {
         "actionRoll": "Бросок действия",
         "characterAttack": "Атака персонажа",
         "characterSpotlight": "Активация персонажа",
         "custom": "Пользовательский",
         "fear": "Страх",
         "spotlight": "Активация"
+      },
+      "CountdownType": {
+        "encounter": {
+          "label": "Краткосрочный",
+          "shortLabel": "Кратк."
+        },
+        "narrative": {
+          "label": "Долгосрочный",
+          "shortLabel": "Долг."
+        }
       },
       "DaggerheartDiceAnimationEvents": {
         "critical": {
@@ -2107,7 +2133,8 @@
       "Attachments": {
         "attachHint": "Перетащите предметы сюда, чтобы прикрепить их",
         "transferHint": "Если отмечено, этот эффект будет применён к любому персонажу, владеющему родительским предметом этого эффекта. Эффект всегда применяется, если этот предмет прикреплён к другому."
-      }
+      },
+      "OriginTag": "Источник: {name}"
     },
     "GENERAL": {
       "Ability": {
@@ -2554,6 +2581,7 @@
         "single": "Промах",
         "plural": "Промахи"
       },
+      "missingX": "Отсутствует {x}",
       "maxWithThing": "Макс. {thing}",
       "missingDragDropThing": "Перетащите {thing} сюда",
       "multiclass": "Мультикласс",
@@ -2666,6 +2694,9 @@
           "value": {
             "label": "Значение"
           }
+        },
+        "identifier": {
+          "label": "Идентификатор"
         }
       },
       "Ancestry": {
@@ -2712,6 +2743,9 @@
             },
             "width": {
               "label": "Ширина"
+            },
+            "depth": {
+              "label": "Глубина"
             },
             "scale": {
               "label": "Масштаб токена"
@@ -3012,6 +3046,15 @@
           "hideObserverPermissionInChat": {
             "label": "Скрывать информацию чата от игроков",
             "hint": "Информация вроде попадания или промаха при бросках атаки по противникам будет скрыта"
+          },
+          "hidePartyStats": {
+            "label": "Скрывать параметры группы",
+            "hint": "Ресурсы и параметры в списке участников листа группы будут скрыты от выбранных пользователей, даже если пользователь состоит в той же группе",
+            "choices": {
+              "never": "Никогда, всегда показывать",
+              "players": "Скрывать от игроков",
+              "always": "Скрывать от всех"
+            }
           }
         }
       },
@@ -3072,7 +3115,9 @@
           "iconName": "Название иконки",
           "iconNameHint": "Иконки из FontAwesome",
           "bagName": "Название мешка",
-          "chestName": "Название сундука"
+          "chestName": "Название сундука",
+          "denomination": "Номинал",
+          "initialAmount": "Начальная сумма"
         },
         "domains": {
           "domainsTitle": "Базовые домены",
@@ -3290,6 +3335,7 @@
         }
       },
       "ChatLog": {
+        "rerollActionRoll": "Перебросить действие",
         "rerollDamage": "Перебросить урон",
         "assignTagRoll": "Назначить командным броском"
       },
@@ -3423,7 +3469,6 @@
         "subclassesAlreadyPresent": "У вас уже есть подкласс класса и мультикласса",
         "noDiceSystem": "В выбранной вами системе костей {system} нет кости с {faces} гранями",
         "gmMenuRefresh": "Вы обновили все действия и ресурсы: {types}",
-        "subclassAlreadyLinked": "{name} уже является подклассом класса {class}. Удалите его оттуда, если хотите назначить его этому классу.",
         "gmRequired": "Для этого действия требуется Мастер в сети.",
         "gmOnly": "Доступно только Мастеру.",
         "noActorOwnership": "У вас нет прав на этого персонажа",
