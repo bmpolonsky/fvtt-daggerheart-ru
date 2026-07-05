@@ -79,6 +79,55 @@ Hooks.once('babele.init', (babele) => {
     }
   };
 
+  // Опыты противников хранятся объектом по ID. Babele не умеет сам обновлять name/value внутри узлов.
+  const applyExperienceTranslations = (experiences, translatedExperiences) => {
+    if (!experiences || typeof experiences !== "object" || !translatedExperiences || typeof translatedExperiences !== "object") {
+      return;
+    }
+    for (const [experienceId, experience] of Object.entries(experiences)) {
+      if (!experience || typeof experience !== "object") continue;
+      const currentName = experience.name || experience.value || experience.label;
+      const translation = getTranslationByIdOrName(translatedExperiences, experienceId, currentName);
+      const translatedName = typeof translation === "string" ? translation : translation?.name;
+      if (typeof translatedName !== "string") continue;
+      const trimmed = translatedName.trim();
+      if (!trimmed) continue;
+      if (typeof experience.name === "string") {
+        experience.name = trimmed;
+      }
+      if (typeof experience.value === "string") {
+        experience.value = trimmed;
+      }
+      if (typeof experience.label === "string") {
+        experience.label = trimmed;
+      }
+    }
+  };
+
+  // Обновляет списки строк вроде вопросов предыстории и связей.
+  const applyStringListTranslations = (list, translatedList) => {
+    if (!Array.isArray(list) || !Array.isArray(translatedList)) {
+      return list;
+    }
+    for (let index = 0; index < list.length; index += 1) {
+      const replacement = translatedList[index];
+      if (typeof replacement !== "string") continue;
+      const trimmed = replacement.trim();
+      if (!trimmed) continue;
+      if (typeof list[index] === "string") {
+        list[index] = trimmed;
+      } else if (list[index] && typeof list[index] === "object") {
+        if (typeof list[index].value === "string") {
+          list[index].value = trimmed;
+        }
+        if (typeof list[index].text === "string") {
+          list[index].text = trimmed;
+        }
+      }
+    }
+    return list;
+  };
+
   // Меняет строки advantage/disadvantageSources внутри effect.changes на переведённые значения.
   const applySourceTranslations = (effect, replacementMap, targetKey) => {
     if (!effect || !replacementMap || typeof replacementMap !== "object") {
@@ -174,6 +223,19 @@ Hooks.once('babele.init', (babele) => {
       applyEffectTranslations(origEffects, transEffects);
       return origEffects;
     },
+
+    /**
+     * Обновляет названия опытов у противников и окружений.
+     */
+    "toExperiences": (origExperiences, transExperiences) => {
+      applyExperienceTranslations(origExperiences, transExperiences);
+      return origExperiences;
+    },
+
+    /**
+     * Обновляет массивы строк, которые Babele может не заменить напрямую.
+     */
+    "toStringList": (origList, transList) => applyStringListTranslations(origList, transList),
 
     /**
      * Преимущества у звероформ внутри Foundry хранятся объектом {id: { value }}.

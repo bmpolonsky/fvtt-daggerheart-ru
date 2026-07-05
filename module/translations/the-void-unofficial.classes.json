@@ -12,8 +12,14 @@
   },
   "mapping": {
     "description": "system.description",
-    "backgroundQuestions": "system.backgroundQuestions",
-    "connections": "system.connections",
+    "backgroundQuestions": {
+      "path": "system.backgroundQuestions",
+      "converter": "toStringList"
+    },
+    "connections": {
+      "path": "system.connections",
+      "converter": "toStringList"
+    },
     "actions": {
       "path": "system.actions",
       "converter": "toActions"

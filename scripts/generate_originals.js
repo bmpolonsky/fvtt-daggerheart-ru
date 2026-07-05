@@ -808,8 +808,14 @@ function buildVoidborneItemsTemplate() {
     label: "Voidborne: Classes & Class Options",
     mapping: {
       description: "system.description",
-      backgroundQuestions: "system.backgroundQuestions",
-      connections: "system.connections",
+      backgroundQuestions: {
+        path: "system.backgroundQuestions",
+        converter: "toStringList"
+      },
+      connections: {
+        path: "system.connections",
+        converter: "toStringList"
+      },
       actions: {
         path: "system.actions",
         converter: "toActions"
@@ -828,7 +834,10 @@ function buildVoidborneActorsTemplate() {
     label: "Voidborne: Adversaries & Environments",
     mapping: {
       description: "system.description",
-      experiences: "system.experiences",
+      experiences: {
+        path: "system.experiences",
+        converter: "toExperiences"
+      },
       motivesAndTactics: "system.motivesAndTactics",
       impulses: "system.impulses",
       potentialAdversaries: {
