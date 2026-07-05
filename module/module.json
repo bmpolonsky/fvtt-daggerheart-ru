@@ -2,7 +2,7 @@
   "id": "fvtt-daggerheart-ru",
   "title": "Daggerheart Russian translation",
   "description": "Русская локализация Daggerheart для Foundry VTT",
-  "version": "2026.07.04",
+  "version": "2026.07.05",
   "compatibility": {
     "minimum": "14.364",
     "verified": "14.364"
@@ -58,5 +58,5 @@
   "bugs": "https://github.com/bmpolonsky/fvtt-daggerheart-ru/issues",
   "license": "MIT",
   "manifest": "https://raw.githubusercontent.com/bmpolonsky/fvtt-daggerheart-ru/main/module/module.json",
-  "download": "https://github.com/bmpolonsky/fvtt-daggerheart-ru/releases/download/v2026.07.04/fvtt-daggerheart-ru-v2026.07.04.zip"
+  "download": "https://github.com/bmpolonsky/fvtt-daggerheart-ru/releases/download/v2026.07.05/fvtt-daggerheart-ru-v2026.07.05.zip"
 }
