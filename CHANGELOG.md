@@ -14,6 +14,7 @@
 - Восстановлено полное описание `Hex`/`Сглаз` в Voidborne и исправлено вложенное действие `Vicious Maul`, где исходник был смешан с текстом `Snapping Strike` ([`b63b044`](https://github.com/bmpolonsky/fvtt-daggerheart-ru/commit/b63b044)).
 - Восстановлено применение переводов вложенных полей Babele для вопросов классов, связей и опытов противников после изменений Foundry/Babele ([`e9de14b`](https://github.com/bmpolonsky/fvtt-daggerheart-ru/commit/e9de14b)).
 - Исправлены потерянные и перепутанные тексты The Void/Voidborne: `Grand Feast`, `Reborne`, `Fangs`, `Flail Swipe`, `Relentless (3)` и `There’s Always That One...` ([`e9de14b`](https://github.com/bmpolonsky/fvtt-daggerheart-ru/commit/e9de14b)).
+- Добавлены i18n-label для доменов Voidborne `Blood` и `Dread`, чтобы в браузере компендиумов они отображались как `Кровь` и `Ужас`.
 
 ![GitHub Downloads](https://img.shields.io/github/downloads/bmpolonsky/fvtt-daggerheart-ru/v2026.07.05/total?color=green)
 
