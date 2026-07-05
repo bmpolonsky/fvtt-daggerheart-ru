@@ -7,6 +7,7 @@
 
 ### Fixed
 - В v13-линейку перенесены исправления вложенных переводов Babele для вопросов классов, связей и опытов противников, а также правки текстов The Void/Voidborne из релиза `v2026.07.05` ([`7f34d95`](https://github.com/bmpolonsky/fvtt-daggerheart-ru/commit/7f34d95)).
+- Добавлены i18n-label для доменов Voidborne `Blood` и `Dread`, чтобы в браузере компендиумов они отображались как `Кровь` и `Ужас`.
 
 ![GitHub Downloads](https://img.shields.io/github/downloads/bmpolonsky/fvtt-daggerheart-ru/v2026.07.05-v13/total?color=green)
 
