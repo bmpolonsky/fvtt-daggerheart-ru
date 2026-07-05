@@ -1,5 +1,15 @@
 # Changelog
 
+## v2026.07.05-v13
+
+### Changed
+- Синхронизирована ветка совместимости с актуальной `main`: добавлены переводы Voidborne и сохранены v13-совместимые настройки Foundry/Daggerheart ([`7f34d95`](https://github.com/bmpolonsky/fvtt-daggerheart-ru/commit/7f34d95)).
+
+### Fixed
+- В v13-линейку перенесены исправления вложенных переводов Babele для вопросов классов, связей и опытов противников, а также правки текстов The Void/Voidborne из релиза `v2026.07.05` ([`7f34d95`](https://github.com/bmpolonsky/fvtt-daggerheart-ru/commit/7f34d95)).
+
+![GitHub Downloads](https://img.shields.io/github/downloads/bmpolonsky/fvtt-daggerheart-ru/v2026.07.05-v13/total?color=green)
+
 ## v2026.07.05
 
 ### Added
