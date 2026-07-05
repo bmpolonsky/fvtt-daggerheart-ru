@@ -1,21 +1,10 @@
 {
   "label": "Подклассы",
-  "mapping": {
-    "description": "system.description",
-    "actions": {
-      "path": "system.actions",
-      "converter": "toActions"
-    },
-    "effects": {
-      "path": "effects",
-      "converter": "toEffects"
-    }
-  },
   "folders": {
     "Assassin": "Ассасин",
-    "Blood Hunter": "Кровавый Охотник",
+    "Blood Hunter": "Кровавый охотник",
     "Brawler": "Боец",
-    "Brawler Stances": "Стойки Бойца",
+    "Brawler Stances": "Стойки бойца",
     "Tier 1": "Ранг 1",
     "Tier 2": "Ранг 2",
     "Tier 3": "Ранг 3",
@@ -27,6 +16,17 @@
     "Specialization Features": "Свойства специализации",
     "Mastery Features": "Свойства мастерства"
   },
+  "mapping": {
+    "description": "system.description",
+    "actions": {
+      "path": "system.actions",
+      "converter": "toActions"
+    },
+    "effects": {
+      "path": "effects",
+      "converter": "toEffects"
+    }
+  },
   "entries": {
     "Adder's Blessing": {
       "name": "Дар гадюки",
@@ -34,7 +34,7 @@
     },
     "Ambush": {
       "name": "Внезапная атака",
-      "description": "<p>Ваше свойство \"Метка Смерти\" теперь использует <strong>d6</strong> вместо <strong>d4</strong>.</p>",
+      "description": "<p>Ваше свойство \"Метка смерти\" теперь использует <strong>d6</strong> вместо <strong>d4</strong>.</p>",
       "actions": {
         "5O9hGdbSO9vHjSy0": {
           "name": "Урон"
@@ -43,19 +43,19 @@
     },
     "Backstab": {
       "name": "Удар в спину",
-      "description": "<p>Ваше свойство \"Метка Смерти\" теперь использует <strong>d8</strong> вместо <strong>d6</strong>.</p>"
+      "description": "<p>Ваше свойство \"Метка смерти\" теперь использует <strong>d8</strong> вместо <strong>d6</strong>.</p>"
     },
     "Chasing Death": {
-      "name": "Погоня за Смертью",
-      "description": "<p>Пока у вас есть 1–3 неотмеченных Ячейки Ран, вы можете использовать свойство Алый Ритуал без траты Ран. Если у вас осталась только 1 неотмеченная Ячейка Ран, вы бросаете d8 вместо d6 для дополнительного урона Алого Ритуала.</p>"
+      "name": "Погоня за смертью",
+      "description": "<p>Пока у вас есть 1–3 неотмеченных Ячейки Ран, вы можете использовать свойство Алый ритуал без траты Ран. Если у вас осталась только 1 неотмеченная Ячейка Ран, вы бросаете d8 вместо d6 для дополнительного урона Алого ритуала.</p>"
     },
     "Circle of Power": {
       "name": "Круг силы",
       "description": "<p>Один раз до следующего отдыха, вы можете начертить круг на земле в пределах Близкой дистанции и поместить на эту карту количество жетонов, равное вашей Характеристике Заклинателя. Каждый раз, когда вы или ваши союзники в круге совершают бросок действия или становятся целью успешной атаки, снимите один жетон. Заклинание действует, пока вы не потратите последний жетон или не покинете круг. Находясь внутри круга, вы и ваши союзники:</p><ul><li>Получаете <strong>+4</strong> к порогам урона.</li></ul><ul><li>Получаете <strong>+2</strong> к броскам атак.</li></ul><ul><li>Получаете <strong>+1</strong> к Уклонению.</li></ul>"
     },
     "Control the Beast": {
-      "name": "Контроль Зверя",
-      "description": "<p>Находясь в Облике Волка, вы можете применять бонусную кость этой формы к вашим Броскам Действия Проворности и Силы.</p>"
+      "name": "Контроль зверя",
+      "description": "<p>Находясь в Облике волка, вы можете применять бонусную кость этой формы к вашим Броскам Действия Проворности и Силы.</p>"
     },
     "Dark Aegis": {
       "name": "Темная эгида",
@@ -67,7 +67,7 @@
     },
     "Death Strike": {
       "name": "Смертельный удар",
-      "description": "<p>Когда вы наносите Тяжелый урон существу, вы можете <strong>отметить Стресс</strong>, чтобы заставить его отметить дополнительную Рану.</p>",
+      "description": "<p>Когда вы наносите Тяжёлый урон существу, вы можете <strong>отметить Стресс</strong>, чтобы заставить его отметить дополнительную Рану.</p>",
       "actions": {
         "BtDEnyNem2nDgadf": {
           "name": "Отметить Стресс"
@@ -84,7 +84,7 @@
     },
     "Draining Bane": {
       "name": "Истощающее проклятье",
-      "description": "<p>Когда противник атакует вас или вашего союзника в пределах Близкой дистанции, вы можете <strong>потратить 2 Милости</strong>, чтобы сделать цель временно <em>Истощенной</em>. Когда вы это сделаете, они должны отметить Стресс, а вы можете очистить Стресс. Броски Атаки <em>Истощенной</em> цели используют <strong>d12</strong> вместо <strong>d20</strong>.</p>"
+      "description": "<p>Когда противник атакует вас или вашего союзника в пределах Близкой дистанции, вы можете <strong>потратить 2 Милости</strong>, чтобы сделать цель временно <em>Истощённой</em>. Когда вы это сделаете, они должны отметить Стресс, а вы можете очистить Стресс. Броски атаки <em>Истощённой</em> цели используют <strong>d12</strong> вместо <strong>d20</strong>.</p>"
     },
     "Draining Invoaction": {
       "name": "Истощающее воззвание",
@@ -113,18 +113,18 @@
     },
     "Favored Weapon": {
       "name": "Избранное оружие",
-      "description": "<p><strong>Отметьте Стресс</strong>, чтобы <em>Зарядить</em> ваше оружие яростью вашего покровителя, пока вы не нанесете Тяжелый урон. При успешной атаке <em>Заряженным</em> оружием, вы можете <strong>потратить любое количество Милости</strong>, чтобы получить <strong>+1d6</strong> к урону за каждую потраченную Милость.</p>"
+      "description": "<p><strong>Отметьте Стресс</strong>, чтобы <em>Зарядить</em> ваше оружие яростью вашего покровителя, пока вы не нанесёте Тяжёлый урон. При успешной атаке <em>Заряженным</em> оружием, вы можете <strong>потратить любое количество Милости</strong>, чтобы получить <strong>+1d6</strong> к урону за каждую потраченную Милость.</p>"
     },
     "Fearsome Attack": {
       "name": "Грозная атака",
       "description": "<p>Вы всегда можете <strong>потратить Милость</strong>, чтобы перебросить любое количество ваших костей урона. Вы можете продолжать тратить Милость, чтобы перебросить те же кости столько раз, сколько захотите.</p>"
     },
     "Feral Hide": {
-      "name": "Звериная Шкура",
-      "description": "<p>Находясь в Облике Волка, вы получаете бонус к вашим Порогам Урона, равный вашему Рангу.</p>",
+      "name": "Звериная шкура",
+      "description": "<p>Находясь в Облике волка, вы получаете бонус к порогам урона, равный вашему рангу.</p>",
       "effects": {
         "rOdpVbqwuw4oMrXY": {
-          "name": "Звериная Шкура"
+          "name": "Звериная шкура"
         }
       }
     },
@@ -134,7 +134,7 @@
     },
     "Focus": {
       "name": "Концентрация",
-      "description": "<p>Во время отдыха бросьте количество костей <strong>d6</strong>, равное вашему Инстинкту и поместите количество жетонов <em>Концентрации</em>, равное наибольшему выпавшему числу, на эту карту. <strong>Потратьте Концентрацию</strong>, чтобы встать в стойку до тех пор, пока вы не получите Тяжелый урон, не закончится сцена, не отметите последнюю Рану или вы не встанете в другую стойку.</p><p>[[/r 1d6]]</p>"
+      "description": "<p>Во время отдыха бросьте количество костей <strong>d6</strong>, равное вашему Инстинкту и поместите количество жетонов <em>Концентрации</em>, равное наибольшему выпавшему числу, на эту карту. <strong>Потратьте Концентрацию</strong>, чтобы встать в стойку до тех пор, пока вы не получите Тяжёлый урон, не закончится сцена, не отметите последнюю Рану или вы не встанете в другую стойку.</p><p>[[/r 1d6]]</p>"
     },
     "Hedge": {
       "name": "Ведунья",
@@ -149,8 +149,8 @@
       "description": "<p>Когда вы или ваш союзник очищаете одну или больше Ран или Стресса в результате использования расходника, увеличьте количество очищенных очков на одно.</p>"
     },
     "Improved Mutagens": {
-      "name": "Улучшенные Мутагены",
-      "description": "<p>Когда вы выбираете преимущество мутагена, ваши варианты также включают следующее: </p><ul><li><p>Стальные Нервы. Всякий раз, когда вы должны отметить Стресс, вы можете вместо этого потратить 2 Надежды. </p></li><li><p>Стремительность. Ваше Уклонение увеличивается на 1. </p></li><li><p>Железная Кожа. Ваш порог Тяжелого урона увеличивается на число, равное вашему Мастерству.</p></li></ul>",
+      "name": "Улучшенные мутагены",
+      "description": "<p>Когда вы выбираете преимущество мутагена, ваши варианты также включают следующее: </p><ul><li><p>Стальные Нервы. Всякий раз, когда вы должны отметить Стресс, вы можете вместо этого потратить 2 Надежды. </p></li><li><p>Стремительность. Ваше Уклонение увеличивается на 1. </p></li><li><p>Железная Кожа. Ваш порог Тяжёлого урона увеличивается на число, равное вашему Мастерству.</p></li></ul>",
       "actions": {
         "JoE1j2EK2MfFupSr": {
           "name": "Потратить 2 Надежды"
@@ -158,20 +158,20 @@
       },
       "effects": {
         "kLbVYo5ogREgCmTS": {
-          "name": "Улучшенные Мутагены - Стремительность"
+          "name": "Улучшенные мутагены - стремительность"
         },
         "9XErPc7AYx93ozbA": {
-          "name": "Улучшенные Мутагены - Железная Кожа"
+          "name": "Улучшенные мутагены - железная кожа"
         }
       }
     },
     "Ire of Pale Light": {
       "name": "Гнев бледного света",
-      "description": "<p>Когда существо, отмеченное <em>Сглазом</em>, в пределах Далекой дистанции проваливает бросок атаки, оно должно отметить Стресс.</p>"
+      "description": "<p>Когда существо, отмеченное <em>Сглазом</em>, в пределах Далёкой дистанции проваливает бросок атаки, оно должно отметить Стресс.</p>"
     },
     "Juggernaut": {
       "name": "Джаггернаут",
-      "description": "<p>Вы превратили свое тело в оружие чистой силы, способное выдерживать и наносить сокрушительные удары.</p>"
+      "description": "<p>Вы превратили своё тело в оружие чистой силы, способное выдерживать и наносить сокрушительные удары.</p>"
     },
     "Keen Defenses": {
       "name": "Превосходная защита",
@@ -179,17 +179,17 @@
     },
     "Limit Breaker": {
       "name": "Преодоление пределов",
-      "description": "<p>Один раз до следующего отдыха вы можете совершить невообразимый подвиг, например, бежать по воде, прыгать между далекими крышами или лазать по стене здания, не совершая бросок. Когда вы это сделаете, получите Надежду и снимите Стресс.</p>",
+      "description": "<p>Один раз до следующего отдыха вы можете совершить невообразимый подвиг, например, бежать по воде, прыгать между далёкими крышами или лазать по стене здания, не совершая бросок. Когда вы это сделаете, получите Надежду и снимите Стресс.</p>",
       "actions": {
         "vd31YZgnJkEQSU4d": {
-          "name": "Преодолеть Предел",
-          "description": "<p>Один раз до следующего отдыха вы можете совершить невообразимый подвиг, например, бежать по воде, прыгать между далекими крышами или лазать по стене здания, не совершая бросок. Когда вы это сделаете, получите Надежду и снимите Стресс.</p>"
+          "name": "Преодолеть предел",
+          "description": "<p>Один раз до следующего отдыха вы можете совершить невообразимый подвиг, например, бежать по воде, прыгать между далёкими крышами или лазать по стене здания, не совершая бросок. Когда вы это сделаете, получите Надежду и снимите Стресс.</p>"
         }
       }
     },
     "Lunar Phases": {
       "name": "Лунные фазы",
-      "description": "<p>Ваш дух растет и убывает, подобно фазам луны. В начале каждой сессии бросьте <strong>d4</strong> и получите соответствующий эффект до конца сессии:</p><ul><li><strong><em>1:</strong> Новолуние - вы всегда можете потратить <strong>Надежду</strong>, чтобы уменьшить Легкий урон до нуля.</em></li></ul><ul><li><strong><em>2:</strong> Растущая Луна - Получите <strong>+2</strong> к броскам урона.</em></li></ul><ul><li><strong><em>3:</strong> Полная - Получите <strong>+2</strong> к порогам урона.</em></li></ul><ul><li><strong><em>4:</strong> Убывающая - Получите <strong>+1</strong> к Уклонению.</em></li></ul>",
+      "description": "<p>Ваш дух растёт и убывает, подобно фазам луны. В начале каждой сессии бросьте <strong>d4</strong> и получите соответствующий эффект до конца сессии:</p><ul><li><strong><em>1:</strong> Новолуние - вы всегда можете потратить <strong>Надежду</strong>, чтобы уменьшить Лёгкий урон до нуля.</em></li></ul><ul><li><strong><em>2:</strong> Растущая луна - получите <strong>+2</strong> к броскам урона.</em></li></ul><ul><li><strong><em>3:</strong> Полная - получите <strong>+2</strong> к порогам урона.</em></li></ul><ul><li><strong><em>4:</strong> Убывающая - получите <strong>+1</strong> к Уклонению.</em></li></ul>",
       "actions": {
         "zcqQvd0UftoWTuA8": {
           "name": "Потратить Надежду"
@@ -197,22 +197,22 @@
       },
       "effects": {
         "2cgsUItFz9IOKDmq": {
-          "name": "Растущая Луна",
+          "name": "Растущая луна",
           "description": "<p>Получите бонус +2 к броскам урона.</p>"
         },
         "iKkLKp5rPtl6A0Lc": {
-          "name": "Полная Луна",
+          "name": "Полная луна",
           "description": "<p>Получите бонус +2 к порогам урона.</p>"
         },
         "WodgSFen9Yaysaht": {
-          "name": "Убывающая Луна",
+          "name": "Убывающая луна",
           "description": "<p>Получите бонус +1 к Уклонению.</p>"
         }
       }
     },
     "Lycan Regeneration": {
-      "name": "Регенерация Ликана",
-      "description": "<p>Находясь в Облике Волка со всеми отмеченными Ячейками Ран, вы можете отметить Стресс, чтобы очистить Рану. Вы можете делать это, находясь без сознания.</p>",
+      "name": "Регенерация ликана",
+      "description": "<p>Находясь в Облике волка со всеми отмеченными Ячейками Ран, вы можете отметить Стресс, чтобы очистить Рану. Вы можете делать это, находясь без сознания.</p>",
       "actions": {
         "TfRiNmCx716o0XOQ": {
           "name": "Исцеление"
@@ -221,15 +221,15 @@
     },
     "Martial Artist": {
       "name": "Мастер боевых искусств",
-      "description": "<p>Вы изучили и освоили особые боевые стили, позволяя вашим движениям плавно перетекать друг в друга в бою.</p><p></p><p>Вы можете перетащить эти свойства на лист персонажа.</p><p></p><h2>Ранг 1</h2><p>@UUID[Compendium.the-void-unofficial.subclasses.Item.MHKcMoI1FOlEbi7M]{Стойка - Жестокая}</p><p>@UUID[Compendium.the-void-unofficial.subclasses.Item.ancvKGl3z9tFzTnC]{Стойка - Оборонительная}</p><p>@UUID[Compendium.the-void-unofficial.subclasses.Item.pj9E3iEGM6CSrGXW]{Стойка - Захватывающая}</p><p>@UUID[Compendium.the-void-unofficial.subclasses.Item.gAB29yCHpBCmvcoY]{Стойка - Точная}</p><p>@UUID[Compendium.the-void-unofficial.subclasses.Item.M1CBMs4kVOxMnUIT]{Стойка - Быстрая}</p><p>@UUID[Compendium.the-void-unofficial.subclasses.Item.BpeJi5xFnTxmi1Ru]{Стойка - Устойчивая}</p><p></p><h2>Ранг 2</h2><p>@UUID[Compendium.the-void-unofficial.subclasses.Item.8wGHiaqfE9vTL4b4]{Стойка - Смертоносная}</p><p>@UUID[Compendium.the-void-unofficial.subclasses.Item.PlOmkkaDCr2cr7Kz]{Стойка - Мешающая}</p><p>@UUID[Compendium.the-void-unofficial.subclasses.Item.BnGRJDnIO6CqDY6W]{Стойка - Неподвижная}</p><p>@UUID[Compendium.the-void-unofficial.subclasses.Item.iQAXTA6y0KhzKUcU]{Стойка - Бодрящая}</p><p>@UUID[Compendium.the-void-unofficial.subclasses.Item.6jexZv6ufhinEvNp]{Стойка - Ловкая}</p><p>@UUID[Compendium.the-void-unofficial.subclasses.Item.cpQEaPhWDTtzJaM0]{Стойка - Потусторонняя}</p><p>@UUID[Compendium.the-void-unofficial.subclasses.Item.oW8fm6mYYiQh4mV5]{Стойка - Пугающая}</p><p></p><h2>Ранг 3</h2><p>@UUID[Compendium.the-void-unofficial.subclasses.Item.0J4jLxLWzoDye1ew]{Стойка - Нарастающая}</p><p>@UUID[Compendium.the-void-unofficial.subclasses.Item.CIl8Pe4wzhEGuzp9]{Стойка - Отражающая}</p><p>@UUID[Compendium.the-void-unofficial.subclasses.Item.84XJzmb6ZORSDA5Q]{Стойка - Разрушительная}</p><p>@UUID[Compendium.the-void-unofficial.subclasses.Item.WzzhboGOu8DVPo6i]{Стойка - Дуэльная}</p><p>@UUID[Compendium.the-void-unofficial.subclasses.Item.XOYTovtyz7MwsRlP]{Стойка - Избранная}</p><p>@UUID[Compendium.the-void-unofficial.subclasses.Item.IRDj7cX6vLINhusw]{Стойка - Неумолимая}</p><p>@UUID[Compendium.the-void-unofficial.subclasses.Item.hVQW2ZDnvUKZ8iaA]{Стойка - Укрывающая}</p><p></p><h2>Ранг 4</h2><p>@UUID[Compendium.the-void-unofficial.subclasses.Item.ihGjGgVizC2rS40H]{Стойка - Сокрушительная}</p><p>@UUID[Compendium.the-void-unofficial.subclasses.Item.C0ZrpyxqH34H3HUd]{Стойка - Проницательная}</p><p>@UUID[Compendium.the-void-unofficial.subclasses.Item.T0X88UuKtmf5Adlb]{Стойка - Разъяряющая}</p><p>@UUID[Compendium.the-void-unofficial.subclasses.Item.wTKUd4DxHykGwODz]{Стойка - Размашистая}</p><p></p><p></p><p></p><p></p><p></p>"
+      "description": "<p>Вы изучили и освоили особые боевые стили, позволяя вашим движениям плавно перетекать друг в друга в бою.</p><p></p><p>Вы можете перетащить эти свойства на лист персонажа.</p><p></p><h2>Ранг 1</h2><p>@UUID[Compendium.the-void-unofficial.subclasses.Item.MHKcMoI1FOlEbi7M]{Жестокая}</p><p>@UUID[Compendium.the-void-unofficial.subclasses.Item.ancvKGl3z9tFzTnC]{Оборонительная}</p><p>@UUID[Compendium.the-void-unofficial.subclasses.Item.pj9E3iEGM6CSrGXW]{Захватывающая}</p><p>@UUID[Compendium.the-void-unofficial.subclasses.Item.gAB29yCHpBCmvcoY]{Точная}</p><p>@UUID[Compendium.the-void-unofficial.subclasses.Item.M1CBMs4kVOxMnUIT]{Быстрая}</p><p>@UUID[Compendium.the-void-unofficial.subclasses.Item.BpeJi5xFnTxmi1Ru]{Устойчивая}</p><p></p><h2>Ранг 2</h2><p>@UUID[Compendium.the-void-unofficial.subclasses.Item.8wGHiaqfE9vTL4b4]{Смертоносная}</p><p>@UUID[Compendium.the-void-unofficial.subclasses.Item.PlOmkkaDCr2cr7Kz]{Мешающая}</p><p>@UUID[Compendium.the-void-unofficial.subclasses.Item.BnGRJDnIO6CqDY6W]{Неподвижная}</p><p>@UUID[Compendium.the-void-unofficial.subclasses.Item.iQAXTA6y0KhzKUcU]{Бодрящая}</p><p>@UUID[Compendium.the-void-unofficial.subclasses.Item.6jexZv6ufhinEvNp]{Ловкая}</p><p>@UUID[Compendium.the-void-unofficial.subclasses.Item.cpQEaPhWDTtzJaM0]{Потусторонняя}</p><p>@UUID[Compendium.the-void-unofficial.subclasses.Item.oW8fm6mYYiQh4mV5]{Пугающая}</p><p></p><h2>Ранг 3</h2><p>@UUID[Compendium.the-void-unofficial.subclasses.Item.0J4jLxLWzoDye1ew]{Нарастающая}</p><p>@UUID[Compendium.the-void-unofficial.subclasses.Item.CIl8Pe4wzhEGuzp9]{Отражающая}</p><p>@UUID[Compendium.the-void-unofficial.subclasses.Item.84XJzmb6ZORSDA5Q]{Разрушительная}</p><p>@UUID[Compendium.the-void-unofficial.subclasses.Item.WzzhboGOu8DVPo6i]{Дуэльная}</p><p>@UUID[Compendium.the-void-unofficial.subclasses.Item.XOYTovtyz7MwsRlP]{Избранная}</p><p>@UUID[Compendium.the-void-unofficial.subclasses.Item.IRDj7cX6vLINhusw]{Неумолимая}</p><p>@UUID[Compendium.the-void-unofficial.subclasses.Item.hVQW2ZDnvUKZ8iaA]{Укрывающая}</p><p></p><h2>Ранг 4</h2><p>@UUID[Compendium.the-void-unofficial.subclasses.Item.ihGjGgVizC2rS40H]{Сокрушительная}</p><p>@UUID[Compendium.the-void-unofficial.subclasses.Item.C0ZrpyxqH34H3HUd]{Проницательная}</p><p>@UUID[Compendium.the-void-unofficial.subclasses.Item.T0X88UuKtmf5Adlb]{Разъяряющая}</p><p>@UUID[Compendium.the-void-unofficial.subclasses.Item.wTKUd4DxHykGwODz]{Размашистая}</p><p></p><p></p><p></p><p></p><p></p>"
     },
     "Martial Form": {
       "name": "Боевая форма",
-      "description": "<p>Вы начинаете с двух боевых стоек 1 Ранга. Когда вы достигаете нового ранга, вы можете взять две дополнительные стойки своего ранга или ниже.</p><p></p><p>Вы можете перетащить эти свойства на лист персонажа.</p><p></p><h2>Ранг 1</h2><p>@UUID[Compendium.the-void-unofficial.subclasses.Item.MHKcMoI1FOlEbi7M]{Стойка - Жестокая}</p><p>@UUID[Compendium.the-void-unofficial.subclasses.Item.ancvKGl3z9tFzTnC]{Стойка - Оборонительная}</p><p>@UUID[Compendium.the-void-unofficial.subclasses.Item.pj9E3iEGM6CSrGXW]{Стойка - Захватывающая}</p><p>@UUID[Compendium.the-void-unofficial.subclasses.Item.gAB29yCHpBCmvcoY]{Стойка - Точная}</p><p>@UUID[Compendium.the-void-unofficial.subclasses.Item.M1CBMs4kVOxMnUIT]{Стойка - Быстрая}</p><p>@UUID[Compendium.the-void-unofficial.subclasses.Item.BpeJi5xFnTxmi1Ru]{Стойка - Устойчивая}</p><p></p><h2>Ранг 2</h2><p>@UUID[Compendium.the-void-unofficial.subclasses.Item.8wGHiaqfE9vTL4b4]{Стойка - Смертоносная}</p><p>@UUID[Compendium.the-void-unofficial.subclasses.Item.PlOmkkaDCr2cr7Kz]{Стойка - Мешающая}</p><p>@UUID[Compendium.the-void-unofficial.subclasses.Item.BnGRJDnIO6CqDY6W]{Стойка - Неподвижная}</p><p>@UUID[Compendium.the-void-unofficial.subclasses.Item.iQAXTA6y0KhzKUcU]{Стойка - Бодрящая}</p><p>@UUID[Compendium.the-void-unofficial.subclasses.Item.6jexZv6ufhinEvNp]{Стойка - Ловкая}</p><p>@UUID[Compendium.the-void-unofficial.subclasses.Item.cpQEaPhWDTtzJaM0]{Стойка - Потусторонняя}</p><p>@UUID[Compendium.the-void-unofficial.subclasses.Item.oW8fm6mYYiQh4mV5]{Стойка - Пугающая}</p><p></p><h2>Ранг 3</h2><p>@UUID[Compendium.the-void-unofficial.subclasses.Item.0J4jLxLWzoDye1ew]{Стойка - Нарастающая}</p><p>@UUID[Compendium.the-void-unofficial.subclasses.Item.CIl8Pe4wzhEGuzp9]{Стойка - Отражающая}</p><p>@UUID[Compendium.the-void-unofficial.subclasses.Item.84XJzmb6ZORSDA5Q]{Стойка - Разрушительная}</p><p>@UUID[Compendium.the-void-unofficial.subclasses.Item.WzzhboGOu8DVPo6i]{Стойка - Дуэльная}</p><p>@UUID[Compendium.the-void-unofficial.subclasses.Item.XOYTovtyz7MwsRlP]{Стойка - Избранная}</p><p>@UUID[Compendium.the-void-unofficial.subclasses.Item.IRDj7cX6vLINhusw]{Стойка - Неумолимая}</p><p>@UUID[Compendium.the-void-unofficial.subclasses.Item.hVQW2ZDnvUKZ8iaA]{Стойка - Укрывающая}</p><p></p><h2>Ранг 4</h2><p>@UUID[Compendium.the-void-unofficial.subclasses.Item.ihGjGgVizC2rS40H]{Стойка - Сокрушительная}</p><p>@UUID[Compendium.the-void-unofficial.subclasses.Item.C0ZrpyxqH34H3HUd]{Стойка - Проницательная}</p><p>@UUID[Compendium.the-void-unofficial.subclasses.Item.T0X88UuKtmf5Adlb]{Стойка - Разъяряющая}</p><p>@UUID[Compendium.the-void-unofficial.subclasses.Item.wTKUd4DxHykGwODz]{Стойка - Размашистая}</p><p></p><p></p><p></p><p></p><p></p>"
+      "description": "<p>Вы начинаете с двух боевых стоек 1 Ранга. Когда вы достигаете нового ранга, вы можете взять две дополнительные стойки своего ранга или ниже.</p><p></p><p>Вы можете перетащить эти свойства на лист персонажа.</p><p></p><h2>Ранг 1</h2><p>@UUID[Compendium.the-void-unofficial.subclasses.Item.MHKcMoI1FOlEbi7M]{Жестокая}</p><p>@UUID[Compendium.the-void-unofficial.subclasses.Item.ancvKGl3z9tFzTnC]{Оборонительная}</p><p>@UUID[Compendium.the-void-unofficial.subclasses.Item.pj9E3iEGM6CSrGXW]{Захватывающая}</p><p>@UUID[Compendium.the-void-unofficial.subclasses.Item.gAB29yCHpBCmvcoY]{Точная}</p><p>@UUID[Compendium.the-void-unofficial.subclasses.Item.M1CBMs4kVOxMnUIT]{Быстрая}</p><p>@UUID[Compendium.the-void-unofficial.subclasses.Item.BpeJi5xFnTxmi1Ru]{Устойчивая}</p><p></p><h2>Ранг 2</h2><p>@UUID[Compendium.the-void-unofficial.subclasses.Item.8wGHiaqfE9vTL4b4]{Смертоносная}</p><p>@UUID[Compendium.the-void-unofficial.subclasses.Item.PlOmkkaDCr2cr7Kz]{Мешающая}</p><p>@UUID[Compendium.the-void-unofficial.subclasses.Item.BnGRJDnIO6CqDY6W]{Неподвижная}</p><p>@UUID[Compendium.the-void-unofficial.subclasses.Item.iQAXTA6y0KhzKUcU]{Бодрящая}</p><p>@UUID[Compendium.the-void-unofficial.subclasses.Item.6jexZv6ufhinEvNp]{Ловкая}</p><p>@UUID[Compendium.the-void-unofficial.subclasses.Item.cpQEaPhWDTtzJaM0]{Потусторонняя}</p><p>@UUID[Compendium.the-void-unofficial.subclasses.Item.oW8fm6mYYiQh4mV5]{Пугающая}</p><p></p><h2>Ранг 3</h2><p>@UUID[Compendium.the-void-unofficial.subclasses.Item.0J4jLxLWzoDye1ew]{Нарастающая}</p><p>@UUID[Compendium.the-void-unofficial.subclasses.Item.CIl8Pe4wzhEGuzp9]{Отражающая}</p><p>@UUID[Compendium.the-void-unofficial.subclasses.Item.84XJzmb6ZORSDA5Q]{Разрушительная}</p><p>@UUID[Compendium.the-void-unofficial.subclasses.Item.WzzhboGOu8DVPo6i]{Дуэльная}</p><p>@UUID[Compendium.the-void-unofficial.subclasses.Item.XOYTovtyz7MwsRlP]{Избранная}</p><p>@UUID[Compendium.the-void-unofficial.subclasses.Item.IRDj7cX6vLINhusw]{Неумолимая}</p><p>@UUID[Compendium.the-void-unofficial.subclasses.Item.hVQW2ZDnvUKZ8iaA]{Укрывающая}</p><p></p><h2>Ранг 4</h2><p>@UUID[Compendium.the-void-unofficial.subclasses.Item.ihGjGgVizC2rS40H]{Сокрушительная}</p><p>@UUID[Compendium.the-void-unofficial.subclasses.Item.C0ZrpyxqH34H3HUd]{Проницательная}</p><p>@UUID[Compendium.the-void-unofficial.subclasses.Item.T0X88UuKtmf5Adlb]{Разъяряющая}</p><p>@UUID[Compendium.the-void-unofficial.subclasses.Item.wTKUd4DxHykGwODz]{Размашистая}</p><p></p><p></p><p></p><p></p><p></p>"
     },
     "Master the Beast": {
-      "name": "Власть над Зверем",
-      "description": "<p>Когда вы находитесь в Облике Волка и должны отметить последний Стресс, вы можете вместо этого поместить одну из карт Домена из вашей руки в Хранилище; вы не можете Вернуть эту карту Домена, пока не закончите продолжительный отдых. </p><p></p><p>Когда вы впадаете в Бешенство от отметки последнего Стресса в Облике Волка, вы получаете 2 Надежды.</p>",
+      "name": "Власть над зверем",
+      "description": "<p>Когда вы находитесь в Облике волка и должны отметить последний Стресс, вы можете вместо этого поместить одну из карт Домена из вашей руки в Хранилище; вы не можете Вернуть эту карту Домена, пока не закончите продолжительный отдых. </p><p></p><p>Когда вы впадаёте в Бешенство от отметки последнего Стресса в Облике волка, вы получаете 2 Надежды.</p>",
       "actions": {
         "xceWFmPWUeVuc0H5": {
           "name": "Получить 2 Надежды"
@@ -237,7 +237,7 @@
       }
     },
     "Mastered Mutagens": {
-      "name": "Совершенные Мутагены",
+      "name": "Совершенные мутагены",
       "description": "<p>Бонус и штраф к характеристикам от вашего свойства Мутагены меняются на +2 и −2 соответственно. Когда вы выбираете преимущество мутагена, ваши варианты также включают следующее: </p><ul><li><p>Эфирная Кровь. В пределах вашей линии обзора вы видите невидимых существ и предметы, а визуальные иллюзии кажутся вам прозрачными. Если существо или предмет в пределах вашей линии обзора были трансформированы магией, вы видите их истинную форму. </p></li><li><p>Ярость. Когда вы совершаете бросок атаки, вы можете отметить Стресс, чтобы получить бонус к броску, равный вашему Мастерству. </p></li><li><p>Стальная Плоть. Ваш порог Ощутимого урона увеличивается на число, равное вашему Мастерству.</p></li></ul>",
       "actions": {
         "e7VsTp0OCPkAgRg0": {
@@ -246,13 +246,13 @@
       },
       "effects": {
         "gUXFfQ0tIClq6lde": {
-          "name": "Совершенные Мутагены - Стальная Плоть"
+          "name": "Совершенные мутагены - стальная плоть"
         }
       }
     },
     "Menacing Reach": {
       "name": "Устрашающая досягаемость",
-      "description": "<p>Когда вы <em>Заряжаете</em> ваше оружие яростью вашего покровителя, вы можете <strong>отметить дополнительный Стресс</strong>, чтобы увеличить его дистанцию на одну ступень (Вплотную -> Близко, Близко -> Средне, и т.д.).</p>"
+      "description": "<p>Когда вы <em>Заряжаете</em> ваше оружие яростью вашего покровителя, вы можете <strong>отметить дополнительный Стресс</strong>, чтобы увеличить его дистанцию на одну ступень (Вплотную -> Близко, Близко -> Средне, и т. д.).</p>"
     },
     "Moon": {
       "name": "Лунная",
@@ -278,17 +278,17 @@
       },
       "effects": {
         "06AAWZJTxlspR8pP": {
-          "name": "Мутагены - Прочность"
+          "name": "Мутагены - прочность"
         }
       }
     },
     "Night's Glamour": {
       "name": "Облачение ночи",
-      "description": "<p><strong>Отметьте Стресс</strong>, чтобы <em>Облачить</em> себя волшебной аурой, действующей до тех пор, пока вы не отметите Рану, совершите атаку или отдохнете. Пока вы <em>Облачены</em>, вы можете:</p><ul><li>Замаскироваться под любое существо примерно вашего размера, которое вы видели.</li></ul><ul><li>Преобразить свой внешний вид. Вы получаете преимущество для Бросков Влияния, опирающихся на это изменение.</li></ul>",
+      "description": "<p><strong>Отметьте Стресс</strong>, чтобы <em>Облачить</em> себя волшебной аурой, действующей до тех пор, пока вы не отметите Рану, совершите атаку или отдохнёте. Пока вы <em>Облачены</em>, вы можете:</p><ul><li>Замаскироваться под любое существо примерно вашего размера, которое вы видели.</li></ul><ul><li>Преобразить свой внешний вид. Вы получаете преимущество для Бросков Влияния, опирающихся на это изменение.</li></ul>",
       "actions": {
         "vq6us2ZBcGStBPOe": {
           "name": "Отметить Стресс",
-          "description": "<p><strong>Отметьте Стресс</strong>, чтобы <em>Облачить</em> себя волшебной аурой, действующей до тех пор, пока вы не отметите Рану, совершите атаку или отдохнете. Пока вы <em>Облачены</em>, вы можете:</p><ul><li>Замаскироваться под любое существо примерно вашего размера, которое вы видели.</li></ul><ul><li>Преобразить свой внешний вид. Вы получаете преимущество для Бросков Влияния, опирающихся на это изменение.</li></ul>"
+          "description": "<p><strong>Отметьте Стресс</strong>, чтобы <em>Облачить</em> себя волшебной аурой, действующей до тех пор, пока вы не отметите Рану, совершите атаку или отдохнёте. Пока вы <em>Облачены</em>, вы можете:</p><ul><li>Замаскироваться под любое существо примерно вашего размера, которое вы видели.</li></ul><ul><li>Преобразить свой внешний вид. Вы получаете преимущество для Бросков Влияния, опирающихся на это изменение.</li></ul>"
         }
       }
     },
@@ -307,21 +307,21 @@
       }
     },
     "Order of the Ghost Slayer": {
-      "name": "Орден Убийц Призраков"
+      "name": "Орден убийц призраков"
     },
     "Order of the Lycan": {
-      "name": "Орден Ликана"
+      "name": "Орден ликана"
     },
     "Order of the Mutant": {
-      "name": "Орден Мутанта"
+      "name": "Орден мутанта"
     },
     "Overwhelm": {
       "name": "Сокрушение",
-      "description": "<p>При успешной атаке, вы можете потратить Надежду, чтобы заставить цель отметить Стресс или отбросить ее в пределах Средней дистанции.</p>",
+      "description": "<p>При успешной атаке, вы можете потратить Надежду, чтобы заставить цель отметить Стресс или отбросить её в пределах Средней дистанции.</p>",
       "actions": {
         "wxX1JhvRDUjEBY4g": {
           "name": "Нанести Стресс",
-          "description": "<p>При успешной атаке, вы можете потратить Надежду, чтобы заставить цель отметить Стресс или отбросить ее в пределах Средней дистанции.</p>"
+          "description": "<p>При успешной атаке, вы можете потратить Надежду, чтобы заставить цель отметить Стресс или отбросить её в пределах Средней дистанции.</p>"
         },
         "kOdV6pn4xkdwRqvT": {
           "name": "Отбросить врага"
@@ -336,20 +336,20 @@
     },
     "Patron's Mantle": {
       "name": "Мантия покровителя",
-      "description": "<p><strong>Отметьте Стресс</strong>, чтобы облачиться в устрашающий аспект вашего покровителя, действующий до тех пор, пока вы не получите Тяжелый урон или до конца сцены. Пока вы облачены:</p><ul><li><em>Когда вы отмечаете Ячейку Брони, вместо этого мы можете <strong>потратить 2 Милости</strong>.</em></li></ul><ul><li><em>Вы получаете бонус, равный вашему рангу, к броскам действий на запугивание цели.</em></li></ul>",
+      "description": "<p><strong>Отметьте Стресс</strong>, чтобы облачиться в устрашающий аспект вашего покровителя, который действует, пока вы не получите Тяжёлый урон или пока сцена не закончится:</p><ul><li><p><em>Когда вы должны отметить Ячейку Брони, вместо этого вы можете <strong>потратить 2 Милости</strong>.</em></p></li><li><p><em>Вы получаете бонус, равный вашему рангу, к броскам действий для запугивания цели.</em></p></li></ul>",
       "actions": {
         "zjdjIrCA7bTP9sJN": {
           "name": "Отметить Стресс",
-          "description": "<p><strong>Отметьте Стресс</strong>, чтобы облачиться в устрашающий аспект вашего покровителя, действующий до тех пор, пока вы не получите Тяжелый урон или до конца сцены. Пока вы облачены:</p><ul><li><em>Когда вы отмечаете Ячейку Брони, вместо этого мы можете <strong>потратить 2 Милости</strong>.</em></li></ul><ul><li><em>Вы получаете бонус, равный вашему рангу, к броскам действий на запугивание цели.</em></li></ul>"
+          "description": "<p><strong>Отметьте Стресс</strong>, чтобы облачиться в устрашающий аспект вашего покровителя, который действует, пока вы не получите Тяжёлый урон или пока сцена не закончится:</p><ul><li><p><em>Когда вы должны отметить Ячейку Брони, вместо этого вы можете <strong>потратить 2 Милости</strong>.</em></p></li><li><p><em>Вы получаете бонус, равный вашему рангу, к броскам действий для запугивания цели.</em></p></li></ul>"
         }
       }
     },
     "Poison Compendium": {
       "name": "Сборник ядов",
-      "description": "<p>Вы также знаете следующие яды:</p><ul><li><strong><em>Полуночная Вуаль</strong>: Цель получает постоянный штраф <strong>-2</strong> к броскам атаки. Это может подействовать на нее только один раз.</em></li></ul><ul><li><strong><em>Призрачный Лепесток</strong>: Навсегда уменьшите кость урона цели от стандартных атак на одну ступень (d10 до d8, d8 до d6 и т.д.). Это может подействовать на нее только один раз.</em></li></ul>"
+      "description": "<p>Вы также знаете следующие яды:</p><ul><li><strong><em>Полуночная вуаль</strong>: Цель получает постоянный штраф <strong>-2</strong> к броскам атаки. Это может подействовать на неё только один раз.</em></li></ul><ul><li><strong><em>Призрачный лепесток</strong>: Навсегда уменьшите кость урона цели от стандартных атак на одну ступень (d10 до d8, d8 до d6 и т. д.). Это может подействовать на неё только один раз.</em></li></ul>"
     },
     "Poisoner's Guild": {
-      "name": "Гильдия Отравителей"
+      "name": "Гильдия отравителей"
     },
     "Powerhouse": {
       "name": "Мощь во плоти",
@@ -373,20 +373,20 @@
     },
     "Rugged": {
       "name": "Стойкий",
-      "description": "<p>Получите постоянный бонус +3 к порогу Тяжелого урона. Кроме того, ваше свойство \"Мощь во Плоти\" может нацеливаться на трех существ вместо двух.</p>",
+      "description": "<p>Получите постоянный бонус +3 к порогу Тяжёлого урона. Кроме того, ваше свойство \"Мощь во Плоти\" может нацеливаться на трёх существ вместо двух.</p>",
       "effects": {
         "0JcKDuNPUlv4Avbc": {
           "name": "Стойкий",
-          "description": "<p>Получите постоянный бонус <strong>+3</strong> к порогу Тяжелого урона.</p>"
+          "description": "<p>Получите постоянный бонус <strong>+3</strong> к порогу Тяжёлого урона.</p>"
         }
       }
     },
     "Scorpion's Poise": {
       "name": "Поза скорпиона",
-      "description": "<p>Вы получаете <strong>+2</strong> к Уклонению против любых атак, сделанных существом с <em>Меткой Смерти</em>.</p>"
+      "description": "<p>Вы получаете <strong>+2</strong> к Уклонению против любых атак, сделанных существом с <em>Меткой смерти</em>.</p>"
     },
     "Shadowed Grit": {
-      "name": "Теневая Выдержка",
+      "name": "Теневая выдержка",
       "description": "<p>Когда Мастер получает Страх от броска Костей Дуальности, вы можете отметить Стресс, чтобы получить Надежду.</p>",
       "actions": {
         "GB0ZzQF3wENibTA7": {
@@ -395,8 +395,8 @@
       }
     },
     "Spectral Form": {
-      "name": "Призрачная Форма",
-      "description": "<p>У вас есть еще один вариант предсмертного хода: Призрачная Форма. Когда вы выбираете этот вариант, вы очищаете Рану, ваше тело становится призрачным, вы получаете сопротивление физическому урону и можете проходить сквозь предметы. Эта форма заканчивается, если вы очистите еще какие-либо Раны. Она также заканчивается, если вы отметите свою последнюю Рану, что вынуждает вас совершить другой предсмертный ход. Вы перемещаетесь в ближайшее свободное пространство, если находитесь внутри объекта, когда форма заканчивается.</p>"
+      "name": "Призрачная форма",
+      "description": "<p>У вас есть ещё один вариант предсмертного хода: Призрачная форма. Когда вы выбираете этот вариант, вы очищаете Рану, ваше тело становится призрачным, вы получаете сопротивление физическому урону и можете проходить сквозь предметы. Эта форма заканчивается, если вы очистите ещё какие-либо Раны. Она также заканчивается, если вы отметите свою последнюю Рану, что вынуждаёт вас совершить другой предсмертный ход. Вы перемещаетесь в ближайшее свободное пространство, если находитесь внутри объекта, когда форма заканчивается.</p>"
     },
     "Spirit Blast": {
       "name": "Духовный взрыв",
@@ -409,154 +409,154 @@
       }
     },
     "Stance - Brutal": {
-      "name": "Стойка - Жестокая",
-      "description": "<p>Жестокая: Когда вы выбрасываете максимальное значение на кости урона, бросьте дополнительную кость урона.</p>",
+      "name": "Жестокая",
+      "description": "<p>Когда на кости урона выпадаёт максимальное значение, бросьте дополнительную кость урона.</p>",
       "actions": {
         "AmjLwfMnO7InhNJj": {
-          "name": "Стойка - Жестокая"
+          "name": "Жестокая"
         }
       }
     },
     "Stance - Compounding": {
-      "name": "Стойка - Нарастающая",
-      "description": "<p>Нарастающая: Когда вы выбрасываете максимальное значение на Кости Комбо, увеличьте размер последующих Костей Комбо, которые вы бросаете для атаки (максимум до d12).</p>"
+      "name": "Нарастающая",
+      "description": "<p>Когда на Комбо-кости выпадает максимальное значение, увеличьте размер последующих Комбо-костей, которые вы бросаете для атаки (максимум до d12).</p>"
     },
     "Stance - Crushing": {
-      "name": "Стойка - Сокрушительная",
-      "description": "<p>Сокрушительная: Когда вы выбрасываете 1 на кости урона, это можно считать наивысшим значением на кости.</p>"
+      "name": "Сокрушительная",
+      "description": "<p>Когда на кости урона выпадаёт 1, это можно считать максимальным значением этой кости.</p>"
     },
     "Stance - Deadly": {
-      "name": "Стойка - Смертоносная",
-      "description": "<p>Смертоносная: Когда вы наносите Тяжелый урон, цель отмечает дополнительную Рану.</p>"
+      "name": "Смертоносная",
+      "description": "<p>Когда вы наносите Тяжёлый урон, цель отмечает дополнительную Рану.</p>"
     },
     "Stance - Defensive": {
-      "name": "Стойка - Оборонительная",
-      "description": "<p>Оборонительная: Броски атаки против вас имеют помеху, если противник не отметит Стресс.</p>",
+      "name": "Оборонительная",
+      "description": "<p>Броски атак против вас совершаются с помехой, если противник не отметит Стресс.</p>",
       "actions": {
         "0op993OEkbKsW1as": {
-          "name": "Стойка - Оборонительная"
+          "name": "Оборонительная"
         }
       }
     },
     "Stance - Deflecting": {
-      "name": "Стойка - Отражающая",
-      "description": "<p>Отражающая: Когда вы становитесь целью атаки, вы можете потратить 2 Концентрации, чтобы получить бонус к Уклонению, равный вашему Показателю Брони, против этой атаки.</p>"
+      "name": "Отражающая",
+      "description": "<p>Когда вы становитесь целью атаки, вы можете потратить 2 Концентрации, чтобы получить бонус к Уклонению против этой атаки, равный вашему значению Брони.</p>"
     },
     "Stance - Devastating": {
-      "name": "Стойка - Разрушительная",
-      "description": "<p>Разрушительная: Потратьте Концентрацию перед броском атаки, чтобы использовать d20 в качестве костей урона.</p>"
+      "name": "Разрушительная",
+      "description": "<p>Потратьте Концентрацию перед броском атаки, чтобы использовать d20 в качестве костей урона.</p>"
     },
     "Stance - Discerning": {
-      "name": "Стойка - Проницательная",
-      "description": "<p>Проницательная: Вы можете выбрать цель вашей атаки после совершения броска атаки. Мастер скажет вам, против кого атака была бы успешной.</p>"
+      "name": "Проницательная",
+      "description": "<p>Вы можете выбрать цель своей атаки после броска атаки. Мастер скажет, против кого эта атака была бы успешной.</p>"
     },
     "Stance - Dueling": {
-      "name": "Стойка - Дуэльная",
-      "description": "<p>Дуэльная: Получите преимущество на броски атаки, когда в пределах Близкой дистанции от вас или вашей цели нет других противников или союзников.</p>"
+      "name": "Дуэльная",
+      "description": "<p>Получите преимущество на броски атаки, когда в пределах Близкой дистанции от вас или вашей цели нет других противников или союзников.</p>"
     },
     "Stance - Favored": {
-      "name": "Стойка - Избранная",
-      "description": "<p>Избранная: Добавьте характеристику по вашему выбору к вашему броску урона.</p>"
+      "name": "Избранная",
+      "description": "<p>Добавьте выбранную вами характеристику к броску урона.</p>"
     },
     "Stance - Grappling": {
-      "name": "Стойка - Захватывающая",
-      "description": "<p>Захватывающая: При успешной атаке вы можете потратить Концентрацию, чтобы сделать цель временно Обездвиженной.</p>",
+      "name": "Захватывающая",
+      "description": "<p>При успешной атаке вы можете потратить Концентрацию, чтобы цель временно стала Обездвиженной.</p>",
       "effects": {
         "TKV02VQESRwaZ3Bw": {
-          "name": "Стойка - Захватывающая"
+          "name": "Захватывающая"
         }
       }
     },
     "Stance - Hindering": {
-      "name": "Стойка - Мешающая",
-      "description": "<p>Мешающая: При успешной атаке вы можете потратить Концентрацию, чтобы сделать цель временно Затрудненной. Будучи Затрудненной, её броски атаки имеют штраф -2.</p>",
+      "name": "Мешающая",
+      "description": "<p>При успешной атаке вы можете потратить Концентрацию, чтобы цель временно стала Затруднённой. Пока цель Затруднена, её броски атаки получают штраф -2.</p>",
       "actions": {
         "ZPGBfUjkngCEpmsj": {
-          "name": "Стойка - Мешающая"
+          "name": "Мешающая"
         }
       },
       "effects": {
         "1SfHkitHu8Gr3ggu": {
-          "name": "Стойка - Мешающая"
+          "name": "Мешающая"
         }
       }
     },
     "Stance - Immovable": {
-      "name": "Стойка - Неподвижная",
-      "description": "<p>Неподвижная: Получите бонус +2 к вашим порогам урона, и вас нельзя переместить против воли.</p>",
+      "name": "Неподвижная",
+      "description": "<p>Получите бонус +2 к вашим порогам урона, и вас нельзя переместить против воли.</p>",
       "effects": {
         "Zmy2QFYQeqCt98SW": {
-          "name": "Стойка - Неподвижная"
+          "name": "Неподвижная"
         }
       }
     },
     "Stance - Inexorable": {
-      "name": "Стойка - Неумолимая",
-      "description": "<p>Неумолимая: Атаки против вас имеют помеху, если в пределах дистанции Вплотную к вам находится более двух противников.</p>"
+      "name": "Неумолимая",
+      "description": "<p>Атаки против вас совершаются с помехой, если Вплотную с вами находится больше двух противников.</p>"
     },
     "Stance - Infuriating": {
-      "name": "Стойка - Разъяряющая",
-      "description": "<p>Разъяряющая: При успешной атаке цель становится Яростной. Будучи Яростной, она Уязвима и имеет штраф -2 к броскам атаки. Она может снять состояние Ярости только успешной атакой против вас.</p>"
+      "name": "Разъяряющая",
+      "description": "<p>При успешной атаке цель становится Разъярённой. Пока цель Разъярена, она Уязвима и получает штраф -2 к броскам атаки. Она может снять Разъярённость только преуспев в атаке против вас.</p>"
     },
     "Stance - Invigorating": {
-      "name": "Стойка - Бодрящая",
-      "description": "<p>Бодрящая: Когда вы совершаете успешную атаку, бросьте d4. На 4 вы получаете Концентрацию.</p>"
+      "name": "Бодрящая",
+      "description": "<p>Когда вы совершаете успешную атаку, бросьте [[/r d4]]. На 4 получите Концентрацию.</p>"
     },
     "Stance - Nimble": {
-      "name": "Стойка - Ловкая",
-      "description": "<p>Ловкая: Когда противник совершает успешный бросок атаки против вас, вы можете потратить количество Концентрации вплоть до вашего Ранга. Бросьте количество d6, равное 1 + потраченная Концентрация. Если значения любых костей совпадают, вы не получаете урона от атаки.</p>"
+      "name": "Ловкая",
+      "description": "<p>Когда противник совершает успешный бросок атаки против вас, вы можете потратить количество Концентрации вплоть до вашего ранга. Бросьте количество d6, равное 1 + потраченная Концентрация. Если значения любых костей совпали, вы не получаете урон от атаки.</p><p>1 Концентрация: [[/r 2d6]]</p><p>2 Концентрации: [[/r 3d6]]</p><p>3 Концентрации: [[/r 4d6]]</p><p>4 Концентрации: [[/r 5d6]]</p>"
     },
     "Stance - Otherworldly": {
-      "name": "Стойка - Потусторонняя",
-      "description": "<p>Потусторонняя: Вы можете выбирать, наносить физический или магический урон.</p>"
+      "name": "Потусторонняя",
+      "description": "<p>Вы можете выбрать, наносите физический или магический урон.</p>"
     },
     "Stance - Precise": {
-      "name": "Стойка - Точная",
-      "description": "<p>Точная: Получите бонус +1 к вашим броскам атаки.</p>",
+      "name": "Точная",
+      "description": "<p>Получите бонус +1 к броскам атаки.</p>",
       "effects": {
         "sMnygnFsd3q7BDIj": {
-          "name": "Стойка - Точная"
+          "name": "Точная"
         }
       }
     },
     "Stance - Quick": {
-      "name": "Стойка - Быстрая",
-      "description": "<p>Быстрая: При совершении броска атаки потратьте Концентрацию, чтобы включить дополнительную цель в пределах досягаемости.</p>"
+      "name": "Быстрая",
+      "description": "<p>Совершая бросок атаки, потратьте Концентрацию, чтобы включить дополнительную цель в пределах дистанции.</p>"
     },
     "Stance - Scary": {
-      "name": "Стойка - Пугающая",
-      "description": "<p>Пугающая: Успешные атаки также заставляют цель отметить Стресс.</p>"
+      "name": "Пугающая",
+      "description": "<p>Успешные атаки также заставляют цель отметить Стресс.</p>"
     },
     "Stance - Sheltering": {
-      "name": "Стойка - Укрывающая",
-      "description": "<p>Укрывающая: Когда вы отмечаете Ячейку Брони, это снижает урон для вас и всех союзников в пределах дистанции Вплотную, получивших тот же урон.</p>"
+      "name": "Укрывающая",
+      "description": "<p>Когда вы отмечаете Ячейку Брони, она уменьшает урон для вас и всех союзников Вплотную с вами, которые получили тот же урон.</p>"
     },
     "Stance - Steady": {
-      "name": "Стойка - Устойчивая",
-      "description": "<p>Устойчивая: Получите штраф -1 к Уклонению. Когда вы наносите урон при успешной атаке, бросьте дополнительную кость урона и отбросьте наименьшую.</p>",
+      "name": "Устойчивая",
+      "description": "<p>Получите штраф -1 к Уклонению. Когда вы наносите урон успешной атакой, бросьте дополнительную кость урона и отбросьте меньшую.</p>",
       "effects": {
         "g3Hb1cKR3xKFgbp8": {
-          "name": "Стойка - Устойчивая"
+          "name": "Устойчивая"
         }
       }
     },
     "Stance - Sweeping": {
-      "name": "Стойка - Размашистая",
-      "description": "<p>Размашистая: Ваша атака нацелена на всех противников в пределах Близкой дистанции. Нанесите половину урона всем целям, против которых вы преуспели.</p>"
+      "name": "Размашистая",
+      "description": "<p>Ваша атака выбирает целями всех противников в пределах Близкой дистанции.</p><p>Нанесите половину урона всем целям, против которых вы преуспели.</p>"
     },
     "Tethered Talisman": {
       "name": "Талисман связи",
-      "description": "<p>Один раз до следующего отдыха, вы можете зачаровать небольшой предмет вашей защитной эссенцией. Когда человек, держащий талисман, получает урон, вы можете потратить магию талисмана, чтобы уменьшить количество отмеченных Ран на одну. Вы не можете создать новый талисман, пока предыдущий не будет использован.</p>",
+      "description": "<p>Один раз за отдых вы можете наполнить небольшой предмет своей защитной сущностью. Когда носитель талисмана получает урон, вы можете израсходовать его магию, чтобы уменьшить количество отмечаемых им Ран на одну. Вы не можете создать новый талисман, пока старый не будет использован.</p>",
       "actions": {
         "JvGfIDjfeKa26pr1": {
           "name": "Связать",
-          "description": "<p>Один раз до следующего отдыха, вы можете зачаровать небольшой предмет вашей защитной эссенцией. Когда человек, держащий талисман, получает урон, вы можете потратить магию талисмана, чтобы уменьшить количество отмеченных Ран на одну. Вы не можете создать новый талисман, пока предыдущий не будет использован.</p>"
+          "description": "<p>Один раз за отдых вы можете наполнить небольшой предмет своей защитной сущностью. Когда носитель талисмана получает урон, вы можете израсходовать его магию, чтобы уменьшить количество отмечаемых им Ран на одну. Вы не можете создать новый талисман, пока старый не будет использован.</p>"
         }
       }
     },
     "Toxic Concoctions": {
       "name": "Токсичные смеси",
-      "description": "<p><strong>Отметьте Стресс</strong>, чтобы добавить <strong>[[/r 1d4+1]]</strong> жетонов на эту карту. Во время следующего продолжительного отдыха, снимите все жетоны. Вы знаете следующие яды:</p><ul><li><strong><em>Корень Горгоны</strong>: Цель получает постоянный штраф <strong>-1</strong> к Сложности. Это может подействовать на нее только один раз.</em></li></ul><ul><li><strong><em>Могильная спора</strong>: Цель также должна отметить <strong>Стресс</strong>.</em></li></ul><ul><li><strong><em>Плющ пиявки</strong>: Добавьте <strong>+1d6</strong> к урону для этой атаки.</em></li></ul>",
+      "description": "<p><strong>Отметьте Стресс</strong>, чтобы добавить <strong>[[/r 1d4+1]]</strong> жетонов на эту карту. Во время следующего продолжительного отдыха, снимите все жетоны. Вы знаете следующие яды:</p><ul><li><strong><em>Корень горгоны</strong>: Цель получает постоянный штраф <strong>-1</strong> к Сложности. Это может подействовать на неё только один раз.</em></li></ul><ul><li><strong><em>Могильная спора</strong>: Цель также должна отметить <strong>Стресс</strong>.</em></li></ul><ul><li><strong><em>Пиявочная трава</strong>: Добавьте <strong>+1d6</strong> к урону для этой атаки.</em></li></ul>",
       "actions": {
         "FKyTGtBLvh6Or7cS": {
           "name": "Отметить стресс"
@@ -565,7 +565,7 @@
     },
     "True Strike": {
       "name": "Верный удар",
-      "description": "<p>Один раз до следующего продолжительного отдыха, когда вы проваливаете бросок атаки, вы можете <strong>потратить Надежду</strong>, чтобы сделать ее успешной.</p>",
+      "description": "<p>Один раз до следующего продолжительного отдыха, когда вы проваливаете бросок атаки, вы можете <strong>потратить Надежду</strong>, чтобы сделать её успешной.</p>",
       "actions": {
         "oP50d3Hy89j5M39a": {
           "name": "Потратить Надежду"
@@ -577,8 +577,8 @@
       "description": "<p>Когда вы накладываете на цель эффект известного яда, вы можете потратить дополнительный жетон, чтобы наложить эффект второго известного яда.</p>"
     },
     "Veilwalker": {
-      "name": "Странник Вуали",
-      "description": "<p>Вы можете ненадолго скользнуть в мир между живыми и мертвыми. Потратьте 2 Надежды, чтобы исчезнуть и появиться рядом с существом или трупом в пределах Далекой дистанции. Вы получаете преимущество на следующий бросок атаки в этой сцене.</p>",
+      "name": "Странник вуали",
+      "description": "<p>Вы можете ненадолго скользнуть в мир между живыми и мёртвыми. Потратьте 2 Надежды, чтобы исчезнуть и появиться рядом с существом или трупом в пределах Далёкой дистанции. Вы получаете преимущество на следующий бросок атаки в этой сцене.</p>",
       "actions": {
         "T2fgFkNFX2WWU8TT": {
           "name": "Потратить 2 Надежды"
@@ -587,10 +587,10 @@
     },
     "Venomancer": {
       "name": "Веномант",
-      "description": "<p>Вы также знаете следующие яды:</p><ul><li><strong><em>Семя Гнили</strong>: Цель получает постоянный штраф <strong>-3</strong> к порогам урона. Это может подействовать на нее только один раз.</em></li></ul><ul><li><strong><em>Лист Страха</strong>: Урон от этой атаки получает бонус, равный результату вашей Кости Страха.</em></li></ul>"
+      "description": "<p>Вы также знаете следующие яды:</p><ul><li><strong><em>Семя гнили</strong>: Цель получает постоянный штраф <strong>-3</strong> к порогам урона. Это может подействовать на неё только один раз.</em></li></ul><ul><li><strong><em>Лист страха</strong>: Урон от этой атаки получает бонус, равный результату вашей Кости Страха.</em></li></ul>"
     },
     "Volatile Toxins": {
-      "name": "Нестабильные Токсины",
+      "name": "Нестабильные токсины",
       "description": "<p>Вы можете выбрать два преимущества мутагена вместо одного. Если вы это сделаете, отметьте Рану, которую нельзя очистить, пока вы не закончите следующий отдых.</p>",
       "actions": {
         "S2P9d1idmgJnIQEO": {

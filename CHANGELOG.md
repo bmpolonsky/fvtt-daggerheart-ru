@@ -1,5 +1,22 @@
 # Changelog
 
+## v2026.07.05
+
+### Added
+- Добавлены переводы компендиумов Voidborne: противники, предметы и макросы ([`b63b044`](https://github.com/bmpolonsky/fvtt-daggerheart-ru/commit/b63b044)).
+
+### Changed
+- Синхронизированы и уточнены переводы The Void: обновлены исходные снапшоты Voidborne, тексты классов, доменов, подклассов, трансформаций и оружия ([`b63b044`](https://github.com/bmpolonsky/fvtt-daggerheart-ru/commit/b63b044)).
+- Приведены к глоссарию формулировки дистанций в компендиумах и SRD-журнале: `Close` → `Средняя дистанция`, `Very Close` → `Близкая дистанция`, `Far` → `Далёкая дистанция`, `Very Far` → `Очень далёкая дистанция` ([`b63b044`](https://github.com/bmpolonsky/fvtt-daggerheart-ru/commit/b63b044)).
+
+### Fixed
+- Исправлены некорректные переводы дистанций и вложенных описаний действий у Acid Burrower, Volcanic Dragon, Earthquake, Hold the Line и Loyal Friend ([`b63b044`](https://github.com/bmpolonsky/fvtt-daggerheart-ru/commit/b63b044)).
+- Восстановлено полное описание `Hex`/`Сглаз` в Voidborne и исправлено вложенное действие `Vicious Maul`, где исходник был смешан с текстом `Snapping Strike` ([`b63b044`](https://github.com/bmpolonsky/fvtt-daggerheart-ru/commit/b63b044)).
+- Восстановлено применение переводов вложенных полей Babele для вопросов классов, связей и опытов противников после изменений Foundry/Babele ([`e9de14b`](https://github.com/bmpolonsky/fvtt-daggerheart-ru/commit/e9de14b)).
+- Исправлены потерянные и перепутанные тексты The Void/Voidborne: `Grand Feast`, `Reborne`, `Fangs`, `Flail Swipe`, `Relentless (3)` и `There’s Always That One...` ([`e9de14b`](https://github.com/bmpolonsky/fvtt-daggerheart-ru/commit/e9de14b)).
+
+![GitHub Downloads](https://img.shields.io/github/downloads/bmpolonsky/fvtt-daggerheart-ru/v2026.07.05/total?color=green)
+
 ## v2026.07.04-v13
 
 ### Changed
@@ -15,7 +32,7 @@
 
 ### Changed
 - Синхронизированы и переведены тексты интерфейса и компендиумов из обновления Foundryborne [2.5.0](https://github.com/Foundryborne/daggerheart/releases/tag/2.5.0) ([`01fde34`](https://github.com/bmpolonsky/fvtt-daggerheart-ru/commit/01fde34)).
-- Обновлены требования совместимости в manifest: Daggerheart 2.5.0+ (проверено на 2.5.0).
+- Обновлены требования совместимости в manifest: Foundry VTT 14.364+, Daggerheart 2.5.0+ (проверено на 2.5.0).
 
 ### Fixed
 - Сохранены `@Lookup`-ссылки в описаниях противников и убраны формулы из локализованных названий действий орды.

@@ -12,9 +12,11 @@ const REMOTE_REPO_DIR = path.join(TMP_DATA_DIR, "original-daggerheart");
 const PACKS_DIR = path.join(REMOTE_REPO_DIR, "src", "packs");
 const VOID_ORIGINAL_DIR = path.join(ORIGINAL_DIR, "void");
 const VOID_UNPACKED_DIR = path.join(TMP_DATA_DIR, "the-void-unofficial-json");
+const VOIDBORNE_UNPACKED_DIR = path.join(TMP_DATA_DIR, "daggerheart-voidborne-json");
 const VOID_DOCUMENT_CACHE = new Map();
+const VOIDBORNE_DOCUMENT_CACHE = new Map();
 const UPDATE_SOURCES_HINT =
-  "Запустите npm run update:sources для обновления исходников (tmp_data/original-daggerheart и the-void-unofficial).";
+  "Запустите npm run update:sources для обновления исходников (tmp_data/original-daggerheart, the-void-unofficial и daggerheart-voidborne).";
 
 const FILE_CONFIGS = [
   {
@@ -162,6 +164,30 @@ const VOID_FILE_CONFIGS = [
       return template;
     },
     build: buildVoidAdversaryEnvironmentEntries
+  },
+  {
+    file: "daggerheart-voidborne.voidborne-items.json",
+    label: "Voidborne: Classes & Class Options",
+    packName: "voidborne-items",
+    buildTemplate: buildVoidborneItemsTemplate,
+    buildFolderNames: buildVoidborneFolderNames,
+    build: buildVoidborneItemEntries
+  },
+  {
+    file: "daggerheart-voidborne.voidborne-actors.json",
+    label: "Voidborne: Adversaries & Environments",
+    packName: "voidborne-actors",
+    buildTemplate: buildVoidborneActorsTemplate,
+    buildFolderNames: buildVoidborneFolderNames,
+    build: buildVoidborneActorEntries
+  },
+  {
+    file: "daggerheart-voidborne.voidborne-macros.json",
+    label: "Voidborne: Macros",
+    packName: "voidborne-macros",
+    buildTemplate: buildVoidborneMacrosTemplate,
+    buildFolderNames: buildVoidborneFolderNames,
+    build: buildVoidborneMacroEntries
   }
 ];
 
@@ -205,21 +231,36 @@ async function generateVoidOriginals() {
 
   for (const config of VOID_FILE_CONFIGS) {
     console.log(`Generating original/void/${config.file}`);
-    let template = await loadTemplate(config.template);
+    let template = config.template ? await loadTemplate(config.template) : await config.buildTemplate();
     if (typeof config.prepareTemplate === "function") {
       template = config.prepareTemplate({ ...template });
     }
     let entries = await config.build();
     entries = sortEntries(entries);
-    const folderNames = config.packName ? await buildVoidFolderNames(config.packName) : [];
+    const folderNames = config.packName
+      ? await (config.buildFolderNames || buildVoidFolderNames)(config.packName)
+      : [];
     const folderMap = buildFolderMapFromNames(folderNames);
-    const payload = { ...template, entries, folders: folderMap };
-    if (config.label) {
-      payload.label = config.label;
-    }
+    const payload = buildVoidPayload(template, folderMap, entries, config.label);
     const targetPath = path.join(VOID_ORIGINAL_DIR, config.file);
     await fs.writeFile(targetPath, JSON.stringify(payload, null, 2) + "\n");
   }
+}
+
+function buildVoidPayload(template, folders, entries, label) {
+  const { label: templateLabel, folders: _folders, entries: _entries, mapping, ...rest } = template || {};
+  const payload = {
+    label: label || templateLabel || "",
+    folders: folders || {}
+  };
+  if (mapping) {
+    payload.mapping = mapping;
+  }
+  for (const [key, value] of Object.entries(rest)) {
+    payload[key] = value;
+  }
+  payload.entries = entries || {};
+  return payload;
 }
 
 function buildOriginalPayload(label, translation, entries) {
@@ -305,7 +346,27 @@ async function loadVoidPackDocuments(packName) {
   if (VOID_DOCUMENT_CACHE.has(packName)) {
     return VOID_DOCUMENT_CACHE.get(packName);
   }
-  const packPath = path.join(VOID_UNPACKED_DIR, packName);
+  const documents = await loadUnpackedPackDocuments(VOID_UNPACKED_DIR, packName, VOID_DOCUMENT_CACHE);
+  return documents;
+}
+
+async function loadVoidbornePackDocuments(packName) {
+  if (VOIDBORNE_DOCUMENT_CACHE.has(packName)) {
+    return VOIDBORNE_DOCUMENT_CACHE.get(packName);
+  }
+  const documents = await loadUnpackedPackDocuments(
+    VOIDBORNE_UNPACKED_DIR,
+    packName,
+    VOIDBORNE_DOCUMENT_CACHE
+  );
+  return documents;
+}
+
+async function loadUnpackedPackDocuments(unpackedDir, packName, cache) {
+  if (cache.has(packName)) {
+    return cache.get(packName);
+  }
+  const packPath = path.join(unpackedDir, packName);
   try {
     await fs.access(packPath);
   } catch (error) {
@@ -316,7 +377,7 @@ async function loadVoidPackDocuments(packName) {
   }
   const documents = [];
   await readDirectoryRecursive(packPath, documents);
-  VOID_DOCUMENT_CACHE.set(packName, documents);
+  cache.set(packName, documents);
   return documents;
 }
 
@@ -341,10 +402,18 @@ async function readDirectoryRecursive(directory, bucket) {
 }
 
 async function buildVoidFolderNames(packName) {
+  return buildFolderNamesFromUnpackedPack(VOID_UNPACKED_DIR, packName);
+}
+
+async function buildVoidborneFolderNames(packName) {
+  return buildFolderNamesFromUnpackedPack(VOIDBORNE_UNPACKED_DIR, packName);
+}
+
+async function buildFolderNamesFromUnpackedPack(unpackedDir, packName) {
   if (!packName) {
     return [];
   }
-  const packPath = path.join(VOID_UNPACKED_DIR, packName);
+  const packPath = path.join(unpackedDir, packName);
   try {
     await fs.access(packPath);
   } catch (error) {
@@ -732,6 +801,203 @@ async function buildVoidAdversaryEnvironmentEntries() {
     }
   }
   return result;
+}
+
+function buildVoidborneItemsTemplate() {
+  return {
+    label: "Voidborne: Classes & Class Options",
+    mapping: {
+      description: "system.description",
+      backgroundQuestions: {
+        path: "system.backgroundQuestions",
+        converter: "toStringList"
+      },
+      connections: {
+        path: "system.connections",
+        converter: "toStringList"
+      },
+      actions: {
+        path: "system.actions",
+        converter: "toActions"
+      },
+      effects: {
+        path: "effects",
+        converter: "toEffects"
+      },
+      attack: "system.attack.name"
+    }
+  };
+}
+
+function buildVoidborneActorsTemplate() {
+  return {
+    label: "Voidborne: Adversaries & Environments",
+    mapping: {
+      description: "system.description",
+      experiences: {
+        path: "system.experiences",
+        converter: "toExperiences"
+      },
+      motivesAndTactics: "system.motivesAndTactics",
+      impulses: "system.impulses",
+      potentialAdversaries: {
+        path: "system.potentialAdversaries",
+        converter: "toPotentialAdversaries"
+      },
+      attack: "system.attack.name",
+      items: {
+        path: "items",
+        converter: "toItemsWithActions"
+      },
+      effects: {
+        path: "effects",
+        converter: "toEffects"
+      }
+    }
+  };
+}
+
+function buildVoidborneMacrosTemplate() {
+  return {
+    label: "Voidborne: Macros",
+    mapping: {
+      command: "command"
+    }
+  };
+}
+
+async function buildVoidborneItemEntries() {
+  const documents = await loadVoidbornePackDocuments("voidborne-items");
+  const duplicateNames = collectDuplicateNames(documents);
+  const result = {};
+  for (const entry of documents) {
+    if (!entry?.name) continue;
+    let converted = null;
+    if (entry.type === "class") {
+      converted = simpleEntry(entry);
+    } else if (entry.type === "feature") {
+      converted = featureEntry(entry);
+    } else if (entry.type === "subclass" || entry.type === "ancestry" || entry.type === "community") {
+      converted = descriptionEntry(entry);
+    } else if (entry.type === "domainCard") {
+      converted = genericItemEntry(entry, `voidborne-domain:${entry._id || entry.name}`);
+    } else {
+      converted = genericItemEntry(entry, `voidborne-item:${entry._id || entry.name}`);
+    }
+    addUniqueEntry(
+      result,
+      getEntryKey(entry, duplicateNames),
+      converted,
+      `Voidborne items:${entry._id || entry.name}`
+    );
+  }
+  return result;
+}
+
+async function buildVoidborneActorEntries() {
+  const documents = await loadVoidbornePackDocuments("voidborne-actors");
+  const duplicateNames = collectDuplicateNames(documents);
+  const result = {};
+  for (const entry of documents) {
+    if (!entry?.name) continue;
+    if (entry.type === "adversary") {
+      addUniqueEntry(
+        result,
+        getEntryKey(entry, duplicateNames),
+        buildVoidAdversary(entry),
+        `Voidborne actors:${entry._id || entry.name}`
+      );
+    } else if (entry.type === "environment") {
+      addUniqueEntry(
+        result,
+        getEntryKey(entry, duplicateNames),
+        buildVoidEnvironment(entry),
+        `Voidborne actors:${entry._id || entry.name}`
+      );
+    }
+  }
+  return result;
+}
+
+async function buildVoidborneMacroEntries() {
+  const documents = await loadVoidbornePackDocuments("voidborne-macros");
+  const duplicateNames = collectDuplicateNames(documents);
+  const result = {};
+  for (const entry of documents) {
+    if (!entry?.name) continue;
+    const converted = { name: entry.name };
+    if (typeof entry.command === "string" && entry.command.trim()) {
+      converted.command = entry.command;
+    }
+    addUniqueEntry(
+      result,
+      getEntryKey(entry, duplicateNames),
+      converted,
+      `Voidborne macros:${entry._id || entry.name}`
+    );
+  }
+  return result;
+}
+
+function collectDuplicateNames(documents) {
+  const counts = new Map();
+  for (const entry of documents) {
+    if (!entry?.name) continue;
+    counts.set(entry.name, (counts.get(entry.name) || 0) + 1);
+  }
+  return new Set([...counts.entries()].filter(([, count]) => count > 1).map(([name]) => name));
+}
+
+function getEntryKey(entry, duplicateNames) {
+  if (entry?._id && duplicateNames.has(entry.name)) {
+    return entry._id;
+  }
+  return entry.name;
+}
+
+function addUniqueEntry(target, key, converted, context) {
+  if (!converted) return;
+  if (!Object.prototype.hasOwnProperty.call(target, key)) {
+    target[key] = converted;
+    return;
+  }
+  generationWarnings.push(
+    `Дублирующаяся запись "${key}" в ${context}. Объединяю безопасные поля без суффикса.`
+  );
+  target[key] = mergeDuplicateEntry(target[key], converted, key, context);
+}
+
+function mergeDuplicateEntry(existing, incoming, name, context) {
+  const merged = { ...existing };
+  for (const field of ["name", "attack"]) {
+    if (!merged[field] && incoming[field]) merged[field] = incoming[field];
+  }
+  for (const field of ["description", "backgroundQuestions", "connections", "motivesAndTactics", "impulses"]) {
+    if (!Object.prototype.hasOwnProperty.call(incoming, field)) continue;
+    if (!Object.prototype.hasOwnProperty.call(merged, field)) {
+      merged[field] = incoming[field];
+      continue;
+    }
+    if (JSON.stringify(merged[field]) !== JSON.stringify(incoming[field])) {
+      delete merged[field];
+      generationWarnings.push(
+        `Конфликтующее поле "${field}" у дубля "${name}" в ${context}. Поле пропущено.`
+      );
+    }
+  }
+  for (const field of ["actions", "effects", "items", "experiences", "potentialAdversaries"]) {
+    if (!incoming[field]) continue;
+    merged[field] = { ...(merged[field] || {}) };
+    for (const [childKey, childValue] of Object.entries(incoming[field])) {
+      if (Object.prototype.hasOwnProperty.call(merged[field], childKey)) {
+        generationWarnings.push(
+          `Дублирующееся вложенное поле "${field}.${childKey}" у дубля "${name}" в ${context}.`
+        );
+      }
+      merged[field][childKey] = childValue;
+    }
+  }
+  return merged;
 }
 
 function buildVoidAdversary(entry) {
